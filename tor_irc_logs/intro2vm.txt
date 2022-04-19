@@ -1,0 +1,698 @@
+Log opened Sun May 01 12:04:17 2016
+<%QwertyKeyboarder> and with that i will begin.
+<%QwertyKeyboarder> juding by the strawpoll some of you figured out how to VM ubuntu.  good job! ubuntu can be iffy in a VM sometimes, its picky.  
+<%QwertyKeyboarder> thats normal.
+<%QwertyKeyboarder> not all linux distros are as picky as ubuntu.  especially debian-netinstall. it will boot on almost anything, and then install itself as you direct.
+<%QwertyKeyboarder> you have to know how the file system is laid out, right?
+<%QwertyKeyboarder> so here is the base layout of the heirarchy
+<%QwertyKeyboarder> http://www.basicconfig.com/files/images/filesystem/02fs.jpg
+[Users #school4lulz]
+[~kr0             ] [ Bockwurst  ] [ fakename     ] [ Limnos      ] [ r0flc0pt0rz       ] [ tool         ] 
+[&ChanServ        ] [ BUs3r      ] [ fany         ] [ lorimeyers  ] [ R3lcr4w           ] [ torist       ] 
+[&mona            ] [ cornelle   ] [ Flip         ] [ M4L4K14S    ] [ Raindeer          ] [ touch        ] 
+[&onionirc        ] [ crackerjax ] [ Gh0S7        ] [ malefic     ] [ Reaper            ] [ trace        ] 
+[&rackham         ] [ CrazeKiller] [ Goldenclaw   ] [ matteblack  ] [ Rookie            ] [ Trovador     ] 
+[%QwertyKeyboarder] [ cronus     ] [ gom          ] [ mithrandir  ] [ Rudolph           ] [ Ulrisch      ] 
+[ [reversehope]   ] [ Cryptonite ] [ Gu355        ] [ n01         ] [ S0ldier           ] [ um1b0zu      ] 
+[ _BadUSB         ] [ Cyborg777  ] [ guiltyspark  ] [ NewBie      ] [ S4b4t5i3l         ] [ user_user    ] 
+[ alpha           ] [ DarkP      ] [ Incognito    ] [ Nicko       ] [ shopang0_0        ] [ v            ] 
+[ anakata         ] [ desu       ] [ j3d1kn1gh7   ] [ nyselaxative] [ SinfulHazeCE_     ] [ viktorbsd    ] 
+[ Anon41896       ] [ dis0bey    ] [ japa         ] [ ofelia1     ] [ Snoop             ] [ WannaBeSpider] 
+[ Anon43899       ] [ diver      ] [ jetblackcloud] [ oldTimer    ] [ sragon            ] [ Xeon         ] 
+[ Anon52433       ] [ E4m72_     ] [ l00l         ] [ omega|c     ] [ Stonedge          ] [ xermes       ] 
+[ Anon57068       ] [ embededgma ] [ L00p         ] [ onthedl     ] [ SygeR             ] 
+[ AnonHax         ] [ emperOR    ] [ Lamparejo    ] [ P3AC3K33P3R ] [ syNTHEX           ] 
+[ anonymous       ] [ empty      ] [ lemen        ] [ Parabole    ] [ The_Death_Of_Death] 
+[ back99          ] [ ePSYlon    ] [ leviathan    ] [ Parsec      ] [ tinkering         ] 
+[ beerscript      ] [ Ethor      ] [ lightcoke    ] [ pine        ] [ Tintik            ] 
+<%QwertyKeyboarder> you have '/bin' '/boot' ' '/dev' '/etc' '/home' '/lib' '/mnt' '/opt' '/root' '/sbin' '/tmp' '/usr' and '/var'
+<%QwertyKeyboarder> '/bin' is the essential OS commands, usually all need superuser permissions.  
+<%QwertyKeyboarder> those are things like the remove command  ' ~$rm -rf /usr/QwertyKeyboarder  '
+<&mona> for you noobs out there
+<&mona> rm = remove
+<&mona> -r = recursive
+<&mona> -f = force
+<&mona> so now you get the rm -rf / joke
+<&mona> it deletes your whole system
+<%QwertyKeyboarder> that command needs superuser permissions to run (if configured properly) because its a dangerous command to let rampant.  
+<%QwertyKeyboarder> ^^
+<%QwertyKeyboarder> how i configured it, i told it to remove my home directory
+<%QwertyKeyboarder> on to home directories
+<%QwertyKeyboarder> '/home' in linux is where your user folder and documents are stored.
+<%QwertyKeyboarder> things like desktop and downloads and photos and music
+<%QwertyKeyboarder> you are probbably wondering how you install different programs other than the ones that come with the system.
+<%QwertyKeyboarder> in debian/ubuntu we have this beautiful program called 'Synaptic Package Manager'  it comes default installed on Linux Mint, Ubuntu, and a slew of other distros
+<%QwertyKeyboarder> you can search for things like Skype on there (although i reccomend getting it straight from microsoft)
+<%QwertyKeyboarder> Synaptic works on this thing called repositories
+<%QwertyKeyboarder> its basically a server that has the addresses of all of the files, and they are indexed to be searchable.  there is more than just the base repository (or repo) and you can find them and add them in.  Spotify Music has it's own repo that you have to add, and they have a tutorial on their website on installing on ubuntu/debian
+!Onion.IRC mona invited TransOnion into the channel.
+<%QwertyKeyboarder> in my opinion the best part about linux is that everything is a file or directory, so when you want to communicate with another device, you go to '/dev/insert-device-name-here' and you can accsess the device from the file manager (usually)
+!Onion.IRC mona invited TransOnion into the channel.
+<&mona> anything the system can do, linux can do
+<&mona> in theory
+<%QwertyKeyboarder> so if i wanted to print something, i would send the file to '/dev/lp0'
+<%QwertyKeyboarder> Mona, open it up for questions for a few?
+< tool> so weird i had this need to study linux filesystem yesterday and now Keyboarder is talking about it.. Oh well
+<&mona> i see a lot of "halp basic linux tech support" every day
+<&mona> now is your chance!
+< Rookie> can you give an example on /lp0
+< CrazeKiller> So If i were to connect a a phone to my computer I'll be able to access Everything on it?
+< SygeR> Everyone says "Ubuntu is more safe then Windows!" so....  Its is ? 
+<%QwertyKeyboarder> mostly, so long as it was unlocked CrazeKiller
+< blindPig> CrazeKiller, if you connect your phone via SSH, then you'll see the allowed stuff
+< l00l> blindPig, tu connect through ssh u need root on it first
+<%QwertyKeyboarder> Rookie: /dev/lp0 is just the generic name for a printer, every device type has its own naming scheme.  my main install drive would show up as /dev/sda1 
+<&rackham> oh is class right now?
+<&mona> well
+<&mona> the drive shows up as /dev/sda
+< Reaper> can u go over disabling the root account? like the were talking about last sunday
+<&mona> /dev/sda1 is a partition
+<%QwertyKeyboarder> ^^
+< j3d1kn1gh7> rackman - yes
+< blindPig> l00l, You just need an SSH client like JuiceSSH for example
+<&mona> Reaper: just type passwd -d
+<&mona> as root
+< Rookie> QwertyKeyboarder
+< Rookie> QwertyKeyboarder: got it
+< Reaper> ok thanks mona
+< l00l> blindPig, I know man but u are talking about phone u need root access there
+< l00l> easy way to connect to your mobile, is through usb port
+<%QwertyKeyboarder> in a default ubuntu install, root acct is disabled by default, but in terminal you can still run commands with " ~$ sudo [command goes here] "
+< blindPig> l00l, well, I don't have root on my phone, yet I can use an SSH client there.
+<&mona> l00l: please don't talk if you don't know what you're talking about
+<%QwertyKeyboarder> any more big questions...?
+<&mona> you don't need root access to connect to a phone
+< CrazeKiller> Wait
+< WannaBeSpider> ls
+< WannaBeSpider> wc :D
+<%QwertyKeyboarder> ls command?
+< blindPig> mona, as I understood not to a phone but with a phone to PC
+< WannaBeSpider> Nah, I was typing into my VM but forgot I had this chat selected
+< l00l> mona, so u can install a ssh client and check all files with out root access?
+<%QwertyKeyboarder> lol
+< CrazeKiller> When I use terminal I don't use ~$. Am i supposed to use it as your exa~$ sudo [command goes here]ple 
+< CrazeKiller> example*
+<&mona> blindPig: it depends on the device
+<&mona> many android phones you can
+<&mona> kindle i believe you can
+< CrazeKiller> I usually do sudo and not ~$ Sudo
+<%QwertyKeyboarder> no, the ~$ is just  a shorthand way to put user@devicename$
+< l00l> mona, dont think so
+<&mona> if the device allows itself to mounted directly as a filesystem
+<&mona> then yes
+< CrazeKiller> Ah, THx.
+< Rookie> Aren't we getting off topic? :$
+<&mona> ok, let's move on
+<%QwertyKeyboarder> okay.  So we have the main part of the file hierarchy down.  as i was using in my examples, "~$" was just shorthand for user@devicename$
+<%QwertyKeyboarder> thats something to keep in mind too, every distro likes to represent the shorthand for command in a different way.  as does every user.
+<&mona> Qwerty's referring to the prompt you see when you're logged into a bash shell
+<%QwertyKeyboarder> ^^
+<&mona> usually it will be username@host
+<&mona> so mona@hacktheplanet$ 
+<&mona> for example
+<%QwertyKeyboarder> or Qwertykeyboarder@VBOX$
+<&mona> for the record, the arch linux wiki has got a huge amount of info on linux configuration and tools
+<&mona> eve if you don't use arch
+<&mona> it's one of the best documented resources out there for setup and configuration
+<%QwertyKeyboarder> yes!  archwiki is the best when you cant figure something out.
+<%QwertyKeyboarder> i find myself there almost daily
+<%QwertyKeyboarder> if you want to see what the whole base tree is supposed to look like  http://www.blackmoreops.com/wp-content/uploads/2015/02/Linux-file-system-hierarchy-Linux-file-structure-optimized.jpg 
+<%QwertyKeyboarder> moving on to some simple bash commands
+<&mona> learn to use the arch wiki and google, and you wont have to rely on apathetic, mocking irc opers like us to help you
+<%QwertyKeyboarder> heheheh -glares at the fedora users-
+<&mona> the arch wiki is the best place to go if you get stuck
+<&mona> if there's no article there that can help you
+<&mona> googling the problem or error message should be your second stop
+<&mona> many programs also have an offline manual that comes with it
+<&mona> which you can access with the man <program_name> command
+<&mona> i.e.
+<&mona> $ man ls
+<&mona> will give you info on the ls command
+<&mona> what it does, how to use it, what options you can give it, etc
+<%QwertyKeyboarder> you can also maneuver your filetree in BASH.  the basic commands for that are  ' cd' 'ls' 'pwd'
+<%QwertyKeyboarder> 'cd' is change directory, you can use this to go '~$cd ..'
+<%QwertyKeyboarder> to go up a folder
+<%QwertyKeyboarder> then you can use '~$ls ' to see where you are, and it will print what is in the directory.  
+<%QwertyKeyboarder> ls stands for list.  
+<%QwertyKeyboarder> pwd is print working directory
+<%QwertyKeyboarder> so say you are using bash to find a file, and you need it for a gui program.
+<%QwertyKeyboarder> you would find it using cd and ls
+<&mona> in linux, . always means your current folder, .. always means the folder above you
+<&mona> that's why cd .. goes up one folder
+<&mona> you can also chain those together
+<%QwertyKeyboarder> ^^
+<&mona> so cd ../../ goes up 2 folders
+<%QwertyKeyboarder> yes.
+<&mona> cd ../../../ goes up 3 folders
+<&mona> etc
+<%QwertyKeyboarder> i actually diddnt learn that till a few weeks ago is the funny thing
+<%QwertyKeyboarder> you always learn new things
+<%QwertyKeyboarder> always
+<%QwertyKeyboarder> so say you used cd and ls to find the file you need, and need to put the directory in a program
+<%QwertyKeyboarder> you would put ~$pwd
+<%QwertyKeyboarder> and the output would look like this
+<%QwertyKeyboarder> /usr/qwertykeyboarder/downloads/this/is/not/a/real/file
+<&mona> pwd = print working directory
+<&mona> prints the directory (folder) you're currently in
+<%QwertyKeyboarder> we also have the sudo command.
+<%QwertyKeyboarder> sudo allows a command to be run as superuser.
+<%QwertyKeyboarder> so say you wanted accsess to a root level folder, and when you cd into it, its empty, but you know it isnt
+<%QwertyKeyboarder> you would put "~$sudo cd /root"
+<%QwertyKeyboarder> it would prompt you for your password, adn you will type it in
+<%QwertyKeyboarder> when setting up ubuntu, always always always have an administrator with a password
+<%QwertyKeyboarder> that goes for any linix distro in general
+<%QwertyKeyboarder> dont forget about the '~#man <command_here>" that mona brought up.   you can use it on any command.
+<%QwertyKeyboarder> hmm.
+<%QwertyKeyboarder> oh yea!
+<%QwertyKeyboarder> this is a great resource for learning in depth about the entire standard hierarchy format
+<%QwertyKeyboarder> http://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/
+<%QwertyKeyboarder> anything to add to man or basic filesystem in bash mona?
+<&mona> not really
+<&mona> probably good to open it up
+<%QwertyKeyboarder> yea
+<&mona> if anyone has questions about how to get around their system
+< tool> There's a good course on codecademy about the command line 
+<%QwertyKeyboarder> tool thanks for bringing that up
+< blindPig> I think that grep is worth mentioning
+< Incognito> will all these be transcripted? i missed the first part
+< WannaBeSpider> I just got a trick I learned: Double click to highlight a file or w.e you want then use middle mouse button to insert the highlighted text at where the typing cursor is.
+< blindPig> and pipes
+<%QwertyKeyboarder> Incognito: yea
+<%QwertyKeyboarder> grep will probbably be covered tonight at the 1900 bash course
+< DARKHP> can u put the script fast on the web, i just enter now in tor...
+< WannaBeSpider> Can you use ls to view multiple directories?
+< DARKHP> so u will be saying the same thing you said now at 1900?
+< blindPig> QwertyKeyboarder, btw, I like multi-lined PS1 =)
+< xermes> ls is very versatile
+<%QwertyKeyboarder> indeed^^
+< xermes> so yeah, you can
+< WannaBeSpider> great :)
+<%QwertyKeyboarder> as i mentioned before i started, i have to take the dogs out for a few, so xermes and mona, could you take over for a few?
+< RTFM> You can "ls directory1 directory2 directory3"
+< xermes> also, you can see file permissions (which you should look into) by using "ls -l"
+< NyanCat> wnna talk a bit about find?
+< xermes> really, just start reading the man pages for basically all of the following commands: cd, pwd, ls, man (yes, "man man"), less, cat, echo
+< WannaBeSpider> yea +  ls --help gives a lot of info too and then you got the manual
+<&onionirc> https://twitter.com/OnionIRC/status/726771641389309956 !!IMPORTANT!!
+<&onionirc> https://twitter.com/OnionIRC/status/726771641389309956 !!IMPORTANT!!
+<&onionirc> https://twitter.com/OnionIRC/status/726771641389309956 !!IMPORTANT!!
+<&onionirc> https://twitter.com/OnionIRC/status/726771641389309956 !!IMPORTANT!!
+<&onionirc> https://twitter.com/OnionIRC/status/726771641389309956 !!IMPORTANT!!
+<&onionirc> https://twitter.com/OnionIRC/status/726771641389309956 !!IMPORTANT!!
+<&onionirc> https://twitter.com/OnionIRC/status/726771641389309956 !!IMPORTANT!!
+<&mona> this is probably a good format
+< l00l> *locate is helpful
+< xermes> oh, did anyone mention environment variables?
+< l00l> *also "mv" command to rename and move directories and files
+<&mona> does anyone have questions on stuff we've covered so far
+< blindPig> I would actually agree here with l00l, locate is useful, you just need not to forget to updatedb
+< xermes> you should definitely know what the "path" variable is for
+< ad3pt> wait, so theres another, more in-depth bash class in 3 hours?
+<&mona> trying to avoid overwhelming people too early
+<&mona> yes
+< surak13> mona What about DDos?
+<&mona> this is for absolute basics
+< xermes> ah, right
+< ad3pt> ok, thx
+<&mona> dumbass
+< onthedl> lmao
+< WannaBeSpider> haha
+< l00l> blindPig, yes man
+<&mona> ok, so i know a lot of you are pretty familiar with linux
+<&mona> but i know a lot of you have had some basic questions
+<%QwertyKeyboarder> -is back-
+<&mona> is everyone in this room comfortable with getting around their file system
+<&mona> looking up man pages
+< WannaBeSpider> Yes
+<&mona> navigating directories
+< RTFM> Indeed
+< xermes> a good thing to try is to do all your daily tasks through the shell
+<&mona> no one has any questions, yes?
+< xermes> try editing files there. moving / copying, etc
+< WannaBeSpider> You guys should check out The Linux Command Line book or the website version, very decent book on linux bash.
+< WannaBeSpider> Loving it so far :)
+<&mona> indeed
+< ad3pt> WannaBeSpider: is that the actual name of the book?
+<&mona> 99% of your basic linux issues
+<&mona> can be solved with google
+<%QwertyKeyboarder> just remember
+< xermes> the bash hackers wiki is great too
+<%QwertyKeyboarder> p - copy files and directories
+<%QwertyKeyboarder> mv - move or rename files and directories
+<%QwertyKeyboarder> rm - remove files and directories
+<%QwertyKeyboarder> mkdir - create directories
+<&mona> cd - change directory
+< ad3pt> lmao!
+<&mona> ls - list contents of directories
+< WannaBeSpider> http://www.amazon.com/Linux-Command-Line-Complete-Introduction/dp/1593273894  ad3pt 
+<&mona> and it's cp to copy, not p
+< ad3pt> thx WannaBeSpider 
+< xermes> he meant "cp - copy files and directories" btw
+< ofelia> cp - copy files and directories *
+<&mona> wb
+< QwertyKeyboarder> ouch 
+<&mona> turn down your flood speed lol
+< ad3pt> can you talk about touch?
+< QwertyKeyboarder> "flooding"
+<&mona> sure
+<&mona> touch is a pretty simple command
+< xermes> also about "finger" :P
+<&mona> it just updates a file's timestamps
+<&mona> if you touch a file that doesnt exist
+<&mona> it'll be created
+<&mona> as a blank file
+<&mona> otherwise nothing will happen to its contents
+<&mona> but its metadata as to when it was last accessed
+<&mona> will be set the right now
+<&mona> it's kind of like opening the file and immediately saving it
+<&mona> and doing nothing else
+<&mona> it just updates when linux thinks it was last used
+< ad3pt> whats the benefits of doing that?
+<&mona> does that make sense?
+< Tech-Know> touch; yes; finger; yes; yes; mount; fsck; yes; fsck; more; fsck; fsck; fsck; fsck; umount; sleep
+<&mona> well, it's very often used to create a file
+< xermes> Tech-Know: :D
+<&mona> without doing anything to it
+< QwertyKeyboarder> if you use ~$touch -t [[CC]YY]MMDDhhmm[.ss]
+< QwertyKeyboarder> you can set it to any time you want
+<&mona> yeah you can also use it to set a specific time
+<&mona> which can be good when covering your tracks
+< Cyborg777> I see what you did there Tech-know xD
+< QwertyKeyboarder> yes
+< l00l> *you can try "htop" tool is very useful for checking services running
+< lulz> glances is good too
+< Tech-Know> also stuck up vim users will call you a noob for using nano
+< Tech-Know> but nano is easy
+< lulz> nano is in the terminal 
+< lulz> why open something 
+<&mona> nano is a good tool
+<&mona> nano is simple and fast
+<&mona> vim is powerful
+<&mona> neither is better than the other
+< l00l> yeah vim is kinda hard, but just need practice i guess
+< Tech-Know> vim is powerful but you really need to learn how to use it
+<&mona> vim isn't hard, just unintuitive
+<&mona> you have to remember a lot of fiddly sequences
+< WannaBeSpider> May I also add to check out Terminator emulator, great terminal, lets you split screen into multiple terminals
+<&mona> speaking of which
+< Tech-Know> finding out how to even exit the damn thing will be difficult when you first use it
+< WannaBeSpider> lots of customizations too.
+< QwertyKeyboarder> nano is good when you need to edit a file over ssh
+< xermes> yeah, start with nano. you'll have to google to even be able to exit vim
+< xermes> oh, that reminds me
+< xermes> you can use ctrl+c to cancel a command
+< xermes> try "sleep 100"
+< xermes> you can cancel this command before it finishes by hitting ctrl+c
+< QwertyKeyboarder> then use touch -t to fix the timestamp
+<&mona> one utility, which, if you spend a lot of time in the terminal
+<&mona> will be very useful
+<&mona> is screen
+<&mona> not installed by default on all systems
+<&mona> but you can install it
+< l00l> WannaBeSpider, check tmux is a little quicker
+<&mona> screen basically opens a new terminal session within your current one
+<&mona> which you can detach from
+<&mona> and reattach to later
+<&mona> so you could open screen
+<&mona> run irssi to connect to an IRC server
+<&mona> then press ctrl+A-D to detach
+<&mona> do other stuff
+<&mona> then do screen -r to reattach to it
+<&mona> and it will have kept running in the background
+< xermes> WannaBeSpider: and speaking of better terminal emulators, a better shell can't hurt either. zsh is great
+<&mona> this is very convenient 
+<&mona> zsh is interesting but beyond the scope of teaching the essentials of bash
+< l00l> xermes, indeed
+< blindPig> mona, also jobs should be covered
+<&mona> ok well
+< ad3pt> and kill
+< WannaBeSpider> Thanks for the names
+<&mona> i'm gonna move back to +m
+< lulz> mona: during the lession should we keep a bash terminal up
+< WannaBeSpider> terminal names*
+<&mona> and let qwerty continue their lesson
+< l00l> *apt -get install "package name"
+<&mona> lulz: if you want to test these commands out then yes
+<&mona> QwertyKeyboarder: take it away
+<&mona> lol
+<%QwertyKeyboarder> lol okay
+<%QwertyKeyboarder> fixed
+<&mona> i'm afk for now
+<%QwertyKeyboarder> okay
+<&mona> you can mute and unmute the channel at will
+<%QwertyKeyboarder> uh, so we covered a few things, now im going to cover basic package getting (software install)
+<%QwertyKeyboarder> we have synaptic package manager, which has the base command apt-get
+<%QwertyKeyboarder> or more recently apt
+<%QwertyKeyboarder> im going to cover apt-get because i know it better, and there isnt a difference between the two
+<%QwertyKeyboarder> if you '~$man apt-get
+<%QwertyKeyboarder> you should get http://ss64.com/bash/apt-get.html as your man
+<%QwertyKeyboarder> oh, apt-get has to be run as superuser
+<%QwertyKeyboarder> so everything would be ~$sudo apt-get *
+<%QwertyKeyboarder> "~$sudo apt-get update" updates the package lists to check if there is updates to software
+<%QwertyKeyboarder> and ~$sudo apt-get upgrade" downloads the updates and prompts for installation
+<%QwertyKeyboarder> to install a new package you would put ~$sudo apt-get install package-name
+<%QwertyKeyboarder> and it would tell you if it found it or not
+<%QwertyKeyboarder> if yes, it will prompt if you would like to install
+<%QwertyKeyboarder> you also cna use the wildcard symbol, in bash its *
+<%QwertyKeyboarder> say you diddnt know the full package name for openjdk for ubuntu, so you would put
+<%QwertyKeyboarder> ~$sudo apt-get install openjdk*
+<%QwertyKeyboarder> it would search the repositories and mark all the ones that start with openjdk
+<%QwertyKeyboarder> and they could have anything after the wildcard
+<%QwertyKeyboarder> for those of you that have debian/ubuntu in a vm or running, go ahead and run ~$sudo apt-get update
+<%QwertyKeyboarder> and then ~$sudo apt-get upgrade
+<%QwertyKeyboarder> and then type the confirmation
+<%QwertyKeyboarder> you are now making sure all your packages (read:programs) are updated
+<%QwertyKeyboarder> i run that about once a week myself
+<%QwertyKeyboarder> gonna give it a minute more for those of you that are running that command
+<%QwertyKeyboarder> xerxes any other basic commands we should cover now?
+<%QwertyKeyboarder> xermes
+<%QwertyKeyboarder> any other commands i should cover?
+<%QwertyKeyboarder> i forgot about chmod and mkdir
+<%QwertyKeyboarder> chmod means change mode
+<%QwertyKeyboarder> it is used to change permissions, e.g. to make a file readable only by admins, or editable by only admins.  
+<%QwertyKeyboarder> you can learn exactly the context to use it in with man chmod
+<%QwertyKeyboarder> http://ss64.com/bash/chmod.html
+<%QwertyKeyboarder> thats the output of man
+<%QwertyKeyboarder> the perms level can be set by number or letter
+<%QwertyKeyboarder> im not sure about the number, so i use the letter formatting
+<%QwertyKeyboarder> r is read, w is write.  so if i wanted to add write permission for everyone to the file test.txt i would put "~$chmod a +w /usr/me/docs/test.txt"
+<%QwertyKeyboarder> there are other commands, but they are more in depth
+<%QwertyKeyboarder> + adds it to those users
+<%QwertyKeyboarder> - removes it from those users
+<%QwertyKeyboarder> and the modifer 'x' marks it as executable
+<%QwertyKeyboarder> any questions?
+< NyanCat> if you want to see permissions type 'ls -l'
+< lulz> what is chmod +777
+< lulz> and why is it a bad idea
+< torist> lulz: 777 is read write execute permissions for user, group, and everyone else
+< l00l> *if u want to search for a package write sudo aptitude search
+< WannaBeSpider> Thanks for getting into chmod
+< bluetooth> is this class logged? I kind of missed it...
+< lulz> yea
+< blindPig> QwertyKeyboarder, damn, I wrote in main
+<%QwertyKeyboarder> no prob WannaBeSpider, even if i am a bit rusty on it
+<%QwertyKeyboarder> and yea, it will get posted when its done blindPig
+<%QwertyKeyboarder> err bluetooth
+< Parsec> your user folder is inside /usr/ and not /home ? I am confused
+<%QwertyKeyboarder> the /home is the same as going to /usr/YourUserName
+< bluetooth> thank you QwertyKeyboarder
+< Parsec> ok. thx
+< WannaBeSpider> I do have a question about apt-get upgrade, what about apt-get dist-upgrade. Reading about it makes it sound like dist-upgrade is better.
+< lulz> ^^
+< WannaBeSpider> Since it checks dependencies
+< blindPig> oh, I think apt-cache search is worth mentioning 
+<%QwertyKeyboarder> the /usr holds all of the users, so when using sudo cd you can go into their folders
+< lulz> one is a update for the things on the system
+< lulz>  the other is an update to the system
+< WannaBeSpider> Ok thanks lulz 
+< l00l> *chmod 7 means=owner can write,read,execute , 5 =means can read and execute , can only write
+<%QwertyKeyboarder> ty ^
+<%QwertyKeyboarder> i think i get numbers now
+<%QwertyKeyboarder> i still like letters though, its clearer who has what
+< l00l> l> *chmod 7 means=owner can write,read,execute , 5 =means can read and execute , 2 can only write
+< m1ctlan> sorry if I'm late, are we talking Linux already?
+< ad3pt> so 777 means everyone has read, write, and execute
+< lulz> yea
+< l00l> yeah
+<%QwertyKeyboarder> yea, dont worry though, its all logged and will get published
+< WannaBeSpider> haha, I like that 777
+< l00l> numbers are easy
+< lulz> so 777 on a .sh file that you didn't read is a bad idea
+< m1ctlan> ok, thx
+< diver> although previously /usr/james had everything /usr now is accepted as  User System Resources
+< l00l> l> *chmod 7 =can write,read,execute , 5 =means can read and execute , can only write
+< l00l> > *chmod 7 means=owner can write,read,execute , 5 =means can read and execute , 2 can only write
+<%QwertyKeyboarder> so any other questions?
+< n01> make it that way r=4 w=2 x=1 sum then in right combination U need
+< l00l> yes
+< l00l> numbers are easy QwertyKeyboarder 
+< l00l> * sudo aptitude search "your package here"
+< l00l> that is to look for a specific package 
+< l00l> if u want to install something
+< Mitnick> Hello
+< l00l> hi
+< bluetooth> quick question...
+< blindPig> l00l, first you need to install aptitude) so apt-cache search might be the choice
+<%QwertyKeyboarder> sure
+< WannaBeSpider> What program do you use to open .png files?
+< l00l> blindPig, indeed ty bro
+< WannaBeSpider> via terminal*
+<%QwertyKeyboarder> google it
+< SygeR> lol
+<%QwertyKeyboarder> ive never really needed to
+< Mitnick> WannaBeSpider whan will start classes?
+< l00l> WannaBeSpider, im not sure if u can watch a image from terminal haha
+<%QwertyKeyboarder> lol
+< blindPig> WannaBeSpider, just use your normal viewer and type it's name in console
+< bluetooth> I owned a jailbroken device and cydia was doing all the apt-get update and stuff like that, do we have kind of the same think like a package store on linux ?
+<%QwertyKeyboarder> okie any other questions.../
+< WannaBeSpider> no, ment like to launch it in an external program
+<%QwertyKeyboarder> yea, its called synaptic package manager,
+< jetblackcloud> WannaBeSpider: type the program name then the filename
+<%QwertyKeyboarder> i went over it a bit earlier
+< shopang0_0> i wonder what bash is
+<%QwertyKeyboarder> we have our ubuntu repositories (or repos for short)
+<%QwertyKeyboarder> and thats where alot of our software is, and we can add more repositories too
+< WannaBeSpider> Mitnick, class already started.
+< WannaBeSpider> Teacher is QwertyKeyboarder 
+< SygeR> Mitnick. hello. haha
+< Mitnick> hello Syger
+< bluetooth> how do you add more repos ?
+< Mitnick> Hi SygeR
+< l00l> bluetooth, if u need it
+<%QwertyKeyboarder> ill get to that in a sec, i dont remember the exact commands
+<%QwertyKeyboarder> so on debian based os's the command is "~$deb http://reponame.whatever/ "
+<%QwertyKeyboarder> err "~$sudo deb reponame"
+<%QwertyKeyboarder> and then you have to run sudo apt-get update to update the lists
+<%QwertyKeyboarder> there is also a type of repo called a Launchpad PPA repo
+<%QwertyKeyboarder> you add those with " ~$sudo add-apt-repository ppa:<repository-name>
+<%QwertyKeyboarder> any questions?
+< l00l> *you also need a key for add-apt-repository i guess...
+< Ethor> QwertyKeyboarder: that's another way. often there are more then on way to do things with linux
+<%QwertyKeyboarder> this is true, but the public key will automatically dl for it
+<%QwertyKeyboarder> Ethor this is true
+< Mitnick> Can someone help me in this classes? I'm lost
+<%QwertyKeyboarder> mitnick when the class is over, there will be alog posted of it so you can read along, and i will post my notes
+< l00l> Mitnick, If u are late then wait for the transcript
+< blindPig> QwertyKeyboarder, they say you should avoid PPA's, otherwise you can do some bad things to your systems, like get dependency hell
+< l00l> blindPig, indeed
+<%QwertyKeyboarder> blindPig: indeed.  that is why a reinstall is a good idea after awhile
+< l00l> you add new repos under your own risk
+< blindPig> that, in my opinion is bad, because it really bricks your system and to undo the changes you have to manually remove packages and install the correct ones
+< l00l> blindPig, but some times the package u need is not in the official repos, so u have to add the repo
+<%QwertyKeyboarder> yes
+< l00l> but it is under your own risk
+<%QwertyKeyboarder> and dl them manuallu
+<%QwertyKeyboarder> *manually
+< scare4face> does all command need repos
+<%QwertyKeyboarder> not all
+< blindPig> I can't understand why apt sometimes does not ask for confirmation and installs a package
+< WannaBeSpider> Repos is just for more programs, like say you want Dropbox, it might be on a repo that you do not have.
+< Mitnick> Ok thanks guys
+< WannaBeSpider> So you add the repo to your distro and then sudo apt-get update and then sudo apt-get install dropbox
+< scare4face> okk
+< WannaBeSpider> just as an example
+< blindPig> oh, btw, what's up with those snap packages that have all deps inside?
+< scare4face> okk
+< Ethor> I prefer to compile additional software over adding external repositories
+<%QwertyKeyboarder> blindPig: i think it assumes you know what it is going to do, but remember you have the --simulate too
+<%QwertyKeyboarder> for apt-get install
+< WannaBeSpider> Yes Ethor, you can also download the zip of the program you want to install and compile it
+< blindPig> QwertyKeyboarder, IMHO apt is not the brightest...
+<%QwertyKeyboarder> yea
+< l00l> Ethor, that is the best practice
+<%QwertyKeyboarder> you can check code if you wish
+< Mitnick> Guys i'm not understanding how work this classes
+ * Ethor is an linux oldtimer...
+< onthedl> Mitnick: just listen and learn
+< onthedl> log will be put up at the end so you can reread it and learn it all
+< blindPig> Mitnick, as a Q&A session
+< WannaBeSpider> Mitnick archives are listed here: http://32qms7q5widd7wke.onion/ 
+ * QwertyKeyboarder is been working with *nix since being a kid
+< WannaBeSpider> this archive will be on there later.
+< WannaBeSpider> *class
+< Ethor> QwertyKeyboarder: nice
+< l00l> haha nice
+< l00l> since 10 years 
+< l00l> haha
+<%QwertyKeyboarder> yea.  12, installed lubuntu on dads old laptop
+<%QwertyKeyboarder> heh
+< l00l> nice bro
+<%QwertyKeyboarder> he couldnt get mad at his little princess though.  xD
+<%QwertyKeyboarder> anyway\
+< WannaBeSpider> nice :D I feel foolish for repeating Ethor  :D
+< NyanCat> guess ur not 13 now :P
+< l00l> me from 18 I guess
+<%QwertyKeyboarder> any other questions
+<%QwertyKeyboarder> ?
+< Ethor> I us linux for about 18 years
+< Mitnick> Thanks onthedl Thanks WannaBeSpider
+<%QwertyKeyboarder> if i told you how long ive been using it yoyd know too much pii
+<%QwertyKeyboarder> anyway
+< WannaBeSpider> np Mitnick 
+<%QwertyKeyboarder> questions....?
+< l00l> very good cllas QwertyKeyboarder 
+< blindPig> QwertyKeyboarder, well, since the v.0.1 was released in 1991, we can make an estimation)
+<%QwertyKeyboarder> ye lol
+< bluetooth> what are all the apt-get command
+<%QwertyKeyboarder> remember mona brought up the man command?
+< scare4face> can you talk more about PATH
+<%QwertyKeyboarder> try running " ~$man apt-get
+< l00l> bluetooth, the easiest one is apt-get install package
+< l00l> for other commands, check man apt
+< NyanCat> <bluetooth> type man apt-get on your terminal and you'll see more
+<%QwertyKeyboarder> gonna close up questions, ill go over top and then path
+<%QwertyKeyboarder> so another great terminal command we have is 'top'
+<%QwertyKeyboarder> its like resource monitor in windows
+<%QwertyKeyboarder> but not gui
+<%QwertyKeyboarder> its in terminal
+<%QwertyKeyboarder> http://static.thegeekstuff.com/wp-content/uploads/2010/01/top-memory-sort.png
+<%QwertyKeyboarder> looks like that
+<%QwertyKeyboarder> the PID is the Process ID
+<%QwertyKeyboarder> User is who is running it
+<%QwertyKeyboarder> you dont really need to worry about PR, NI, VIRT, RES, or SHR
+<%QwertyKeyboarder> S is user level
+<%QwertyKeyboarder> the rest is self explanatory
+<%QwertyKeyboarder> if you use man top
+<%QwertyKeyboarder> http://ss64.com/bash/top.html
+<%QwertyKeyboarder> thats the output
+<%QwertyKeyboarder> you use 'k <pid>' to kill processes
+<%QwertyKeyboarder> and page up and down to scroll
+<%QwertyKeyboarder> thats the basics of top
+<%QwertyKeyboarder> it works best with the sudo modifier
+<%QwertyKeyboarder> that way you can kill anything
+<%QwertyKeyboarder> any questions?
+< bluetooth> whats the sudo modifier
+< NyanCat> top is pretty much as windows task manager
+<%QwertyKeyboarder> sudo is where you put the superuser modifer before a command
+<%QwertyKeyboarder> NyanCat: exactly!
+< bluetooth> ok
+< NyanCat> w\o the GUI
+<%QwertyKeyboarder> bluetooth:  like this ~$sudo top
+<%QwertyKeyboarder> mhm
+< bluetooth> sudo top or ~$sudo top
+<%xermes> don't run commands you see on the internet without thinking, though. especially not ones that include "sudo"
+<%QwertyKeyboarder> yes exactly 
+<%QwertyKeyboarder> sudo gives the command full permissions
+< bluetooth> which one
+< bluetooth> with the $
+< bluetooth> or without
+<%xermes> without
+<%QwertyKeyboarder> bluetooth:  the shorthand for a terminal prompt is ~$
+< bluetooth> ok
+<%QwertyKeyboarder> to show its a bash commad
+< l00l> ye
+< bluetooth> how do you type the ~
+< tool> try F5
+< NyanCat> If you want to be sure about what a command you see on a help page does the best thing is to copy and google it to check with other sources
+< WannaBeSpider> for me it is alt gr ¨
+< l00l> alt and plus sign i think
+< WannaBeSpider> ~
+< bluetooth> oh { found it
+< bluetooth> ~
+< bluetooth> QwertyKeyboarder
+<%QwertyKeyboarder> lol
+< bluetooth> http://32qms7q5widd7wke.onion/class2.txt
+< bluetooth> Not Found
+< bluetooth> The requested URL /class2.txt was not found on this server.
+<%xermes> "cd ~" is generally shorthand for going to your home directory
+<%QwertyKeyboarder> yep ^^
+< bluetooth> or cd c
+< l00l> xermes, also u can do just "cd"
+<%xermes> QwertyKeyboarder: have you covered bash variables? or will that be covered later?
+< scare4face> what is the command to kill all processes
+< bluetooth> cd C:/
+< bluetooth> \
+<%xermes> bluetooth: you're not on windows here
+<%xermes> there is no C:/
+< beerscript> Qwerty, a bit off topic, but what about running linux on a laptop? I had lots of problemas with both Nvidia Optimus and battery life :(
+< l00l> lol
+< bluetooth> its var i thinjk isnt it
+< l00l> omg C:/
+< l00l> lol
+< beerscript> problems, damn it
+<%QwertyKeyboarder> lol
+<%xermes> scare4face: if you killed all processes, your computer would shut down, so don't do that
+<%QwertyKeyboarder> yea
+<%QwertyKeyboarder> it wouldnt be a safe shutdown either
+< lulz> I have issues with my alfa card in linux
+<%QwertyKeyboarder> try it in a vm
+< l00l> beerscript, yeah man u are right 
+<%QwertyKeyboarder> any other questions about top?
+ * ad3pt snorted coffee at seeing C:/
+< l00l> beerscript, that is the only bad part of linux
+< beerscript> yeah, think so. I love GNU/Linux but just can't use it on a laptop
+< l00l> drivers and hardware compatibility
+<%QwertyKeyboarder> yea,,
+<%QwertyKeyboarder> rip
+<%xermes> i assume piping, file descriptors and all of that will be covered in the later course?
+< blindPig> beerscript, ubuntu is just not especially keen on providing nvidia drivers
+<%xermes> redirection and whatnot
+<%QwertyKeyboarder> moving on then from top
+<%QwertyKeyboarder> i want to take this time to bring up the .bash_history
+<%QwertyKeyboarder> its a text file without a file type, that allows you to see what was run since the last time it was cleared
+<%xermes> (this is how you can hit the up arrow in the terminal to bring up your previous command)
+<%QwertyKeyboarder> ^^
+<%xermes> (and how ctrl+r (reverse search) can search through commands you've run)
+<%xermes> sorry, go on, QwertyKeyboarder
+<%QwertyKeyboarder> its all good
+<%QwertyKeyboarder> trying to figure out how to explain networking via bash
+<%QwertyKeyboarder> so the basic networking commands we have in bash are ifconfig and netstat
+<%QwertyKeyboarder> ifconfig lists off ip's and mac addresses of all your networking devices
+<%QwertyKeyboarder> netstat tells you what connections are incoming and outgoing
+<%QwertyKeyboarder> not gonna go in depth but i thought theyre worth bringing up
+<%QwertyKeyboarder> now to the fun-ish stuff
+<%QwertyKeyboarder> i hope we all know what ssh is
+<%QwertyKeyboarder> if not, here is my favorite tutorial on it
+<%QwertyKeyboarder> https://linuxacademy.com/blog/linux/ssh-and-scp-howto-tips-tricks/
+<%QwertyKeyboarder> ssh is short for secure shell
+<%QwertyKeyboarder> it allows secure connections via computers.
+<%QwertyKeyboarder> not gonna go too in depth with ssh cuz its easy to learn on your own
+<%xermes> if you don't know, ssh basically allows you to access another host device's shell (if they're running an ssh server, and you're authenticated)
+<%QwertyKeyboarder> ye~
+<%xermes> so knowing your way around with bash is fairly important. if you can get into a web server, but don't know what to do after that, it's pointless to have gotten in
+<%xermes> (web servers usually have ssh servers running to let the sysadmins control of the server)
+<%xermes> some basic commands you *should* know about for basic recon: id, whoami, last
+<%QwertyKeyboarder> yes.  its helpful if you can manage to lift authentication from another source to getting in
+<%QwertyKeyboarder> like i said before i started, feel free to research on your own
+<%QwertyKeyboarder> nothing stopping you
+<%xermes> if you look into ssh, you will want to look into setting up ssh keys as well, because you don't want to be a dumbass whose box got popped simply because your password was easy to brute force
+<%QwertyKeyboarder> ^^^
+<%QwertyKeyboarder> whoami is great for when you are on a remote system and arent sure what user you are or if your elevated
+<%xermes> if you look into exploit dev, people will generally use whoami  or id to prove that they've escalated privileges
+<%QwertyKeyboarder> yea
+<%QwertyKeyboarder> gonna open it up to questions once more, answer a few, and then i think im out
+< tool> can netstat be used to see if you have spyware or keyloggers on your pc?
+<%xermes> also, remember, getting good with bash will only come with practice. which is why i recommended trying to do *all* your daily tasks there
+< bluetooth> 1-whats bash
+< bluetooth> 2-how do i kill top, when i press k it asks for the pid so i enter 987 which is top but then it asks me something else and i dont know what to type
+< bluetooth> 3-how to clear screen in terminal
+< bluetooth> 4-can someone help me set up irssi so i can join this channel via linux
+<&mona> good job QwertyKeyboarder 
+<%QwertyKeyboarder> ty~
+<&mona> bluetooth: kilall <name>
+<&mona> killall*
+< anonymous> bluetooth:ctrl+z
+< anonymous> *c
+<%xermes> bluetooth: bash is the shell that runs on most linux systems by default
+<%QwertyKeyboarder> bash is your terminal, it stands for Bourne Again SHell
+< onthedl> 3: type clear
+<%xermes> clear will clear the screen. should have guessed :p
+<&mona> 4- check the last mini-lesson
+< bluetooth> ok thanks a lot
+< d4rkc311> whats the shortcut for clearing the screen?
+ * anonymous looks at mona
+< WannaBeSpider> clear
+<%xermes> ctrl+l for me
+< anonymous> You cant do this to mw
+< anonymous> *me
+<%xermes> but it isn't fixed
+ * anonymous starts shaking mona and screaming obscenities
+< d4rkc311> xermes: thanks
+< scare4face> mona: killall <name>, is the name, the name of the process
+ * mona sags limply
+<%xermes> also, use man extensively. it's a great resource
+<%QwertyKeyboarder> yes
+<%QwertyKeyboarder> this
+<%QwertyKeyboarder> i cant tell people this enough
+Log closed Sun May 01 14:27:03 2016

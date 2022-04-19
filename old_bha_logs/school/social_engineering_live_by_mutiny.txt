@@ -1,0 +1,354 @@
+<Mutiny>	Okayyyy
+<Mutiny>	Let's get started
+<Mutiny>	I'm going to talk about Social Engineering and ways to protect
+yourself from it.
+<Mutiny>	This isn't going to teach you how to social engineer, but
+rather, what you should watch out for.
+<Mutiny>	As usual, message an op (other than me) for voice
+<Mutiny>	So I'm going to start with the very basics.
+<Mutiny>	What is Social Engineering?
+<xochipilli>	the science of manipulating people
+<xochipilli>	to get what you want
+<Mutiny>	Precisely.
+<Mutiny>	Social engineering focuses on perception and persuasion.
+<Mutiny>	They try to get you to think they are someone of authority, of
+power.
+<Mutiny>	They try to persuade you into giving up information that you
+shouldn't give up
+<Mutiny>	So think to yourself in advanced
+<awkward>	basicaly using people stupidity and trust against them
+<Mutiny>	"What might cause me to give out information that I shouldn't.
+What might someone do that would persuade me to do so."
+<Mutiny>	Then, watch for that.
+<Mutiny>	Social engineers prey on qualities of human nature. These
+include the desire to be helpful, the tendency to trust people, and the fear
+of getting in trouble.
+<Mutiny>	So it doesn't matter how strong your password is, or how
+secure you think your computer is.
+<Mutiny>	If your password is too long, you'll probably write it down,
+and trust that your little note to yourself will be found.
+<Mutiny>	If it's too short, expect your password to be bruteforced.
+<Mutiny>	If it's too easy, learn what makes a strong password.
+<Mutiny>	If you don't change it regularly, you may as well just remove
+the password all together.
+<Mutiny>	>.>
+<Mutiny>	You might use some awesome encryption, but that doesn't stop
+me from persuading you into giving me your passphrase because "I'm from IT and
+need to verify something"
+<Mutiny>	Your password is your password for a reason.
+<Mutiny>	Now, when conversing with a social engineer, they are going to
+do as much as they can to get you answering questions
+<Mutiny>	So just be a pain in the ass and ask questions back.
+<Mutiny>	If someone asks you for questionable information
+<Mutiny>	ask why
+<Mutiny>	verify who they are
+<Mutiny>	make them explain it to you
+<Mutiny>	A social engineer wants to rush the conversation
+<Mutiny>	because the longer they are in a conversation
+<Mutiny>	the more likely it is that they will be found out.
+<Mutiny>	A good social engineer may be patient, a great social engineer
+may not even sweat any of your questions.
+<Mutiny>	It just depends on how bad they want the information.
+<Mutiny>	And before you think to yourself
+<Mutiny>	"Oh well they were confident, it didn't sound like they were
+lying"
+<Mutiny>	just forget about it
+<Mutiny>	A social engineer, a real social engineer, not just a
+prankster, might/probably will practice
+<Mutiny>	They will practice until they are confident in the role they
+are going to try to play.
+<Mutiny>	Ignore how confident they sound.
+<Mutiny>	Don't trust people.
+<Mutiny>	For any reason.
+<Mutiny>	Anyways, on to the various avenues of attack.
+<Mutiny>	Social Engineers will focus on the human element of security.
+This isn't to say they will only try things over the phone though
+<Mutiny>	We'll start with phone calls and move out from there.
+<Mutiny>	If someone from my phone company calls me telling me something
+might be wrong, and asking me to verify such and such information
+<Mutiny>	I ask their name
+<Mutiny>	and the department they are in
+<Mutiny>	and an employee identification number
+<Mutiny>	I hang up
+<Mutiny>	Call the company back using the official phone listing either
+in a phone book or on their website
+<Mutiny>	And ask to speak to "TheirName in TheirDepartment"
+<Mutiny>	A few things will happen at this point
+<Mutiny>	"Sorry sir, we don't allow transfers to specific employees,
+but perhaps I can assist you"
+<Mutiny>	This will get you in touch with a company contact that can
+verify if anything is wrong with your account.
+<Mutiny>	Or "We don't have anyone named so&so in that department"
+<Mutiny>	In which case you saved yourself.
+<Mutiny>	Or
+<hatter>	lol
+<Mutiny>	"Ok I'll transfer you right away" means that they really were
+legit, and you can just carry on as if your hardware had some technical
+problems
+<Mutiny>	Either way, you've been cautious and alert.
+<nachash>	Try to get to the actual person, if they exist.
+<Mutiny>	^
+<nachash>	Good SE types will get real contact info on someone in a
+company
+<nachash>	And hope you can't pierce the veil of bullshit
+<Mutiny>	That's why we want to sharpen our spears and be looking out
+for that veil ;)
+<Mutiny>	There are other methods of attack that you should be aware of
+as well.
+<Mutiny>	You'll probably laugh now
+<Mutiny>	but Dumpster Diving is a legitimate avenue of attack
+<Mutiny>	People get careless
+<Mutiny>	and throw away things that may have confidential information
+<Mutiny>	or personal informatoin
+<Mutiny>	information*
+<Mutiny>	Instead of shredding/burning/some other method of securely
+disposing of it.
+<Mutiny>	If someone really wants access to something, I wouldn't put
+this past them.
+<Mutiny>	It could also just be a random kid trying to find information
+on various people, looking for a random attack.
+<Mutiny>	For example: Whenever I use an ATM, I burn the receipt to the
+point where nothing can be seen anymore.
+<Mutiny>	Then I rip it and throw it in the trash
+<nachash>	Back in the 80s, a lot of kids liked to dumpster dive their
+local central office to find telco publications that had been discarded.
+<Mutiny>	^
+<nachash>	Just to give this a historical example
+<awkward>	i dont even take the atm receipt
+<Mutiny>	awkward: Some of the ATM's I've used automatically print them.
+Otherwise I also don't take it.
+<awkward>	true
+<Mutiny>	So dispose of important information properly
+<Mutiny>	A paper shredder now may cost a bit
+<Mutiny>	but it will save you
+<Mutiny>	in the long run
+<xochipilli>	or
+<xochipilli>	eat all the confidential paper
+<xochipilli>	:3
+<Mutiny>	You could do that XD
+<xochipilli>	youll get a little
+<xochipilli>	blocked up
+<xochipilli>	around day 2
+<xochipilli>	dont be discouraged
+<Mutiny>	Ok so that pretty much covers dumpster diving. People will
+find shit on you, people will use it.
+<xochipilli>	XD
+<xochipilli>	sorry, continue
+<Mutiny>	Shoulder surfing
+<kratos>	or just stick it on a fire, if you want to get oldschool, but
+some inks are as bad as toner for cancer
+<Mutiny>	is my personal
+<Sav>	low end paper
+<Sav>	like
+<Sav>	that drinks a lot of water
+<Sav>	is more easily eaten
+<Sav>	or
+<Sav>	cooked
+<Sav>	or
+<nachash>	^^^
+<xochipilli>	omgomgomg
+<Sav>	whatever
+<xochipilli>	whats that paper
+<xochipilli>	FLASH PAPER
+<xochipilli>	everyone get flash paper
+<nachash>	Bookies used to use paper that dissolved easily in water.
+<xochipilli>	http://en.wikipedia.org/wiki/Nitrocellulose
+<Mutiny>	See, there are lots of ways to dispose of your information
+securely.
+<nachash>	If a raid came down, they just threw the books in a 55 gallon
+drum of water
+<xochipilli>	flash paper is like that, nachash 
+<xochipilli>	cept u burn it
+<xochipilli>	it burns in like .1s
+<nachash>	Boom, instant evidence destruction
+<xochipilli>	like a flash
+<Sav>	and
+<Sav>	is unstable
+<Sav>	and dangerous
+<kratos>	not something you want under your arm on a sunny day
+<kratos>	walking past smokers
+<nachash>	This had the added bonus of them being able to tell the
+winners, "We got raided, and destroyed the books. Sorry."
+<nachash>	And just keeping the money
+<kratos>	but sorry Mutiny, shoulder surfing, go on...
+<Mutiny>	Anywhooooo. Shoulder surfing is my personal favorite attempt
+for someone to get my information.
+<Mutiny>	It just makes me laugh.
+<Mutiny>	A bad shoulder surfer
+<Mutiny>	will stand over you and pretend to read a book or a newspaper
+or something stupid
+<Mutiny>	Don't input any sensitive information if there is anyone
+behind you
+<Mutiny>	Nuff said.
+<kratos>	A good one might set up a camera
+<kratos>	or something behind your cubicle
+<kratos>	maybe just lean over talking to somebody else
+<Mutiny>	Even if you have one of those screen protector things, people
+can still see
+<Mutiny>	I can watch someone type in their password and 9 times out of
+10 I can tell at the very least the length of their password and a list of
+keys it contains
+<Mutiny>	just by watching the keyboard
+<Mutiny>	If you want to make this a little harder for people to do
+<Mutiny>	Buy blank keycaps :3
+<kratos>	and if it's somebody who works with you, through these
+half-glances they could have your password in a couple of days
+<Mutiny>	People can get information through many quick glances over a
+long period of time
+<Mutiny>	so just beware
+<kratos>	one idea might be asking them for a telephone number just
+after if you think they were watching you
+<kratos>	starting a discussion, so they can't go back and write it down
+<Mutiny>	If someone is looking, or you think someone might be looking,
+exercise caution
+<Mutiny>	Now
+<Mutiny>	It's important to note
+<Mutiny>	that there is a computer side of social engineering as well.
+<Mutiny>	Emails
+<Mutiny>	spam
+<Mutiny>	malware
+<Mutiny>	etc
+<Mutiny>	A compromised email account will send mail just the same as a
+normal email account
+<nachash>	IMs, too.
+<kratos>	and social networking accounts, now
+<nachash>	I've used IM accounts that girls let me borrow to pump
+e-stalkers for info.
+<Mutiny>	if someone asks you for information over email, look for a way
+to contact them via phone. Tell them you don't feel comfortable releasing such
+information via internet
+<nachash>	But you've got to be pretty leet at copying typing styles for
+that
+<Mutiny>	Yeah when i say "email" i guess it really applies to all sorts
+of internet comm
+<kratos>	and be aware of anybody who adds you on facebook, myspace,
+AIM, MSN or whatever
+<Mutiny>	OK LISTEN UP
+<Mutiny>	IF SOMEONE ADDS YOU
+<Mutiny>	AND YOU DON"T KNOW THEM
+<Mutiny>	PRESS DECLINE
+<kratos>	DEM
+<kratos>	DENIED*
+<Mutiny>	BECAUSE NO ONE
+<Mutiny>	GIVES TWO FUCKS
+<Mutiny>	ABOUT HOW MANY FRIENDS YOU HAVE
+<Mutiny>	K?
+<kratos>	^x100000000000000
+<Mutiny>	Anyways
+<Mutiny>	If someone contacts you online asking for sensitive info
+<Mutiny>	try to get ahold of them via phone
+<Mutiny>	don't ask them for a number
+<Mutiny>	find the number in a phone book or their website
+<nachash>	^^
+<Mutiny>	call the company they claim to be from
+<Mutiny>	and ask to talk to them
+<nachash>	My father once got socialed by someone like that
+<nachash>	They called him from a spoofed number
+<nachash>	And claimed all this bullshit
+<nachash>	I told him it sounded like somebody was messing with him
+<nachash>	The number went to a direct auto insurance office in another
+state.
+<nachash>	But it wasn't auto insurance related.
+<nachash>	Reverse any business numbers you're given. If it's an unlisted
+or cell phone number, beware.
+<nachash>	But still, do as Mutiny says and look them up properly.
+<Mutiny>	See, shit can be manipulated to make you THINK it's legit
+<Mutiny>	You always want to talk to at least one other person from the
+business that the potential attacker is claiming to be from
+<Mutiny>	So that mostly covers internet communication
+<Mutiny>	don't disclose sensitive shit
+<Mutiny>	Now
+<Mutiny>	Spam/malware/etc, as i mentioned, can be used to get info
+<Mutiny>	an attacker plants a keylogger
+<Mutiny>	something
+<Mutiny>	like that
+<Mutiny>	First
+<Mutiny>	ALWAYS check your USB ports before booting up
+<nachash>	^^
+<nachash>	The government uses tamper-evident cases because of shit like
+this
+<Mutiny>	I've keylogged co-workers simply to prove to my boss how
+vulnerable they were.
+<nachash>	If someone cracked it open and installed something, it's going
+to be obvious
+<Mutiny>	But, if your hardware is all normal
+<Mutiny>	Then
+<Mutiny>	Don't click shit.
+<Mutiny>	Don't install shit.
+<Mutiny>	If you're on windows, you better have file extensions always
+showing. Otherwise you can an hero.
+<Mutiny>	Scan things when you download.
+<Mutiny>	Scan them before opening
+<Mutiny>	No matter if it claims to be a jpeg or a pdf or whatever
+<Mutiny>	scan it
+<Mutiny>	Basically
+<Mutiny>	Just wear a condom while you surf the internet. You don't want
+to get AIDS and die.
+<Mutiny>	If you don't wear a condom online, you WILL get AIDS and DIE
+<nachash>	And people will point and laugh at you
+<Mutiny>	So all that being said, lets make it brief. Anyone who says
+they are someone, get identification.
+<Mutiny>	Never speak your password over the phone. If they are in tech
+support for real, they don't need your password.
+<Mutiny>	Don't EVER write your password down and leave it on a sticky
+note on the monitor, or under the keyboard, or stuck to the bottom of your
+desk/chair/lamp.
+<Mutiny>	If you don't have caller ID, you can buy a new phone for like
+$20. Being able to see the number you get a call from is important.
+<Mutiny>	If you don't have means of properly disposing of documents,
+get yourself a paper shredder. It's worth it.
+<Mutiny>	Any questions?
+<droid>	what about people who block their numbers on caller ids?
+<zetareticulan>	can has speak?
+<Mutiny>	Droid
+<nachash>	droid, just don't answer.
+<Mutiny>	^
+<Mutiny>	If they block their number, they aren't legit.
+<nachash>	I always take the following stance
+<zetareticulan>	So by participating in late enrollment, how are you granted
+access to any materials you missed?
+<nachash>	"You're unavailable? So am I"
+<Mutiny>	zetareticulan message fox
+<Mutiny>	or hatter if you've already paid
+<lovely>	dont say ur name if you take an unknown call. just say "hello
+whos there"
+<nachash>	^
+<nachash>	Never give up any info
+<Mutiny>	If you have a voicemail that says your name
+<Mutiny>	get rid of it
+<lovely>	!word
+<nachash>	If they ask who you are, just be like, "Who are you? You
+called me."
+<Mutiny>	"You've reached 867-5309, please leave a message."
+<rode0s>	its simple, watch your privacy....dont puke info
+<nachash>	Use the generic shit that has a robot read off your number if
+at all possible.
+<nachash>	Then they can't even get a voice sample
+<Mutiny>	^
+<nachash>	Depending on your level of paranoia, this can be useful
+<rode0s>	paranoia lvl 10
+<hatter>	 /win 144
+<Fox>	Sup
+<nachash>	People have wrecked lives in the past by taking words and
+stitching them together to say incriminating things.
+<Fox>	I 
+<Fox>	BROKE
+<Fox>	PAYPAL.
+<nachash>	lol
+<Fox>	That is all.
+<Mutiny>	Ok I'm going to go over a few signs to look for when dealing
+with sketchy situations. More info can be found on the log that will be
+posted.
+<Mutiny>	--Signs of a social engineer:
+<Mutiny>	Refusal to give contact information.
+<Mutiny>	Rushing the conversation.
+<Mutiny>	Name-dropping.
+<Mutiny>	Intimidation.
+<Mutiny>	Small mistakes.
+<Mutiny>	Requesting any forbidden information.
+<Mutiny>	This is security we're talking about.
+<Mutiny>	Sec - U - R - IT -y.
+<Mutiny>	You're the weakest link, and attackers know this.
+<Mutiny>	You'll be targeted.
+<Mutiny>	Undoubtedly.
+<Mutiny>	So watch out.

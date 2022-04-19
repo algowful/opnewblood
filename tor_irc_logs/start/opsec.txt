@@ -1,0 +1,637 @@
+Log opened Fri Apr 29 19:01:07 2016
+<&mona> for Q&A
+<&mona> although this shit should be fairly cut and dried
+<&mona> we had a lesson on sunday about opsec, and we covered a lot of technical ground
+<&mona> but i want to talk to you assholes about IRC in particular
+<&mona> this little talk comes in 2 sections
+<&mona> this first will be technical, the second logistical
+<&mona> so if you're hot shit already and you just wanna make sure your client is legit
+<&mona> you don't need to hang around
+<&mona> so without further ado
+<&mona> IRC OPSEC
+<&mona> or:
+<&mona> why are you all so fucking dumb jesus christ fuck
+<&mona> as we've discussed before, you are data and information is powered
+-!- mode/#school4lulz [-z] by butts
+<&mona> from a technical perspective, there's a huge amount of information every piece of software you use can potentially disclose about you
+<&mona> IRC is no exception.
+<&mona> first thing I want to cover is the basics: CTCP and DCC
+<&mona> DCC is used for file transfer
+<&mona> CTCP is used for generic queries to an IRC client
+<&mona> DCC and CTCP can both be used as part of client exploits
+<&mona> and CTCP can be used to dox you
+<&mona> specifically, CTCP VERSION and TIME
+<&mona> can disclose what client+version you are running
+<&mona> and what your local timezone is
+<&mona> you should not be sending files over IRC
+<&mona> and you should not be disclosing version or timezone info
+<&mona> you likely have CTCP and DCC allowed
+<&mona> the only reason this is the case, is probably because it's on by default and you didn't know to turn it off
+<&mona> TURN IT OFF.
+<&mona> now, in irssi this is easy enough:
+<&mona> ./ignore * CTCPS
+<&mona> ./ignore * DCC
+<&mona> that wasn't so bad was it?
+<&rackham> ./ignore * CTCPS
+<&mona> for irssi, there's also a script called fakectcp.pl
+<&butts> On this network, we use a default channel mode +C to disallow CTCPs to the channel.
+<&mona> which will lie when it receives VERSION and TIME requests
+<&mona> yes, that's worth nothing
+<&mona> you're not in immediate danger on this network
+<&mona> but elsewhere, it's down to your client
+<&mona> and a network having +C by default is uncommon
+<&butts> Indeed.
+<&mona> anyway, non-irssi clients will have a way to do everything i just said if they're worth anything
+<&mona> including faking version/time
+<&mona> google is your friend there
+<&mona> speaking of clients
+<&mona> yours sucks
+<&mona> chatzilla sucks
+<&mona> mirc sucks
+<&mona> xchat sucks
+<&mona> good clients: irssi, hexchat, tormessenger
+<&mona> other good clients include irssi, irssi, irssi, irssi, irssi, irssi, and irssi
+<&mona> seriously, why aren't you using irssi?
+<&mona> use irssi
+<&mona> fuck
+<&butts> (weechat is also apparently good, but we haven't used it)
+<&mona> yeah
+ * kr0 is using it
+<&mona> weechat is also good
+<&mona> however
+<&rackham> tl;dr use irssi
+<&mona> even the best clients
+<&mona> ^
+<&mona> even the best clients
+<&mona> cannot protect you from your own boneheaded fucking incompetence
+<&mona> if you choose to broadcast your real identity to the world
+<&mona> your irc client can only shake its head sadly and mutter as you dox yourself
+<&mona> your irc client broadcasts 3-4 pieces of information about you:
+<&mona> nickname, user name, realname, and (not for everyone) hostname
+<&mona> if somehow you are using XChat < v2 or so
+<&mona> XChat is broadcastng your machine's real hostname
+<&mona> and there is no option to override it
+<&mona> don't use xchat, lol
+<&mona> all of these can be changed
+<&mona> in irssi:
+<&mona> ./set nick, ./set user_name, ./set real_name, ./set host_name
+<&mona> something to consider
+<&mona> you may not i used the ./set nick command for irssi
+<&mona> instead of just /nick
+<&mona> that's because you can only change nicks with /nick after you've already connected
+<&butts> (you can also pass along custom nick, user_name, real_name, & hostname data in your Network configurations in irssi)
+<&mona> ^
+<&mona> if you connect to a server with personally identifying info, then change your nick
+<&butts>  /network add -nick nick -user user -realname name -host host NetworkName
+<&mona> you are trusting the admin of the server with that information
+<&mona> on a related note
+<&mona> re: server admins
+<&mona> commands like /topic, /names and /whois are not 100% passive
+<&mona> the admin can see
+-!- mode/#school4lulz [+ao onionirc onionirc] by ChanServ
+<&mona> this isn't that big a deal
+<&mona> but in a server like this, for example, can you think what an admin might think about someone
+<&mona> who obsessively checks who is connected to a particular chan?
+<&rackham>  (and there have been a number of people who registered their nick with, what we suspect, are their actual e-mails)
+<&mona> ^
+<&mona> don't register your nick with your actual email
+<&mona> but we'll get to the logistical stuff in a second
+<&mona> a few more words about the admins of the IRC servers you're connecting to
+<&mona> don't trust them
+<&mona> you've see most server admins
+<&mona> they're pretty much pure evil
+ * mona looks sidelong at butts
+<&mona> can't trust one of them
+ * mona glares at onionirc
+<&butts> Also, for those of you fairly comfortable with IRC and interested in seeing additional information about what kind of things an IRC server is set to hook by default, check out the /module -all and /version commands
+<&mona> word
+<&mona> many IRCds will mask your IP when you connect to them
+<&butts> you will have to look up what the information corresponds to, but you can see if your favorite IRC server is hooking your private messages!
+<&mona> this one is located in the onion, obviously it will
+<&mona> not all of them will
+-!- zerocold is now known as Anon13843
+<&mona> keep that in mind if for some reason you're connecting to directly to an irc server
+<&mona> many of them will proudly display your IP address
+<&mona> for everyone to see
+<&mona> don't be tempted to connect wiht your personal IP because they blacklisted tor
+<&mona> find another way
+<&mona> dont be a dumbass
+<&mona> and there's another thing to keep in mind about IRC admins
+<&onionirc> SSH tunnel,VPN, etc.
+<&butts> at the very least, you can google for open socks5 proxies
+<&mona> MOST IRC CLIENT EXPLOITS CAN ONLY BE EXECUTED BY THE ADMIN OF THE SERVER YOU'RE CONNECTING TO
+<&mona> MOST IRC CLIENT EXPLOITS CAN ONLY BE EXECUTED BY THE ADMIN OF THE SERVER YOU'RE CONNECTING TO
+<&onionirc> :D
+<&mona> consider that before connecting to some random irc server linked by a certain professional troll in #main
+<&mona> or any other random irc server you see on the net
+<&butts> Yeah, don't trust me because I act nice. Your adversary might not even be your IRC admin. It might be someone that has exploited your admin.
+<&mona> protect yourself(, and use irssi god damn it)
+<&mona> yup
+<&mona> for the record
+<&mona> an irc server
+<&mona> that auto-fires off exploits at its clients
+<&mona> makes for a great botnet
+<&mona> js
+<&mona> don't make the mistake of thinking that other users are the only thing you have to fear
+<&butts> P.S. Please don't use IRSSI on windows
+<&mona> ^^
+<&mona> yeah irssi on windows is a completely different beast
+<&mona> that bears only a superficial resemblance to real irssi
+<&mona> another miscellaneous thing to note is the exact scope of the /whois command
+<&mona> whois will reveal your nick, real name, user name, every non-secret channel you're in + your privs in those chans, as well as how long you've been idle for
+<&mona> just keep that in mind
+<&mona> the mode to make a chan secret is +s
+<&rackham> and their are irssi scripts that will track nick changes
+<&mona> if you don't want it to show up in a /whois, do it
+<&mona> yes there are scripts that will track nick changes, that will track sign-on and logout times
+<&mona> that will track speech pattern
+<&mona> you name it, some sperg wrote an irssi script or a bot for it
+<&mona> this is irc, land of the autist
+<&mona> butts: anything you want to add before i open the chat up for Q&A for the technical stuff?
+<&mona> and rackham 
+<&rackham> yeah
+<&rackham> real quick
+<&rackham> a lot of this stuff like timezone may sound so minimal
+<&rackham> and stupid
+<&rackham> but metada is the most valuable thing LE can get
+<&butts> Set your client's time to UTC
+<&mona> ^
+<&mona> set your fucking computer's time to UTC
+<&rackham> perfect example of metadata in use is the artist Banksy
+<&mona> no matter where you live
+<&mona> fuck your accurate clock
+<&mona> sorry go on rackham 
+<&rackham> its all good..i just wanted to stress the importance
+<&rackham> because i thought stuff like TBB warning me i maximized my window or my timezone was stupid
+<&butts> A lot of people don't realize that nick changes can be tracked with a simple query window. 
+<&rackham> but then i saw how valuable metadata is when you have a lot of it to correlate
+<&mona> if you have enough metadata, you don't need metadata
+<&rackham> and banksy is an awesome, recent example of a univeristy tracking his paintings and this guy (Robin Gunningham) movement
+<&mona> metadata describes the shape of data
+<&butts> I've caught multiple people trying to switch aliases on this network just by parting channels and changing nicks. But they had been in a private message with me, so my client tracked their nick changes.
+<&mona> ^
+<&butts> Any regular user could do that
+<&rackham> overall, metadata is more important than you think..there is a very good reason why the NSA collect EVERYTHING and would rather track the times you make phone calls and who you're talking to
+<&rackham> rather than record the actual audio of the call
+<&rackham> carry on <#
+<&rackham> <3
+<&butts> (They probably still record the audio but hey that's a tinfoil hat for another class)
+<&mona> it's more efficient and effective to collect metadata than data
+<&mona> in the long run
+<&mona> ok, so i'm going to open the chan for a quick q&a
+<&mona> we've only got about 100 people today so i'll see how insane it is just unmuting
+<&mona> if it's too hectic we'll do it the same as last time
+-!- mode/#school4lulz [-m] by mona
+<&butts> kk
+<&mona> shoot
+< justforyou> How about relaying tor?
+< toor_777> please make transcript of every lesson
+< Vulcan> INSANITY!
+< Gcoder> what about pidgim as irc client?
+< barracuda> For those interested: I'm working on an extensive step-by-step tutorial (including screenshots) for using Kali with Weechat over Tor on VirtualBox on Windows with full disk encryption, for those who don't want to jump into the deep and install a dualboot and/or say goodbye to Windows just yet. I will post links to it in #hacking when it is done and also hand it over to onionirc and anyone
+< barracuda> else who wants to include it in a pack of guides. If people and the admins are interested, I'm willing to do a course and a Q&A on virtualization after the article is done. If you have questions already (they're off-topic here), feel free to ask away in #hacking . Enjoy the rest of the lesson!
+< drzupan> how to remove all metadata in all kind of files?
+< scareface> what is irssi and how do we configure in the irc
+<&rackham> there will be logs toor_777 
+< Flip> if your in a virtual box does that help mask your computer at all?
+< HellCrown> tormessenger how you can change timezone, and about irss in it?
+< Yandere> how to configure irssi? an example of the best configuration?
+< SimpleNoName> HexChat vs. irssi 
+<&mona> removing metadata from files is not in scope really for irc and is also different for each file format
+<&butts> Pidgin is not a bad IRC client. However, it does utilize libpurple. Google that to get a concept for how exploitable it's considered to be.
+< jeff> HOW DO MAGNETS WORK!?
+< anakata> Thanks barracuda
+< MrPr0xy> Many dump people here afterall
+< nastaz> exactly, how to use irssi with tor?
+< amnesia_> When starting up Tails it says that Tails needs an accurate clock for Tor, does this still matter setting timezone to UTC?
+<&mona> ok
+-!- mode/#school4lulz [+m] by mona
+<&butts> mona: though removing metadata DOES pertain to files you share with people on IRC
+<&mona> i'll answer the backlog
+<&butts> jpegs and the like
+<&mona> true
+<&mona> removing metadata is different per file format
+<&mona> but you should look into how to remove the metadata
+<&butts> a user the other day was asking for help setting up a hidden service website
+<&rackham> you'r confusing metadata w/ exif data
+<&mona> from whatever format you are sharing
+<&mona> exif is metadata
+<&mona> just a specific type
+<&butts> they were posting screenshots of their terminal and scrubbing out their IP 
+<&butts> but they missed one spot in one JPEG so I got their whole IP
+<&butts> and that was someone from China. imagine if their government caught them
+<&mona> yup
+<&mona> so a few of the questions
+<&mona> first of all, irssi is an irc client
+<&mona> any linux distro will have it available
+<&mona> apt-get install irssi, pacman -S irssi, etc.
+<&mona> don't bother with irssi for windows
+<&mona> as for using irssi with tor
+<&mona> the easiest way to do that is with socat imo
+<&mona> give me 1 second and i will post a one-liner to seamlessly connect your irssi to tor
+<&butts> transparent proxy is nice, but i understand the average user is looking for general tor usability and not making their entire system use it. which is not great, but just reality.
+<&mona> sudo socat TCP4-LISTEN:9999,fork SOCKS4A:localhost:onionirchubx5363.onion:6697,socksport=9050 &> /dev/null &
+<&mona> so running through what that does
+<&mona> it connects to OnionIRC through your tor SOCKS proxy running on localhost:9050
+<&mona> and binds that connect to port 9999 on your host
+<&mona> so to connect to onion irc, you would run that
+<&mona> then do
+<&mona> ./server -ssl localhost 9999
+<&mona> as butts said, if you transparently proxy
+<&mona> you won't need to worry about that
+<&mona> jeff pointed out in main you don't need sudo for that
+<&mona> and probably shouldn't have it
+<&mona> my bad, fingers moving on their own
+<&butts> if you are using linux in a VM or live boot scenario, there's really no reason why you should not be transparently proxying. because it's clearly not a permanent environment for you
+<&butts> OS like whonix or tails transparently proxies out of the box
+<&mona> Flip: being in a VM can mask your identity to a limited extent in some ways
+<&mona> i.e. when connecting through a browser your default user-agent will read as the UA of the VM, not your machine
+<&mona> but not really in any way that matters
+<&mona> you should be randomising your UA anyway
+<&mona> and irc won't really be affected by a VM
+<&mona> in terms of what information you disclose
+<&rackham> https://ghostbin.com/paste/6h4qk <--Transparent Proxy 
+<&mona> ok, let's take another round of questions
+-!- mode/#school4lulz [-m] by mona
+< Caribou_QC> does it make a difference if i run issri on linux on virtualbox on windows 7 without a usb wifi adapter( vitualbox uses NAT in that case)
+< emperOR> i lost the first lesson, can i ask you one think in private about tor and vpn? 
+< SygeR> the irc is not completly safe ? admins can see my ip  ?(srry, the irc mes' quit alone)
+<&mona> emperOR: the first lesson was logged
+<&mona> SygeR: if you are properly anonymised, the admins cannot see your IP
+<&butts> SygeR: We cannot see your IP here. But this is a hidden service network.
+<&mona> and here you will be anonymised by default
+< barracuda> not an issue Caribou_QC, NAT works fine - the VM has no idea of the Guest OS
+< Lulz> its tor
+<&mona> but if you have misconfigured your client to transmit your IP
+< SygeR> understand. 
+<&mona> then it doesnt matter how many layers of anonymisation you use
+<&butts> If you connect to another network without Tor or with an exploitable client, your IP might leak.
+< WhiteFace> you said something about creating a botnet with an IRC, how can you protect yourself from an exploit?
+< drzupan> but a transparent proxy... doesn't reveal your real ip?
+< Lulz> admins should only see localhost
+< torist> if I use a VM can't some attacker break out of the VM environment?
+<&rackham> drzupan: transparent means that EVERYTHING goes through the proxy
+<&butts> drzupan: transparently proxying means your entire system is utilizing the proxy rather than a single application
+< SygeR> so how i can be properly anonymised ? Vpn and the kinds of stuffs ?:
+< drzupan> what is the purpose of transparent proxy?
+< barracuda> WhiteFace: stay up-to-date
+<&mona> WhiteFace: you can't protect yourself from a 0day
+<&mona> but you can stay updated
+<&mona> and avoid clients
+<&mona> with a history of vulnerabilities
+<&mona> mirc, for example, is absolute trash
+<&mona> with a long history of remote code execution
+<&mona> if you use it, you're asking to be pwned
+<&rackham> drzupan: if you use TBB, only that browser goes through Tor..a transparent proxy will force everything through tor...ssh, ftp, http
+<&butts>  23:45:53   scareface| how do i route all my traffic through tor                |
+< amnesia_> I tried to install irrsi but it didnt work, says it completed and everything but then nothing
+< Y0nk0u> is there any way to give false metadata?
+<&rackham> torist: yes, someone could. breaking out of a VM is big money right now so is that 0day worth pwning you
+< SygeR> how can i configure my entire pc with tor or vpn ? 
+<&mona> amnesia_: irssi is a commandline application
+<&onionirc> isn't routing a GUI client like hexchat through the Tor browser a lot easier?
+-!- zilaep is now known as Anon6520
+< SygeR> i can do that ? 
+<&mona> type irssi form terminal
+<&rackham> amnesia_: now run irssi in the terminal
+<&mona> yes
+<&mona> transparently proxy, guys
+< iojojo> kali + whonix gateway is "secure"?
+< spunknuggets> whats the best ircclient for windows?
+<&mona> if you want all traffic to go through tor
+<&mona> transparently proxy
+<&rackham> spunknuggets: hexchat or tor messenger
+<~kr0> kali is not secure at all
+< drzupan> what is TBB?
+<&butts> https://trac.torproject.org/projects/tor/wiki/doc/TransparentProxy
+< barracuda> Tor Browser Bundle
+<&rackham> there is a tor transparent proxy for windows call tAllow 
+<~kr0> onionirc: Not really
+<&rackham> use at your own risk
+<&rackham> drzupan: Tor Browser Bundle
+< spunknuggets> thanks
+< Tech-Know> mona: a minor detail; it seems it's /set hostname instead of /set host_name :-)
+< anakata> You can create an IRC-only user too
+<&mona> sorry, typo
+< drzupan> ah ok rackham
+<&mona> it is indeed /set hostname
+<~kr0> Its just way easier to set , onionirc 
+<&butts> for windows, better to use a middlebox or a virtual machine with transparent proxy
+< anakata> so you just filter packets from determined UID
+< amnesia_> socat TCP4-LISTEN:9999,fork SOCKS4A:localhost:onionirchubx5363.onion:6697,socksport=9050 &> /dev/null &
+< amnesia_> ** (irssi:28998): ERROR **: Couldn't create /home/amnesia/.irssi directory
+< amnesia_> Trace/breakpoint trap
+<&butts> one thing about irssi's /set hostname, if you set it to something that's not a real hostname for your system, you will not be able to connect to any network
+< jeff> tails lol
+< Gcoder> got to go. thanks for the info anon :) see you soon? i hope :) bye
+< Invador> how do i choose a good proxy that isnot very slow??
+< SygeR> u keep saying about transparently proxy but i have no idea what this is.  lol --' 
+<&mona> Invador: use a paid VPN, and pay anonymously
+<&butts> SygeR: i just provided a URL 
+< teleport> O/o
+<&mona> a guide was posted
+< spunknuggets> is there anything i can do on tor messenger to hide any extra information about me?
+< SygeR> so many msg. lol ---' 
+<&mona> on transparently proxying
+< Y0nk0u> i dont trust you butts.
+<~kr0> > https://trac.torproject.org/projects/tor/wiki/doc/TransparentProxy
+< SygeR> nobody trust butts
+<&mona> spunknuggets: tor messenger is locked down by default
+< SygeR> lol
+<&mona> but on any application
+<&mona> you should go through the settings
+< SygeR> kr0 thanks. 
+<&mona> and configuration options
+<~kr0> np
+<&butts> You shouldn't trust me. Don't trust anyone.
+< spunknuggets> ok thanks guys
+<&mona> to make sure everything is the way you want it to
+<&mona> be
+< jeff> a transparent proxy is a way to force all traffic over tor that can go over tor, which is a bad idea since exits can sniff plaintext
+<&rackham> https://ghostbin.com/paste/6h4qk <--Transparent Proxy 
+<&mona> and this should go with out sayng, but always verify your downloads
+< jeff> so don't do it willy nilly
+< barracuda> Q for butts / mona / onionirc / rackham / kr0 : So far my tutorial was focussed on kali in virtualbox but reading this I'd rather do a tutorial on a base VM just for OnionIRC over tor, as a 'super secure isolated client' idea. I'll prolly do both, but since there are so many questions about IRC, should I prolly do this first?
+<&mona> most package managers will verify downloads automatically, when you download something manually compare the md5 or sha1 hash
+<&rackham> barracuda: we'll talk about it after :)
+< Y0nk0u> so is that a no on the false metadata thing? because that seems like it would be really useful to know
+<&mona> yeah talk after 
+< barracuda> rackham: k :)
+<&mona> Y0nk0u: repeat please?
+<&rackham> Y0nk0u: i'm sorry what was your question
+<&butts> Y0nk0u: falsifying information is one such way to use false metadata
+< SygeR> is just run the lines of commands on my terminal  ? from 6h41k ? 
+<~kr0> jeff: you're correct
+< jeff> be careful with transproxy, don't throw all the traffic on your lan over tor
+< anakata> See you later guys
+< anakata> Take care
+<&mona> lol
+<&rackham> Y0nk0u: that might be a topic for a forensics class
+< SygeR> cya anakata
+<~kr0> Thats why you always use SSL/TLS when using tor
+< jeff> mona: you have to say this because people do it
+< Y0nk0u> okay, because i mean you can track someone by the nothing they leave as well as by metadata
+<&mona> well
+< jeff> just like people using their "real identity" on irc
+< jeff> :^)
+<&mona> you can tell that a file has had the metadata stripped from it
+<&mona> it can in some circumstances be identifying info
+<&mona> but the short answer is yes, you can edit metadata
+<&butts> jeff: if they actually read the transparent proxying pages we provided, and use the proper iptables, they won't be forwarding all local traffic to tor
+<&mona> instead of just stripping it
+<&mona> ok let's move on
+-!- mode/#school4lulz [+m] by mona
+<&mona> so that's the technical side of things
+<&mona> honestly there's some shit you need to keep in mind
+<&mona> but from a technical perspective
+<&mona> irc is a very simple protocol
+<&mona> it's not that hard to keep it locked down
+<&mona> there is, however, a critical unpatched bug in every irc client ever produced
+<&butts> http://www.irchelp.org/irchelp/rfc/
+<&mona> it is found just behind the keyboard
+<&mona> and it looks just like you
+<&mona> i'll start this w/ a disclaimer: pure opsec is impossible
+<&mona> you're here, and you're speaking english
+<&mona> you have been narrowed down
+<&mona> to 942 million of 7.4 billion people on earth
+<&mona> if you attempt perfect opsec
+<&mona> and try to never leak any identifying information of any kind
+<&mona> you may as well not even bother communicating
+<&mona> that being said
+<&mona> it is possible to have meaningful communication without doxing yourself
+<&mona> from a high-level perspective, before we go into specifics
+-!- Anon6520 is now known as zilaep
+<&mona> compartmentalise
+<&mona> view your online presence as a persona
+<&mona> if you connect to 2 different servers
+<&mona> that's 2 different personas
+<&mona> your irl identity is also a persona
+<&mona> the more those personas touch, the worse your opsec is
+<&mona> the difficult part of opsec is in identifyng all the ways in which they can overlap
+<&mona> anywhere they overlap, correlational data exists that can be used to track or identify you
+<&mona> so that's the theory
+<&mona> let's talk logistics
+<&mona> starting with the very basics:
+<&mona> minimize nickname reuse
+<&mona> ach nick should be associated with a specific persona and your personas should not touch nor be allowed to escape the scope you have defined for them.
+<&mona> each*
+<&mona> When choosing a handle, go generic - you want it to be as difficult as possible to put information from different sources together by googling your handle. Think about what you'll get if you google butts, mona, or rackham
+<&mona> that might not seem like a big deal now
+<&mona> but let's say synja here, for example
+<&mona> becomes an elite haxor
+<&mona> and spends the next 3 years on that handle
+<&mona> how many hackers using the handle 'synja' do you think there are?
+<&mona> how easy is it going to be to find every pastebin posted
+<&mona> with logs were synja spoke
+<&mona> lol, didnt mean to scare him away
+<&mona> now, the really obvious shit should go without saying
+<&mona> but i've seen this all violated, so i'll come out and say it
+<&mona> dont tell people your name
+<&mona> don't tell people what country you live in
+<&mona> don't discuss the whether
+<&mona> don't mention your timezone or the current time in your area
+<&mona> don't tell people what continent, state, province, county or region you live in
+<&mona> Now that the basics are out of the way
+<&mona> correlational data
+<&mona> when do you wake up?
+<&mona> when do you go to sleep?
+<&mona> how does that information correlate with the times you're online
+<&butts> don't tell us when you are going to bed
+<&butts> just fade away 
+<&mona> if you log on at 6pm est and leave at about 10pm est every day
+<&mona> but then on one specific day
+<&mona> you're on all day
+<&butts> or, better yet, lie. lie about it all.
+<&mona> and that day happens to be US labor day
+<&butts> disinformation is one of your best friends
+<&mona> guess what
+<&mona> you're american!
+<&mona> there are 2 ways to mitigate this
+<&mona> the casual way, and the paranoid way
+<&mona> the casual way is to do what butts just said
+<&mona> dont tell us how tired you are
+<&mona> or that it's time for you to sleep
+<&mona> or that you just woke up
+<&mona> or that it's dinner
+<&mona> or that you have to go buy lunch
+<&mona> please practice some common sense
+<&mona> the paranoid way is with a shell or an irc bouncer
+<&mona> basically, these keep you logged in all the time
+<&mona> you connect to the shell and disconnect from the shell, but your account is always online
+<&mona> so it's impossible to get any metadata from your sign on and sign out
+<&mona> honestly, it's not a bad idea if you're getting into anything risky, it's great and fairly cheap way to improve your opsec
+<&mona> there's a huge range of stuff i could cover when it comes to opsec
+<&mona> i wont cover all of them
+<&mona> use common sense
+<&mona> anythng that you and only you do
+<&mona> canbe used to identify you
+<&mona> one that's worth noting
+<&mona> is how you type
+<&mona> i know a guy who is hyper paranoid about opsec
+<&mona> and maintains three connections to an irc server at any time
+<&mona> so he can phase out one nick and bring another one in
+<&mona> without it being suspicious
+<&mona> but he has the same stupid typing quirk
+<&mona> he talks like this , with a space around his punctuation .
+<&mona> it's immediately obvious which handles belong to him, because no one else talks like that
+<&mona> likewise, if you tend to use slang 
+<&mona> do you capitalise your sentences
+<&mona> and end them with a full stop
+<&mona> do you use contractions
+<&mona> etc etc
+<&mona> i could go on for hours
+<&mona> use your common sense here guys
+<&mona> before i descend too deep into pedantics
+<&mona> i'll cover the last topic
+<&mona> disinfo
+<&mona> aka every wannabe hacker's fallback when he gets doxed
+<&mona> disinformation is the art of disseminating false information about yourself
+<&mona> so as to confuse anyone taking notes on your behavior
+<&mona> now
+<&mona> in my opinion, there are 2 types of disinfo worth doing
+<&mona> and they both have a time and place
+<&mona> one is subtle and premeditated
+<&mona> you come up with a persona
+<&mona> you research the persona
+<&mona> and you assume that identity
+<&mona> if you're supposed to be russian, you make sure you can speak russian, and you know what time it is in russia
+<&mona> you make sure you speak like a russian
+<&mona> and you are up to speed wiht russian politics
+<&mona> you need to be able to speak to another russian, like a russian
+<&mona> this kind of disinfo is exhausting to keep up
+<&mona> it's best used when interactng with a group of strangers
+<&mona> for a relatively small period of time
+<&mona> in the long run, it'll always break down
+<&mona> and that's when you fall back to the second form of disinfo
+<&mona> this is the most common kind
+<&mona> where you don't pretend that you're not performing disinfo
+<&mona> you rely on pure entropy
+<&mona> brazenly and proudly disseminate false information
+<&mona> in large quantities
+<&mona> disseminate
+<&mona> CONFLICTING
+<&mona> information
+<&mona> so that any notes make no sense
+<&mona> even if you fuck up
+<&mona> and say something personally identifying
+<&mona> it'll get lost in the haze of bullshit
+<&mona> even if everyone knows what you're doing
+<&mona> it still works
+<&mona> you're effectively devaluing real information compared to false information
+<&mona> now
+<&mona> you'll be using this technique most of all
+<&mona> and when using this technique, there's stuff you need to keep in mind
+<&mona> this relies on the false information and the true information being indistinct from each other
+<&mona> a common example of failed disinfo you see in amateurs
+<&mona> is when they're being very obvious about their disinfo
+<&mona> but the real info they share
+<&mona> is clearly different
+<&mona> take the example of a guy in the UK
+<&mona> he uses 'z's in his typing
+<&mona> he says vacation instead of holiday
+<&mona> he's a passable american
+<&mona> but he doesnt participate in conversations about the election race
+<&mona> he doesnt know why the Iowas caucuses are so important
+<&mona> yet when someone's talking about David Cameron's tax havens
+<&mona> or the protests in London
+<&mona> he can talk for hours
+<&mona> anyone who's really paying attention can tell
+<&mona> yeah, this guy is English
+<&mona> ok
+<&mona> last tihng I wanna cover
+<&mona> is deflection
+<&mona> when using entropy-based disinfo
+<&mona> deflection is your friend
+<&mona> when trying to assume a persona, deflection is your enemy
+<&mona> if you are pretending to be someone you're not and someone asks you a question
+<&mona> and you brush it off or deflect
+<&mona> that comes across as suspicious
+<&mona> makes you seem like you are cagey
+<&mona> whereas deflection is a pro tactic when doing active disinfo
+<&mona> a common example where deflection can help you
+<&mona> someone will try to bait you out
+<&mona> by saying something like "you always log on during these times, you are british"
+<&mona> what they said may, or may not be true
+<&mona> maybe you are british
+<&mona> maybe you are venezuelan
+<&mona> they're trying to put you on the defensive
+<&mona> and pressure you
+<&mona> into giving them more info
+<&mona> as you try to prove why you're not a britfag
+<&mona> if you respond seriously, pretty much no matter how you respond
+<&mona> you're increasing the sum total of info they possess about you
+<&mona> and i will note that simply pointing that out
+<&mona> and calling attention to the fact that they're trying to put you on the defensive and get info from you
+<&mona> works pretty well as a form of deflection
+<&mona> otherwise you can call them a fed, insult the size of their penis
+<&mona> i don't need to tell you how to troll
+<&mona> so, cliff notes
+<&mona> secure your shit
+<&mona> use tor
+<&mona> use irssi
+<&mona> check your configs
+<&mona> don't reveal personally identifying info
+<&mona> lie like a motherfucker
+<&mona> don't reveal personally identifying info
+<&butts> When all else fails, lurk like you've never lurked before.
+<&mona> yes
+<&mona> when in doubt
+<&mona> SHUT
+<&mona> THE
+<&mona> FUCK
+<&mona> UP
+<&mona> just
+<&rackham> also, wear sunscreen
+<&mona> don't talk
+<&mona> just don't do it
+<&mona> it's that easy
+-!- mode/#school4lulz [-m] by mona
+<&mona> this should all be basic stuff
+<~kr0> people used to pretend that they are females
+< Lulz> ^
+< Y0nk0u> would you mind, before you go, maybe doing a quick tut on irssi?
+<~kr0> OpSec at the weirdest level
+<&mona> but i've seen probably in the double-digits failing in opsec
+< dis0bey> pls
+<~kr0> but still good
+<&mona> probably in the triple digits
+< anakata> RTFM
+< dis0bey> on irssi
+< Lulz> from a socal engeneer standpoint 
+<&mona> ok, irssi
+<&mona> what are you guys stuck on?
+< changer> is ther gonna be a transcript posted? i just got here lol
+ * Knowme is talking german in #german to pretend to be a german..  ;)
+< amnesia_> sudo apt-get install irssi
+< dis0bey> been attempting to use it but couldn't figure out how to connect thru tor
+< Y0nk0u> i see the "menu" but im not really sure how to connect to onionirc from there
+< Lulz> males are more likely to click shit from "sarah" the horny 22 year old
+< Caribou_QC> apt-get install irssi doesnt work on backtrack5
+<&butts> https://quadpoint.org/articles/irssi/
+< dis0bey> sudo pacman -S irssi in my case ><
+<~kr0> amnesia_: better compile it from source
+< HellCrown> tor messenger vs irssi ???
+<&mona> it depends what distro you're using 
+<&mona> irssi is easy to compile from source
+< Lulz> then from big bob the wleder
+< xerxes> can somebody get a transcript?
+< xerxes> i came late
+<&mona> HellCrown: tormessenger for noobs, irssi for pros
+<&mona> ;)
+< zilaep> Caribou why are you using BT5, this is 2016
+<&mona> xermes: someone is logging
+< torist> you guys mentioned insecure distros. which ones would you recommend then?
+< HellCrown> humm ok :D
+< anakata> dis0bey: In Arch it's better to use transparent proxying
+< The-Watcher> Well thanks for the Class Mona and Butts.
+< SygeR> u are using the irssi from this class? 
+< amnesia_> I'm on tails soooo i'm yeah
+<&onionirc> mona
+<~kr0> alot of distros got old version in their repo
+< SygeR> or the tor msger ?
+<~kr0> so get it directly from the source
+<&rackham> alright logging is off
+< anakata> dis0bey: Create a user and create the iptables rules, based on it's UID
+<&rackham> transcript incoming
+<&mona> sup onion
+Log closed Fri Apr 29 20:05:45 2016

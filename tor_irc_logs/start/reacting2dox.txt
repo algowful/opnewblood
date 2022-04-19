@@ -1,0 +1,180 @@
+Log opened Fri Jun 03 19:01:50 2016
+<&rackham> woooooooooooooooooooooooooooo
+<&rackham> nothing like walking away and coming back to a shit storm
+<~kr0> basically I c/p'd #main for now :3
+<&rackham> that works
+<&rackham> anyway
+<&rackham> sorry about the anti-forensics class...fuckin IRL always gettin in the way
+<&rackham> hate real life
+<&rackham> but
+<&rackham> i came back to some gold and something that i think you all, as noobs, can learn a lot from
+<&rackham> now
+<&rackham> FUCK: please don't interrupt
+<&rackham> can anybody tell me where OnionIRC went wrong?
+< polski_krol> Showing persona's
+< _z> \u03bb You made it a .onion \u039b
+<%ad3pt> bored hackers
+< MOS-6502> at its very conception
+< polski_krol> mixing identities
+< tcp> putting asses as ops.
+< polski_krol> not being knowledgeable 
+< D4rkL0rd> LOL
+<&rackham> ah showing persona's
+<&rackham> we'll start with that
+<&rackham> how many people had an inkling that he was discordian?
+< tcp> i dont care
+<&rackham> well, you're here
+< polski_krol> I wasnt sure he was disc.
+< tcp> yes
+<%ad3pt> what does it matter, really?
+< polski_krol> But he did post the 3 twitters he managed.
+<&rackham> it doesn't...
+<&rackham> but it's about controling IDs
+< polski_krol> outting himself as an operator.
+< polski_krol> amongst anons.
+<&rackham> okay
+<&rackham> so why does it matter if OnionIRC was discoridan?
+<&rackham> it doesn't.
+<&rackham> don't miss the point
+<&rackham> what matters is he had an id that was obliterated in the past and failed to maintain a disconnect
+<&rackham> bad opsec
+<&rackham> 1) there has, on more than one occassion, been times when there was a twitter conversation
+<&rackham> and he would jump between Discord and OnionIRC...at least one comes to mind when I was fuckin w/ storm
+<&rackham> 2) bragging up his involvement in the 3 biggest anon accounts
+<+polski_krol> rackham 
+<&rackham> most people are not in the know, but some are
+<+polski_krol> if you wanna do this talk again later
+<+polski_krol> ill help contribute, im out for now.
+<&rackham> thanks for voicing and fuckin my logs for that 
+<&rackham> have a nice night
+<&rackham> i hope you choke on your mcdonalds
+<&rackham> :)
+<&rackham> dick.
+<&rackham> so
+<&rackham> anyway
+<&rackham> not being knowledgeable...thats meh
+<%ad3pt> <3
+<&rackham> yeah he isn't a tech guy and was as much of a student as all of you
+<&rackham> he wasn't in here teaching tech shit either so thats whatever
+<&rackham> so anyway
+<&rackham> this is important shit
+<&rackham> because this is a classic failure of opsec
+<&rackham> this isn't the first time we've been researched
+<&rackham> this isn't the last
+<&rackham> more dox will be posted
+<&rackham> some will be fails
+<&rackham> some will be correct
+<&rackham> nobody is untouchable
+<&rackham> that being said, where did OnionIRC FUCK up after his dox were posted?
+<%ad3pt> poking the bears?
+<&rackham> no, he fucking confirmed them
+<&rackham> he denied and played it off for a totalof 2 minutes or so
+< peter> he fucked up by putting asses as ops
+< DreadPirateRoberts> don't dox me bro
+<&rackham> putting asses as ops...
+<&rackham> i guess i'm bias
+<&rackham> because i'm one of said "assholes" or so i hear
+<&rackham> but the hacking community is not for the soft skinned
+<&rackham> we came from adiferent place..toughen up or find another career path
+<&rackham> anyway
+<&rackham> dude confirmed dox
+<&rackham> there were fail dox posted here 2-3 weeks ago
+<&rackham> victor, pleasego read the dodging the pipe logs...you're going to need it when you blah blah blah and go to prison
+<&rackham> and i dout you want a dick in ou
+<&rackham> you*
+<&rackham> he could've fail doxed himself in afew days
+<&rackham> and let everything et lost in the noise
+<&rackham> honestly, NOBODY CARED until he sperged out
+<&rackham> kr0: mona 
+<&rackham> you got anything to add?
+<~kr0> Not really , but its a perfect example on how NOT to react to a dox
+<&rackham> why do you think thej35t3r that everybody loves so much hasn't been doxed ?
+<&rackham> he's been doxed as like 30 diff people hahaha
+<&mona> his real dox are amongst those 30
+<~kr0> definatly
+<&mona> that is a guarantee
+<&rackham> but which one are they?
+<&mona> same thing w/ sabu
+<&mona> he was doxed ages before his identity became common knowledge
+<&rackham> questions?
+< localhost> so ..
+< D4rkL0rd> even jeremy
+< D4rkL0rd> he used chewy123 for his wifi pass
+< localhost> someone confirmed their dox?
+<&FUCK> he did
+< D4rkL0rd> and the agencies sniffed a tor packet from his wifi
+< D4rkL0rd> and
+< D4rkL0rd> they confirmed the mac adddress of his pc
+< D4rkL0rd> and
+< D4rkL0rd> they arrested him coz
+< D4rkL0rd> they had proof taht his pc connected to tor at the same time he was on an irc
+<&rackham> yeah not sure where he was going with that
+<&rackham> so tl;dr
+<&rackham> CONTROL YOUR EMOTIONS
+<&mona> ^
+<&rackham> if you see your name and address pop up in here, it can be scary
+<&rackham> but just take a step back and breathe
+<&mona> i said it in the first ever lesson we held on this network
+<&rackham> OnionIRC could've blew this off
+<&rackham> and made it his word vs muerto
+<&mona> drama kills hackers
+<&mona> drama kills hackers
+<&mona> drama kills hackers
+<&mona> drama kills hackers
+<&mona> drama kills hackers
+<&mona> drama kills hackers
+<&mona> drama kills hackers
+<&mona> drama kills hackers
+<&mona> evidently i didnt say it loud enough
+<&rackham> but now he confirmed it to 100+ people that he is discordian
+<&rackham> anything else mona ?
+<&mona> hmm
+<&mona> let me think
+<&mona> oh yeah
+<&mona> drama kills hackers
+<&mona> for real
+<&mona> just chill the fuck out
+<&mona> if you let your emotions rule you, you will make shitty snap decisions
+<&mona> you will trip over yourself and fuck up
+<&mona> and you will signpost your lack of professionalism and reliability to others
+<&mona> anyone with any real skill has a 6th sense for drama magnets
+<&mona> tl;dr don't be a drama magnet
+<&rackham> Q&A 
+<&rackham> go
+< thr33> pointing out the advise from dodging the pipe, control your emotion
+< D4rkL0rd> just a talk on opsec at blackhat taht may help people https://www.youtube.com/watch?v=J1q4Ir2J8P8
+< thr33> neither happy nor sad
+< Kalel> is being connected to tor and irc illegal?
+< rackham-zzzzzz> no
+< thr33> no
+< R3lcr4w> all i get from this is the less noisy you are the less probabilities you have to get doxed not a question just thinking
+< localhost> no
+<&rackham> R3lcr4w: right
+<&rackham> if you go out there poppin off
+< rackham-zzzzzz> he asked that because of what someone said earlier
+<&rackham> you're gon get rekt
+<&mona> yes
+<&mona> it's always a tradeoff
+<&mona> you're on irc because you want to talk shit
+<&rackham> i was definitely prepared for my dox when i was fuckin with storm
+<&mona> if you give nothing away, you are just a lurker
+<&rackham> didn't happen...
+<&rackham> but the probability was there
+< D4rkL0rd> using tor is not illegal as long as the purpose is not illegal, if you need to do illegal stuffs you need to think about and be careful, have a good opsec
+<&rackham> overall
+<&rackham> its over
+<&rackham> OnionIRC confirmed his own dox
+<&rackham> he'll probably change ID packs and come back
+< thr33> btw can you guys expand on what's happening, cause i have no context
+< rackham-zzzzzz> you really confirmed it by having this class thanks :)
+< localhost> me too
+< D4rkL0rd> who doxed him mate?
+<&mona> maybe as an op, maybe not
+<&rackham> thats the beauty of this net
+<&rackham> you can die today and be back tomorrow reborn
+<&mona> unless you get v&<3
+<&rackham> he'll learn and grow
+<&rackham> just a lesson in security and self-presevation
+< localhost> rackham, can you explain a bit more most cant understand
+<&rackham> luckily for him, it probably won't end like his idols ended
+Log closed Fri Jun 03 19:24:50 2016

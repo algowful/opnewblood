@@ -1,0 +1,155 @@
+Server Configuration (by hatter)
+
+* hatter sets mode +m #school4lulz
+<hatter> not we're talking server configurations
+<hatter> there's a lot of those 
+<hatter> so we'll go with a common config
+<hatter> exim, mysql, apache, php
+<hatter> less common configs include qmail, dovecot, courier, lighttpd, ngingx, ruby, java, etc
+<hatter> usually your configuration files are either in your /etc/ directory, or in /usr/local/servicename/conf
+<hatter> you will have /etc/exim.conf, /etc/apache2/apache.conf, /etc/php/php.ini
+* adh (~Nate@LulzCo-8EF823D1.hsd1.md.comcast.net) has left #school4lulz
+<hatter> /etc/my.cnf
+<hatter> the mysql client on some systems has its own configuration in ~/.my.cnf
+* adh (~Nate@LulzCo-8EF823D1.hsd1.md.comcast.net) has joined #school4lulz
+* curi0us (~S@LulzCo-879302C5.torservers.net) has joined #school4lulz
+<hatter> apache has virtual hosts.  in some cases, they are all stored in one big conf file, in others, they have a directory and are split into different files.
+<lolwat> /etc/httpd/conf
+<lolwat> for apache on some distros
+* i0dic has quit (Remote host closed the connection)
+<hatter> (all of these programs can be installed with your package management software usually)
+* i0dic (~i0dic@LulzCo-CB9E1773.formlessnetworking.net) has joined #school4lulz
+<xoxo> (/opt/lamp/... for lamp. i love it! :3)
+<hatter> :)
+* suckmyace (~suckmyace@LulzCo-9995A3E5.red.bezeqint.net) has left #school4lulz
+* suckmyace (~suckmyace@LulzCo-9995A3E5.red.bezeqint.net) has joined #school4lulz
+<hatter> these configs for apache will have the ip address to listen on, the hostname, and the web root along with any subdomain or extra domain information for a site.
+<hatter> many servers have multiple ip addresses.
+* i0dic has quit (Remote host closed the connection)
+<hatter> You can copy entries from there and reconfigure them as necessary
+* i0dic (~i0dic@LulzCo-7239976D.formlessnetworking.net) has joined #school4lulz
+<hatter> if you have absolutely no idea
+<hatter> where your configs are
+<hatter> find / -name apache.conf -o -name httpd.conf -o -name apache2.conf
+<hatter> this will also contain the location of your logs
+<xoxo> ^(the wonders of linux)
+* MrLinux (~mail@LulzCo-4D35FFA3.goeaston.net) has joined #school4lulz
+<hatter> find / -name exim.conf -o -name exim4.conf
+<hatter> etc
+<hatter> if you're only checking a certain configuration option
+<hatter> you can just
+<hatter> find / -name apache.conf -exec grep -eiHnE9 documentroot '{}' \; 
+* suckmyace has quit (Quit:  Want to be different? Try HydraIRC -> http://www.hydrairc.com <-)
+<hatter> that'll typically give you a full vhost output.
+<hatter> you can also grep -i data /etc/my.cnf
+<hatter> to find the data directory for mysql
+* chkkit has quit (Ping timeout: 240 seconds)
+<hatter> typically in /var/lib/mysql
+<hatter> All your databases etc and tables will be there
+<hatter> There are multiple formats (MyIsam, INNODB) that these files could be in.
+<hatter> do NOT rm these files
+<hatter> unless you are intentionally breaking shit.
+<hatter> all of the log files can be accessed with tail -f
+<hatter> if something's not working right, you can tail -f the apache log while hitting refresh on a page
+<hatter> or if its a sql query, the mysql error log
+<hatter> etc
+<hatter> to create a new database & user
+<hatter> you'll want to type 
+<hatter> mysql -u root -p
+<hatter> enter the root mysql password
+<hatter> then
+<hatter> CREATE DATABASE databasename;
+<hatter> CREATE USER databaseuser;
+<hatter> update mysql.user set password=PASSWORD('thepassword') where user='databaseuser';
+<hatter> grant all on databasename.* to 'databaseuser'@localhost identified by 'thepassword';
+<hatter> grant all on databasename.* to 'databaseuser'@'localhost' identified by 'thepassword';
+<hatter> flush privileges
+<hatter> \q
+<hatter> now you have a new database
+<hatter> to install an app like wordpress
+<hatter> etc
+<hatter> sometimes you just move an installation
+<hatter> and you'd like to run a massive find and replace on your config files
+hatter> sed -i s/old\/path\//new\/path/g /path/to/config
+<hatter> sed -i.bak s/old\/path\//new\/path/g /path/to/config
+* criticalmass (~criticalm@LulzCo-1FC57423.lightspeed.nsvltn.sbcglobal.net) has joined #school4lulz
+<hatter> will provide a bak file for you
+<hatter> in case you screwed up
+<hatter> awk is a powerful tool
+<hatter> it converts columns into $1 $2 etc
+<hatter> ps faux|awk '{print $1}'
+<hatter> prints only the user column
+<hatter> you could also do that
+<hatter> with ps -eo user
+<hatter> ps faux|awk '{print $2}'
+<hatter> gives you the pid, the second column
+<hatter> if you want to separate something comma delimited
+<hatter> a csv for example
+<hatter> you could do something like
+<hatter> awk -F, '{print "Username: "$1" Password:"$2}' ./file.csv
+<hatter> you could also wrap data in html tags ;)
+<hatter> the -F flag is used to specify a delimiter.
+* curi0us has quit (Quit: Leaving.)
+<hatter> cut is like awk, except it can ony print one columns
+* dildo_faggins (~dildo_bag@C0860C5F.9B17F29D.4DBE7335.IP) has joined #school4lulz
+<hatter> *column
+<hatter> you would do cut -d[delimiter] -f[columnnumber]
+<hatter> a delimiter can only be one character in cut
+<hatter> but in awk it can be a string.
+<hatter> sed and awk are also useful tools for cleaning malware 
+<hatter> from websites
+<hatter> since you can use them to edit files, not just command output.
+<hatter> whenever you receive command output that you'd usually use as an argument to another command
+<hatter> you can likely use awk, sed, or egrep to make the two commands into one.
+<hatter> well, you can always use.
+<hatter> whenever you're done constructing additional commands
+<hatter> around the arguments that you parsed from the output
+<hatter> just tack an |sh on the end
+<hatter> and you'll execute the commands you generated.
+<hatter> awk can also use regex
+<hatter> like egrep.
+<hatter> regex is regular expressions
+<hatter> if you're searching for somethinig
+<hatter> *something
+<hatter> you can search by the format of the data
+<hatter> not just for data itself
+<hatter> say you were looking for an ip address
+<hatter> in bash regex
+<hatter> a .
+<hatter> is a wildcard
+<hatter> a *
+<hatter> means none or more of the preceeding character
+<hatter> a +
+* chkkit (~chkkit@LulzCo-FECF7F64.torservers.net) has joined #school4lulz
+<hatter> means at least one of the preceeding character
+<hatter> you can put sets of characters in lists with brackets. []
+<hatter> netstat -tnpa|awk '/\./ {print}'
+<hatter> would work
+<hatter> but just for clarification
+<hatter> you're looking for any digits
+<hatter> between 1 and 3 
+<hatter> digits long
+<hatter> and a set of four of them
+<hatter> delimited by dots
+<hatter> netstat -tnpa|awk '/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/ {print}'
+<hatter> netstat is sans pants.
+<hatter> netstat -pant.
+<hatter> anyway
+<lolwat> (omg... still on bash...)
+<hatter> Yeah
+<xoxo> stop complaining lolwat 
+<xoxo> at least we get free lessons :)
+<lolwat> i am not complaining lol
+<lolwat> =O
+<hatter> so any file
+<hatter> containing ips
+<hatter> or command output
+<hatter> ifconfig|egrep '/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/'
+* t0bias (~t0bias@3C56B256.CB1BD8B5.3EDA1CE.IP) has joined #school4lulz
+<hatter> you can grab line with ips that way.
+<hatter> ifconfig|egrep -o '/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/'
+<hatter> will show just the ips.
+<hatter> and nothing else.
+<hatter> So I'm gonna take another break
+<hatter> and then we're gonna actually have some fun.
+* hatter sets mode -m #school4lulz

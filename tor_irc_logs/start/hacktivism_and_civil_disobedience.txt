@@ -1,0 +1,853 @@
+- May, 8th 2016
+
+<rackham> started
+<crackerjax> i do
+<butts> ty
+<onionirc> before we begin I want to ask you a question
+<DLF> I log
+*** Modus #class -m by onionirc
+<marcolini> shoot
+<onionirc> what drew you towards Anonymous?
+<leet> Ask away
+<ad3pt> THE LULZ
+<fsec> i was on TOTSE a long time ago
+<zero> voice of freedom 
+<crackerjax> your guys past deeds drew me here
+<Gaylien> understanding of computers
+<DLF> The guardian
+<Lithicri> freedom / privacy
+<NSA_Agent> Turkey
+<butts> We are assuming that many of you came here due to our connection to anonymous
+<fsociety> desire to learn and help people
+<Bunts> yes
+<zerophreak> BSA
+-*- anonymous braces himself
+<Sisyphus> The ideals
+<siamese_twins> shit world
+<Gaylien> right to privacy
+<zerophreak> NSA even
+<leet> To me it wasn't Anonymous, it was private chatting and spreading knowledge
+<skimo> see things like scientology dead
+<Reaper> i want to stop this corrupt government
+<Gaylien> anonymiety
+<gh0st> The Humanity Party
+<kashloca> fbi
+<crackerjax> use my knowledge for something bigger
+<fsec> went from TOTSE to the chans, got on /i/ because i was already hacking
+<Cyborg777> 2011 cairo
+<Gaylien> and to be a hacktivist.
+<Bunts> I'm a rogue looking to lurk in the shadows
+<mona> i was drawn to nonmous because want hax just like le 4chan & mr robot XDDDD
+<butts> +1 kashloca 
+<anonymous> kasloca:lol
+<mv> personally, I found the drama to be amusing. the havoc wrought by LulzSec and certain Anonymous offshoots amused me. 
+<AverFenix> melhor sou eu
+<P1X3L> HI COOPS ^_^
+<fsociety> fuck The govs
+<Toad> Standing up for whats right in the world 
+<kilo> finally here
+<crackerjax> get better at trolling
+<leet> +1 mona 
+-*- DLF onionirc : How can we know you are for real ?
+<Clueless> To help
+<Bunts> trolling from the shadows and pooping on ppl
+<Parabole> defending our freedoms
+<johndoewannabe> Budde?
+<fsec> i guess i got involved around 05
+*** Modus #class +m by onionirc
+<crackerjax> yes are u guys real??
+<rackham> so im seeing privacy, freedom fighting, and general chaos
+-*- butts illusion
+<mona> also something about the fbi
+<mv> in my defense this was in what, 2011? I've matured some!
+<onionirc> these are all good reasons, and essentially we will cover all of the mentioned reasons
+<butts> We will cover some of the topics that were mentioned
+<butts> So, what is hacktivism?
+-*- DLF and get me in this fucking irssi
+<butts> The word itself was created by a member of Cult of The Dead Cow back in the early 90s.
+<butts> Look them up if you want. It's not very important to the lesson.
+<butts> There are differing opinions on what actions fall under the umbrella of hacktivism. 
+<butts> Some believe it is bringing about social change through the advancement of technology. 
+<mv> cDc is an arcane hacking group--I believe they produced the first Microsoft Windows trojan horse program?
+<butts> Others see it as a term referring to any action taken against a perceived political target. For the purposes of this class, we will be using the term in this way.
+<anonymous> backorifice
+<onionirc> HACK THE PLANET!
+<butts> Hacktivism is hacking with a political/social message. Hacktivism is just about as broad of a term as hacking. 
+<butts> Generally speaking, hacktivists tend to choose their targets for specific reasons.
+<butts> Perhaps they want to release the email spools of a corrupt or nefarious organization, or maybe they will just take advantage of an exploit in a popular website to post a political message. 
+<mona> see: milw0rm
+<butts> Basically, anything that you might consider hacking could be hacktivism if done in a political light.
+<butts> It's a pretty simple concept.
+<onionirc> you can see that in the several groups over the years as well, some decided to use their skills to expose the security industry, others were working to expose rogue cops during protests
+*** Modus #class +h jetblackcloud by anonymous
+<mv> for example, the recent "Panana papers" drama
+<butts> oh yes, and everyone is so concerned about who was behind it, mv
+<mv> would be considered "hacktivism" because it was done to expose corruption.
+<butts> Before we go any further, are there any questions on what hacktivism is?
+*** Modus #class -m by butts
+<marcolini> no
+<zero> nop
+<johndoewannabe> Would wikileaks qualify?
+<crackerjax> no
+<zerophreak> nope
+<Gaylien> no, clear as my coffee!
+<Sisyphus> not here
+<JimTheSlimJim> can anyone see this?
+<fsociety> fuck all govs!!!!!!!!!!!!
+<Pixel> I have a question
+<JimTheSlimJim> oh nvm
+<hidden> why did you make it voice only
+<zerophreak> clear as my piss
+<butts> Yes johndoewannabe 
+<anonymous> Wikileaks is a publisher
+<hidden> so we can watch you talk bs
+<Pixel> How do you record logs?
+<fsec> what is it again?
+<johndoewannabe> Thanks.
+<butts> the people who give content to wikileaks would moreso be considered the hacktivists
+<diver> hacktivism implies hacking always?
+<butts> wikileaks, perhaps just activists :)
+<onionirc> johndoewannabe: wikileaks is a prime example, Anonymous leaked a lot of government documents to WikiLeaks as a result of their hacking activities
+-*- hidden hacker
+<zerophreak> chelsea manning?
+<mv> hacktivism implies hacking for a cause, to expose wrongdoings
+<butts> diver: yes. but implying hacking is also vague because what is hacking?
+<crackerjax> Does hacktivism always involve a computer?
+<diver> or can hacktivism imply real life actions or promoting causes in petition sites?
+<johndoewannabe> Thank all.
+<hidden> how anonymous are you if you call yourself anonymous
+<anonymous> Manning whistleblower
+<butts> diver: that sounds more like activism
+<butts> using technology
+<marcolini> cyberactivism?
+<butts> activism, definition see: terrorism
+<anonymous> lol
+<mona> for those who are fond of poorly-fitting hackneyed tropes
+<mona> most hacktivism falls squarely under "grey hat"
+<hidden> what is hacking? hacking is like breaking in, becoming a disease
+<butts> but is DDoS hacking?
+<onionirc> DDoS is more like civil disobedience
+<butts> i think maybe might be more accurate.
+*** Modus #class +v someone by mona
+<vladtheimpaler> running the LOIC does not make one a hacker
+<butts> agreed vladtheimpaler 
+<Gaylien> or smart
+<hidden> defining hacking does not make someone a hacker
+<fsec> it can be used for psyops or as a distraction
+<vladtheimpaler> it can be useful however to make a point
+<butts> in fact, many people have been arrested for using LOIC
+<kashloca> no
+<NullMind> a 5 year old can ddos
+<marcolini> yes
+<butts> even though their actions didn't really cause any kind of actual damage
+<marcolini> in portugal
+<fsec> it has its purpose
+<P1X3L> PORTUGAL <3
+<marcolini> areested because use ddos atack
+<zerophreak> can social engineering be deemed a way of people hacking?
+<hidden> dude what are we talking about
+<kashloca> it conveys a message only
+<justforyou> but a good ddos need alot off bots that needs to be hacked
+*** Modus #class +m by onionirc
+<anonymous> People really have the wrong idea about DDoS
+<butts> DDoS can be utilized for various legit purposes. hackers often use DDoS as a sort of slight of hand. a distraction. or it can be used for various fuzzing purposes
+<mv> I'm inclined to agree with fsec - DDoSing can be used as a distraction technique while you're busy hacking or exfiltrating data
+<butts> and, like stated, as a general act of civil disobedience
+<mona> in 90% of cases ddos fulfils the function of a protest
+<butts> exactly mv
+<mona> a form of active protest
+<mv> but "DDoS" itself isn't "hacktivism" because you're not really exposing corruption using technical capabilities. you're just holding someone's site down.
+<mona> like blocking the doors of a store
+<butts> right. and the majority of those cases, especially those done by Anonymous lately, are very lacking. they tend to be LOIC attacks from residential lines
+<butts> anyway, I think we have a good understanding of hacktivism and where ddos lies 
+<butts> so, you know of Anonymous. but what is it? where did it come from?
+*** Modus #class -m by butts
+<tool> trolling
+<Gaylien> guy fawks?
+<fsec> imageboards
+<crackerjax> anonymous posts on 4chan
+<zerophreak> chanology
+<Bunts> poop
+<marcolini> chanology
+<skimo> programing is like having super powers?
+<waddlepon> 4chan
+<Kaze> 4chan?
+<Pixel> butts: Are logs automatically recorded?
+<Parabole> 4chan
+<marcolini> 4chan
+<fsec> anonymous is pre-chanology
+<diver> sciencology
+<butts> Pixel: we have someone recording logs for this lesson
+<Sisyphus> A group of people on 4chan with a common idea idk
+<zerophreak> read Gabriella Coleman - great book
+<butts> All of the things stated are related to Anonymous
+<Pixel> butts: ah thanks
+<NullMind> came from 4chan i think
+*** Modus #class +m by butts
+
+<butts> Okay, so I'm not going in to the history of 4chan. I think the majority of you probably know what 4chan is. But I will cover some areas of 4chan as Anonymous relates to it
+<onionirc> Anonymous goes way back though, and while it's true it started as a meme on 4chan, it hasn't always been about political issues
+<butts> Anonymous is a concept born from the culmination of Japanese anonymous imageboard culture and it's introduction to the West by means of 4chan.org.
+<butts> This is around 2003
+<butts> On imageboards, anonymity is the community accepted form of identity. It is not typically forced, but there are untold rules and when you break them expect to be ridiculed.
+<butts> That is the cruel way of the *chan. You are either an outsider or a dedicated member of the so called hive (more recently referred to as the "Legion").
+<butts> It wasn't long after 4chan's inception that concepts such as Anonymous began to take literal form in animated characters such as the classic green Anon also known as "Old Anonymous" nowadays. 
+<butts> He is seen wearing a suit with a green face with the text "No picture available." typed over it.
+<butts> This character became the symbol of unification between Anonymous posters. 
+<butts> Over time, he became a hero of sorts. Users would ask for his help when spammers would flood the boards or when an influx of noob or "newfag" users came around.
+<butts> But everyone knew he wasn't a real person, he was all of them.
+<onionirc> A reincarnation of this depiction of "Old Anonymous" can be seen in the profile picture of YourAnonNews on twitter
+<butts> This general hivemind or groupthink lead to many hilarious raids on various websites & other services. 
+<butts> Some notable early raids are the Habbo Hotel raid and the complete and utter owning of Hal Turner around 2006/2007. 
+<onionirc> POOL'S CLOSED!
+<butts> POOL'S CLOSED!
+<butts> The raids on Hal Turner eventually turned up information that he was working with the FBI as an active informant. After that, he went crazy & threatened some federal judges.
+<butts> btw, "raids" in this instance means about the same thing as the way "Operation" is used these days. It's just an organized mass of anons doing something together
+<butts> At this point, the FBI couldn't (or perhaps didn't want to) protect him any longer and he found his way to prison.
+<mv> I didn't know about that(here's an after class reference- https://en.wikipedia.org/wiki/Hal_Turner)
+<butts> Eventually, after a lot of very funny raids against non-political targets, Anonymous evolved into something more.
+<butts> In early 2008, Project Chanology appeared. It was born out of the organizing power of many anons across various IRC networks and websites.
+<butts> It was the first large scale operation organized under the banner of Anonymous. There were IRL protests that took place world wide against the Church of Scientology.
+<onionirc> This was also the first Anonymous video where a computerized voice was used
+<butts> Yes I believe the video is titled "Message to Scientology" but I could be mistaken
+-*- DLF those videos are cool
+<onionirc> you're right
+<butts> The project involved many aspects, including DDoS attacks, fax bombing, VOIP flooding, website hacking, and IRL protest organizing.
+<anonymous> op slickpupes
+<anonymous> *pubes
+<butts> Anonymous' reasons for targeting the Church of Scientology for many, and varied from person to person. But the general reasoning seemed to be: the church was killing people by denying them access to medication and doctors, they were bleeding people of money, they didn't deserve tax exempt status, and they were generally insane 
+<-> Guli3lmus_ heißt jetzt Guli3lmus
+<butts> If you haven't seen the recent HBO documentary on Scientology called "Going Clear" I highly recommend you check it out.
+<mona> scientology is fucked UP
+<mona> we should still be fucking their shit up
+<onionirc> Scientology got ridiculed after Anonymous went after them, and it changed from a dangerous cult to a laughing stock
+<butts> The church of scientology was so corrupt and shady that they had agents lurking in the Chanology IRC channels. They offered tens of thousands of dollars to various users for information on other members.
+<onionirc> Even South Park made an episode ridiculing Scientology after Anonymous exposed a lot of their ways
+<onionirc> I do briefly want to mention the protests
+<butts> Okay, any questions on Anonymous' origins, 4chan, Chanology, or any other raids?
+<butts> onionirc: one sec
+*** Modus #class -m by butts
+<marcolini> no
+<fsec> you forgot the tom green raids XD
+<Shadow> just came
+<butts> lol poor tom green
+<zerophreak> not really
+<mona> how do i triforce?
+<Gaylien> this is exactly what drew me to Anonymous.
+<skimo> so scientology is completely out of scope now?
+<Sisyphus> How organized is Anonymous? How will we know when there'll be a raid and take part in it?
+<butts> there are sooo many raids we didn't cover fsec
+<Toad> Are youtuber targets considered hacktivism? 
+<mona> scientology is still way too powerful
+<fsec> right right
+<waddlepon> is anonymous continuing to target scientology?
+<vladtheimpaler> lol mona
+<mona> does a lot of fucked up shady shit
+<crackerjax> ive seen docs on this history that drew me here
+<mona> ruins people's lives
+<mona> and is pure fucking evil
+<mona> don't make the mistake of thinking they're gone, or irrelevant now
+<isabelle> the scientology thing doesn't really sound like hacktivism, based on your desc of hacktivism though
+<fsec> scientology also infiltrated the government
+<zerophreak> scientology is messed up
+<Shadow> seem like i missed half class
+<butts> yeah maybe scientology needs some fresh eyes
+<torist> and what about /i/?
+<Panda> ***intresting fact the Church of Sci brought out 106 lawsuits against the US Gov for not stopping the anon movment, this caused the US Gov to do 2 things.... back off the church and stop invesitgations and start seraching for anon memebers
+<fsec> https://en.wikipedia.org/wiki/Operation_Snow_White
+<butts> i did not cover /i/nsurgency, but you are right it is worth covering a bit
+<Panda> all 106 where in 1 day within the mater of 5 hours ... 
+<zerophreak> they have a secret squad that goes after you
+<mona> for the record, kids, be very careful when talking about scientology outside of media such as this one
+<NSA_Agent> isabelle: Good point, what distinguishes a valid target from an invalid one?
+<zerophreak> when you want to eave
+<Gaylien> i wish i could join an op like that!
+<Shadow> can u like send all the transcript to my email pls
+<hidden> ok
+<Gaylien> wanna be apart of that change!
+<butts>  /i/nsurgency was actually a big stepping stone between old anonymous and politically active anonymous
+<hidden> why is this channel always being voice only
+<Shadow> i mean twitter
+<fsec> there is no real heirarchy of power in anonymous
+<kilo> ideology? why do you/we fight for? what is a legitimate cause to eb covered by anonymous?
+<fsec> make your own OPs
+*** Modus #class +m by butts
+<butts>  /i/nsurgency was actually a big stepping stone between old anonymous and politically active anonymous
+<mona> we will never, ever host an op here
+<mona> for the record
+<mona> if you want to create your own on the server
+<mv> hidden: to avoid interruption 
+<mona> that's your business
+<butts> we as in the staff
+<mona> yes
+<butts> you can run an op here if that's your prerogative
+<mona> we are here to educate, not to take sides
+<butts> but we will recommend that you, at the very least, use blowfish to encrypt your chats
+<butts> and if you have questions about other ways to communicate with each other for your ops, feel free to ask. we may have some recommendations for you
+<butts> anyway, /i/nsurgency. off the top of my head I don't remember who hosted the original /i/nsurgency board. it was a board dedicated to organizing raids on other sites. they started to ban people on 4chan for trying to organize raids so /i/ became a thing on many other websites.
+<mv> https://www.schneier.com/cryptography/blowfish/
+<butts> and then someone created a centralized #/i/nsurgency IRC
+<butts> raidchan, perhaps? that sounds right. someone might correct me in a bit
+
+<butts> and it was among those groups that many of the organizers for Project Chanology came out of
+*** Modus #class -m by butts
+<butts> anything to add about /i/?
+<fsec> original /i/ was 711 or 420chan
+<fsec> i think
+
+<skimo> just wondering if i talk about whosnameicantsay is not safe even in tor?
+<ozma> Question: I walked in in the middle, but did you say anything about the epilepsy raids that (I've heard at least?) 4channers did in response to the political activism of Chanology?
+<butts> oh yes, 711chan it was definitely
+<fsec> also partyvan.info
+<butts> ozma: the epilepsy raids were a lot smaller than they were made out to be. but we did not really cover it
+<butts> in the real world, out in media land, the worst things get the most coverage
+<P1X3L> what is this "http://partyvan.info/"
+<zerophreak> always
+<Pixel> Question
+<fsec> old anon site for info about ops
+<fsec> looks like it has changed a bit
+<butts> Are there any topics regarding 4chan or Anonymous that anyone would like me to touch on?
+<crackerjax> media makes Anon look like terrorist group
+<Pixel> Where could I access the logs for future reference?
+<vladtheimpaler> pretty much
+<ozma> Was Habbo Hotel also much smaller?
+<butts> crackerjax: actually, the FBI has labeled Anonymous a terrorist organization since about 2008
+<mona> habbo hotel was early 
+<fsec> old insurgency irc was on partyvan
+<butts> ozma: the Habbo raids were fairly large as far as user involvement & staying power
+<butts> and yeah it was pretty early
+<butts> 2005 maybe?
+<Toad> is Anon as powerful as social media portrays them or is it an up hill battle against organizations with government involvement etc
+<mv> didn't partyvan get compromised by a hacking group called ZF0?
+<fsec> yea 05
+<kashloca> but annons were used too by the fbi to frame other people like jeremy hammond
+<zerophreak> I really reccomend the Gabriella coleman docu on Anonymous
+<JackofHearts> is it ok to ask how many people were involved in these raids ? just wondering about the scale of them
+<butts> Toad: that's entirely up to the individuals that make it up
+<fsec> mv i dont remember i havent kept up with partyvan that well
+<crackerjax> did the "anon" disguise come from the Habbo Hotel black guy
+<butts> mv: there were various partyvan entities. 
+<Shadow> uh can u make this chat darker or something?
+<fsec> you can see some of the raids on youtube
+<Shadow> too bright for me
+<fsec> like tom green, habbo hotel
+<butts> crackerjax: no, the pools closed negro was just coincidentally in a suit as well
+<TrashyPumpkin> Shadow i'd like a dark theme too, just no clue how to enable it :/
+<butts> Shadow: google your irc client + change theme
+<ozma> zerophreak: Documentary? I thought there was just the book...?
+<NullMind> shadown go to tools 
+<isabelle> crackerjax - as it's mentioned anonymous is not centralized, nothing's stopping terrorist from claiming to be part of anonymous too I guess..?
+<fsec> true
+<zerophreak> ozma: no, there's a docu too
+<butts> that is correct isabelle 
+<Shadow> alright
+*** Modus #class +m by butts
+<mona> it's not even "stopping terrorists from claiming to be part of anonymous"
+<mona> terrorists can be Anonymous
+<mona> with a capital A
+<mona> if you think Anonymous only applies to your ideologies, you're wrong
+<mona> that's the entire point
+<mona> anyone who takes on the name is Anonymous
+<anonymous> is Anonymous
+<DLF> ^^
+<butts> The power in Anonymous comes from the obfuscation & power in numbers. It's not entirely about being anonymous. Though, anonymity plays a large part.
+<mv> think of doing work under the Anonymous banner as sharing the same network with hundreds or thousands of users
+<butts> People often say things like "How can you be in Anonymous? Your name is known." 
+<onionirc> we're still the largest online community the world's ever seen
+<butts> That's not how it works. Take on another alias. How does anyone know who you are? Be careful what you say and how to say it.
+<butts> onionirc: do you want to start on occupy, perhaps? or should we talk about lulzsec
+<crackerjax> lulzsec pleaz
+<onionirc> I could start about occupy
+<onionirc> let's do it chronologically though
+<butts> Honestly, I think there are a lot of good resources online for information about lulzsec
+<butts> 50 days of lulz > *
+<onionirc> LulzSec was an internet phenomenon, it was a group of individuals who spawned from internetfeds
+<mv> onionirc: I also believed them to be "gn0sis" as well at one point.
+<onionirc> They decided to go on a hacking spree for 50 days and disband afterwards
+<onionirc> sunny days as well mv, it doesn't really matter :p
+<butts> and a lot of things happened
+<butts> way too much to cover here
+<mona> lulzsec is also the sunny birthplace of the original s4l, the predecessor of these very lessons ;)
+<onionirc> there is a misconception about LulzSec though, their hacks WERE NOT political, they did it for the lulz
+<mona> rip canthack.us
+<onionirc> anyway, let's talk about Occupy
+<onionirc> In july of 2011 adbusters started a call to action for a protest "against corporate rule" on september 17th. 
+<mv> what is "s4l"?
+<mona> school4lulz
+<onionirc> After Anonymous picked up on it, it blew up massively and the initial aim was to hit the financial center of the world, wall street, with protests.
+<mona> -> BHA
+<onionirc> It started with around 2000 people which is huge for a protest. Despite the scale the media didn't pick up on it until mass arrests started happening. 
+<mv> ah okay I wasn't around much aside the LulzSec drama 
+<onionirc> The excessive use of police force and the use of pepper spray didn't only cause the protests to blow up in numbers even more, it spawned various memes of photoshopped images of the cops (who were identified by Anonymous) using pepper spray on babies and other non-threatening things.
+<butts> p.s. this is civil disobedience we're on now 
+<butts> sorry for not mentioning that. lol
+<onionirc> Anonymous even made a music video about one of the identified cops singing about his phone number and showing it on screen https://www.youtube.com/watch?v=oRvBqEXLLXk
+<butts> civil disobedience is essentially breaking the law as a form of protest. common tactics are things like laying down in the street, blocking a highway, stuff like that
+<mv> how did they I.D that cop? badge number?
+<butts> or in the case of occupy, occupying a park
+<onionirc> Occupy was one of the biggest protests we've ever seen in our generation with multiple protests across the entire world. But what should have been a protest movement slowly faded away, some say it was because they had no clear goals and no focus because of a lack of leadership 
+<onionirc> After a huge donation by the bank JP Morgan there were mass arrests in New York. It looked like they wanted to arrest everyone who was protesting at the time. This is what caused the decline in New York
+<butts> onionirc: others say it's because the federal government colluded with local governments and the department of homeland security to shut them down
+<butts> and there is plenty of evidence to support these claims
+<butts> there were multiple entrapment cases pulled off in occupy encampments around the USA by the FBI
+<onionirc> Similar events happened around the world, occupy camps were evicted by governments and after 7 months the occupy movement came to a halt. 
+
+<butts> in some cities, the local government got help from DHC and FBI to clear entire camps out. they would come in the middle of the night, throw everyone into buses, and throw all of the belongings into garbage trucks with trash compactors
+<butts> there is an instance in zuccoti park in NYC where a tent with puppies in it were thrown in a trash compactor
+<mv> I remember those days like yesterday being I routinely took the ferry to Manhattan
+<butts> but it did not see media attention
+<mv> the heavy police presence across from the park - where the vendors were
+
+<onionirc> The media had a huge role in discrediting Occupy
+<onionirc> They hired bums or looked for the people with the least knowledge
+<butts> the government's reaction to occupy was a reminder to many activists on why their work is important
+<onionirc> asked them why they were protesting and got answers like "uhhh, I don't know"
+<butts> even though most occupations had a concise list of reasons they agreed upon
+<onionirc> After talking to so many intelligent people on the ground, it is absolutely clear these interviews were staged
+<butts> No one can say that Occupy was the greatest thing in the world. It certainly had many faults.
+<butts> Some would argue (thegrugq) that leaderless movements are a waste of time.
+
+*** Modus #class -m by butts
+<onionirc> In the case of Anonymous being leaderless has been proven successful multiple times 
+<crackerjax> leaders always have their own motivations
+<butts> onionirc: For certain things, yes. But also, often they aren't really leaderless. And they are only portrayed as leaderless.
+<GloBalAnon32> yeah over and over again
+<waddlepon> have there ever been any informal leaders of Anonymous?
+<Sisyphus> How does Anonymous operate effectively despite its lack of leadership or centralization? 
+<butts> waddlepon: often. and they usually suck
+<fsec> waddlepon weev
+<isabelle> onionirc - actually... what has been really successful though..?
+<Reaper> can u briefly go over encrypting IRC chat?
+<anonymous> Reaper ask in the main room
+<onionirc> Reaper that is for another lesson
+<jetblackcloud> there is leadership within anonymous. but, there can be no dictators or presidents.
+<butts> isabelle: that depends on how you weigh success
+<isabelle> okay..
+<crackerjax> are the the previous raids just a smoke screen for the bigger picture
+*** Modus #class +m by onionirc
+<onionirc> there were several successful Anonymous operations 
+<onionirc> We had a huge role in the Arab spring
+<butts> (many are successful in that they get mass media attention, but don't really do much)
+<onionirc> Operation Iran leaked more information about the Iranian government than they could handle to go through
+<mona> individual operations can easily have leaders
+<butts> Not to mention, there are countless operations that take place in countries outside of the western world that we barely ever hear about
+<mona> and there have also been "de facto" leaders who, as butts said, sucked
+<mv> I believe that Anonymous has been lead by influential people briefly
+<onionirc> How about the time we gave proof a government contractor tried to give wikileaks and journalists false information to discredit them?
+<onionirc> How about the many security contractors operation antisec exposed in general?
+<butts> The emails that Jeremy Hammond leaked alone
+<butts> Many realizations came to light from those leaked spools
+<butts> including the spying on of occupy protestoers
+<mv> hah - remember HBGary?
+<mv> that was hilarious!
+<butts> indeed
+<onionirc> there is also terrabytes of information that went to wikileaks because Anonymous themselves didn't want to publish them, they were successful operations that never had a name, never had a twitter account
+<butts> props to Barrett Brown, even though he's another leaderfag egoface
+<onionirc> The popularity of Anonymous is because of those successful operations
+<onionirc> And I would argue that the people who are new to Anonymous are ruining that reputation rapidly
+<mv> and props to whomever social engineered the sysadmin of rootkit.com ;-)(Kayla I think?) that was hilarious. memorable indeed.
+<butts> Then again, many people have found their way to Anonymous just in the recent years. And the news stories that brought them there may have been a bit lacking in proper representation.
+<butts> Operations like OpKKK, OpISIS, OpTrump
+<mv> a lot of people were drawn to Anonymous because of the infamy it garnered via the media
+<onionirc> all bark and no bite
+<mv> a lot of individuals wanted the attention but never put in the work
+<butts> all basically consisting of just low bandwidth DDoS attacks lasting hours at maximum. coupled with obvious fabricataions
+<mona> they lap that shit up
+<butts> like when OpKKK tried to claim they took down a KKK website. when in reality the website had not existed for months
+<anonymous> dont be that guy
+<anonymous> Dont be Commander X
+<butts> or when OpKKK claimed to have hacked a major KKK twitter account. in reality, it was an account that they had created a year earlier and pretended to hack it
+<onionirc> Don't be TheAnonMessage
+<mona> the problem really lies in the MSMs poor understanding of hacking - ddos, defacement, and the more skilful stuff are all on the same level as far as they're concerned
+<mona> so what they latch onto is apparent magnitude
+<butts> indeed mona, they still have a hard time with the term hacking
+<mona> and ddos is good at looking impressive
+<mona> if you know fuck all
+<onionirc> that brings me to my work within Anonymous
+<onionirc> PR
+<butts> it used to be that hackers were angry with the media because hacking was always referred to as an evil or bad act.  nowadays hackers get aggravated because the media calls DDoS or reporting twitter accounts hacking
+<mona> in our defense
+<mona> it's really fucking annoying
+<onionirc> writing a press release to the media with an iconic Anonymous video is an important part of an Anonymous operation. 
+<onionirc> But people are doing it wrong
+<butts> they have the PR side down, but not the action side
+<onionirc> New anons think they need to gather support for their opration by announcing it first 
+<onionirc> before any coordination or execution is done
+<onionirc> The purpose of a press release is presenting what you have done
+<anonymous> It is annoying because last time i checked hacking is difficult and requires knowledge and practice.  So when you have idiots claiming the everything is "hacked" its really annoying.  Anonymous as of late has been the best at doing just that
+<onionirc> back in the day Anonymous would find a target like a government, gain access to it and slowly gather information in secret, once they had enough information, they would prepare the release of the information with a press release.
+<butts> Anonymous 2016 https://www.youtube.com/watch?v=Js02m-7qHyE
+<onionirc> They would also often deface the webpage of their target showing the entire database dump on the front page of the website
+<onionirc> Right now it seems whenever Anonymous sees a target, they show a press release and think Anonymous will automagically jump on it like a personal army
+<anonymous> ^ absolutley. no one does anything so then fake shit or reguratated hacks appear
+<anonymous> but since anyone can be Anonymous, its just part of it
+<onionirc> Planning in an Anonymous operation is key, so we made a checklist of how to run an operation.
+<onionirc> *What is the purpose of the op? 
+<onionirc> *What are you trying to accomplish? 
+<onionirc> *What kind of message are you trying to spread? 
+<onionirc> *Make sure that the operation has a foundation that has been thoroughly thought out so that the op doesn't have to suffer later because of poor planning.
+<onionirc> *Why should people care about the op? The op is nothing if no one cares about it. Clearly, you care about it so you had better be able to tell the rest of us why we should also care. While we encourage ops, it should also be said that not every grievance and/or government wrongdoing is a reason to rally an op.
+<onionirc> *What are the relevant/vital pieces of information relating to the op? Assume nobody else but you know anything about the topic of the op. Gather the more important information that will get people up to speed quickly.
+<onionirc> *How will you communicate the op to the public? Whether you are going to use Facebook, Twitter, videos, press releases, etc. have a solid plan on how to execute and spread the op.
+<onionirc> Once you addressed all these things, you're good to go.
+<onionirc> and we can't say it enough
+<onionirc> P̲L̲E̲A̲S̲E̲ ̲D̲O̲ ̲N̲O̲T̲ ̲M̲A̲K̲E̲ ̲A̲ ̲P̲R̲E̲S̲S̲ ̲R̲E̲L̲E̲A̲S̲E̲ ̲F̲O̲R̲ ̲A̲N̲ ̲O̲P̲E̲R̲A̲T̲I̲O̲N̲ ̲I̲F̲ ̲Y̲O̲U̲ ̲H̲A̲V̲E̲N̲'̲T̲ ̲D̲O̲N̲E̲ ̲A̲N̲Y̲T̲H̲I̲N̲G̲ ̲T̲O̲ ̲B̲A̲C̲K̲ ̲U̲P̲ ̲Y̲O̲U̲R̲ ̲W̲O̲R̲D̲S̲
+<anonymous> ppl think of Anonymous as being this family "anonfamily" shit or a lifestyle. day in day out. no one cares about your anonfamily
+<onionirc> There are a million things that can go wrong in the planning of an op and when you don't deliver while getting the public excited with a press release it causes a MAJOR discredit for the movement as a whole.
+<butts> "anonfamily" is what gets people caught
+<anonymous> 3
+<DLF> true
+<butts> your fellow activists may have common goals, but they do not need to know who you are
+<anonymous> i think as mv once said, there is no love on the internet
+<mv> quoting my "infamous" chat log with Sabu lol
+<butts> https://soundcloud.com/ny-rats/sabuvi
+<mv> he proved my point.
+<anonymous> it was the only redeeming thing i ever saw from you
+<anonymous> but yeah, you were right
+<butts> i was just sittin here appreciatin ur friendship and how loyal you are :^)
+<mv> I had experienced his kind before--I was raided at 17 because of a "friend" and afterwards we had a couple of informants in Kryogeniks
+<mv> he exhibited signs I learned from those individuals
+<butts> yeah, practice makes perfect
+<butts> and that kind of relates to something you were saying earlier mv
+<butts> remain neutral
+<butts> get involved, but don't take sides. that sort of thing. always keep a watchful eye
+<anonymous> thats good advice mv
+<butts> informants will have a hard time leading you or pinching you and will end up tripping over themselves trying to get you to slip
+<mv> my experiences as a teenager enabled my foresight thankfully. not everybody in Anonymous had that kind of experience, and subsequently fell for Sabu's bullshit.
+<butts> Any questions?
+*** Modus #class -m by butts
+<P1X3L> can u give some site (tuturials) for begginers??
+<Sisyphus> What are the intricacies of organizing and performing a operation, or will that be covered in a separate lesson?
+<Sisyphus> To the teachers, what are your qualifications for teaching us? What's your background with Anonymous?
+<Sisyphus> How is noncentralization better for Anonymous than being centralized, if noncentralization leads to issues such as people doing PR wrong, unregulated raids, and ruining the reputation of Anonymous?
+<Sisyphus> Sorry for all of the questions, I write these as I think of them and send them during the Q&A periods.
+<Pixel> When will class end?
+<anonymous> Sisyphus:that is a good question
+<Sisyphus> ^
+<NullMind> P1X3L beginner for what?
+<skrillysama> the tutorials in the page in onion i think
+<Gnaw> where can i find the chat logs considering i missed a chunk 
+<Pixel> I have to do some things soon so I was wondering
+<mv> hah he had that clipboard ready
+<zelith> if a memeber get arrested what do we do 
+<butts> Sisyphus: we should not be giving out specific qualifications
+<P1X3L> NullMind programers
+<ozma> Question: How do you advertize and build the beginnings of an Op, to have some result presentable, or to get enough people to DDOS (e.g. OpWikileaks DDOSing of Paypal), without something resembling a "Press Release"? Which necessarily has to happen before you have anything to show for it.
+<Gaylien> i dont expect ops here, but will we intellectually learn how to communicate with each other, seems like ops need a hell lot of planning.
+<torist> can you talk a bit more about identifying informants/LEA?
+<P1X3L> NullMind where we start?
+<Secrypt> Hey
+<johndoewannabe> Is this the end of class?
+<butts> but, for reference, without giving out identities, members of our "staff" are from Blackhat Academy and, regarding anonymous, some of us have been involved with Anonymous since the beginning.
+<NullMind> P1X3L go on overthewire good wargames teaches linux and web hacking and lot of other shit
+<Gnaw> Is this "class" going to end up working together on something or what is the end result in teaching us 
+<Gaylien> it's a long way from using > | grep to exposing corrupt governments ...
+<Secrypt> I suppose
+<Secrypt> OnionIRC I sent you message I hope you check it out
+<Reaper> mv u did ops with sabu?
+<Sisyphus> That makes sense. I guess I'm asking more along the lines of your involvement in Anonymous, although I understand if you can't say that
+<butts> We have either been directly involved with, created, analyzed, protected, etc various operations over the years.
+<kashloca> identifyin informants would be nice topic
+<fsec> Gaylien theyre giving you the tools its up to you on how to use them
+<mv> ozma: if you're planning on downing a target it's best you learn how to assemble a botnet and do it that way - discard all of that LOIC bullshit that requires your operation participants endangering themselves.
+<kashloca> sabu like informants
+<skrillysama> are we black, white, or greyhats /
+<GloBalAnon32> BlackHat academy?
+<butts> kashloca: sure we'll cover something like that 
+<Santa> Sisyphus pm?
+<mona> skrillysama: you want me to tell you which way to wipe your ass too?
+<Santa> too noisy in here
+<anonymous> mona:heheheh
+<GeneralImpact> mona: lmao
+<skrillysama> mona LUL 
+<Sisyphus> Santa, would you like me to PM my questions to you?
+<butts> mona: side to side
+<Santa> no i would like to answer them in pm
+<onionirc> Secrypt: I'll click on that link when I'm not on my home pc, maybe in a starbucks some day 
+<Sisyphus> Ah, okay!
+<butts> also "wipe your ass" omg u clearly don't live in india
+<anonymous> front to back
+<mona> lol
+<GeneralImpact> poo in loo
+<Secrypt> Ok
+<anonymous> doxed
+<mona> FUCK
+<Secrypt> Its just my website
+<GloBalAnon32> lulz
+<mv> Reaper: I met Sabu via AOL instant messenger. He approached me because I was a "prolific AOL hacker" and he needed some accounts - I knew about him and the things they were doing and I was admittingly enticed by the chaos and obliged with his request and then we became "friends"
+<onionirc> I still don't click random .onion sites Secrypt 
+<Secrypt> Thats what I got whonix for
+<mv> I was also friends with "Kayla" as well--but I didn't really know the rest of the guys
+<NullMind> so is #learninghub active
+<zelith> if anonymus fight for internet freeedom why dont we have secure ssl
+<Secrypt> I only click .onion sites using Whonix onionirc
+<butts> zelith: we do have ssl here
+<johndoewannabe> Has class ended? And are the logs available online yet?
+<butts> though, it is not required since you're connecting to a hidden service whichi means it's already end to end encrypted
+<Pixel> Available online?
+<mv> Sabu shared some cool stuff with me as well prior to him being flipped
+<Gaylien> thanks for the list btw! it's pasted, saved and archived! ;)
+<waddlepon> is there any way to access prior lessons?
+<butts> I think this is the end of the class, but we'll stick around to talk and answer questions for a bit.
+<zelith> what about the nsa they are listing on every trafic
+<mv> like webshells on some pretty large websites, admittingly, they appeared to be very soft targets with very old kernels and a lot of PHP lying around
+<Gnaw> Is this class a daily thing or do we just join main to see when the next one is
+<johndoewannabe> thanks.
+<GloBalAnon32> is it possible to find anons around where we each live?
+<butts> zelith: but it is still end to end encrypted
+<butts> your packets from your computer to this IRC are encrypted all the way through
+<onionirc> If you want to find anons attend protests
+<Secrypt> zelith you can't crack the onion
+<butts> with perfect forward privacy
+<Gaylien> what's the world become when the hacker is arrested and the criminals he's exposing kinda walks free? this world is fucked up!
+<zelith> ok just wanted to make sure thanks
+<onionirc> tje annual Million Mask March is a great way to meet each other
+<onionirc> *the
+<butts> i agree Gaylien 
+<GloBalAnon32> onionirc: perfect 
+<waddlepon> is there any way to look at prior lessons?
+<Introvert> Anyone knows Vinnie Omari? What happened to him?
+<butts> previous lessons can be found here http://xerxesolusfedexu.onion/
+<GloBalAnon32> ^^
+<mv> anything said in the chat room is publicly available to anyone else in the room and prone to being logged, however if you communicate with another user via private messages, if you're using Tor Messenger and so is the other party it should be encrypted by default
+<Gaylien> non of those ops i like with Anonymous is actually criminal. i find them highly ethical and neccesery for a better world.
+<Gaylien> great lesson by the way. as always! thanks a lot guys!!
+<vladtheimpaler> agreed.
+<butts> yes there are plenty of anonymous operations that do not pertain to any sort of hacking
+<ozma> Probably don't answer this if this isn't the end of the class 'cause this is an end-of-the-class question, but where to from here?
+<zelith> what if a memeber gets caught 
+<butts> opsafewinter, for example
+<butts> they work towards providing clothes and shelter for h omeless people
+<Gaylien> <3
+<Gaylien> i love it!
+<zerophreak> what is the next class?
+<marcolini> great lesson  thanks a lot guys!!
+<barracuda> or, you know, for secure queries (private messages on irc), get a proper IRC client that has a proper OTR plugin
+<barracuda> like weechat
+<barracuda> and most likely irssi too
+<Secrypt> Listen people if you don't want to be deanonymized using Tor just use Tails or Whonix
+<Guli3lmus> class finished?
+<Pixel> butts: I've never opened any onion links before so should I get something to view them or just use my regular browser?
+<ozma> What notable ways do you see Anonymous changing in the future? On a "years" scale?
+<mv> if anyone if compromised by law enforcement, do not exile them but keep them at arms length
+<GeneralImpact> What's the general opinion on QubesOS?
+<barracuda> Pixel: use the tor browser bundle
+<mv> in other words, be careful what you tell them.
+<barracuda> and set security to highest
+<butts> most of the deanonymizing that happens to tor users is through bad opsec or through tor browser (firefox) exploits
+<Gaylien> ethically, philosophically Anonymous are one of the most ethical people in the whole fucked-up-world!
+<zelith> so do we just leave them
+<Secrypt> GeneralImpact qubesos is a great OS
+<Pixel> barracuda: thanks
+<Gnaw> whats the end game for teaching this class & also when does it like.. end
+<Gaylien> with exceptions as we heard today.
+<barracuda> Pixel: np
+<Reaper> mv did sabu try to catch u slipping up?
+<butts> Gnaw: this specific class?
+<mv> if you can, test them. typically if I'm "hacking" with a person and they're detained and return immediately I request they own something.
+<ozma> Gaylien: ... Nooo...
+<mv> Reaper: yes.
+<zerophreak> what's the topic for next time?
+<GloBalAnon32> who cares if i
+<Gnaw> No just what you and the other ops are doing in total
+<butts> mv: that's not exactly 100% effective anymore
+<DLF> barracuda: where set highest ?
+<butts> we know for a fact that informants commit crimes under FBI gaze
+<butts> without concern
+<GloBalAnon32> who cares if class is over ppl lol
+<barracuda> DLF: there is a security slider in the tor browser settings, also explained on first startup
+<NullMind> is this class over?
+<butts> Gnaw: we plan on carrying classes on for as long as we can. hopefully forever
+<Secrypt> Sabu got caught because he wasn't using Tor when he connected to the IRC server
+<butts> but probably not :p
+<zerophreak> yes
+<barracuda> setting it to highest will disable all plugins and javascript
+<NullMind> finally
+<Secrypt> Never mess up
+<butts> NullMind: yes
+<zelith> is donald trump wins or clitton what will happen
+<GloBalAnon32> keep ingesting the knowldge
+<fsec> zelith as if anybody knows?
+<JackofHearts> thank you very much for todays lesson have a good one
+<butts> hopefully more people will be motivated to become activists, zelith 
+<Gnaw> butts: where to find schedule or is this just daily at 10UTC?
+<NullMind> i have a shit ton of knowledge loic can power me through to google server yaw
+<ozma> Also, request for next time: Can we have a #class-discussion channel for un-+m-ed discussion alongside the class?
+<butts> Gnaw: usually the channel topic for #school4lulz has information about upcoming classes
+<fsec> butts how do i become more involved in shit on here
+<mv1> sorry my internet dropped
+<butts> also we post updates on the @onionirc twitter page
+<Pixel> I don't have to be a black hat to particpate in these lessons right?
+<GloBalAnon32> OnionIrc: thanks for this!
+<kashloca> thank you for the lesson 
+<butts> 23:38:37  ~       butts| mv: that's not exactly 100% effective anymore
+<ozma> That way, it's not interrupting, but people can ask each other simple, small questions.
+<GloBalAnon32> This is spectacular
+<butts> 23:38:46  ~       butts| we know for a fact that informants commit crimes under FBI gaze
+<butts> 23:38:49  ~       butts| without concern
+<kashloca> c ya
+<NullMind> so lets get to the technical side?
+<GeneralImpact> Pixel: I say just forget about the 'hats' and do what you think is right (and consider OPSec and all that)
+<GeneralImpact> You don't need to be anything to participate. Just read, lurk, ask questions - the classroom is to teach us
+<zerophreak> weechat better than hexchat?
+<butts> fsec: are their topics that you feel you are well informed enough to teach a lesson about?
+<anonymous> yeah join #class-discussion
+<fsec> hmmm
+<barracuda> zerophreak: 'better' is personal, but weechat has a great OTR plugin
+<butts> #main can be used for class discussion
+<mv1> zerophreak: depends on your preferences. I personally prefer command line based clients
+<Pixel> GeneralImpact: :)
+<fsec> general python programming
+<NullMind> i could teach networking
+<barracuda> weechat is a CLI client btw, just like IRSSI
+<alkovich> what is the longest prison time if we are arrested?
+<Gaylien> text-based!
+<otacon> why not use ricochet?
+<RosaLux> thanks for lesson cya
+<Gaylien> yee!
+<torist> weechat even has a axolotl plugin now
+<butts> ricochet is good.
+<fsec> web development, networking
+<barracuda> I prefer weechat because the configuration is awesome and it has relay functionality
+<Kaze> tyvm for the lesson ^^
+<mv1> what's axolotl?
+<Sisyphus> Thank you to all of the teachers and participants for the lesson!
+<ozma> butts: Main varies too much. It has it's own topics, and it's the first thing people drop into if they're just stopping by.
+<butts> btw mv if you register your nick you can reclaim it if you get d/c and it hasn't left
+<zerophreak> python programming would be great
+<barracuda> alkovich: that totally depends on what you do, doesnt it
+<GloBalAnon32> HexChat is good right
+<Pixel> I was thinking about setting up an account for secretive purposes, is there any that are good?
+<NullMind> i could do lesson on computer networks which is fundamental in hacking
+<Reaper> will there be a class on phone number spoofing for social engineering purposes? 
+<Secrypt> onionirc ....
+<zelith> what is the best linux for hacking (i think kali) but is there a better one
+<butts> maybe Reaper if we find someone to teach it
+<mv1> honestly, I've seen some crazy stuff happen to a known library like libpurple
+<torist> its a double rachet algorithm
+<Gaylien> the coolest thing with tor messenger is to verify the shasums and the gpg! xD
+<torist> its a double ratchet algorithm
+<mv1> and here we are blindly utilizing... instantbird..? never heard of it in my life. has it even been audited?
+<torist> the one used by signal?
+<NullMind> Reaper use spooftel
+<torist> mv1: instantbird is tor messenger
+<ozma> torist: Yeah.
+<torist> or pidgin 
+<mv1> torist: yes I know.
+<NullMind> Reaper they except bitcoin too
+<zelith> what linux distro should i use for hacking 
+<Gaylien> xD
+<butts> i dont think there's been an audit of instantbird, mv
+<fsec> butts im not super leet but im knowledgable on lots of IT shit, some basic hacking, but im an oldfag and when i heard about this i wanted to get more involved like i used to be
+<torist> and I think the tor guys did audit the code
+<Gaylien> a distro with a terminal.
+<barracuda> zelith: use Windows, you'll get hacked much easier
+<torist> and changed some base libs
+-*- barracuda runs
+<zelith> i use kali but i want to swith to another one
+<zerophreak> quick question
+<barracuda> why is it that you want to switch?
+<butts> yes zerophreak 
+<zerophreak> why do so many hackers use apple macs?
+<zelith> my os
+<butts> because they are silly
+<NullMind> Because its shiny ughggggh
+<Gaylien> xD
+<zelith> apple has a terminal
+<GloBalAnon32> excellent class ppl, c u next class!
+<Gaylien> i wish some hackers could adopt me.
+<Gaylien> xD
+<waddlepon> ty for the excellent class
+<barracuda> because it is an UNIX based OS and the hardware is nice (good build quality, good battery time, etc).. other than that, there are no real advantages
+<saimita> best way to get pass wifi, method with wordlist, without wordlist like method reaver?
+<Invador> is class stilll going on??
+<TrashyPumpkin> Because they dont mind throwing away their trash can in a trsh can if something goes wrong 
+<butts> class just ended Invador 
+<zelith> barracuda which one
+<fsec> barracuda how about Black Arch
+<barracuda> zelith: eh? I was talking about Mac OS X
+<barracuda> that is UNIX based
+<lorimeyers> butts and onionirc: Do you ever get the impression that Anonymous was used (unknowingly) from time to time by government agendas? Like for example the OpIran you mentioned?
+<fsec> and?
+<barracuda> zelith: its personal really, there is no 'best OS for hacking'
+<Invador> butts: can i have transcript
+<NullMind> fsec i actually installed blackarch ontop of arch 
+<fsec> its either that or windows
+<butts> Invador: eventually
+<zelith> barracuda which one would you use
+<anonymous> lorimeyers:constantly and it still is
+<zerophreak> payig $1000 for a good battery and unix based OS
+<zerophreak> wow
+<Introvert> Just use Kali and you are fine
+<alkovich> butts: how we should run website with javascript in TOR browser?
+<onionirc> Operation Iran was done by people who genuinely believed in the Arab Spring
+<butts> for the money spent on a mac you could get a way higher spec desktop
+<zelith> Introvert i do
+<barracuda> zelith: personally I prefer Debian (server setup, on which I setup Fluxbox for my GUI)
+<NullMind> alkovich you dont
+
+<zelith> barracuda ok thanks
+<vladtheimpaler> kali is good for pen.testing NOT for anonyminity
+<zelith> then what is good for both
+<Gaylien> what is best for hacking, isn't that a secterian question? like what linux distro is best for coding?
+<Gaylien> it's just a q
+<saimita> anonyminity best is tails 
+<fsec> its all presonal preference Gaylien
+<vladtheimpaler> whonix for personal protection imho
+<Gaylien> that's my point
+<Pixel> Is there any site that can help me protect me? :P
+<Gaylien> sure
+<vladtheimpaler> tails is overused
+-*- DLF I have a stupid question. Ma dad has a wlan. How can i test if it is set upt right ?
+<fsec> i use ubuntu for development
+<saimita> why is overused?
+<alkovich> barracuda: is it safe to run site with javascript on TOR?
+<Invador> what was today's lesson about ??
+<barracuda> I would suggest not to
+<barracuda> @ alkovich 
+<zelith> fsec that what i am using right now
+<barracuda> javascript engines are pure hell, I _always_ disable it
+<vladtheimpaler> when an OS gets so many users it becomes more of a focus for attacks
+<barracuda> I _always_ set my tor browser to max security
+<Pixel> Invador: Anonymous' history and such
+<Gaylien> cool
+<zerophreak> anyone here ever attended DEFCON?
+<DLF> barracuda: where is the fucking slider
+<Gnaw> Cya next class guys 
+<vladtheimpaler> no, i plan on going this year hopefully
+<Pixel> zerophreak: I really want to but I can't afford it
+<Gaylien> tor has NoScript, i use that in firefox too
+<changer> shit, did class just end?
+<rackham> butts: 
+<rackham> we ready to shut this down?
+<barracuda> DLF: https://people.torproject.org/~mikeperry/images/SecuritySlider.jpg
+<zerophreak> I want too as well
+<Pixel> changer: It ended like 10 mins ago
+<Gaylien> you can even use LibreJS
+<barracuda> DLF: set it to high, my recommendation :)
+<changer> damn... 
+<Gaylien> there are free java scripts too
+<DLF> i will
+<alkovich> is this IRC will be forever?
+<Gaylien> free software yey!
+<zerophreak> Richard Stallman ftw
+<Gaylien> woops
+<fsec> richard stallman is a weirdo
+<Gaylien> damnit!
+<fsec> i saw him give a lecture and i had to leave halfway through
+<Gaylien> like weirdo is bad
+<Gaylien> xD
+<zerophreak> aren't we all a little bit weird
+<barracuda> only on fridays
+<DLF> barracuda: this is ubuntu
+<Gaylien> hehe
+<gh0st> Thanks to all the teachers for this class/knowledge. Great class! 
+<mv1> sorry I just caught up--was trying to ghost my nick
+<barracuda> DLF: yes, OS does not matter, the slider is in the same place for all the Tor Browser versions
+<Gaylien> i think Stallman et al are doing a great job!
+<rackham> mv1: it is RECOVER on this ircd
+<DLF> hmm
+*** Modus #class +i by rackham
+<Gaylien> so does fsf
+<rackham> alright ladies and gents
+<rackham> #class dismissed

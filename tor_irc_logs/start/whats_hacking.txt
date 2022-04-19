@@ -1,0 +1,443 @@
+<kr0> lets get it going
+
+<benis> is shitflooding an irc channel hacking? :p
+
+<kr0> I'll cover a few things
+<kr0> > Hacking today
+<kr0> > abit of Hacking ethics 
+<kr0> > and How everything will turn out
+
+<kr0> Okay
+<kr0> HACKING EVOLUUUUUTION
+
+<kr0> the work of a security guy was pretty simple back then
+<kr0> NOBODY and I mean NOBODY applied Patches 
+
+<kr0> all you had to do is 
+<kr0> > Port scan (Nmap)
+<kr0> > Banner grab
+<kr0> get a exploit
+<kr0> booom
+<kr0> > Profit
+<kr0> Nowadays it changed
+<kr0> (except Sony)
+
+<anonymous> lol
+
+<kr0> More and more people apply patches
+<kr0> The software is easier to handle
+<kr0> and everyone likes to be a security guy
+
+<benis> security is really easy until you have to actually do your job
+<kr0> may you noticed the TalkTalk hack from a few months back
+<kr0> You know what the hackers used ?
+<kr0> SQLMAP
+
+<benis> really?
+
+<kr0> a automated SQL explotaion tool
+<kr0> 8 Million people were affected 
+<kr0> Little kids used a KNOWN Tool to hack a Company
+
+<kr0> > Known Pattern 
+<kr0> > Known Vuln
+
+<kr0> everything was known 
+<kr0> and people were still able to fuck up baaadly
+
+<kr0> The whole game changed
+<kr0> Most of the modern day hacks/leaks are caused by WebApp Flaws
+<kr0> SQLi / RCE / LFIs
+<kr0> No Zerodays
+<kr0> CUMMON Vulns
+<kr0> Why ?
+<kr0> people like to apply 'Cool Stuff'
+
+<kr0> Wordpress for example
+<kr0> alot of Plugins
+<kr0> and alot of possible ways to fuck up
+
+<benis> wordpress is a good unauthenticated web shell with a side feature of being a blog
+
+<kr0> pretty much
+<kr0> People like to get a "All in one Package"
+<kr0> No Devs 
+<kr0> No work
+<benis> no brain
+<kr0> NO GOD DAMN SECURITY
+<kr0> Things are getting old and Vuln
+<benis> linux mint got their linux images backdoored from skids breaking wordpress
+<kr0> and there are tools out there exploiting these Vulns by a Point-Click action
+
+<benis> so it can happen to anyone
+
+<kr0> and this can be dangerous af
+<kr0> Look at Linux Mint
+<kr0> Millions of Users 
+<kr0> rekt by Wordpress
+<benis> (this is why you always verify gpg sigs)
+<kr0> ^
+
+<kr0> Imagine the Damage if they didn't patched it real quick
+<kr0> anyways
+<benis> Imagine the damage if it wasn't just skids
+
+<DLF> wat is skid ?
+<kr0> Thats why
+<kr0> alot of people (Including me ) changed their way to work over to Web App Sec
+<kr0> People don't even Port Scan anymore at this point
+
+<kr0> Okay
+
+<kr0> before I go to my next Topic , are there any questions related to that ?
+
+*** Modus #school4lulz -m by kr0
+
+<kr0> no ?
+
+<benis> ask questions
+<zelith> no
+<Gaylien> how exactly to gpg test a downloaded iso?
+<zero> just joined so nop
+<anonymous> good question
+<xerxes> that is a good question
+<zelith> i use kali linux is that fine
+
+<benis> gpg --verify somefile.iso.asc
+<benis> i think
+<butts> https://www.gnupg.org/gph/en/manual/x135.html
+<Gaylien> i need to download the key first?
+
+<zelith> also can they be brute forced 
+<benis> yes and verify the key, and trust the key
+<benis> not really
+<z3r0phr34k> hi
+<kr0> zelith: I'll come to that In a minute
+<benis> the fingerprints yes
+<Gaylien> great!
+<zelith> ok thanks
+<anakata> yeah, the web of trust is a complex thing
+<kr0> good ?
+<butts> tor has a good page on how to verify signatures of their packages/installers https://www.torproject.org/docs/verifying-signatures.html.en
+<benis> too complex IMO
+<butts> you can use that and apply it to other isntances
+<benis> anyways
+
+<benis> back to hacking
+
+*** Modus #school4lulz +m by kr0
+
+<benis> what is.... this hacking?
+<kr0> Okay , Hacking you hear that alot 
+
+<kr0> There is no real definition for the Term
+<kr0> so basically 
+<kr0> There is 
+
+<kr0> Hardware Hacking
+<kr0> Software Hacking 
+<kr0> > RE
+<benis> Social Hacking
+
+<kr0> Big one
+<kr0> If you use the term "Hacking"
+<kr0> You mean alot of things
+<kr0> SO
+<kr0> If I ever hear that question again " how to hack ? "
+<kr0> I'll kick ur ass
+<butts> The term hacking originates to the MIT Tech Model Railroad Club. The original meaning for a "hacker" was someone who applies ingenuity to create a clever result, known as a "hack"
+<kr0> You can hack ATMs
+<kr0> You can hack Toasters
+
+<kr0> You can hack Websites
+<kr0> You can hack People
+<kr0> alot of ways
+<DLF> and Shaq
+-*- anonymous literally hacks people into pieces
+<kr0> c ?
+
+<kr0> Thats why people could misunderstood your questions .. " how to hack ?"
+<kr0> Okay
+<kr0> back to the definition we all love 
+<kr0> "hacking teh Planets"
+
+<benis> unauthenticated access to computer systems
+
+<kr0> Okay
+<kr0> back from APPLY A PATCH YOU FAG 
+<kr0> To ./sqlmap.py -u http://fbi.gov
+<kr0> see a pattern ?
+
+<kr0> People made those mistakes
+<benis> people continue to make those mistakes
+<kr0> build shitty Web Apps
+<kr0> are just stupid
+<benis> with the rise in "learning to code" it will get worse
+
+<kr0> So hacking anything isn't hard at all
+<ad3pt> using a feature built into the software is just using a feature, its not hacking.
+
+<kr0> Thanks for the ads 
+<ad3pt> just wanted to put that out there
+<kr0> fair enough
+<kr0> Like I said
+<kr0> "What is hacking?" is a question of definition
+<kr0> The media calls a ordinary DoS , a hack
+
+<benis> and the the law has a very broad net that it casts on what "hacking" is. i.e. weev at&t crap
+<kr0> and uber leets WANT A 0DAY
+
+<kr0> exactly
+<kr0> so 
+<kr0> Hacker ethics
+<benis> so what happens is that any kiddo that finds a bug is LE EBIN HAXOR now it seems?
+<kr0> I'll keep it short
+<kr0> benis: pretty much
+<kr0> If you're getting to know Computers , you're awesome
+<kr0> If you're getting to know Code , you're awesome as well
+
+
+<kr0> If you're using that Knowledge to fuck with people , its non of my business
+<kr0> Now
+
+<kr0> If you're using that knowledge to really fuck with people , Ransomeware on Hospitals for example
+<kr0> You're a huge faggot
+<anonymous> with alot of money
+<anonymous> ^_^
+<kr0> DONT UNDERESTIMATE MY POINT
+<kr0> its true tho
+<benis> ransomware can be bought as a kit
+<benis> so it's rather skidish
+<butts> but hey, good job if you hit a bank, police station, corporation, insurance company, debt collection agency, military or state establishment with it
+<anonymous> what isnt skidish?
+<butts> ;)
+<anonymous> ;)
+<kr0> I think morals shouldn't be thought by a stranger on IRC
+<kr0> Thats whhhhyyy
+<benis> if you need morals taught via irc then something is wrong
+<kr0> hacking today and how it will be in 10 years
+<kr0> definatly
+
+<kr0> HACKING
+<kr0> wooohooo Fuck yea
+<kr0> will change 
+<benis> thank god internet of things
+<kr0> Take a look at the InfoSec Community 
+<kr0> they will PATCH ALL TEH THINGS
+<kr0> They'll try to make blackhat life harder
+<kr0> and they will
+<kr0> BUT Stoopid people will stay 
+<kr0> they'll get everything in teh webs
+<kr0> your fridge 
+<kr0> your table 
+<benis> also your car
+<anonymous> car
+<kr0> your chair
+<kr0> exactly
+<anonymous> heart pump
+<benis> and your heart transplant
+<anonymous> :D
+<anonymous> damn benis
+<butts> your front door's locking mechanism :)
+<benis> fug you keep steeling
+<kr0> are you guys one ?
+<kr0> exactly
+
+<butts> the ability to turn on your stove
+<benis> the ability to turn off the car's breaks
+<kr0> That means
+<benis> it's like diehard 4 but real
+<kr0> alot more ways to fuck up
+<kr0> more 0days
+<anonymous> moar vulns
+<kr0> everything will stay the same
+<butts> >yfw people don't know you can already send packets across electrical lines
+
+<benis> >tfw i know 50% of congress's porn habbits
+<anonymous> and what abou those new smart meters:X
+<kr0> except in a few years there will be a class titled " How to get rid of people , using sqlmap"
+
+<anonymous> dont excite me like that kr0
+<kr0> Social Fooling will alawys be a thing 
+<benis> don't tell the CIA
+
+<kr0> get ready
+<kr0> look at Cracka , the fag who got into John Bredans Email 
+<kr0> Okay it was AOL 
+<kr0> BUT STILL
+<benis> the director of the CIA
+<benis> dude
+<benis> that's not good
+<anonymous> Guccifer
+
+<kr0> The haxor of Hillary
+<anonymous> the guy wasnt even technical
+<anonymous> he was creative
+
+<kr0> The biggest hacks have been executed by noobs 
+<kr0> Thats why 
+<anonymous> so true
+<kr0> Don't rely on Kali
+<benis> the biggest PUBLIC hacks have been executed by noobs
+<kr0> fair enough
+<anonymous> lol
+<anonymous> thats the noob part making it public
+<anonymous> :X
+<kr0> Don't rely on 7 proxeas
+<kr0> don't even rely on us
+<benis> don't rely on anything but math
+<kr0> USE YOUR BRAIN 
+<benis> ^
+<benis> brain power
+<kr0> and you can basically hack everything 
+
+-*- kr0 drops mic
+<anonymous> literally, the ppl in this room are at an advantage that no one else has ever been at
+<benis> except for facebook, they're hard core
+<kr0> any questions ?
+<anonymous> You have the entire internet to search and read on anything
+
+*** Modus #school4lulz -m by kr0
+
+<anonymous> Why are hackers getting busted so much?
+<zero> ego maybe?
+<anonymous> shut the fuck up
+<anonymous> ^
+<anonymous> yes ego
+<benis> ^
+<benis> ego is your worst enemy
+<zelith> what about brute force
+<anonymous> kills more hackers then anything
+-*- DLF ego is not good for opsec ! Sic
+<benis> if you want to hack for name and fame, do yourself a favor and get arrested
+<kashloca> bad opsec
+
+<anonymous> its tough, you do something amazing and then you cant tell anyone.  Thats hard for anyone, but in the current world of informants...you cant
+<Gaylien> i used the shasum for last distro. i forgot the gpg. am i still safe?
+
+<Gaylien> if something were wrong, fedora, debian etc. would announce it right?
+<kr0> Gaylien: gpg is a way to verify IF the File you're getting is the same one they placed in there
+<zelith> nsa is spying on us how?
+<benis> shasum is probably fine BUT you need to get the right sum
+<benis> gpg solves that
+
+<anonymous> the nsa has never been not spying on you, its no diferent then any other corporation
+<Gaylien> the shasum were correct.
+<zelith> oh
+<kr0> zelith: They listen to your traffic
+<kr0> your phone class , etc
+<benis> nsa does bulk collection and then pulls up the file on you when you commit wrongthink
+<zelith> what about ssl
+<kr0> learn how to encrypt them
+<pretzel> in the light of bullrun, edgehill, etc, what encryptions can be trusted?
+<Gaylien> using gpg to encrypt email, won't that flag me?
+<benis> "ohay since you've been arrested let's take a look at your nsa file so we can throw you away for life"
+<zelith> thanks
+<anonymous> parallel consctuction
+
+<kr0> Gaylien: alot of people are encrypting their mails
+
+<benis> anonymous: you need to explain the term so people can understand
+<kr0> and still
+<kr0> its encrypted
+<Gaylien> great!
+<anonymous> ok benis
+
+<zelith> humans will always be a flaw in security
+
+<anonymous> is anyone familar with parallel construction?
+
+<Gaylien> no
+<anonymous> alright
+<kashloca> no
+<pretzel> parallel construction = coming up with dummy case to conceal the real investigation
+
+<anonymous> the DEA was busted using it quite a bit
+<anonymous> pretty much
+
+<benis> i.e. "ur arrested for possion of marijuana"
+<anonymous> using illegal means to build a legal investigation
+<benis> now you're being prosicuted for treason
+<anonymous> right
+<Gaylien> omg
+<kashloca> okay to collect evidences
+<benis> isn't that ... like... illegal? :^)
+
+<Alem> what do you guys think about PRISM and Sistems like that . . .  
+<zumbaye> good info
+
+<anonymous> "oh we pulled him over for smoking a joint and happened to go threw his phone and we found him selling secrets to china"
+<anonymous> but really they were already listening to your phone
+<-> shirase heißt jetzt BPS
+<anonymous> so they need a legal pretext first
+<Gaylien> in other words, don't smoke and drive?
+
+<anonymous> A tactic known as “parallel construction” allows law enforcement to capitalize on intelligence information while obscuring sensitive sources and surveillance methods from the prosecution, defense and jury alike.
+<fakir> hello
+<anakata> In other words, don't make it easy for them to have a reason
+
+<Gaylien> got it! cool.
+
+<kashloca> is tor can guarantee annonymity for example for countries that don't use tor much??
+<fakir> a question when we learn how to break into a pc ethics form
+<fakir> ?
+<fakir> a question when we learn how to break into a pc ethics form?
+<benis> don't rely on tor
+<benis> or anything else
+<benis> tor is pretty good but it won't help if you're fucking dumb
+<anakata> ^
+<Gaylien> what you mean, benis? how to stay safe if not relying on anything?
+
+<Anonymous_Rebel> If you can't rely on anything how can you know if you're safe or not?
+<benis> that is the question we all ponder every day
+<zelith> what do people use to get password beside phirshing and brute force
+<benis> :<
+<anonymous> he means it takes more then software alone to keep you safe
+<anakata> Asume everything you use is compromised
+
+<devnull> be very paranoid.
+<benis> know your tool, assume everything is broken and plan accordingly
+<Gaylien> i'm paranoid as hell!
+<benis> tools*
+<benis> not enough
+<Tech-Know> zelith: dictionary, key logger, guessing
+
+<kr0> aight guys I hope you got something out of that lesson, I'm out 
+<benis> kk
+<benis> -- LESSION OVER--
+
+<butts> thanks for today's mini lesson, kr0 
+<Gaylien> sure, thanx! you're awesome!!
+
+<kr0> o/
+<zelith> anything else 
+<Anonymous_Rebel> Thanks!
+
+-*- devnull bows.
+<kashloca> thanks kr0 a good reminder though
+
+<anakata>  -- LESSON FINISHED --
+<kr0> np butts 
+<Gaylien> great lesson!! yet another corner stone to build on!
+<anakata> \o/
+<DLF> ugh. already over ?
+<Gaylien> THANK YOU!!
+
+<Anonymous_Rebel> I got signed out for part of it and missed some, so when will todays script be posted?
+<anakata> Thanks kr0 
+<Tech-Know> zelith: passwords you've previously used on services that have been compromised
+<-> dis0bey heißt jetzt Anon26643
+
+<japa> notes ? 
+<Parabole> thank 
+<benis> --- END IRC LESSION --
+<zelith> thanks Tech-Know 
+<Gaylien> with teachers in school had this much brains!
+<Tech-Know> e.g. if you use the same password for google and twitter and twitter gets hacked, they can go and look on your gmail
+<anakata> benis: lol
+<Gaylien> wish*
+<anakata> Thank you too haha
+<Tech-Know> which is why you never reuse passwords!
+
+<benis> --- begin irc clusterfuck ---
+

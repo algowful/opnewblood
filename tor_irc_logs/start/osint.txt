@@ -1,0 +1,447 @@
+<&kr0> There we go
+<&rackham> alright
+ * kr0 is the alias king
+<&rackham> lets turn up
+<&rackham> so today's mini-lesson is on OSINT
+<&rackham> Open-Source Intelligence
+<&rackham> and at the end, you'll get a chance to put your newly found skills to the test...but we'll get to that
+<&rackham> so what is OSINT?
+<&rackham> OSINT is type of passive recon
+<&rackham> you dont just run out shooting, you perform recon on the target
+<&rackham> passive recon leaves no fingerprints on your target
+<&rackham> you're using various OSINT techniques and collecting information from publically available sources 
+<&rackham> SUCH AS
+<&rackham> DNS records, Google, Github, and my favorite...
+<&rackham> fuckin facebook
+<&rackham> love social media
+<&rackham> anyway
+<&OnionIRC> goddamn facebook
+<&mona> oh shit, here we go
+ * anonymous looks around
+<&rackham> search engines are, obviously, a wealth of information
+<&rackham> and you can use different operators or "dorks" to manipulate data you receive
+<&rackham> so everybody..spin those tor browser's up
+<&rackham> go to google now and search for
+<&rackham> site:fbi.gov
+<&rackham> thats it
+<&mona> and enjoy the experience of being throttled by google
+<&eyakilak> 
+<&mona> and censored
+<&rackham> yes...take those captchas
+<&rackham> emmm
+<&rackham> mm
+<&rackham> love em
+<~kr0> and captcha'd
+<&rackham> i'd do captchas all day if i could
+<&eyakilak> mmmmm showme wat a robot can't do
+<&rackham> now STFU
+<&rackham> so fbi.gov
+<&rackham> when you search for site:fbi.gov you're telling google "only show me results from fbi.gov
+<&rackham> you can also use this to find other hostnames...for example, i see vault.fbi.gov
+<&rackham> so in your free time later, please put an end to this whole "Do Alient Exist?" question
+<&rackham> you now have the vault.fbi.gov hostname
+<&rackham> where all the seekritz are kept
+<&rackham> to dive a little deeper
+<&rackham> site:reddit.com ELI5 Tor
+<&rackham> that will search reddit for ELI5 posts about Tor...might be beneficial
+<&rackham> thats not fun though
+<&rackham> google will also index some sensitive shit
+<&rackham> governments have been known for leaving confidential PDFs and shit hanging out there on the tubes for anybody to raed
+<&mona> one thing you might notice when you do site:fbi.gov or site:facebook.com or whatever
+<&mona> is you get a lot of shit you dont care about
+<&mona> i.e.
+<&mona> especially in a big company
+<&mona> you'll get lots of www.
+<&mona> you can get rid of that by combining a basic site: parameter
+<&mona> with a -site: parameter
+<&mona> for example:
+<&mona> site:fbi.gov -site:www.fbi.gov
+<&mona> that shows you only pages on the fbi.gov domain
+<&mona> that arent part of the www.fbi.gov host
+<&rackham> yes yes
+<&rackham> good catch
+<&rackham> so yeah...
+<&rackham> people leave sensitive shit out there
+<&rackham> and we all know nmap and some vuln scanners can be noisy and we dont want to use em
+<&rackham> my favorite is when they leave vuln reports out there
+<&rackham> try this search
+<&mona> as a matter of course you're going to want to do filetype:pdf, filetype:doc, filetype:xls for documents
+<&rackham> filetype:pdf intitle:"SSL Report"
+<&mona> lol
+<&rackham> don't jump ahead
+<&rackham> i'm gettin there
+<&mona> <3
+<&eyakilak> ^
+<&rackham> so go find your favorite vulnerability scanner, whether its Acunetix or Nessus, and search for their report on google
+<&rackham> guarantee you'll find em
+<&rackham> but as you can see
+<&rackham> that dork was PDFs named SSL Report
+<&rackham> now a complex, fun one
+<&mona> note for those who somehow don't know: the quotes around SSL Report only matches "SSL Report", not "SSL" or "Report"
+<&rackham> lets search pastbein for e-mails and passwords
+<&rackham> site:pastebin.com intext:@gmail.com | @yahoo.com | @hotmail.com daterange:2457388-2457491
+<&rackham> so obviously, search pastebin.com 
+<&rackham> and show me results with the text @gmail.com OR @yahoo.com OR @hotmail.com
+<&rackham> between the provided daterange
+<&mona> aside for those who were at the bash lesson on sunday: can you think of a way to script google's daterange parameter to get round the limitations google places on the number of results it gives you?
+<&mona> get in the habit of thinking about this shit
+<&rackham> we can go on for hours about fun, interesting google dorks so i'm goin to leave you some research to do
+<&rackham> https://www.exploit-db.com/google-hacking-database/ 
+<&mona> ^ congratulations, you're now fully qualified to work in the threat intelligence sector
+<@Lisa> eheheh
+<&rackham> hahahaha
+<&eyakilak> w0000000t
+<&eyakilak> CONGRATS EVERYONE
+<&rackham> THAT WAS THE BIG SURPRISE WE HAD!
+<&rackham> put it on your resume
+<&mona> how2google pastebin
+ * Lisa hands out lamanated infosec id cards
+<&rackham> lool
+<&rackham> okay..back on track
+<&rackham> so you can use these types of searches on other sites
+<&rackham> duckduckgo is getting better in their dorking results
+<&mona> they still suck but they are improving
+<&mona> and unlike google they aren't censoring cunts
+<&rackham> BUT another favorite is github dorking
+<&rackham> ahh fuckin github
+ * Lisa braces herself
+<&rackham> remember when github implemented the search feature
+<&rackham> and motherfuckers were git push their SSH keys
+<&rackham> yeah...free shells for everybody
+<&rackham> i think they made some modifications to their search since that debacle but you can still find gold
+<&mona> more on that later...
+<&rackham> for example
+<&rackham> lets say there is a sublime txt plugin that requires authentication credentials...
+<&rackham> you better believe motherfuckers aren't reading too far past git push and git clone
+<&rackham> and aren't utilizing any kind of .gitignore
+<&rackham> but yeah...we're going to come back to that
+<&rackham> social media..
+<&rackham> social media is exciting stuff too
+<&rackham> from tracking a CEO of a major corp
+<&rackham> to stalking that girl you used to creep on in high school
+<&rackham> you can abuse the shit out of Facebook, Instagram, Twitter APIs
+<&rackham> and make them scream whatever data you want
+<&rackham> echosec.net
+<&rackham> draw a fucking box around an area and see the instagram posts in thatb ox
+<&rackham> what an exciting time to be alive
+<&rackham> this guy already wrote it and i'm not re-inventing the wheel
+<&rackham> but
+<&rackham> some whitehat
+<&rackham> https://inteltechniques.com/OSINT/instagram.html
+<&rackham> put in a user ID and plot posts on a map
+<&rackham> listen...if you're going to have a facebook or instagram
+<&rackham> turn the fuckin location off on your phone
+<&rackham> for the love of fucking god
+<&mona> pollack's going to run a social engineering class later this week, and you'll see a lot about how much power knowing a lot about a person in a position of privilege can give you
+<&rackham> yes^
+<&rackham> quick example before i pass it off to mona to bust out the comamnd line OSINT stuff
+<&rackham> scenario a) you get an e-mail from your child's dr and it says "we need to see your child. fill out this form and bring it with you." (obviously, the form is backdoored)
+<&rackham> scenario b) you get an e-mail from your child's dr and it says "we need to see Chippy. fill out this form.."
+<&rackham> you're going to probably fall for that one that has your kids name and info in it because..well..its a doctor
+<&rackham> your info is secure....RIGHT?!
+<&rackham> basically
+<&rackham> KNOWLEDGE IS POWER
+<&rackham> and you can get a lot of info on your target without ever even touching them
+<&mona> ok
+<&mona> so
+<&mona> let's get technical for a second
+<&mona> and talk about DNS
+<&rackham> mona: is goin to dive into the command line technical OSINT stuff
+<&eyakilak> ie, the best stuff
+<&mona> quick crash course for those who don't know shit, DNS is how the internet associates hostnames with IP addresses
+<&mona> you can use it the way it's meant to be used and abuse misconfigured DNS
+<&mona> to perform recon
+<&mona> i'll show you how to do that manually
+<&mona> and i will also point you in the direction of some tools
+<&mona> to do it automagically
+<&mona> so, DNS basics
+<&mona> a dns nameserver contains a few types of information about a domain
+<&mona> the A records are the basic "map IP to a hostname"
+<&mona> NS records delegate a zone to use as an authoritative nameserver
+<&mona> i.e. "ns1.google.com is the nameserver for google.com"
+<&mona> that tells you who to ask if you want an IP address for google
+<&mona> you've also got MX records for mailservers
+<&mona> TXT records, which can contain anything at all
+<&mona> and CNAME records
+<&mona> which are used for aliasing
+<&mona> you've maybe used nslookup in the past
+<&mona> to find the IP of a server
+<&mona> nslookup queries DNS servers, and by default it does a query for NS records
+<&mona> i.e. 
+<&mona> if you do "nslookup google.com"
+<&mona> it will tell you DNS servers for google.com
+<&mona> however, you can use nslookup to query any of the types of records
+<&mona> with the -type switch
+<&mona> so
+<&mona> nslookup -type=ns google.com is the same as "nslookup google.com"
+<&mona> but you can also do
+<&mona> nslookup -type=a
+<&mona> nslookup -type=cname
+<&mona> nslookup -type=txt
+<&mona> etc etc
+<&mona> being able to enumerate nameservers is useful for dns zone transfer attacks, which i'll get into in a second
+<&mona> and likewise, you can often find interesting info in the TXT records 
+<&mona> there is another type of record i havent mentioned which is a PTR record
+<&mona> this is the opposite of an A record
+<&mona> if a dns server is configured with PTR records
+<&mona> you can give it an IP address
+<&mona> and it will tell you all the hostnames for that ip address
+<&mona> this can be very useful for passive enumeration
+<&mona> and it is called a reverse DNS lookup
+<&mona> basically, you take whatever hosts you've found already
+<&mona> and you lookup their IPs in reverse
+<&mona> to see if there are any hosts you havent already found
+<&mona> returned by the PTR
+<&mona> nslookup doesn't have this functionality built-in as far as i am aware, but
+<&mona> you can manually perform any kind DNS lookup with dig
+<&mona> to do a reverse DNS lookup with dig
+<&mona> just take the IP address
+<&mona> and add ".in-addr.arpa" to it
+<&mona> and pass that to the dig command along with the PTR argument
+<&mona> i.e.
+<&mona> $dig 216.58.208.142.in-addr.arpa PTR
+<&mona> xerxes has noted one thing which i should bring up
+<&mona> we're mostly discussing open source intelligence, and dns lookup are often passive in nature
+<&mona> however, if your victim hosts their own DNS server
+<&mona> you are technically touching them by doing this
+<&mona> but it's traffic that is very low-impact
+<&mona> and not noisy at all
+<&mona> compared to virtually every other form of recon
+<&mona> now, dns zone transfer attacks
+<&mona> are a bit noisier
+<&mona> but can be very fruitful
+<&mona> a zone transfer occurs when one DNS server, for whatever reason, wants to update its records of IPs and hostnames
+<&mona> <reactD> nslookup -type=A -debug whatever.com gives PTR answer
+<&mona> the more you know
+<&mona> anyway, yeah zone transfers occur between 2 dns server
+<&mona> one nameserver asks the more authoritative nameserver for its tables
+<&mona> so it can update its records
+<&mona> in theory, there should be strict whitelists
+<&mona> so only ACTUAL nameservers can request this info
+<&mona> since it can contain privileged info about IP addresses and network topology
+<&mona> in pratice, this is very often not the case
+<&mona> misconfigured DNS servers are immensely common
+<&mona> once again, you can use the dig command to attempt a DNS zone transfer
+<&mona> dig axfr @dns-server domain.name
+<&mona> if the server is properly configured
+<&mona> you'll get a "transfer failed" message
+<&mona> if it isn't, you'll get a massive dump of every record relating to that domain, including all the hostnames and IPs that the nameserver knows about
+<&mona> this is critical information when you're performing recon
+<&mona> and make no mistake, enumeration is key 
+<&mona> the bigger the attack surface, the more room you have to find a hole
+<&mona> now
+<&mona> there are a couple tools to facilitate performing this recon easily
+<&mona> theharvester is a script whose main function is to harvest email addresses, but it also has DNS recon features
+<&mona> fierce is much better for it though
+<&mona> it has various functionality including DNS hostname bruteforcing
+<&mona> which is when you spam a DNS server with random hostnames from a wordlist until it says "yes, that hostname does exist, it's at <IP>
+<&mona> finally if you want to be completely passive
+<&mona> there are various online DNS recon tools out there
+<&mona> i've used dnsdumpster before and found it to be fairly decent
+<&mona> ok rackham, over to you
+<&rackham> alright
+<&rackham> yeah
+<&rackham> automated tools
+<&rackham> before you go firing off automated tools, know what the fuck you're doign
+<&rackham> earn the right to use the automated tools
+<&rackham> if for no other reason other than for your knowledge...fuckin do it
+<&rackham> so yeah mona touched on fierce
+<&rackham> fierce is pre-installed on kali
+<&rackham> if you're on kali.. run 
+<&rackham> fierce -dns healthcare.gov
+<&rackham> find all their development servers..you know..the ones with shitty code held together by duct tape and glue
+<&rackham> sexy fuckin attack vector
+<&eyakilak> ^
+<&rackham> blindcrawl.pl is another favorite tool of mine...
+<&rackham> you'll probably have to go out to packetstorm to grab it
+<&rackham> https://dl.packetstormsecurity.net/UNIX/scanners/blindcrawl.pl
+<&rackham> if you want
+<&rackham> grab that and run
+<&rackham> perl blindcrawl.pl trump.com
+<&rackham> mail.trump.com 141.150.185.165
+<&rackham> www.trump.com 104.16.32.168
+<&rackham> smtp.trump.com 141.150.185.165
+<&rackham> pop.trump.com 141.150.185.165
+<&rackham> you now have a web server and some mail servers to poke...
+<&rackham> that old addage...defense has to clog all of the holes, an attacker only needs one
+<&rackham> its a lot easier to find the whole when your threat landscape is that much bigger
+<&mona> that's also why being able to script and automate your shit is key
+<&rackham> and i have maltego in my notes for whatever reason...
+<&rackham> nobody uses that htough
+<&rackham> except feds and jen emick
+<&mona> maltego a shit
+<&mona> enumeration is time consuming
+<&mona> and methodical as fuck
+<&mona> to do by hand
+<&mona> but it's also absolutely essential
+<&rackham> do you want to do a quick Q&A before we dive into this fun game?
+<&mona> you need to be able to script your shit
+<&mona> shoot 
+< meand> is python a good scriptig language for automating such stuff?
+<&rackham> nobody?
+<&mona> python is great for OSINT
+<&mona> when you're dealing with passive recon most of what you do
+< alkovich> why I can't open the link https://dl.packetstormsecurity.net/UNIX/scanners/blindcrawl.pl ? 
+<&mona> is going to be at the web application level
+<&mona> python has a lot of good libraries
+<&rackham> alkovich: you can just do wget -O blindcrawl.pl <URL>
+<&mona> for interfacing with web applications in a automated manner
+<&mona> you can use the ssl and socksipy libraries to wrap sockets over tor and with ssl
+<&mona> and there's also more fully-featured libraries
+<&mona> like urllib for fetching data
+<&mona> and beautifulsoup for parsing raw html
+< Kaeli> wow
+< ad3pt>  site:pastebin.com intext:@gmail.com | @yahoo.com | @hotmail.com daterange:2457388-2457491 brings up two results
+<&mona> this is one of the areas where python is uniquely suited to the task
+<&mona> ad3pt: that daterange: parameter specifies a very narrow data
+< cruder> would you be able to do anything at all without bash and python(or other scripting language)?
+<&mona> play around with it
+< ShapeShifter> php-cli + curl
+<&mona> cruder: yes
+<&mona> but you are shit without those
+< ad3pt> im on it boss
+<&mona> you are slow and manual without commandline tools
+<&mona> or scripting
+<@Lisa> dont diss perl
+<&mona> you can use google
+<&mona> and honestly i don't think we've stated enough the power of google
+<&mona> you can find hostnames with google
+<&mona> you can find broken production servers
+<&mona> you can find PDFs with login guides for users
+< anakata> filetype:pdf
+<&mona> filetype:pdf, filetype:doc or docx, xls for documents
+<@Lisa> you just have to use your imagination
+<&mona> .sql or .log
+<&mona> is a goldmine for user info
+<&mona> and finding broken sql servers
+<&rackham> a good tool for automating document searches like that on google is FOCA
+<&mona> .php and .py and any script extension
+<&mona> .txt
+<&rackham> https://www.elevenpaths.com/labstools/foca/index.html 
+< reactD> if you're going into serious information gathering about any host, you dont really need to do it from your own machine. All data is out there already.
+<&mona> combine those filetypes with any useful string
+<&mona> yeah and speaking of reactD
+<&mona> don't make the mistake of lumping port scanning in with active scanning
+<&mona> although they're not as comprehensive as a noisy port sca
+< dis0bey> iletype:pdf intext:"How to Login" lol
+<&mona> services like SHODAN.IO
+<&mona> are great for enumerating services and open ports and versions
+<&mona> without every touching a box directly
+<&mona> and shodan also allows its own dorking
+<&mona> it requires a login, but they're easy to get anonymously and free
+< reactD> sometimes you just have to do some port scans, once you're inside their internal network, there wont be any much you can get from outside. Then you need to do port scanning, knocking and all that stuff.
+< reactD> But you need to be smart and careful
+< reactD> and slow.
+<&mona> reactD is correct
+<&mona> while you're still outside though
+<&mona> 80% of the available info
+<&mona> can be obtained without knocking on the door
+<&mona> or ringing any alarm bells
+<&mona> foca is also awesome
+<&rackham> while reactD is right..like mona said, everything we covered never shows up in a log on a target's machine
+<&mona> automatically enumerates hosts, downloads all documents with metadata
+<&mona> such as pdfs etc.
+<&mona> and analyses the metadata
+<&mona> it can enumerate emails, users, IP addresses on the internal system
+<&mona> as well as technology being used
+<&mona> versions of windows or whatever, version of adobe used to create the pdf, etc.
+<&mona> which can be extremely useful for spear phishing
+<&mona> and also just in general
+<&rackham> like i said -- exciting times to be alive
+<&rackham> want to wrap this up and tie this pretty little polka dot bow 
+<&mona> almost
+<&mona> just a few notes that really should have been at the beginning
+<&mona> i almost dont want to mention stuff like ping and traceroute, it should be obvious
+<&mona> but for the complete neophytes, you can ping a host to see if it's up
+<&mona> for many this will be second nature, but one note
+<&mona> if you ping something and it doesnt respond
+<&mona> that doesnt means its down
+<&mona> it just means it's not responding to ICMP packets
+<&mona> don't be fooled
+<&mona> likewise, traceroute is used to measure the path your packets take to a host
+<&mona> it can often be used to enumerate firewalls and such between you and <IP>
+<&mona> but it's not as effective as it was in the old days of the net
+<&mona> it's blocked by a lot of IDS's and firewals
+<&mona> try doing a tcp traceroute
+<&mona> to get around some of that
+<&mona> which you can do with the tcptraceroute
+<&mona> with nmap's --traceroute option
+<&mona> or some distros include a tcp option in traceroute itself
+<&mona> traceroute -T
+<&mona> on the subject of automated tools, just to wrap up
+<&mona> if you're performing passive recon, i can't not mention recon-ng
+<&mona> recon-ng is basically metasploit for recon
+<&mona> it uses the exact same commands and the user interface is almost identical
+<&mona> it's got a lot of neat scripts
+<&mona> a lot of the techniques we've mentioned in this class are built in as scripts
+<&mona> it also has a very cool internal database
+<&mona> that makes it very easy to chain your outputs and inputs together
+<&mona> run a whois and a dns bruteforce -> that goes into a table
+<&mona> then you can use the contents of that type directl in another scan
+<&mona> of that table* sorry
+<&mona> if you're using the whois modules of recon-ng
+<&mona> one thing to bear in mind:
+<&mona> they only query the US whois NIC
+<&mona> project: write scripts for the EU, asian and african NICs
+<&mona> :D
+<&mona> you can also find the scripts for recon-ng at /usr/share/recon-ng or something like that
+<&mona> they're basic python scripts
+<&mona> and you can author your own recon-ng modules as well and take advantage of the internal database
+<&mona> all in all, a very useful framework
+<&mona> one last Q&A
+<&mona> before we get on to the homework
+<&mona> :)
+<&rackham> FINALLY
+<&rackham> i'm gettin antsy over here
+<&mona> <3
+< meand> theres homework? xD
+< RocketRacoon> what if the dog eats our homework...
+< MenTor> how can you identify the firewalls and IDS with traceroute?
+<&rackham> "homework"
+<&rackham> its just a project to do if you want
+<&rackham> obviously
+< CrazeKiller> I have enough Homework for school ; - ;
+< RocketRacoon> does the homework invole a felony>
+< Kaeli> homework yay..i hope it is fun
+< reactD> rm rf ate our homeworks
+< testiclees> hahahaha
+<&mona> http://ix.io/Ake << master list of social networks
+< CrazeKiller> LOL
+< onthedl> haha reactD
+<&rackham> RocketRacoon: its up to you...
+<&mona> http://ix.io/Akf
+<&mona> US corporate registries
+<&rackham> everything you learned never touches a target
+<&rackham> no logs, etc.
+<&rackham> so nothing illegal
+< ad3pt> RocketRacoon: depends how far down the rabbit hole you wat to go, id assume
+<&rackham> ^
+<&mona> before we get accusations of being a fed honeypot
+<&mona> it's not actual homework
+< jeff> mona: requests > urllib
+<&mona> it's not required for anything
+<&mona> it's something to do for fun
+< fsociety> tell us mona
+< ad3pt> mona lol
+< Kaeli> yay
+< ad3pt> "Don't try this at home"
+< Kaeli> cmon teach lamo
+<&rackham> ready mona ?
+< jeff> mona: pip install requests
+< meand> ad3pt: hahahaha
+< Kaeli> *lmao
+<&mona> jeff: urllib is a module for python that gives you various functions to fetch stuff from the net
+<&mona> sec
+< jeff> yes i know
+< CrazeKiller> OPSEC
+< lorimeyer> made it just in time baby
+<&mona> wanna go over the ground rules rackham
+<&rackham> okay
+<&rackham> obvious disclaimer
+<&rackham> whatever you do with this knowledge is done at your own risk etc etc etc
+<&mona> the info we'll give you as a prerequisite is public knowledge, so don't think we're dropping some huge 0day on you
+<&rackham> OnionIRC cannot be held liable ;)
+<&mona> we can make you follow these rules, but things will be better for everyone if you do
+<&rackham> so to come full circle
+<&mona> so listen up
+--------TRANSMISSION LOST---------

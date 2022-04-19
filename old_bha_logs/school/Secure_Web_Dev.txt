@@ -1,0 +1,148 @@
+Secure Coding in Web Development (by hatter and Savitri)
+
+03[20:05] * Sav sets mode: +m
+[20:05] <~Sav> So
+[20:05] <~Sav> secure coding in web development
+[20:05] <~Sav> I had told you on Twitter I'd give an impromptu on that, here it comes.
+[20:05] <~hatter> I'll give you a hand Sav 
+[20:05] <~Sav> ok
+[20:05] <~Sav> there are many threats your apps can encounter on the Internet.
+[20:05] <~hatter> ^
+[20:06] <~Sav> Some are based on the applicative base (MySQL, PHP, Apache)
+[20:06] <~Sav> These often you can't do anything unless you own the box
+[20:06] <~Sav> MOST however can be avoided, by proper coding practices.
+[20:06] <~Sav> Rule 1: sanitize whatever you receive for input. Get, Post, Ajax request, whatever goes through your $_REQUEST you shall clean.
+[20:07] <~Sav> One good practice I can recommend is keep an array 'key'=>'type'
+[20:07] <~Sav> and automate the sanitization
+[20:07] <~hatter> Yep
+[20:07] <~Sav> This will allow for avoiding one major threat, that you all experienced from one side or the other: SQL i
+[20:07] <~Sav> bad:
+[20:08] <~Sav> $id = $_GET['id']
+[20:08] <~Sav> $query = "SELECT user, password from logins where id = $id";
+[20:08] <~Sav> oh, fosha, id is "supposed" to be an int
+[20:08] <~Sav> but it can be anything
+[20:08] <~Sav> good:
+[20:08] <~Sav> $id = (int) $_GET['id'];
+[20:08] <~Sav> and if you want to be anal
+[20:08] <~Sav> you can die if $id is not numeric, or if $id != (int) $id
+[20:09] <~Sav> One second threat, CSRF.
+[20:09] <~hatter> in ruby you'd do var.to_i
+[20:09] <~Sav> It's quite hard to craft, because it requires a part of social, and good knowledge of code.
+[20:09] <~hatter> if you're using vanilla ruby w.o railes
+[20:09] <~Sav> yup, I'm covering PHP right now, because that's what kids will encounter most often on the webs
+03[20:10] * hatter sets mode: +v LulzSheep
+[20:10] <~Sav> the Ruby codebase is like very small compared to PHP
+[20:10] <~Sav> so
+[20:10] <~hatter> yea just tossing out other compats :) keep goin lol
+[20:10] <~Sav> CSRF is dangerous crap, and some apps thinking they were well designed falled because of it
+[20:10] <~hatter> ^
+03[20:10] * reapr (r3@ec-78943B27.sub-174-252-90.myvzw.com) has joined #school
+[20:10] <+LulzSheep> cover CSRF?
+[20:10] <~Sav> the idea is to submit a form through someone
+[20:11] <~Sav> that is
+[20:11] <~Sav> have someone do without knowing something he doesn't want to do 
+[20:11] <~Sav> typically... add an admin to a phpbb board and such crap.
+[20:11] <~Sav> CSRF = Cross Site Request Forgery iirc
+[20:11] <~Sav> but you may google it
+[20:11] <~hatter> some javascript to make the browser forge a request to another domain and because the session handling is not locked down on the server it accepts the request and performs an action as a user
+[20:11] <~Sav> so
+[20:12] <~Sav> yeah, you can also have it inside the server itself
+[20:12] <~Sav> that's even more awful :)
+[20:12] <~hatter> which is xsrf
+[20:12] <~Sav> (phpbb exploit)
+[20:12] <~hatter> terribad.
+[20:12] <~Sav> yup
+[20:12] <~Sav> csrf/xsrf are synonyms for Google :p
+[20:12] <~Sav> well, the idea to protect from it
+[20:12] <~hatter> yep
+[20:13] <~Sav> is to make sure a form is legit by protecting it with a token
+02[20:13] * rockstr (fuckery@D72F3306.11F2790.C229B399.IP) Quit (Quit: Leaving)
+[20:13] <~Sav> the token should be random enough not to be guessed, just like a session ID
+[20:13] <~Sav> and should be bound to an IP to make sure it's being validated by the one who issued it
+03[20:13] * rckst (fuckery@ec-9F61577F.torservers.net) has joined #school
+[20:13] <~Sav> tokenization allows for two things: 1/ you have to get access to the form to generate a valid token
+[20:14] <~Sav> 2/ you can't submit the form and have it validated if the pair token/ip does not match
+[20:14] <~Sav> and the tokens expire quickly, like it's a matter of minutes
+[20:14] <@Theruler> sry to interupt save but guys all these terms can be found on http://www.wildcardsecurity.com/security101/index.php?title=Main_Page
+[20:15] <~Sav> in general, matching IP and token is sufficient, because if you can use the guy's IP to make a request, you better start off a VNC on his machine and do your crap
+[20:15] <~Sav> :)
+02[20:15] * rabbit (rab@away.away) Quit (Connection reset by peer)
+[20:15] <~Sav> so, first type of attacks, XSS
+[20:15] <~Sav> XSS is the "Oh noes my guestbook :'((((((((((((((((((((((((((" attack of the 1990's pushed to its paramount
+[20:16] <~Sav> it can be quite dangerous, like, using it you can inject a bitcoin miner into the output of a big, well visited html page.
+[20:16] <~Sav> in that case, make us a donation
+[20:16] <~Sav> kthx
+[20:16] <+LulzSheep> is that what lolhackers had?
+[20:16] <~Sav> but if you want to be protected from that
+03[20:17] * Sav sets mode: +v patri0t
+[20:17] <~Sav> and still has afaik
+02[20:17] * srs (srs@ec-A688B963.blutmagie.de) Quit (Ping timeout)
+[20:17] <~Sav> well
+[20:17] <~Sav> afaik
+[20:17] <~Sav> :)
+[20:17] <+LulzSheep> lol epic
+[20:17] <~Sav> so, if you want to be protected from that, you have to sanitize your input
+[20:17] <~Sav> I'm talking code side
+03[20:17] * srs (srs@ec-6DF430B1.rmpriv.nl) has joined #school
+[20:17] <~Sav> server side, you can install some WAF, some Apache modules that will rule out certain requests
+[20:18] <~Sav> one good option is to strip all html tags
+[20:18] <~Sav> I like a combo of urldecode, strip_tags and html_entity_decode
+[20:18] <~Sav> (and some trim and stuff)
+03[20:18] * niggerTroll is now known as dsr
+03[20:18] * Sav sets mode: +v dsr
+03[20:18] * rab (rab@5D130A6B.6784CA8C.80F6ECE2.IP) has joined #school
+[20:18] <~Sav> so
+03[20:18] * rab is now known as rabbit
+[20:18] <~Sav> that's what I wwanted to tell you
+[20:19] <+dsr> stripping html tags wont matter if they encode them though
+[20:19] <~Sav> you can code sanely and secure using PHP
+[20:19] <~Sav> dsr: cf. supra
+[20:19] <~Sav> html_entity_decode, urldecode
+[20:19] <~hatter> unless you encode your data dsr 
+[20:19] <~Sav> and such crap.
+[20:19] <~hatter> html_entities()
+[20:19] <+dsr> no
+[20:19] <+dsr> i mean with js
+[20:19] <~hatter> won't matter.  you can turn ' into &quot; , etc 
+[20:19] <+dsr> not HTML encode them.. encode them with js
+[20:20] <~Sav> what do you mean encoding with js?
+[20:20] <~Sav> hey, to run JS
+[20:20] <~Sav> you need a tag
+[20:20] <~Sav> dude.
+[20:20] <+dsr> like chr() etc
+[20:20] <+dsr> not necessarily
+[20:20] <+dsr> using their unicode
+[20:20] <+dsr> equivelents
+[20:20] <~hatter> those () can be turned into other things too.
+[20:20] <+dsr> ascii equivelents
+[20:20] <~Sav> PoC or it did not exist.
+[20:20] <~Sav> :)
+[20:20] <+dsr> dude.. seriously? its all over the internet ahahah
+[20:21] <+patri0t> babe* :P
+03[20:21] * Sav sets mode: +v _0xE9
+01[20:21] <+_0xE9> ty
+[20:21] <~Sav> if you sanitize your input, no JS will run.
+[20:21] <~Sav> go have a <script get through my filters :)
+[20:21] <~Sav> if you decode html entities
+[20:22] <~Sav> this is busted.
+[20:22] <+LulzSheep> when I tried to learn XSS a year or so ago I got this javascript for my website that was supposed to create an invisible iframe that redirected ppl to a site like forums and because FF would have rememebered their user/pass it would auto-fill the forms and the javascript would send back the user/pass data
+[20:22] <~Sav> you first perform a url decoding, then html entity decoding, then tag stripping
+[20:22] <+LulzSheep> I never actually tested it :(
+[20:22] <~Sav> yup LulzSheep, DOM is very loose sometimes
+[20:22] <~Sav> this can be very practical, and very dangerous
+[20:23] <~Sav> actually I think modern browsers put restriction on cross-domain DOM manipulation for these very reasons.
+02[20:23] * sharpie (sharpie@ec-293DB96F.jd.exarnet.net) Quit (Input/output error)
+[20:23] <~Sav> (google: same origin policy)
+[20:23] <~hatter> can still be done though
+[20:23] <~hatter> just have to evade the browser restritions
+[20:23] <+LulzSheep> http://paste2.org/p/1495199 would this code have worked?
+[20:24] <+LulzSheep> I only customized it a tiny bit, most just script kiddying :)
+[20:25] <~Sav> this has good chances to work, yup
+[20:26] <~Sav> toy: http://ha.ckers.org/xss.html#XSScalc
+[20:27] <+LulzSheep> what does that do
+[20:27] <~Sav> encoding, to ease out your xss tests
+[20:27] <~Sav> so, if you guys have questions
+[20:27] <~Sav> it's open chat on the topic
+03[20:27] * Sav sets mode: -m
+[20:28] <prophet> its worth noting that XSS and CSRF can often be used in conjunction to defeat CSRF protections
+[20:28] <prophet> where such holes both exist on the same domain

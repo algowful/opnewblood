@@ -1,0 +1,456 @@
+<@aediot> There we go
+<@aediot> Thank you all for coming to class
+<@aediot> Firstly Id like to say that the idea of the lesson is not to to dissuade you from the dangers the FBI pose.
+<@aediot> It is to educate you that they only pose dangers so long as you perform actions or retain aspects that make you the lowest hanging fruit or if you let their mind games get to you and make you do something stupid. 
+<@aediot> For anyone here who is unaware the "lowest hanging fruit" Is, it's a term thats assigned to those who are the easiest for the FBI or the NSA or anyone to catch. 
+<@aediot> Basically if you pull a stupid thing and think "Oh theres no way the FBI will pay attention to me" Or you pull off a stupid thing and don't cover your ass?
+<@aediot> Guess what you're the lowest hanging fruit.
+<@aediot> You're the type of person the FBI chew up and show off as examples to the rest of the world that you should keep employing them because they're "doing good in the world by arresting people like you"
+<@aediot> Now I'm going to be showing you a lot of things in this class that will make you think that the FBI are worthless.
+<@aediot> Which they are.
+<@aediot> But never underestimate a criminal organization that has the power to put you in a cell for 20+ years for breaking what they deem as the law or because they want to.
+<@aediot> We are going to be observing 3 case studies on the matter and I'll leave about 5-6 minutes of questions between each case and will answer all that I can. 
+<@aediot> If I don't answer your question try asking again during the next break or wait until the end where I'll keep online to answer everything. 
+<@aediot> In addition please note that these are just three cases out of hundreds, each pulling the same theme which I will show to you in these few. 
+<@aediot> Firstly, do we have any questions before we begin?
+< Sempiternal> nope
+< memeses> nah
+< anonindia> nup
+< Parabole> no
+< Stitch> nah
+< Scareface> no
+< lolcat> nope
+< kashloca> no
+< omegacolon> :Peter Griffin: nope
+< Lily> are 
+< SHODAN> N
+< dev> nah
+< Geek> no..
+< fsociety> go ahead mrSmith
+<@aediot> Excellent.
+<@aediot> Let's begin the course.
+<@aediot> The first of our case studies is on what's known as the Blackshades takedown. 
+<@aediot> Blackshades for anyone unfamiliar was a rootkit that was operated and dispensed just like a business on clearnet. 
+<@aediot> They provided updates, had a team for handling purchases, tech support even. The problem is when you're peddling a product that can land you 20 something years in jail or longer someone in your team is probably going to be a fed. More on that later though. 
+<@aediot> Roughly a week before the infamous blackshades takedown this was posted and spread throughout the community: 
+<@aediot> http://www.reuters.com/article/us-cyber-summit-fbi-idUSBREA4D0UP20140514
+<@aediot> I want you all to give it a quick glance over while I continue talking and laugh at the ridiculousness of some of their quotes. 
+<@aediot> My favorite ones include "There is a philosophy change. If you are going to attack Americans, we are going to hold you accountable," 
+<@aediot> And "If we can reach out and touch you, we are going to reach out and touch you."
+<@aediot> Gotta love that pure unadulterated level of self importance. 
+<@aediot> mmmmm love that shit. 
+<@aediot> 10/10 would have it for breakfast every morning before my daily bowl of cereal. 
+<@aediot> So a week after that goldmine of an article was put out the FBI sacked the fuck up and busted the writer of the blackshades malware as well as his team.
+<@aediot> Surprise surprise one of the people on this massive team were a federal agent who had personal information revealed to him because a Trust model on the Darknet is TOTALLY something you want to do when you're distributing a piece of code that can land you 20+ years in jail.
+<@aediot> (rolls eyes)
+<@aediot> Please keep in mind if you ever tend to play the Darknet game for money, for secrets/information, or just straight power. Please fucking remember that 1 in 3 people on the Darknet are confirmed feds. 
+<@aediot> But that shouldn't concern you so long as you trust everyone equally and treat everyone like a fed, because if you can pull that off nobody will be able to touch you.
+<@aediot> And really that goes for anywhere. If you go into a place like *cough* onionirc *cough* and complain "oh oo its infested with feds" then that means you've already failed at your fucking opsec. 
+<@aediot> Because the fact that you're worried a few people might be fed means that you don't treat everyone like feds already.
+<@Buttercup> ^
+<@aediot> Which means you give out special trust and permissions to certain people or users who you think "Aren't feds"
+<@aediot> This is the shit that gets you arrested people.
+<@aediot> Learn it.
+<@aediot> If you're under a name that has done confirmed illegal shit then you should treat everyone like a fed, snitch, or someone who will rat you out for their own gain.
+<@aediot> But if you come to onionirc or on twitter or wherever for the sake of fun and friends then dont do anything illegal. 
+<@aediot> This is compartmentalization 101.
+<@aediot> Also there's a common rule when it comes to either hacking or fraud, and I think it's a pretty good rule to follow when doing anything cyber-related thats illegal.
+<@aediot> Assume that every tool of anonymity is broken. Every layer is traceable. And that the FBI can break any level of encryption you have. Now ask yourself, what's your setup?
+<@aediot> And that's how you should think, that's how you stay two steps ahead of these games the fed try to play on everyone and that's how you avoid being the lowest hanging fruit. 
+<@aediot> Aka the key to living a long and happy Darknet career. 
+<@aediot> But enough on that back to the lesson.
+<@aediot> I want you all to load up the tor browser if you can and take a look at the press release they put out here: 
+<@aediot> https://www.fbi.gov/news/stories/2014/may/international-blackshades-malware-takedown/international-blackshades-malware-takedown
+<@aediot> I want you to take a look at the wording of a certain section, preferably the second paragraph.
+<@aediot> >Also charged and arrested in the US were an individual who helped market and sell the the malware + two blackshades users in the usa who bought the malware. 
+<@aediot> That paired with the "Oh we arrested 90+ people" stated in the press release would make you think that they caught more people than just the users and the devs/team that peddled it.
+<@aediot> Wrong.
+<@aediot> About 3 weeks later it was found via a magical group of rednecks who will not be named that the only people arrested were (get this) and I quote:
+<@aediot> "Users who bought the malware on hackforums using a paypal tied to their real names."
+<@aediot> I want you to let that shit sink in for a moment, that is literally the most un-technically impressive takedown in the fucking world. Really? Hackforum users who bought fucking MALWARE with their REAL paypals?
+<@aediot> You may as well have walked up to the FBI headquarters and shouted "HELLO YES I AM CRIMINAL PLS ARREST".
+<@aediot> Good fucking job FBI, we should all give them a round of applause for that ultra sack of fucking bravery and skill. 
+<@aediot> And now I'm going to unmute chat and I want you all to clap in chat with me because that's so fucking impressive.
+< omegacolon> :clap:
+ * aediot claps
+ * SHODAN america claps
+< A_B_C> *CLAPS*
+< A_B_C> *CLAPS*
+< dev> amazing
+< A_B_C> *CLAPS*
+< br0d4m> claps 
+< A_B_C> *CLAPS*
+< fsociety> i remember the case aediot
+< Daito> lol
+< MrClockwork> CLAP**
+< A_B_C> *CLAPS*
+< A_B_C> *CLAPS*
+ * LightShadow claps
+< A_B_C> *CLAPS*
+< lolcat> Hello to all feds watching this we love u <3
+<@aediot> Ok that's enough cancer for one lesson
+<@aediot> Point is this is a re-occuring theme you're going to see in eh roughly 90% of any Cyber op the FBI take hold of. 
+<@aediot> A) Do something unimpressive as fucking hell. B) Try to word it in a way on the shiny press release that you did a lot of work. C) Exploit the fearing fuck out of it and make your target paranoid as all hell if they took part of it or plan to.
+<@aediot> In this case the target audience being current tor/Darknet users, and new people thinking about getting into the game. As it is with just about every "takedown". 
+<@aediot> It should be noted though that they didn't lie in the press release though, two USA people were arrested for buying it. Because the others who used their real paypals were foreign. 
+<@aediot> So basically just came down to clever wording.
+<@aediot> It should also be noted that the article was released the week before the blackshades takedown on rueters on how "If we can reach out and touch you, we will reach out and touch you." 
+<@aediot>  Was this intentionally spread throughout the script kid level community by the FBI though? I'll leave that to your own rationale to decide.
+<@aediot> Now then.
+<@aediot> Any questions before we move on to our second case? I'm going to leave the questions open for 5 minutes.
+<@aediot> Or however long I feel 
+< SHODAN> what about https://motherboard.vice.com/read/judge-rules-fbi-must-reveal-malware-used-to-hack-over-1000-computers-playpen-jay-michaud ?
+< A_B_C> How long is this lesson aediot?
+< omegacolon> How effective is FBI taking out hackers on the darknet?
+<&rackham> SHODAN: slow your roll
+< SHODAN> tl;dr on that link
+< SHODAN> oh
+< SHODAN> ok
+<&rackham> i was goin to chime in at the end with some playpen statistics
+< SHODAN> lol sorry
+<&rackham> :)
+<@aediot> SHODAN: Unfortunately it's a bit new so I haven't done any digging into that subject matter
+< Blue> ehhh
+< A_B_C> aediot: how long is the lesson? I sadly have 45 minutes
+< anonindia> FBI can assrest any persone outside USA ? 
+< omegacolon> I mean, not a low-hanging fruit type.
+<@aediot> I'm only covering the cases I have studied to the fullest
+< br0d4m> what can the FBI do against foreign people?
+<@aediot> A_B_C: It wont be that long :)
+< SHODAN> on the outside us questions: extradition orders
+< A_B_C> awesome man! xD
+<@aediot> omegacolon: Not effective
+< SHODAN> look em up
+< Blue> br0d4m, go watch criminal minds beyond borders
+<@aediot> Aside from fear, the FBI can only use RATS and social engineering to catch you
+< thr33> demand extradition for countries with said treaties and prosecute u according to US law
+<@aediot> It should be noted though
+< omegacolon> aediot: how effective is NSA taking out a hacker on the darknet?
+< SHODAN> https://en.wikipedia.org/wiki/Extradition if you get identified and youre outside the us youre still fucked
+<@aediot> That in all the years of being on the darknet I've never ONCE seen an arrest happen because of a tech flaw
+<@aediot> Meaning
+<@aediot> It's never been a 
+<@aediot> "OMG TOR WAS HACKED"
+<@aediot> No
+<@aediot> It's 90% of the time just social engineering and fear
+< memeses> really? :0
+< Blue> if the fbi is so powerful why is weev free 
+< omegacolon> Tor was hacked due to vulnerabilties such as JS or pHp.
+<@aediot> Tor wasn't no
+< Blue> after the printer hack
+<@aediot> Firefox was
+<@aediot> On top of which
+< fsociety> or firefox vuln
+< omegacolon> Tor Broswer Bundle (aka)
+< SHODAN> Blue: weev knows what he's doing mostly
+< dev> wasn't there a thing about mozilla suing the fbi under foia to disclose the bug in browser
+<@aediot> The FBI used an exploit on an OUTDATED version of the Tor browser
+< omegacolon> or if you're hosting JS or pHp
+<@aediot> meaning
+< SHODAN> dev: i mentioned that
+< dev> ok
+<@aediot> If the pedos of freedom hosting for example
+<@aediot> had upgraded their tor browsers that day
+< anonindia> aediot: tor + tor + tor can help retendanci in anotomi ?
+< Lily> how can we download some tools if some website need JS to run it?
+< Keldo> update tor lol
+< Blue> SHODAN, but is it not still illegal to pwn thousands of printers O.o
+<@aediot> Nobody would have been taen
+< SHODAN> Blue: it's not pwning
+<&rackham> slowin this down
+<&rackham> weev is out of scope...
+<@aediot> anonindia: the protocol doesn't work like that no unfortunately, I would advise you do some more research into the whitepapers and documentation for it
+<@Buttercup> thanks
+<&rackham> if you want to know why weev is free, find out where he is living currently
+<@aediot> ^
+<@aediot> Also weev has nothing to do with darknet operations from the FBI
+<@aediot> He was arrested because he pulled something stupid under a nym that is tied to his real name
+<@aediot> When he should have done it anonymously
+<&rackham> also, research his case..his charges were dropped because feds fucked up the jurisdiction
+<&rackham> anyway
+<&rackham> carry on aediot 
+<&rackham> onymous?
+ * Buttercup coughs
+<~kr0> hi everyone
+<&rackham> ah
+<&rackham> okay
+<&rackham> he pinged out
+<@Buttercup> got raided
+<&rackham> LOL
+<&rackham> coincidental?
+<@Buttercup> :D
+<&rackham> ill try and pick up where he left off
+<&rackham> i believe the next stop was Operation Onymous
+<&rackham> Operation Onymous, if anybody remembers, was the raids of November 5 2014
+<&rackham> remember remember amirite?
+<&rackham> anyway
+<@Buttercup> you are
+<&rackham> originally
+<&rackham> America the world police claimed to have taken down 414 "illicit services"
+<&rackham> the big claim to fame was Silk Road 2, Cloud 9 and Hydra market places
+<&rackham> among these 414 was another "big fish"
+<&rackham> a pro-ISIS website that accepted BTC donations
+<&rackham> well in awesome FBI fashion
+<&rackham> Onymous was a huge flop
+<&rackham> there are some theories that float around about what actually happened...but the leading theory is
+<&rackham> they knew of some shady hosting companies and went kicked their door in scooping up a bunch of hidden services
+<&mona> rip aediot
+<&rackham> just grepping for tor private keys
+<@Buttercup> heh
+<&rackham> after this
+<&rackham> the tubes went into investigative mode
+<&rackham> the FBI backtracked and said "upwards of 50" sites were brought down
+<&mona> also yeah generally even for the NSA/state sponsored hackers
+<&mona> dropping a zeroday is the last resort
+<@Buttercup> last
+<&rackham> Nik Cubrilovic did some research on the seized sites
+<&mona> even the crazy chinese dont do it THAT often
+<@Buttercup> 0days are like condoms
+<&rackham> it turns out to be a total of 27 sites
+<&mona> and the nsa doesn't share its shit with the fbi
+<&rackham> to which the 414 addresses redirect to
+<&rackham> and a majority of them were scam/phishing clones
+<&rackham> and the best part?
+<&rackham> the ISIS site they bragged out bagging...
+<&rackham> yeah 
+<&rackham> scam site
+<&rackham> i'm not as gracious as aediot though..no round of applause for those fuckin morons
+<&rackham> also
+<&rackham> while we're on onymous
+<&rackham> RIP Doxbin <3
+<&mona> gone but not forgotten
+<&rackham> NEVER
+<&rackham> anyway
+<&rackham> speaking of doxbin
+<&rackham> and what was touched on earlier
+<&rackham> when the ocmment was made about nobody was busted because of a TECHNICAL hack
+<&rackham> doxbin is the perfect example of this
+<&rackham> you know those corona commercials of peopel chillin on the beach
+<@aediot> RIP
+<&rackham> that is nachash
+<@aediot> Sorry about that.
+<&rackham> IRL
+<@aediot> Joys of using a public hotspot.
+<@aediot> rackham: what part did I get cut at
+<&rackham> sec aediot 
+<&rackham> i just flew through onymous
+<@aediot> Thanks.
+<&mona> that's how you win
+<&mona> operate something like doxbin for years
+<&rackham> but Onymous was an attack
+<&mona> get out without giving a single fuck
+<&rackham> where people started panicking
+<&rackham> was tor exploited etc etc
+<&mona> that means you won
+<@aediot> Yes
+<&rackham> we've all seen the Carnegie Mellon exploit used blah blah
+<&rackham> well
+<&rackham> good job FBI
+<&rackham> paying over $1mil for a 0day
+<&rackham> to net 27 sites
+<&rackham> of which
+<@aediot> Lol
+<&rackham> most were scammy clones
+<&rackham> aediot: you can pick up with defcon and SR2
+<&rackham> and ill hit playpen at the end
+<@aediot> I'd just like to say though in regards to Onymous
+<@aediot> Can't even tell you how many fucking people came up to us asking "Is TOR Broken!!?!?" and we had to respond with "We don't know at this point", which I'm sure didn't inspire new users or normies to get into the trade and deterred normie Darknet users like kingpins from continuing business on the tor network.
+<@aediot> We were in the dark for about 2+weeks
+<@aediot> Anyways
+<@aediot> Any questions before our final case study?
+< FallagaTN> I think it's the case of Hamza Bendelladj the creator of the SpyEye malware
+< omegacolon> aediot: tell us about Carnegie Mellon
+< Scareface> Most notably, the leader of the LulzSec hacking group, Hector Monsegur, has had his sentencing delayed more than a half-dozen times as he cooperates and helps break into high-value intelligence targets overseas.can you explain this aediot
+< KaliLinuX> How register ?
+<@aediot> Rackham can shed more light on that omegacolon
+< omegacolon> aediot: ok thanks.
+ * DLF 
+< anonindia> Are your OnionIRC will not be raid ! as of you are not doing anything illlge.. !!
+<@aediot> Scareface: that's not an FBI operation though. Which is the topic of the talk.
+<@aediot> lol
+<@Buttercup> Scareface:completely diferent
+< omegacolon> aediot: FBI never really broke TOR in the first place.. just vulnerabilies in JS and pHp?
+< Keldo> thanks mona 
+<&rackham> Scareface: sabu is not related
+<&mona> <3
+< SHODAN> wasn't it a flash vuln or something
+< Keldo> dude was a fed lol
+<&rackham> omegacolon: yes i will gloss over that when i cover playpen at the end
+< SHODAN> dont remember
+<&rackham> omegacolon: also, carnegie melon
+<&rackham> is a university that does some awesome research
+<@aediot> Let me just say this on the topic of the Tor "vuln"
+<@aediot> It wasn't in Tor
+<&mona> ^
+<&mona> "tor is broken lel"
+<@aediot> The FBI exploited a public and known vuln in an outdated version of firefox
+<&mona> so sick of seeing that
+<@aediot> And PEOPLE DO NOT
+<@aediot> UPDATE
+<&rackham> ^ yeah ill cover that 
+<@aediot> THEIR
+<@aediot> SHIT
+<@aediot> So 
+<@aediot> They get surprised and blame tor
+<@aediot> When they don't update the browser
+<@aediot> And get 20+ years in jail
+<@aediot> But
+<@aediot> That's not to say that's not what the fed want you to think
+<@Buttercup> ^
+<@aediot> You can bet your ass that it gets them wet when they hear
+<@aediot> "oh tor is broken cause of that one exploit"
+<&mona> the takeaway is, take literally everything that comes from the govt or MSM with a fucking truckload of salt
+<@aediot> ^
+<@aediot> It's all clever fucking wording
+<&mona> don't get panicked because you heard a rumour that something big is going down
+<&mona> if it is, they've either got you already or don't
+<&mona> so keep a level head
+<@aediot> More than half the time they never outright lie though, more times than none it's like the shit with the blackshades takedown.
+<@aediot> "We arrested two users in the US"
+ * Buttercup tells mona to calm down
+<@Buttercup> :D
+<@aediot> By saying that, they can neglect to mention that the other 90+ people were also users
+<&mona> :O
+<@aediot> but just not in the US
+<@aediot> Ok
+<@aediot> Last case study, this one is on Silk Road 2.
+<@aediot> This is still within Operation Onymous as it happened at the same time but it was not taken down in the same manner as the other .onion's. This was actually the one targeted .onion in the entire operation. 
+<&rackham> http://www.buttcoinfoundation.org/wp-content/uploads/2014/11/bent-tinykeyboard.jpg for context
+<@aediot> So this last one is going to be relatively brief because it's more or less a repetition of all the shit I've pointed out before in terms of the pattern the FBI so dearly cling to.
+<@aediot> lolrackham
+<@aediot> The too long didn't read version of Silk Road 2 is that a few autistic motherfuckers who had no idea what the hell they were doing much like Dread Pirate Roberts the owner of the first one, decided "Hey we should totally cash in on this Silk Road name thing and put up a clone". A few hours of shite code edits and changes later you have the most scammy deplorable market on the Darknet. 
+<@aediot> The owner of this travesty known as Defcon was probably the most useless fuck imaginable who got Doxed (Dox confirmed when he was taken to jail for what will probably be life) within I think it was the first 4 months of operating his market? 
+<@aediot> Yea GG.
+<@Buttercup> it was quick
+<@aediot> #ThisIsHowYouDarknet
+<@aediot> So anyway this is more of a hilarious point that the FBI handled, but when asked how they managed to get the .onion's server IP/location they said and I quote:
+<@aediot> "We managed to get the IP of the server by fiddling around with the login screen for about an hour"
+<@Buttercup> i remember that
+<@aediot> Rightttttttttttttttttttttttttttttttt.
+<@aediot> Buttercup: Do you remember smelling the shit that came with it
+<@aediot> lol
+<@Buttercup> oh yes
+<@aediot> Personally I think they just had a fed somewhere on the inner circle and didn't want to rouse suspicion so they lied through their fuckin teeth cause they still want the fucker undercover.
+<@aediot> But what the fuck ever we could speculate all day. 
+<@Buttercup> They avoided answering it in court too
+<&rackham> read: parallel construction
+<@aediot> Now the FBI knew for a fact that nobody fucking liked or cared for Silk Road 2 because the staff kept scamming the users and vendors and the market itself was unreliable and scam centraly as fuck. 
+<@aediot> Which is why they included it within Operation Onymous.
+<@aediot> For what reason?
+<@aediot> To spread the fear and worry that Operation Onymous was a targetted attack. 
+<@aediot> Think about it, if you got something like a Darknet Market alongside other services like Doxbin the first thing that would come to your mind is that the attack is targeted in terms of they exploited some massive flaw or something within TOR or Relay servers or whatever.
+<@aediot> And that was how they used the OP to scare as many people as possible.
+<@aediot> And guess what.
+<@Buttercup> and they did
+<@aediot> It worked for the most part.
+<@aediot> ^^
+<@aediot> Which brings me to my final point. The reason that the FBI keep resorting to fear and lack of basic fucking understanding of the inner workings and layers of the Darknet is because fear and social engineering is all they know, and it's all they have in this battlefield.
+<&rackham> tl;dr encryption works
+<@aediot> Their organization for decades has been dedicated to hunting Physical crime, which they are good at and I'll give them props for that.
+<@Buttercup> and their informants
+<&mona> lol
+<&rackham> when implemented correctly
+<@aediot> The problem is that on the internet it is much MUCH easier to be an attacker than a defender.
+<@aediot> Fear is all they fucking know to do, because it's the only real tool they have in this unwinnable war against all crime ever. 
+<@aediot> True story, the FBI have actually put up ads stating "You can now smoke weed and work for us in the cyber division!".
+<&mona> lol
+<@aediot> You know what I call that? Desperate. The FBI know they're fighting a war that can't be fucking won.
+<&mona> because they need us
+<&mona> they want us so bad
+<@aediot>  And they know that the whitehats they have employed don't half even half the skill that the Blackhats of the net have, much less the common fraudster.
+<@aediot> What mona said.
+<&mona> and they can't have us~
+<@aediot> ~~~
+<@aediot> That's why they're attempting to backdoor and censor our internets so they might gain a fighting chance. But so long as you stay two steps ahead of whatever game they try to play, they will never beat you. 
+<@aediot> Now my man rackham wanted to share some stats for the playpen fiasco since a few of you asked about that.
+<&rackham> yeah before the flood of questions come
+<@aediot> lol
+<&rackham> and because this is in the news a lot recently
+<&rackham> the hack that they utilized and everybody is so spun up about was PATCHED in TBB before the FBI is thought to have used it
+<&rackham> it is suspected to be a variant of Rapid 7's decloak (google it if you don't know)
+<&rackham> so tl;dr
+<&rackham> patch your shit
+<&rackham> and disable javascript
+<&rackham> number
+<&rackham> love numbers
+<@aediot> lol
+<&rackham> someone get a calculator out for me
+<&rackham> so
+<@aediot> TOR IS BROKEN 
+<&rackham> we all know the story
+<&rackham> FBI seizes server
+<@aediot> ^^ dont do that
+<&rackham> and hosts CP for like 2 months or something
+<&rackham> and they're talking about how big this site is and over 200k users right
+<&rackham> they deanonymized 1300 IPs
+<&rackham> can i get a percentage quick?
+< FallagaTN> do you think that Google will help the FBI with it's newly created quantum computer to break privacy ?
+<&rackham> you guys are too slow
+<@aediot> LOL
+<&rackham> its .0065%
+<&rackham> POINT
+<@Buttercup> lol
+<&rackham> 0
+<&rackham> 0
+<&rackham> 6
+<&rackham> 5
+<&rackham> okay
+<&rackham> lets go further
+<&rackham> now this wa s quick google
+<&rackham> numbers may have changed but
+<@aediot> FallagaTN: to answer your question personally, I don't think Google will. But fucking IBM sure as hell might.
+<&rackham> as of April 14
+<&rackham> can anybody guess how many of the 1300/200K+ were actually arrested?
+<&rackham> 135
+<@aediot> rip^
+<&rackham> add another 0 in there 
+<@aediot> Lol
+<&rackham> .000675 percent
+<@aediot> Let's all pray for the FBI's ego
+<&rackham> throw a tee-ball player in the MLB
+<@aediot> They need a loving touch right now
+<&rackham> and they'll bat a better percentage
+<&rackham> also, the way they found the server?
+<&rackham> an unnamed foreign country found it on the clearweb
+<@aediot> lol
+<&rackham> admin SSH to the server from his home IP
+<&rackham> RIP
+<&rackham> GG
+<&rackham> at the end of the day, onet hing we can see in all of this
+<&rackham> 1) encryption DOES work when used correctly
+<&rackham> 2) the infosec community is not the only ones selling FUD
+<&rackham> the FBI will use fear, uncertainty, and doubt
+<&rackham> that is their only weapon
+<@aediot> ^
+<&rackham> that is not to say they are not a danger
+<&rackham> but don't get it twisted
+<&rackham> they're not fuckin skilled in the least
+<@aediot> The parting lesson to take home is, stay two steps ahead in whatever you do. And if you're in the game for anything illegal, treat everyone like a fed. Making friends is not your priority, and trust is the last thing you want. 
+<@aediot> Alright
+<@aediot> One last round of questions for this chat alone before the class ends, if you have personal questions though reach me via private message either here or on twitter.
+< Stitch> Thanks for the info. When will the next lessons be ? Some hack techniques or ?
+< Lily> ow can we download some documents and tools, if the website requires JS, since you told us JS is one of the reason why others were caught?
+< A_B_C> Thanks aediot i stayed for the whole lesson :D
+<@aediot> Stitch: check the topic
+< Lily> how can we download some documents and tools, if the website requires JS, since you told us JS is one of the reason why others were caught?
+< omegacolon> Question: what about Burr-Feinstein Anti-Encryption bill?
+<@aediot> A_B_C: <3 thank you
+< fsociety> noScript
+< lulz> https://blog.torproject.org/blog/thoughts-and-concerns-about-operation-onymous
+< anonindia> is ZeroNet  technology is impossible to trace also using tor cauZe it uses decenterlized model !!
+< Stitch> !topic
+< lolcat> aediot: thank u :)
+< dev> What do you think about Freenet and I2P?
+<@aediot> Lily: You shouldn't be using the tor browser for fucking everything
+<@aediot> Like facebook
+< OkL> thanks you
+< memeses> great lesson
+< DalMag> aediot thanks a lot. i was veri informative
+< memeses> also short
+<@aediot> <3
+<@aediot> Glad you enjoyed it
+< Keldo> Ok Y'all, cybrary.it, Free courses on just about anything..... I suggest if your new, go check it out
+< omegacolon> aediot, What about Burr-Feinstein Anti-Encryption bill?
+< SHODAN> never mix irl and hax
+< Lily> but there is no other choice to download that stuff, but only through tor
+Log closed Tue May 17 16:54:34 2016

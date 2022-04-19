@@ -1,0 +1,237 @@
+Fuzzing (by Pantmissile)
+
+?[21:37] <+PantMissile> We’re going to talk about fuzzing for exploits.
+
+[21:37] <~Fox> Who’s moderating this shit
+[21:37] <~Fox> PantMissile is holding an impromtu class
+[21:37] <+PantMissile> Fuzzing is the act of injecting random shit into a tcp stream or parameter to a script to hopefully crash it.
+[21:37] <+kratos> great
+[21:37] <~Fox> PantMissile
+[21:37] <~Fox> hold up
+[21:37] <+PantMissile> k.
+[21:37] <~Fox> Jester
+[21:37] <%jester> sup
+[21:37] <&hatter> Or even throwing an error is ok
+[21:37] <%jester> ill stop talking
+[21:38] <~Fox> can you stop trolling for a few minutes and watch over and make sure shit doesn’t get out of line?
+[21:38] <%jester> i havent been trolling but sure
+[21:38] <%jester> let me get more coffee and a cig
+[21:38] <+PantMissile> Ok. You done?
+[21:38] <%jester> go
+[21:39] <+PantMissile> Scanning for SQL Injections you learned earlier is a form of fuzzing, where you are looking to crap out a php script.
+[21:39] <+PantMissile> The same for LFI.
+[21:39] <+PantMissile> Now you cannot type at a billion characters a second.
+[21:39] <+PantMissile> Your computer can.
+[21:39] <+PantMissile> So your first tought should be: how the fuck can i make my computer do this shit.
+[21:40] <+PantMissile> Well, since we’re going to try to crap the application out with input, we might as well feed it random bullshit.
+[21:40] <+PantMissile> This is not the most efficient technique.
+[21:40] <+PantMissile> You see, exploits, for example SQLI, generally follow the pattern of the url/script they are trying to exploit.
+[21:40] <+PantMissile> For instance, fuzzing a SQLI you might want to send a valid fucking HTTP Header over the line.
+[21:41] <+PantMissile> Now since SQLI is for skiddies, we’re not going to be talking SQLI here.
+[21:41] <+PantMissile> I will however use it as an analogy for omg so leet h4x0ring.
+[21:41] <%jester> woah woah slow down
+[21:41] <%jester> accessing databases is valuable
+[21:41] <+PantMissile> jester: not the purpose here
+[21:42] <%jester> kk
+[21:42] <+PantMissile> jester: you already know how to do that.
+[21:42] <+PantMissile> ok.
+[21:42] <%jester> go on
+[21:42] <+PantMissile> say you have a dumbass motherfucker of a programmer.
+[21:42] <+PantMissile> int main(int argc, char* argv[])
+[21:42] <+PantMissile> {
+[21:42] <+PantMissile> char aids[20];
+[21:42] <+PantMissile> memcpy(aids,argv[1],strlen(argv[1]));\
+[21:42] <+PantMissile> omit the slash.
+[21:42] <+PantMissile> }
+[21:43] <+PantMissile> ok.
+[21:43] <+PantMissile> Now after running a bash script that feeds it a ton of random parameters, this will crash fairly easily.
+[21:43] <+PantMissile> Hopefully you’ll have it dump core, that core dump can later be analyzed to see if the crash is exploitable.
+[21:44] <+PantMissile> Now let’s say you have a somewhat harder to exploit vulnerability.
+[21:44] <+PantMissile> That requires a certain pattern of data input.
+[21:44] <+PantMissile> The general rule here is to implement that datatype partially by hand.
+[21:44] <+PantMissile> Then use a random fuzzer for length fields, etcetera.
+[21:44] <+PantMissile> Something that builds forth upon this is a neural network as a fuzzer.
+[21:45] <+PantMissile> A neural network is fucking good at learning patterns.
+[21:45] <+PantMissile> Now most of the shit that you want to exploit, will have some sort of network connection.
+[21:45] <+PantMissile> The idea behind this is to log packets, and let the neural net look for patterns.
+[21:45] <+PantMissile> Then evolve the network to reliably produce a crash.
+[21:45] <+PantMissile> THEN see if the crash is exploitable.
+[21:45] <+PantMissile> All you guise know how a neural net works?
+[21:45] <&hatter> a lot of times you want to try \x00′s and some %s and some %d etc
+[21:46] <&hatter> format strings, nul bytes
+[21:46] <&hatter> Not just large parts of data
+[21:46] <+PantMissile> hatter: neural net saves time looking for that;)
+[21:46] <&hatter> Neural net saves time for everything PantMissile
+[21:46] <&hatter> lol
+[21:46] <+PantMissile> http://en.wikipedia.org/wiki/Neural_network <-neural networks.
+[21:46] <+PantMissile> The basic idea is this. It approximates a function to a pattern.
+[21:47] <+PantMissile> It sets various outputs depending on the inputs. Then trough reinforcement learning good outputs are rewarded.
+[21:47] <+PantMissile> A crash is a pretty good output.
+[21:47] <+PantMissile> Valid packets are decent output too.
+[21:48] <+PantMissile> So you generally have two stages (correct me if i’m wrong, but this is how i run this)
+[21:48] <&hatter> then time to install locally attach to the vulnerable app with a debugger and hit it to see what you’ve gotta do to write a real payload
+[21:48] <+PantMissile> You feed the net packets, and have inputs for chunks of a few bytes (4).
+[21:48] <+razor> build a mothafuckin neural net and use it to hack the world
+[21:48] <+PantMissile> you teach it to produce outputs that are somewhat like the packets from your packet dump.
+[21:49] <+PantMissile> You then feed it random data trough some of the inputs, and see if the outputs crash shit, Those outputs are good.
+[21:49] <+PantMissile> Then trough reinforcement learning it will learn to produce those packets that crash shit.
+[21:50] <+PantMissile> hatter: anything to add?
+[21:50] <+PantMissile> hatter: ’cause this is how i do it.
+[21:50] <&hatter> well I mean
+[21:50] <&hatter> once you crash shit
+[21:50] <&hatter> you gotta figure out how to attack it
+[21:50] <+PantMissile> yeah
+[21:50] <&hatter> installing it locally or in a virtual machine
+[21:50] <&hatter> and debugging it
+[21:50] <&hatter> mid-crash
+[21:50] <+PantMissile> true.
+[21:50] <&hatter> is the best way
+[21:50] <&hatter> to learn to get code execution out of the beast
+[21:50] <+razor> yeah but a neural net for finding an initial vector would be pretty interesting
+[21:50] <+PantMissile> ok, towards debugging then.
+[21:51] <&hatter> keep your operating system in mind when debugging
+[21:51] <&hatter> lol
+[21:51] <+PantMissile> You have a neural net that you evolved to produce valid packets (giving it initial values that are already close to an optimum), then generate values that crash shit.
+[21:51] <+PantMissile> You FUCKING SAVE THE WEIGHTS.
+[21:51] <@Nyse> Source code IMO
+[21:51] <+PantMissile> Now you’ve got a reliable way of DoS already.
+[21:52] <@Nyse> Ive not used neural networks
+[21:52] <&hatter> well sure if you have the source code
+[21:52] <&hatter> but you don’t always have it
+[21:52] <@Nyse> No
+[21:52] <+PantMissile> point being, we’re talking about fuzzing.
+[21:52] <@Nyse> Of the neural net fussed
+[21:52] <&hatter> oh
+[21:52] <@Nyse> I wanna see an implementation
+[21:52] <&hatter> Yeah me too
+[21:52] <&hatter> that’d be cool
+[21:52] <@Nyse> Never worked with neural networks before
+[21:52] <+PantMissile> Nyse: you can easily google this shit:P
+[21:52] <+PantMissile> there’s frameworks out there.
+[21:53] <@Nyse> Yea
+[21:53] <&hatter> oh also
+[21:53] <@Nyse> But I wanna see this specific implementation
+[21:53] <&hatter> the biggest stack size is typically 16 megs
+[21:53] <&hatter> and heaps usually get capped around 2 gigs
+[21:53] <&hatter> so if you aren’t getting crashen after that
+[21:53] <&hatter> probably not going to
+[21:53] <+PantMissile> hatter: yeah, that’s a weakness of this method.
+[21:54] <+PantMissile> hatter: this is a lazy man’s method rly.
+[21:54] <+PantMissile> ok, now that you can hopefully reliably crash shit.
+[21:54] <+PantMissile> it’s time to turn this into an exploit.
+[21:54] <@Nyse> Could I teach a neural network to perform arithmetic ?
+[21:54] <+PantMissile> Nyse; yes.
+[21:54] <&hatter> I’m sure you could Nyse
+[21:54] <@Nyse> Ex teach it how to add tomn
+[21:54] <@Nyse> Two numbers**
+[21:54] <&hatter> yeah
+[21:55] <+PantMissile> Nyse: yup. easily.
+[21:55] <@Nyse> Hmm
+[21:55] <+razor> you could make a human with a neural network. it just takes millions of years to develop it to that point :U
+[21:55] <+PantMissile> Nyse: fuzzing is more difficult, and you want to choose your inputs correctly depending on the program.
+[21:55] <+PantMissile> CHOOSING THE INPUTS TO THE NETWORK IS IMPORTANT.
+[21:55] <@Nyse> Ill fuck around with neural networks tmre
+[21:55] <&hatter> tbqh there’s a large problem with the internet right now
+[21:55] <&hatter> every protocol has something called a bnf code attached to it
+[21:55] <&hatter> and the parsers for the protocols are not generated from the bnd
+[21:55] <@Nyse> How does the performance of neural networks work?
+[21:55] <&hatter> *bnf
+[21:56] <&hatter> its all hand-rolled
+[21:56] <&hatter> you could write a fuzzer by taking bnf notation as input
+[21:56] <&hatter> since it defines all the inputs of a protocol
+[21:56] <+PantMissile> formal verification l8er.
+[21:56] <+PantMissile> that’s hella more difficult.
+[21:56] <+PantMissile> ok, you ran reliably crash shit.
+[21:57] <+PantMissile> *can
+[21:57] <+PantMissile> You could probably use this to nuke a server offline, like the lamer you are, and waste an exploit.
+[21:57] <+PantMissile> Or: you could stick the app in a debugger that monitors memory writes.
+[21:57] * Bruns (~Bruns@LulzCo-BEC64D3B.hsd1.al.comcast.net) has joined #school4lulz
+[21:57] <+PantMissile> See where the stack pointer gets overwritten
+[21:57] <+PantMissile> And work from there.
+[21:57] <&hatter> its not the stack pointer
+[21:57] <&hatter> the stack pointer is %esp
+[21:57] <&hatter> its the instruction pointer
+[21:57] <&hatter> %eip
+[21:57] <+PantMissile> yeh.
+[21:58] <&hatter> that you’re lookin for
+[21:58] <+PantMissile> anyways, the return pointer on the stack;)
+[21:58] <&hatter> ^
+[21:58] <&hatter> this also
+[21:58] <&hatter> does not exist on mips
+[21:58] <+PantMissile> fuck mips
+[21:58] <&hatter> mips architecture does not store its return pointer in the stack
+[21:59] <+PantMissile> ok. so you jump to your shellcode, hopefully avoiding tripping any stack cookies etc
+[21:59] <+PantMissile> (also read the article that ruined the hacking community on phrack)
+[21:59] <+PantMissile> And now you’ve got root.
+[21:59] <+PantMissile> or at least user;)
+[21:59] <&hatter> lool
+[21:59] <+PantMissile> you so leet.
+[21:59] <&hatter> that was so abridged.
+[22:00] <+PantMissile> This is how vulns are discovered nowadays.
+[22:00] <+PantMissile> There’s practically nobody going trough source by hand to find vulns.
+[22:00] <&hatter> insecure.org/stf/smashstack.html
+[22:00] <+PantMissile> Would you want to read 260mb of source code to check the kernel?
+[22:00] <+PantMissile> me neither.
+[22:00] <+PantMissile> Now there’s another way.
+[22:01] <+PantMissile> Formal verification, or hoare tuples for lulz & profit.
+[22:01] <+PantMissile> Formal verification is the idea that there’s conditions that fuck up an application, that you can express mathematically.
+[22:01] <+PantMissile> Now since you cannot solve the halting problem, this is not guaranteed to work, but pretty fucking good nontheless.
+[22:01] <+PantMissile> Let’s use the example we had earlier.
+[22:02] <+PantMissile> the memcpy to the stack has a CONDITION that allows it to be exploited.
+[22:02] <+PantMissile> namely: the strlen of arg[1] is greater than 20.
+[22:02] <+PantMissile> This is important.
+[22:02] <+PantMissile> Now what you’re going to do is see which data enters the application and is user controllable.
+[22:02] <+PantMissile> You mark this data as ‘tainted’ in your proof.
+[22:03] <+PantMissile> Tainted simply means that an attacker could set it to any random value.
+[22:03] <+PantMissile> A bounds check un-taints a pointer.
+[22:03] <+PantMissile> shit like that
+[22:03] <+PantMissile> also, ryan, stop pmming me, i dont talk to feds.
+[22:04] <%jester> rofl
+[22:04] <+darkspline> lol
+[22:04] <+darkspline> lolol
+[22:04] <zeyz> lol
+[22:04] <Hellspawn> lolololol
+[22:05] <darkmatter|mobile> xD
+[22:05] <JBAIT> lesson over 
+[22:05] <zeyz> priceless
+[22:09] * PantMissile (~PantMissi@LulzCo-DED99F01.serverhorror.com) has joined #school4lulz
+[22:10] <PantMissile> Can i continue now.
+[22:10] <JBAIT> please
+[22:10] <@t> yes
+[22:10] <PantMissile> Ok where was i.
+[22:10] * t sets mode: +v PantMissile
+[22:10] <+eni> +m
+[22:10] * t sets mode: +m
+[22:10] <+PantMissile> Somewhere about bound conditions i think.
+[22:10] <@t> <+PantMissile> You mark this data as ‘tainted’ in your proof.
+[22:10] <@t> <+PantMissile> Tainted simply means that an attacker could set it to any random value.
+[22:10] <@t> <+PantMissile> A bounds check un-taints a pointer.
+[22:10] <@t> <+PantMissile> shit like that
+[22:10] <@t> <+PantMissile> also, ryan, stop pmming me, i dont talk to feds.
+[22:11] <@t> thats still on my screan
+[22:11] <+PantMissile> thnx.
+[22:11] <+PantMissile> Now, how the fuck do we prove what is in a variable after a function.
+[22:11] <+PantMissile> Enter hoare logic.
+[22:11] <+PantMissile> I’ll give you a second to lulz there.
+[22:12] <+PantMissile> Hoare logic is nothing more than formally expressing what a program does.
+[22:12] <+PantMissile> In essence you have a precondition, a piece of code, and a postcondition
+[22:12] <+PantMissile> if the precondition is satisified, and the code is executed, the post condition holds.
+[22:12] <+PantMissile> say {a=1}b=a{b=1} is a valid hoare tuple.
+[22:13] <+PantMissile> Since this language is pretty much limited to first order logic, it is quite computable.
+[22:13] <+PantMissile> The only issue is iterating trough the code step by step and generating pre and post conditions.
+[22:13] <+PantMissile> To me, the easiest way to do this is to use the assembly.
+[22:14] <+PantMissile> It’s fairly easy to just number stack locations and generate pre and post conditions.
+[22:14] <+PantMissile> There’s toolkits out there that support c and cpp tough.
+[22:14] <+PantMissile> But generally assembly is a much more limited subset of a language, and therefore easier to validate.
+[22:14] <+PantMissile> Ok, so we now know how we validate shit.
+[22:15] <+PantMissile> What about the inputs.
+[22:15] <+PantMissile> The basic idea is this, we compute from the main function on all conditions. We see where a memcpy happens, and we backtrack trough the proof tree to see if the data could be tainted.
+[22:16] <+PantMissile> A good start for writing your own automated theorem prover would be to implement SAKE, and work from there.
+[22:16] <+PantMissile> SAKE is a really simple way of limiting proof trees in predicate logic, but can be easily extended with extra operators and 1st order logic.
+[22:16] <+PantMissile> everyone follow?
+[22:17] <+PantMissile> Good.
+[22:17] <+PantMissile> Now we could simplify our theorem prover a bit by analyzing standard for loop/increment structures etcetera.
+[22:18] <+PantMissile> This allows us to basically skip verifying code that doesn’t change shit we need in the first place.
+[22:18] <+PantMissile> So SAKE generates a proof tree that an exit assumption of the algorithm is valid.
+
+

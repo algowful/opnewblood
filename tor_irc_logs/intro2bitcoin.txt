@@ -1,0 +1,447 @@
+< mithrandir> interesting
+< anakata> Ghost can see us little baby
+<&mona> logging
+<%muerto> fucking
+<%muerto> faggot ass 
+< anakata> I'm a fucking bonsai
+<%muerto> log bot
+<%muerto> stop logging my chats
+<%muerto> terrorist
+<&mona> nevar
+<%muerto> irc terrorist
+< anakata> mona: +m please
+<&mona> irc terrorist
+< anakata> Oh wait
+< anakata> 2 mins
+< DLF> ello
+< anakata> Thu May 26 21:58:46 UTC 2016
+< anakata> Thu May 26 21:59:51 UTC 2016
+< beamer> wasa
+< LED> oh shit
+< anakata> Thu May 26 22:00:03 UTC 2016
+< anakata> :-)
+< leet5> I think this chat must be spanish free
+< joinjohn> OpShit
+< Anon64> Time to start 
+< Parabole> late  !
+< joinjohn> OpLulz
+< zap> Te jodan !!! leet5 
+< nick> this is the bitcoin one ?
+< nick> or the pipe ?
+< j4ck4l> hola chicko
+<&mona> patiences newfriends
+<&mona> nick: btc
+< fsociety> +m
+< anon1209> bicoin
+<@aediot> mona: 
+< nick> and the pipe one
+< joinjohn> биткоин
+<@aediot> <3
+< nick> is it about drugs ?
+< joinjohn> yes
+<@aediot> OKKKKKKKKKKKKK 
+<@aediot> Thanks mona
+<@aediot> mona: Logging up?
+<%muerto> >+s
+<&mona> whoops
+<&mona> aediot: yus
+<@aediot> OK DOKE
+<@aediot> Hello everyone, and welcome to my class.
+<%ad3pt> mona
+<@aediot> Bitcoin: Breaking the bank.
+<@aediot> Quick shoutout to muerto who will be the bodyguard by shielding me from the basic questions so class time isn't 100% wasted during Q&A.
+<@aediot> Todays topic is on cryptocurrency, and in more specific detail Bitcoin.
+<@aediot> Please keep in mind that I teach a lot of this from personal experience as I have survived with nothing but Bitcoin and cash for the past three years and counting now. 
+<&mona> blowjobs are a good source of income
+<@aediot> So during the Q&A sections or at the end of class if you have personal questions on how to go about setting things up for your personal life just shoot me a question and I'll more than likely have a solution for you if it's not already been covered in this lesson.
+<@aediot> By the end of this class you should be able to have a basic idea of how Bitcoin works, where you want to go to buy your own, where to stay away from, how to secure your own wallet and most importantly. 
+<@aediot> How to secure your own fucking wallet.
+<@aediot> On a brief summary for those who are unfamiliar with the concept of Bitcoin and need an explaination of how it all works, the too long didnt read version is this:
+<@aediot> Bitcoin is a decentralized network that isn't run by a bank or by any central authority. 
+<@aediot> When you get into Bitcoin you'll use a wallet software like Electrum or a web wallet like Blockchain.info to generate a wallet address that looks like this: 113oPeEquAW8fxDwcThH6PU8sjCiHSCWUH 
+<@aediot> The concept is that anyone who also has a Bitcoin address can send you money directly without the use of a bank or a 3rd party processor just by entering the amount of Bitcoin they want to send and your wallet ID.
+<@aediot> The wallet ID being that long ass block of numbers you just saw.
+<@aediot> So if you've never used Bitcoin before and just need to briefly familiarize yourself just sign up for a quick wallet via https://blockchain.info/wallet (Yes you can use your Tor browser) and just explore around a bit with the options and you should get an idea for it.
+<@aediot> At the current time of writing Bitcoin is currently priced at around 450$ per Bitcoin, so if I wanted to send you say 20$ in Bitcoin the amount I would send you an amount of 0.04357 as an example.
+<@aediot> You can check the current market value and see how much USD or any other currency is worth via preev (https://preev.com)
+<@aediot> The real end goal of this class is to be able to use the knowledge I'm going to impart on you to completely remove the use and need for your bank in your everyday life.
+<@aediot> And know which services are available for you to replace the functions that your bank held.
+<@aediot> So im sure the first thing your brilliant mind is just clammering at the keyboard to ask me is "lol but aediot y the fug wud i want to not use a b@nk? xD".
+<@aediot> Because if you want full privacy and control over your money and in reality your life you need to ditch the institution you've given full control of your life to.
+<@aediot> Money is life, it follows you everywhere and it allows you to do things. 
+<@aediot> It's what feeds us.
+<@aediot> Pays for our house.
+<@aediot> And takes care of us in general.
+<@aediot> And privacy is a lot like bacon, it makes everything better even if you're doing nothing wrong or illegal. 
+<@aediot> The more control you take back over your own money the more self empowered you'll be to do anything you want without a watchful eye from not just your local government but people around you as well. 
+<@aediot> And the fact that you're on a .onion address learning about things like this means you probably agree with me. 
+<@aediot> In addition, Having access to your money everywhere and anywhere you go can be useful if you find yourself in a situation of where you need to be on the run or you need to not be tracked via your credit card or banking information.
+<@aediot> There are even laws that you can't carry more than 10k In cash if you're traveling outside of the US. Something like Bitcoin fixes that easily. 
+<@aediot> In addition full security and privacy over your own money is an extreme peace of mind when regarding the assurity that some random blowhole doesn't target your bank for some $ and sells off the info to someone who cashes out your account 2 years after the actual hack. 
+<@aediot> I'll talk more about that in another class though.
+<@aediot> Lastly there are legal reasons such as being sued or having the court freeze your accounts to where you can't access any of your funds. They can't garnish your wages or do anything to you in regards to your coin flow if you're using Cryptocurrency. 
+<@aediot> "but aediot I've heard that bitcoin wallets have been haxored off cam-pu-tors!!!!!"
+<@aediot> That's because people like Tom exist. 
+<@aediot> Tom could be anyone from your next door neighbor to the average white girl at an internet cafe who decided to try to get into Bitcoin without doing any prior research as to go about securing their shit. 
+<@aediot> They decided it'd be a good idea to leave a hardware wallet on their nifty little windows desktop and thought "eh ill be ok nobody will ever hack me, i'm not important enough!".
+<@aediot> Next thing you know Tom wakes up and all his Bitcoin is gone because norton antivirus didn't pick up that he was infected with Bitcoin stealing malware that was searching computers on a mass scale for a wallet.dat file and ran off with it.
+<@aediot> Tom is now a very sad man.
+<@aediot> Moral of the story: Don't be like Tom.
+<@aediot> Another grip I often hear from the uninformed and lazy is this:
+<@aediot> "bitcoin will just drop as soon as a better alternative to bitcoin comes out and starts being mined. So why should i bother with using bitcoin at all since it's so fragile and the market will switch to a new coin whenever its out!"
+<@aediot> ^ To people who think that, you've obviously not done your homework.
+<@aediot> Hundreds of altcoins already exist that far surpass the semi-anonymous network that makes up Bitcoin.
+<@aediot> Take Darkcoin (now called Dashcoin) for example. 
+<@aediot> It has instant payment speeds. Tumbles all the coin for you so that it's impossible to track transactions through a public ledger. And anonymizes your connection without Tor or a VPN.
+<@aediot> It's great right? Even better than Bitcoin if I'm being perfectly honest.
+<@aediot> But there's one thing you may have noticed.
+<@aediot> You've more than likely never fucking heard of it up until this point. 
+<@aediot> Reason being.
+<@aediot> It's not adopted by giants for payment like microsoft, steam, tigerdirect, dell or anywhere else.
+<@aediot> It doesn't have years of publicity and public discussion behind it backing its solidarity within the various tech communites.
+<@aediot> Bitcoin is the one currency that comes to mind when you think of crypto-coins and for that reason alone it's the only one anyone uses in a serious manner. 
+<@aediot> And because of that it's the only one I'm going to be covering in todays class. 
+<@aediot> One thing I'm going to do is not waste class time telling you all of how Bitcoin network itself works however.
+<@aediot> Because you can google that and find amazing explainations within minutes.
+<@aediot> Like this one for example: http://www.coindesk.com/bitcoin-explained-five-year-old/
+<@aediot> And this one if that last one is too babied for you: http://www.coindesk.com/information/how-bitcoin-mining-works/
+<@aediot> So instead what I am going to do, is briefly explain that Bitcoin was built with psuedo anonymity in mind. 
+<@aediot> Basically meaning that because every Bitcoin transaction is available to the public eye via the Bitcoin ledger (https:/blockchain.info for example displays this) the FBI or any other agency can easily see how much money gets transfered to which wallet. 
+<@aediot> And while they cannot see your name just by looking at the wallet, you can determine the sending IP that's associated with the account. 
+<@aediot> And to anyone who isn't aware by now you can get a lot of information from an IP address. And you don't have to be a federal agent to social engineer an ISP into giving you personal information on the target. 
+<@aediot> That said though, it is easier to look up information as a fed seeing as how they can just go up to the ISP and pull all the records about the account that was assigned said IP and find information like your name and address.
+<@aediot> Hence the term psuedo-anonymity.
+<@aediot> And why it's important to use things like a VPN or Tor as well as Bitcoin tumblers to anonymize yourself within the network, but I'll touch more on that near the end. 
+<@aediot> I'm going to open up the chat now for some questions.
+<@aediot> Q&A will be opened up in between each major section of the class which there are three of. And if I don't get to your question by the end of class I'll be available online afterwards and you can PM me with anything you need.
+<@aediot> Now, do we have any questions so far? And for those who have just joined YES this class will be logged and posted later as a transcript for you to read.
+< AmonSec> Wich bitcoin client do you use ?
+ * DLF test
+<@aediot> AmonSec: I'll touch on that later
+<&mona> keep questions to the subject matter, not logistics or logs or anything like that
+< RosaLux> so? for what? what should i buy?! cheat money? for what?
+< skyd> aediot: How does one determine the value of bitcoin?
+<@aediot> RosaLux: Can you rephrase that?
+<%muerto> skyd: google
+<%muerto> like all questions, google
+ * DLF how do i use btc when i want to build a home ?
+<@aediot> skyd: You can check the currency pricing via that preev site i mention
+<@aediot> ed
+< mithrandir> is there a way to create a wallet anonymously and cash money anonymously?
+<@aediot> Itll show you the current market value
+<@aediot> mithrandir: Yes I'll touch on that later
+< anon1209> and cash out anonymously
+< skyd> aediot: But can't the bank control the market value?
+< freebird> aediot, didn`t undestand what we have to do , to not end up like `tom`
+< freebird> ??
+<@aediot> skyd: No
+<@aediot> Bitcoin is a lot like stocks
+<@aediot> IN terms of value
+< skyd> aediot: Do you invest in bitcoin?
+<@aediot> The algorithm its run on changes its price depending on how many is bought and sold
+< Benedict> are you going to explain the principle of bitcoin mining?
+<@aediot> skyd: I use bitcoin as my bank, so yes.
+<@aediot> beamer: No that's in a link I posted above
+<@aediot> freebird: Listen to my class :)
+< freebird> ok
+< beamer> ?
+<@aediot> Any other questions for now?
+<@aediot> Ok cool
+<@aediot> I'm going to get the quickest portion of this class out of the way, which is covering the services you can use for replacing the parts of your life and things that you buy with your bank account.
+<@aediot> These next 3 methods are for paying Bills and other things with cash or e-cash services. Now keep in mind you DO have to verify your identity for these but that's O K! You're not trying to hide that you're paying your bills from the government. 
+<@aediot> You're trying to hide how you got the money or where you keep the money in the first place so they can't monitor ALL your shit. 
+<@aediot> The more privacy we can attain in our day to day lives the better off we are.
+<@aediot> https://yourutilitysitehere.com - Most companies actually allow you to visit a local office branch directly and pay with cold hard cash. And even more companies than that will let you just pay your bills by purchasing a prepaid debit card and doing the transaction over the phone! Though you want to be SURE to ask them first before you go spending all your $ on a prepaid debit card that you can't do anything with. 
+<&mona> luckily most companies still have to deal with old people who dont understand computer
+<@aediot> ^
+<@aediot> Exactly.
+<@aediot> Which is good for us and our privacy.
+<@aediot> https://westernunion.com - You can use in-person agent locations to pay your bills using straight cash for most companies, yes its a tad pain in the ass to keep having to go to a location everytime you have a bill due however it will keep your money location a secret if your utility company doesn't allow direct payments via the above method.
+<@aediot> https://paypal.com - As a last resort one of the things you can do is pay your bills using Paypal if they allow it. And if you're asking yourself how you load money onto a paypal account without a bank or credit card, paypal added this WONDERFUL service called paypal mycash. Mycash is essentially a prepaid giftcard for nothing but paypal credit that you can put onto your account redeem via the code on the back of the card you purchase.
+<&mona> WU does not require ID to send money <$1000 last I checked
+<@aediot> The site for paypal mycash can be found here: https://paypal-cash.com also as a side note, paypal mycash works internationally as well as the USA. And if you live in a relatively remote area where you can't go to a pharmacy and pick up the prepaid card you can actually trade Bitcoin DIRECTLY for mycash codes. But more on that in a minute. 
+<@aediot> And no it does not^
+<@aediot> Though do keep in mind that faking your name via a wire transfer is fraud.
+<@aediot> So keep that in mind when you do your tradecraft.
+<@aediot> The site for paypal mycash can be found here: https://paypal-cash.com also as a side note, paypal mycash works internationally as well as the USA. And if you live in a relatively remote area where you can't go to a pharmacy and pick up the prepaid card you can actually trade Bitcoin DIRECTLY for mycash codes. But more on that in a minute. 
+<@aediot> In addition you can use payoneer (https://payoneer.com) to verify your paypal account without the use of a bank.
+<@aediot> Another thing I imagine a lot of you here use your bank for is getting money from you job. 
+<@aediot> I understand that not all of you are super duper cyber criminals and just have normal jobs that you hate or jobs that you love. Which is why this section is dedicated to you, The lovelies of this lesson <3
+<&mona> fuckin scrubs
+<@aediot> ^
+<@aediot> Your local Walmart - Walmart actually has a check cashing service that they charge $3 for if your check is under 1000$. Insanely useful, as well as painless. 
+<@aediot> Local loan sharks - You know those places you pass by that have those cancer inducing banners like "GET APPROVED NOW!!!" They actually double as check cashers if there are no Walmarts nearby you. Some have more expensive cashing fees than others but shop around! Also because this is a private establishment you can use a faked address when you have to verify your identity to them. And if they ask you why it doesn't match your ID just tell them "I just moved an
+<&mona> "I just moved an
+<&mona> you cut off
+<@aediot> "I just moved and haven't gotten the  address changed yet". 
+<@aediot> Google for a local service - If you don't have any of the above two then just google "check cashing services <your city/country> and something is bound to come up. People are greedy fucks and chances are someone will have a way to help you cash your money.
+<@aediot> And that's it for this segment, so now that I've gone over that does anyone here have any questions before we move on to the final section? For those who have just joined this class will be logged for transcripts that you can read later and again if I don't get to your questions this Q&A then just stick around after class and message me for anything I missed.
+<@aediot> Any questions?
+< skyd> aediot: Can you skip tax with bitcoin?
+< fsociety> yes
+< Anon59025> what would you recommend, Software wallet or web wallet?
+< AmonSec> How to mining bitcoin ?
+<&mona> note that even if some or all of the services mentioned here are not available in your country
+< fsociety> i use coinimal.com
+< j4ck4l> can i convert bitcoin to cash
+<&mona> there will likely be alternatives
+<@aediot> skyd: Currently, far as the USA is concerned 
+< RosaLux> can you send me money :D
+<&mona> and actually if you live in a shitty country it'll probably be easier
+<@aediot> Bitcoin is known as property
+<@aediot> And can't be taxed
+< fsociety> aediot when registering to services like coinimal and you give personal info its safe?
+< kashloca> how they servers to mine bitcoins ??
+<@aediot> fsociety: No, but I go over that
+< kashloca> they use servers to mine bitcoins
+<@aediot> kashloca: Don't concern yourself with mining unless you have a fleet of server
+<@aediot> servers*
+< anon1209> how can i cah out bitcoins ?
+< kashloca> okay
+<@aediot> RosaLux: totes
+ * DLF when i transfer btc - $$ will the revenue be taxed ?
+< j4ck4l> ^
+< freebird> when you spoke about wu, paypal, you meant that the bitcoing can become real money for us ? sorry for my english
+<@aediot> Anon59025: Ill go over that
+< skyd> Can you use bitcoin in a country that doesn't support buying with bitcoin? (like cashing out the moment you buy)
+<&mona> yes, that's the point of all these services
+<&mona> that convert your btc into money
+< freebird> cool
+< Ed> Do you think doing all of this will raise a red flag?
+< Anon59025> Also i want to hear your opinion on cloud mining. Thank you
+< skyd> Ah, I didn't know about it.
+< j4ck4l> so i could take bitcoin tansfer funds to somkind of card and get cahs from it?
+<&mona> correct
+< freebird> yes, 
+< j4ck4l> k
+<&mona> a prepaid credit card
+<&mona> or even just a code
+< freebird> I`ve one, really chip in here
+<&mona> no physical card
+< freebird> cheap
+< thr33> if it's not feasible to bitcoin  mine without a fleet, how would you get bitcoin, or am I answering my own question
+<&mona> thr33: we're getting to that
+< skyd> Is there some other benefict like cheaper item after milestone of paying?
+ * DLF so the cash service get some btc, and they give you a paycard ?
+< freebird> so with that paypal account, we can just thru a code, transfer money from bitcoin to paypal, and than pay for the credit card 
+< RosaLux> thanks for lesson =)
+< skyd> Thanks
+< fsociety> ping time out
+<&mona> lol
+<&mona> the lesson isn't over
+< RosaLux> oh ok :D
+< anakata> lmao
+< anakata> He's out
+< j4ck4l> lol
+< DLF> lol
+<&mona> aediot's pinged
+<&mona> INTERMISSION
+< fsociety> +m in the meanwhile mona?
+ * DLF thinks aediot is Snowden fro Mockba
+< j4ck4l> pinging trace route...
+< DLF> m
+< kashloca> aediot lool
+< freebird> fsociety, hope you`re right
+< freebird> loool
+< fsociety> right for what?
+< freebird> snow..
+< anakata> Welcome back aediot 
+< j4ck4l> wb aediot
+< aediot> RIP
+< LED> i too pictured snowdene
+<@aediot> Sorry everyone, laptop battery died
+< anakata> Awesome
+<@aediot> Thanks mona.
+<%ad3pt> LOL
+< RosaLux> :D
+< skyd> haha
+< anon1209> lol nice
+< j4ck4l> sweet
+<&mona> power company turned the lights off
+<&mona> cause you only pay in btc
+<@aediot> I'm just going to resume with the lesson now, will have another Q&A session later on.
+< anakata> lmao
+<@aediot> Haha what mona said.
+< j4ck4l> ^
+<%ad3pt> leet hacker... battery dies
+<@aediot> lmao
+<@aediot> Ok
+<@aediot> Secondly, I'm going to go over the basics of buying Bitcoin and how to do it right.
+<@aediot> "but aediot i already have my 4-tier identity verified bitcoin exchange account, I don't need to listen to this!"
+<@aediot> Stopthatshit.jpg
+<@aediot Like immediately.
+<@aediot> I'm only going to express this once, but if you have to USE your BANK to buy BITCOIN then you're already missing the entire point and may as well not even bother at all.
+<@aediot> And furthermore if you're FORCED to VERIFY your IDENTITY for BITCOOIN in like 4 different ways. Then you're doing it wrong.
+<@aediot> Fuck exchanges.
+<@aediot> Now then.
+<@aediot> Instead what you want to be doing is using services such as https://localbitcoin.com which has a thousand way to purchase Bitcoin online that don't involve a bank. And in multiple currencies too.
+<@aediot> And if you're lucky someone nearby via that site is selling them and you can just meet up in a public place IRL without the need for any identity verification whatsoever and you'll be able to trade at the current market value.
+<@aediot> This is honestly the BEST way to do it if you can.
+<&mona> you're all obsessed with anonymous, right?
+<&mona> make the legion work for you
+<&mona> for a change
+<@aediot> ^
+<&mona> crowdsource that shit, take it out of big organizations
+<@aediot> If you're worried about people taking back privacy and their lives n whatnot. 
+<@aediot> And really want to hurt banks.
+<@aediot> Invest in Bitcoin.
+<@aediot> When it comes to the options available to you for buying Bitcoin via trade sites the options are almost limitless.
+<@aediot> You can even trade Bitcoin directly for paypal mycash codes which works with the Bill method listed above with paypal.
+<@aediot> Another option to trade Bitcoin with is #bitcoin-otc which is a channel on freenode that allows for even more anonymized Bitcoin trading via things like Giftcards and whatnot.
+<@aediot> Though it does require some setup, it's well worth your time if you plan on trading in the long run.
+<@aediot> You can check out their instructions on their site here: https://bitcoin-otc.com
+<@aediot> And lastly one method you can use which is relatively new, though I can say from personal experience that it seems solid and hasn't let me down so far is Bitsquare.
+<@aediot> Bitsquare is a decentralized Bitcoin exchange that runs automatically through the Tor network. Identity verification is not required and you don't have to trade with your bank.
+<@aediot> Works just like localbitcoins and bitcoin-otc in terms of what you can trade for.
+<@aediot> Their website can be found here: https://bitsquare.io
+<@aediot> So like I said, the point of not using exchanges and trading semi-anonymously with other users directly is tht you don't have the fed diggin through whatever Bitcoin Exchange database and seeing when/where/who has bought Coin.
+<@aediot> And as a little bonus I'm going to be showing you a few places that you can spend your freshly earned coin for everyday services and goods directly without the need for converting to cash via the sites above.
+<@aediot> Gyft (https://gyft.com) is a site where you can purchase hundreds of virtual gift cards 100% anonymously using Bitcoin.
+<@aediot> It has cards for places like Walmart, itunes, Amazon, Target, and even Dominos + Burgerking.
+<@aediot> As well as dozens of resturants.
+<@aediot> Cheapair (https://cheapair.com) Can be used to pay for various airlines and hotel bookings all with Bitcoin!
+<@aediot> I've personally used them when I had to fly out to Defcon last year and have even used it for out of country flights.
+<@aediot> Good shit.
+<@aediot> Tigerdirect (https://tigerdirect.com) You can get a shit ton of cheap electronics here if you're a techie. Their product range is essentially everything you can get on amazon though you can pay with Bitcoin directly instead of a giftcard.
+<@aediot> Though if you find something cheaper on amazon you can just purchase cards via gyft for it and itll work all the same.
+<@aediot> And that's all for those two sections, do I have any questions before we cover the last subject of this class?
+ * DLF takes a piss
+<&mona> dead silence
+<&mona> you must all be thinking v hard
+<@aediot> GOOD
+<@aediot> LOL
+< CM99> u need to organize this in somthing like a blog bost
+< Anon59025> I want to hear your opinion on cloud mining please. Thank you
+<@aediot> CM99: It will be logged for later
+<@aediot> Anon59025: Not worth it
+< Anon59025> that's what i thought
+< Anon59025> glad you agree
+< RosaLux> where to download the log? or read blog?
+< CM99> its gonna be hard extracting the steps from the log 
+< j4ck4l> yeah multiple questions here
+<&mona> CM99: too bad
+< mithrandir> you said, don't use your bank to buy bitcoins... that means we have to cache out before?
+< reactD> log will be out after the class, as always
+< DLF> xerxesolusfedexu.onion has the logs
+<&mona> put some basic work into taking advantage of this free information
+<@aediot> RosaLux: It'll be put up via the twitter on @onionirc and @delevrything as well as the lessons archive listed in the topic in that onion^
+< yetan0theruser1> aediot: doxed as Defcon attendee
+<&mona> you make a blog post if you want
+<@aediot> yetan0theruser1: rude
+<&mona> lol
+<@aediot> mithrandir: What do you mean by that?
+< mithrandir> how can I get money out from my bank and buy bitcoins anonymously 
+< victor> you may have said this already...so your saying this isnt a way to convert bitcoin to cash without producing ID?
+<@aediot> Yes
+< CM99> ok 
+<@aediot> Via the sites I listed above
+<@aediot> For example
+< j4ck4l> bitcoin is not real money until convered to cash, wont this add to the current money stock and force the dollar to drop in value?
+<@aediot> Localbitcoin lets you do things like eh
+<@aediot> Cash in the mail
+< skyd> How is bitcoin better than back other than privacy aspect.
+<@aediot> And whatnot
+< skyd> ?
+<@aediot> Also you can trade in person skyd 
+< RosaLux> ironical question to show my interest?
+<@aediot> skyd: More control over your money
+<@aediot> Your money cant be frozen in a court of law
+< skyd> aediot: Can you save more money with bitcoin?
+<@aediot> You don't have to twiddle your thumbs to wait for a bank to approve payment
+< skyd> Oh
+<@aediot> And also skyd you don't have to worry about your account being jacked
+< skyd> aediot: Age limits?
+<@aediot> And having to change your social
+<@aediot> skyd: No age limits
+< skyd> Nice +1
+< j4ck4l> u see my question?
+< yetan0theruser1> you just have to have above average IQ
+<@aediot> Just saw, and I disagree
+<@aediot> j4ck4l: 
+<@aediot> If you can spend it for services
+<@aediot> It is "real money"
+< victor> any option for getting cash anonymously?
+<&mona> robbery
+< victor> lol
+< skyd> haha
+< victor> thanks mona
+<@aediot> victor: Check your options on localbitcoin and bitcoin-otc
+<@aediot> Like I said
+<&mona> ^
+<@aediot> As well as bitsquare
+<&mona> literally the entire lesson
+<&mona> has been about getting cash anonymously
+<&mona> from bitcoin
+<&mona> and vice versa
+<@aediot> ^
+ * DLF Can i donate to bums in bitcoin ?
+<@aediot> Oooooooooooooooooooook
+<@aediot> That's enough of that
+<@aediot> Now we move on to the most important aspect of owning a Bitcoin wallet.
+<@aediot> Actually securing the fucking thing.
+<@aediot> Now the blessing of Bitcoin is that security of your money relies entirely on you. For any of my lovelies listening on this lesson that may sound daunting, and my heart goes out to you. So I prepped this section to show you how it's basically the easiest thing ever when you do it right.
+<@aediot> This is going to be split into two mini-sections, the first being for people who have a budget to spend on securing your coin.
+<@aediot> And the second for people with no money and still want security.
+<@aediot> For my broke lovers out there, you'll unfortunately have the task of compartmentalizing your wallets.
+<@aediot> You're going to want to generate two wallets to ensure maximum security.
+<@aediot> One for spending and trades, and another for stashing.
+<@aediot> As far as what information you share with each wallet, the spending account is going to be an account that's O K if the government knows you use.
+<@aediot> The idea for the stash wallet is that nobody will know who owns it.
+<@aediot> No government, no corporation, and no friend.
+<@aediot> The practice is that any time you need to withdraw your Bitcoin for a trade on localbitcoin/bitsquare/bitcoin-otc or whatever else. You mix your coins through a Bitcoin tumbler and that wtihdraws the mixed coin from the stash account to the spending.
+<@aediot> As for what wallet software you should use for the two wallets, I would advise your spending wallet be a blockchain wallet (https://blockchain.info) and your stash wallet be electrum (https://electrum.com) that you store on an encrypted usb using something like veracrypt (https://veracrypt.codeplex.com)
+<&mona> bitcoins come out of stash wallet -> bitcoins get mixed -> mixed bitcoins go into trade wallet
+<@aediot> ^
+<&mona> is what aediot is saying, for those who dont understand tumblers
+<@aediot> Exactly.
+<@aediot> Yes
+<@aediot> Though I'll touch on those soon.
+<@aediot> You also want to seriously consider storing your recovery seed in a remote location and written down on something like a piece of paper.
+<@aediot> For anyone unaware of what a recovery seed is.
+<@aediot> It's essentially a long combination of words that act as a private key for your wallet. Or in other words an Ultimate password.
+<@aediot> If you lose access to a Bitcoin wallet and have the recovery seed located somewhere, you can simply download something like electrum and import the seed into there.
+<@aediot> And BOOM.
+<@aediot> Money recovered.
+<@aediot> Nifty yeh?
+<@aediot> As for my rich pimps who have a little $ to spend on this nonsense your job is a lot easier.
+<@aediot> You can just go out and buy a hardware wallet that does all the heavy lifting for you. A few of which I'll go over.
+<@aediot> Ledger wallet (https://ledgerwallet.com) lets you create multiple (yet seperate) wallets within the same software such as spending, savings, stash, or whatever else.
+<@aediot> IN addition it helps you a lot with anonymization because every time one of the accounts recieves coin via one of the wallet id's it generates itll automatically give you a brand new wallet id.
+<@aediot> Anonymizing each and everytime you recieve coin from a new person.
+<@aediot> Nobody will know it's you, unless you tell them.
+<@aediot> It also helps keeps around the past wallet Id's in case someone sends you coin by accident, so don't worry about money loss.
+<@aediot> Though a few other projects exist as well such as (https://bitcointrezor.com) and (https://keepkey.com) which are hardware wallets with essentially their own OS inside. 
+<@aediot> The private keys never once touch the computer you run it on meaning you can bring it around with you and you are safe wherever you want to manage your coin.
+<@aediot> All that said though.
+<@aediot> You still want to keep a remote backup of your recovery seed somewhere that isn't in your house in case something happens to your house or your keepkey/trezor/ledgerwallet and you're not able to get it back.
+<@aediot> And it should be HIGHLY noted that you remember to channel all of Bitcoin wallet traffic through a VPN or Tor so they can't trace it back to an IP address with your name written on it.
+<@aediot> And lastly, we get to mixing your coin.
+<@aediot> At the time of writing these are the three best methods I can advise to you.
+<@aediot> My personal favorite is bitblender (http://bitblendervrfkzr.onion/) as they have been around the longest and have never personally let me down or taken coin from me. There was one case where I lost my coin in one of the transactions (a good chunk of it too) and the bitblender staff had actually helped me recover it even though it wouldve been super easy for them to just ignore me and keep the money. It should be noted as well that if you use the "quickmix" op
+<&mona> "quickmix" op
+<&mona> cutoff
+<@aediot> Another one I hear glowing reviews about is HelixLight (http://grams7enufi7jmdl.onion/helix/light) via Grams. For anyone unfamiliar with Grams they're essentially a group of people trying to be the Google of Darknet. They have things like a search bar and whatnot for searching markets all at once, and I personally think their work is interesting. But more importantly their Bitcoin mixer is solid and I give it a reccomendation.
+<@aediot> Now additionally if you don't want to have to rely on a Darknet site to tumble your own coin for you then there's an option like joinmarket (https://github.com/JoinMarket-Org/JMBinary) which runs off your computer and uses CoinJoin to mix with other people. I've personally never used it so use at your own risk.
+<@aediot> "But aediot I don't need to mix my coin using some service because I dont trust them!!!!!! I do it all myself by pushing it through 10 wallets I won before reaching my personal!!!!!)
+<@aediot> ^Let me address this shit.
+<@aediot> First of all, trust them to do what. Exactly?
+<&mona> if you're not sure what to use, one of the above 3 services and keep joinmarket et al in mind as a fallback if all the legit services go down
+<@aediot> It's not like your private keys are hitting their servers so they can't rob your Bitcoin wallet or anything first of all. And secondly the most they could possibly do is just take the coin you wanted to mix. Though if they did that word would spread like wildfire and nobody would use them.
+<@aediot> If you don't feel any of my references are fine then try it out for yourself with like 5$ in Bitcoin and see if they rob you.
+<@aediot> I've put quantities of Bitcoin into bitblender alone (at once mind you) that's the equivilent to what most of you make in a single year.
+<@aediot> Not once have I had my coin taken, and it arrived in all the wallets I told it to go in.
+<@aediot> And if you're worried about "oh well they could just mix it badly so they can have the feds track it"
+<@aediot> There's this amazing little thing called "Taint"
+<&mona> right behind your balls
+<@aediot> Each wallet has what's called "Taint" which is actually nicely and colorfully displayed via blockchain that shows you which wallets have touched which wallets.
+<@aediot> Like here for example: https://blockchain.info/taint/1dice6GV5Rz2iaifPvX7RMjfhaNPC8SXH
+<@aediot> So it's entirely possible to see if a Mixer did it's job right.
+<@aediot> So don't hit me with that "I don't trust them" nonsense because I'm going to point and laugh at you.
+<@aediot> The entire point of tumbling your coin is that you're mixing it with OTHER users Bitcoin. THAT'S what destroys the taint from your wallet.
+<@aediot> Other users coin.
+<@aediot> It is impossible to tumble coins that only you own alone.
+<@aediot> I would advise that you use the transcript when it's up as a reference point for any services or things you missed for the future so you have a quick access of links.
+<@aediot> Alright! That's it for the class today. Thank you all for attending. As stated I'll stick around for a good number of hours so if you have any questions regarding the class or in general just shoot me a private message by typing "/query aediot <your message here>" And I'll answer your question as fast as I can though keep in mind it may take me a short while because I may be busy answering others questions. If you're reading this via a transcript after the cl
+<@aediot> mona: end of log
+<&mona> ***LOG CLOSE***
+<@aediot> <3

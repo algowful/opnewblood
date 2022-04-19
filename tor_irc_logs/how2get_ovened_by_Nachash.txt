@@ -1,0 +1,192 @@
+<@saken> Ahhoy 
+<@aediot> \o/
+<@saken> Class will start here in about 20minutes, if anybody has questions ask them after I'm done covering a topic
+<@saken> Topic is pretty much FBI/V&'s and what to expect
+<@aediot> \o/
+< dev> Just FBI or secret services in general?
+< D4rkL0rd> Agencies dev :p
+< McL0u1s> what V&'s means?
+<@saken> Getting vanned by a law enforcement agency
+<@aediot> McL0u1s: When they raid your house with a swat van
+<@saken> aka raided
+<@aediot> ^
+< dev> Someone needs to upd8 the title
+<@aediot> y
+< dev> oh k
+< McL0u1s> oh. ok
+<@saken> Mainly we will be going over federal law enforcement agencies which includes FBI, Secret Service etc. You'll get an insight on how raids work, cases, and the indepths of everything
+< dev> usually there's info about what the class is gonna be about? I dunno
+< dev> alright, cool
+<@aediot> dev: Doesn't matter too much now that it's starting in 35
+<@aediot> lol
+<@aediot> But yer agree
+< dev> heh, okay c:
+< McL0u1s> one question about sqli: what this error means: mysql_num_rows(): supplied argument is not a valid MySQL result resource
+< kermit> wouldn't the idea be to not get v&
+< kermit> i'm not an expert or anything
+<@aediot> kermit: this is for when 60% of the people in here eventually get arrested
+<@aediot> lol
+<@aediot> but yes the idea is to not get to that point
+< McL0u1s> i checked the number of args using 'order by', but when I try to inject using "union (select 1,2,3,4,5)" I get that error. Anybody knows?
+< nachash> yes hello
+< nachash> v& lovecraftian onion god here
+< nachash> *unv&
+<@GeisEijkelboo> rofl
+< nachash> I hear
+< nachash> this is a school
+< nachash> for lulz
+< kermit> 4lulz*
+< nachash> do you teach people how to laugh
+< nachash> or how to generate laughter?
+< dev> we're stand up comedians
+< dev> yes
+< D4rkL0rd> yes they teach how to laugh at others security
+< nachash> dev: awesome
+< nachash> D4rkL0rd: Your name is suspiciously close to one of my old titles
+<@aediot> holy fucking shit
+< D4rkL0rd> are we the same ppl then?
+< nachash> we just might be
+< dev> wot
+< D4rkL0rd> ordid i hakc ur acc o_o
+< D4rkL0rd> * hack
+< nachash> I am at least 40% of the room at any given time
+<@saken> nachash lol
+<@saken> not sure if real one or not but hello
+<@aediot> ^
+< nachash> saken: the mystery is at least half the fun
+< D4rkL0rd> lol nachash what was ur old name?
+< D4rkL0rd> muerto o/
+<@nachash> I had @DarkLordofDox on le twatter at one time
+<@nachash> then those faggots rmed it
+< D4rkL0rd> LOL
+<@saken> lel
+<@saken> where have you been nachash
+<@saken> you missed the ev0 wreckening
+<@nachash> if you look at my current twitter, the avatar is of morgoth pwning the shit out of an elf
+<@nachash> saken: I've been residing in the spaces between spaces
+<@saken> lool fair enough
+<@nachash> that's where unv& lovecraftian onion gods go when they aren't chatting with stand-up comedians on the internet
+< D4rkL0rd> nachash http://pastebin.com/xSddn7mN
+<@nachash> > pastebin
+<@nachash> fed detected
+< D4rkL0rd> lol
+<@muerto> D4rkL0rd: you can find that on doxbin as twitter.txt
+< kermit> Anyway, what brings you here nach? Are you here to teach us how to laugh?
+< D4rkL0rd> ahh okay i was actually looking for his twitter to see his pic :p
+<@nachash> D4rkL0rd: That post was fun
+<@nachash> I fucking
+<@nachash> did the dox
+< D4rkL0rd> lol nachash
+<@nachash> and when I gave intangir the reigns for a bit
+<@nachash> I told him
+<@nachash> "post this when twitter IPOs"
+<@nachash> because
+<@nachash> as you comedians know
+<@nachash> the secret to good comedy is timing
+< D4rkL0rd> LOL
+<@nachash> I think he may have improved upon it
+<@nachash> that was too long ago to care about
+< D4rkL0rd> LOL probably
+<@nachash> only regret was not shoving delbius in the oven
+<@nachash> she needed to get roasted moreso than the rest
+<@saken> Alright well I'm going to get this "class" started here
+< D4rkL0rd> aight mate
+<@saken> I will not be discussing how to hide/get rid of shit, encrypt, etc so look on the internet for that or keep reading. For a tutorial on how to survive in prison I will refer you here: http://phrack.org/issues/67/5.html
+<@saken> lel
+< D4rkL0rd> lol
+<@saken> Now, in the future for some reason if your opsec is shitty and the feds manage to find out who you are for some crime you committed online, 9/10 you will more than likely get a huge kaboom bang at your front door at 6AM or random hours in the PM. The hours for searches are between 6AM to 10PM Monday through Saturday (which leaves you untouched Sunday, in some cases they can make an exception with court permission) You will have automatic rifles pointed at 
+<@saken> your face ready to shoot so when this happens you have to LISTEN TO EVERY WORD they say unless you wanna an hero.
+<@nachash> saken: I have one question
+<@saken> Go for it 
+<@nachash> on a scale of 0 to zeekill, how talkative were you after you got grabbed?
+<@muerto> lmfao
+<@saken> With in mind that everybody snitched in my own case, 5/10
+< D4rkL0rd> i think he was sleepy at 6am so not much talkative probably
+<@saken>  Pets will be let loose to roam free as your doors will let wide open and you will get the pleasure of seeing a few fat feds chasing after your dog(s) or cat(s). Surrounding neighbors obviously will know what the fuck is going on because of loud ass bangs and screams of "IT'S THE FBI OPEN THE DOOR!"
+<@nachash> for those who don't know, zee's interrogation with finnish police was 67 pages
+<@saken> If you don't open the door in a timely matter, you can kiss that door goodbye and they WILL be able to knock it off despite any padlocks you may have on it. You will be immediately handcuffed and everybody else in your household will be screamed at to come outside so they can be handcuffed as well. This is for their "safety" in case there are weapons, although it's completely unnecessary and part of the process of getting owned and scaring the living shit 
+<@saken> out of you. 
+<@saken> During this time your house will be searched for whatever materials they are looking to seize depending on the crime(s) you committed, weapons, explosives, and hidden compartments. Depending on the field offices and how much they hate you, they will have the SWAT FBI team, a mini team of forensics professionals who think their hot shit because they have Microsoft Certifications will get to work immediately on your computer, and a few Special Agents who are 
+<@saken> there to interrogate you.
+<@nachash> "special"
+<@nachash> lllllll
+<@saken> Yeah the most funny part about "Special" Agents is that the Sheriffs Department cracks that joke aswell, nachash
+<@saken> I'm going to get into the forensics part now
+<@nachash> not even surprised
+<@nachash> can we
+<@nachash> forensically analyze this link first?
+<@nachash> http://very-hung.tumblr.com/
+<@saken> (y)
+<@aediot> 
+<@saken> The tools used to comb your computers is EnCase Forensics Software which is similar to AccessData's FtK (Forensic Toolkit) and contains most of the same capabilities. If your computers happen to be ON during the time of the raid, the encryption on your HDD will be completely meaningless unless you have hidden volumes and this is a huge win for them and less resources to use. They have capabilities of doing live memory dumps which will tell them everything 
+<@saken> you've done on your computer from the time you powered it on, search files for keywords, scan for pictures, and "suspicious files"; any evidence found they make a report and it gets sent to a prosecutor's office where they determine if you get to get screwed or not.
+<@aediot> er, ignore that
+< D4rkL0rd> eww tahts too HARD to forensically analyze nachash :p
+<@muerto> saken: im assuming that's your dong
+<@muerto> rofl
+<@saken> Not ashamed :P
+< kermit> is that 4 or 5 inches
+< kermit> i can't tell
+<@muerto> i'd say 3
+<@nachash> how much vay jay do you expect to get after doing your time?
+<@muerto> them angles 
+<@saken> They will tell you have the right to an attorney and if you do not have one, they will appoint one for you. This does NOT mean that they will get you an attorney while you are being questioned so it's completely up to you if you wanna speak which is highly not advised as every word IS and WILL BE used against you if it goes to court, or if you wanna give them the middle finger and tell them you won't speak with them until you hire an attorney (which is 
+<@saken> highly recommended, if you can't afford one there are a few on Twitter who can MAYBE help point you in a good direction or give you advice) that is also possible but that usually leaves them pissed off, leaving you open for them to interrogate people that associate with you to see if they know anything, as well as building dossiers on them. This includes family members, friends, neighbors, teachers, employers, etc. You can expect the whole nine.
+<@saken> does it conern you that much big guy? nachash
+<@muerto> oh shit, shots fired
+< kermit> wait i didn't get an answer sorry i live in africa and my internet is very bad
+<@nachash> saken: this is a comedy channel, and there's nothing funnier than the truth
+<@muerto> saken going on the offensive after getting dropped
+< kermit> is it 4 or 5 inches
+<@muerto> kermit: he hasn't confirmed, im betting on 3
+<@saken> i'm not too amazed by a tumblr grep lol
+< D4rkL0rd> lol is it illegal if i disagree to decrypt my drive?
+<@saken> D4rkL0rd: It all depends if it goes to court and you're compelled to give them the key to the decrypt the files/the drive in question.
+<@nachash> saken: I'm not too amazed by your 5/10 cooperation, especially since leiderman claimed you didn't rat anyone out
+< dev> https://nakedsecurity.sophos.com/2016/04/28/suspect-who-wont-decrypt-hard-drives-jailed-indefinitely/
+<@muerto> 01:50 -!- lolded changed the topic of #school4lulz to: CURRENT LESSON: HOW TO GET OVENED BY FORSAKEN
+<@muerto> LOL
+<@nachash> loooooooooooooooooooool
+< D4rkL0rd> LOL
+< dev> lol
+<@nachash> school4lulz: still a place where skiddies get rip'd, 5 years later
+<@saken> nachash: the thing is I didn't, everybody did so how would you call that ratting in sense? 
+<@nachash> I'm unimpressed by your relativist bullshit
+<@saken> I could really care less brohem, it's okay that you're defending an e-girl all because of this <3
+<@saken> Don't you have somewhere to hide lol
+<@nachash> lol, what e-girl?
+<@saken> During this entire process, you can expect all of your internet communications to have a wire-tap which allows them to see your incoming traffic and outgoing traffic, if your traffic is encrypted, the MAC addresses on your network and the PC names associated with them. You can expect all known social media accounts to have subpoenas, and in case Skype keeps history FOREVER including deleted messages and all incoming/outgoing calls as well as IP addresses 
+<@saken> used to connect; Facebook retains all messages, friends you've had on your list since the day you made your account (even deleted ones), IP addresses used to connect, and your user agent data which consists of your computer screen size, operating system, browser, and time/timezone. Cell phones or landlines if known to them, any calls you make they will automatically get a phone call on a designated phone number that they sent the Legal Department for your 
+<@nachash> you should know I don't roll like that
+<@saken> phone company for them to listen in on your communications.
+<@nachash> this class is 0/10
+<@saken> I can just go with the pretense we don't know who we're talking about as why you're on the offense ;)
+<@nachash> should have been a medium.compost
+<@muerto> i agree, what another failure
+<@nachash> *medium.com post
+<@nachash> although
+<@nachash> the compost pile
+<@nachash> would be a good place for it as well
+<@muerto> loool
+<@nachash> saken: You never did understand my motivations
+<@nachash> glad to see that's still the case
+<@nachash> I was told this was a comedy channel
+<@nachash> and I came to bring my brand of lulz
+<@nachash> to this fine school
+< D4rkL0rd> lol
+<@saken> If they find evidence on your computer and decide to charge you and this process can take years depending on the crime you committed, as long as its within the statue of limitations. Assuming most of you will possibly be raided for computer crimes, the statue of limitations for that is 5 years. If your case is dormant and you are not charged within that time, you can consider yourself a free man and say you got away with it. If it turns out you are being 
+<@saken> charged, expect another knock at the door from your local Sheriff's department and the Special Agents who were there to question you during the search warrant raid for them to process you and take your mugshot, and depending on the prosecutor they can decide to keep you detained until arraignment or let you go on your way with an assigned court date. The exciting part of this is that they ALWAYS will have a minivan for the ride there, so you finally will 
+<@saken> get to kick it in the back seat of the PartyVan. The chances of receiving your equipment back in a case where you are not charged with a crime will be a 50/50% unless you hire an criminal defense attorney who can negotiate the return of your property.
+<@nachash> tl;dr
+<&lolded> who approved this copy pasta?
+<@muerto> same, this is shite
+<@muerto> f0rsaken's blog itc
+<@saken> was a rough draft
+<@saken> that i never finished up
+<&lolded> okay
+<&lolded> so thats where we can end it?
+<@saken> yep
+-!- mode/#school4lulz [-o saken] by lolded
+-!- saken was kicked from #school4lulz by nachash [nachash]
+-!- mode/#school4lulz [+b saken!*@*] by lolded
+<@muerto> fuckin expunged

@@ -1,0 +1,128 @@
+21:34 <@ErrProne> cool, port knocking for the purposes of this lesson
+21:35 <@ErrProne> is a method of externally opening ports on a computer that are otherwise closed
+21:35 <@ErrProne> if that makes any sense
+21:35 <@ErrProne> i'll get into more detail in a minute
+21:35 <@ErrProne> it's not just running nmap on a host and "knocking" on every port to see if it's open
+21:35 ||| mode/#school -c by hatter
+21:35 <@ErrProne> say we have ssh running on a server
+21:36 <@ErrProne> we don't want port 22 to be visible to the outside world though
+21:36 <@ErrProne> we can create a knocking sequence that will either open port 22 temporarily
+21:36 <@ErrProne> or reverse ssh to the host that knows the secret handshake
+21:36 ||| mode/#school +v greatvon by hatter
+21:37 <@ErrProne> this is also helpful for creating backdoors, if you're into that sort of thing
+21:37 <+greatvon> are the knocking sequences always the same or different server different sqeuence
+21:38 <%selket> hatter
+21:38 <@ErrProne> the sequence can be however you set it up
+21:38 <@Theruler> i hop everyone knows what a reverse connection is 
+21:38 <@ErrProne> i've set one up in the past, using nothing more than a bash script, and modified IP tables
+21:38 ||| mode/#school -D+D by hatter
+21:38 <@ErrProne> Theruler explain to them a reverse connection real quick
+21:38 <@ErrProne> i'll get into sequences when you're done
+21:39 ||| NOF4CE is now known as joinschool4lulz
+21:39 <@Theruler> ok so basiclly reverse connection for those who do not know what it is its like the server connects to you
+21:39 <@Theruler> this gets around firewalls and stuff
+21:39 <@Theruler> it inatilazes the handshake
+21:39 ||| WOOTAnonymous_ is now known as WOOTAnonymous
+21:39 <@Theruler> instead of you sending packets to it
+21:39 <@Theruler> it sends packets to you
+21:39 <@Theruler> and you listen for them
+21:39 <@Theruler> then it starts the connection
+21:40 <@kratos> just like a connection but in reverse :)
+21:40 <@ErrProne> right, you can use netcat to bind a shell to an outgoing socket
+21:40 <@ErrProne> or use any of the other variations 
+21:40 <@ErrProne> so, knocking sequences
+21:40 <@ErrProne> are limited to your imagination
+21:40 <@Theruler> its very simple and anyone who wants to dl metasploit and damn vulnerable linux can test it out via live cd
+21:41 <@Theruler> thats a good place to start since u can read the code too to see how it works
+21:41 <@Theruler> i cannot write code for the life of me but i can read and understand it
+21:41 <@Theruler> anyway sorry errprone
+21:41 <@ErrProne> no, you're good bro
+21:41 <@ErrProne> so, sequences
+21:41 <@ErrProne> can be anything
+21:41 <@ErrProne> for the first example
+21:41 ||| mode/#school -D+D by hatter
+21:41 <@ErrProne> we'll say, 3 tcp ports that have to be hit in a certain order
+21:42 <@ErrProne> w/in 10 seconds
+21:42 <@ErrProne> so, port 1337, 31337, and 13375
+21:42 ||| mode/#school +o selket by hatter
+21:42 <@ErrProne> so the person knocking would use hping, nmap, or a custom client to knock each of those ports
+21:42 <@ErrProne> in sequence
+21:43 <@ErrProne> not scanning other ports either
+21:43 <@ErrProne> so the host running the server
+21:43 <@ErrProne> lowers the protection on that port
+21:43 <@ErrProne> or spawns a shell back
+21:44 ||| mode/#school +v laycat by ErrProne
+21:44 <@ErrProne> laycat had something to add
+21:44 <+laycat> hello
+21:44 ||| exception_x is now known as fil
+21:44 <@ErrProne> go ahead
+21:45 <+laycat> for windozers(like me) after u install nmap on your computer, go to my computer > propeties > advanced settings > environment variables > system variables and add nmap as a path there
+21:45 <@kratos> this will make your command shell look in the nmap directory for any exes you try to run through it
+21:45 <+laycat> eg for me, ;c:\Program Files\Nmap  in the path variable
+21:45 <+laycat> ok done
+21:46 <@kratos> ie when you type nmap.exe or nmap it will search through the nmap directory for it
+21:46 <@kratos> meaning you can be cded into any directory and still use nmap :)
+21:46 <+greatvon> cool
+21:46 <@ErrProne> alright, cool
+21:46 <@ErrProne> so
+21:47 <@ErrProne> portknocking.org has a shit ton of more information
+21:47 <@ErrProne> as well as an easy tool to download and play with
+21:47 <@ErrProne> this is just a simple way to obfuscate, or hide ports from the outside world
+21:47 <@ErrProne> but still give you the freedom to connect back to your computer
+21:47 <@ErrProne> w/o needing to filter by ip addresses
+21:47 <@ErrProne> so if you're mobile
+21:47 <@ErrProne> you'll still be able to connect
+21:48 <@ErrProne> one more example though
+21:48 <@ErrProne> along w/ some code
+21:48 <@ErrProne> and i'll turn it over to questions
+21:48 <@ErrProne> as i said before
+21:48 <@ErrProne> the knock sequence is only limited by your imagination
+21:48 <@ErrProne> i took the code from an old tcpdump example
+21:48 <@ErrProne> for sniffing traffic on the network
+21:48 <@ErrProne> and use it to monitor for a magic packet
+21:49 <@ErrProne> "magic packet"
+21:49 <@ErrProne> which will be #defined as MAGIC_ACK
+21:49 <@ErrProne> and MAGIC_SEQ
+21:49 <@ErrProne> this knock sequence
+21:49 <@ErrProne> requires only one TCP packet to open
+21:49 <@ErrProne> if you're shakey on TCP/IP headers
+21:49 <@ErrProne> look that shit up
+21:49 <@ErrProne> i'm not gonna touch on it
+21:49 <@ErrProne> but you have a SEQ and ACK header
+21:49 <@ErrProne> that can be modified w/ a number
+21:50 <@ErrProne> it helps the layers sort out which packets are coming in sequence, and which packet number is expected next
+21:50 <@ErrProne> anyways, for this example
+21:50 <@ErrProne> incoming ACK on any port will be 0xdead
+21:50 <@ErrProne> and SEQ will be 0xfeed
+21:50 <@ErrProne> those are hex numbers
+21:50 <@ErrProne> for the slow kids
+21:51 <@ErrProne> anyways w/o any further waiting
+21:51 <@ErrProne> http://pastebin.com/7ZEVBxCD
+21:51 <@ErrProne> the code         if (r_ack == MAGIC_ACK && r_seq == MAGIC_SEQ) printf("magic packet received\n");
+21:51 <@ErrProne> should be replaced w/ a connect back shell, or a system call to unfirewall the port for say 1 minute, to allow you to connect in
+21:52 ||| mode/#school -m by ErrProne
+21:52 <@ErrProne> questions / comments
+21:52 ||| Captain|Akademika is now known as Captain|Akademika|Off
+21:52 <@ErrProne> i could have been a lot more detailed, but i've been drinking
+21:52 < thz_nmr> ;)
+21:52 < thz_nmr> nice job
+21:52 < thz_nmr> thx
+21:52 < P-4> This is in C++ right?
+21:53 <@ErrProne> C
+21:53 <@ErrProne> uses libpcap
+21:53 <@ErrProne> i haven't seen anyone else use SEQ/ACK values for the knock sequence before either
+21:53 ||| mode/#school -D+D by hatter
+21:53 <@ErrProne> so you should feel privileged
+21:53 < P-4> :)
+21:53 < P-4> how useful is java?
+21:53 < menot> errprone, will there be "logs" of this lesson?
+21:54 <@ErrProne> i didn't log it
+21:54 < menot> mkay
+21:54 <@ErrProne> but if someone did
+21:54 <+laycat> i did no worries
+21:54 <@ErrProne> i'll put it in the topic if they pastebin it
+21:54 <@ErrProne> any other questions tho?
+21:54 <@ErrProne> confusion?
+21:54 <+greatvon> so am i right in thinking, i can just change the printf part to opening the firewall on port 22 for a few mins to connect, when the firewall goes backup wll it disconnect the ssh shell?
+21:54 < c0s> Nope, you did a good job explaining it.
+

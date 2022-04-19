@@ -1,0 +1,1252 @@
+Log opened Sun May 01 15:16:03 2016
+<@Lisa> So, with bash we want to give you some very basic commands that you can use in terminal
+<@Lisa> echo
+!Onion.IRC jetblackcloud invited changer into the channel.
+!Onion.IRC [Knock] by Ungoliant!Ungoliant@localhost (no reason specified)
+<@Lisa> what does ehco do? sends something to STDOUT
+!Onion.IRC [Knock] by The_Death_Of_Death!The_Death_@localhost (no reason specified)
+<@Lisa> echo "hello world" 
+!Onion.IRC [Knock] by Edward!User@localhost (no reason specified)
+!Onion.IRC kr0 invited Ungoliant into the channel.
+!Onion.IRC kr0 invited Edward into the channel.
+<@Lisa> and hit enter, you will then see hello world on your screen
+!Onion.IRC kr0 invited The_Death_Of_Death into the channel.
+<@Lisa> cat displays the content of a file
+<@Lisa> cat hellowolrd.txt, will show you what is in the file
+<@Lisa> yes boring stuff, but you have to know it
+!Onion.IRC jetblackcloud invited Sud0 into the channel.
+<@Lisa> more/less allows you to step through a file page by page
+<@Lisa> by the way if you have questions pm one of the ops and then they will ask it
+<@Lisa> flood jetblackcloud
+<@Lisa> netstat
+<@jetblackcloud> thanks :-p
+<&mona> don't pm me or Lisa
+<@Lisa> is a command, your welcome, that i find myself constantly using
+<&mona> we'll probably ignore you
+<@Lisa> netstat is what you use to view connections
+!Onion.IRC [Knock] by jeff!my.dick@ur.mum (no reason specified)
+!Onion.IRC kr0 invited jeff into the channel.
+<@Lisa> netstat --tcp, would show you your current tcp connections
+<@Lisa> netstat -p
+<@Lisa> and so on and so on
+<&mona> a good netstat oneliner: netstat -antp
+<@Lisa> ^
+<@xerxes> i'd like to add that -l is for listening ports, useful to see active services
+<&mona> this will show all connections and what programs are associated with them
+<@Lisa> very good
+<&mona> yeah
+<&mona> also
+<@xerxes> netstat -tulpn is good too
+<&mona> if you are paranoid
+<&mona> add -c
+<&mona> which will update it every second or so
+<@Lisa> right
+!Onion.IRC [Knock] by Pirate6!chatzilla@localhost (no reason specified)
+<&mona> so you can see when 10 connections open
+<&mona> because you're getting hacked :D
+!Onion.IRC [Knock] by Edward!User@localhost (no reason specified)
+<&mona> note that some rootkits can hide their connectons from netstat, of course
+<@Lisa> and you could use > to dump that into a file
+<&mona> or they wouldnt be very good rootkits
+<@Lisa> what about piping mona?
+<@Lisa> how can that be used with something like netstat?
+<&mona> well, Lisa!
+!Onion.IRC kr0 invited Edward into the channel.
+<&mona> in Linux there's a few ways to redirect the output of a program
+!Onion.IRC kr0 invited Pirate6 into the channel.
+<@jetblackcloud> piping. ood. was asked. how do you od the cat command with more/less? by icy
+<&mona> the one Lisa just mentioned
+<&mona> uses the '>' character
+<&mona> if you do
+<&mona> netstat -antp > netstat.txt
+<&mona> the output from netstat wont be displayed on screen
+<&mona> instead, it will go into a file
+<@Lisa> \^_^/
+<&mona> another thing you can do
+<&mona> is use a pipe, |
+<&mona> when you pipe a command, you actually send the output of one command
+<&mona> directly into the input of another
+<@Lisa> right
+<@xerxes> netstat -antp | grep "string" for example
+<&mona> let's say i have a .tar file with my evil, evil rootkit in it
+<&mona> and i want to convert it into base64
+<&mona> and then upload it to ix.io
+<@Lisa> naughty
+<&mona> the cat command can be used to display it
+!Onion.IRC [Knock] by dirtyanon!dirtyanon@localhost (no reason specified)
+<&mona> and the base64 command will convert input into base64
+<&mona> and the ix utility will upload it
+<&mona> so:
+!Onion.IRC kr0 invited dirtyanon into the channel.
+<&mona> cat evil_fucking_shit.tar | base64 | ix
+<@Lisa> ^ pipe all teh tings
+<&mona> and i get a nice, clean link
+<&mona> what i did there is cat (display) the .tar file as binary data, convert that into base64, and directly upload it
+<@Lisa> hey mona lets say i have a program that is hanging:( it wont close
+<@Lisa> how can i get rid of it using terminal?
+<&mona> why, Lisa, I'd say
+<&mona> i thought you were leet!
+<&mona> but because i'm a good person
+<@Lisa> :(
+<&mona> i'll help you
+<&mona> you have too options
+<&mona> you can use killall
+<&mona> to kill any process that matches a name
+<&mona> .e.g
+<&mona> killall irssi
+<&mona> killall socat
+<&mona> obviously that's a bit of a blunt object
+<&mona> what if you just want to kill 1 irssi instance, not all 212 you're running
+<@jetblackcloud> note for all, since asked, remember that commands and file names are case sensitive
+<&mona> (you are running 212 instances of irssi in this example)
+<&mona> (in this example, you are insane)
+<&mona> you can use kill -9 for htat
+<&mona> and you provide it the pid, or process id
+<&mona> the pid identifies one single process
+<&mona> i.e., one instance of a running program
+<&mona> you can find out a program's pid with the ps command
+<&mona> then
+<&mona> kill -9 <pid>
+<&mona> if you dont have privileges to kill that process, you might need sudo
+ * mona looks at Lisa expectantly
+ * mona begins shivering violently in anticipation
+<&kr0> mona DO SOMETHING
+<&mona> lol
+<&mona> ok well
+!Onion.IRC jetblackcloud invited adazhangx into the channel.
+<&mona> you've got > to send output into a file
+<&mona> and | to pipe output into a program
+!Onion.IRC jetblackcloud invited amnesia into the channel.
+<&mona> small note about using >
+<&mona> you can also use it to supress output
+<&mona> by sending it to /dev/null
+<&mona> /dev/null is Linux's "delete me" file
+<&mona> rip
+<&kr0> well
+<&mona> cat Lisa > /dev/null
+<&kr0> ^
+<&mona> a few other special sequences
+<&mona> . always represents the current directly
+<&mona> so cat ./porn.txt
+<&mona> is the same as cat porn.txt
+<&mona> current directory* sorry
+<&mona> .. is always the directory above you
+!Onion.IRC kr0 invited meldcat into the channel.
+<&mona> so cd .. takes you up one level
+<&mona> you can chain those together
+<&mona> so
+<&mona> cd ../../
+!Onion.IRC [Knock] by kevinfinch!chatzilla@localhost (no reason specified)
+<&mona> = up 2 directories
+<&mona> cd ../../../
+<&mona> = up 3 directories
+<&mona> you kids are smart
+<&mona> you get the idea
+<&mona> you can also use $() to execute a command within a substring
+<&mona> i.e.
+<&mona> if you have a .txt document that contains the string "-antp"
+<&mona> you could do like
+<&mona> netstat $(echo antp.txt)
+<&mona> that's a shitty example
+<&mona> but you get the idea
+<&mona> lol
+<&mona> uh
+<&mona> since Lisa is ded
+<&mona> i'll unmute for a sec
+<&mona> let's see if we have any questions on what we've covered so far
+<@jetblackcloud> have a few, mona
+[Users #class]
+[~butts        ] [ beerscript ] [ Edward           ] [ Kwippy       ] [ Omegon      ] [ Srobizy           ] 
+[&ChanServ     ] [ blindPig   ] [ embededgma       ] [ l00l         ] [ onthedl     ] [ StonedgeWorld     ] 
+[&kr0          ] [ bluetooth  ] [ emperOR          ] [ L00p         ] [ osinc       ] [ Sud0              ] 
+[&mona         ] [ Bockwurst  ] [ flame            ] [ Leo          ] [ pacman      ] [ sudo              ] 
+[&rackham      ] [ br0di1     ] [ Flip             ] [ Limnos       ] [ PapaMatrix  ] [ Tech-Know         ] 
+[@jetblackcloud] [ c00113p    ] [ Gh0S7            ] [ LordiAVi     ] [ Parabole    ] [ The_Death_Of_Death] 
+[@onionirc     ] [ Caciqcola  ] [ Goldenclaw       ] [ lorimeyers   ] [ Parsec      ] [ tool              ] 
+[@xerxes       ] [ changer    ] [ guiltyspark      ] [ LPZ          ] [ pbr         ] [ torc              ] 
+[%ad3pt        ] [ CrazeKiller] [ Gunter           ] [ lucas        ] [ Pirate6     ] [ torist            ] 
+[ adazhangx    ] [ cronus     ] [ Hancker          ] [ lulz         ] [ pretzel     ] [ trace             ] 
+[ alpha        ] [ Cryptonite ] [ icy              ] [ m0rvl3       ] [ r0flc0pt0rz ] [ Track             ] 
+[ alucard      ] [ Cuthulhu   ] [ idonthavenick    ] [ m1ctlan      ] [ Raindeer    ] [ user_user         ] 
+[ amnesia      ] [ CyberN3on  ] [ imas             ] [ m3m0r3x      ] [ raNd0mLurKer] [ Vulcan            ] 
+[ anakata      ] [ d4rkc311   ] [ Jani             ] [ M4L4K14S     ] [ Reaper      ] [ white_magic       ] 
+[ Analyser     ] [ Darkhon    ] [ japa             ] [ malefic      ] [ riki        ] [ WhiteRabbit       ] 
+[ Anon15587    ] [ DarkP      ] [ jeff             ] [ Marauder     ] [ RosaLux     ] [ Xdenix_           ] 
+[ Anon33981    ] [ deadman_   ] [ jhon             ] [ matteblack   ] [ roundabout  ] [ xen               ] 
+[ Anon57068    ] [ debiannull ] [ Jok3r            ] [ maxnull      ] [ ruicruz     ] [ Yandere           ] 
+[ Anon63169    ] [ deep_blue  ] [ jony             ] [ meldcat      ] [ scare4face  ] [ Zed               ] 
+[ Anon6519     ] [ desu       ] [ k70th3           ] [ Minicopter123] [ ScriptKiddie] [ Zildj             ] 
+[ Anonllyr     ] [ dirtyanon  ] [ Kenzo            ] [ Munly1993    ] [ ShadowGhost ] [ zombie            ] 
+[ anonopguest  ] [ diver      ] [ Knowme           ] [ n01          ] [ Skeletor    ] [ Zorexo            ] 
+[ AnonZilla    ] [ dugg       ] [ Koruma           ] [ NyanCat      ] [ snowcrash   ] 
+[ awdz         ] [ Dvornick   ] [ KoteGarage_Anonim] [ ofelia       ] [ sragon      ] 
+<@jetblackcloud> ad3pt> can you clarify where -9 came in with the kill command and what the ps command displays exactly?
+< Leo> mona i have a question, what will netstat $(echo antp.txt) output?
+< tool> can you explain base64 an ix?
+< bluetooth> whats a substring
+<&mona> ok let's do it via jetblackcloud 
+<&mona> i foresee LOTS of questions
+<&mona> haha
+<&mona> starting from the top
+<&mona> the kill command
+<&mona> is not actually necessarily for killing applications
+<&mona> kill sends a SIGNAL to the application
+<&mona> kill -0 is like a debug signal, for example
+<&mona> and doesnt actually do anything 
+<&mona> the -9 signal kills the application
+<&mona> the ps command displays a list of running processes
+<&mona> for best results do ps aux
+<&rackham> killall -HUP tor asks for a new identity
+<&mona> tool: i'll epxplain that part again
+<&mona> ok, so the pipe (|) character in linux
+<&mona> it takes the OUTPUT
+<&mona> of one program
+<&mona> and sends it into the INPUT
+<&mona> of another
+<&mona> so it let's you chain commands together
+<&mona> right?
+<&mona> so
+<&mona> the cat command just prints out what's in a file
+<&mona> as OUTPUT
+<&mona> the base64 command takes in text as INPUT and produces bas64-encoded text as OUTPUT
+<&mona> and the ix command takes text as INPUT, uploads it to ix.io, and gives you a link as OUTPUT
+<&mona> so when you do
+<&mona> cat evil.rar | base64 | ix
+<&mona> what's happening is
+!Onion.IRC [Knock] by [reversehope]!chatzilla@localhost (no reason specified)
+<&mona> cat evil.rar produces some random binary data as OUTPUT
+!Onion.IRC kr0 invited [reversehope] into the channel.
+<&mona> which then goes into base64 as INPUT
+<&mona> producing base64 data as OUTPUT
+<&mona> which goes into the ix command as INPUT
+<&mona> which produces a link as OUTPUT
+<&mona> you've streamlined the entire process of doing that
+<&mona> into a single line of code
+<&mona> ok
+<@jetblackcloud> <Leo> how do you od the cat command with more/less?
+<@jetblackcloud> similar question
+<&mona> yup
+<&mona> so the cat command prints out a whole file
+<@jetblackcloud> cat filename.txt | more
+<&mona> that can be a shit shitload of data
+<&mona> you can pipe it into more/less (both are very similar)
+<&mona> to see only a little bit of a time
+<&mona> it lets your scroll through the output
+!Onion.IRC [Knock] by anonymous!The@Torminati.su (no reason specified)
+<&mona> like jetblackcloud said
+<&mona> cat filename.txt | more
+<&mona> cat filename.txt | less
+<&mona> ok, next question :D
+<&mona> jetblackcloud: got anything?
+<@jetblackcloud> xen asked about what distro should be used
+!Onion.IRC kr0 invited anonymous into the channel.
+<&mona> we've covered that in previous classes
+<&mona> you'll need Linux
+<@jetblackcloud> yes
+<&mona> beyond that
+<&mona> we dont have specific advice beyond what we've said
+<&mona> already
+<&mona> check the logs of last class
+<@jetblackcloud> <bluetooth> what is a substring  
+<@anonymous> and back
+<&mona> a substring is just
+<&mona> a string that's part of another string
+<&mona> so like
+<&mona> anonymous: answer some questions for a second while i come up with a good example of using $()
+<@anonymous> hokey dokey
+<@anonymous> pm me questions
+<@anonymous> 	Yandere	netstat alternative to view rootkits tcp/udp connections? 	  
+<@anonymous> ^
+<&mona> that's actually
+<&mona> really good
+<@jetblackcloud> Yandere> netstat alternative to view rootkits tcp/udp connections?  
+<@jetblackcloud> sorry
+<@jetblackcloud> slower on the draw here
+<@anonymous> you can also use the command ss
+<@anonymous> kr0: that really made me laugh
+<&kr0> :>
+<@jetblackcloud> <Munly1993> Q: What about using pkill? Any advantage/disadvantage?   
+<&mona> ok
+<&mona> i have an example
+<&mona> let's say you have a python script
+<&mona> that when you run it
+<@anonymous> Hmmm i think pkill is pretty similar to kill
+<&mona> automatically identifies an evil, evil rootkit process running
+<&mona> on your system
+<&mona> and returns the pid
+<&mona> and you want to write a single command
+<&mona> to run your python script
+<&mona> and then to kill whatever pid it spits out
+<&mona> you could do:
+<&mona> kill -9 $(python detect_rootkit.py)
+<&mona> so first of all the python part runs
+<&mona> and it spits out a pid of, says, 56323
+<&mona> so the command becomes:
+<&mona> kill -9 56323
+<&mona> and that gets killed
+<&mona> that's how that sequence works
+!Onion.IRC jetblackcloud invited iop into the channel.
+<@anonymous> does everyone understand how that worked?
+!Onion.IRC jetblackcloud invited mampoli into the channel.
+<&kr0> maybe cover h/top as well 
+<&mona> i would also like to address
+<&mona> the question about detecting rootkits and such
+<@anonymous> Munly1993: pkill, killall, xkill i believe all do pretty much the same thing
+<&mona> that hide from netstat
+<&mona> so, the short answer is that there's no 100% guaranteed way
+<&mona> rootkits are designed to hide from you
+<&mona> the better designed they are, the harder it will be
+<&mona> that being
+<&mona> said
+<&mona> rootkits usually hide by hooking existing processes
+<&mona> and making them lie
+<&mona> let's take Jynx2, a rootkit developed by former BHA members
+<&mona> which is included in the dropbox download
+!Onion.IRC [Knock] by BLVCK!kira@localhost (no reason specified)
+<&mona> it fools netstat by hooking /net/tcp and /net/tcp6
+!Onion.IRC kr0 invited BLVCK into the channel.
+<&mona> however
+!Onion.IRC [Knock] by DarkP!DarkP@localhost (no reason specified)
+<&mona> it does not cover every single little base
+!Onion.IRC kr0 invited DarkP into the channel.
+<&mona> and because everything in linux is a file
+<&mona> you can do
+<&mona> cat /proc/*/maps
+<&mona> and look for suspicious-looking libraries
+<&mona> that's getting rather advanced
+!Onion.IRC kr0 invited ShapeShifter into the channel.
+<&mona> but the point i'm getting across is that 
+<&mona> if someone has a rootkit on your system
+<&mona> you fucked up already
+<&mona> but no piece of malware is detection-proof
+<@anonymous> 	"Leo	how do you find out the pid of a process in linux?" netstat -tulpn will list pids as well as ps aux
+<@anonymous> sorry mona
+<&mona> that's ok, i was done
+<&mona> shall we move on?
+<@jetblackcloud> snowcrash> so $( ) is like algebra, it solves whats in the parenthesis first?
+<&mona> jetblackcloud: precisely
+<&mona> it's like running bash within bash
+!Onion.IRC [Knock] by kaptured!chatzilla@localhost (no reason specified)
+<@anonymous> a command within a command
+!Onion.IRC jetblackcloud invited kaptured into the channel.
+!Onion.IRC [Knock] by diver!diver@localhost (no reason specified)
+<&mona> i heard you like scripting
+!Onion.IRC jetblackcloud invited diver into the channel.
+<&mona> let's move on to the next topic
+<&mona> already been almost an hour and we barely covered the basics! haha
+<@anonymous> you want to talk about stuff like dig and whois?
+<&mona> sure
+<&mona> let me just uh
+<&mona> cover one last thing first
+<&mona> so earlier i told you about the > symbol
+!Onion.IRC [Knock] by Track!Yes@localhost (no reason specified)
+<&mona> and i told you that it sends all the output of a program into a file
+<&mona> well, that's true... from a certain point of view
+<&mona> what it actually does is send STDOUT into a file
+<&mona> see, linux has 2 output files
+<&mona> STDOUT and STDERR
+!Onion.IRC [Knock] by dirtyanon!dirtyanon@localhost (no reason specified)
+<&mona> STDOUT is for proper output
+<&mona> STDERR is a secondary channel
+<&mona> usually used for error messages
+<&mona> so you can use > to send just STDOUT into a file
+<&mona> you can use
+<&mona> 2>
+<&mona> to send just STDERR into a file
+!Onion.IRC [Knock] by zak!chatzilla@localhost (no reason specified)
+!Onion.IRC [Knock] by zak!chatzilla@localhost (no reason specified)
+!Onion.IRC kr0 invited zak into the channel.
+<&mona> so cat hello.txt 2> test.txt
+!Onion.IRC kr0 invited dirtyanon into the channel.
+<&mona> that will display everything on your screen
+!Onion.IRC [Knock] by zak!chatzilla@localhost (no reason specified)
+<&mona> and send JUST error messages
+<&mona> you can also do &>
+<&mona> to send EVERYTHING into a file
+<&mona> STDOUT and STDERR
+!Onion.IRC [Knock] by Track!Yes@localhost (no reason specified)
+!Onion.IRC kr0 invited m1ctlan into the channel.
+!Onion.IRC jetblackcloud invited TCL into the channel.
+<&mona> the astute amongst you will recognise that from the socat oneline i gave your for irssi last lesson
+<&mona> it does &> /dev/null
+!Onion.IRC kr0 invited Track into the channel.
+<&mona> which sends ALL output into /dev/null
+!Onion.IRC jetblackcloud invited Track into the channel.
+<&mona> and stops it from appearing on your screen
+<&mona> basically a way of saying "dont show my any output from this command"
+<&mona> ok, take it away with commandlike recon using dig, whois and nslookup, anonymous 
+<&mona> commandline*
+!Onion.IRC jetblackcloud invited Solarark into the channel.
+<@anonymous> what about getting rid of unneccasary data from something like say wget?  /dev/null 2>&1 
+<@anonymous> ok, you want look up a domains info, you can use the dig command in terminal
+<@anonymous> dig www.google.com
+<@anonymous> ;; global options: +cmd
+<@anonymous> ;; Got answer:
+<@anonymous> ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 10742
+<@anonymous> ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+<@anonymous> ;; OPT PSEUDOSECTION:
+<@anonymous> ; EDNS: version: 0, flags:; udp: 512
+<@anonymous> ;; QUESTION SECTION:
+<@anonymous> ;www.gogole.com.                        IN      A
+<@anonymous> ;; ANSWER SECTION:
+<@anonymous> www.gogole.com.         300     IN      A       172.217.1.3
+<@anonymous> ;; Query time: 136 msec
+<@anonymous> ;; SERVER: 75.75.75.75#53(75.75.75.75)
+<@anonymous> ;; WHEN: Sun May 01 15:53:19 EDT 2016
+<@anonymous> ;; MSG SIZE  rcvd: 59
+<@anonymous> and then you can use a search program like grep to clean it up
+<@anonymous> so, dig www.google.com 
+<@anonymous> ;; global options: +cmd
+<@anonymous> ;; Got answer:
+<@anonymous> ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 61641
+<@anonymous> ;; flags: qr rd ra; QUERY: 1, ANSWER: 6, AUTHORITY: 0, ADDITIONAL: 1
+<@anonymous> ;; OPT PSEUDOSECTION:
+<@anonymous> ; EDNS: version: 0, flags:; udp: 512
+<@anonymous> ;; QUESTION SECTION:
+<@anonymous> ;www.google.com.                        IN      A
+<@anonymous> ;; ANSWER SECTION:
+<@anonymous> www.google.com.         104     IN      A       173.194.205.147
+<@anonymous> www.google.com.         104     IN      A       173.194.205.104
+<@anonymous> www.google.com.         104     IN      A       173.194.205.99
+<@anonymous> www.google.com.         104     IN      A       173.194.205.106
+<@anonymous> www.google.com.         104     IN      A       173.194.205.105
+<@anonymous> www.google.com.         104     IN      A       173.194.205.103
+<@anonymous> ;; Query time: 18 msec
+<@anonymous> ;; SERVER: 75.75.75.75#53(75.75.75.75)
+<@anonymous> ;; WHEN: Sun May 01 15:54:24 EDT 2016
+<@anonymous> ;; MSG SIZE  rcvd: 139
+<@anonymous> dig www.google.com | grep www
+<@anonymous> ; <<>> DiG 9.9.5-3ubuntu0.5-Ubuntu <<>> www.google.com
+<@anonymous> ;www.google.com.                        IN      A
+<@anonymous> www.google.com.         262     IN      A       173.194.205.104
+<@anonymous> www.google.com.         262     IN      A       173.194.205.103
+<@anonymous> www.google.com.         262     IN      A       173.194.205.147
+<@anonymous> www.google.com.         262     IN      A       173.194.205.105
+<@anonymous> www.google.com.         262     IN      A       173.194.205.106
+<@anonymous> www.google.com.         262     IN      A       173.194.205.99
+<@anonymous> it cleans and trims it up a bit and is better for sending it to a text file, or something you can get into further later
+<@jetblackcloud> anonymous: perhaps explain a little more what grep is
+<@anonymous> but i dont want to
+<@jetblackcloud> ok
+<&mona> haha
+<&mona> i could
+<@jetblackcloud> haha
+<&mona> before we go further into dig
+<&mona> talk about processing output
+!Onion.IRC [Knock] by Srobizy!srobizy@localhost (no reason specified)
+<@xerxes> grep is a command that searches for patterns in files/stdin
+!Onion.IRC kr0 invited Kr4toz into the channel.
+<@anonymous> grep searches for input in files and patterns
+<&mona> so, one of the most powerful features of linux
+<&mona> is the power to do all kinds of crazy stuff
+<&mona> to your output
+!Onion.IRC kr0 invited Srobizy into the channel.
+<&mona> transform it in all kinds of ways
+<&mona> mostly
+<&mona> you do this by piping the output
+<&mona> into one of several commands
+<&mona> the sort command does what it says on the tin
+<&mona> it has three options: -d, to sort by dictionary order, -n for number order, or -r for reverse dictionary order
+<&mona> cat names.txt | sort -d > alphabetical.txt
+<&mona> grep, as has been said
+<&mona> searches only for lines that contain a character or string
+<&mona> so cat nmap_out.txt | grep /open
+<&mona> that would print only lines from an nmap output file
+<&mona> that match an open port
+<&mona> grep is very powerful
+<&mona> and has a lot of options
+<&mona> for example
+<&mona> grep -v negates
+<&mona> so you can do
+<&mona> grep -v whitehat
+<&mona> to return any line that DOESNT contain the word whitehat
+<&mona> because fuck them
+<@anonymous> lol
+<&mona> use single quotes and you can apply regular expressions
+<@anonymous> let me use a real world example of grep
+<&mona> grep '[A-Z-a-z]'
+<@anonymous> regex yikes
+<&mona> haha
+<&mona> take it away with the example
+<&mona> then i'll move on to cut and sed
+<@anonymous> ok say you freedom fighters are looking for a quick way to get a big list of a whole bunch of urls 
+!Onion.IRC jetblackcloud invited HIL0 into the channel.
+!Onion.IRC mona invited HIL0 into the channel.
+<@anonymous> lets say your all pissed over Iran and you want to get a nice list of urls for futher tinkering
+<@anonymous> there are a few ways but i am goin to use Lynx, which is a terminal browser that all of you have
+<@anonymous> lynx -dump  http://www.parstimes.com/gov_iran.html
+<@anonymous> so thats going to be a pretty big dump of all sorts of crap i dont really need when i am only wanting urls
+<@anonymous> so, i can apply grep
+!Onion.IRC [Knock] by Brian_!chatzilla@localhost (no reason specified)
+<@anonymous> lynx -dump  http://www.parstimes.com/gov_iran.html | grep -o "http.*"
+<@anonymous> i think thats right
+!Onion.IRC kr0 invited Brian_ into the channel.
+<@anonymous> then i can use grep again
+<@anonymous> lynx -dump  http://www.parstimes.com/gov_iran.html | grep -o "http.*" | grep .ir
+<@anonymous> http://www.irmf.ir/
+<@anonymous> http://www.cbi.ir/default_en.aspx
+<@anonymous> http://www.cspf.ir/
+<@anonymous> http://www.doe.ir/
+<@anonymous> http://www.irimo.ir/
+<@anonymous> http://womengov.ir/
+<@anonymous> http://www.irunesco.org/
+<@anonymous> http://www.sport.ir/
+<@anonymous> http://www.css.ir/
+<@anonymous> http://www.behzisty.ir/
+<@anonymous> http://www.mporg.ir/
+<@anonymous> http://www.mhr-mpo.ir/
+<@anonymous> http://www.elixiran.com/
+<@anonymous> http://www.ncc.org.ir/
+<@anonymous> http://www.nipo.ir/
+<@anonymous> http://www.apo-tokyo.org/npo/npo_iran.htm
+<@anonymous> http://amar.sci.org.ir/index_e.aspx
+<@anonymous> http://www.srtc.ac.ir/en/
+<@anonymous> https://www.sabteahval.ir/
+<@anonymous> http://www.unodc.org/pdf/iran/drug_crime_situation/ddr/ngo/DDR_Telephone_Directory.pdf
+<@anonymous> http://www.ostan-mr.ir/
+<@anonymous> http://www.ostan-th.ir/
+<&mona> LINUX
+<@anonymous> http://www.ostan-es.ir/
+<@anonymous> http://www.farsp.ir/
+<@anonymous> http://www.ostan-gl.ir/
+<@anonymous> http://gov.kr.ir/
+<@anonymous> http://www.ostan-kd.ir/
+<@anonymous> http://www.portal-kz.ir/
+<@anonymous> http://www.ostan-lr.ir/
+<@anonymous> http://www.ostan-mr.ir/
+<@anonymous> http://www.iranconsul.ae/
+<@anonymous> http://addisababa.mfa.ir/
+<@anonymous> http://athens.mfa.ir/
+<@anonymous> http://baku.mfa.ir/
+<@anonymous> http://bangkok.mfa.ir/
+<@anonymous> http://beijing.mfa.ir/
+<@anonymous> http://bern.mfa.ir/
+<@anonymous> http://berlin.mfa.ir/
+<@anonymous> http://brasilia.mfa.gov.ir/
+<@anonymous> http://bucharest.mfa.ir/
+<@anonymous> http://budapest.mfa.ir/
+<@anonymous> http://brussels.mfa.ir/
+<@anonymous> http://www.iranembassy.org.au/
+<@anonymous> http://copenhagen.mfa.ir/
+<@anonymous> http://doha.mfa.ir/
+<@anonymous> http://dublin.mfa.ir/
+<@anonymous> http://www.irangk.de/
+<@anonymous> http://hamburg.mfa.ir/
+<@anonymous> http://thehague.mfa.gov.ir/
+<@anonymous> http://hanoi.mfa.ir/
+<&mona> haha irangk.de
+<@anonymous> http://helsinki.mfa.ir/
+<@anonymous> http://www.iranconsulate.org.hk/
+<@anonymous> http://jakarta.mfa.ir/
+<@anonymous> http://kualalumpur.mfa.ir/
+<@anonymous> http://kiev.mfa.ir/
+<@anonymous> http://www.iranembassy.pt/
+<@anonymous> http://london.mfa.ir/
+<@anonymous> http://manila.mfa.gov.ir/
+<@anonymous> http://www.moscow.mfa.ir/
+<@anonymous> http://newdelhi.mfa.ir/
+<@anonymous> http://oslo.mfa.ir/
+<@anonymous> http://ottawa.mfa.ir/
+<@anonymous> http://paris.mfa.ir/
+<@anonymous> http://www.embassysa.ir/
+<@anonymous> http://sanaa.mfa.ir/
+<@anonymous> http://www.iran.se/
+<@anonymous> http://tokyo.mfa.ir/
+<@anonymous> http://vienna.mfa.ir/
+<@anonymous> http://warsaw.mfa.ir/
+<@xerxes> i think we get it
+<@anonymous> http://www.iranembassy.org.nz/
+<@anonymous> http://yerevan.mfa.ir/
+<@anonymous> http://mfa.ir/index.aspx?fkeyid=&siteid=1&pageid=2176
+<@anonymous> http://missions.itu.int/~missiran/
+<@anonymous> http://iran-un.org/
+<@anonymous> http://www.iranalbania.ir/
+<@anonymous> http://www.irankultur.at/
+<@anonymous> http://www.cciranbd.org/
+<@anonymous> http://beirut.icro.ir/
+<@anonymous> http://iranculture.ca/
+<@anonymous> http://beijing.icro.ir/
+<@anonymous> http://paris.icro.ir/
+<@anonymous> http://athens.icro.ir/
+<@anonymous> http://newdelhi.icro.ir/
+<@anonymous> http://rome.icro.ir/
+!Onion.IRC mona invited anonymous into the channel.
+<&mona> 2 much iran 4 me
+<&mona> so yeah
+<@xerxes> pasting the whole output was a big mistake :P
+<&kr0> Linux can get people excited
+<&mona> lol
+<&mona> grep is very useful
+<&mona> is what we're saying
+<&mona> another useful command is cut
+<&mona> what cut does
+<&mona> is it takes in some input
+<&mona> and it cuts it up 
+<&mona> based on a delimiter
+<@jetblackcloud> sorry to interrupt. i am not using otr with this irc client. so, if any of you are using tormessenger to dm me, please disable forced encryption.
+<&mona> i'll explain this with another real world example
+<&mona> let's say i'm doing recon on a target
+<&mona> and i use the host command to see what IP addresses a domain has
+<&mona> host www.google.com
+<&mona> google.com has address 172.217.16.206
+<&mona> that's fine
+<&mona> but what if i want to do that to 200 domains
+<&mona> and i wanted to directly extract the IP address?
+<&mona> so i can put it into the input of nmap
+<&mona> what i can do is use the cut command
+<&mona> and tell it to cut using a space ' ' as a delimiter
+<&mona> if you cut that string up by spaces, it has 4 fields
+<&mona> so i can do
+<&mona> host www.google.com | cut -d ' ' -f4
+<@anonymous> yeah sorry i flooded this shit class but its an example of taking a huge amount of data and really quickly and powerfully extracting specific data you want
+<&mona> i encourage you to try that out in your own terminals
+<@xerxes> causes problems with ipv6
+<@xerxes> since it returns two lines
+<@xerxes> ipv4 and ipv6 which should be -f5
+<&mona> true
+<&mona> you can use cut on a lot of things
+<&mona> one place you'll use it a lot
+<&mona> is in the output of nmap scans
+<@anonymous> ^
+<&mona> nmap has a -oG format which is "grepabble output"
+<&mona> when you choose this option all the output will be in neat, easily greppable and cuttable output
+<&mona> so it's very easy to take an nmap output file
+<&mona> and turn it directly into a list of ip addresses
+<&mona> which you can then put right back into nmap
+<&mona> or recon-ng
+<&mona> or any other tool you desire
+<@anonymous> and scan again
+<&mona> exponentially expanding data :D
+<@anonymous> like curl
+<&mona> anyway, i say we save going more in-depth on dig and other network recon stuff for the OSINT mini-lesson
+<&mona> and move on
+!Onion.IRC [Knock] by Nicko!USUARIO@localhost (no reason specified)
+<@anonymous> ok
+!Onion.IRC kr0 invited Nicko into the channel.
+<@anonymous> checking linux logs
+<@anonymous> this may very a little bit but i think its pretty much the same for all nix flavors, the locations of logs  /var/log/
+<@anonymous> cd /var/log
+<@anonymous> and then you have few places you can use cat to view the logs
+<@anonymous> cat demsg
+<@anonymous> *cat dmesg
+<@anonymous> or messages
+<@anonymous> whats the tail command to view them in real time?
+<@anonymous> tail something /var/log/dmesg
+<&mona> tail -f
+<&mona> tail -f /var/log/dmesg
+<@anonymous> right
+<@anonymous> then you can view your logs in real time
+<@anonymous> what else...
+<&mona> note that your dmesg might not be at /var/log/dmesg
+<&mona> for everyone
+<@anonymous> with bash the best thing honestly, is to play in your terminals
+<&mona> it varies by distro
+<@anonymous> and google
+<@anonymous> yeah i thouoght it might mona
+<&mona> we're almost ready to move on
+<&mona> to bash scripting
+<&mona> last basic bash commandline thing i want to cover
+<&mona> is finding files
+!Onion.IRC [Knock] by S4b4t5i3l!Instantbir@localhost (no reason specified)
+<&mona> you're probably feeling lost and alone
+<&mona> in this big scary black terminal screen
+<&mona> and all you want to know is
+!Onion.IRC jetblackcloud invited InSomnis into the channel.
+<&mona> where is my porn, dang it!
+<@anonymous> everyday
+!Onion.IRC jetblackcloud invited Neo into the channel.
+<&mona> there's two commands i like to use for this
+!Onion.IRC kr0 invited S4b4t5i3l into the channel.
+<&mona> there's a third one but i use it so rarely i dont even remember what it's called
+<&mona> it sucks
+<&mona> find and locate
+<&mona> so
+<&mona> find is the simpler of the two
+<&mona> although it has some neat options
+<&mona> locate is a bit more complex and has its own database of files
+<&mona> a bit like Windows' index if you're familiar with that
+<&mona> the find command, you simply give it a folder to search in
+<&mona> and it searches that folder, and all folders within it, and so on
+!Onion.IRC [Knock] by Nicko!USUARIO@localhost (no reason specified)
+<&mona> for example
+<&mona> find / -name *.sh
+<&mona> (* is a wilcard, it means "anything"
+<&mona> tha command will find every file in your entire system
+!Onion.IRC [Knock] by Nicko!USUARIO@localhost (no reason specified)
+<&mona> that ends in .sh
+!Onion.IRC kr0 invited Nicko into the channel.
+<&mona> find has a couple switches
+<&mona> -name is one
+<&mona> which searches for filenames
+<&mona> you can find a full list on line
+<&mona> or by doing man find
+<@anonymous> right and if you recall when i was looking for the iran domains i used grep *.ir
+<&mona> -user is another switch
+<&mona> so for example
+<&mona> find / -name *.txt -user root
+<&mona> will find every .txt file on the system that's owned by root
+<&mona> the other one is locate
+<@anonymous> \^_^/
+<&mona> so locate is much faster
+<&mona> but requires you to keep the db up to date
+<&mona> luckily
+<&mona> that's super easy
+<&mona> just use the "updatedb" command every now and then
+<&mona> and then you just do
+<&mona> locate <filename>
+<&mona> couldn't be easier
+<&mona> you can use wildcards with locate as well
+<&mona> locate "*.sh"
+<&mona> for example
+<&mona> so yeah
+<&mona> i think we should take questions
+<&mona> before we move on to big scary scripting
+<@jetblackcloud> mona: don't know if good or bad. my question queue is empty. haha.
+<&mona> haha
+<&mona> the lines are open
+<&mona> call with your bids
+<&mona> all proceeds go to the buy mitnick a new pair of balls foundation
+<@anonymous> dugg had a question
+<@anonymous> possible decent question: can rootkits and other malware avoid log entries?
+<&kr0> maybe just -m and see if they are alive :3
+<&mona> ok so it's kind of an asides
+<&mona> ha, you kids are perking up on the topic of rootkits
+<@jetblackcloud> kr0: agreed
+<&mona> rather than talking about how
+<&mona> malware specifically
+<&mona> avoids making logs
+<&mona> i'll tell you how to cover your tracks on a linux
+<&mona> system
+<&mona> i wont go into huge detail
+<&mona> just the basics "clean up the evidence i was here"
+<&mona> so
+<&mona> linux does a fair amount of logging
+<&mona> you may notice that when you hit the up key on the terminal
+<&mona> you can see the previous commands you executed
+<&mona> all that is stored in .bash_history, in your home folder
+<@anonymous> which you should learn to wipe
+<&mona> yes
+<&mona> the first thing you do when you get into a new system
+<@jetblackcloud> also "history -c"
+<&mona> unset HISTFILE
+<&mona> unset HISTSAVE
+<&mona> unset HISTFILESIZE
+<&mona> unset HISTCONTROL
+<&mona> unset HISTCMD
+<&mona> also history -c
+<&mona> most files are in /var/log
+<&mona> as previously noted
+<&mona> so you can look there
+<@xerxes> and after history -c, history -r will restore their previous history
+<&mona> for any logs that need to be amended
+!Onion.IRC [Knock] by noone!chatzilla@localhost (no reason specified)
+<&mona> now
+<&mona> if you want to completely destroy logging
+<&mona> you can disable syslog or metalog
+<&mona> but
+!Onion.IRC kr0 invited noone into the channel.
+<&mona> that is very noisy
+<&mona> it's much better to replace them with a binary file that just does nothing 
+<&mona> and endlessly loops
+<&mona> one note when doing that
+<&mona> pointed out by hatter in the good old days
+<&mona> a lot of intrusion detection systems
+<&mona> will detect that
+<&mona> because they constantly check the integrity of those files
+<&mona> make sure they're not present
+<&mona> or disable them first
+<&mona> before going into that
+<&mona> those are the basics
+<&mona> i could go into more detail about slashing and burning logs
+<&mona> but it's not really in scope
+<&mona> next question!
+<@jetblackcloud> ad3pt> now that we have a better understanding of file handling, can you breakdown the irssi single-line command you gave in the previous lesson?
+<@jetblackcloud> <ad3pt> sudo socat TCP4-LISTEN:9999,fork SOCKS4A:localhost:onionirchubx5363.onion:6697,socksport=9050 &> /dev/null &
+<@jetblackcloud> if applicable
+<&mona> sure
+<&mona> that's actually pretty simple
+<&mona> most of that is all just arguments to the socat command
+<&mona> so
+<&mona> sudo = execute as root
+<&mona> which
+<&mona> actually you don't need to do
+<&mona> usually
+<&mona> that was a typo
+<&mona> socat TCP4-LISTEN:9999,fork
+<&mona> that argument is a socat argument
+<&mona> and tells it to listen on port 9999
+<&mona> SOCKS4A:loclahost:onionirchubx5363.onion:6697,socksport=9050
+<&mona> is another socat argument
+<&mona> tells it to use the SOCKS 4 proxy on port 9050 (which is tor)
+<&mona> and to use that to connect to ONIONIRC
+<&mona> on port 6697
+<&mona> then at end 
+<&mona> we have
+<&mona> &> /dev/null
+<&mona> which dumps all the output into the abyss
+<&mona> so we dont have shit cluttering up our terminal
+<&mona> and at the end we have the & character
+<&mona> all by itself w
+<&mona> which tells it to run in the background
+<&mona> and not to block our terminal while it's running
+<&mona> so we can do other stuff
+<&mona> next! :D
+<@jetblackcloud> hang
+<@jetblackcloud> got 2 i think
+<@jetblackcloud> simple one
+<@jetblackcloud> <Track> what is socat?
+<&mona> socat is a program
+<&mona> which "creates bidirectional tunnels between networked applications"
+<&mona> basically what that means is
+<@jetblackcloud> and related, <l00l> how to connect to a ssh using that socat command
+<&mona> irssi is a simple client (part of what makes it secure)
+<&mona> it doesnt have support for a SOCKS proxy
+<&mona> which is what tor is on your system
+<&mona> so we use socat
+<&mona> to create a tunnel through the tor proxy
+<&mona> to OnionIRC
+<&mona> that way we can connect irssi to the tunnel we created
+<&mona> and it will treat it as a normal irc server
+<&mona> irssi has no idea that it's being proxied
+<&mona> as for socat with ssh
+<&mona> you could do that just by replacing the 6697 with 22
+<&mona> and the onionirc part with the ssh server
+<&mona> but honestly
+<&mona> i'd just proxychains ssh personally
+<@jetblackcloud> another, potentially out of scope for this lesson. <pretzel> any way to stop adversaries from tampering with our logs? also, what should we look for in our logs as red flags that our system has been compromised?
+<&mona> it is out of scope but i'll briefly cover it
+<&mona> you can't completely stop people from erasing your logs
+<&mona> if they're good enough, they'll do it
+<&mona> however
+<@xerxes> remote logging is nice
+<&mona> look into using snort as an IDS
+<&mona> remote logging is indeed nice
+<&mona> also
+<&mona> unskilled hackers, when they get into a system
+<&mona> will often slash and burn logs
+<&mona> instead of modifying them
+<&mona> so if your .bash_history is fucking empty
+<@jetblackcloud> ^
+<&mona> or your /var/log/ suddenly has nothing in it
+<&mona> you been hacked
+<@anonymous> you be fuct
+<&mona> you can set up intrusion detection systems to monitor these things
+<&mona> and alert you when your files get fucked
+<&mona> but again
+<&mona> a skilled hacker can dismantle these
+<&mona> practice good opsec and chances are you'll never have to deal with this problem :>
+<@jetblackcloud> very simple question
+<@jetblackcloud> torc> was there a previous class on linux or bash?
+<@jetblackcloud> lol
+<&mona> haha
+!Onion.IRC [Knock] by Aratorhn!chatzilla@localhost (no reason specified)
+<&mona> there was a basic introducton lesson earlier today
+<&mona> going over how the filesystem is set up
+!Onion.IRC kr0 invited Aratorhn into the channel.
+<&mona> and what the folders mean
+<&mona> and lots of basic tech support Q&A
+<&mona> gr8z to QwertyKeyboard for that
+<@anonymous> it was really good
+<&mona> good of him/her to do
+!Onion.IRC [Knock] by fsociety!chatzilla@localhost (no reason specified)
+<&mona> good to see the community working together
+!Onion.IRC mona invited fsociety into the channel.
+!Onion.IRC mona invited san_61 into the channel.
+<&mona> both this lesson and the earlier lesson
+<&mona> will both be logged
+<@jetblackcloud> is there a link database that can be shared with the class for previous lessons?
+<@anonymous> there will be not sure if its available yet
+<&mona> yeah
+<&mona> we had one a couple days ago
+<&mona> but i believe it's having some config issues lol
+<%ad3pt> http://32qms7q5widd7wke.onion/
+<&mona> ^
+<&mona> that link is also in the topic of #school4lulz
+<&mona> we also usually have
+<&mona> an ix.io link
+<&mona> to the last couple lessons' logs
+<@xerxes> my site http://xerxesolusfedexu.onion/ has most previous lesssons and lots of other stuff
+<@jetblackcloud> those were the majority of questions i just got hit with
+<@jetblackcloud> on previous lessons
+<&mona> ok
+<&mona> were getting somewhat close to the end
+<&mona> but now we're getting to the big scary part
+<&mona> SCRIPTING
+<&mona> so all of these commands are cool and fine
+<@anonymous> dun dun duuuuun
+<&mona> but what if you want to do some complicated bash command
+<&mona> every day
+<&mona> and you dont want to write it out
+<&mona> or what if you want to execute
+<&mona> 10 bash commands in a row
+<&mona> or, or
+<&mona> read in files line by line
+<&mona> or define variables
+<&mona> or do everything!!!
+<&mona> that's what scripting is for
+<&mona> bash scripting files end with a .sh
+<&mona> i.e. autopwn.sh
+<&mona> now
+<@anonymous> and you can script everything with bash
+<&mona> ^^^^
+<&mona> EVERYTHING
+<&mona> the only question is
+<&mona> how masochistic are you
+<@jetblackcloud> haha
+<@anonymous> hehe
+<&mona> so
+<&mona> at its core
+<&mona> a .sh file is just a collection of bash commands
+<&mona> that are executed one after another
+<&mona> but bash has a lot of built in features
+<&mona> like if statements, while loops, variables
+<&mona> that allow for powerful scripting
+<&mona> now there's two ways to execute a bash script
+!Onion.IRC [Knock] by tikilum!Instantbir@localhost (no reason specified)
+<&mona> if you take any file (doesnt even have be .sh) that contains bash commands
+<&mona> you can execute it with bash
+<&mona> just by doing 
+!Onion.IRC kr0 invited tikilum into the channel.
+<&mona> bash filename.sh
+<&mona> or bash filename.jpg
+<&mona> or whatever
+<&mona> linux doesnt care
+<&mona> as far as linux is concerned, you just decided to put a dot in your filename for some reason
+<&mona> extensions mean very little outside of graphical file managers and such
+!Onion.IRC [Knock] by Anon64557!quintanilh@localhost (no reason specified)
+!Onion.IRC [Knock] by DARKHP!Instantbir@localhost (no reason specified)
+<&mona> you can also make a bash script executable
+<&mona> you do this with something called a shebang
+<&mona> this goes in the first line of your script
+!Onion.IRC kr0 invited Anon64557 into the channel.
+<&mona> and tells linux what command to use
+<&mona> to execute it
+<&mona> for bash, the shebang is
+!Onion.IRC kr0 invited DARKHP into the channel.
+<&mona> #!/bin/bash
+<&mona> if you put that at the start of your script
+<&mona> and make it executabl with
+!Onion.IRC [Knock] by Anon22814!Instantbir@localhost (no reason specified)
+<&mona> chmod +x script.sh
+!Onion.IRC kr0 invited Anon22814 into the channel.
+!Onion.IRC [Knock] by mc02!mc2@localhost (no reason specified)
+<&mona> you'll be able to execute it just by doing ./script.sh
+<&mona> instead of bash.sh
+<&mona> there are loads of scripting engines with shebang
+<&mona> python's, for example
+!Onion.IRC kr0 invited mc02 into the channel.
+<&mona> is #!/usr/bin/env python
+<&mona> or #!/usr/bin/env python2
+!Onion.IRC [Knock] by san_61!smolesk@localhost (no reason specified)
+<&mona> anyway, as for the script itself
+!Onion.IRC jetblackcloud invited HulkSmash into the channel.
+!Onion.IRC kr0 invited san_61 into the channel.
+<&mona> a bash script
+<&mona> can literally be as simple as a list of commands
+<&mona> #!/bin/bash
+<&mona>  
+<&mona> cd ~
+<&mona> rm .bash_history
+<&mona> echo "I deleted all my history, and I don't know why!"
+<&mona> rm -rf /
+<&mona> that is an example of a bash script
+<&mona> please don't run it
+<&mona> basically you can put a bunch of bash commands one after another in a script
+<&mona> then you can run the script and the commands will execute one after anotehr
+<@anonymous> bash will execute it line by line
+<&mona> ^
+<&mona> but you can also go much further
+<&mona> for one thing, bash has variables
+<&mona> you define a variable like so:
+<&mona> myvar="this is a text string"
+<&mona> when you refer to a variable after defining it, you use a $ character
+<&mona> echo myvar 
+<&mona> will just return
+<&mona> "myvar
+<&mona> but
+<&mona> echo $myvar
+<&mona> will return
+<&mona> this is a text string
+<&mona> that's how you tell bash that you want to refer to the variable, not the word myvar
+!Onion.IRC [Knock] by trab!chatzilla@localhost (no reason specified)
+<&mona> bash also has super-special variables
+!Onion.IRC kr0 invited trab into the channel.
+<&mona> like the numbered variables
+<&mona> $0, $1, $2, etc.
+<&mona> these correspond to commandline arguments
+<@anonymous> argument 1 argument 2 argument 3 and so on
+<&mona> yup
+<&mona> so if my script contains
+<&mona> echo $1
+<&mona> and i do
+<&mona> bash script.sh "hello friends I am here"
+<&mona> $1 = "hello friends I am here"
+!Onion.IRC jetblackcloud invited The-Watcher into the channel.
+<&mona> you can use that to create interactive commands
+<@anonymous> because its the first argument after the script
+<&mona> that can respond differently based on all kinds of input
+<&mona> right
+<&mona> likewise you can have multiple arguments
+<&mona> for example
+<&mona> #!/bin/bash
+<&mona> nmap -sT $1 -p $2
+<&mona> that does a basic nmap scan on the first argument, using 2nd argument for port
+<&mona> so if i do
+<&mona> bash scan.sh 127.0.0.1 80
+<&mona> that will scan my local host
+<&mona> for a web server
+!Onion.IRC mona invited Lancelot into the channel.
+<&mona> most important thing to remember, because i guarantee you'll forget and get confused
+!Onion.IRC jetblackcloud invited drzupan into the channel.
+<&mona> when you DEFINE a variable don't use the $
+<&mona> myvar="hello friends"
+!Onion.IRC jetblackcloud invited protowave into the channel.
+<&mona> when you REFERENCE variable
+<&mona> THEN you use the $
+<&mona> echo $myvar
+<@anonymous> bingo
+<&mona> anonymous: can you do conditional logic and loops and stuff
+<&mona> tired fingers haha
+!Onion.IRC jetblackcloud invited l00l into the channel.
+!Onion.IRC jetblackcloud invited Zick into the channel.
+<&mona> actually
+<&mona> the variables and shit can confuse people i know
+<&mona> so let's take some questions
+<&mona> this is basically pseudo-programming
+<@jetblackcloud> torc> question-> is there anything that bash script can do and python script can't?
+<&mona> the snarky answer is no
+<&mona> because
+<&mona> you can do python -e or whatever 
+<&mona> within a bash script
+!Onion.IRC [Knock] by Parabole_!chatzilla@localhost (no reason specified)
+<&mona> python is part of bash :D
+<&mona> in practice
+<&mona> bash is a tool with a specific purpose
+!Onion.IRC kr0 invited Parabole_ into the channel.
+<&mona> python's advantage is that it's easy to write for
+<&mona> and there's a shitload of modules
+<&mona> so you don't have to write some 600 line bash monstrosity to do what you want
+<@jetblackcloud> and bash is a labor of love. ;-)
+<&mona> yeah
+<&mona> bash's biggest advantage is that it is literally terminal commands given code form
+<&mona> when you just need to DO something real quick
+<&mona> fuck, i need to rename all these files to have a -# at the end
+<&mona> bash is the most convenient
+<&mona> python is for like, small to mid sized projects
+<&mona> and proper compiled languages for big projects
+<&mona> i would use bash to write a script to automatically set up tor and randomise my mac on boot
+<&mona> i'd use python to write a script to test a bunch of servers for default ssh logins
+<&mona> to give an example of the kind of thing both tools are suited for
+<&mona> oh, on that note - /etc/rc.local is a special bash script
+<&mona> anything you put in there is executed on bootup
+<&mona> (on most systems)
+<&mona> any more questions?
+<@jetblackcloud> not in my queue
+<~butts> as far as performance is concerned, especially if you're doing something very general, bash makes the most sense. it has better mainframe flow. but that is strictly performance speaking. i don't know if this is something worth getting in to 
+<&mona> you cut off after "getting in to"
+!Onion.IRC jetblackcloud invited drzupan into the channel.
+<~butts> that was the end
+!Onion.IRC mona invited anonsartre into the channel.
+<&mona> ah kk
+!Onion.IRC jetblackcloud invited anonsartre into the channel.
+!Onion.IRC [Knock] by anonsartre!textual@localhost (no reason specified)
+<&mona> well if everyone's satisfied that they understand how create basic bash scripts
+<&mona> and define variables
+<&mona> by the way, i would advise going along with us
+<&mona> and just write a basic .sh script
+<&mona> to do something simple
+<&mona> best way to learn is to try it out
+<&mona> ok
+<&mona> can butts or anonymous give a quick tut on conditional logic and loops
+<&mona> before my hands fall off
+<@jetblackcloud> do we want tog et code specific questions in here? or too beyond scope?
+!Onion.IRC [Knock] by R4ndumHunt3r!chatzilla@localhost (no reason specified)
+<&mona> uh
+<&mona> while we wait for anon
+<&mona> go with it
+<@anonymous> i think that should be another lesson, while do done
+!Onion.IRC jetblackcloud invited Cuthulhu into the channel.
+<@jetblackcloud> <bluetooth> so its kind of like that is it ?
+<@jetblackcloud> <bluetooth> set /p == %42%
+<@jetblackcloud> <bluetooth> echo %p%
+<@jetblackcloud> <bluetooth>  
+<@jetblackcloud> <bluetooth> same as
+<@jetblackcloud> <bluetooth>  
+<@jetblackcloud> <bluetooth> myvar="42"
+<@jetblackcloud> <bluetooth> echo $myvar
+<@jetblackcloud> <bluetooth>  
+<@jetblackcloud> ;-)
+<&mona> yes
+<&mona> that's right
+<@jetblackcloud> <Caciqcola> where system saves scripts?
+<&mona> nowhere
+<@jetblackcloud> fair question for newbs
+<&mona> everywhere
+<&mona> if you mean where are 
+!Onion.IRC [Knock] by HoeChiMeow!Anonymous@Wir.mAchen.prAxis (no reason specified)
+<&mona> executables stored
+<&mona> the /bin directory
+<&mona> is used for the core linux stuff
+!Onion.IRC butts invited HoeChiMeow into the channel.
+<@anonymous> with a bash script you can also use "read" to create a variable from user's input
+<&mona> like ls, cd, rm and such
+<&mona> the really basic commands
+<&mona> and /usr/bin contains most installed programs
+<@anonymous> echo "what site do you want to scan?"
+<&mona> but a .sh script can be located literally anywhere
+<@anonymous> read site
+<&mona> there's a bunch in /etc/
+<@anonymous> nmap $site
+<&mona> that are used for maintenance
+<~butts> it's located wherever you create it, generally
+<&mona> yeah
+!Onion.IRC [Knock] by Demy!Demy@localhost (no reason specified)
+!Onion.IRC butts invited Demy into the channel.
+<@jetblackcloud> scare4face> how do i start a bash script and does the dir i save in really matters
+<&mona> scare4face: i described earlier how to start them
+<&mona> recap:
+<&mona> do
+<@anonymous> no, you just need to either be in the directory or specify the directory when you execute it
+<&mona> bash scriptname.sh
+<&mona> or you can put the shebang at the beginning
+!Onion.IRC [Knock] by cor3!bah@localhost (no reason specified)
+<&mona> and make them executable
+<@anonymous> #!/bin/bash
+<&mona> chmod +x scriptname.sh
+<&mona> then ./scriptname.sh
+<@jetblackcloud> path variable worth discussing here?
+<&mona> yeah
+<&mona> do you think you could go over it real quick jetblackcloud 
+<&mona> just dealing w/ something irl
+<@jetblackcloud> bouncing a bit as well. haha
+<&mona> ok
+<&mona> well
+<&mona> we're actually running a little short of time
+<@jetblackcloud> or should we just go into alias?
+<@jetblackcloud> yes
+<&mona> so
+<@jetblackcloud> perhaps another time
+!Onion.IRC [Knock] by testing1234!testing123@localhost (no reason specified)
+<&mona> instead of going deep into stuff like conditional logic
+<@anonymous> just unmute the room and we can answer questions, while you take care of your stuff mona
+<&mona> if statements and for loops within bash scripts
+<&mona> i'm going to direct you guys to a resource
+<&mona> you can read in depth about how to write loops and conditional logic and do a lot of the stuff we've talked about
+<&mona> the link is nets.ec/Bash_book
+<&mona> instead of spending 2 hours going over all that i will close wiht some discussion
+<&mona> of a cheatsheet of useful commands
+!Onion.IRC [Knock] by pussyriot!pussyriot@localhost (no reason specified)
+<&mona> that you will find helpful
+<&mona> for general system admin
+!Onion.IRC kr0 invited testing1234 into the channel.
+!Onion.IRC kr0 invited pussyriot into the channel.
+<&mona> so
+<&mona> ifconfig
+<&mona> will give you a readout
+<&mona> of your network interfaces
+<&mona> what your ip address is
+<&mona> local gateway, subnet mask, etc.
+<&mona> you can use chmod to change permissons on a file
+<&mona> we showed you chmod +x earlier
+<&mona> to make a file executable
+<&mona> you can also use numerical permisions
+!Onion.IRC [Knock] by AnonV0125!chatzilla@localhost (no reason specified)
+<&mona> i.e. chmod 400 filename 
+<&mona> you can google for all the different numerical permisions
+!Onion.IRC [Knock] by raze!Instantbir@localhost (no reason specified)
+<&mona> you can also use chown to change the ownership of a file
+<&mona> i.e. chown root file.txt
+!Onion.IRC kr0 invited raze into the channel.
+<&mona> and you can do it by uid/group id as well
+!Onion.IRC kr0 invited AnonV0125 into the channel.
+<&mona> chown 126:126 file.txt
+<@anonymous> netstat -tulpn and ss for network connections
+<&mona> as mentioned before yeah
+<&mona> netstat -tulpn, netstat -antp, -c for continuous
+<@anonymous> cat to display contents of a file
+<&mona> view ram usage: free -m
+<&mona> iostat to check disk i/o
+<&mona> ionice to reduce i/o rate of a process
+!Onion.IRC jetblackcloud invited debiannull into the channel.
+<@anonymous> grep to find specific patterns or strings in a file or the ouptu of a command
+<&mona> yep
+<&mona> so those are the basics of bash
+<@anonymous> top to display running programs
+<&mona> although it's deceptively simple
+<&mona> bash can be a very nuanced thing
+<@anonymous> indeed
+<&mona> as it's effectively the entire interface between you
+<&mona> and your linux system
+<&mona> there is nothing your machine is physically capable of
+<&mona> that linux does not allow you to do
+<&mona> and thus, there is noting your machine is physically capable of
+<&mona> that you cannot do with bash
+<&mona> given enough time and perseverance.... ;)
+<@anonymous> you can get really creative with bash, expecially when pentesting and such
+<&mona> we highly recommend the Bash book for a wonderful resource of bash and bash scripting
+<@anonymous> very good mona, excellant
+<&mona> avaiable for free:
+<&mona> nets.ec/Bash_book
+<&mona> we hope this was helpful to the linux neophytes amongst us!
+<&mona> we'll hang around to discuss and ask questions
+<&mona> CLASS DISMISSED
+< lulz> Glances is a neat tool
+<%ad3pt> classes keep getting better! Thanks nreds!
+< pussyriot> I need some pussy
+< CrazeKiller> Are we going to go over Kali Linux tools?
+< CrazeKiller> o:
+< lulz> it combines htop and netstt
+< bluetooth> thank you so much mina
+< ScriptKiddie> Bash FTW 
+< onthedl> o//
+<@jetblackcloud> very easy way to view this. as you get comfortable with a commond line, you will find individual tasks that you personally need to accomplish. some may involve a number of commands and variables. as you get comnfortable with bash scripting, this makes it achievable much faster.
+<@jetblackcloud> can literally save hours
+< lulz> CrazeKiller: sure we can go over 100's of tools in 2 hours
+< Anon62211> thank god it finished, i have to take a dump
+< CrazeKiller> LOL
+< anonopguest> Thanks to all team!
+< bluetooth> please do so
+<&mona> the next mini-lesson will include a homework with a reward for the first person to complete it
+<@jetblackcloud> and allow you to leave while your cpu does the work
+<&mona> and mastery of bash
+<&mona> will be instrumental to completing it
+< pussyriot> I need to drop a shit too
+< lulz> inb4 Anon62211 shits himself
+<&mona> that's all i'm revealing for now ;)
+< idonthavenick> thanks <3
+<@onionirc> marathon lesson
+< Parabole> thanks
+<@onionirc> holy shit
+<@jetblackcloud> just a little
+<@jetblackcloud> haha
+<&mona> lol
+<@anonymous> :D
+< lulz> if the reward someone that may have been stolen
+< lulz> is*
+< RosaLux> thanks a lot
+< Track> thanks you mona! your fingers have earned a rest 
+<&mona> my fingers are worn down little nubs
+<&mona> :D
+< onthedl> thank you for the class =)
+< snowcrash> good lesson
+< CrazeKiller> Thank youuuuuuuus
+< Srobizy> Thanks
+< snowcrash> thx
+< raze> tytyty
+< l00l> mona, thx
+< pussyriot> it was hard holding that shit in class
+< drzupan> interesting  class
+< Pirate6> Thanks!
+<&mona> haha
+< Anon62211> it was
+ * lulz passes bong to mona 
+< drzupan> thanks
+<&mona> you now all have permission to shit
+< beerscript> Awesome, guys, ty
+< Neo> Thanks for the class :D
+< sragon> thx mona anonymous jetblackcloud 
+< drzupan> this will be logged?
+< LordiAVi> Thank you all
+< matteblack> thx
+< drzupan> I mean this class
+Log closed Sun May 01 17:13:01 2016

@@ -1,0 +1,259 @@
+Phone phreaking (by DrAnthrax)
+
+<DrAnthrax> Lesson 1 is how to get something for free that WOULD be free, if the service wasn't run by a bunch of profiteering gluttons
+<KroaK> we just have to not interrupt
+<KroaK> lol
+<KroaK> hackers reference ftw
+<DrAnthrax> That's right, actually i learned most of what I know from the movie Hackers
+<xoxo> DrAnthrax: you mean ... the movie
+<DrAnthrax> And the rest from really old Phrack text files
+<xoxo> in which hacking the gibson appear right?
+<KroaK> flu shot
+<DrAnthrax> That's right yes although they don't fully explain the hacking techniques
+<DrAnthrax> so I'm not sure about the methods involved in hacking a gibson
+<DrAnthrax> And to be honest that was from 1995
+<DrAnthrax> So i'm sure there have been some patches to the Gibson software
+<DrAnthrax> since that documentary was made
+<KroaK> lol
+<figgybit> on with the class ...
+<DrAnthrax> Ok
+<DrAnthrax> So basically, a lot of people don't know that a red box still works
+<DrAnthrax> At least in many states in the US
+<DrAnthrax> But
+<DrAnthrax> You have to solder in a different crystal
+<DrAnthrax> The crystal you want is a 18.45 mhz crystal
+<DrAnthrax> And you can get them from radio shack
+<DrAnthrax> Now if you didn't know, you solder these into a tone dialer
+<DrAnthrax> and when you press the * button
+<DrAnthrax> It will register as 25c
+<DrAnthrax> In a payphone
+<DrAnthrax> Now a word of warning
+<DrAnthrax> This doesn't work in ALL payphones
+<DrAnthrax> and in some states it doesn't work at all, california and new york specifically although there are no doubt others
+<DrAnthrax> What you want to find is an older payphone
+<DrAnthrax> and just try it out
+<DrAnthrax> If you want to be 100% sure
+<DrAnthrax> Then a COCOT will almost ALWAYS work
+<DrAnthrax> That's a customer owned, customer operated payphone
+<DrAnthrax> Like you'll find in bars etc.
+* lolwat has quit (Ping timeout: 240 seconds)
+<DrAnthrax> And these often work even in the states I mentioned
+<DrAnthrax> Also in Canada, and the United Kingdom, they are surefire
+<DrAnthrax> With the same crystal
+<DrAnthrax> It just registers a different coin
+<figgybit> whats a red box look like?  is there an image online?
+<DrAnthrax> Well it's just a regular radio shack tone dialer
+<DrAnthrax> The thing that makes it a red box is the modifications that you do to it yourself
+<xoxo> figgybit: http://hangout.altsounds.com/geek/gars/images/2/redbox.jpg
+<figgybit> http://www.biocomp.net/RS_dialer_1.jpg
+<DrAnthrax> Haha
+<DrAnthrax> Figgybit, yes, exacrlyt
+<DrAnthrax> Exactly like that
+<DrAnthrax> Now you can paint yours red if you want, it's up to you
+<DrAnthrax> I also sometimes write the name of my phreaking group on there
+<DrAnthrax> You can use tippex, or a magic marker
+<DrAnthrax> It's totally your choice
+<DrAnthrax> It's easy to solder in a new crystal too
+<DrAnthrax> You just take a soldering iron, and use the solder that is already in there
+<DrAnthrax> You heat that up, take out the crystal (you'll recognise it because it looks like the other crystal you bought)
+<figgybit> what a crystal look like
+<DrAnthrax> Like a diode
+<DrAnthrax> or a transistor
+<DrAnthrax> just like an electrical component
+<DrAnthrax> Now, the thing you have to be careful of at this stage
+<figgybit> http://di105.shoppingshadow.com/images/di/64/79/43/596e396a654e42485233652d697975732d7941-149x149-0-0.jpg
+<figgybit> opps
+<DrAnthrax> is that the crystal is attached to the circuit board with two little dabs of solder in each terminal
+<figgybit> data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBhQSERQUExMWFBQVFxgYFxgYFxcYHBwYIB0dHR0aGxUgHCYgHhskHSAaHzAgJic1LCwsGR40NTkrNiYrLCoBCQoKDgwOGg8PGiolHCUsLDAsLCwsKS4pKSksLSwsLCksKSwsLCwvLCk1KSwpKSkqLDQsNSopNSk1LCopKSkqKv/AABEIAHYAdwMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAABgQFAQIDBwj/xAA9EAACAQIEAwYDBQcCBwAAAAABAgMEEQASITEFBkETIlFhcfAHMoEUQlKRsRUjYqHB0eFDchYXJCWCkvH/xAAZAQADAQEB
+<figgybit> AAAAAAAAAAAAAAAAAQIDBAX/xAArEQACAgECBAYBBQEAAAAAAAAAAQIRAxIhEzFRYQQiQXGB8DIUkdHh8QX/2gAMAwEAAhEDEQA/APccL/PnMDUVDNOgBdQAl9RmYgAkeV7/AExfZxiq5o4GlbSy07tlEg0bfKwN1NutjbTG/h3jWaDy/jav2vcTFSDk2uEUU8XEpmqjkd1la8BBsWXswNANvPy6VPNXFgOLSRVFfPRwCBGHZOwHaaaWyncXO3TFn+xOLyRx0sk0EUSFQ1REz9qyLsAOjEWvt59b2qcpseKy1LhHgkphDlY5mJBW91I1Fgce5HPDHOUss4vyyrSlfNVvVdaVbfJIs8vx1dZDXRQ1dQ8SFTR1LlkZnsbqWsMyHQHw0P
+<figgybit> ljbhfMlVxSWmpgZaf7OM1eykoS6kqIwRtmsT9T+HDLydy7PQyzw5w9ETnguxLx33S1vl879PM47cq8uyU9VXyuVy1EyvHY3OUBvm003xOXxWFPI4qLpJwe120ou1XOvM1yUlY6EjmPirrXVKV1ZWUahrUpiuIcttGYgEtrv9dsMn7MmqeHRSvxCQvFFIe0pXypL1UtdbkjLY7a3wV3CeJxyVCwtT1UEzFlWpLExX3UDYqOg8umuLHlblJqPhrUpcPIyyEkXC5nB0H8I0/ngzZ8axQlGUVJONJU9qp7abj3Tbt7hRS/DqB/scdfUVlS/wC7kZ0eTNGACbm1r3AF98VXJvMtUK2Capkc0/Ee2EKMTaNlbuADYXGgtvfFweTqteCJQIYx
+<figgybit> Ke7I2Y5QhcsbG1ySLC3mcceN/CSMQD7HJItREUaIySsVBUj7uoXx0G+NuN4WU8nEkvPJxWy8sVdP0rdp30iLctOGcTlbjtVCZGMS00bKl+6GOS5A8d/zxn4nVlRHTxmAyrH2qioeEXkWLqVHT19MQajgXEU4hJWQLTEywRxssjvYEBc1soH3hofDE2v4fxSaGNxJDBVQylgkbOYZI7DuyX1ve/l6Xvjk0445sWVShSjFNN+tb2vf1ruMq/h/xFXq2FPxF6mAx3aGpLGZX/EpKgFfHXr6HHpGELg3K1XJxFK2rWnhMSMqpBclyQRd2O+5/lh8vjk/6MscsqcHeyvlz6Wkk/ehozgxi+DHnDFXnvmWSjgjeNY7yTJEXmzCKINfvyZdba
+<figgybit> W33IwvwfESpmgpFiig+01VRNCjN2nYFIrlpl++UItYX8cX/OvLktWtOYTGXp51lEcwJiksCMrgaje4Njrhcp/hzVRJDNHJAKuKqmqQlnEAEqhWiW3eAAAINt7+uGIauUOZWrKMTMgSQNIkigkqHQlTYn7vXXxwhcM+Mc8nDZ52hi+1JJCsSAPkYS/KSC1/uybHoMPfJ/LTUdEIHdXkYySSMoIXO5JNhvlFwPphKoPg/KjUjNNH+5p3jkUZrNL++7Jx3dQvabnXTTCAYqD4lwCkpZKkkTTQduyQxySBE1BkYDMVjBHzHw8sdB8SIf2h9lt+6FN2/b2YrYgNe9sojCXOcm19NDhbn+FNQFgMbwO60a0siu9QiXUkh1MZBca2KNof0sar
+<figgybit> 4bSmUCN4hBJw/wCxS6OGW1yHiW5BGa2jHa+AZe0nxGopEkYPIoiiM5zxSIWhH+pGGAzr5jHNPidRFEZDM+dmEapTzMzhVDMyoFuUAIu22uFnh/wuqBDMkhpw5o3po2V6lySwtnYuSEW1u4q2vtbFrzLyHLPBRRqtPKaaMIwkMsZuEVc0U8feXVfltY6YAHLhfFI6iFJojmjcXU2I09CLjEsYXOAqeH0MUVXU9rIgN3JJJJJIUX7xAHdBPhiuruZZptIR2UZ+8fmPoOmAQxcV4/FT/M126IurH6dMU9Nzg5e7xKsfgCc1vHwPpioj4VYE7tc5r/MSN9+vljmFucAz0GCoV1DKbg9RjphJ4dxB6d9jY2zKdL+fkcN1NUrIoZDcH3b1wC
+<figgybit> O5wYwMGGBzW+Mi/wCfv+2Nc2Ae/f5YZJuTjBxoT79/TGc++AZvm9+/0wA41ZsQeOSEQMRptfp3ev01wJWJukTZ6lUUs7BQOpNsLVbzW8l1pUuNjI2w9B1xVU3C4nupvmZswBdirH8NibBvAjQ+uLNAABYWHgNPzGCSoIyUkQI+F5nzSOZJD1ba/gBiVURgDu2PQf39enhjq0dyPDbAtPcm58CLg66+mvTElkV2djmG57txpv099MbtAEOupvr0t5ef9sSHksNAPP8A+9f6gDqMRIoQxOYkeG+vvy11wAalQ1gNxrcnp4H0vv6Y68Prnha4BIPzL4/58MS46UsSEW1iR9R1H00I6+WIPGeYqWiHfIkl6IpGnr4DAA401UroGU6H6fQ+
+<figgybit> BG1sYwqci8dmqWmeWMIjZWQbeV/HUW18sGGSNRbxxtm9+/TAR79/XGANvfvrphiDQe/fhgBt09+xtjUD3p78cDuALsQBqb+X9tTgEbMffpb344ruLzqqkOwC2N7n6enTGpr3l0hUZTvI18v/AI9W33GnnjmOHqpDuS8l75m6f7VGi77jXxJxSJlyPOuNpKjxlO0Gqq+hBMdzqEOt765ja2XbDfQcQ7Xusf3q72/1FH3h/GOo6jUeGOfHKZqjRBZgSQ3mTt9b4oqSmKscxIdT46g9CDjpcVKO/M5IzcJbchve1geh6jAiE6fX1/qcRaWqEik2s6jvqOo/Go/UdP0sKWnMgzAgAbk6befljjap0ehGSkrRxNORe2jX10OxHQj0xtWdlC
+<figgybit> va1DhF89yfJd736DFDzJ8RqekBSC00v4t0U+XifTTCFOlRXEz1cpSMdW008FXYDAothKSjzGHjXxClqGMFEhRdiR8x9TsoxUwUUVO15T29Qdcm4U+JPj64509USOypE7NOshHebzHh6nDRy7ybszDzJO59T/XHQoKPM45ZZT2iMXKFeWFitidTp66YMXnD+HLGAAPevvXGcZSas3jFpHe/u/vxxh5PPp7/AFGIVXxJUIGrOflRRdj5gdLG1ydPE4immkl1mbInSNCddPvyfloNPM4KCzu/FiWKRL2jg620C/7m2HTTfyxgUFzmmbtCNQu0Y3+7971N/QYO3WMZEAAGwUAD6C3kMbJTM++nsbH6HTDoWrodJKs6hen+f8Y1SkJPe6XN
+<figgybit> vr/j0xIjgsD6em9vy66Y0qqtIwWdgAPHTx8fXrgvoOuodgANBbT2P5emFzmNIywyt+9GgCjMW6WsBckAbDbrpiylklm2vDEepHfYa/Kh2Hm//qca9lHCDkGpBuxOZm33Y6n00GLi2ZzSo844cJ46skF44jmcAMLrID9465b/AIQT0vfbEHi/M1bUO1GHuc2ay2UMp+8fLxG2+GrmDhkk5MqDLbcDdt769TYbDCnVIC94wwlClM4BUqL6/Xf88byipLc5o5XB9iPHSw0pGf8A6io6KPlU+fu+J9HwqarcNLqNLKPlG2w/rvidy3ydexIvfUkjfb3449E4VwhYgLDWw6D9fZxDajsi0pZHciDy/wArrHYkeB/TDJBFYAD3t7vjCCxH06
+<figgybit> enu++BOn+f4fd8YN2dKiktjoTYaa4zjix06/kT4bf3wYVDsjMEjzOqgFvmIFiT0uba9MR7s/kPUfz/AC33xNdR129D72GwxlRbTwt7/XzxdkVZpFQhQP59fAXI/PXHe/U/z96i5xX1vFVjsp7zt8qLqxP8K79dzoOtt8RWppJtZzlS2kSNuNfncb7fKpA8ScKmytkSZuMFiVgAcj5m+4tr6MwB127q3bxtjn
+<DrAnthrax> Whoa my nigga!
+<figgybit> whoa! sorry
+<DrAnthrax> Lulz
+<DrAnthrax> Hang on let me find you a picture of a crystal
+<xochipilli> wow
+<xochipilli> rude
+<figgybit> ok thanks
+<figgybit> yeah sorry
+<xochipilli> <3
+<DrAnthrax> http://www.tradeeasy.com/photo/seller/8075/sgraphic/1273557628802_1.jpg
+<DrAnthrax> Ok, shit looks like this
+<DrAnthrax> Although the two terminals sticking out of it will be way smaller
+<DrAnthrax> They sell them big so you can clip them to the size you need
+<figgybit> ok cool
+<DrAnthrax> Now, like I was saying
+<DrAnthrax> It's attached to the circuit board with two little bits of solder, one on each terminal
+<DrAnthrax> and if you dunno how to use a soldering iron, you MIGHT let those two dabs run into eachother and go together
+<DrAnthrax> Now it's very important that you don't do this
+<DrAnthrax> otherwise you need to start over with a new tone dialer, and while they aren't expensive or anything it's still a hassle
+<DrAnthrax> And to be honest you should buy two because this probably will happen at least once when you are still trying to learn how to use a soldering iron
+<DrAnthrax> So yeah, be careful and watch out for that shit
+<xochipilli> light cigarettes w/ a soldering iron
+<xochipilli> run out of building
+<DrAnthrax> A true phreak respects his soldering iron way too much to light a cigarette with it
+<xochipilli> oops
+<DrAnthrax> It's the phreaking tool of choice
+<xoxo> (bytheway, i got the logging going on)
+<DrAnthrax> Sweet
+<xochipilli> iono
+<xochipilli> id like to challenge a true freak to spend a day working w/o lighter
+<xochipilli> with a pack of cigs
+<xochipilli> and a soldering iron
+<xochipilli> :3
+<DrAnthrax> I feel you. I'd do the same thing
+<xochipilli> haha
+<DrAnthrax> But I make sure to carry a lighter
+<DrAnthrax> It's the other phreak tool of choice
+<xochipilli> smoke drugsssssssssssssss
+<DrAnthrax> So yeah, making a redbox is easy
+<DrAnthrax> The hard part is finding a phone to use it
+<DrAnthrax> Some places it's easy
+<DrAnthrax> Some places it just won't happen
+<DrAnthrax> In big cities you stand way less chance than small towns
+<DrAnthrax> So if you live in a big city, the best choice is to find one of those COCOTs I mentioned earlier
+<DrAnthrax> But...even if you live in a big city, your phreaking fun is not phucked
+<DrAnthrax> and that brings me to lesson 2, the beige box
+* lolwat (~lolwutder@LulzCo-E8B02DB8.privacyfoundation.ch) has joined #school4lulz
+* ChanServ gives voice to lolwat
+xochipilli> i didnt know people still phreaked
+<xochipilli> outside of like voip, which isnt rly phreaking
+<DrAnthrax> Dude I''ve been phreaking since '99
+<DrAnthrax> And most of the shit still works
+<xochipilli> heh
+<torify> hi
+<DrAnthrax> Or you need to modify it a bit
+<DrAnthrax> Like with the redbox, you need to use a different crystal and it doesn't work in every phone
+<DrAnthrax> But yeah, I pheel you, there's no REAL reason to phreak anymore
+<DrAnthrax> Other than because it's fun
+<DrAnthrax> Or "phun" as we say in the phreaking community
+<figgybit> thanks for the lesson !
+<figgybit> i got to run to 'the shack'
+<DrAnthrax> No worries figgybit
+<xoxo> DrAnthrax: the end?
+<DrAnthrax> Nah I was going to talk about beige boxes too
+<xoxo> all righty DrAnthrax 
+<DrAnthrax> Which is a linesman's handset
+<DrAnthrax> This is the same piece of equipment that the phone engineers use to test lines
+<lolwat> just out of curiosity (and to create a good ol' editors war)
+<DrAnthrax> But you can make one yourself in your home
+<figgybit> great more
+<lolwat> do you use either vim, emacs or other editor?
+<DrAnthrax> Again you need a soldering iron
+<DrAnthrax> lolwat: emacs
+<torify> vim
+<DrAnthrax> People who use vim are the lowest form of life on this earth
+<xoxo> guys don't fuck up the lesson
+<lolwat> I use vim <3
+<lolwat> aw, there was a lesson going on?
+<lolwat> soz
+<DrAnthrax> No worries
+<xoxo> lolwat: it's all right
+<DrAnthrax> Anyway, the linesmans handset, or beige box
+<DrAnthrax> To make one, all you need is an old school corded phone
+* yamazaki has quit (Quit: http://www.mibbit.com ajax IRC Client)
+<DrAnthrax> and two alligator clips
+<DrAnthrax> and some solder
+<DrAnthrax> and a soldering iron
+<DrAnthrax> But all phreaks should have a soldering iron, that's the first thing you buy
+<DrAnthrax> So yeah, it's really simple to make
+<DrAnthrax> You just cut the handset from the base of the phone
+<DrAnthrax> And solder two aligator clips to the two wires
+<DrAnthrax> I mean this is easy as phuck, I used to do it when I was 11
+<DrAnthrax> Now, at this point, you need to find one of the phone company exhanges, they are like green boxes in the street
+<DrAnthrax> That's how they look in the suburbs anyway
+* DoubleD has quit (Remote host closed the connection)
+<DrAnthrax> In inner city places they are underground but you don't want to do this there anyway, because people will see you
+<DrAnthrax> Now, if you open up one of these green boxes, you'll see a ton of terminals
+<DrAnthrax> make sure this is a phone company box btw, and not power! The phone company logo will be on it
+<DrAnthrax> You use a square hex wrench to open it
+<DrAnthrax> The size varies
+<DrAnthrax> But it's usually a small one
+<DrAnthrax> I mean maybe smaller than you have in a normal socket set
+<DrAnthrax> so yeah, open up the box, and you'll find terminals. Each one of these terminals is linked to your neighbours phone lines
+<DrAnthrax> Now at this point, you can clip the alligator clips of your beige box to the terminals
+<DrAnthrax> And you can make free calls (using an unmodified radio shack tone dialler to dial)
+<DrAnthrax> But that's not really worth sitting in the ground for
+<DrAnthrax> The best thing is listening to other people's calls
+<lolwat> DrAnthrax, being I a total noob on phreaking:
+<lolwat> is it possible to cross lines?
+<DrAnthrax> Yes! Now you are thinking
+<lolwat> like "redirect" to my line?
+<lolwat> (i am lazy xD=
+<DrAnthrax> well, don't do that
+<lolwat> (don't like the outside light)
+<DrAnthrax> Because if you do, the phone company guy will open up the box
+<DrAnthrax> and be like "Hmm some clown crossed these lines"
+<xochipilli> DANERGOUS HOOLIGAN
+<xochipilli> DISRUPTING TEL COM COMMUNICATIONS
+<DrAnthrax> And if your neighbour phones up the phone company and is like "WTF I didn't call Venezuela "
+<xochipilli> CALL THE SECRET SERVICE
+<xochipilli> STAT
+<lolwat> and can we do the same shit for ADSL?
+<DrAnthrax> They'll phreak out
+<lolwat> I mean, I use phone lines to access the internet
+<DrAnthrax> and not in a cool phreaking way, in a phucked up ma bell way
+<lolwat> so, i could (in theory, and provided I have a modem)
+<lolwat> have free interwebs...
+<DrAnthrax> lolwat: Dude you could go down there and do that, sure, but it wouldn't be a very stable connection through a pair of alligator clips
+<DrAnthrax> I dunno if it would work
+<lolwat> tru...
+<DrAnthrax> Voice though, no problem
+<lolwat> yeah, some interferences, but still hearable
+<DrAnthrax> But it's fun to cross your neighbours lines for mischief purposes
+<lolwat> *audible
+<DrAnthrax> Yeah, actually pretty clear, but maybe not clear enough for good data purposes
+<lolwat> i see your point...
+<DrAnthrax> If you want to use your neighbours internet, just hack their wi-fi
+<DrAnthrax> You can do that without getting your knees wet
+<lolwat> I am very unlucky in that regard...
+<lolwat> I am the only one with wireless
+<lolwat> around my neibourghood
+<DrAnthrax> Do some wardriving then
+<IR601> :D <3 znc with 500lines of buffering
+<DrAnthrax> But yeah, that's about it for the phreaking lesson today, we've kind of migrated into discussion time
+<lolwat> DrAnthrax, is there something else to know? is it really that simple?
+<DrAnthrax> Next week I'll be discussing the mysterious rainbow box
+<lolwat> just open the box, tap into the wires, and all done?
+<DrAnthrax> lolwat: Yep it's that simple
+<DrAnthrax> Indeed
+<DrAnthrax> Like I say
+<DrAnthrax> A beige box is the same tool that engineers use to check lines
+<lolwat> and phreaking should be done, like, at night... am i right?
+<DrAnthrax> Yes
+<xoxo> DrAnthrax: gimme a kick when you END. really.
+* Gralon has quit ()
+<DrAnthrax> xoxo: I think we're done, unless you want discussion included in the log?
+<lolwat> now I have a new activity this summer =)
+<xoxo> should I include iT? DrAnthrax 
+<DrAnthrax> xoxo: Sure, why not?
+<xoxo> DrAnthrax: all righty
+<DrAnthrax> xoxo: I'll let you know when I'm done in here
+<xoxo> ok
+<DrAnthrax> lolwat: Yes, it's fun
+<lolwat> I bet it is =D
+<DrAnthrax> you can tap your neighbours calls too, and record them on a microcassette recorder
+<DrAnthrax> But that takes a bit more technical knowledge
+<DrAnthrax> You can work it out
+<lolwat> this is the equivalent of being on an unprotected wifi, with promicuous packet sniffing =)
+<lolwat> reading messenger logs <3
+<DrAnthrax> Yes
+<xoxo> lolwat: that's nasty :3
+<DrAnthrax> It's totally unencrypted etc
+<DrAnthrax> so if you have physical access to the mechanism of the lines
+<DrAnthrax> You can hear everything that goes on
+<DrAnthrax> and use that phoneline yourself
+* nonbit has quit (Remote host closed the connection)
+<DrAnthrax> But ok, I'm done in here xoxo
+<DrAnthrax> Like I say, next saturday
+<DrAnthrax> I'll come and do a lesson on the rainbow box
+<DrAnthrax> What it is, how to build one, and how to use it
+<lolwat> Microtutorial time for promiscuous packet capture? =D
+<xoxo> ---------------------- log end.

@@ -1,0 +1,618 @@
+Know Thy Enemy (by hatter)
+
+<kratos> see topic
+<hitler> Anorov: b7a44db2326bd29
+* k0dxzz9 gets giddy anticipating a talk
+<hatter> oh
+<hatter> Know thy enemy
+<hatter> ok
+<hatter> Can do
+<hatter> Shall I go ahead?
+<kratos> i can help too, if i'm here
+<hatter> Are we on schedule for right now?
+<Fox> Not yet
+<kratos> just about to go to the shops lol
+<hatter> Shit 
+<hatter> I'll go ahead
+<Fox> 6:13 pm
+<hatter> And then like
+<Fox> lol
+<hatter> yeah
+<Fox> Or fuck it
+<hatter> But its 8:28 pm
+<hatter> Here
+<Fox> lets roll
+<hatter> So like
+<hatter> idk
+<hatter> kkk
+* hatter sets mode +m #school4lulz
+<hatter> Your enemy are those who would follow, prosecute, persecute, or attack you.
+<hatter> These enemies have different forms of weapons
+* skullby (~skullby@lulzsecurity.com) has joined #school4lulz
+<hatter> Sniffers, Tempest, TEMPEST II
+* GenericSkiddie (~root@behind.7.proxies.net) has joined #school4lulz
+* vicki (~io@lulzsecurity.com) has joined #school4lulz
+<Fox> TEMPEST.
+* sigma (~sigma@LulzCo-E54A5768.hsd1.mn.comcast.net) has joined #school4lulz
+<hatter> Sniffers are simply applications which record network information.
+* CastleBravo (~androirc@LulzCo-61E8EE3C.lsanca.fios.verizon.net) has joined #school4lulz
+* f0rpaxe (mouse@87751555:F0007639:487DA59C:IP) has joined #school4lulz
+<hatter> TEMPEST I allows the government or MISUSE OF GOVT RESOURCES (this does occur) TO READ SHIT OFF OF YOUR SCREEN
+<hatter> they can read it by reading the signals of radio waves (radiation) etc off of your monitor output
+<hatter> hence you've heard the term "Faraday cage"
+* Fox gives voice to vicki
+<hatter> Tempest II, something a great deal more dangerous,
+* snw (ee@LulzCo-236B1969.getinternet.no) has joined #school4lulz
+* hatter gives channel operator status to vicki
+* mks2 (~mks@LulzCo-9C7131C0.dhcp.embarqhsd.net) has joined #school4lulz
+<hatter> vicki: long time no talk, you know me under another handle, pm afterwards.
+<hatter> anwaways, Tempest II is a completely different story
+<hatter> It uses EM (electromagnetics) in conjunction with ES (electron spectroscopy) to not only pinpoint, but also alter, actions not limited to :
+<hatter> Viewing your screen, mouse movements, disk i/o (read/write), ram usage, and CPU usage.
+<hatter> Usually an improper use, or a misuse of TEMPEST II will result in temporary hardware failure, similar to an EMP
+* Shiny has quit (Ping timeout: 240 seconds)
+<Fox> now
+<hatter> the difference is that misuse of TEMPEST II will only result in the temporary disabling
+<Fox> Just to clarify with the EMP
+<hatter> Not perminant disabling
+* figgybit has quit (Ping timeout: 240 seconds)
+<hatter> EMP is permanent
+<hatter> TEMPEST II misuse
+<hatter> is temporary
+<Fox> I know
+<hatter> just reboot your system
+<hatter> However
+<Fox> I was clarifying that it kills battery
+<hatter> If you're still in range of the TEMPEST (Usually 20 to 30 feet)
+* Shiny (shiny@LulzCo-48E1A1D3.static.vx.siw.siwnet.net) has joined #school4lulz
+* VanKrause (~lol@cocks.dongs.and.anal.holes) has joined #school4lulz
+<hatter> Yes it does fucking DESTROY battery.
+<hatter> If you have a battery in a laptop
+<hatter> that gets hit by tempest 2
+<hatter> Take it out
+<hatter> Just throw it
+* figgybit (~whatsthis@LulzCo-D6241CCF.c3-0.avec-ubr2.nyr-avec.ny.cable.rcn.com) has joined #school4lulz
+<hatter> Use your power cable
+<hatter> much more reliable
+<hatter> In any case, those are their preliminary information gathering points.
+<hatter> They'll record emitted radiation, emitted electromagnetism, as well as emitted networking (they can MITM your ISP, no big deal)
+* hatter sets mode -m #school4lulz
+<redEye> is this the real content of the class?
+<hatter> Yep
+<hatter> This is when a JTF tackles you.
+<Fox> This is information from experience.
+<hatter> Joint Task Force
+<hatter> If a JTF tackles you
+<hatter> you only have two hopes
+<hatter> and you need them both
+<kratos> hatter: 
+<hatter> sup kratos 
+<hitler> how widely is this used?
+<kratos> this stuff is used only after surveillence
+<kratos> of the person
+<hatter> This is typically used in third stage
+<kratos> it's more likely that a hacker will be confronted with physical tracking
+<hatter> when they've already got you in their sites, you already fled from the law
+<kratos> before it reaches that
+<hatter> when they've already got you in their sites, you already fled from the law
+<hatter> when they've already got you in their sites, you already fled from the law
+<hatter> when they've already got you in their sites, you already fled from the law
+<jester> sights*
+<hatter> ^
+<Fox> Now 
+<Fox> To clarify
+<jester> or if youre me, they have me in their sites
+<jester> ;D
+<hatter> You are correct kratos 
+<Fox> for those just joining us
+<kratos> but it's important to identify when you are being physically followed
+* hatter gives voice to kratos
+<Fox> This is a class on protecting yourself from all sorts of nastiness
+* hatter sets mode +m #school4lulz
+<Fox> Federal Agents, Task forces, Rival Crews
+<hatter> ^
+<kratos> ie checking for monitoring equipment on your car or parent's cars, checking your house for anything that's been moved or changed
+<Fox> We are preparing you to be sent off on your own.
+<hatter> 00:36 <+kratos> ie checking for monitoring equipment on your car or parent's cars, checking your house for anything that's been moved or changed
+<hatter> Very correct
+<hatter> however even ditching that equipment
+<hatter> doesn't make you safe.
+<hatter> Which is what this class is for
+<kratos> and also being aware of anybody around you, especially if they appear to follow you over long distances
+<hatter> This is for the perma-fucked, ultra-paranoid.
+<kratos> yeah
+<hatter> 00:36 <+kratos> and also being aware of anybody around you, especially if they appear to follow you over long distances
+<hatter> One good trick that I learned from Fox actually
+<Fox> :3
+<hatter> Is throwing some blank cd's and hdd's out of the car
+<hatter> if they're following you in a moving vehicle
+<hatter> their primary objective will be to obtain evidence
+<jester> looool
+<kratos> haha
+<hatter> they don't know if you're canning evidence
+<hatter> or if you're just throwin shit out there
+<hatter> so they gotta pull over 
+<kratos> well, i don't know if they'd fall for that, enough to take it when you're in their view
+<hatter> Fox: What was it?  10?  14?  something like that?
+<kratos> besides, they typically 'box' you
+<Fox> Rofl
+<Fox> kratos
+<Fox> Wrong
+<Fox> Hatter mind if I step in for a second?
+<hatter> kratos: you're correct, you underestimate my driving
+* Mac (~chatzilla@7CD30C03.9D752112.EE98B35.IP) has joined #school4lulz
+<hatter> Fox: go ahead.
+<Fox> Now we're all familiar with the 'eyeball' scenario
+<Fox> 2 without sight lines, and 1 with or 2 with
+<Fox> Depending on the amount of people involved
+<kratos> yes
+<Fox> now the thing is, with highway travel, or city travel
+<Fox> this is often too conspicous
+<Fox> so, what they will do if they lack air support
+<Fox> will be to create choke points
+* Endiss (~Endiss@LulzCo-9E41B2A.wgnet.pl) has joined #school4lulz
+<Fox> where people will be at intersections
+<kratos> true
+<Fox> which could be called a box, but eyeball is usually the term used
+<Fox> A box would refer to all 4 having a potential sight line
+<kratos> although these days, they also have drones, which is another possibility
+<Fox> This is usually not the case.
+<kratos> the fact being that they don't neccessarily need people on the ground to follow you
+<Fox> Ontop of this surveillance in most interstate travel can be an issue.
+<Fox> Cameras on travel signs
+<kratos> i was meaning a floating 'box', fox, with a remote c&c 
+<Fox> No worries, that's proper
+<Fox> Now another thing that I've learned
+<Fox> is a huge thing with traveling while tailed or potential tailed
+<Fox> Gas Mileage, and night time are your best friends.
+<Fox> Most surveillance vehicles for the most part are large beefy vehicles, or lower end models with equipment.
+<Fox> So
+<Fox> Suburbans, Escapes, Econolines, et cetera.
+<kratos> ^
+<Fox> Now
+* EndzO (~EndzO@LulzCo-262C7ECD.abhsia.telus.net) has joined #school4lulz
+<hatter> Don't forget about pathfinders!!!!!
+<Fox> Thank you
+<Fox> Now don't think you got it cause you see none of these
+* Medusa (~Victoria@BC74D05.D2B206B7.7E52A797.IP) has left #school4lulz
+<Fox> that just means they're not gathering evidence at the time
+<Fox> I'm about to wrap up here, and let hatter take over again for a minute
+<Fox> But the one thing I have to stress
+<hatter> kso basically
+<hatter> your electronics go down, you don't be active for a while
+<hatter> Assume sniffers are there
+<Fox> is that you need to trust your instincts here.
+<hatter> If you've been using the same coffee shop for a while
+<Fox> If you FEEL something wrong, then change up. Immediately.
+<hatter> and you've been switching your mac every time
+<hatter> doesn't matter
+<kratos> and yet, another thing, is don't let them know you know if possible
+<kratos> if they know that you know, they'll change tactics to try to make you feel safe, again
+<kratos> better an enemy you know than one you don't
+<hatter> ^
+<hatter> kratos is quite right
+<hatter> But even if you know 
+<hatter> if you've been using the same area
+<hatter> for a while
+<hatter> and you see that guy
+<hatter> with his cold coffee
+<hatter> reading the paper
+<hatter> GET THE HELL OUT.
+<kratos> yes, it's good to change it up, but keep it subtle
+<hatter> ^
+<hatter> I've seen a guy pretending to drink a cold cup of coffee before
+<hatter> That meant that I fucked up to begin with
+<hatter> by using the same location more than once.
+<t> you should never use the same place twice let alone goto the coffee shop every morning b4 work to jerkoff on your laptop
+<hatter> They don't even try to cover that shit up
+<hatter> Like, you'll see the rings on the inside of the coffee cup
+<t> another thing is if its early morning and started raining and you notice one person dry but everyone else wet
+<hatter> ^
+* Medusa (~Victoria@BC74D05.D2B206B7.7E52A797.IP) has joined #school4lulz
+<t> basic shit that you wouldnt normally look for
+<hatter> t: take it away, need a cig break
+<t> k one sec ogtta piss
+<Fox> Fine.
+<Fox> Anyways
+* agentblagojevic has quit (Ping timeout: 240 seconds)
+<Fox> Now some of the big things we're discussing here, is that there are feds in this channel right now
+<Fox> So a little more about how you should conduct yourself
+<Fox> One of the big things is that you're going to have people try and get at you
+<Fox> "Hey whats up I got some CVV"
+* svelte (~svelte@LulzCo-AF9BED75.hsd1.fl.comcast.net) has joined #school4lulz
+<Fox> Learn to identify when people are being too earnest.
+<Fox> Learn to identify when people are trying to trap you into a sentence
+<kratos> as usual, do
+<Fox> When you side step a question and someone persists, and change language, 
+<Fox> REALIZE THAT IMMEDIATELY.
+<kratos> don't talk about these things with anybody you don't trust^ *
+* renzor_ (~renzor@LulzCo-5D7A2F03.dsl.hol.gr) has joined #school4lulz
+<vicki> learn to identify when people ask you question when they don't NEED TO KNOW the answer.
+<vicki> OPSEC = NEED TO KNOW.
+<Fox> OPSEC = Operations Security
+<Fox> Big thing.
+<vicki> thx
+<Fox> Now
+<Fox> Our next class that I'm participating in will be on cultivation of contacts
+<Fox> You don't necessarily want to be scared shitless of the feds
+<Fox> But you don't want to play nice
+<kratos> most of them are just normal guys doing their jobs, to be honest
+<Fox> Exactly.
+<kratos> and will get pretty pissed if you make things too difficult for them
+<Fox> Well
+<kratos> so you want to let them do their thing, while you do your thing, but professionally
+<Fox> That depends
+<vicki> like attacking senate.gov and asking if this is an act of war?
+<vicki> :)
+* mr (~mr@1D80A41C.F7A7C2E9.334BF441.IP) has joined #school4lulz
+<kratos> just don't punch the guy with the rings in his coffee
+<kratos> lol
+<Fox> It's really a matter of how you handle business.
+<kratos> apart from seeming really paranoid, it just won't help, even if they are FBI or whatever
+<hatter> vicki: pretty much
+<Fox> There are multiple types of Digital Hustlers here.
+<hatter> ^
+<vicki> well i can only stress one thing: do NOT try to copy lulzsec. unless you really fkn know what you are doing (which means you know EVERYTZHING we say here)
+<hatter> ^
+<jester> guys
+<jester> i wanna start a group
+<hatter> If you want to go baller
+* hatter removes channel half-operator status from jester
+<Fox> For instance you have a few people who are balls to the wall Fuck you.
+* jester (~root@pluto-a.nasa.gov) has left #school4lulz
+* jester (~root@pluto-a.nasa.gov) has joined #school4lulz
+<hatter> you gotta really really really know how to cover your ass
+<Fox> A few who stack paper quietly and handle business
+<Fox> and a few in between.
+<hatter> as the fist part of covering your ass
+<hatter> means not leaving tracks to begin with
+<hatter> Don't leave any tracks, there's nothing to cover.
+<hatter> Your enemy will do anything to get at you once they know who you are
+<hatter> they are unscrupulous
+* renzor has quit (Ping timeout: 240 seconds)
+<Fox> Now a little bit of etiquette for you.
+<Fox> Note there is a honor amongst thieves system.
+<Fox> Or at least some people adhere to it.
+<t> also if your a 350lb asshole whos 19 and already bald dnt think that hot asain bitch coming up to wants the dick she wants to get inside your place
+<kratos> DO NOT EVER EVER GRASS 
+<Fox> There are lines that you cross when beefing with someone.
+<kratos> ANYBODY TO THE FEDS FOR WHATEVER REASON
+<Fox> kratos
+<Fox> sh for a sec.
+<Fox> Now
+<Fox> Rules:
+<Fox> You go after family. You better be ready to bury someone.
+<Fox> You snitch, you WILL be found out, and that measly few G's they offered will be taken out on your ass and your credit report a thousand fold
+<Fox> You snitch, and I ever see you at a conference, please do trust that I will give your face a fuck up that you've never seen before.
+<Fox> Won't eat solid food for a month.
+<hatter> ^
+<kratos> ^
+<hatter> I'll help too
+<hatter> lol
+<Fox> Shit's getting rough.
+<hatter> N believe me 
+<hatter> You don't want me up your face
+<Fox> You need to learn to protect yourselves.
+<hatter> ^
+<Fox> ^^
+* clu (~clu@LulzCo-4044EA2D.hsd1.co.comcast.net) has joined #school4lulz
+<Fox> Anyways
+<Fox> Another big ordeal is other crews.
+<kratos> that may not share your ethics
+<Fox> Lets say you've gotten yourselves a few people here
+<Fox> Right?
+<Fox> You decide to start stepping on some toes
+<Fox> Fuck 'em right? You learned shit here.
+<Fox> Wrong.
+<hatter> ^
+<Fox> You start getting in crew-crew or crew-person drama
+<Fox> you better have your shit on point.
+<Fox> Your accounts, your servers, your LIFE.
+<Fox> Because crew wars are fucking relentless.
+<Fox> It is truly the sense of warfare, there are casualties, there are a lot of problems
+<Fox> And one thing to remember
+<Fox> is you never know who you're talking to.
+<Fox> So that innocuous statement you made to me about your area code?
+<Fox> Guess what
+<Fox> I now have your locale to start digging.
+<Fox> Every piece of information is valuable, the sooner you realize this, the sooner you will stop your digital hemmorhaging
+* Endiss has quit ()
+<t> facebook twitter myspace shitbook anything and everything you sign up for if you have ANY I MEAN ANY personal info or hints it will be found
+* daquikniz (syncore@LulzCo-B0D1073A.us) has joined #school4lulz
+<t> esp if you have 30 face book friends and 22 of them are from north dakota gee i wonder were he is from
+* Fox gives voice to jester
+<jester> to add to what fox said
+<Nyse> n e one
+<jester> about digitial hemorraghing
+<Nyse> who knows pytho nitc
+<Nyse> wanna talk python?
+<jester> if you have experience with social engineering
+<jester> its very very simple to fill everyones head with disinformation
+<kratos> ^
+<jester> accidentally let things slip
+<t> dont ever post your address phone num area code or anything like that when i sign up for websites my name is a random letter with a random birthdate
+<jester> make small comments about a place you arent from
+<jester> let people question everything you say
+<nachash> jester = dead on
+<Fox> Now another piece of information
+<Fox> I'm on a road trip right
+<Fox> everyone knows this
+<Fox> But
+<Fox> Where am I really
+<jester> in your moms basement
+<jester> with #swag
+<Fox> As I said
+* Fox has kicked jester from #school4lulz (Your behavior is not conducive to the desired environment.)
+* jester (~root@pluto-a.nasa.gov) has joined #school4lulz
+<Fox> The best part about that
+* FlipRez has quit (Ping timeout: 240 seconds)
+<Fox> is that I can get into the middle of the country
+<Fox> and disappear.
+<Fox> Anyone that had a problem with me, and was digging
+<Fox> Now they're back at square one.
+<nachash> There are still a lot of blank spots on the map. Use them some time.
+<Fox> Indeed
+<Fox> Anyone here know of any of the big crew battles from back in the day?
+<kratos> and when you do disappear, learn something new and get really involved in it
+* Fox gives voice to jester
+* Flipster (~Flip@EEC4046F.F45C557D.601F3378.IP) has joined #school4lulz
+<nachash> You mean like LOD/MOD?
+<kratos> any interest you didn't have before
+<Fox> Yes
+<Fox> Like LOD MOD
+<Fox> hatter
+<hatter> Sup?
+<hatter> Oh god
+<t> uhhh ohhh
+<Fox> Would you like to school the kids on some folk lore?
+<nachash> That's like the biggest crew war ever.
+<God> i am God
+<Fox> Kids, we're about to teach you about your roots.
+<jester> the best disinformation is a lie that you keep up for years at a time
+<jester> something very basic
+<hatter> I am a former member of the MoD.
+<God> super mad cow?
+<jester> that everyone "knows" about you
+<hatter> anyone who doesn't believe me can leave or just ignore my comments.
+<God> the cult of the dead cow
+<jester> lol
+<hatter> is not the same thing as the MoD God 
+* hatter removes channel half-operator status from God
+<hatter> quit interrupting the lesson
+* hatter gives channel half-operator status to God
+<hatter> in any case
+<hatter> Watch yourself with crews
+<hatter> If you snitch on anyone, or if someone things you snitched, you'll run into another Eli vs. Chris situation
+<hatter> Btw by that I mean
+<hatter> Acid Phreak vs. Erik Bloodaxe
+<hatter> Erik Bloodaxe was snitching the MoD out to the feds
+<hatter> And Acid Phreak picked up on the ONGOING CALL
+<hatter> And said "Yeah, we're comin for your ass bitch"
+<hatter> Hence, this year is the first year that Eli/Acid Phreak has been allowed to touch computers
+<hatter> or any other telecommunications device
+<Fox> Also social side note:
+<Fox> If Eli ever asks you to come get fucked up
+* j3rk (~j3rk@j3rk.com) has joined #school4lulz
+<Fox> It'll be a good goddamn night.
+<hatter> He will fuck you up good
+<hatter> lol
+<Fox> Anyways
+<Fox> Beef is an interesting thing
+<jester> egos are fragile
+<hatter> ^
+<Fox> There are entities like LulzSec who will systematically
+<hatter> ^
+* Frienz (~Starbucks@LulzCo-BB255874.pools.spcsdns.net) has joined #school4lulz
+<Fox> and COMPLETELY
+<Fox> destroy a complete crew
+<hatter> ^
+<Fox> in a matter of hours.
+<hatter> ^
+<hatter> They aren't the only ones
+<hatter> The people here are able to do the same
+<hatter> There is no difference
+<Fox> Exactly.
+<jester> cyberwarfare is real
+<jester> your information and connections are the strongest weapon
+<jester> ;D
+<kratos> notice keyword YOUR
+<jester> hence why disinformation can be the most important
+* yoyoyoyyoyoy0 (yoyoyoyyoy@LulzCo-82C0325E.pools.arcor-ip.net) has joined #school4lulz
+<hatter> As far as I'm concerned we're in no way negative towards #LulzSec and they're in no way negative towards us
+<jester> but you need to be good at it
+<jester> joining a channel and screaming LOL HI GUYS IM JOHN isnt subtle
+<jester> nobody gives a shit
+<Fox> For instance
+<Fox> Note:
+<whiteh8> fuck cdc
+<whiteh8> and l0pht
+<hatter> ^
+<Fox> ^
+<hatter> Especially l0pht
+<God> ^
+<kratos> lol l0pht
+<God> ^
+<hatter> the LoD, big group of snitches
+<hatter> went on to become L0pht Security
+<hatter> Fuck those kids
+<Fox> Snitches, are bitches.
+<hatter> they snitched on the MoD and got most of us arrested
+<whiteh8> you can thank them personally for fucking up the internet
+<hatter> the rest of us still got visited by the secret service
+<hatter> or narrowly dodged the incoming bullet by moving and changing idents in time
+* clu has quit (Quit: leaving)
+<Fox> Now a lot of you mis-typed the class title today.
+<Fox> Know... Thy... Enemy.
+<t> another thing is if your going to do something illegal know the statchute of limitations for your crimes
+<Fox> I chose these carefully.
+<Fox> Know who is in the scene.
+<Fox> Know what they do, know who they hang with, quietly note their vulnerabilites.
+* Frienz has quit (Ping timeout: 240 seconds)
+<whiteh8> spy on your friends ;)
+<Fox> A good country, strengthens their armies in times of peace.
+<hatter> Worming out someone
+<hatter> right now
+<hatter> Fox: we may have a whitehat here in this very channel
+<hatter> And in #lulzsec
+<hatter> in our midst right now
+<Fox> Oooh
+<kratos> watch for tics, common misspellings, flow of typing
+<Fox> Is it digital crucification time?
+<hatter> They'll be exposed
+<hatter> Calling an oper right now.
+<hatter> Someone who can see the IP's
+<kratos> nice
+<Fox> Seriously if you boys can work in time,
+<Fox> let me know
+<jester> also
+<Fox> I'd be happy to show the class what we do to snitches.
+<hatter> oh we'll knkow
+* MrLinux has quit ()
+<hatter> it'll be announced to the whole channel
+<kratos> a live demo, perfect.
+<jester> if youre approached by a snitch or someone with law enforcement ties
+<hatter> Hold on
+<jester> and have SE experience
+<jester> play along
+<hatter> Calling the alt. number
+<jester> create an ally
+<jester> with information
+<Fox> jester is right
+<Fox> Don't wreck snitches on sight
+<hatter> Uck...
+<Fox> You have to remember
+<hatter> Not that I got an answer anyway
+<hatter> but everyone's right on that
+<Fox> They are valuable as arms length assets.
+<hatter> don't do it rihgt away
+<jester> indeed
+<hatter> You can actually use them for misinformation
+<Fox> DING DING DING DING
+<Fox> STRONGEST
+<Fox> FORM
+<Fox> OF MISINFORMATION
+<jester> theres a difference between snitches and people with law enforcement ties
+<jester> the latter is the best ally
+<kratos> or a scapegoat in a crisis, if you're clever about it
+<kratos> i mean, with snitches, all bets are off
+<jester> yeah basically
+* mks2 has quit (Ping timeout: 240 seconds)
+<Fox> Now
+<Fox> hold on a sec
+<Fox> to clarify for the class
+<jester> youd be surprised what a friend with ties will be willing to let you know
+<Fox> A snitch 
+<Fox> = Someone who is on a fed's dick.
+<kratos> yes
+<Fox> Jr G man shit.
+<Fox> a Friend with LE ties
+<Fox> = 
+<kratos> who you KNOW (not just suspect) is on the fed's side
+<hatter> ^
+<kratos> there have been misunderstandings in the past
+<Fox> Much broader spectrum, this could be someone who has been picked up in the past
+<Fox> and who gets questioned
+<Fox> Lots of potentials in the latter
+<kratos> true
+<Fox> And 
+<whiteh8> that's hard to pin down, especially if you don't know if they've been paid a visit
+<Fox> if you ever
+<Fox> area able to acquire the holy grail.
+<Fox> A crooked fed.
+<whiteh8> uT
+<Fox> You are in the fucking game, coach.
+<jester> you are the game, coach
+<whiteh8> or was that another guy
+* snw has quit (Ping timeout: 240 seconds)
+<whiteh8> i think uT's comrade. he was an informant but also playing the game
+<nachash> Gonzales?
+<whiteh8> sounds right
+<nachash> Gonzales played both sides, but ultimately became a snitch when it came time to choose sides.
+<nachash> he still got 20 years.
+<nachash> uT got 2.
+<Fox> Now for those of you here with political sides.
+<whiteh8> ouch
+<nachash> That's another thing, kids. He who talks the least, gets the least time.
+<Fox> whiteh8 is going to give you a little bit of information
+<nachash> uT denied everything, even with logs on his own box that said otherwise.
+<nachash> He said he wrote some sniffer, but claimed he didn't know he was going to be used for evil.
+<nachash> Ok, shutting up now.
+* buzzkill (~buzzkill@98A9E627.9C91A005.6BC1F737.IP) has joined #school4lulz
+* chexmate (~chexmate@98A9E627.9C91A005.6BC1F737.IP) has joined #school4lulz
+<whiteh8> dupe ^
+* Fox sets ban on *!~buzzkill@98A9E627.9C91A005.6BC1F737.IP
+* Fox has kicked buzzkill from #school4lulz (Fuck you)
+<whiteh8> wait what did you want me to talk about?
+* Fox has kicked chexmate from #school4lulz (Your behavior is not conducive to the desired environment.)
+<Fox> Political motivations and enemies
+<jester> all of this shit falls in line so much with what i was saying earlier i wanna go off about SE'ing
+<jester> but ill do it later
+<Fox> Jester second class later tonight
+<Fox> Anyways
+<Fox> whiteh8 go
+<Fox> boys are handling business
+<whiteh8> well im not exactly prepared, but a lot of people will take on causes
+<whiteh8> prepare to actually meet with people face to face
+<whiteh8> if you can be in touch with non-tech activists who will work with you as boots on the ground, then all the better
+<whiteh8> they can disrupt private meetings, infiltrate close-knit organizations
+<whiteh8> there are a lot of dangerous groups out there, who would do bodily harm if they found you out
+* hatter sets mode -m #school4lulz
+<whiteh8> a few years ago, some national socialists in the pacific northwest murdered some guy because they found out he was anti-racist/anti-fascist
+<blu3beard> What does SE
+<blu3beard> SE'ing stand for? sorry to interrupt
+<Jonathon_Young> To you have any advice on safety when it comes to face to face meetings?
+<whiteh8> social engineering
+<nachash> Social Engineering
+<s4> and LoD/MoD?
+<spindoctor> this should be tought at schools
+<hatter> legions of doom/masters of deception
+<God> http://social-engineer.org
+<nachash> It's a newspeak way of saying conning someone, basically.
+<whiteh8> Jonathon_Young, well.. no...i don't actually. i went to a big city to meet a friend one weekend
+<figgybit> http://www.sptimes.com/Hackers/history.hacking.html
+<hatter> ^
+<whiteh8> that i had made online doing hacking and shit
+* hatter gives voice to figgybit
+<whiteh8> it just depends how old you are
+<whiteh8> i was 17; told my parents i was going to a LAN party 
+<whiteh8> i didn't raped and/or murdered so i guess it worked out alright?
+<jester> social engineering is how you con people
+<sigma> watch out for unmarked cars and whatnot though if you're meeting buddies from IRC.
+<jester> but the terms are not interchangable
+<whiteh8> but you can meet people at places like defcon, 2600 (watch out for these guys, though)
+<jester> if you know how to social
+* IranianChaos (~IranianCh@LulzCo-38223486.hsd1.tx.comcast.net) has joined #school4lulz
+<jester> you know how to manipulate and disinform whoever you wish
+<eni> http://www.social-engineer.org/framework/Computer_Based_Social_Engineering_Tools:_Social_Engineer_Toolkit_%28SET%29
+<jester> unless you have a reputation of a liar, people will believe what you say
+<whiteh8> i'd say that's safer; HOPE, DefCon, 2600, b-sides, etc.
+<God> there podcasts are awesome
+<whiteh8> try and arrange friends to meet you here and you'll have a cool place to hang out and common stuff to do
+<God> some of the best podcasts ive listened too
+<eni> http://pauldotcom.com/ - "white hat" security weekly podcast 
+* figgybit has quit (Ping timeout: 240 seconds)
+* figgybit (~whatsthis@LulzCo-D6241CCF.c3-0.avec-ubr2.nyr-avec.ny.cable.rcn.com) has joined #school4lulz
+* Co has quit (Ping timeout: 240 seconds)
+* mr (~mr@1D80A41C.F7A7C2E9.334BF441.IP) has left #school4lulz (Leaving)
+<teton> i enjoyed that read :]
+<GenericSkiddie> is the class over or are we still talking about knowing your enemy ? :)
+* x0x0 has quit (Ping timeout: 240 seconds)
+* x0x0 (shdaniell@LulzCo-70A132AC.net) has joined #school4lulz
+<jester> generally when -m comes off the talking is over
+<jester> its open discussion
+<Fox> Yeah
+<lulz_panda> well shit
+<Fox> Business called
+<Fox> My bad gents
+<lulz_panda> hello
+<k0dxzz9> thanks for another informative course
+<GenericSkiddie> all right
+<jester> im not sure if im gonna be up late enough tonight to explain social engineering in depth
+<jester> i plan to do it though
+<Fox> Jester
+<Fox> if you wanna go
+<Fox> let us know
+<s4> yes, thank you guys
+<jester> nah not this second
+<Fox> Donate
+<Fox> :3

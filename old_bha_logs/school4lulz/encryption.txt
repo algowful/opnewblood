@@ -1,0 +1,617 @@
+--- Log opened Tue Aug 16 22:09:44 2011
+22:09 :: Irssi: #school4lulz: Total of 84 nicks (5 ops, 1 halfops, 1 voices, 77 normal)
+22:09 :: mode/#school4lulz (+o d1zzY) by Lulzboat
+22:09 :: Irssi: Join to #school4lulz was synced in 1 secs
+22:09 <~Fox> So, you get a voice right?
+22:09 <~Fox> You say something stupid. That happens.
+22:10 <@d1zzY> lol
+22:10 <~Fox> Anyways, d1zzY PM him for voice
+22:10 <@Bratty> something stupid
+22:10 <@d1zzY> questions?? PM me or bratty for Voice
+22:10 <@Bratty> ;x
+22:10 <~Fox> Bratty is our sexretary.
+22:10 :: Bratty was kicked from #school4lulz by Fox (Abuse.)
+22:10 :: mode/#school4lulz (+o Bratty) by Lulzboat
+22:10 <@Bratty> lolol
+22:10 <~Fox> Now, moving along since these douchebags are finished.
+22:10 <~Fox> Tonights class is on encryption, virtual machines, hiding things
+22:10 <~Fox> General 101, of making shit hard for other people.
+22:11 <~Fox> We've done this a couple times before, but at the requests of some people
+22:11 <~Fox> we're going over it again, with a lot of new content,
+22:11 <~Fox> some more step-by-step,
+22:11 <~Fox> and a little less tin-foil hat.
+22:11 <~Fox> So, with that lets begin.
+22:11 <~Fox> Right now, my personal preference of setup, is pretty simple.
+22:12 :: mode/#school4lulz (+v _1lluminat1_) by d1zzY
+22:12 <+_1lluminat1_> and specific operating systems? or is this open discussion
+22:12 <~Fox> Linux box, with encrypted home partition (lukscrypt),
+22:12 :: mode/#school4lulz (-v _1lluminat1_) by d1zzY
+22:12 <~Fox> I'll cover quite a bit for you
+22:12 :: mode/#school4lulz (+v turbopinko) by d1zzY
+22:13 <~Fox> Also, revoice him, but please put your questions to them, to funnel up to me, for logs cleanliness.
+22:13 :: mode/#school4lulz (+v diesl0w) by Fox
+22:13 :: mode/#school4lulz (+v _1lluminat1_) by d1zzY
+22:13 <~Fox> Anyways, 
+22:13 <+diesl0w> wrd.
+22:13 <~Fox> Linux box, with encrypted home partition (lukscrypt),
+22:13 <~Fox> Then from there, I am a fan of truecrypt in some ways,
+22:13 <~Fox> Most of my documentation is kept within a regular truecrypt partition that I label /data
+22:14 <~Fox> from there, a hidden partition within that of /data/secure
+22:14 <~Fox> Thats where I keep my Virtual Machines, and other sensitive nastiness.
+22:14 :: mode/#school4lulz (+v case) by d1zzY
+22:14 <~Fox> From there, my VMs are based upon the needs of the day.
+22:14 <~Fox> Am I wrecking shit?
+22:14 <~Fox> Or am I just chilling on IRC, and handling business.
+22:15 <~Fox> Now, I'm getting lit up about truecrypt.
+22:15 <~Fox> NOTHING. IS. INFALLIABLE.
+22:15 <@d1zzY> _1lluminat1_ asks: Why does one keep their VMs in a secure area?
+22:15 <~Fox> Know tihs.
+22:15 <~Fox> I'll get to that
+22:15 :: mode/#school4lulz (+v redrock) by d1zzY
+22:15 <~Fox> Truecrypt does have known flaws, but still as esc mentioned 
+22:16 <~Fox> the ability to cascade different sets of encryption is a function that to my knowledge is unparalleled.
+22:16 <~Fox> Plus, I mean fuck.
+22:16 <~Fox> You're gonna go through an enc home partition
+22:16 <~Fox> a fuckin truecrypt volume
+22:16 <~Fox> PLUS A HIDDEN?
+22:17 <~Fox> THEN YOU MAY HAVE TO GET THROUGH MY VM?
+22:17 <~Fox> ffs.
+22:17 <~Fox> I'm not that bad.
+22:17 <~Fox> And if you're here, you're certainly not.
+22:17 :: mrbroadcloak is now known as C21H26O2
+22:17 <~Fox> Anyways
+22:18 <~Fox> A lot will tell you AMG YOUR FUCKING PASSWORD HAS TO BE RETARDEDLY AWESOME HOLY FUCK AMG AMG AMG
+22:18 <~Fox> Fuck that.
+22:18 <~Fox> right?
+22:18 <~Fox> Password difficulty is a pretty fickle thing.
+22:18 <~Fox> Anyone here see the XKCD article?
+22:18 <~Fox> *cartoon
+22:18 <~Fox> whatever.
+22:18 <~Fox> On password entropy?
+22:18 <+case> ye
+22:18 <~Fox> Got passed around here a lot, someone able to get that link?
+22:19 <+redrock> http://xkcd.com/936/
+22:19 <@d1zzY> redrock wants to know why you encrypt /home and not the entire system?
+22:19 <~Fox> Thank you.
+22:19 <@d1zzY> TehSushi wants to know best linux distro besides gentoo
+22:19 <~Fox> redrock makes a good point.
+22:20 <+case> and how much the encryption/decryption thing slows everything down?
+22:20 <+redrock> -boot of course
+22:20 <~Fox> Honestly, because I'm already putting in PWs anyways.
+22:20 <@d1zzY> http://www.pindarsign.de/webblog/?p=767
+22:20 <@d1zzY> whoops
+22:20 <@d1zzY> http://xkcd.com/538/
+22:20 <~Fox> Like, those file volumes, and types, are pretty grimy.
+22:20 <~Fox> Like any cryptographer would be like fml.
+22:20 <~Fox> Just plain and simple.
+22:21 <~Fox> I could, but why hide my configs and etc, 
+22:21 <~Fox> You know?
+22:21 <~Fox> Nothing in there is going to be so revealing that it's gonna make a bit of difference.
+22:21 <+_1lluminat1_> when running a VM, why is is smart to hide it in a secure location?
+22:21 <@d1zzY> ^^he said he'd get to that lol
+22:22 <~Fox> And I promise I will
+22:22 <+_1lluminat1_> k, my bad
+22:22 <~Fox> also linux distros, I'll probably be fucking castrated for it, but I've always been a fan of CentOS, RHEL, and Ubuntu.
+22:22 <@d1zzY> Fox: shit like sqlmap stores dumps in /opt/ or /usr/
+22:22 <~Fox> d1zzY: hence the vms..
+22:22 <@d1zzY> but then again, i guess you're hackin on the VM and not your box...nevermind
+22:22 <~Fox> Asshat.
+22:22 <~Fox> But no, I'm not a distro elitest...
+22:23 <~Fox> but if you don't ever brew your own..
+22:23 <~Fox> you're kind of a faggot.
+22:23 <~Fox> Just saying.
+22:23 <~Fox> Like, you need the struggle
+22:23 <~Fox> of wanting to put your fist
+22:23 <~Fox> through a screen
+22:23 <~Fox> over dependencies.
+22:23 <@d1zzY> My input: I think best distro = Arch..it's not bloated w/ shit like ubuntu and doesn't come w/ open ports default but isn't gentoo pos
+22:23 <~Fox> d1zzY is a retard.
+22:23 <@d1zzY> =)
+22:23 <~Fox> please disregard him.
+22:23 <~Fox> gentoo pos....
+22:23 <+turbopinko> coughBSDcough
+22:23 <~Fox> ....
+22:24 <~Fox> sacrelidge.
+22:24 <+redrock> bloat mattered when we had 64mb of ram
+22:24 <+turbopinko> BSD is the most secure out of the box *nix distro
+22:24 <+diesl0w> ubuntu is like a pink fluffy bunny 
+22:24 <@d1zzY> yeah, i just read about how BSD is like, so many years behind everything else...
+22:24 <~Fox> turbopinko makes a great point. BSD is for those whom have a strong constitution.
+22:24 <+turbopinko> yeah it really is
+22:24 <~Fox> Anyways
+22:24 <~Fox> not here for distro argument
+22:24 <~Fox> use what you use. read, research
+22:25 <~Fox> don't just take my advice as word of god.
+22:25 <~Fox> please fucking christ, don't do that
+22:25 <~Fox> I'm here to guide, and educate
+22:25 <@d1zzY> lmao
+22:25 <~Fox> not be final word.
+22:25 <~Fox> Anyways
+22:25 <~Fox> moving on the line,
+22:25 <~Fox> As d1zzY has pointed out, I was stolen by the gentoo cult a while back.
+22:26 <~Fox> I still taste other flavors, but the school crew has always hit the gentoo kool aid hard.
+22:26 <~Fox> So, moving back over to password entropy and shit like that.
+22:26 <~Fox> Take this example 
+22:27 <~Fox> correcthorsebatterystaple
+22:27 <~Fox> Now, although it does fucking great
+22:27 <~Fox> combine the two.
+22:27 <~Fox> c0rr3cth0r53b4tt3ryst4pl3
+22:27 <~Fox> c0rr3cth0r53b4tt3ryst4pl3!!1!#
+22:27 <~Fox> Oh shit.
+22:27 <~Fox> I just made something that I can most likely fucking remember
+22:28 <~Fox> that now is exponentially more difficult, by at least a few more passes.
+22:28 <~Fox> People say shit like OH MEMORIZE A PASSWORD HASHED IN LIKE 12 DIFFERENT METHODS
+22:28 <~Fox> I literally dare anyone right now, that has a hash memorized, to speak up.
+22:29 <~Fox> I'll wait a minute.
+22:29 <~Fox> Exactly.
+22:29 <~Fox> No one does that, 
+22:29 <~Fox> because it is insane.
+22:29 <~Fox> I am not insane.
+22:29 <~Fox> I will never tell you to do that.
+22:30 <@orbital> i got pi remembered to 300 digits I CAN DO IT /insane
+22:30 <~Fox> Now, you want to be supercool, you can throw keyfiles in the mix
+22:30 <~Fox> So, now your boots looking like that
+22:30 <~Fox> *this
+22:30 <~Fox> boot - pw for enc /home
+22:30 <~Fox> pop in sd card (OR IF YOUR PRO, MAKE FS ON SD CARD.) with keyfiles.
+22:31 <~Fox> Unlock enc volume, or enc sd card,
+22:31 <~Fox> sd card holds keyfiles which are just bullshit from dev/urandom
+22:31 <~Fox> Everyone here DOES know what dev urandom is right?
+22:32 <~Fox> Seriously.
+22:32 <~Fox> Looking for input
+22:32 <@d1zzY> yeas
+22:32 <@d1zzY> yeah*
+22:32 <~Fox> Everyone here knows?
+22:32 <@d1zzY> nobody is PMin me asking?
+22:32 <+_1lluminat1_> explain please
+22:32 <+redrock> Yes
+22:32 <~Fox> Ok
+22:32 <~Fox> so
+22:32 <~Fox> if you don't know what /dev/urandom is
+22:32 <~Fox> please type in this
+22:32 <~Fox> dd if=/dev/urandom of=/dev/sda
+22:32 :: mode/#school4lulz (+v sark) by d1zzY
+22:33 <~Fox> That will show you
+22:33 <~Fox> exactly what I'm talking about.
+22:33 <~Fox> Please run that right now, if you don't know what I'm talking about.
+22:33 <~Fox> Anyways, moving along, you have your randomized garbage keys
+22:33 <~Fox> stash em.
+22:33 <~Fox> Your use copy
+22:33 <~Fox> your backup
+22:33 <~Fox> cause, there is literally nothing worse
+22:33 <~Fox> than fucking up
+22:34 <~Fox> wasting all these hours worth of encryption
+22:34 <~Fox> and losing your shit
+22:34 <+redrock> aside: lulz at terminal command
+22:34 <~Fox> Anyways
+22:34 <~Fox> Lets get into the meat huh?
+22:35 <~Fox> I got some stuff pulled up cookie cutter for you kids
+22:35 <~Fox> Anyone here not know how to handle their kernel?
+22:36 <@d1zzY> what do you mean by "handle"
+22:36 <~Fox> Cause there is no fucking way, I'm going through kernel recompiles with you guys right now.
+22:36 <@d1zzY> lol
+22:36 <~Fox> Like, that is a hell, you must face on your own.
+22:36 <~Fox> Ya know
+22:36 <~Fox> Like, we'll provide input and troll you
+22:36 <~Fox> but, I can't just sit and go over all the potentials, and blah blah blah blah
+22:36 <~Fox> That you shitbirds will ask
+22:37 <~Fox> so going to -m for a second
+22:37 <~Fox> who knows, who doesnt.
+22:37 :: mode/#school4lulz (-m) by Fox
+22:37 <~Fox> go.
+22:37 <@d1zzY> How useful is GrSec for a personal comp?
+22:37 < AndroUser> yes.  
+22:37 <~Fox> Very.
+22:37 <+sark> <-- knows
+22:38 <~Fox> Ooooh... broad sms....
+22:38 <~Fox> sec.
+22:38 <@d1zzY> soo
+22:38 <+redrock> d1zzy: updated kernels will provide aslr by default but there are some addition features from pax that help
+22:38 <@d1zzY> how many people ran the dd command?
+22:39 :: d1zzY was kicked from #school4lulz by Fox (you have no idea you fucking derp.)
+--- Log closed Tue Aug 16 22:39:00 2011
+--- Log opened Tue Aug 16 22:39:17 2011
+22:39 :: Irssi: #school4lulz: Total of 88 nicks (5 ops, 1 halfops, 7 voices, 75 normal)
+22:39 :: mode/#school4lulz (+o d1zzY) by Lulzboat
+22:39 :: Irssi: Join to #school4lulz was synced in 1 secs
+22:39 <~Fox> :>
+22:39 <@d1zzY> fuckin up my logs nigga
+22:39 <~Fox> Moving along
+22:39 <@d1zzY> lol
+22:39 <~Fox> I aint gonna be doing anything fancy for you all on the meat and potatoes.
+22:40 <~Fox> sec while I get mah
+22:40 <~Fox> TEECHIN
+22:40 <~Fox> UTILITY.
+22:40 <~Fox> http://en.gentoo-wiki.com/wiki/DM-Crypt_with_LUKS
+22:40 <~Fox> Boom.
+22:40 <~Fox> Warning: This would save your data only, you'd get killed either way. If the data is more important than your life it would be stupid for you to rely on the information presented in this document.
+22:41 <~Fox> So this right here
+22:41 <~Fox> will walk you through the steps
+22:41 <~Fox> top to bottom
+22:41 <~Fox> In order to get this setup running right
+22:41 <~Fox> you're most likely going to be chrooting
+22:41 <~Fox> and setting shit up yourself.
+22:42 <~Fox> So lets see, where are you all gonna fuck this up.
+22:43 <+sark> Leaving my passphrase on a slip of paper in my desk?
+22:43 :: Shaggy|away is now known as Shaggy
+22:43 <~Fox> Thats a big fucking up.
+22:43 <@d1zzY> lol
+22:43 <~Fox> now, note
+22:43 <~Fox> this right here
+22:44 <~Fox> will let you PICK YOUR FLAVOR OF CRAZY
+22:45 <~Fox> So anyways, am I going to go over this doc top bottom
+22:45 <~Fox> no you faggots 
+22:45 <~Fox> you can read
+22:45 <~Fox> so, first things first
+22:45 <~Fox> FOLLOW THIS.
+22:45 <~Fox> READ, RE READ
+22:45 <~Fox> READ A FUCKIN GAIN
+22:45 <~Fox> Anyone here
+22:45 <~Fox> that has done dirt, or admin work will tell you
+22:45 <~Fox> there is nothing worse
+22:45 <~Fox> than thinking you are the shit
+22:46 <~Fox> and finding out, without an internet connection, and a non-working boot, that you are wrong.
+22:46 <~Fox> Show of !'s who's done it.
+22:46 :: mode/#school4lulz (-m) by Fox
+22:46 <+redrock> !
+22:46 < Steve2> done tihnking ?
+22:46 <~Fox> Lying fucks.
+22:46 < Steve2> thinking too
+22:46 < Halcium> !!!
+22:46 < Steve2> i try not to think, it hurts
+22:46 <+redrock> reading doc pages on an old nokia fucking sucks
+22:46 < V3r4eX> !
+22:46 <~Fox> K.
+22:47 <~Fox> See.
+22:47 <~Fox> lol
+22:47 <~Fox> .
+22:47 <~Fox> anyways, sec, intermission
+22:47 <~Fox> I need a piss and a cigarette afterwards.
+22:47 <+sark> !
+22:48 <~Fox> for the record
+22:48 <~Fox> stop ircing from your own machine
+22:49 <+case> from where then
+22:49 < OpMonsanto> the moon oO
+22:49 <@d1zzY> ssh
+22:49 <~Fox> from a server you cunt
+22:49 < alpha> Phone
+22:49  * Steve2 has always ircd from his own machine
+22:49 <@d1zzY> Fox: like a VPS?
+22:49 <~Fox> yup
+22:49 <@d1zzY> what if using like...i2p?
+22:49 <~Fox> i'm a fan of amazon ec2 + vpn
+22:49 < Halcium> please explain fox?
+22:49 <+case> what's the cost ?
+22:49 <~Fox> cost of vpn
+22:50 <~Fox> lol
+22:50 <@d1zzY> lol
+22:50 <+case> wat
+22:50 <~Fox> amazon ec2 tiny ami instances
+22:50 <~Fox> are free.
+22:50 <+redrock> http://aws.amazon.com/ec2/pricing/
+22:50 <@d1zzY> i was gonna say, is a free vps a bad idea for IRC?
+22:50 < issue313> Any decent small shell services?
+22:50 <~Fox> perfect for irssi
+22:50 <@d1zzY> yeah thats what i mean
+22:50 <~Fox> not with vpn support tmk
+22:50 < Halcium> shell bad?
+22:51 <~Fox> idk imho
+22:51  * d1zzY is gonna need to format soon
+22:51 <@d1zzY> =)
+22:51 <~Fox> I'd rather know what they're seeing
+22:52 <~Fox> than vice versa.
+22:52 <~Fox> Admins are nosy fucks.
+22:52  * Steve2 is an admin as is nosy as fuck
+22:52 <~Fox> Indeed.
+22:52 < Steve2> s/as/and
+22:53 < Halcium> A nosey admin cost me my job a couple years ago, I think it was Steve2..
+22:53 <~Fox> Anyways faggots
+22:53 <~Fox> shush
+22:54 :: mode/#school4lulz (+m) by Fox
+22:54 <~Fox> Back in session
+22:54 <~Fox> so who's even bothered to look at the wiki?
+22:54 <@d1zzY> !
+22:54  * sark raises hand.
+22:54 <+case> !
+22:54 <~Fox> Cool,
+22:54 <~Fox> so that right there is your step by step 
+22:54 <~Fox> That includes full encryption
+22:54 <~Fox> top-bottom
+22:55 <~Fox> happy paranoid fags?
+22:55 :: Steve2 is now known as I_havent
+22:55 <~Fox> so, once again, as we love to say
+22:55 :: I_havent is now known as Steve2
+22:55 <~Fox> EAT YOUR FUCKING SD CARD
+22:55 <~Fox> It sounds fucking weird.
+22:55 <~Fox> But if you are not a HUGE threat
+22:55 :: mode/#school4lulz (+v Steve2) by d1zzY
+22:55 <~Fox> (IE: Fucking major corps, or Govt shit that is sensitive)
+22:55 <~Fox> you'll do just dandy.
+22:55 <~Fox> Eat the card
+22:56 <~Fox> they'll throw some shit at it
+22:56 <~Fox> as long as your password is long and relevant
+22:56 <~Fox> and you keyfile
+22:56 <~Fox> and be a dick
+22:56 <~Fox> You'll do just fine
+22:56 <~Fox> they will sweat 
+22:56 <~Fox> the ever
+22:56 <~Fox> loving
+22:56 <+redrock> <MissWonderful> fuckin asshole says, if you dont know what dev/urandom is, type dd if or
+22:56 <~Fox> bejesus out of you
+22:56 <~Fox> DID YOU DO IT?
+22:56 <~Fox> Oh shit
+22:56 <~Fox> hold up
+22:56 :: mode/#school4lulz (-m) by Fox
+22:56 <~Fox> please god
+22:56 <~Fox> tell me thats what you did
+22:56 <+Steve2> oh, hey, thats better
+22:56 <+redrock> hahahahaha
+22:57 <+redrock> he is bitching in #school
+22:57 <~Fox> MissWonderful: 
+22:57 < MissWonderful> YES!~ u ass
+22:57 <~Fox> HAHAHAHAHAHAH
+22:57 <+Steve2> where is this wiki which you speak of ?
+22:57 <+redrock> <MissWonderful> fucking fox..
+22:57 <~Fox> HAHAHAHAHAHAH
+22:57 <+sark> Sweet!
+22:57 <~Fox> HAHAHAHAHAHAHAHAHAHAHA
+22:57 <~Fox> HAHAHAHAHAHAHAHAHAHAHAHAHAH
+22:57 <@d1zzY> he ran it
+22:57 < r3dd3r> lmfao
+22:57 <~Fox> HAHAHAHAHAHAHAHAH
+22:57 <@d1zzY> lololol
+22:57 <+sark> Nice one, Miss!
+22:57 <~Fox> YOU ARE A FAGGOT
+22:57 :: MissWonderful was kicked from #school4lulz by Fox (LOLOLOLOLOLOL I AM LAUGHING. IN REAL LIFE.)
+22:57 < MissWonderful> hehe
+22:57 < r3dd3r> hahahahahahahahahahahaha
+22:57 <@d1zzY> lmao
+22:57 <~Fox> OH MAN.
+22:57 < sc> i've done it once too, trying to copy a live cd to a flash drive, but chose the hdd instead
+22:57 <~Fox> THAT IS FANTASTIC.
+22:57 < k4n0n> this tut will be on pastebin?
+22:57 <~Fox> Yes it will
+22:57 < k4n0n> koo
+22:57 < r3dd3r> amazing
+22:57 <@d1zzY> k4n0n: in the goo.gl link in topic
+22:57 < sc> now you get to learn about forensics : )
+22:57 <~Fox> sec, I am tweeting this.
+22:57 <~Fox> So amazing.
+22:58 <@d1zzY> lmaooo
+22:58 < sc> recovering your own data
+22:58 < overlord> what did miss wonderful do?
+22:58 <@d1zzY> got punked
+22:58 < MissWonderful> glad to brighten your day!
+22:58 <@d1zzY> redrock ++
+22:58 <@d1zzY> you're such a punk dude...you talk so much smack on them here...
+22:58 <@d1zzY> lmao
+22:58 <+redrock> haha
+22:59 <~Fox> Man
+22:59  * d1zzY getting logs
+22:59 <~Fox> So happy.
+22:59 :: mode/#school4lulz (+m) by Fox
+22:59 <~Fox> class.
+22:59 <~Fox> in session
+22:59 <~Fox> whew.
+22:59 <~Fox> That is great.
+22:59 <~Fox> Anyways
+22:59 <~Fox> Make sure that is in logs
+22:59 <@d1zzY> will do
+22:59 <~Fox> emblazoned in internet forever.
+22:59 <@d1zzY> lolol
+22:59 <~Fox> Kay
+23:00 <~Fox> so where the fuck was I 
+23:00 <~Fox> I just derailed the whole fucking class over that.
+23:00 <~Fox> Oh fed shit.
+23:00 <~Fox> Yeah, like anyone here that has had dealings with you will tell you, these guys talk MAD GAME
+23:00 <~Fox> They will say they have you strung up like some kiddie rape fuck
+23:01 <~Fox> you know
+23:01 <~Fox> OH YEAH SO THE BACK END BOYS ALREADY CRACKED UR SHIT LOLS
+23:01 <~Fox> SO 
+23:01 <~Fox> SNITCH
+23:01 <~Fox> OR GO TO JAIL 
+23:01 <~Fox> FOR
+23:01 <~Fox> 02343089-23942-39432094-320942-3853094t6830583095820942305982509275109uwokerngfoeiur20rj YEARS
+23:01 <~Fox> FAGGOT
+23:01 <~Fox> Keep a cool head
+23:01 <~Fox> Lawyer up
+23:01 <~Fox> You should be fine.
+23:01 <~Fox> So derailed.
+23:01 <~Fox> So so derailed.
+23:01 <~Fox> Fuck
+23:01 :: mode/#school4lulz (-m) by Fox
+23:01 <~Fox> Open forum
+23:01 <~Fox> ask questions
+23:01 < k4n0n> lol
+23:01 <~Fox> Get answers.
+23:02 <@d1zzY> http://pastebin.com/mGG1JL2Z <== go fuckin RETWEET
+23:02 <+sark> Ok, I have a question.
+23:02 <@d1zzY> lolol
+23:02 < sc> thats my password
+23:02 <@d1zzY> omg..that fucked me all up
+23:02 <+sark> I don't understand the layering between VPN and VPS that you mentioned.  How does that work?
+23:02 <~Fox> k
+23:02 <~Fox> SO 
+23:02 <~Fox> so
+23:03 <~Fox> VPN
+23:03 <~Fox> covers all traffic
+23:03 <~Fox> right?
+23:03 <+sark> ok
+23:03 < sc> dns leaks
+23:03 <~Fox> So
+23:03 <+redrock> shouldn't with a vpn
+23:03 <~Fox> it's better then just fucking connecting straight out
+23:03 < sc> or something regarding vpn and tor
+23:03 <~Fox> I hate tor.
+23:03 <~Fox> I really do.
+23:03 <~Fox> I wont go into that further
+23:03 < Halcium> its too slow
+23:04 <~Fox> but just I really fucking hate it.
+23:04 <~Fox> Leave it at that
+23:04 <~Fox> so
+23:04 <~Fox> srak
+23:04 <~Fox> sark
+23:04 <~Fox> you got it?
+23:04 < smrt> tunnel ssh? ovpn? ipsec?
+23:04 <~Fox> take your pick.
+23:04 < DecryptedMatrix> how much machine does one need to run MULTIPLE VMs at once?
+23:04 <+sark> So tunnel to the VPS and then it looks like all traffic originates there . . .
+23:04 <~Fox> DecryptedMatrix: I dont usually run multiples at the same time
+23:04 <+redrock> decryptedmatrix: depends on what the vm's are doing, you can run most os on really fuckin low ram if they are just sitting there testing network daemons
+23:04 <~Fox> but Core2Duo 2.2 8g ram on a lappy does fine
+23:05 <~Fox> +1 redrock
+23:05 :: mode/#school4lulz (+v God) by Fox
+23:05 <+God> +1 Fox
+23:05 < DecryptedMatrix> thats what i figured. Confusing to hear that Topiary had SIXTEEN running??
+23:05 < DecryptedMatrix> is that possible?
+23:05 <~Fox> DecryptedMatrix: that was a lie.
+23:05 <+redrock> decryptedmatrix: you are limited by io, cpu and memory
+23:05 <~Fox> He only had 2
+23:05 <+God> what did i miss i was late for class, the bus driver was slow today
+23:05 <~Fox> both of them were running lemonparty.
+23:05 <~Fox> Topiary Forever.
+23:05 <~Fox> Glitter Dragons
+23:06 <~Fox> Forever.
+23:06 <@d1zzY> lmao @ lemonparty
+23:06 <+sark> I saw one news story that claimed he had 16 physical machines in his bedroom!
+23:06 <+redrock> decryptedmatrix: too much io they run like shit, too much cpu use it runs like shit, too much memory use you'll crash
+23:06 <+sark> But later, read about the VMs and realized the reporter's lie.
+23:06 <~Fox> who knows maybe he did
+23:06 <~Fox> but who gives a shit
+23:06 <~Fox> cause im not
+23:06 <+Steve2> decrypted : it really depends on the resources of the host server - for example, we have a sun box here running around 9 VMs at the same time, limited really by memory and HDD space
+23:06 <~Fox> and your probably not
+23:06 <@d1zzY> 16 VMs running probably means he had 16VMs to choose from...
+23:06 < sc> im too poor for 16 computers : (
+23:06 <+case> tooopic
+23:06 <@d1zzY> anywayyyyyyy
+23:06 <+Steve2> (tho, it DOES have a cpu with 128 cores)
+23:07 < DecryptedMatrix> thanks all
+23:07 < k4n0n> i heard he had like 20 computers though
+23:07 <@d1zzY> ^no
+23:07 <+redrock> whys it matter
+23:07 <@d1zzY> ./join #freetopiary
+23:07 <+redrock> if he has 20 he's retarded anyway, just get a few more powerful ones and virtualize all that shit
+23:07 <@d1zzY> ^
+23:07 < r3dd3r> HE HACKED NORAD WITH A LAPTOP MMMMMMM
+23:07 < TehSushi> Why would you need that many VMs anyway? :|
+23:08 <+God> i heard he was a computer a cyborg genetic organism to be exact 
+23:08 <+redrock> tehsushi: I have.. a lot
+23:08 < k4n0n> LOL
+23:08 <+case> i've heard we should return on topic :(
+23:08 < TehSushi> and why do you need them redrock?
+23:08 <@d1zzY> that aiin't shit...Kevin Mitnick wasn't allowed phone calls in jail because he could whistle nuclear launch codes!!!!11
+23:08 <+redrock> tehsushi: whole networks with virtualized routers
+23:08 <~Fox> case I lost the topic
+23:08 <~Fox> lol
+23:08 < DecryptedMatrix> Is there any need to randomize the MAC if using a disposable VM?
+23:08 < o0o0o0o0o> Fox: you never went over cold boot prevention
+23:08 <+redrock> decryptedmatrix: open a terminal and run "macchanger --help"
+23:08 < k4n0n> hacked the Interpol, Google, the CIA, nd area 51 with a motorola startac
+23:08 <@d1zzY> DecryptedMatrix
+23:08 < Halcium> kevin mitnick likes weiner
+23:08 <@d1zzY> yes because your MAC == your MAC
+23:08 < DecryptedMatrix> already use it.. just not in VM 
+23:08 <+redrock> tehsushi: testing, practice, and simulating potential victim machines
+23:09 <+sark> OR:  how about dead-man switches?
+23:09 <@d1zzY> edit your init file and macchanger -r <interface> at boot
+23:09 < r3dd3r> i ran into mitnick in manhattan today hahaha
+23:09 <@d1zzY> lol...
+23:09 <+God> macchanger wlan0 -r
+23:09 <+God> wewt
+23:09 <@d1zzY> Fox: class over? we still rollin?
+23:09 < DecryptedMatrix> i randomize for up, and down actually
+23:09 <~Fox> o0o0o0o0o: you are right
+23:09 < o0o0o0o0o> i.e. turn off your computer
+23:09 < DecryptedMatrix> was told that is best in case of disconnect
+23:09 <+God> why would you ever turn off your computer?
+23:10 <~Fox> o0o0o0o0o: nigga
+23:10 <@d1zzY> lol
+23:10 < ZZ> someone already covered cold boot in past lessons
+23:10 <~Fox> I could talk about this for days
+23:10 <~Fox> and yes
+23:10 <~Fox> check our logs
+23:10  * Steve2 really doesnt see why you'd want to change your MAC address
+23:10 <@d1zzY> Steve2: google why
+23:10 < sc> what about live cd programs like tails that "clean" the ram when shutting down
+23:10 <+Steve2> just the fact it can be changed runs to your advantage in court
+23:10 < k4n0n> because a comp can be traced back to you
+23:10 <+redrock> steve2: uh, what
+23:10 <+redrock> steve2: that's retarded
+23:10 <~Fox> Nigga god DAMN
+23:10 <~Fox> I GIVE YOU SHIT
+23:10 <~Fox> AND YOU ALL ARE LIKE
+23:11 <~Fox> DERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRP
+23:11 <+God> Nigga fox damn
+23:11 <@d1zzY> http://www.cbsnews.com/stories/2005/07/07/tech/main707361.shtml
+23:11 < MissWonderful> derp
+23:11 <+Steve2> no lawyer is going to convict you based on evidence that could be fabricated
+23:11 < sc> :<
+23:11 <~Fox> WHAT ABOUT THIS OBSCURE SITUATION THAT PROBABLY WILL NEVER HAPPEN
+23:11 <+redrock> steve2: lol what
+23:11 <~Fox> HERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRP
+23:11 <@yngjungian> lol
+23:11 < k4n0n> so when the Vans come from you and see that your laptop matches the MAC that hacked the gibson you will take a long ride
+23:11 <@d1zzY> Steve2: http://www.cbsnews.com/stories/2005/07/07/tech/main707361.shtml
+23:11 < Halcium> ya no shit
+23:11 < o0o0o0o0o> i feel like if you're out of the house, and you left your computer on, and you get raided
+23:11 <~Fox> Be thankful you bastards.
+23:11 <@d1zzY> he was stealing his neighbor's wi-fi trying to get them framed for CP...
+23:11 < o0o0o0o0o> your are fucked.
+23:11 <~Fox> o0o0o0o0o: 
+23:11 <+God> what if you have no HD and only boot from memory how do you recover then
+23:11 <~Fox> THEN DONT LEAVE WITH IT ON.
+23:11 < o0o0o0o0o> just saying
+23:12 <@d1zzY> they came, traced it back to the MAC (read: MAC ADDRESS)
+23:12 <+Steve2> d1zzy : um, if you admit to something then changing your mac or not doesnt mean squat
+23:12 < o0o0o0o0o> That's my point, I was just saying it for the noobs
+23:12 <@d1zzY> God: Cold boot
+23:12 <~Fox> Oh
+23:12 <~Fox> word
+23:12 <~Fox> so
+23:12 <@d1zzY> Steve2: then why the fuck are you goin to admit?
+23:12 < k4n0n> confessions are bullshit anyway
+23:12 <~Fox> NIGGERS
+23:12 <~Fox> DONT
+23:12 <+Steve2> also, a mac in wifi networks is irrelevant
+23:12 <~Fox> FUCKING
+23:12 <~Fox> DO SHIT
+23:12 <~Fox> AND THEN BE LIKE
+23:12 <+redrock> steve2 you are fucking retarded
+23:12 <~Fox> DERRRRRRRRRP
+23:12 <@d1zzY> if yo admit to anything, all of this talk is pointless
+23:12 <~Fox> IMA GONNA GO GET ICEY CREAMS!
+23:12 <~Fox> AND LEAVE YOUR SHIT ON
+23:12 < MissWonderful> yummy
+23:12 :: Steve2 was kicked from #school4lulz by d1zzY (www.google.com)
+23:12 <~Fox> FAGGOTS
+23:12 :: d1zzY was kicked from #school4lulz by Fox (I LIKED HIM)
+--- Log closed Tue Aug 16 23:12:54 2011
+--- Log opened Tue Aug 16 23:13:01 2011
+23:13 :: Irssi: #school4lulz: Total of 82 nicks (5 ops, 1 halfops, 7 voices, 69 normal)
+23:13 :: mode/#school4lulz (+o d1zzY) by Lulzboat
+23:13 :: Irssi: Join to #school4lulz was synced in 1 secs
+23:13 :: mode/#school4lulz (+o Steve2) by Fox
+23:13 :: mode/#school4lulz (-o Steve2) by d1zzY
+23:13 <+redrock> look, none of you motherfuckers are in aqap, nobody gives THAT MUCH of a fuck about you to track you down through all this fucking shit.   You don't need 10/10 security, 6/10 is going to fuck up the kids coming at you
+23:13 < Steve2> there are far more reliable ways to trace something back than using a mac address, which can be proven to be unreliable (due to the fact anyone can change it)
+23:13 <@d1zzY> lol
+23:13 <@d1zzY> i see waht you did there 
+23:13 :: mode/#school4lulz (+v Steve2) by d1zzY
+23:13 :: mode/#school4lulz (+o Steve2) by Fox
+23:13 <~Fox> sec
+23:13 :: mode/#school4lulz (+a Steve2) by Fox
+23:13 <~Fox> Oooh...
+23:13 <@d1zzY> lol
+23:13 :: mode/#school4lulz (-o Steve2) by Fox
+23:13 <+redrock> hahaha
+23:14 :: mode/#school4lulz (-a Steve2) by Fox
+23:14 < FxHnd> Am I missing something? I thought MAC addresses weren't transmitted over the internet. They stopped at your LAN.
+23:14  * Steve2 blinks at all the mass modes
+23:14 <@d1zzY> lmao
+23:14 <+redrock> fxhnd: mac addresses are supposed to only transfer to the next hop
+23:14 <+Steve2> fx : yeah, and they are recycled quite a bit as well
+23:14 < sc> i think they hit the first hop
+23:14 <~Fox> d1zzY: 
+23:14 <+redrock> fxhnd: what happens if the next hop logs?
+23:14 <~Fox> Wrap it up

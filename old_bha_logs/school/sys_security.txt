@@ -1,0 +1,171 @@
+System Security (by Laurelai and xochipilli)
+
+[00:37] <%Laurelai> ok
+[00:37] <%Laurelai> well
+[00:37] <%Laurelai> one of the important things people miss
+[00:37] <%Laurelai> is updating their software
+[00:37] <@garrett> Omega: <3
+[00:37] <%Laurelai> you can add a bash script to a cron job to auto update
+[00:37] <%Laurelai> depending on your distro
+03[00:37] * lolatu (Owner@ec-DC3B3377.hsd1.ca.comcast.net) has joined #school
+[00:37] <%Laurelai> but make sure everythings up to date
+[00:38] <%Laurelai> next is protecting the kernel
+[00:38] <%Laurelai> the grsecurity patch is very very good for this
+[00:38] <%Laurelai> if your hosting company doesnt use it or doesnt support custom kernels
+[00:38] <%Laurelai> run away
+03[00:38] * Spozm (Lord@ec-7F544397.no.no.cox.net) has joined #school
+03[00:39] * Spozm is now known as Spozm|laptop
+03[00:39] * qwert is now known as dsr
+[00:39] <@Fox> Run far away.
+[00:39] <%Laurelai> the grsec patch has a lot of options you can choose from based on your desired setup, however make sure to install gradm also
+[00:40] <%Laurelai> now for RHEL based distros
+[00:40] <%Laurelai> there is no rpm for this
+[00:40] <%Laurelai> however i am currently working on one
+03[00:40] * Fox sets mode: +v kratos
+[00:40] <%Laurelai> it can be seen on github
+[00:41] <%Laurelai> and of course you can compile from source
+[01:02] <%Laurelai> anyways
+[01:02] <%Laurelai> grsec
+[01:02] <%Laurelai> now some people will tell you that all of the good parts have already been incorporated into the linux kernel
+[01:02] <%Laurelai> those people are idiots
+[01:02] <%Laurelai> looking at you linus torvaldis
+[01:03] <%Laurelai> now if you have to compile from source
+[01:03] <%Laurelai> be sure to incorporate the old .config
+[01:03] <%Laurelai> it will have all of the modules you need to keep running after you reboot
+[01:03] <%Laurelai> thats the biggest sorce of problems
+[01:03] <%Laurelai> source*
+[01:04] <%Laurelai> once you have done that you may need to tune up the policy with gradm
+[01:04] <%Laurelai> depending on your infrastructure
+[01:04] <%Laurelai> id advise reading the grsecurity documentation
+[01:04] <%Laurelai> now with SElinux
+[01:05] <%Laurelai> i dont reccomend it at all
+[01:05] <%Laurelai> first of all the code was written by the NSA and i dont trust the code
+[01:06] <%Laurelai> and second there have been a number of 0 days in the past that show it hasnt been audited to the level it should be
+[01:06] <%Laurelai> so
+[01:07] <%Laurelai> no SElinux
+[01:07] <%Laurelai> now on to PHP
+[01:08] <%Laurelai> one of the down sides of centOS is the fact they use older packages and just backport security updates
+[01:08] <%Laurelai> http://rpm.oneechan.org/i386/
+[01:08] <%Laurelai> as you can see here
+[01:08] <%Laurelai> i have updated packages for centos
+[01:08] <%Laurelai> also patched with something called php-suhosin
+03[01:08] * Fox sets mode: +v Frosty
+[01:08] <%Laurelai> http://www.hardened-php.net/suhosin/
+[01:09] <%Laurelai> this is a good first step in protecing your web applications
+[01:09] <%Laurelai> the second step is of course stop writing shitty php
+[01:10] <%Laurelai> http://t.co/0OnR5Ff
+[01:10] <%Laurelai> here is a good guide to stopping sql injection too
+[01:10] <%Laurelai> one thing
+02[01:10] * Hellspawn (kvirc@B4A95BE6.D8CEB73D.2BD6162F.IP) Quit (Ping timeout)
+[01:10] <%Laurelai> that people argue over
+[01:11] <%Laurelai> is php safe mode
+[01:11] <%Laurelai> now i personally use it because i like many people use software i have not written myself, for example kusabax
+[01:12] <%Laurelai> its not hard to get applications to run under safe mode, at the most it requires editing your php config
+[01:12] <%Laurelai> and please make sure mysql is not running as root
+[01:12] <%Laurelai> thats a dumb thing to do
+[01:13] <%Laurelai> and just to make sure
+[01:13] <%Laurelai> try sql injecting your site
+[01:13] <%Laurelai> throw everything you have at it
+[01:13] <%Laurelai> ask your blackhat friends to test it too
+[01:13] <%Laurelai> you can never really be too paranoid about it
+[01:14] <%Laurelai> another big thing is file permissions
+[01:14] <%Laurelai> if you have a script laying around that runs as root and is world writable
+[01:14] <%Laurelai> you just owned yourself
+[01:14] <%Laurelai> if a script has to run as root
+[01:14] <%Laurelai> chmod 700
+[01:15] <%Laurelai> now the idea isnt to make anything hack proof
+[01:15] <%Laurelai> because it just isnt possible
+[01:15] <%Laurelai> there are 0 days and people who hold on to them and door source trees
+[01:16] <%Laurelai> your owned
+[01:16] <%Laurelai> 24/7
+[01:16] <%Laurelai> the idea is to make it too hard for the average hacker
+[01:16] <%Laurelai> and to move on to something easier
+[01:16] <%Laurelai> oh
+[01:17] <%Laurelai> and also keep offsite backups
+[01:18] <%Laurelai> one last thing
+[01:18] <%Laurelai> stop using passwords
+[01:18] <%Laurelai> use RSA keypair authentication
+[01:18] <%Laurelai> your passwords suck
+[01:18] <%Laurelai> all of them
+02[01:18] * Spunker (Spunker@ec-E4FE7FA7.ipredate.net) Quit (Connection reset by peer)
+[01:18] <%Laurelai> keypairs are easy
+[01:18] <%Laurelai> and they are pretty secure
+[01:18] <%Laurelai> and disable password login
+[01:18] <@xochipilli> ^ pubkey auth for everything, you will not regret
+[01:18] <%Laurelai> you cant be ssh brute forced if it doesnt even accept a password
+[01:19] <@xochipilli> if youre lazy you can unlock your key when you login
+[01:19] <@xochipilli> if you leave your computer on all the time, might not be the best practice tho
+03[01:19] * deadmau5 (deadmau5@CCAFBAF5.A0DD3AEC.18284D36.IP) has joined #school
+[01:20] <@xochipilli> theoretically they could bruteforce the key, but its impractical
+[01:20] <%Laurelai> yeah snowball in hell
+[01:20] <@xochipilli> see also: a waste of time
+[01:21] <%Laurelai> and another big thing i almost forgot
+[01:21] <%Laurelai> if you dont use it
+[01:21] <%Laurelai> uninstall it
+[01:21] <%Laurelai> its just another 0 day waiting to happen
+[01:22] <%Laurelai> i think thats about it
+[01:22] <@xochipilli> btw for the more practically minded among you, i can login to any of my servers w/ 7 keystrokes,  because of pubkey auth and 2 character names in my ssh config
+[01:22] <@xochipilli> 7 includes return
+[01:23] <@xochipilli> just keep your key safe. it is symmetrically encrypted, but its easier to break that than to bruteforce your box
+[01:23] <%Laurelai> yeah if your key gets taken
+[01:23] <@xochipilli> new key
+[01:23] <%Laurelai> even if its password protected
+03[01:23] * ducksauce (amnesia@ec-892C1EBD.torservers.net) has joined #school
+[01:23] <%Laurelai> change your keys
+[01:23] <@xochipilli> assume its broken
+[01:23] <@xochipilli> this is also why some types of keys will have expirations
+[01:23] <@xochipilli> i dont *think* ssh keys do
+[01:23] <+Frosty> the problem is. how do i know if my key is taken? not like it disappears 
+[01:24] <%Laurelai> if you know
+[01:24] <%Laurelai> or suspect
+[01:24] <%Laurelai> also
+[01:24] <@xochipilli> if you know your box has been compromised
+02[01:24] * davispuh (Davis@E28C7CBB.6770A094.244D6A10.IP) Quit (Ping timeout)
+[01:24] <@xochipilli> new keys
+03[01:24] * dvector (dvector@ec-AE95276C.hsd1.ma.comcast.net) has joined #school
+[01:24] <@xochipilli> ive seen DCs
+[01:24] <%Laurelai> yeah
+[01:24] <@xochipilli> pubkey auth to all their boxes w/ root
+[01:24] <@xochipilli> passwordless key
+[01:24] <@xochipilli> KEY TO THE CASTE
+[01:24] <+Frosty> so something like a new key each week is a good habit?
+[01:24] <@xochipilli> probably not necessary
+[01:24] <%Laurelai> Frosty: it couldnt hurt
+[01:24] <%Laurelai> but
+[01:24] <%Laurelai> more like
+[01:24] <%Laurelai> once a month
+[01:24] <%Laurelai> every 3 months
+[01:24] <%Laurelai> is ok
+[01:25] <@xochipilli> depends on your level of paranoia
+[01:25] <@xochipilli> haha
+[01:25] <%Laurelai> and dont leave your private key on a server
+[01:25] <%Laurelai> if it gets owned
+[01:25] <@xochipilli> ^^^
+[01:25] <@xochipilli> you can setup unix to fwd private keys
+[01:25] <%Laurelai> they own your other servers too
+[01:25] <@xochipilli> w/ kerberos
+[01:25] <@xochipilli> tho im sure there are other ways
+[01:26] <@xochipilli> so you can chain between your servers w/o keeping a key on each one
+[01:26] <@xochipilli> also, if Laurelai didnt say this already NO ROOT SSH ACCESS
+[01:26] <@xochipilli> EVER
+[01:26] <@xochipilli> even w/ a key
+[01:26] <%Laurelai> yeah its generally a bad idea
+[01:26] <@xochipilli> even if someone manages to compromise a user account, they still dont have root
+[01:27] <%Laurelai> if you lose your keys or something your hosting company should be able to get you in
+[01:27] <@xochipilli> not the case if you use root for access
+[01:27] <%Laurelai> so it might be inconvenient
+[01:27] <%Laurelai> but its safer
+[01:27] <%Laurelai> also an IDS is good
+[01:27] <%Laurelai> but only if you pay attention to it
+[01:27] <@xochipilli> if properly configured
+[01:28] <@xochipilli> as well
+[01:28] <@xochipilli> a poorly configured IDS will just waste your itme, and you will stop paying attention it
+[01:28] <@xochipilli> pretty damn fast
+02[01:28] * Thom (someuser@9C8A894C.32AD0DCA.A7C00BA5.IP) Quit (Quit: leaving)
+[01:29] <@xochipilli> ok i gotta run, ill bbl
+02[01:31] * rockstr (fuckery@ec-252DD818.torservers.net) Quit (Quit: Leaving)
+03[01:31] * treysmee (redstick@ec-DA430982.net) has joined #school
+[01:32] <%Laurelai> any questions?
+01[01:32] <+_0xE9> set -m
+03[01:33] * Fox sets mode: -m
+

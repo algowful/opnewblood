@@ -1,0 +1,290 @@
+<rackham> alright
+<rackham> lets party
+<rackham> let me get my life together real quick
+<rackham> okay
+<rackham> SSH
+<rackham> SSH and Hidden Service crash course
+<rackham> this is not going to be some deep dive into hidden services
+<anonymous> aww sheet
+<rackham> at the end you will be able to set SSH up on a box and be able to ssh to a generated .onion address
+<rackham> you probably should not launch your darknet market yet
+<rackham> so we all know what SSH is right
+<rackham> its a protocol where you can remotely connect to a box over command line
+<rackham> basically it's
+<rackham> ssh user@host
+<anonymous> an encrypted tunnel
+<rackham> lots of SSH bots out there so you definitely want to lock down your SSH
+<anonymous> ^
+<rackham> there are a number of ways to lock your shit down
+<rackham> some people go with security through obscurity, which doesn't fucking work
+<rackham> but if it helps some IT admin sleep at night while i sift data from his net
+<rackham> whatever
+<rackham> but what they typically do is move the port SSH is running on
+<rackham> SSH defaults to port 22, they may set it to something in a higher range so that automated bots don't bang on it all day
+<anonymous> yeah 2222
+<rackham> lol
+<rackham> there has also been some mention of port knocking in the cancer that we call #main
+<anonymous> heheh
+<rackham> i won't touch on it because port knocking is flaky
+<rackham> and can break and next thing you know, you're locked out
+<rackham> but what it is
+<rackham> port 22 is closed until you knock on a series of ports
+<rackham> so i may hit port 1000, 3000, 2000
+<rackham> and when the app sees the 3 failed attempts on those ports in that order, 22 opens
+<rackham> or whatever
+<rackham> and you can log in..magic right?
+<anonymous> like a secret door knock
+<rackham> until the app monitoring the logs for those failed attempts shits the bed
+<rackham> and you're locked out
+<rackham> there is also some neat black magic surrounding PAM authentication and using google for two factor
+<rackham> i think today we're just going to focus on important SSH configs
+<rackham> so fire up your favorite text editor and open /etc/ssh/sshd_config
+<rackham> okay
+<rackham> so lets look at some important lines
+<rackham> find the line that says Protocol
+<rackham> this should be Protocol 2
+<rackham> sometimes it is defaulted to Protocol 2,1 
+<rackham> remove 1
+<rackham> it's broken
+<rackham> cryptographically weak
+<rackham> vuln to MITM attacks
+<rackham> and formally deprecated
+<rackham> Keep going, you'll see Port 22, this is where you change your port to whatever you want it to be
+<rackham> so lets say you set port 666
+<rackham> then you ssh by ssh -p 666 user@host
+<rackham> UsePrivilegeSeparation yes
+<rackham> this creates a child process to deal with incoming traffic
+<anonymous> enable root login
+<anonymous> <_<
+<rackham> after authentication, it gives the rights as an authenticated user. If incoming traffic woere to get corrupts, there is no privilege escalation
+<rackham> SyslogFacility AUTH
+<rackham> LogLevel INFO
+<rackham> this tells SSH to log to /var/log/auth.log
+<rackham> we're all vulnerable
+<rackham> or may be vulnerable when that sweet SSH RCE 0day comes out
+<rackham> we want to minimize damage
+<rackham> monitor your logs
+<rackham> PrintLastLog yes
+<rackham> that goes with what i just said
+<rackham> this will show you, when you log in, the LAST log in time and IP
+<rackham> so if you log in and see a weird time or IP, you can start being suspicious
+<rackham> LoginGraceTime 20
+<rackham> this can be whatever
+<rackham> this is how long it allows you to type your password
+<rackham> it defaults to 120 seconds..20 seconds is more than enough time for me to type my password
+<rackham> i dont know hwy anybody would need two minutes
+<rackham> i shrink it though because there is no reason for the connection to be open longer than that
+<rackham> and i know there are denial of service attacks tied to the grace time
+<rackham> PermitRootLogin no
+<rackham> NO NO NO
+<rackham> REREAD THAT
+<rackham> if you change one rule in your sshd_config
+<rackham> PermitRootLogin no
+<anonymous> you want your login time as short as possible
+<anonymous> ^_^
+<rackham> there is no reason you should be ssh'ing to your box as root
+<rackham> StrictModes yes
+<anonymous> you never want root login enabled
+<anonymous> ever
+<rackham> this tells sshd to check the .ssh directory and ensure that it is only writable to the rightful owner
+<rackham> if the .ssh directory was tampered with, you can't log in
+<rackham> PubkeyAuthentication yes
+<rackham> AuthorizedKeysFile %h/.ssh/authorized_keys
+<rackham> okay
+<rackham> so
+<rackham> you can log in with a password
+<rackham> or you can log in using private/public keys
+<rackham> use ssh-keygen to generate a key
+<rackham> and drop your public key on your box at .ssh/authorized_keys
+<rackham> the private key, you keep with you
+<rackham> now, you can actually disable passwords and only use the keys
+<rackham> and the only way someone will log in is by compromising your private key
+<rackham> PLEASE password protect your private key
+<rackham> and DON'T upload it to github ;)
+<anonymous> heheh
+<rackham> i don't really feel like i should add this but, you know..
+<rackham> PermitEmptyPasswords no
+<anonymous> add it
+<rackham> fucking duhhhh
+<anonymous> ?
+<anonymous> Why not?
+<anonymous> root enabled with empty password
+<anonymous> ^_^
+<rackham> you can further lock down your SSH by allowing and denying certain users
+<anonymous> inbe4 i get booted
+<rackham> AllowUsers rackham lol
+<rackham> DenyUsers fbi nsa
+<rackham> keep least-privilege in mind
+<anonymous> less is better
+<rackham> if a user has no reason to be ssh, add them to the deny list so they don't get compromised w/ their shitty passwords
+<rackham> also, its good to know
+<rackham> as soon as you start your ssh
+<rackham> within a couple hours
+<rackham> russian and chinese bots will be beating your door down
+<anonymous> lol
+<anonymous> i was just going to say that
+<rackham> so it's worth researching fail2ban
+<rackham> and i like artillery
+<rackham> i use artillery
+<rackham> but i <3 dave kennedy so
+<rackham> bias
+<rackham> ;)
+<rackham> okay
+<rackham> questiones before we hit hidden services
+<rackham> see? 15 min
+<rackham> i dont fuck around
+<rackham> go
+<leet> wait what
+<leet> fail2ban and artillery?
+<leet> :)
+<leet> looking into those rn
+<D4T4> why do you like Artillery?
+<rackham> they are firewalls
+<rackham> i like artillery because it does cool shit
+<Munly1993> what should the password grace time be if you are connecting using private keys? 0?
+<anonymous> great stuff ra ckham
+<rackham> it'll set up a honeypot
+<anonymous> thatnks
+<rackham> and look vulnerable
+<rackham> and when a bot or hacker hits the "vulnerable service" it automatically bans their IP
+<rackham> it baits them in and then bans them
+<jhon> please it is too fast.you teach too many things ,have missed starting point
+<leet> Thanks rackham
+<anonymous> there will be logs
+<rackham> yeha..its a "CRASH COURSE"
+<D4T4> oh ok thanks rackham 
+<rackham> and i knwo i flew through it but this is simple shit and should've been googled by you already
+<oscarpapa> my sshd_config is missing some of the parameters you've mentioned (and most are commented, i.e. defaulting) - I take it you're hitting on the parameters we should ensure are in place
+<rackham> so we'll post logs shortly after and you can re-read
+<rackham> oscarpapa: correct
+<anonindiaa> SSH is always in Encrypted from or in clear as of telnet ?  
+<rackham> ^i'm not sure what that even means
+<rackham> ssh-keygen is literally a wizard
+<anonymous> ssh traffic is always encrypted
+<rackham> and will walk you through the process of creating the key
+<rackham> any other questions?
+<anonymous> yes
+<anonindiaa> okey thanks anonymous.
+<reyenne> Where can I find logs? I missed the previous nmap and dns-tunneling class.
+<anonymous> Has everyone been able to locate their sshd_config file?
+<_V> what's being taught?
+<D4T4> yep
+<anonymous> SSH
+<Munly1993> <Munly1993> what should the password grace time be if you are connecting using private keys? 0?
+<D4T4> locate sshd_config
+<rackham> Munly1993: whatever you want
+<rackham> however long you need to type your password
+<anonymous> most of you its here /etc/ssh/sshd_config
+<j3d1kn1gh7> mine says PermitRootLogin without-password  ..so the value here "without password" should be changed to no
+<anonymous> hehehe yes
+<rackham> j3d1kn1gh7: yes
+<rackham> without-password means that password login is disabled
+<j3d1kn1gh7> cool thanks
+<rackham> but ssh keys can be used
+<rackham> jsut make it no
+<rackham> no need for root to be logging in in any way shape or form
+<anonymous> Does everyone understand the point of having a server or vm somewhere to ssh to?
+<kunainai> I don't have that file, just ssh_config
+<D4T4> anonymous, yeah
+<anonymous> Thou Shall Not Hack From Home
+<kunainai> are they the same?
+<rackham> no
+<rackham> reinstall ssh and figure out where your sshd is
+<rackham> okay
+<rackham> we ready to move onto hidden services?
+<rackham> this will be fast because its super simple
+<D4T4> yep
+<kunainai> ready!
+<rackham> okay
+<rackham> tor hidden services
+<rackham> the file we'll be focusing on here is /etc/tor/torrc
+<rackham> now, like i said
+<rackham> hidden services don't have a TON of research invested in them
+<rackham> so there is a lot of theory that floats around on securing hiddne services and hiding them from LE
+<rackham> i'm goin to stay awy from that
+<rackham> because it can get crazy, quick
+<rackham> https://help.riseup.net/en/security/network-security/tor/onionservices-best-practices
+<rackham> there are some good tips from riseup there
+<anonymous> yeah search out Nachash's paper on running hidden services
+<rackham> i've had discussions about using specific guard nodes
+<rackham> https://gist.githubusercontent.com/WonderSwan/72deb6c85de2be8e4922/raw/df7d3e182b9932ba10baedcbbcb003fbf7a03256/Walter%2520White
+<rackham> that is nachash's article in 2600
+<rackham> where he outlined some things we've discussed about guard nodes, exit nodes
+<anonymous> beat me to it
+<rackham> and non-technical stuff about
+<rackham> MLATs
+<rackham> and cooperation between countries
+<rackham> anyway
+<rackham> out of scope
+<rackham> please don't reboot silk road based on this knowledge
+<anonymous> ooof
+<rackham>     HiddenServiceDir /etc/tor/hidden_service/
+<rackham>     HiddenServicePort 22 127.0.0.1:22
+<rackham> those two lines
+<rackham> are all you need to add to your torrc
+<rackham>     HiddenServiceDir /var/lib/tor/hidden_service/
+<rackham> not /etc/tor
+<rackham> sorry
+<rackham> the "hidden_service" can be renamed to whatever you want
+<anonymous> if your dming me a question turn off OTR
+<rackham> because you can host multipe .onions on one box
+<rackham>   HiddenServiceDir /var/lib/tor/hidden_service/
+<rackham>     HiddenServicePort 80 127.0.0.1:8080
+<rackham>     HiddenServiceDir /var/libtor/other_hidden_service/
+<rackham>     HiddenServicePort 6667 127.0.0.1:6667
+<rackham>     HiddenServicePort 22 127.0.0.1:22
+<rackham> so in that example, you have a web server as one hidden service (.onion)
+<rackham> and then irc and ssh on another .onion address but one server
+<rackham> but anyway, those two lines are the BASICS to creating a .onion address
+<rackham> so when you add those to your torrc
+<rackham> restart tor
+<rackham> look in the /var/lib/tor/hidden_service directory and you'll find hostname and private_key
+<rackham> hostname will obviously be your .onion address
+<rackham> private_key you need to protect
+<rackham> the hostname is a hash of the private_key...
+<rackham> if i have your private key, i can use your .onion
+<rackham> remember when doxbin was seized then re-hosted and taken back from the FBI
+<rackham> that is because the private key changed hands
+<rackham> and re-published to the tor HS descriptors
+<rackham> anonymous: anything to add before I -m?
+<rackham> hidden service questions?
+<oscarpapa> main reasons for running ssh on a hidden service being reducing the attack surface & hiding where you're sshing to? hidden services run under the single tor process, or have their own pids?
+<d00dle> About ssh, does having ssh_config mean that I can ssh from any machine??
+<awdz> probably add that sshing to an onion requires proxying.
+<rackham> oscarpapa: you may host a website and want to connect to that box anonymously
+<rackham> and not use the IP
+<rackham> lots of reasons..
+<rackham> oscarpapa: i believe single tor process but you can do some simple scripting to give each it's own PID
+<mv> I might not be here long gotta help my mother
+<anonymous> Just, that ppl should really ssh into other boxes before hacking
+<rackham> but i don't know for sure
+<anonindiaa> okey. logs will be posted in onionirc ?
+<anonymous> this is what ppl mean when they say "dont hack from home"
+<rackham> d00dle: you can ssh from any machine ssh is installed
+<rackham> awdz: right...you'll need to push ssh through localhost:9050
+<rackham> or you that transparent proxy everybody talks about
+<anonymous> the more hops the less chances of being tracked
+<onionirc> really?
+<onionirc> :p
+<rackham> any other questions?
+ anonymous anonindiaa Anon17012 Anon56350 Anon58579 Anon7548 
+<mv> are we talking about tunneling ssh over tor
+<anonindiaa> Logs will be posted later on ? 
+<rackham> yes
+<mv> so we'll be using tor but outbound is your vps ip or whatever
+<awdz> logs will always be posted later lol
+<onionirc> rackham: when do we go on a school trip?
+<mv> oh ok just getting caught up
+<rackham> mv:  yeah it was a real quick crash course on hardening sshd_config and setting up ssh on a hidden service
+<oscarpapa> so the idea there is anonymous that you have multiple offsite tor services running ssh that you hop through?
+<rackham> onionirc: soon
+<rackham> i have a field trip planned
+<rackham> oscarpapa: 
+<rackham> okay
+<rackham> im wrapping this up for logs sake
+<anonymous> If your gonna hack, do some tunneling first
+<rackham> 33 minutes
+<rackham> look at all that knowledge
+<rackham> and I didn't even ramble like mona <3
+<anonymous> Nice rackham
+<anonymous> thanks for the knowledge

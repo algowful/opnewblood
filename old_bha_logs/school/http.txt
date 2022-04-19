@@ -1,0 +1,91 @@
+HTTP (by hatter)
+
+Jun 25 14:38:53 *    hatter sets mode +m #school4lulz
+Jun 25 14:39:28 <hatter>    So, the HTTP (HyperText Transfer Protocol)
+Jun 25 14:39:36 <hatter>    allows multiple methods
+Jun 25 14:39:46 <hatter>    you have “GET” which is what you’re usually doing when browsing
+Jun 25 14:39:55 <hatter>    “POST” any time you type something into a web server and hit submit
+Jun 25 14:40:01 <hatter>    “TRACE” is used for debugging
+Jun 25 14:40:11 <hatter>    “HEAD” will tell you the content size and type along with a few other things
+Jun 25 14:40:23 <hatter>    HTTP 1.1 now has request headers and server headers.\
+Jun 25 14:40:48 <hatter>    When testing HTTP vulnerabilities,
+Jun 25 14:41:04 <hatter>    it is important to recognize your input vectors:
+Jun 25 14:41:08 <hatter>    GET parameters
+Jun 25 14:41:10 <hatter>    POST parameters
+Jun 25 14:41:20 <hatter>    COOKIES (in the headers, usually)
+Jun 25 14:42:00 <hatter>    So to recognize input vectors,
+Jun 25 14:42:11 <hatter>    you’re all familiar with urls that have a variable=value pair in them.
+Jun 25 14:42:16 <hatter>    those variables are your inputs
+Jun 25 14:42:22 <hatter>    sometimes they are integers, sometimes they are strings.
+Jun 25 14:42:32 <hatter>    sometimes integers are mis-handled as strings.
+Jun 25 14:42:42 <hatter>    There are various tools you can use in firefox or IE to view your cookie data
+Jun 25 14:42:53 <hatter>    I typically use the Web Developer plug-in or Tamper Data on firefox.
+Jun 25 14:43:23 <d0ct0r>    or netscape
+Jun 25 14:43:31 <hatter>    chrome has the webkit inspector
+Jun 25 14:44:05 <hatter>    now, in an HTTP POST, the format is very similar.
+Jun 25 14:44:16 <hatter>    You can even perform an HTTP POST to a url that has GET parameters in it.
+Jun 25 14:44:49 <hatter>    >.>
+Jun 25 14:44:52 <hatter>    netsplit.
+Jun 25 14:45:06 <hatter>    Anyway,
+Jun 25 14:45:19 <hatter>    GET parameters are input vectors that may be vulnerabilities
+Jun 25 14:45:35 <hatter>    As are POST input parameters
+Jun 25 14:45:40 <hatter>    as well as cookies
+Jun 25 14:56:08 <hatter>    Now, all of them have data types
+Jun 25 14:56:16 <hatter>    And there’s different places you could be injecting into
+Jun 25 14:56:19 <hatter>    we’ll get tot hat
+Jun 25 14:56:46 <hatter>    injection vulnerabilities occur every time input from one language interface is repeated as output into another language which is then processed elsewhere
+Jun 25 14:57:14 <hatter>    So, for a POST parameter
+Jun 25 14:57:17 <hatter>    <form method=’post’ action=’file.ext’>
+Jun 25 14:57:17 <hatter>        <input type=’hidden’ name=” value=”>
+Jun 25 14:57:17 <hatter>        Name: <input type=’text’ name=’name’><br />
+Jun 25 14:57:17 <hatter>        Email Address: <input type=’text’ name=’email’><br />
+Jun 25 14:57:17 <hatter>        <input type=’submit’ value=’submit’>
+Jun 25 14:57:17 <hatter>    </form>
+Jun 25 14:57:36 <hatter>    sometimes there are hidden inputs like you see above, that one doesn’t have anything in it, but it might be something like
+Jun 25 14:57:47 <hatter>    <input type=’hidden’ name=’token’ value=’a8235987af97a2930f7at73a2′>
+Jun 25 14:58:01 <hatter>    You may need to retain that token when submitting to the form.
+Jun 25 14:58:51 <hatter>    There is a content-type in the request header of HTTP as well
+Jun 25 14:59:04 <hatter>    HTTPS is merely HTTP wrapped in a SSL socket
+Jun 25 14:59:13 >hatter<    don’t worry it’s all logged
+Jun 25 14:59:56 <hatter>    A lot of different servers except different encoding types
+Jun 25 15:00:05 <hatter>    non-utf8, urlencoding, multiple encoding layers, etc
+Jun 25 15:00:23 <hatter>    if you use content-type chunked
+Jun 25 15:00:32 <hatter>    you can actually split an HTTP request over different connections
+Jun 25 15:00:39 <hatter>    and have the response sent back over different connections
+Jun 25 15:00:54 <hatter>    This evades many intrusion detection systems
+Jun 25 15:00:57 <hatter>    as does using https
+Jun 25 15:01:24 <hatter>    base64 encoding can sometimes also evade intrusion detection systems, but you have to find something on the other end to automatically decode it before its evaluated
+Jun 25 15:01:36 <hatter>    so that will only apply to input vectors which values are already in base64 format
+Jun 25 15:01:50 <hatter>    THere is also a PUT method
+Jun 25 15:01:52 <hatter>    to upload files
+Jun 25 15:02:06 <hatter>    If you can upload an executable
+Jun 25 15:02:09 <hatter>    you’re good to go.
+Jun 25 15:02:31 <phed>    is nikto the easiest way to detect if a server accepts put or is there a quicker way?
+Jun 25 15:02:43 <hatter>    you could use telnet
+Jun 25 15:02:45 <hatter>    and try it
+Jun 25 15:02:45 <hatter>    lol
+Jun 25 15:02:46 <phed>    simply nc?
+Jun 25 15:02:51 <hatter>    ^
+Jun 25 15:02:52 <hatter>    lol
+Jun 25 15:02:56 <phed>    cool
+Jun 25 15:04:01 <hatter>    so at any rate
+Jun 25 15:04:06 <hatter>    your injection strings will usually wind up in :
+Jun 25 15:04:29 <hatter>    html, html tag properties & values, sql, ldap, or javascript.
+Jun 25 15:05:11 <hatter>    sometimes they can wind up in bash, or file opens, or include() or eval() statements
+Jun 25 15:06:00 <hatter>    now, for fuzzing, quotes are great, but not the only way
+Jun 25 15:06:11 <hatter>    a string of characters primed to break anything
+Jun 25 15:06:13 <hatter>    is usually the best.
+Jun 25 15:06:29 <hatter>    ‘”+=&;{}#
+Jun 25 15:06:32 <hatter>    ()
+Jun 25 15:06:34 <hatter>    what have you
+Jun 25 15:07:39 <Fox>    Sup kids
+Jun 25 15:07:42 <hatter>    <> ?> <?
+Jun 25 15:07:44 <hatter>    etc
+Jun 25 15:07:49 <hatter>    %> <% <%
+Jun 25 15:07:56 <hatter>    Different tags for different languages
+Jun 25 15:08:05 <hatter>    see if the data is displayed in the response, or if the data in the response changes
+Jun 25 15:08:40 <hatter>    as you find errors, try to identify what the input is being injected into
+Jun 25 15:08:58 <hatter>    then that’s the type of code you’ll need to write a successful exploit
+Jun 25 15:09:06 <hatter>    questions guys?
+Jun 25 15:09:09 *    hatter sets mode -m #school4lulz
+

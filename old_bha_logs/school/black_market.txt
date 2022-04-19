@@ -1,0 +1,82 @@
+<Fox>As per usual
+<Fox>Ask a halfop for voice
+<Fox>If you get voice, don't spew bullshit.
+<Fox>Act dumb, get wrecked.
+<Fox>That's our usual here.
+<Fox>I see a lot of new kids in here, and that makes me a very happy camper.
+<Fox>103 total users. Me likey.
+<Fox>So todays mini-talk for the 4th of july
+<Fox>will be on as the topic states
+<Fox>The Black Market
+<Fox>and you.
+<Fox>Which is not what most of you are thinking
+<Fox>we're not talking about selling on the black market
+<Fox>that's easy enough to find on google
+<Fox>we're talking about how these people with poor moral scruples, can assist you in your quest to be invisible.
+<Fox>We will not discuss, nor endorse any illegal activities here. We are providing information for the means in which you may educate your clients when you leave from this school.
+<Fox>Now theoretically, we will cover over how criminals on the internet attain various 'black market' items
+<Fox>Some of which we've discussed here, credit cards, skimmers, atm pads/bezels, et cetera.
+<Fox>Ontop of that we're finally going to talk some turkey on VPNs.
+<Fox>Now the suggestions we've made is what we use on a day to day basis, but those are only our opinions
+<Fox>unless someone would like to correct me, in my opinion
+<Fox>the best connection, is steady vpn for work and play -> Eastern Europe Internet Black Hole
+<Fox>Or somewhere else just as well, but I like eastern europe
+<Fox>those guys do it right
+<Fox>they send abuse@ emails to /dev/null
+<Fox>Just blatantly don't care.
+<Fox>This allows you to emulate the paths of a real attacker, in a penetration testing situation
+<Fox>So for instance, with some of these 'black market' vpn services
+<Fox>you will have providers in countries that pretty much tell law enforcement, and other companies to go fuck themselves.
+<Fox>I respect that a hell of a lot.
+<Fox>So a few places we're going to talk about today are going to be how you find these particular guys and how to validate what they do-do not do
+<Fox>now
+<Fox>a quick and dirty google search will garner you quite a few websites that offer dumps and everything else under the sun
+<Fox>including a taiwanese hooker for 49.99 + Shipping and handling
+<Fox>Now it seems like this is the most glorious shithole on earth for finding bad things that you're not supposed to do or know about
+<Fox>But guess what
+<Fox>it's a cutthroat market.
+<Fox>It's kind of like paying for cigarettes, while holding a pistol to the cashiers head, while the cashier has a mossberg shottie to your gut
+<Fox>One person does the slightest thing wrong, or the other person pulls the trigger
+<Fox>It's all over, way too fast, and really fucking messy.
+<Fox>You follow
+<Fox>Anyways give me two second while I step outside for this cigarette and bring the laptop
+<Fox>Anyways, moving along what we're talking about is how to get VPNs and anonymous servers/vps/ et cetera
+<Fox>if you fuckers think you can pay for this with paypal or it's easy
+<Fox>it's not
+<Fox>The name of the game are anonymous currencies
+<Fox>BTC, LR, WMZ,
+<Fox>if you want to be a ghost
+<Fox>completely and totally
+<Fox>this is the way to go
+<Fox>vpn-vpn- to whatever the fuck you please
+<Fox>sec
+<Fox>i'm ashing
+<Fox>Anyways with most of these types you'll be looking at either sock5 of comp'd boxes
+<Fox>or VPNs in countries with names you probably will struggle to pronounce
+<Fox>These places will have the type of documents that you will be looking for doing risk assessment
+<Fox>These places have fulls which are CC#,CVV,Expiration, First, Last, Middle, DOB, Address, et cetera
+<Fox>What people will do is forge these onto templates to submit as identification
+<Fox>So a few things to watch when looking for a forgery
+<Fox>Holograms
+<Fox>These are pretty particular, and it's pretty easy to find online quickly what they look like
+<Fox>in order to be positive, you need to verify those sorts of things
+<Fox>If you're dealing with a physical ID in a corporate security position, usually most major states will have some form of UV check, which under ultraviolet light there is something legible there that isn't in normal circumstances
+<Fox>Now
+<Fox>jetting right along as this is to be a short class for the moment
+<Fox>Now as far as CC's go we've covered over a lot of that, phed actually has an interesting method that he'd like to discuss
+<phed>hi
+<phed>the most recent method being used these days by atm hackers is easy cash in hand. no more skimming/bluetooth devices to mess with or collect later on
+<phed>the method simply goes like this, place a cloned/working card in a machine and request the max amount you can withdraw
+<phed>when the card is about to be spat back out place your hand up and block the card so it is impossible for the card to leave the card reader
+<phed>then money will then be counted up and placed on the presenter and be sitting right behind the shutter
+<phed>simply take a small knife, pop open the shutter, retrieve the cash and cut the belts
+<phed>then card is ejected, machine malfunctions and the funds are placed back in the account as not dispensed
+<phed>so its possibe you can do this on your own account but be carefull its not traced back, also all atms do not have cameras
+<Fox>Phed does this apply to a particular ATM type?
+<phed>yes the main type it applys to is any NCR machine
+<phed>who are worldwide
+<phed>if you play it wise you can get the cash out and the atm engineer will just think the belts snapped, try a serrated knife for a rough cut
+<phed>clean cuts are obvious
+<Fox>Kids please do forgive, I just got a call regarding some work that I've been handling. I'm in the middle of retainer negotiation.
+<phed>and thats me, passing the ball back to fox
+<Fox>Someone please log this up and email it over to fox@canthack.us

@@ -1,0 +1,212 @@
+Log opened Mon Jun 13 13:30:02 2016
+<@ufurnace> lol nt Hu55y 
+<@ufurnace> So let's start with a basic understanding of what crypto is
+<@ufurnace> Crypto is about changing the way that information is stored or expressed
+<@ufurnace> In order to prevent unauthorized parties from learning that information
+<@ufurnace> Or, in some cases, changing it
+<@ufurnace> At a fundamental level, there's really only three ways to do that
+<@ufurnace> Substitution, transposition, and steganography (which isn't really crypto and which we won't discuss today)
+<@ufurnace> Substitution is replacing the symbols in the information with other symbols
+<@ufurnace> Transposition is moving the information around so that it loses the context that allows it its meaning
+<@ufurnace> In classical cryptography, you see some very basic applications of these concepts
+<@ufurnace> But the way that classical ciphers are broken also applies to modern cryptography
+<@ufurnace> In the same way that even something as sophisticated as AES is built upon substitution and transposition
+<@ufurnace> So take for instance the encrypted data "gdkkn"
+<@ufurnace> Let's say we know that this is encrypted by shifting each letter a certain number of positions through the alphabet
+<@ufurnace> There are 25 possible ways to do this that don't result in the data not being changed at all
+<@ufurnace> It's possible that the real message might be "ifmmp"
+<@ufurnace> But if we know that this message is the first sent in a conversation between two English speakers, we can look at all the possible decryptions and say that a single position shift up the alphabet is the most likely as it results in "hello"
+<@ufurnace> But of course, unless you're crazy, stupid, or both, you're not going to use an alphabetic shift cipher in modern times
+<@ufurnace> Before we talk about strong crypto, let's talk about weak modern crypto
+<@ufurnace> Sometimes, people decide they are smarter than the entire field of cryptographers out there
+<@ufurnace> (Or at least decide that no well-accepted algorithm is suitable for their needs)
+<@ufurnace> There are a few ciphers these folks generally come up with, usually based on misconceptions about the one-time pad
+<@ufurnace> Can anyone tell me about the one-time pad?
+<@ufurnace> I'll take that as a no, I guess
+< justforyou> this all new for me so no
+< j4ck4l> ^
+<@ufurnace> So basically, the one-time pad is an algorithm that is mathematically proven to be impossible to attack
+<@lolfuct> one-time pad is private keys right?
+<@ufurnace> But there are caveats
+<@ufurnace> Firstly, this proof only holds for ciphertext-only attacks
+<@ufurnace> That is, you don't have any knowledge about the unencrypted form of the data
+<@ufurnace> And secondly, you must have implemented it right, which is tricky
+<@ufurnace> OTP works like this:
+<@ufurnace> Generate TRULY random data just as long as your message
+<@ufurnace> Then, mix it in with an operation known as XOR (there are other operations that work, but this is the most common)
+<@ufurnace> XOR is a bitwise operation which basically means "either but not both"
+<@ufurnace> So 1 xor 1 is 0
+<@ufurnace> 1 xor 0 is 1
+<@ufurnace> etc
+<@ufurnace> But it has this property that for each unique value you XOR with something
+<@ufurnace> You get a unique output
+<@ufurnace> Effectively, you can't break OTP with just the encrypted data because it's just as likely that the message decrypts to "Hello" as "Under" or "XYZZY"
+<@ufurnace> But
+<@ufurnace> If the key is not truly random, you can say that one decryption isn't the correct one
+<@ufurnace> Sorry, not one
+<@ufurnace> Any one particular
+<@ufurnace> So, imagine that you know that an XHTML file has been encrypted with the OTP and not with a random key
+<@ufurnace> So you XOR the first five bytes with "<html" and you get "3.1415" out
+<@ufurnace> All of a sudden you can pretty well guess that someone was using the digits of Pi as their OTP key
+<@ufurnace> Which totally breaks the strength of OTP
+<@ufurnace> So to recap quickly
+<@ufurnace> Cryptanalysis usually doesn't occur in a vacuum
+<@ufurnace> Adversaries almost always have some advantage greater than possession of the encrypted data
+<@ufurnace> Knowing something about the communication allows for an analyst to confirm that some decryption is correct
+<@ufurnace> And the details of the actual cipher, combined with some knowledge about the actual message often allows for powerful attacks
+<@ufurnace> It gets even more interesting with active attacks
+<@ufurnace> But before we go further, I realize there will probably be questions
+< justforyou> so this is also about (p)rng's? right..or...
+<@ufurnace> PRNGs do play a part in this
+< justforyou> can you explain some more abou that?
+<@ufurnace> In fact, stream ciphers are simply cryptographically strong PRNGs and the one time pad
+< justforyou> what part
+< Linux777> "So you XOR the first five bytes with "<html" " please explain this
+< j4ck4l> ^
+<@ufurnace> Right, so XORing the bits of '<html' and '3.1415' together results in '\x0fFEY]'
+< Hu55y> Truly random does not exist or does it?
+<@ufurnace> If you were to take an XHTML file and encrypt it with the one time pad using Pi as a key
+< j4ck4l> so iw ould see the '\x0fFEY]'
+<@ufurnace> '\x0fFEY]' would be the first five bytes of your ciphertext (encrypted data)
+< j4ck4l> then xor would tell me pi
+<@ufurnace> If I know that it's an XHTML file, I know the first five bytes of the decrypted message must be '<html'
+< Linux777> ahhhhh ok
+<@ufurnace> This is called a "known-plaintext" attack, because in addition to having the ciphertext, I have some of the plaintext (unencrypted data)
+< Linux777> thanks :p
+<@ufurnace> As it turns out, XOR is its own inverse operation
+<@ufurnace> (A xor B) xor B results in A
+<@ufurnace> Ugh smilies
+< Linux777> bool algebre :p
+<@ufurnace> A xor N xor N = A
+< Linux777> but if not XHTML file ?
+< j4ck4l> yeah what if email or somethign
+<@ufurnace> Email is a good example
+<@ufurnace> When greeting an SMTP server to send data, you start with "HELO domain.com" where domain.com is your originating domain
+<@ufurnace> (or in some cases EHLO)
+< Namaste> in the raw message header ? 
+<@ufurnace> Well, whatever the encrypted data was
+<@ufurnace> If only the email body were encrypted, you might try common greetings like 'Hi '
+<@ufurnace> Or 'Hello '
+<@ufurnace> The idea is the same. You know some part of the message, and perhaps where it appears
+<@ufurnace> And you might learn something about the key from that
+<@ufurnace> Or you might know what's likely to appear in the plaintext, but not exactly what
+< Namaste> how would it be possible to only try decrypt the first 5 bytes of the message ? 
+<@ufurnace> Here's another example
+<@ufurnace> Well, think about classical ciphers
+<@lolfuct> Namaste: i think the idea is that if you know it's an e-mail..people will say "Hello Bob," to start the message
+<@ufurnace> Could you decrypt only the first three letters of the number-letter code?
+<@lolfuct> so they can use that or similar greetings like that to try to determine the key to decrypt the rest
+<@ufurnace> Or a caesar ciphered message?
+< justforyou> srry irl stuff will read the transscript...pretty interesting stuff ufurnace Tnx in advance 
+<@ufurnace> np justforyou take it easy
+< Namaste> but isn't it all the content of the message that shapes the cipher text? So if only some few letters where missing the ciphertext should look alot different from the other ? 
+<@ufurnace> It depends on the cipher
+< Namaste> ofc. Your right
+<@ufurnace> In many cases, removing one character from the end will not change the decryption whatsoever except to remove one character from the decrypted message
+<@ufurnace> In the case of block ciphers, it affects the rest of the block
+<@ufurnace> (and actually, removing a character would prevent successful decryption)
+<@ufurnace> Let's talk about another variation on OTP
+<@ufurnace> This is something you actually see a LOT
+<@ufurnace> Take one byte or a few bytes and repeat it until you have enough data to use as a key
+<@ufurnace> The one-byte XOR is incredibly weak
+<@ufurnace> You can simply try every possible byte from \x01 to \xff
+<@ufurnace> XOR your ciphertext with that
+<@ufurnace> And then check each result to see if it matches what you're expecting to see
+<@ufurnace> There are few enough possible keys that you could simply look at each of them and probably very easily see which is the right key
+<@ufurnace> You can also do this programmatically using character frequencies
+<@ufurnace> For instance, if you're dealing with human language, the space is going to be the most common character
+<@ufurnace> As far as actual letters, you probably know that E is the most common in English
+<@ufurnace> So armed with that knowledge, let's talk about how to break multi-byte XOR
+<@ufurnace> First, we have to guess how long the key is
+<@ufurnace> To do that is fairly simple, as it turns out
+<@ufurnace> Most of the letters you'll see in human communication are within a very small range
+<@ufurnace> When you xor those characters with the same byte, they'll still be within a small range
+<@ufurnace> So, take every other byte of encrypted data and check how close they are together
+<@ufurnace> And then every third byte
+<@ufurnace> And then every fourth
+<@ufurnace> If the key is five characters long and you take every fifth character, you're reducing the problem to solving single-byte XOR
+<@ufurnace> So you split it into slices, solve each slice with character frequency analysis, then stick em back together
+<@ufurnace> Something hilarious about multi-byte XOR might make it even easier
+<@ufurnace> A xor 0 = A
+<@ufurnace> One place you see lots of people use this cipher is in obfuscating firmware
+<@ufurnace> So if you have a home router and you get its firmware but can't pull it apart to bug hunt
+<@ufurnace> Try looking through for the same character or character sequence repeating a lot
+<@ufurnace> In many cases, firmware will contain a large sequence of null bytes
+<@ufurnace> So if you xor a lot of null bytes with a repeating key, you get the key bytes as your ciphertext
+<@ufurnace> So you might be able to just see the key sitting there
+<@ufurnace> Questions?
+<@ufurnace> (mode is -m)
+< j4ck4l> do u have anything vusiual that we could work with you on?
+<@ufurnace> Hm, okay!
+< Linux777> any live demo  for that :p ?
+< j4ck4l> ^
+<@ufurnace> One sec.\
+< j4ck4l> i remember setting up linux with something xor. does that mean i have the softwre to cipher?
+<@ufurnace> XOR is a fairly basic operation, you'll probably need to resort to your language of choice for that
+<@ufurnace> I realize this stuff is a bit hard to visualize
+< j4ck4l> little bit
+<@ufurnace> I'll move on to more practical stuff
+< j4ck4l> on the wiki also
+< Namaste> Where can we expect to find XOR encryption today ? 
+<@ufurnace> Namaste: It's often what people come up with when they try to make their own cipher for some reason
+< Linux777> yes is little hard to get it :/
+<@ufurnace> I think it's actually what ISIS was using for their Mujahideen secrets "secure" communication software
+<@ufurnace> You'll sometimes find it for firmware updates
+<@ufurnace> Or being used to protect files from prying eyes (usually in the DRM sense)
+<@ufurnace> But one of the very interesting things is that stream ciphers (and block ciphers in stream modes) are effectively just XOR
+< j4ck4l> so the xor can encryopt and decrypt?
+< Linux777> hmmmm and what about RSA ?
+<@ufurnace> Yes, XOR is a part of many ciphers
+<@ufurnace> It's very commonly used, but like many things, how you use it makes the difference
+<@ufurnace> Okay, let's talk briefly about RSA
+<@ufurnace> RSA is one that's a little tough to discuss without a math background, since it's a cipher based totally on number theory
+< Namaste> but wouldn't offen be used with a random IV to protect for making a pattern in the ciphertext ? 
+<@ufurnace> Namaste: Yes, if you don't use a random IV and rotate the key before IVs start repeating, you have issues
+<@ufurnace> This was the downfall of WEP (that plus weaknesses in RC4 itself)
+<@ufurnace> So the strength of RSA is built on a mathematically "hard" problem
+<@ufurnace> Meaning, there's no efficient way to do some particular thing. It's "hard"
+<@ufurnace> The particular problem is factoring the product of two large primes
+<@ufurnace> At least, that's the problem that prevents you from calculating the private key from the public one
+<@ufurnace> But there are a number of caveats to that
+<@ufurnace> One of the easiest to understand is when two public keys share a prime
+<@ufurnace> You've probably learned Euclid's GCD algorithm in school at some point
+<@ufurnace> It's an efficient way to learn the largest factor two numbers share
+<@ufurnace> So if two public keys share a prime, you can factor both and get the private keys
+<@ufurnace> If you're interested in RSA factoring in the real world, look at http://facthacks.cr.yp.to
+< Linux777> ok thnx :D
+<@ufurnace> When it comes to modern crypto, there's a number of common, well known attacks on bad implementations
+< Linux777> Xor can be part of RSA ?
+< Namaste> so you could actually bruteforce it by making making a new key pair and match the public for a shared prime  with the one you want a private key for ? 
+<@ufurnace> XOR is based on modular exponentiation, not XOR
+<@ufurnace> Namaste: Trying to brute force would take too long in that scenario
+< Namaste> it did sound way too easy lol
+<@ufurnace> It wouldn't likely be more efficient than the GNFS
+<@ufurnace> Most mistakes people make with RSA involve using raw RSA
+<@ufurnace> RSA has a lot of problems when unpadded
+<@ufurnace> And mostly, active attacks are what's useful against modern ciphers like RSA or AES
+<@ufurnace> This is when you have some live system that gives you useful info
+<@ufurnace> Here's an easy example
+<@ufurnace> Let's say you have a cookie that's like "creds=username:myuser123:password:<some_encrypted_data>"
+<@ufurnace> On every request you make to a web app using that cookie, the app would have to decrypt the password and then check it
+<@ufurnace> Let's say you do that with a SQL query
+<@ufurnace> What might happen if the password contained a single quote is that the app falls over and says "Hey I couldn't run this query: <spits out query>"
+<@ufurnace> And of course, that query contains the password decrypted
+<@ufurnace> So here we come to a really important point
+<@ufurnace> Encryption doesn't prevent modification
+<@ufurnace> Unless you're using an AE mode, which is rather uncommon
+<@ufurnace> And as it turns out, modifying ciphertext produces some pretty controllable changes to the plaintext in many cases
+<@ufurnace> For instance, if we have a block ciphertext, we can easily add another block to the end of the ciphertext and keep changing it until the padding is correct and it contains a single quote
+<@ufurnace> And this won't affect the rest of the data
+<@ufurnace> If it's a stream ciphertext, we can simply add a byte and keep changing that byte to every possible value until it decrypts to a single quote
+<@ufurnace> So, we're already over an hour in now, I think I might need to do a cryptanalysis part 2 since we've only scratched the surface
+<@ufurnace> And I have to do some actual work today :)
+< j4ck4l> live demo too
+<@ufurnace> But I'll leave you with one more bit of further reading http://www.slideshare.net/ceng/cryptography-for-penetration-testers-pdf-version-presentation
+< j4ck4l> ohhhh
+< Linux777> yes live demo too *_*
+<@ufurnace> And I'll also point you to http://github.com/nccgroup/featherduster which implements a number of the things we talked about, along with some examples
+< j4ck4l> or a yt vid to follow with for basci noob
+< Namaste> Guys go youtube there's a lot of crypto science classes for various of universitys 
+< j4ck4l> http://www.slideshare.net/ceng/cryptography-for-penetration-testers-pdf-version-presentation
+< j4ck4l> sry ^
+Log closed Mon Jun 13 14:46:17 2016

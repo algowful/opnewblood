@@ -1,0 +1,735 @@
+                                                .,~.                                                
+    Herein lies the official                 ..,7...                                                
+    transcript of the first                ...II       ...                                          
+    lesson taught on OnionIRC~      ..   ...77?.  ....7I..                                          
+                                    .,   .~I7:..  :777,...                =$.                       
+    It is an entry-level primer    .,. ..III,...I7II?...             ..IMMMMM,.                     
+    on #Anonymity that covers    ...I..,777..,7I77I..              :OMMMMMMMM..                     
+    a wide variety of topics.    . 7, ~777..II777?.          . ?MMMMMMMMMMM?                        
+                                  ?I.II7I.I777I7...      .:NMMMMMMMMMMMM?.                          
+    On this date, 24/04/2016,    .I?+777.7II77I...     ~MMMMMMMMMMMMM,                              
+    approximately 250 users     .77~777+77777~ .     .MMMMMMMMMMMMMMM                               
+    came together to learn     .~77777777777..        :7N8+. .  =MMMM=.                             
+    to better protect their   ..77777777I7?.                     NMMMM.                             
+    privacy online....       . :I77777777+.                      $MMMMI                             
+                              .I77777777,.                       .MMMMM.                            
+    ...in an IRC.             .I7777777...                        $MMMM+                            
+                       .MN   .+7777777..                          .MMMMM    ..,?8M=                 
+        That's us!      IMMM..777777I ..                           ~MMMM8OMMMMMMMMM.                
+    Partying like it's   MO.,=8I777I.                            .:ZMMMMMMMMMMMMMI.                 
+          1990!          .M...,..NN?....                     ..7MMMMMMMMMMMMMD,.                    
+                          MM......778MM                     ,MMMMMMMMMMMM=..                        
+                          MM......77MMM                     ZMMMMMMMO=                              
+                          NM......77NMM                     .~~,. .                                 
+                          MM......Z7$MM,                                                            
+                         IMM......M77DMM.                                 .:ZNN8~.                  
+                        =MM,......M777MMM.                         ..~$MMMMMMMMMMM~.                
+                     .$MMM....:....M777DMMM                     .NMMMMMMMMMMMMMMMMMM..              
+                    DMMM7..........O87777MMMN,                 $MMMMMMM87I=,,,~MMMMM7.              
+                 ~MMMM7......I......N877777DMMM8.              .IMMMMM         ZMMMM8               
+               ZMMMM.,.......Z...I...MD7777777MMMM:              =MMMM=      ~DMMMMM,               
+             MMMM7..........$....M....MD77777777NMMMM.           .MMMMM .=NMMMMMMMM~                
+           NMMMD,...........M....7,....M$777777777NMMMZ           NMMMMMMMMMMMMMMN,                 
+         NMMMO.............M......~.....M777777777778MMM7.        .MMMMMMMMMMM: .                   
+       ~MMMO.............OM.......D.....,M777777777777DMMM         NMMMMMMMMMMMMN,                  
+      NMMN............,NZ..........M.....MD7777777777777MMM?       7MMMMZ=NMMMMMMMM=                
+     MMM:...........,MO.............M,...,M77777777777777MMM7.     =MMMMN   ~MMMMMMMM=              
+    MMM,..........8M.,........,..,..,M....MO777777777777778MMO     =MMMMM      .MMMMMMMM,.          
+   MMM,.........IM:...........~......+I...8M777777777777777DMM~.   =MMMMM.       .IMMMMMMM:         
+  MMM.........:M,............?...?....M,...M7777777777777777MMM.   .MMMMM+         ..7MMMMM         
+ +MM.........M7,.................M.....M...MO7777777777777777MMM    7MMMM$             ..:.         
+ MMN........M..............I.....I=,...?O..MM7777777777777777ZMM,   .MMM$                           
+,MM,.......M,............,M,......M.....M,.MM77777777777777777MMM.   .  .                           
+MMM.......M............?M..........M,...M:.NM77777777777777777NMM                 ..                
+MMM......M~..........D?.............M...:M.8M$7777777777777777$MM.           .IDMMMMMMD,            
+MMZ.....:M.........O8,..........,....$...M,OMO77777777777777777MMI         ,NMMMMMMMMMMMZ           
+MMI.....M.........M.,..........,~....M,..M.8MD77777777777777777MMO        IMMMMMN=,:NMMMM~.         
+MMI.....M........M...............,...~O..M.NMN77777777777777777MMO      .MMMMM:.    .?ND+.          
+MM$.....M.......M.............8..M....M..M.MMN7777777777777777$MMI      8MMMN..                     
+MMM,....M......O?...........ZI...$,...M..M.MMD7777777777777777ZMM      OMMMN                        
+?MM.....+8.....M...........M:.....M...OI.M.MMO7777777777777777MMM.    ~MMMM.                        
+ MMI.....M.....M..........=Z......M...8Z.M.MM$7777777777777777MMD     DMMMM                         
+ MMM,....?D....M,.........M.......M...N$.M.MM7777777777777777NMM      MMMM=.                        
+  MMM.....M,...M..........8.......M?..M=8DOMM777777777777777$MM       MMMM+                         
+  ~MMZ.....M...MD........,+.......MZ..M.M.MMM777777777777777MMM       OMMMM            . .          
+   OMMI.....M...M,.......=?.......M$..M.M,MMZ77777777777777MMM        :MMMMM.         ~MM8.         
+    $MMN....,M,.MM.......,M.......M=..M?$+MM77777777777777MMM         .OMMMMM8.      $MMMM.         
+     ,MMM.....M..MM.......M.......M..NZM,MMD777777777777$MMM            ~MMMMMMMNNNMMMMMMD          
+       MMM~....M..MM......?M......M..M.M=MM7777777777778MMM.              8MMMMMMMMMMMMMM.          
+        ZMMM.,..M:,MM.,....M+....IM.?MM~MMZ7777777777ZMMM.                  +NMMMMMMMMD             
+         .DMMM+..DD.~M8,....M:...MD.MOOMMN7777777778MMM$                       .,~=~. .             
+            ZMMMN:.M~.+M7....M+.~M.MZMMM87777777OMMMMI                                              
+               MMMMMZ8M..MMD.,DMM7MMMMM77777$MMMMMN..                                               
+                 .=MMMMMMMMM8MMMMMMMMD78MMMMMMM .                                                   
+                    ...7MMMMMMMMMMMMMMMMMD~..       
+
+
+				"Welcome to 'How to Triforce' advanced"
+
+	Welcome to the first of (hopefully) many lessons to come here on the OnionIRC, coming to you
+	live from The Onion Routing network! This lesson is an entry-level course on Anonymity and
+	Privacy.
+	
+	Some of you may be wondering why we are doing this. What motivates us?
+	Some users have shown concern that this network might be "ran by the feds" and other such
+	common threads of discussion in these dark corners of the web.
+	I assure you, our goal is to educate. And I hope you came to learn.
+	No admin here will ask you something that would compromise your identity nor ask you to do
+	anything illegal.
+	We may, however, give you the tools and knowledge necessary to commit what some would
+	consider a crime.
+	(Shout out to all the prisons out there that need a good burning!)
+	What you do with the knowledge you obtain here is entirely your business.
+	
+	We are personally motivated to participate in this project for various reasons. Over the
+	last five years we have seen the numbers of those aligning with Anonymous soaring, while the
+	average users' technical knowhow has been on the decline.
+	The average Anonymous "member" believes that DDoS and Twitter spam equates to hacking &
+	activism, respectively. 
+	While this course is not covering these specific topics, we think this is a beginning to a
+	better understanding of what "hacktivism" is & how to protect yourself while subverting
+    	corrupt governments.
+	
+	Okay, enough with the back story. I'm sure you are all ready to start learning.
+
+0:45       Athena: This course will cover many topics, all relevant to privacy, security, and
+                   anonymity.
+0:45       Athena: Tyche: Would you like to get us started?
+0:45        Tyche: sure
+0:45        Tyche: at this point I'd like to welcome you again to this
+0:46        Tyche: This will teach you alot REALLY Important things you need to know
+0:46        Tyche: Including the usage of Tor 
+0:46        Tyche: VPNs
+0:46       Athena: (we understand that many of you are only just now using Tor for the first time!)
+0:46        Tyche: possible Tunnelings
+0:46        Tyche: Proxies
+0:47        Tyche: and general OpSec
+0:47        Tyche: which stands for Operational Security
+0:47        Tyche: It is really Important 
+0:47       Athena: The human element!
+0:47        Tyche: thats why we start with this
+0:48        Tyche: I'd like to thank everyone who made this possible
+0:48       Athena: The one thing that will always be a factor in hacking. Human error.
+0:48        Tyche: because this is what its all about , Free Information
+0:48        Tyche: Done. lets get it going 
+0:48        Tyche: exactly
+0:49       Athena: Bottom line, you ARE data & information is power.
+0:49       Hypnos: ^
+0:49        Tyche: as Athena said, its really Important that you don't rely on Tools
+0:49       Hypnos: We hackers like to think of ourselves as the one's seizing power by obtaining
+                   information about others
+0:49       Hypnos: but you are not free from this maxim
+0:50       Athena: Tools can only augment your own capabilities.
+0:50       Hypnos: others obtain power over you by the information you give away, intentionally or
+                   not
+0:50        Tyche: OpSec and being Anonymous is a 24/7 job
+0:51        Tyche: Doesn't matter if you're in the supermarket , playing games or even just
+                   register to an Email account
+0:51       Athena: Do you know one of the things that makes agencies like the NSA such a good
+                   adversary? You know, aside from billions of dollars and state sponsorship? They
+                   know to keep their mouths shut. All the time.
+0:51        Tyche: Your Data is on the line
+0:51       Athena: There is a joke in the intelligence community. NSA stands for, Never Say Anything.
+0:52       Athena: And that is a basic rule of operational security. You may have heard the phrase
+                   "Need to know basis."
+0:52        Tyche: You need to be a better Fed then the Fed itself
+0:52       Athena: And that is what we are referring to. If you are involved in something illegal or
+                   possibly subverting a government, for example, you should not be saying ANYTHING
+                   about your actions to ANYONE. Unless they absolutely have to know.
+0:53       Athena: You may be surprised at the reach of your adversaries.
+0:53        Tyche: Aliases, the way you type and online friends
+0:53        Tyche: everything can be traced back to you
+0:53       Athena: More than a few of us here have had "friends" outed as informants of one type or
+                   another.
+0:54       Hypnos: as well as friends who turned coat to get out of trouble
+0:54       Hypnos: the prospect of a life sentence does wonders for your morals
+0:54       Athena: Indeed. You may trust someone, with your entire heart. But you cannot know how
+                   they will react when they are arrested and put under pressure.
+0:55        Tyche: Its very Important that you understand that
+0:55        Tyche: No Tool
+0:55        Tyche: Not Tor
+0:55        Tyche: No VON
+0:55       Athena: And, folks, we understand that this only seems relevant to people committing
+                   crimes, but it's very important that you understand this philosophy, as it
+                   connects to everything relating to your privacy, security, and anonymity on the
+                   internet.
+0:55        Tyche: VPN*
+0:55       Athena: That is why we started the lesson off with the subject of operational security
+                   awareness.
+0:56       Hypnos: can I jump in on a related note, Athena?
+0:56       Athena: All the tools in the world can't help you if you tell public stories that can
+                   lead directly back to your identity.
+0:56       Athena: See: Jeremy Hammond
+0:56       Athena: Hypnos: of course please do
+0:56       Hypnos: ok
+0:56        Tyche: ok lets move on , Hypnos 
+0:56       Hypnos: so we're talking a lot about opsec, and generally when we talk about it what we're
+                   referring to is information you disclose about yourself
+0:57       Hypnos: but even if you have perfect opsec and your identity is a beautiful little pearl
+                   hidden away from the world
+0:57       Hypnos: you can still fail in opsec by not vetting who you associate with
+0:57       Hypnos: this thing we do is often wrapped up with ego
+0:57       Hypnos: very few people have the desire and drive to hack and don't have some kind of god
+                   complex, lol
+0:57       Hypnos: but the fact is
+0:57       Hypnos: ego kills hackers and crews
+0:57       Hypnos: drama kills hackers and crews
+0:57       Hypnos: let me repeat that
+0:57       Hypnos: DRAMA KILLS HACKERS
+0:58       Hypnos: if you're doing this for bragging rights
+0:58       Hypnos: if you associate with people who are toxic
+0:58       Hypnos: it's only a matter of time until you're v&
+0:58       Hypnos: if you associate with people who draw drama and shit
+0:58       Hypnos: and split crews wherever they go
+0:58       Hypnos: who are petty and seek vengeance over ideology
+0:58       Hypnos: you will soon find that the people who might otherwise welcome you with open arms
+0:58       Athena: Little side-note: If you are bothered by all the join/part/quit spam, google your
+                   irc client + hide joins parts quits
+0:58       Hypnos: wants nothing to with you
+0:59       Hypnos: if you want to work with professionals, be one yourself
+0:59       Hypnos: drama is for kids
+0:59       Hypnos: if you actually want to make a difference, keep a level head
+0:59       Hypnos: because a level-headed hacker with no ego?
+0:59       Hypnos: is a fucking goldmine
+0:59       Hypnos: you hold onto them and cultivate them
+0:59       Hypnos: they will never let you down
+0:59       Hypnos: that's all I wanted to say
+1:00       Athena: Okay, so opsec isn't just the way we conduct ourselves. It also relates to the
+                   things we utilize in our every day lives.
+1:00       Athena: You may have some friends that you consider "tinfoil conspiracy theorists" because
+                   they do not own a cell phone.
+1:01       Athena: But you also may not be aware that, if you own a cellular device & carry it with
+                   you, every place you go is recorded & referenced & stored forever.
+1:02        Tyche: Okay , lets get into Detail
+1:02       Hypnos: to within 100 feet via 3G and 1 feet via GPS, iirc
+1:02       Athena: Some may think that this is scary, but maybe not such a problem. But you have to
+                   understand that agencies like the NSA is storing and cross referencing all of this
+                   data. So, for example, they know who you associate with because you all carry your
+                   phones on your person when you are together.
+1:02       Athena: They know where you go and when you go there.
+1:02       Athena: All of your patterns.
+1:02       Athena: And this is a  very good example of where opsec comes in. If you are trying to
+                   organize with a group of local activists, for example, do not all bring your
+                   phones when you are having meetings.
+1:03       Athena: It's a very simple thing you can do to make yourselves just that little bit more
+                   secure in your movement.
+1:03       Athena: Okay, sorry about that little rant.
+1:03        Tyche: no problem
+1:03       Athena: I think you have a very basic understanding of what operational security is now.
+1:03        Tyche: lets get the good shit going
+1:04       Athena: Be careful what you say & who you say it to. Be careful of what you do & how you
+                   do it.
+1:04        Tyche: OpSec is Number 1
+1:04       Athena: Indeed, Tyche. Now to the meat!
+1:04        Tyche: SOOO
+1:04       Athena: The riot is only one night. Metadata is forever.
+1:04       Athena: ;)
+1:04        Tyche: All of you heard about the bad stories about Tor
+1:04        Tyche: :D
+1:05        Tyche: > Tor is run by feds
+1:05        Tyche: > Tor is for criminals
+1:05        Tyche: > Tor is Vulnerable
+1:05        Tyche: all of that is based of theories of people
+1:05        Tyche: YES
+1:05       Athena: Some of the most common horror stories regarding tor: "Created by the military"
+                   "All nodes ran by feds" "MITM attacks" "Identities compromised"
+1:05        Tyche: ^
+1:05        Tyche: exactly
+1:06        Tyche: The concept of Tor was created by the Feds
+1:06       Athena: #1 issue leading to the compromise of a Tor user's identity: bad opsec. Not
+                   properly configuring their system for transparent proxying, which we will cover.
+1:06        Tyche: Now we got 116
+1:07        Tyche: The Devs of Tor are the most hard working people I've seen 
+1:07        Tyche: There are A LOT of similar people to us running Nodes and Exit Nodes
+1:07       Athena: If you are interested in the origins of Tor, check out this site:
+                   http://www.onion-router.net/ It was originally developed by the Naval research
+                   laboratory
+1:07        Tyche: ^
+1:08        Tyche: Tor is a Proxy network
+1:08        Tyche: each server is called a Node
+1:08        Tyche: there are entry points
+1:08        Tyche: and there are EXIT NODES
+1:08        Tyche: maybe you've heard about that
+1:09        Tyche: within TOR there is a end to end encryption
+1:09       Athena: As long as you stay within the tor network
+1:09       Athena: you are end-to-end encrypted
+1:09        Tyche: The people running those nodes can't see your traffic at all
+1:09        Tyche: exactly
+1:10        Tyche: If you're leaving the Tor network you are Vulnerable , because no encryption
+1:10       Athena: Also, entry nodes do not have knowledge of the destination of your traffic.
+1:10        Tyche: ^
+1:10       Athena: They are only knowledgeable 1 or 2 hops down the line, I believe? Someone's correct
+                   me if I'm wrong
+1:10        Tyche: There is a thing called HTTPS
+1:10        Tyche: exactly
+1:10       Athena: Which helps to fight against traffic analysis
+1:11        Tyche: Https is the HTTP Protocol in a SSL Socket
+1:11        Tyche: for those of you who want to know
+1:11       Hermes: If you're going A to D, A only knows about B, B only knows about A and C, C only
+                   knows about D and B, D only knows about C and the destination
+1:11       Athena: (You will typically hear SSL referred to as TLS nowadays, SSL is deprecated term
+                   but we old people are stuck on it)
+1:11        Tyche: right :D
+1:12       Athena: thank you Hermes 
+1:12        Tyche: most either refer to SSL or TLS or SSL/TLS
+1:12        Tyche: which isn't very Important
+1:12        Tyche: back to Tor
+1:12       Athena: So why is TLS (SSL) important for end-users to use?
+1:13       Athena: (or would you prefer to cover that later)
+1:13        Tyche: lets get tor done I'll come back later to ssl
+1:13        Tyche: SSL/TLS Support gives you back the end to end encryption 
+1:14        Tyche: on that :P
+1:14        Tyche: Okay
+1:14        Tyche: Tor
+1:14        Tyche: There are Servers WITHIN TOR
+1:14        Tyche: called HIDDEN SERVICES
+1:14        Tyche: like this one
+1:14        Tyche: they usually end with a .onion
+1:15        Tyche: those are domains you can't reach on the Normal Web (Clearnet)
+1:15       Athena: They are ONLY accessible from within the tor network. There are services that will
+                   create a bridge from the clearweb to hidden-services, but they are NOT recommended
+                   to use at all.
+1:15        Tyche: That why there is this Deepweb and Darknet everyone is talking about
+1:15        Tyche: right
+1:15        Tyche: You don't leave Tor
+1:16        Tyche: you're within the Network
+1:16       Hypnos: the network loves you, the network will cradle you softly to sleep
+1:16       Athena: For a simple point of reference, Tor Hidden Services basically achieves for
+                   websites (or other services, like this IRCd) the same thing that Tor achieves for
+                   regular end users.
+1:16       Athena: IE You don't know where the server is.
+1:16       Athena: And that's how we like it!
+1:17        Tyche: even Admins can't find wer where users will be allowed to ask questions in the
+                   channel after being voiced.
+1:18        Tyche: ^
+1:18        Tyche: &Tyche | even Admins can't find your real Location
+1:18        Tyche: This is True
+1:18        Tyche: UNLESS
+1:18  * Athena mumbles something about users registering with emails
+1:18       Hypnos: lol
+1:18       Hypnos: opsec 101
+1:18        Tyche: exactly
+1:19        Tyche: you click any phishy Links
+1:19        Tyche: That will send you to a Website and get your IP , possibly ur Browser hooked and
+                   many other Things
+1:19        Tyche: okay , Athena 
+1:19       Hypnos: that's happened at least once in #main
+1:19       Hypnos: in case you think we're being paranoid
+1:20  * Apollo sees Athena mumbling and giggles with glee
+1:20       Athena: No need to cover the feds tactics for uncovering hidden service locations just
+                   yet. Maybe even something for another class.
+1:20        Tyche: ok good
+1:20       Athena: much too complex
+1:20        Tyche: alright
+1:20       Hypnos: word, baby steps
+1:21       Athena: but we can go in to the tor browser
+1:21        Tyche: The Tor Browser
+1:21        Tyche: yea
+1:21       Athena: because that is the best and worst thing for tor
+1:21        Tyche: absolutely
+1:22       Athena: it brings Tor to the average end-user who may not be technically capable of
+                   utilizing the tor network otherwise
+1:22       Athena: However, it is also responsible for the majority of all "tor related hacks"
+1:22        Tyche: site-note: The Tor Browser is not TOR , its a browser modified to let you use the
+                   Tor network
+1:22       Athena: generally speaking, it's vulnerabilities in Tor Browser that typically get people
+                   owned when using tor, not the tor network itself
+1:22       Athena: But the Tor Browser is generally safer for average end-users who do not know how
+                   to properly secure their browsers in the first place.
+1:23       Athena: Because Tor Browser comes with certain privacy/security minded addons out of the
+                   box
+1:23       Athena: Like HTTPS everywhere. which automatically utilizes the TLS connection to a
+                   website where applicable
+1:23        Tyche: a short QnA for Tor ? , Athena 
+1:23       Athena: sounds good
+1:24        Tyche: okay
+1:24        Tyche: If you got any Questions about Tor
+1:24       Athena: we will take a bit to field any questions from users regarding tor or anything
+                   that we have covered so far
+1:24       Athena: please PM one of us with your question
+1:24        Tyche: ^
+1:24       Athena: if it makes sense (please make sense) we will try to get to it
+1:24       Hypnos: phone lines are now open
+1:24       Hypnos: good morning, what's your bid?
+1:24       Athena: <USERNAME> Is tor browser for android any good? 
+1:25       Athena: Great question, we get people asking about using tor on mobile devices all the
+                   time.
+1:25       Athena: It's a complicated question, because most of us would say "Oh god please don't try
+                   to be secure on a smart phone because smart phones are never secure" But I don't
+                   think that's very helpful here and now.
+1:26       Athena: Short answer, there is no Tor browser for mobile as far as I'm aware. But you can
+                   utilize tor on android with the app "Orbot" it also has a beta feature that will
+                   allow you to enable transparent tor proxying for your entire device. However, your
+                   device MUST BE ROOTED for this to work properly.
+1:26        Tyche: <USERNAME>| What is better. the browser bundle or the tor from the repos + a
+                   random browser ?
+1:26        Tyche: as Athena said
+1:26        Tyche: The Tor Browser is customized for secure usage
+1:26       Athena: So, you can utilize something like Orbot with Andchat to chat on an .onion via
+                   an android device. 
+1:27        Tyche: alot of helpful addons
+1:27       Athena: Tyche: important note there
+1:27        Tyche: I'm not sure about that , didn't manage to get that working yet
+1:27       Hypnos: <USERNAME> how can we better secure the Tor browser
+1:27       Athena: USERNAME, Tor devs recommend using the tor browser because it has a specific
+                   fingerprint, just like all browsers. But if we all use the same browser/setup is
+                   just another bit of information they can correlate to find your identity
+1:29        Tyche: USERNAME: 
+1:29        Tyche: Downloading stuff over tor can be Dangerous
+1:30        Tyche: but that doesn't have to do with Tor
+1:30        Tyche: in general
+1:30        Tyche: Downloading files on the Internet can always be a risk
+1:30       Athena: 1:40 <USERNAME> you said the govt tracks our location using our phones, how
+                   exactly do they do that using the cell signal? And what about airplane mode?
+1:30        Tyche: Just on Tor there no "verified sources
+1:31       Athena: Your phone is constantly pinging the cell towers around you. That data is all
+                   archived.
+1:31       Hypnos: the cell towers HAVE to know approximately where you are
+1:31       Hypnos: to communicate with your phone
+1:31       Hermes: cell phone tower triangulation and the distance between WiFi access points
+1:31       Hypnos: and they store that data because lol why not
+1:31        Tyche: But its all good if you check your Downloads, maybe later on that
+1:31       Athena: airplane mode won't save you
+1:31       Hermes: they actually use WiFi routers around you and their signal strength to be more
+                   accurate
+1:31       Hermes: and its less taxing on the battery
+1:31       Athena: If you want to carry a phone and are worried about privacy. Take your battery out
+                   and purchase a small faraday pouch for travel.
+1:31        Tyche: <USERNAME>| is it a good idea to use tor browser for like personal surfing? like
+                   twitter or any social site? i know its not but dnu why
+1:31        Tyche: here is the point
+1:32        Tyche: either you use Tor all the Time or you use t only if you need it 
+1:32       Athena: good question USERNAME
+1:32        Tyche: There are a lot of opinions on that
+1:32       Athena: indeed, Tyche. some think it is better to split up your traffic
+1:32       Hypnos: <USERNAME> why doesn't tor like to be run as root user?
+1:32       Hypnos: this is a simple one
+1:32        Tyche: exactly
+1:32       Hypnos: userland applications should not be run as root
+1:33       Athena: but if you are going to split your traffic up, you must also be very very aware of
+                   how you conduct yourself across both identities.
+1:33       Hypnos: there are no advantages to doing so and significant risks
+1:33       Athena: because it can be very simple to tell two identities are the same person. and this
+                   all goes back to operational security
+1:33       Hypnos: if despite the best efforts of the developers, there are vulns in tor browser,
+                   running as root gives full system access
+1:33       Hypnos: linux's access control is useless if you hand root to an attacker on a silver
+                   platter
+1:34        Tyche: <USERNAME>| if you run another web browser at the same time as tor, but both are
+                   on different web sites, will that compromise your anonymity
+1:34        Tyche: similar to the Tor/not tor question
+1:34       Hypnos: <USERNAME> if using nmap or something can we configure it to go through tor
+1:34       Hypnos: simple answer: yes, google proxychains and/or usewithtor
+1:35        Tyche: If you run two web-browsers 
+1:35        Tyche: on two different websites
+1:35       Hypnos: complex answer: transparent proxying will make certain that none of your traffic
+                   is being leaked by proxychains/torify
+1:35        Tyche: there are ways that your ISP will get you trhough that
+1:35       Hypnos: more on how to set transparent proxying up later
+1:35        Tyche: or anyone sniffing on the traffic
+1:35        Tyche: There is a low chance , but it can happen
+1:35        Tyche: I get a lot of questions :P
+1:35       Athena: okay we should move on. we can take more questions later
+1:36       Athena: How about Encryption
+1:36        Tyche: okay one last sentence
+1:36       Athena: yes
+1:36        Tyche: most of the "getting caught using Tor" stories
+1:36        Tyche: are about BAD OPSEC
+1:37        Tyche: This pretty much sums it up :D
+1:37       Hypnos: tbh
+1:37       Athena: and also with tor browser 0days the government had and used to inject malware into
+                   clients via addle (MITM) attack
+1:44       Athena: and, yeah, more on that in another class ;)
+1:44       Hypnos: that was a good class in BHA
+1:45       Athena: When it comes down to it, if you don't trust the hotspot, it might be a better
+                   choice to use your dataplan if possible
+1:45       Athena: Okay, some other things that I hope most of the people here already know but I
+                   will say anyway
+1:45       Athena: Passwords
+1:45       Athena: Please, make them secure.
+1:45       Athena: Make them long. Make them complex.
+1:46       Athena: Show some creativity, people!
+1:46       Athena: Don't be afraid to use a password generator. Don't allow yourself to use poor
+                   security simply because you are afraid to forget a password.
+1:46  * Hypnos hopes we avoid the CorrectHorseBatteryStaple debate
+1:46       Athena: There are ways to mitigate the risk of losing passwords. I recommend utilizing
+                   something like KeePass2 for storing your passwords locally and encrypted
+1:46       Athena: all you have to do is remember your password (or also have your key) to get access
+                   to your passwords
+1:47       Athena: the risk there, obviously, is that an adversary might be able to gain access to
+                   your passwords (so be smart)
+1:47       Athena: If you are using linux, and we hope you are or are willing to try it out, DO NOT
+                   USE ROOT
+1:48       Athena: disable root login
+1:48       Athena: setup a sudo account
+1:48       Athena: Also, don't be afraid of password-less login. Learn to love key authentication
+1:49       Athena: Your adversary will need to put in a hell of a lot more work if they can only
+                   login to your server with a specific account & your privkey.
+1:49       Athena: Anyone want to add anything regarding what I've covered?
+1:49       Athena: Hypnos Tyche 
+1:50        Tyche: 1 sec
+1:50        Tyche: I've closed my PMs for now 
+1:51        Tyche: ok guys
+1:51        Tyche: > Long Password and complex ones are really Important
+1:51        Tyche: KeePass X /2
+1:51       Athena: 2:03 <USERNAME> But doesn´t most Linux have an admin pw for the login and a  root
+                   pw anyways ?
+1:51       Athena: You CAN disable password login. And you can also UNSET passwords for users.
+1:52       Athena: passwd -d username
+1:53        Tyche: a new QnA ?
+1:54       Athena: sure Tyche 
+1:54       Athena: we'll field some more questions for a bit
+1:54       Athena: i know users have some questions about 2FA and key authentication
+1:54       Athena: anyone willing to cover key auth for me?
+1:55       Athena: Hehe okay I guess not
+1:56       Athena: okay, the basic most widely used key based auth system is called "public-key
+                   cryptography"
+1:57       Athena: in very basic terms, it is broken into a public and private set of keys
+1:57       Athena: the private key (aptly named) should always be kept private, and hidden
+1:57       Athena: never store it publicly anywhere
+1:58        Tyche: let me rephrase that
+1:58       Athena: the public key goes on your server (if using for key based authentication) or
+                   somewhere else public (if, say, you are using it for encrypted communications you
+                   want people to be able to access your public key to encrypt their message to you)
+1:58        Tyche: You got 2 Keys
+1:59       Athena: here is a basic simple guide for setting up passwordless login on debian
+                   https://www.debian.org/devel/passwordlessssh
+1:59        Tyche: one is for anyone to read
+1:59        Tyche: and the other one is private
+1:59        Tyche: You ENCRYPT it with the Public KEY
+2:00        Tyche: and you DECRYPT it with your Private KEY
+2:00        Tyche: So EVERYONE can encrypt their messages
+2:00        Tyche: But only you , with the private key, you're able to decrypt it
+2:00       Athena: another helpful guide regarding setting up passwordless login
+                   https://help.ubuntu.com/community/SSH/OpenSSH/Configuring
+2:01        Tyche: you can send anything ENCRYPTED
+2:01        Tyche: but only you are able to DECRYPT it
+2:01        Tyche: maybe you've seen those PGP Keys of people
+2:02        Tyche: alot of people are using them
+2:02        Tyche: With this KEY you're able to send stuff to you got secrets 
+2:03       Athena: we love secrets
+2:03        Tyche: there are different types of encryption from RSA over to AES
+2:03        Tyche: different key sizes and all that
+2:03        Tyche: but that is the basic Idea
+2:04        Tyche: You have your Secret
+2:04        Tyche: ENCRYPT it with a Key
+2:04        Tyche: and the guy you're sending it to got the Key to open it up
+2:04        Tyche: all it is
+2:05        Tyche: well
+2:05       Athena: we should move on, i think. 
+2:05        Tyche: Yea
+2:05       Athena: one sec, reloading notes
+2:05        Tyche: VPN/Proxies/Addons 
+2:05        Tyche: Encryption software 
+2:06       Athena: VPNs. you will hear many opinions on them
+2:06       Athena: They are great! They are Horrible! Only noobs use them! Only elite hackers use
+                   them! Use them for everything! Blah blah blah.
+2:07        Tyche: We're not gonna suggest any Provider btw
+2:07       Athena: The truth is, all of this is true and all of this is false.
+2:07        Tyche: VPN 
+2:07        Tyche: Different to a Proxy
+2:07        Tyche: way different
+2:07       Athena: The main issue with VPN providers is that, well, you are putting trust in them.
+                   You can mitigate that trust as long as you can securely and privately purchase
+                   your VPN service
+2:08        Tyche: let me explain what a VPN is first :D
+2:08       Athena: if your VPN provider has your name, billing info, IP, etc on file, you aren't
+                   exactly more secure when using your VPN as far as being safe if you commit a crime
+                   using it.
+2:08       Athena: yes, please
+2:08        Tyche: a VPN is a Server / Network of Servers
+2:08        Tyche: You put ALL your Traffic trhough them
+2:08        Tyche: which means 
+2:08        Tyche: > Its Encrypted
+2:09        Tyche: > you're anonymized 
+2:09        Tyche: and you may cross ISP Blocks by your Gov
+2:09        Tyche: Now , back to Athena 
+2:09        Tyche: You need to pay for a VPN
+2:09        Tyche: Free VPNs are shit
+2:10       Athena: There are free VPNs but they are not really recommended
+2:10        Tyche: they sell your data
+2:10       Hypnos: you are the product
+2:10       Athena: Everything costs something, right?
+2:10        Tyche: Bandwith = Money
+2:10       Hypnos: and they will crumple like paper vs. law enforcement
+2:11        Tyche: Important
+2:11       Athena: VPNs are especially nice if you are just an average end-user that does a lot of
+                   traveling/business trips
+2:11       Athena: you can utilize public wifi with much less worry
+2:11       Athena: because your traffic is tunneling
+2:11        Tyche: as Athena said, VPNs need to be paid
+2:12        Tyche: and there is Vuln
+2:12        Tyche: RIGHT THERE
+2:12       Athena: The issue there is, how do you pay without giving up identifying information?
+2:12        Tyche: ^
+2:12       Athena: There are VPNs that accept bitcoin payments. But then you also have to securely
+                   obtain and send bitcoins.
+2:12       Athena: So, again, it's possible to privately obtain VPN access, but you have to know what
+                   you are doing.
+2:13       Athena: That is why, sometimes, people do not recommend new users to rely on VPNs for
+                   privacy & security.
+2:13        Tyche: but VPNs can be Important , especially to newbs 
+2:13        Tyche: Really easy to use
+2:13       Athena: It is also not inherently true that Tor is better if you use it with a VPN. It CAN
+                   be better. But it can also make your tor traffic easier to identify.
+2:14       Athena: https://trac.torproject.org/projects/tor/wiki/doc/TorPlusVPN
+2:14        Tyche: ^
+2:14       Athena: providing some URLs regarding some of this, as reference points. make sure you
+                   check them out
+2:14       Athena: http://www.howtogeek.com/118145/vpn-vs.-ssh-tunnel-which-is-more-secure/
+2:15        Tyche: I would say another quick QnA ?
+2:15       Athena: regarding VPNs, like Hermes said we are not recommending any specific service. but
+                   here is a guide that torrentfreak maintains
+                   https://torrentfreak.com/anonymous-vpn-service-provider-review-115-150228/
+2:15       Hypnos: we will have a lesson on securely paying for things anonymously
+2:15       Hypnos: and there is a log in the mega.nz link
+2:15        Tyche: so we get this not to long
+2:15       Athena: that is information given to them in interviews with the various VPN providers. 
+		   again, there is a lot of trust here. because you are TRUSTING the VPN providers 
+		   that they are telling the truth
+2:15       Hypnos: or if not there, PM me
+2:15       Athena: especially when they say "We do not log"
+2:15       Athena: Yes, Q&A
+2:15       Athena: go go go
+2:16        Tyche: Read the ToS and if they claim "We don't log" maybe they'll later
+2:16        Tyche: Okay now
+2:16        Tyche: PM
+2:16       Athena: PM us your questions on anything we've covered up to this point
+2:16        Tyche: I cant afford a paid VPN, What should i do?
+2:16        Tyche: well
+2:17        Tyche: VPNs are really cheap
+2:17        Tyche: they are around 5-10 $ a month
+2:17        Tyche: and sometimes even less
+2:17       Hypnos: failing that, pay by cash if you know how to do it properly
+2:17       Hypnos: again, we'll have a whole lesson on that at some point
+2:18        Tyche: revolker | "sudo su" more safe than "su" and use root? Yes? site PrivacyTools.IO
+                   is good info about vpn?
+2:18       Athena: I have multiple users PMing me asking how to setup sudo and disable root login.
+                   This guide by digitalocean is pretty good. Give it a read.
+                 https://www.digitalocean.com/community/tutorials/initial-server-setup-with-debian-8
+2:18        Tyche: ^
+2:18        Tyche: revolker: like I said
+2:18       Athena: (I am not promoting digitalocean, I do not use their services nor would I because
+                   they are way too cheap and way too popular for me to be comfortable using it)
+2:19        Tyche: we don't suggest any providers
+2:19        Tyche: but haven't heard anything bad from them , yet
+2:19       Hermes: yes..i think it is important to stress we are brand agnostic
+2:19       Athena: Yeah, you can pay for a VPN with cash. That can be more anonymous that bitcoin ;)
+2:19        Tyche: and I can't really judge on the sudo su vs root debate :P
+2:19       Athena: Depending on how you send the money via the mail. That's also opsec related.
+2:19        Tyche: Abhz | Difference between VPN, SSH and key authentication??
+2:20        Tyche: okay
+2:20        Tyche: let me get something straight
+2:20        Tyche: a VPN is a SERVER
+2:20        Tyche: which ENCRYPTS your TRAFFIC until you leave the range of it
+2:20        Tyche: SSH is a way to connect to something 
+2:21       Athena: (which also encrypts your traffic over it)
+2:21        Tyche: ^
+2:21        Tyche: and Key authentication is a METHOD
+2:21        Tyche: to encrypt stuff
+2:22        Tyche: <USERNAME> | Just a side note, not really a question, but I think it is very
+                   important that people dont take those VPN interview
+2:22        Tyche: Exactly
+2:22        Tyche: VPNs are though
+2:22        Tyche: If you pay for a Service 
+2:22        Tyche: for example a VPN
+2:22        Tyche: you accept their ToS
+2:23        Tyche: If they state " WE WILL NEVER EVER LOG "
+2:23        Tyche: There is a chance , depending on the Country they are based in
+2:23        Tyche: that feds will knock on their Door and want the Traffic
+2:23        Tyche: Depending on the laws
+2:24        Tyche: they might legally get it
+2:24        Tyche: for example , a US based VPN is a bad Idea
+2:24        Tyche: but usally , Its Illegal if they break their ToS
+2:25        Tyche: I don't have any questions 
+2:25        Tyche: anyone else ?
+2:26       Athena: okay
+2:26        Tyche: <USERNAME> | misconception. they can absolutely break their tos and it doesn't
+                   affect the validity of the evidence.
+2:26        Tyche: like I said depending on the Countrry
+2:26        Tyche: It might be Illegal
+2:26       Athena: Let's rattle off some stuff here to try and zoom through some more topics
+2:26        Tyche: If it still gets used is on another page
+2:26       Athena: Don't want to run too much longer
+2:27       Athena: but have a bit we can cover
+2:27        Tyche: yea
+2:27       Athena: Firewalls, USE THEM! Configuring firewalls is outside the scope of this lesson,
+                   but we can cover it another time. 
+2:27       Hypnos: iptables<3
+2:27       Athena: When using tor, make sure you are transparently proxying! 
+		   https://trac.torproject.org/projects/tor/wiki/doc/TransparentProxy
+2:28       Athena: We don't need to cover malware in this lesson. But be aware that it exists and it 
+		   wants to make your life suck
+2:29       Athena: And be aware that even "legit" companies spread malware sometimes. There is an 
+		   example back in 2005 through to 2007 Sony had a rootkit installed on CDs that they 
+		   sold
+2:29       Athena: it silently installed, concealed itself, reported users listening habits to sony,
+                   and created further exploits that other malware was able to take advantage of
+2:29       Athena: its purpose was initially to "Prevent illegal copying" but we know that's just
+                   bullshit.
+2:30       Athena: Fuck the cloud. That is all on the cloud.
+2:30       Hypnos: word
+2:30       Hypnos: WORD
+2:31       Athena: When you are downloading software, make sure you are verifying that what you
+                   downloaded is what you were supposed to get! Adversaries can trick you into
+                   installing infected versions of software.
+2:31       Athena: Here is a good point of reference for how to verify your Tor software,
+                   specifically https://www.torproject.org/docs/verifying-signatures.html.en
+2:31       Athena: take what you learn there, and apply it to everything else you download. You will
+                   learn how to use GPG to verify the signature of files you download. Very important
+                   stuff.
+2:32       Athena: Make sure you keep your software up to date.
+2:32       Athena: There are gaping holes exposed all the time.
+2:32       Athena: <3
+2:32        Tyche: okay
+2:33        Tyche: lets get this done and over it 
+2:33        Tyche: I think IRC was never THAT Intense for me 
+2:34       Athena: Here's some disk encryption programs to look into: Truecrypt (ONLY VERSION 7.1a),
+                   Veracrypt, FileVault2 (for OSX, but fuck Apple), dm-crypt/LUKS (linux)
+2:34       Athena: you can find many comprehensive guides on how ot use them on the internet
+2:34        Tyche: and we don't want a OS war here :D
+2:34        Tyche: Apple doesn't pay taxes
+2:34       Athena: and as far as we know, truecrypt full disk encryption is still solid. no reports
+                   of people getting their boxes decrypted without obvious routes taken
+2:34        Tyche: so definatly shit
+2:35        Tyche: yes
+2:35       Athena: Okay, so 
+2:35        Tyche: any type of encryption cal help getting you caught
+2:35       Athena: TL;DR Anonymous is a mindset.
+2:35        Tyche: lets publish the nodes as well ?
+2:35       Athena: ?
+2:35       Athena: oh the notes
+2:35        Tyche: notes *
+2:36        Tyche: fuck me
+2:36       Athena: yeah good idea
+2:36        Tyche: so people got a sums up
+2:36       Athena: maybe not on the pad though
+2:36       Athena: since it's modifiable
+2:36        Tyche: yea :P
+2:36       Athena: oh wait
+2:36       Athena: http://piratepad.net/ep/pad/view/ro.-zDMnaSnqgi/latest
+2:36        Tyche: our notes
+2:36       Athena: Here are the notes from this class. There is a bit that we did not cover.
+2:36       Hypnos: we could teach another entire lesson tbh
+2:36       Hypnos: but we'll probably do something more fun next time ;)
+2:36        Tyche: exactly
+2:37        Tyche: Those are the basics
+2:37        Tyche: There HAVE TO BE TOLD
+2:37        Tyche: I know its a bit meh
+2:37       Athena: I want to give a big thanks to everyone for showing up to this
+2:37        Tyche: but there are really Important
+2:37       Athena: I'm really glad to see you all interested in securing your online presence
+--End transmission
+
+Shoutout to Hatter, gone but not forgotten. We strive to maintain the spirit of the old days.
+
+Gr8z to: Anonymous & every dingus that's turned it to a steaming pile these last years. You motivate
+         us so much!
+
+	 #Wikileaks #JeremyHammond #EdwardSnowden #ChelseaManning #WilliamBinney #ThomasDrake
+	 #DanielEllsberg #DeepThroat #AaronSwartz #SmedleyButler #PeterBuxtun #FrankSerpico
+	 #PerryFellwock #CathyMassiter #MordechaiVanunu #PeterWright #MichaelRuppert #KarenKwiatkowski
+	 And to all other whistleblowers out there, past, present, & future!
+
+		 
+irc://OnionIRChubx5363.onion 6667/+6697

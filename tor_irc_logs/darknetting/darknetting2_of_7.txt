@@ -1,0 +1,114 @@
+<@aediot> Let's begin. 
+<@aediot> Hello, and welcome to part two. 
+<@aediot> You'll notice the format for this is a bit different, that's because the IRC I was teaching on had run itself into the ground. 
+<@aediot> Aka there's no Q&A sections, so if you have a question just dm me on twitter or reach me through email through the instructions at the bottom.
+<@aediot> So for now, expect these class formats to look like this.
+<@aediot> This talk is all about the Darknet community, and how to become one of the best. 
+<@aediot> The reason this talk may be the most important one of the entire series is because you're not apart of the Darknet if you're not apart of the community that runs it. 
+<@aediot> Half of what makes us so powerful and two steps ahead is eachother.
+<@aediot> All of the services and insight that each of us bring to the table heavily contribute to our weak areas as well as our strengths. 
+<@aediot> That's not to say were all one big happy family, many of you will get into wars and fights with others so this aims to prepare you for that too.
+<@aediot> And that's also not to say that you're not expected to be a one man army, because you are. 
+<@aediot> The only reason you have contacts are to cover your weak spots, but they aren't friends. They're business associates. 
+<@aediot> All that said though, first thing I want to cover is this.
+<@aediot> There's essentially a divide (for the most part) In the Blackhat community and it's very important you understand the difference. 
+<@aediot> On one side you have ones that believe in nothing but profit and reputation for their Darknet nym so they can gain access to more private forums and the like. 
+<@aediot> These are the ones who make the fuck-you money, selling off weaponized exploits for money on a level that would make your head spin and making malware like ransomware or botnets that can be used to reap information on a mass level. 
+<@aediot> On the other side you'll find people from places such as Doxbin, BlackHatAcademy, ED, who don't much care for making profit off their hacks or finds and only use them for the sake of having a laugh or in order to humiliate someone. 
+<@aediot> But almost never for profit.
+<@aediot> Most of these people are ghosts, meaning they don't stick to a single nym because they don't have anything to prove because they aren't aiming to get e-fame among the masses. 
+<@aediot> People like rm monkeys fall into this second pool, an rm monkey being someone who believes it's more hilarious or damaging to just delete everything on the system as opposed to taking your time and extracting valuable information to be sold off later for a profit. 
+<@aediot> Sometimes you find a mix of both in some people, but a majority of them stick to one of these extremes.
+<@aediot> I find most times it's a clash of ideals of what hacking should be used for. 
+<@aediot> You've got one side kicking and screaming that it should be for nothing but fun fear and hobby.
+<@aediot> You've got the other side kicking and screaming that it should be used for whatever personal gain you can think of. 
+<@aediot> People who believe it for a hobby typically have dayjobs where they're either codemonkeys or whitehats for the sake of getting the bills paid.
+<@aediot> My personal opinion in this is irellevant, I'm simply informing you of the divide and it's up to you to decide what side you want to take. 
+<@aediot> That said though, because they're doing it for fun and not for profit most times out of none I find that the second pool tend to find better 0days and pull off more hilarious hacks in general because they don't need to waste their time marketing to other users for their product or building up a reputable nym to get into priv forums n whatnot. 
+<@aediot> So it's something to consider. 
+<@aediot> For the sake of these talks though I'm reffering only to the first pool I mentioned above, those in it for strictly profit. 
+<@aediot> However keep in mind, just like I said from the last talk not everybody you run into on Darknet is a malware dev or exploit builder. 
+<@aediot> Though it's still important to keep the divide in mind when starting out for when you eventually do run into them. 
+<@aediot> I should take the time to explain that it's possible to make money without a nym, however you'll never make insane money if you don't. 
+<@aediot> You'll never learn the best tips and tools of the trade if you don't.
+<@aediot> You'll not know where everyones migrated to if a market goes down. 
+<@aediot> Basically your community is what helps you keep food on the table. 
+<@aediot> It's your lifeline.
+<@aediot> When something goes wrong in your career or your life, it's your community who helps pull you out of the ditch.
+<@aediot> A severe loyalty to the community is highly encouraged, however it's not required. Obviously.
+<@aediot> But for those of you who are thinking "but aediot if there are no laws then why shouldnt I just try to fuck over everyone I can for max profitz?"
+<@aediot> Well sherlock I'll tell you.
+<@aediot> First being, long term and sustained business is 10/10 always more profitable than one big scam. 
+<@aediot> Second, the healthier your community is the better off you are. 
+<@aediot> Third, just because you can do something doesen't mean you should or that it's beneficial to you in the long run. 
+<@aediot> Third, just because you can do something doesen't mean you should or that it's beneficial to you in the long run. 
+<@aediot> Here's a wonderful example, lets say there was a legit clearnet website that gave the best goddamn socks5 for insanely cheap moni. 
+<@aediot> If you and the rest of the community wanted to order a shit ton you could yes card them, and only pay like eh 10$ for 300 proxies or something like that. 
+<@aediot> But if everyone in the community did that then said clearnet site would obviously go out of business no?
+<@aediot> And if that happens, guess who just lost out to that insanely good contact?
+<@aediot> Another short example is really any Bitcoin related service, there have been lots of epic business models that had things like refilling your BTC wallet using prepaid sims and stuff like that which have been frauded into oblivion and gone out of business.
+<@aediot> This is bad for the community, cause you're making the currency that we use with eachother on a day to day basis weaker everytime you or another in the community does this.
+<@aediot> Which as a whole makes us weaker. 
+<@aediot> It's essential to keep in mind to try and bolster anything that makes us stronger as a whole. 
+<@aediot> Cause if anything happens to this haven that we've built for ourselves then you'll have nowhere to go and make your coin. 
+<@aediot> Sure you might find some loophole but you won't be able to make anything near what you were making before when the community was strongest. 
+<@aediot> Every time someone discovers Bitcoin for the first time, or sees something about the Darknet that's a potential gateway for them to become involved.
+<@aediot> For all you know they may have the skills and vision required to make the best goddamn service that ends up netting you millions.
+<@aediot> The more powerful we are as a whole, the more money you make.
+<@aediot> And the more potential contacts we get. 
+<@aediot> Another thing Id like to touch on is that a sense of humor or "trolling" isn't exactly tolerated in the DN community for the most part.
+<@aediot> That's not to say you can't be snyde and sarcastic when dealing with a moron or an enemy, but I mean someone who doesn't come off as someone who knows what they're talking about for the sake of jokes won't get very far at all. 
+<@aediot> Remember from my last talk, many of these "elites" are businessmen in real life or something similar. 
+<@aediot> Very few of them were raised off the culture of places like EncyclopediaDramatica and others. 
+<@aediot> So keep that in mind when interacting with others, especially at first. 
+<@aediot> Also.
+<@aediot> I'm not going to touch on this long, I DONT FUCKING CARE what you come from or what your sexual preference is.
+<@aediot> But if ANYBODY finds out you are even remotely linked to a pedophile, wether you have one as a contact that you're helping or you're using one to make your coin.
+<@aediot> Or if you even say something like "I don't care if someones a pedo or not". 
+<@aediot> You can kiss fucking any reputation or respect you've built goodbye. 
+<@aediot> I mean shit the only reason I can get away with saying this myself is because "aediot" isn't my Darknet nym. 
+<@aediot> I know it's really weird, like you'd figure all the frauders and blackhats wouldn't give a remote shit but 8/10 times if they find you have any pedo ties they'll do all they can to virtually beat the shit out of your coin earning and your contacts. 
+<@aediot> End. Of. Story. 
+<@aediot> Another really touchy topic and finicky thing in the Darknet is loyalty. 
+<@aediot> Now I know you're about to say "oh but aediot you said not to trust anyone on the durknet and loyalty means u a have 2 trust a one"
+<@aediot> Nah, not at all. 
+<@aediot> You need to have loyalties if you're going to survive in the community, it determines where you stand on things with your peers. 
+<@aediot> Just because you're loyal to someone though doesn't mean you have to give them every detail of your life, your loyalties for be strictly for the sake of preserving commerce. 
+<@aediot> If you have a contact who you rely on and who relies on you for the sake of lets say your main source of income, it would be wise to be loyal to said person cause if something happens to them or their coin they wont be able to provide you services as a contact anymore right?
+<@aediot> But choose your loyalties wisely, cause if you become loyal to someone and they're loyal to you then their enemies are your enemies and their contacts are your contacts. 
+<@aediot> It helps when you're looking for something really specific and you can ask your loyal contacts "hey man, looking to get this over with do you know anyone who could get the job done?"
+<@aediot> ^That has saved my ass more times than I can count. 
+<@aediot> Of course with loyalty comes war, and you WILL have people who hate your fuckin guts for whatever the fuck reason. 
+<@aediot> When you do, and it elevates to the point of you two duking it out you'll want to have people on your side whether its to dig up dirt on them or to sabotoge their coin flow.
+<@aediot> Ok now that all that's out of the way, here comes the good stuff. 
+<@aediot> Actually learning the tips thatll get you ahead in the community and not just help you maintain access. 
+<@aediot> So first and foremost, your FIRST and foremost priority should be aiming to be impressive enough for someone to give you access to an invite only forum.
+<@aediot> Invite only forums are the fucking LIFE and inner real workings of the community as a whole.
+<@aediot> It's where you'll find the best contacts, methods, and overall deals on shit you will need in order to really thrive off hundreds of thousands and get access to anything illegal that you could ever possibly need. 
+<@aediot> "but aediout how will i know when ive hit tha big timez?" I hear you asking yourself.
+<@aediot> Well white wesley snipes let me tell you.
+<@aediot> It'll have 150 or less members that are all active and a new domain at least twice every month meaning the only way to keep up to date is through your invite source via jabber or icq. 
+<@aediot> If you're in anything other than that, keep at it but just know you haven't hit the big time yet.
+<@aediot> One of the BEST ways to get into these places or at least some of the lower tier invite only forums is to flex your shit. 
+<@aediot> Not even kidding. 
+<@aediot> Have a kickass product or service/skill that you know how to pull off? 
+<@aediot> Can you build malware from scratch? Make a decent rootkit and give it off for free. 
+<@aediot> Do you have a botnet? Give free unrestrained access and let it run into the ground. 
+<@aediot> Have the knowledge on how to do something extremely technical and highly profitable? Make a free post about it. 
+<@aediot> Make or something basic but impressive that puts you above the common rabble.  
+<@aediot> Then give it away for free on some public forums using the nym you want to get popular. 
+<@aediot> Can gaurentee your ass that you'll get invites and queries of all sorts.
+<@aediot> Business offers and the like. 
+<@aediot> "Oh shit man, can you help me out with so and so? I'll pay you good coin"
+<@aediot> Keep in mind that everyone starts off the public forums, it's just how things work. 
+<@aediot> You have to prove yourself before you can get access to the good shit.
+<@aediot> Though another thing you could just do is pitch in on public forums giving your two cents and helping out people who need it, you'll meet some interesting contacts in that regard. 
+<@aediot> Might surprise you.
+<@aediot> And the last thing I want to touch on is this.
+<@aediot> Secrets and custom shit are precious.
+<@aediot> If the Darknet is a daycare then things like forum invites, custom fraud methods, and custom malware are like motherfucking candy.
+<@aediot> Only to be used as either leverage to get in a potential contacts good graces, sold for a high sum, or if you're contributing to a really tight community to boost your reputation. 
+<@aediot> With all this said, I hope you've taken it all in and will understand that there are many minute details you'll have to find out for yourself in order to truly succeed. 
+<@aediot> That's it for the class. Thank you all for the read. 
+<@aediot> If you have any questions, you can reach me via twitter at https://twitter.com/delevrything or email me at aediot@protonmail.ch
+<@aediot> ***LOG CLOSE***

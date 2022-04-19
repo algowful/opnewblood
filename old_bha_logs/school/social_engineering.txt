@@ -1,0 +1,83 @@
+--- Social Engineering ---
+--- Protecting Yourself ---
+
+-What is Social Engineering?
+Social engineering is the name given to a
+category of security attacks in which someone
+manipulates others into revealing information
+that can be used to steal, data, access to
+systems, access to cellular phones, money or
+even your own identity. Such attacks can be
+very simple or very complex. Gaining access to
+information over the phone or through web sites
+that you visit have added a new dimension to
+the role of the social engineer.
+
+-How?
+Social Engineering is all about perception and persuasion. Who are they claiming to be, and how could they persuade you into giving them the information they need?
+
+Social engineering preys on qualities of
+human nature:
+the desire to be helpful
+the tendency to trust people
+the fear of getting into trouble
+
+It doesn't matter how strong your password is, or how secure you think your computer is. If your password is too long and you have to write it down to remember, expect someone to find that note. If it's too short, expect it to be bruteforced. If it's too easy, learn to computer. If you never change it, you might as well remove it. People are usually the weakest link in the security chain, which is why social engineers exist.
+
+A social engineer will try to get you answering questions. So, be a pain in the ass and ask questions back. A real employee will be inclined to answer these questions for you. A social engineer may not know the answers and start to get annoyed at having to talk so much. A good social engineer may know the answers and not even sweat it. It all depends on how badly they want what you've got.
+
+-Confidence: Why not to trust it.
+Confidence is really not something you want to base your decisions off. If a social engineer calls you and claims to be someone, they have probably practiced it and can pull it off confidently with ease. Ignore how confident they sound. Humans tend to trust people that sound confident. Don't.
+
+
+--Avenues of Attack:--
+
+-Over the Phone:
+Do they have credentials?
+For example, if someone from your phone company calls you and claims that something is wrong, but they need to verify its you, you should first verify that they are who they say they are. Personally, if a representative from a company calls me and starts asking for any sort of information for "verification", I will ask their name, department they are from, and a ID number or Reference number. I'll hang up after getting the information, and call the number that I know for that company. If it's a large company you'll probably get routed through a machine, and end up with a different person. Ask that person if they can transfer you to (InsertName in InsertDepartment). Say your phone dropped the call and you were in the middle of something. If that person doesn't exist, you just saved yourself from a social engineer. If they do exist, you can pass it off as just a hardware failure. If the person you end up talking to says they can't transfer you, then you can ask about any possible problems on your account.
+
+
+-Dumpster Diving: 
+This seems like something you wouldn't really have to worry about, but what the hell? Better to be save, than to be sorry. If someone REALLY wants your information, what's to stop them from looking through your garbage. You can tell a lot about a person from their garbage. Eating habits, shopping habits, etc. You can find receipts that may or may not contain important information. You might throw out a bill, which if found can open up you to other attacks. Etc. Best suggestion: Anything that might contain confidential information, run through a shredder, burn, or something similar. Everytime I use the ATM, when I get a receipt I burn it so that you can't see any of the information on it.
+
+-Shoulder Surfing: 
+This really only applies if you're in a public place or if someone close to you is trying to social you. In places like coffee shops and airports, I suggest exercising extreme caution when typing anything. Even one of those screen protectors that makes it harder to see your screen from various angles, don't protect against someone who watches your keys while you type. This is tricky to get away from. Don't input anything sensitive if there are people behind you or looking at you suspiciously. If you're really pro, you can even get blank keycaps to replace all your keys. That should slow people down a bit if they are trying to capture information by watching your keystrokes.
+
+-E-mail: 
+If someone emails you and asks for sensitive information, or even anything you don't feel comfortable giving out, call that person. If they don't give you a contact number, write them back saying you will not disclose that information via email. This will get you back to personal communication, which allows for better methods of verification. A compromised email account sends an email just the same as a regular account. At least phone communication can be verified a little more because you can lookup the office phone number online or in a phone book, and call the office number asking to speak with whoever claimed to have contacted you.
+
+OK LISTEN UP
+IF SOMEONE ADDS YOU
+AND YOU DON"T KNOW THEM
+PRESS DECLINE
+BECAUSE NO ONE
+GIVES TWO FUCKS
+ABOUT HOW MANY FRIENDS YOU HAVE
+
+
+-Spam/malware/etc:
+Duh. Don't click shit. Don't install shit. If you're on windows, you better have file extensions always showing. Scan things you download. Basically: Just wear a condom while you surf the internet. You don't want to get AIDS and die.
+
+
+So all that being said, lets make it brief. Anyone who says they are someone, get identification. Never speak your password over the phone. If they are in tech support for real, they don't need your password. Don't write your password down and leave it on a sticky note on the monitor, or under the keyboard, or stuck to the bottom of your desk/chair/lamp. If you don't have caller ID, buy a new phone for like $20. Being able to see the number you get a call from is important. If you don't have means of properly disposing of documents, get yourself a paper shredder. It's worth it.
+
+
+--Signs of a social engineer:
+
+These are some key signs of a social engineer that you should watch out for.
+
+-Refusal to give contact information. If they contact you, and refuse to give contact information, hang up. 
+
+-Rushing the conversation. The longer they are on the phone, the more likely they are to be outed as an attacker. They don't want this.
+
+-Name-dropping. (trying to forge confidence/trust) It's easy to get ahold of the name of one of your superiors and use it to build trust. If someone says they have talked to your boss, call your boss on another line and ask about it.
+
+-Intimidation. This might be used to make you feel like you don't know whats going on or you might be afraid of reprocussion (ie getting fired, etc). Don't give in. You can explain to your boss that you were uncomfortable and suspected an attack much easier than you can explain that you gave out your personal information and compromised everything on your machine.
+
+-Small mistakes. Did they slip up on a name? Did they only vaguely seem to know what it is they were requesting? Be weary of these things.
+
+-Requesting forbidden information. Your password is meant for you. You shouldn't need to give it to anyone. If someone asks you for something that you've no experience with as far as talking about, tell that person to hold on, and contact someone who will know. You don't want to accidently give out something that can be leveraged against you later.
+
+-----------------------
+Security. Sec-U-R-IT-y.
+-----------------------

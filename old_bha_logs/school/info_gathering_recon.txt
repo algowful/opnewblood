@@ -1,0 +1,581 @@
+Info Gathering (by hatter)
+
+[19:01] <~hatter> For our example today, we're going to use scorpion.canthack.us
+[19:01] <~hatter> Everyone have nmap installed?
+[19:01] <~hatter> if you don't have nmap installed, its available for windows and linux at http://nmap.org/ or http://insecure.org/
+[19:01] <~hatter> If anyone has any installation troubles, PM someone.
+[19:02] <~hatter> if you're on a public wifi,
+[19:02] <~hatter> you'll want to do a fast scan, semi-loud, and just defeat the ratelimit for iptables based firewalls
+[19:02] <~hatter> you'll want invasive version fingerprinting and operating system detection
+[19:02] <~hatter> along with a traceroute that works
+14[19:02] * s1ko (null@ec-FBCC0D82.red-2-138-73.dynamicip.rima-tde.net) has joined #school
+14[19:02] * germicle (Nniff@ec-C3A25B57.static.mtpk.ca.charter.com) Quit (Quit: ChatZilla 0.9.86 [Firefox 3.6/20100115144158])
+[19:02] <~hatter> everyone can go ahead and traceroute scorpion.canthack.us
+[19:02] <@dot> my nmap isnt working
+[19:02] <~hatter> or tracert
+[19:03] <~hatter> dot: pm someone
+[19:03] <@dot> lol
+[19:03] <@dot> was joking sorry teach
+[19:03] <~hatter> anyway
+[19:03] <~hatter> On windows its tracert
+[19:03] <~hatter> tracert -d
+[19:03] <~hatter> will give only the ips
+14[19:03] * ri3p3r (ri3p3r@ec-287E30EC.cust.tele2.at) has joined #school
+[19:03] <~hatter> on windows
+[19:03] <~hatter> on linux
+[19:03] <~hatter> you use traceroute
+[19:03] <~hatter> just by itself for now
+[19:03] <~hatter> You'll see that our network configuration firewalls off a default traceroute
+[19:04] <~hatter> hatter ~ $ traceroute scorpion.canthack.us
+[19:04] <~hatter> traceroute to scorpion.canthack.us (109.75.183.121), 30 hops max, 60 byte packets
+[19:04] <~hatter>  1  10.108.224.1 (10.108.224.1)  13.712 ms  13.681 ms  13.702 ms
+[19:04] <~hatter>  2  ten0-3-0.orld40-ser2.bhn.net (72.31.194.124)  13.727 ms  13.923 ms  14.709 ms
+[19:04] <~hatter>  3  ten0-15-0-4.orld71-car2.bhn.net (71.44.60.190)  17.562 ms ten0-10-0-4.orld71-car2.bhn.net (97.69.194.88)  17.570 ms ten0-15-0-4.orld71-car2.bhn.net (71.44.60.190)  22.172 ms
+[19:04] <~hatter>  4  ae1-0.orld71-cbr2.bhn.net (72.31.194.2)  18.596 ms  18.378 ms  18.413 ms
+[19:04] <~hatter>  5  ae-3-10.cr1.atl20.tbone.rr.com (66.109.6.104)  27.346 ms  26.633 ms  27.327 ms
+[19:04] <~hatter>  6  ae-1-0.pr0.atl20.tbone.rr.com (66.109.6.177)  26.614 ms  15.492 ms  17.231 ms
+[19:04] <~hatter>  7  TenGigabitEthernet9-2.ar1.ATL2.gblx.net (64.212.108.69)  17.280 ms  17.268 ms  21.276 ms
+[19:04] <~hatter>  8  filoo-gmbh.gigabitethernet3-6.ar1.fra4.gblx.net (67.17.161.142)  123.439 ms  123.459 ms  123.536 ms
+[19:04] <~hatter>  9  bb01.av.backbone.filoo.de (93.190.67.18)  124.843 ms  124.629 ms  124.811 ms
+[19:04] <~hatter> 10  * * *
+[19:04] <~hatter> 11  * * *
+[19:04] <~hatter> 12  * * *
+[19:04] <~hatter> 13  * * *
+[19:04] <~hatter> 14  * * *
+[19:04] <~hatter> 15  *^C
+15[19:04] * Fox sets mode: +v LulzSheep
+[19:04] <~hatter> so the traceroute gets blocked
+[19:05] <~hatter> you can bypass this with various tcp traceroute utilities, and I believe NMAP actually uses a tcp traceroute to an open port it finds from its port scan
+[19:05] <~hatter> on gentoo's traceroute
+[19:05] <~hatter> you can bypass this with a simple traceroute -T -p
+14[19:05] * rand0m (r@ec-F64C4005.anonymizer.ccc.de) has joined #school
+[19:05] <+JohmasTefferson> question:
+[19:05] <~hatter> for example:
+[19:05] <~hatter> JohmasTefferson: shoot
+[19:05] <~hatter> ask away
+[19:06] <+JohmasTefferson> on this box, it traced everything with the default windows tracert
+[19:06] <~hatter> ok
+[19:06] <+JohmasTefferson> so does that mean it's leaving something out?
+[19:06] <~hatter> So maybe there's a different routing path that it took
+[19:06] <~hatter> that didn't get firewalled
+[19:06] <~hatter> I'll look into it
+[19:06] <~hatter> Thanks for the heads up.
+[19:06] <+JohmasTefferson> I can tell you where I came from if you'd like to know.
+[19:06] <~hatter> just pm me your ip
+[19:06] <~hatter> the origin ip
+[19:07] <~hatter> anyway
+[19:07] <~hatter> when you traceroute with TCP 
+[19:07] <~hatter> its different than a typical udp/icmp traceroute
+[19:07] <~hatter> Like I said, nmap has this built in by default, I believe
+[19:07] <~hatter> so
+[19:07] <~Sav> still works by setting incrementing ttls, though?
+[19:08] <~hatter> Sav: I believe so, with SYN/ERG kind of like a BGP request
+[19:08] <~hatter> so, then,
+14[19:08] * CMYK (CMYK@ec-92EDEF1C.dynamic.swissvpn.net) has joined #school
+[19:08] <~hatter> since you're gonna want version fingerprinting, fast scanning, and ratelimit defeat
+14[19:08] * prophet (proph3t@D72F3306.11F2790.C229B399.IP) has joined #school
+[19:09] <~hatter> probably also no ping, since a lot of network administrators disable icmp (although this is actually a demonstration of incompetency) 
+[19:09] <~hatter> and you'll also want an authentic traceroute and operating system detection
+14[19:09] * _4g69 (mitsu@ec-25BC185E.lsanca.fios.verizon.net) has joined #school
+14[19:09] * prophet (proph3t@D72F3306.11F2790.C229B399.IP) has left #school
+[19:09] <~hatter> We'll use the following nmap string :
+14[19:09] * prophet (proph3t@D72F3306.11F2790.C229B399.IP) has joined #school
+[19:09] <~hatter> nmap -sS -sV -O -F --defeat-rst-ratelimit -P0 scorpion.canthack.us
+[19:10] <~Sav> (needs to be run as root)
+[19:10] <~hatter> ^
+[19:10] <~hatter> you may have to previx this with sudo 
+[19:10] <+Lemon> what os?
+[19:10] <~hatter> or run cmd as administrator
+[19:10] <~hatter> Lemon: any os
+[19:11] <+Lemon> was asking them my bad
+14[19:11] * patriot (patri0t@37B0D606.CDF5202B.B5636C75.IP) has joined #school
+[19:11] <~hatter> Starting Nmap 5.00 ( http://nmap.org ) at 2011-06-28 13:10 CDT
+[19:11] <~hatter> Interesting ports on 109-75-183-121.reverse.cust.as47215.net (109.75.183.121):
+[19:11] <~hatter> Not shown: 97 filtered ports
+[19:11] <~hatter> PORT    STATE SERVICE  VERSION
+[19:11] <~hatter> 22/tcp  open  ssh      OpenSSH 5.8p1-hpn13v10 (protocol 2.0)
+[19:11] <~hatter> |  ssh-hostkey: 1024 14:3f:e4:74:ec:48:11:68:15:01:44:2e:f6:73:87:50 (DSA)
+[19:11] <~hatter> |_ 2048 83:1b:f3:8c:66:1b:88:31:82:39:a3:c2:d6:8a:bc:05 (RSA)
+[19:11] <~hatter> 80/tcp  open  http     Apache httpd
+[19:11] <~hatter> |_ html-title: 403 Forbidden
+[19:11] <~hatter> 443/tcp open  ssl/http Apache httpd
+[19:11] <~hatter> |_ sslv2: server still supports SSLv2
+[19:11] <~hatter> |_ html-title: 403 Forbidden
+[19:11] <~hatter> Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+[19:11] <~hatter> Device type: WAP|switch|general purpose
+[19:11] <~hatter> Running (JUST GUESSING) : D-Link embedded (93%), TRENDnet embedded (93%), HP embedded (92%), Linux 2.6.X (86%)
+[19:11] <~hatter> Aggressive OS guesses: D-Link DWL-624+ or DWL-2000AP, or TRENDnet TEW-432BRP WAP (93%), HP 4000M ProCurve switch (J4121A) (92%), Linux 2.6.9 - 2.6.24 (86%)
+[19:11] <~hatter> No exact OS matches for host (test conditions non-ideal).
+[19:11] <~hatter> TRACEROUTE (using port 443/tcp)
+[19:11] <~hatter> HOP RTT    ADDRESS
+[19:11] <~hatter> 1   10.83  10.108.224.1
+[19:11] <~hatter> 2   ...
+[19:11] <~hatter> 3   15.74  ten0-10-0-4.orld71-car2.bhn.net (97.69.194.88)
+[19:11] <~hatter> 4   15.20  ae1-0.orld71-cbr2.bhn.net (72.31.194.2)
+[19:11] <~hatter> 5   101.93 ae-3-10.cr1.atl20.tbone.rr.com (66.109.6.104)
+[19:11] <~hatter> 6   ...
+[19:11] <~hatter> 7   17.12  64.209.106.17
+[19:11] <~hatter> 8   119.69 filoo-gmbh.gigabitethernet3-6.ar1.fra4.gblx.net (67.17.161.142)
+[19:11] <~hatter> 9   123.93 bb01.av.backbone.filoo.de (93.190.67.18)
+[19:11] <~hatter> 10  123.50 109-75-183-121.reverse.cust.as47215.net (109.75.183.121)
+[19:11] <~hatter> OS and Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+[19:11] <~hatter> Nmap done: 1 IP address (1 host up) scanned in 54.85 seconds
+[19:11] <~hatter> So you'll see it did a tcp traceroute
+[19:11] <~hatter> to the ssl port 443
+[19:11] <~hatter> 18:11 <~hatter> TRACEROUTE (using port 443/tcp)
+14[19:11] * HeavyHead (HeavyHead@ec-8889B041.flatrate.dk) has joined #school
+[19:11] <~hatter> that evaded firewalling.
+[19:11] <~hatter> This does not always work
+14[19:11] * showleshow (leshow@ec-7722BC92.cpe.net.cable.rogers.com) has joined #school
+[19:12] <~hatter> but it will get you the information you want 99.9% of the time.
+14[19:12] * reapr (r3@ec-C8836D61.sub-174-252-82.myvzw.com) Quit (Ping timeout)
+[19:12] <~hatter> you can almost always guarantee
+[19:12] <~hatter> that the next-to-last-hop is EITHER a router or a firewall
+[19:12] <~hatter> on highly secured networks
+[19:12] <~hatter> the next-to-last hop may be an IDS
+14[19:13] * smeegle (bgp@530A7868.ABA2CEB3.E1A05890.IP) has joined #school
+14[19:13] * SiLENT (SiL@ec-517B5E3.clienti.tiscali.it) has joined #school
+[19:13] <~hatter> the hop before that a router, the hop before that a firewall, and the hop before that another ids
+14[19:13] * patri0t (patri0t@37B0D606.CDF5202B.B5636C75.IP) Quit (Ping timeout)
+[19:13] <~hatter> Many places put IDS's on both sides of the firewall
+14[19:13] * tr3mble (mirc@ec-252DD818.torservers.net) has joined #school
+14[19:13] * reapr (r3@ec-C8836D61.sub-174-252-82.myvzw.com) has joined #school
+15[19:13] * Fox sets mode: +v Spozm
+15[19:13] * Fox sets mode: +v Arsis
+[19:13] <~Fox> hatter
+[19:13] <~hatter> Fox: 
+[19:13] <~Fox> a few of them are having issues still
+14[19:13] * sil (SiL@ec-517B5E3.clienti.tiscali.it) Quit (Ping timeout)
+[19:13] <~hatter> ok
+[19:14] <~hatter> I'll slow down
+[19:14] <+phed> why is that hatter? do they have differing rules in the IDS?
+[19:14] <~Fox> Thank you
+[19:14] <+phed> or use different IDS all together?
+[19:14] <~hatter> phed: no, sometimes different types of traffic
+[19:14] <~hatter> let me explain...
+[19:14] <+phed> ahh i see
+[19:14] <~hatter> 1: with an ids on both sides
+[19:14] <~hatter> you can see the effectiveness of your firewall
+14[19:14] * rodeoss (580de779@ec-4442AFE.mibbit.com) has joined #school
+[19:14] <~hatter> 2: with the ids on both sides,
+[19:14] <+phed> maybe vpn to the router? then another ids for traffic into a internal net?
+[19:14] <+Arsis> hatter: when I run that nmap string it doesn't do a traceroute
+[19:14] <~hatter> say a packet was hella fragmented
+[19:14] <~hatter> Arsis: you on latest nmap?
+[19:14] <+Arsis> I believe so yes
+[19:15] <~hatter> Say that a packet was hella fragmented
+[19:15] <~hatter> and reconstructed into another packet
+[19:15] <~hatter> the ids on the outside wouldn't see that
+[19:15] <~hatter> but after stateful packet inspection on the firewall
+[19:15] <~hatter> which effectively reconstructs the packet for the attacker
+[19:15] <+Arsis> Correction, no I'm on 5.21
+[19:15] <+phed> ahh but when reconstructed on the inside its picked up
+[19:15] <~hatter> the IDS on the inside can see it
+[19:15] <+curi0us> yea same didn do tracert
+[19:15] <~hatter> update yo nmaps kids
+14[19:15] * rand0m (r@ec-F64C4005.anonymizer.ccc.de) Quit (Input/output error)
+[19:15] <~hatter> er wait
+[19:15] <~hatter> I'm on 5.0
+[19:15] <~hatter> lol
+[19:15] <~hatter> maybe there's a different flag now
+[19:15] <~hatter> idk
+[19:15] <~hatter> fuuuu
+[19:16] <+Spozm> hatter: Dunno what I'm failing at, but I can't even scan scorpion.canthack.us
+[19:16] <~hatter> Spozm: paste 
+[19:16] <+Spozm> Starting Nmap 5.51 ( http://nmap.org ) at 2011-06-28 13:08 Central Daylight Time
+[19:16] <+Spozm> Note: Host seems down. If it is really up, but blocking our ping probes, try -Pn
+[19:16] <+Spozm> Nmap done: 1 IP address (0 hosts up) scanned in 2.28 seconds
+[19:16] <+curi0us> im on 5.51 it didnt run tracrt
+[19:16] <~hatter> ah
+[19:16] <+phed> add --traceroute: Trace hop path to each host
+[19:16] <~hatter> -P0
+14[19:16] * Spunker (Spunker@1BBDBC80.6782282A.58569C9D.IP) has joined #school
+14[19:16] * rand0m (r@ec-76A3794E.torservers.net) has joined #school
+[19:16] <~hatter> Spozm: -P0
+[19:16] <~hatter> for no ping
+[19:16] <~hatter> oh shit
+[19:16] <~hatter> hold on guys
+[19:16] <~hatter> we just hit a maxconnect in the ircd config
+[19:16] <~hatter> lol
+[19:16] <~Sav> yay!
+15[19:16] * Fox sets mode: +v CMYK
+15[19:17] * Fox sets mode: +v torify
+[19:17] <+Spozm> worked, ty
+[19:17] <+CMYK> ty.
+[19:17] <+phed> nmap -sS -sV -O -F --defeat-rst-ratelimit -P0 --traceroute scorpion.canthack.us
+[19:17] <~Fox> Oh wow
+[19:17] <~Fox> lol
+[19:17] <+torify> is this the reason my traceroute doesn't start even though i have version 5.51?
+[19:17] <+CMYK> I have a question. He said that disabling ping was actually a demonstration of incompetancy, how so?
+14[19:17] * p0x (4bb76529@ec-EA53C1E3.mibbit.com) has joined #school
+[19:17] <+curi0us> LOL
+14[19:18] * s1ko (null@ec-FBCC0D82.red-2-138-73.dynamicip.rima-tde.net) Quit (Quit: .:|:.:|:.)
+[19:18] <@dot> [1:18:02 pm] +(CMYK) I have a question. He said that disabling ping was actually a demonstration of incompetancy, how so?
+15[19:18] * Sav sets mode: +v neth0les
+[19:18] <~hatter> fixed
+[19:18] <~hatter> Ah good queestion CMYK
+[19:18] <@dot> what if your DNS server isn't responding
+[19:19] <@dot> how do you check if it's even up?
+[19:19] <~hatter> ^
+[19:19] <~hatter> Anyway
+[19:19] <~hatter> Here's why its incompetency
+[19:19] <~Sav> Disabling ping is like changing SSH port.
+[19:19] <+CMYK> ah I see.
+[19:19] <+torify> okay thx phed adding --traceroute did the thing for me (sry 4 interrupting)
+[19:19] <~hatter> there's a type of network layer attack
+[19:19] <~hatter> called an ICMP redirect
+[19:19] <~Sav> (It's like, hiding instead of hardening)
+[19:19] <~hatter> it makes target hosts start sending BGP traffic to another BGP gateway
+[19:19] <~hatter> By completely disabling ICMP 
+[19:19] <~hatter> they are protecting themselves from that
+[19:20] <~hatter> on the flipside, they're missing out on all the things that ICMP has to offer
+[19:20] <~hatter> They should simply disable ICMP Type 8
+[19:20] <~hatter> for inbound
+[19:20] <~hatter> the end
+[19:20] <+Spozm> Question: Should nmap scans/tracerouting be done behind proxycondoms/etc? Or is it not something that gets the target's attention?
+[19:20] <~hatter> Well, that depends Spozm 
+[19:21] <~hatter> As we learned in covering yo trax
+[19:21] <@dot> Depends on the network you're scanning lol
+[19:21] <~hatter> If you really don't want to be known as the guy who did it
+[19:21] <~hatter> change your mac address
+[19:21] <~hatter> use public wifi
+[19:21] <~hatter> leave
+[19:21] <~hatter> lol
+[19:21] <@Theruler> never go back
+[19:21] <@Theruler> ^
+[19:21] <~hatter> ^
+[19:21] <+Spozm> lolk
+[19:21] <~hatter> So
+[19:21] <~hatter> Now we're gonna get into the fun stuff
+[19:21] <~hatter> Fox: 
+[19:22] <~hatter> how far out are we?
+[19:22] <~Fox> On?
+14[19:22] * rand0m (r@ec-76A3794E.torservers.net) Quit (Input/output error)
+[19:22] <~hatter> Kids getting caught up
+[19:22] <~hatter> You said to push pause
+[19:22] <~hatter> so I took a questions block
+14[19:22] * rand0m (r@ec-9E9E9E5D.online.de) has joined #school
+[19:22] <~hatter> lol
+[19:23] <~hatter> Cuz our next topic
+[19:23] <~hatter> is nikto
+[19:23] <~Fox> Oh
+[19:23] <~Fox> Well tbqh
+[19:23] <+Lemon> :)
+14[19:23] * +toad (toad@ec-B82A050.kromyon.net) Quit (Input/output error)
+[19:23] <~Fox> I don't think the half of them understand what you just said
+[19:23] <~Fox> lol
+[19:23] <~hatter> :(
+[19:23] <~hatter> lol
+[19:23] <~Fox> Like fully
+[19:23] <~Fox> you know
+[19:23] <+torify> hm there's not much not to understand but a few terms sounded odd
+[19:23] <~Fox> I'd run QA so they can get clarified
+[19:23] <~Fox> then move to nikto
+[19:24] <~hatter> ok
+[19:24] <~hatter> Run qa fox
+[19:24] <+curi0us> i got it
+[19:24] <~hatter> lol
+[19:24] <~Fox> Kay
+[19:24] <~Fox> so little shitbirds
+[19:24] <~Fox> go go
+[19:24] <~hatter> ASK MOAR QUESTIONS IF YOU DONT GET IT
+[19:24] <~hatter> ask for voice if you need it!
+[19:24] <+torify> :D
+[19:24] <+Arsis> Fox, my traceroute only shows hops 1 and 7 is that normal?
+[19:24] <+torify> as long as it ends with the last point
+[19:24] <~Fox> Exact
+15[19:24] * Fox sets mode: +v rabbit
+[19:25] <+torify> i read through your lecture again maybe i find something else i can ask quickly ;(
+15[19:25] * hatter sets mode: +v srs
+[19:25] <+srs> All 1239 scanned ports on 109-75-183-121.reverse.cust.as47215.net (109.75.183.121) are filtered
+15[19:25] * Fox sets mode: +v patriot
+[19:25] <+srs> Too many fingerprints match this host to give specific OS details
+15[19:25] <+LulzSheep> I'm a bit behind I was just eating some yoghurt, just did a 'tracert -d scorpion.canthack.us' which shows 3 open ports and a bunch of other text
+[19:25] <~hatter> uhm
+[19:25] <~hatter> LulzSheep: that's not gonna show open ports
+[19:25] <~hatter> LulzSheep: that's a tracert
+[19:25] <+rabbit> can we identify the IDS/Firewall by looking to the IP ?
+[19:25] <~Fox> lol
+[19:25] <~hatter> that traces the border gateways and routers between you and the remote host
+[19:26] <+Lemon> yes rabbit using nmap
+[19:26] <~hatter> so you can see the way traffic is shaped
+[19:26] <~hatter> there are other ways also
+[19:26] <~hatter> Who wants to see how many ppl here are monitored by feds?
+[19:26] <~hatter> lol
+[19:26] <+Lemon> check me
+[19:26] <+Arsis> OS fingerprint not idea because: Missing a closed TCP port so results incomplete
+[19:26] <+Spozm> go ahead
+15[19:26] <+LulzSheep> I don't care I haven't done anything illegal
+[19:26] <~hatter> It was a joke
+[19:26] <+torify> i only got one noob question: how do i really trace the last ip to a location, i didn't use any tracing tools for a long time, are there other programs or are there only some websites i can use for that?
+[19:26] <+Lemon> lol
+[19:26] <+Arsis> ideal*
+[19:27] <~hatter> torify: geolocation
+[19:27] <+torify> ok
+[19:27] <+rabbit> Can we say the IDS/Firewall is in the same IP segment or it does not matter?
+15[19:27] * Fox sets mode: +v tr3mble
+[19:27] <~hatter> http://www.maxmind.com/app/locate_demo_ip
+[19:27] <~hatter> rabbit: sometimes the IDS doesn't even have an IP\
+[19:27] <~hatter> and is just on the SPAN port on the router
+[19:27] <~hatter> n then crossovere'd to a private vlan
+[19:27] <~hatter> on a firewall
+[19:27] <+Lemon> 8081
+[19:27] <~hatter> or to the server itself
+[19:28] <+patriot> my question : just wanna know what do these stand for  nmap -sS -sV -O -F --defeat-rst-ratelimit -P0 scorpion.canthack.us
+15[19:28] <+LulzSheep> http://ScrnSht.com/jxyenj this is what I've got
+[19:28] <+torify> LulzSheep, add --traceroute
+[19:28] <~hatter> -sS is a full syn scan -O gives operating system detection
+[19:28] <~hatter> oh
+[19:28] <~hatter> -A
+[19:28] <~hatter> -A is also traceroute
+[19:28] <~hatter> I believe
+[19:29] <~hatter> anyway 
+[19:29] <~hatter> -F means fast scan (top 100 ports)
+15[19:29] <+LulzSheep> I'm using windows
+[19:29] <~hatter> -sV is version detection
+[19:29] <~hatter> -P0 means no ping
+[19:29] <+torify> yes but don't u see the command line in your client lulzsheep
+[19:29] <+patriot> thanks sir !
+[19:29] <~hatter> --defeat-rst-ratelimit will defeat any ratelimits that cause a FIN_RST response in the remote firewall (typically iptables)
+[19:29] <+torify> there's your command and it misses the --traceroute part, just put it before the url
+[19:29] <+patriot> thanks a lot
+15[19:30] * Fox sets mode: +v smeegle
+[19:30] <+rabbit> I dunno how firewall works, can youo explain briefly what is ratelimit?
+14[19:31] * prophet (proph3t@D72F3306.11F2790.C229B399.IP) Quit (Ping timeout)
+[19:31] <~hatter> a ratelimit is where a firewall sees that you're trying to create a certain number of connections to a server in a specific amount of time
+[19:31] <~hatter> If you go above this number (the ratelimit)
+[19:31] <~hatter> The firewall will start denying your traffic
+[19:31] <+smeegle> ratelimit limits the rate at which packets may enter from a single host
+[19:31] <~hatter> --defeat-rst-ratelimit attempts to ignore/defeat this firewall option
+[19:31] <~hatter> 18:32 <+smeegle> ratelimit limits the rate at which packets may enter from a single host
+[19:31] <~hatter> Also that
+[19:32] <~hatter> Kinda depends on which ratelimit we're talking
+[19:32] <~hatter> could be packets, syn packets specifically, etc
+15[19:32] <+LulzSheep> heh I added the tracert bit to start of it and now there is much more text
+[19:32] <~Fox> Kids
+[19:32] <~Fox> Double-shot today
+[19:32] <~Fox> I am stealing things for you to use
+[19:32] <~Fox> :3
+[19:32] <~hatter> Fox: check im
+14[19:32] * ~Fox (Fox@D1152B17.1276228B.BD5AC284.IP) Quit (Quit: Textual IRC Client: http://www.textualapp.com/)
+[19:33] <+rabbit> so this mean putting a -T4 will alert the firewall?
+14[19:33] * Fox (Fox@D1152B17.1276228B.BD5AC284.IP) has joined #school
+14[19:33] * Fox (Fox@D1152B17.1276228B.BD5AC284.IP) Quit (Quit: Textual IRC Client: http://www.textualapp.com/)
+[19:33] <+curi0us> fox: wooooooooooo
+[19:33] <+torify> you've got a server in Frankfurt? german server-city :S
+[19:34] <+torify> and my home for a long time ;(
+14[19:34] * showleshow (leshow@ec-7722BC92.cpe.net.cable.rogers.com) Quit (Quit: Leaving)
+14[19:34] * Fox (Fox@D1152B17.1276228B.BD5AC284.IP) has joined #school
+15[19:34] <+LulzSheep> whats the shortcut that toggles overwrite :|
+[19:35] <+Lemon> insert
+14[19:35] * reapr (r3@ec-C8836D61.sub-174-252-82.myvzw.com) Quit (Quit: Bye)
+[19:35] <+smeegle> LulzSheep, overwrite of what?  im tempted to answer with >
+14[19:35] * reapr (r3@ec-C8836D61.sub-174-252-82.myvzw.com) has joined #school
+15[19:35] <+LulzSheep> insert worked
+[19:35] <+Lemon> :)
+[19:35] <+Lemon> its universal ffr
+15[19:36] * Lemon is now known as LemonAFK
+[19:37] <~Sav> protip
+[19:37] <~Sav> man nmap
+[19:37] <~Sav> for the Linux guys
+[19:37] <+JohmasTefferson> man 'anything' relly
+[19:37] <+JohmasTefferson> one of the most handy commands out there IMO
+[19:37] <+neth0les> ^
+14[19:37] * AcidWaSH (Pr0t0c07@ec-D78F2A89.pools.spcsdns.net) has joined #school
+[19:37] <+smeegle> methinks fox needs +o
+[19:38] <+Arsis> wooooooooord @ man nmap
+15[19:38] * Fox sets mode: +q Fox
+[19:38] <~Fox> I dont need shit.
+[19:38] <+Arsis> Fox can do it himself
+[19:38] <+smeegle> haha ok
+[19:38] <+Arsis> Thug life
+[19:38] <~Sav> yaeh
+[19:39] <~Sav> Fox is grownup now
+[19:39] <~Sav> Fox is the owner of Internet, btw.
+[19:39] <+torify> can i borrow it? :/
+14[19:39] * +patriot (patri0t@37B0D606.CDF5202B.B5636C75.IP) Quit (Connection reset by peer)
+[19:39] <~hatter> Ok anyway
+[19:39] <+Arsis> Sav you just dox'd Fox
+[19:39] <+Arsis> Now we all know he's Al Gore
+14[19:39] * patriot (patri0t@37B0D606.CDF5202B.B5636C75.IP) has joined #school
+[19:39] <+neth0les> LOL
+[19:39] <~hatter> here comes more school
+[19:39] <~hatter> ok kids
+[19:39] <~hatter> install nikto
+[19:39] <~hatter> most distros have this
+[19:40] <~hatter> you can also get it at http://cirt.net/nikto2
+[19:40] <~hatter> Nikto is perl
+15[19:40] <+LulzSheep> is it not available for windows?
+[19:40] <~hatter> and can be run on windows using either activestate perl or cygwin
+15[19:40] <+LulzSheep> oh
+[19:40] <~hatter> you can find these easily by using the power of google
+[19:40] <+CMYK> ^
+15[19:41] * LemonAFK is now known as Lemon
+[19:41] <+torify> > Don't forget to update your plugins running as root:
+[19:41] <+torify> > nikto -update
+[19:41] <~hatter> ^
+[19:41] <~hatter> lets go over a few things
+[19:41] <~hatter> nikto has some interesting features, ids evasion, request mutation
+[19:42] <~hatter> you can also write scripts and extensions for it
+[19:42] <~hatter> Nikto is basically a web crawler with a CVE database
+[19:42] <~hatter> as it discovers basic configuration issues or known vulnerabilities
+[19:43] <~hatter> It will usually provide the user with links as well as CVE references
+14[19:43] * +Lemon (lemon@CFFE1B3.75C91E20.2F6CA35B.IP) Quit (Quit: Leaving)
+[19:43] <~hatter> (Oh, and before we're COMPLETELY done with nmap, I'd just like to point out that port sentry is that annoying little program you run into that shows all ports as open)
+14[19:43] * patriot (patri0t@37B0D606.CDF5202B.B5636C75.IP) Quit (Connection reset by peer)
+14[19:43] * patriot (patri0t@37B0D606.CDF5202B.B5636C75.IP) has joined #school
+[19:43] <@dot> Could also be a honeypot, not in this particular situation
+[19:43] <~hatter> anyway
+[19:44] <@dot> but certain honeypot software will also do that if they're designed to capture malware binaries
+[19:44] <~hatter> ^
+[19:44] <~hatter> This is also true
+[19:44] <~hatter> At any rate
+[19:44] <~hatter> nikto -e 9 -h scorpion.canthack.us
+[19:45] <~hatter> - Nikto v2.03/2.04
+[19:45] <~hatter> ---------------------------------------------------------------------------
+[19:45] <~hatter> + Target IP:          109.75.183.121
+[19:45] <~hatter> + Target Hostname:    scorpion.canthack.us
+[19:45] <~hatter> + Target Port:        80
+[19:45] <~hatter> + Start Time:         2011-06-29 13:45:32
+[19:45] <~hatter> ---------------------------------------------------------------------------
+[19:45] <~hatter> + Server: Apache
+14[19:45] * rand0m (r@ec-9E9E9E5D.online.de) Quit (Quit: Leaving)
+14[19:45] * rand0m (r@ec-A64054DA.blutmagie.de) has joined #school
+[19:46] <~hatter> you'll notice some interesting results as the scan continues
+[19:46] <+torify> it automatically traceroutes as well or am I imaginating things
+14[19:47] * rand0m (r@ec-A64054DA.blutmagie.de) Quit (Quit: Leaving)
+14[19:47] * ~Sav (savitri@want.more.trees.and.less.dust) Quit (Ping timeout)
+14[19:47] * rand0m (r@ec-A64054DA.blutmagie.de) has joined #school
+[19:47] <~hatter> now if you use -e 9
+[19:48] <~hatter> that's session splicing
+[19:48] <~hatter> notice it doesn't work against scorpion
+[19:48] <~hatter> this is because scorpion does not accept content-type chunked
+[19:48] <~hatter> Scorpion is a relatively locked down machine that is to be used as a user sandbox for the advanced classes
+[19:49] <~hatter> so if your nikto is not returning very much, that'd be why
+[19:49] <~hatter> in any case, one common thing you will find on shared hosts is the enabled mod_userdir for apache
+[19:49] <~hatter> this is what makes those http://ip.ip.ip.ip/~username
+[19:49] <~hatter> style links
+[19:49] <~hatter> by using the option 
+14[19:49] * Sav (savitri@85B5D400.5C22DE9B.55ED5973.IP) has joined #school
+[19:49] <~hatter> nikto -m 3 
+[19:49] <~hatter> on a server running mod_userdir
+[19:49] <~hatter> these usernames will be enumerated
+[19:49] <~hatter> although your source will likely be logged to hell
+[19:49] <~hatter> and its noisy
+14[19:50] * SiL (SiL@ec-517B5E3.clienti.tiscali.it) has joined #school
+[19:50] <~hatter> It works.
+[19:50] <~hatter> Another thing you'll notice when scanning a site is that nikto will sometimes read the /robots.txt file
+14[19:50] * MacGyverlulz (virus@ec-2AE965EB.cpe.net.cable.rogers.com) has joined #school
+[19:50] <~hatter> for those of you who don't know, robots.txt 
+[19:50] <~hatter> is used to tell search engines what they can and cannot index
+[19:50] <~hatter> along with bandwidth limitations 
+[19:50] <~hatter> etc
+[19:51] <~hatter> manual review of this file can tell you a lot
+[19:51] <~hatter> it can tel you where an admin panel or other private resource is
+[19:51] <~hatter> or even tell you how much traffic it would take to overload and cause a denial of service on the remote system
+14[19:51] * WishBoy (WishBoy@ec-4E10E88D.dsl.telesp.net.br) has joined #school
+[19:51] <~hatter> Any questions right now?
+[19:51] <+rabbit> -e 9 is to evade IDS?
+14[19:52] * SiLENT (SiL@ec-517B5E3.clienti.tiscali.it) Quit (Ping timeout)
+14[19:52] * +phed (gentoo@ec-B6419CBE.uddi.cable.virginmedia.com) Quit (Ping timeout)
+[19:52] <+smeegle> (theres a previous class on the website by tylerdurden that explains (makes a shell script with you) digging through robots.txt)
+15[19:52] <+LulzSheep> I downloaded and installed activeperl, what now
+14[19:52] * prophet (proph3t@DF0D3B97.8178EF05.381B4B9B.IP) has joined #school
+14[19:52] * GentooTen (gentoo@ec-B6419CBE.uddi.cable.virginmedia.com) has joined #school
+[19:53] <~hatter> rabbit: -e 9 is just one option
+[19:53] <~hatter> rabbit: -e 9 uses session splicing to attempt to evade ids
+[19:53] <~hatter> more information is available in the manual <3
+15[19:53] * GentooTen is now known as phed
+[19:53] <+rabbit> :) 
+[19:53] <~hatter> ids evasion options also include random uri encoding and using \ in stead of /, using tab in stead of spaces as protocol whitespace
+[19:53] <~hatter> etc
+[19:54] <+torify> (LulzSheep, i'd recommend you establish a close relationship with linux :S you'll save yourself a lot of trouble. as for your question, no idea)
+14[19:54] * rand0m (r@ec-A64054DA.blutmagie.de) Quit (Quit: Leaving)
+[19:54] <~hatter> LulzSheep: I'd download the nikto tarball
+[19:54] <~hatter> decompress with winrar
+14[19:54] * rand0m (r@ec-EF3750F1.serverhorror.com) has joined #school
+[19:54] <~hatter> extract it somewhere
+[19:54] <~hatter> then open cmd
+[19:54] <~hatter> then
+[19:54] <~hatter> cd path/to/extracted/files
+[19:54] <~hatter> then
+[19:54] <~hatter> perl.exe nikto.pl 
+15[19:54] <+LulzSheep> yes but right now linux is completely new to me(: and this is confusing enough without being on alien os
+[19:54] <+smeegle> dont forget to edit the config
+[19:55] <+smeegle> you'll want to change some things, like USERAGENT for example
+[19:55] <~hatter> ^
+[19:55] <~hatter> I think there's also a flag for this
+[19:55] <+Spozm> hatter: whats the command to run nikto.pl from cygwin?
+[19:55] <+torify> it's not cd in windows or is my memory that bad? oO
+[19:55] <+smeegle> it is cd in windows
+15[19:55] * hatter sets mode: +v unon
+[19:55] <+neth0les> it is
+[19:55] <+torify> hm lol
+14[19:55] * +CMYK (CMYK@ec-92EDEF1C.dynamic.swissvpn.net) Quit (Quit: minecraft time.)
+[19:56] <+unon> Thanks. I have a question regarding ids
+[19:56] <+smeegle> maybe cd  1 dir at a time in windows if you need to... easier
+[19:56] <~hatter> ask away unon 
+[19:56] <+unon> Is there a good way to profile them?
+[19:56] <~hatter> Hrm
+[19:56] <~hatter> The best way would be to buy one of each and test the shit out of them
+[19:56] <~hatter> I can tell how good one is with tests
+[19:56] <+unon> 'kay, thanks
+[19:56] <~hatter> but not really a brand name per say
+[19:57] <~hatter> So that's a mixed answered
+[19:57] <~hatter> *answer
+[19:57] <~hatter> did it suffice, unon ?
+15[19:57] * Sav is now known as savitri
+15[19:57] * hatter sets mode: +o savitri
+15[19:57] * hatter sets mode: +v phed
+[19:57] <+unon> Yes, I was just curious if there was an easy way
+15[19:57] * savitri sets mode: +scq savitri
+15[19:58] * savitri is now known as Sav
+[19:58] <~Sav> hell
+[19:58] <+phed> guying trying nikto in cygwin, try perl nikto.pl
+[19:58] <~hatter> Profiling an IDS is almost just like profiling a sniffer, unon 
+[19:58] <+Spozm> tried that
+[19:58] <+phed> install perl
+[19:58] <+Spozm> derp i'm retarded
+[19:58] <~hatter> so you'd take shots at it that you'd usually take at a sniffer
+[19:58] <~hatter> follow?
+[19:59] <~Sav> under windows, when switching drives, you have to type the drive letter
+[19:59] <~Sav> like
+[19:59] <~Sav> e:
+[19:59] <~hatter> yeah 
+[19:59] <~Sav> and then do your CD things
+[19:59] <~hatter> I think in cygwin its like cd /cygdrive/
+[19:59] <~hatter> n then there's some shit about windows an shit in there
+[19:59] <+unon> Yeah, build a script and look what triggers what
+[19:59] <~hatter> lol
+[19:59] <~hatter> exactly unon 
+[19:59] <~hatter> or
+[19:59] <~Sav> cd /cygdrive/C/foo/bar/baz
+[19:59] <~hatter> see if you can get it to crash unon 
+[19:59] <~Sav> or sth
+[19:59] <~hatter> like different parsing bugs
+[19:59] <~hatter> see if suddenly you DoS'd the target behind the ids
+[19:59] <~hatter> lol
+[20:00] <~hatter> sometimes that can identify your IDS too
+[20:00] <~Sav> haha, it won't detect all the subtleties of scorpion
+[20:00] <+unon> Yeah, I guess that's pretty much a giveaway :D
+[20:00] <~hatter> :) Sav 
+[20:01] <~hatter> ok
+[20:01] <~Sav> <- proud
+[20:01] <~hatter> So I'll leave you guys with a final tip
+[20:01] <~hatter> You want to get all the subdomains
+[20:01] <~hatter> use gootle
+[20:01] <~hatter> *googe
+[20:01] <~hatter> *google
+[20:01] <~hatter> site:*.domain.tld
+14[20:01] * In4TehLulz (In4TehLulz@4D967D44.87E8106A.91DAB2B2.IP) has joined #school
+[20:01] <~hatter> for example
+15[20:01] <+LulzSheep> whats nikto.pl I don't have nikto.pl I do have nikto-2.1.4.tar tho and when i did 'perl.exe nikto-2.1.4.tar' my cmd spammed me with garbage
+[20:01] <~Sav> oh
+[20:01] <~hatter> you can see all of slashdot's subdomains
+[20:01] <~hatter> by using
+[20:01] <~Sav> In4TehLulz!
+[20:01] <+JohmasTefferson> welcome, in4
+15[20:01] * Sav sets mode: +v In4TehLulz
+[20:01] <+In4TehLulz> *sigh* I MADE IT!
+[20:01] <~hatter> site:*.slashdot.org
+

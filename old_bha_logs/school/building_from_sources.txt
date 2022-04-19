@@ -1,0 +1,76 @@
+*	hatter sets mode +m #school
+<Sav>	before I get sushis
+<Sav>	So
+<Sav>	Building sources, I'll assume you're on Linux
+<hatter>	Once you've extracted the compression archive, open a terminal
+and cd to the folder it extracted to
+<Sav>	but most of this can apply to OSX, too
+<hatter>	^
+<Sav>	open a terminal, xterm, gnome-terminal, whatever
+<Sav>	you first download the source package
+<Sav>	or change directory to that one
+<Sav>	for the newcomers
+<Sav>	cd /path/the/the/directory/where/the/file/lies
+<Sav>	then
+<Sav>	usually, you'll have to decompress a .tar.gz archive
+<Sav>	tar xvzf my.sourcE.package.tar.gz
+<Sav>	you'll see a bunch of file names output
+<Sav>	it will tell you in what directory it's been extacted
+<Sav>	+r
+<Sav>	you change to this directory
+<Sav>	then
+<Sav>	you'll be doing some MAGIC
+<Sav>	you'll type ./configure
+<Sav>	most of time
+<Sav>	you'll have a configure script, that's a Unix de facto standard, most
+often, it's based on autoconf.
+<Sav>	so, running ./configure will bootstrap the program compilation
+<Sav>	i.e. prepare the source for real compilation
+<Sav>	then
+<Sav>	you'll CHECK THE OUTPUT
+<Sav>	because often it'll be interesting
+<Sav>	you'll miss some libraries, or will want to enable additional
+functionalities (follow my look towards OpenSSL)
+<Sav>	install these libs
+<Sav>	if you want
+<Sav>	and rerun ./configure, with your options
+<Sav>	might be like
+<Sav>	./configure --with-more-sugar --with-more-fun --with-openssl
+<Sav>	and so on
+<Sav>	(that's optional)
+<Sav>	then
+<Sav>	make
+<Sav>	will do the actual compilation, i.e. conversion to machine code,
+linking, and family
+<Sav>	if it doesn't work
+<Sav>	you did it wrong
+<Sav>	double check the stels
+<Sav>	steps
+<Sav>	and read the README or INSTALL file
+<Sav>	one thing
+<Sav>	always READ THE DOCS
+<Sav>	ok
+<Sav>	so let's assume make has completed
+<Sav>	you'll then want to strip your binaries
+<Sav>	to remove useless crap from them
+<Sav>	that is
+<Sav>	strip path/to/binary/file
+<Sav>	protip, to find the binary
+<Sav>	searchfor a file with exec permissions
+<Sav>	that is, using find
+<Sav>	(I'm reading the man)
+<Sav>	find . -mode u=x 
+<Sav>	or rather
+<Sav>	find . -type f -mode u=x
+<Sav>	and then
+<Sav>	you'll want to type
+<Sav>	make install
+<Sav>	that's it
+<Sav>	if you download a binary, usually it will come with a makefile too
+<Sav>	you'll just have to cd to the directory where the makefile lies
+<Sav>	and do
+<Sav>	make install
+<Sav>	that's it.
+<Sav>	Google Makefile, now, and learn more about it.
+<Sav>	End if impromptu class. Questions?
+*	Sav sets mode -m #school

@@ -1,0 +1,378 @@
+	Vulcan	Okay, nmap. Whats it about?
+	crackerjax	candy dish by the door
+	=-=	Mode #school4lulz +m  by butts
+	Vulcan	Pls do butts
+	Vulcan	thx
+	Vulcan	Okay nmap. nmap is the goto for scanning networks
+	Vulcan	When you're in the planning phase of whacking a box, you want to know what the boxes are, how many there are, and what they are running.
+	Vulcan	A good way to do this is to scan the network, and the tool most ppl use is nmap.
+	=-=	Mode #school4lulz -MR  by OperServ
+	Vulcan	if I put a ~ at the front of a line, it is cmd line syntax.
+	Vulcan	~nmap scanme.nmap.org
+	Vulcan	feel free to follow along, as this server is made to be scanned, and is fairly safe to do so, as it is scanned many 100s if not 1000s of times per second.
+	Vulcan	if you type this command, many things happen.
+	butts	(can confirm, that server is safe to scan for purposes of this class)
+	Vulcan	First, the Domain name is translated to an IP address using the host machine's DNS server. Then a ICMP Echo request (Commenly refered to as a ping) is set to the resolved IP address
+	mona	we didnt root nmap.org just to get you v&, dont worry
+	Vulcan	mona butts 
+	Vulcan	a SYN packet is sent to port 443 as well, just in case ICMP is being filtered
+	Vulcan	This is the default "
+	Vulcan	Host Discovery" potion of the nmap engine.
+	Vulcan	Note: Some versions also send a TCP ACK packet to port 80, and an ICMP timestamp request.
+	=-=	Apathy_ is now known as Apathy
+	Vulcan	Then the default ports are scanned using the TCP protocol
+	=-=	psyched is now known as Anon31384
+	=-=	Apathy is now known as Anon37656
+	Vulcan	The default ports are a list of about 1500 common ports that host services we would be interested in. 20,21,22,23,80,443,8080, etc...
+	Vulcan	Something to note: I did not see any UDP ports being scanned by default. if anyone else can confirm, I would appreciate it.
+	butts	80 http 443 tls 22 ssh 21 FTP, etc
+	butts	default nmap scan only hits tcp stack afaik
+	mona	correct
+	mona	you need to tell nmap to scan UDP
+	Vulcan	^ yes, those are the protocols generally associated with those TCP ports. Just remember that these are only the "well-known" ports. And you can set your Apache 1.2 web server to listen on port 666 if you want to.
+	Vulcan	Right. on with more options!
+	mona	hail satan
+	Vulcan	Shout out to Doom! lol
+	mona	a lot of people overlook UDP when scanning btw guys
+	Vulcan	^
+	mona	it's always worth a try if you cant find any interesting TCP ports
+	mona	a lot of exploitable stuff uses udp
+	Vulcan	especially RCP 
+	Vulcan	UDP port 111
+	Vulcan	anyway, I digress...
+	Vulcan	lets say we don't want to cause the alarms to go off right away, as a port scan may do.
+	Vulcan	~nmap scanme.nmap.org -sn
+	=-=	olympiad is now known as Olympia
+	Vulcan	This option disables the port scan portion of the engine and only runs the "Host Detection" portion.
+	Vulcan	Lets say you go to starbucks and connect to the wifi.
+	Vulcan	You know there are other ppl connected to the network. By default, most OSs respond to ICMP echos on an "internal" network
+	Vulcan	you do a quick ifconfig and see your assigned IP is 10.0.0.45 on a /20 subnet.
+	Vulcan	Lets run a quick ping scan to see who is listening.
+	Vulcan	~nmap 10.0.0.45/20 -sn
+	mona	bear in mind that if you use the host detection only scan, you can miss stuff depending on how the firewall is configured
+	Vulcan	this will ping every host in the 10.0.0.45/20 network. It will also TCP SYN their port 443 as well by default, so remember that if you are in a well logged network.
+	mona	you can turn that off
+	mona	but it will fail to detect hosts
+	mona	that ignore ICMP
+	Vulcan	^ yes
+	mona	scanning is always a trade off between noise and accuracy
+	mona	you need to be able to feel out the context
+	mona	massive companies get scanned all the time
+	mona	your scan is a drop in the ocean of skids
+	mona	but when you're touching sensitive stuff and you need to be quiet, the intensive scans will ring alarm bells FAST
+	Vulcan	even if they are not hosting a secure webpage on port 443, it "should" return a RST packet telling you the port is closed.
+	Vulcan	I say should because, like mona said, if there is a firewall with a drop rule, you will receive no response.
+	Vulcan	Alright, are there any qustions so far?
+	Vulcan	(whats the unmute command?)
+	=-=	Mode #school4lulz -m  by mona
+	fsociety	like you said. is there any way of "bypassing" that?
+	butts	 /mode -m
+	AmonSec	How we can creat with nmap an quit scan ?
+	mona	it's /mode <chan> -m
+	mona	or that
+	Vulcan	thx
+	mona	fsociety: bypassing what?
+	butts	depends on client whether /mode -m will work without /mode #chan -m
+	mona	Anon37656: please rephrase in clear english
+	fsociety	when a firewall haz a drop rule mona
+	x01A	Vulcan: if a firewall has restricted one port just for one ip address, you can know what ip is set?
+	kashloca	what's the best way to determine if a port is open or closed 
+	kashloca	?
+	mona	no
+	mona	that's why when you configure your firewalls
+	mona	you configure them to drop, not reject
+	fsociety	mona do you think udw is a good firewall?
+	fsociety	ufw*
+	mona	if your packets are dropped there's no way to force it open
+	mona	i havent used ufw, but iptables is and always will be best firewall
+	=-=	Mode #school4lulz +m  by Vulcan
+	fsociety	thx mona
+	===	#school4lulz You need voice (+v) (#school4lulz)
+	mona	dropped packets = the server ignores you
+	mona	rejected packets = server tells you to fuck off
+	Vulcan	Okay, the best way to tell if a port is opened or closed can best be described by the nmap documentation. Specifically: https://nmap.org/book/man-port-scanning-basics.html
+	mona	yes
+	mona	a port that drops packets
+	mona	will read as "filtered"
+	mona	whereas as rejected packets will read as "closed"
+	Vulcan	As for the IP allowed question, sniff the traffic: or brute force the source IP
+	Vulcan	Ok back to our starbucks network.
+	Vulcan	we pinged the whole network and found NO live hosts Great. We're in a gardened network, and we are restricted to our vlan.
+	Vulcan	But wait a second, NO live hosts? Not even the router? Aha!
+	Vulcan	back to ifconfig! the default gateway is 10.0.0.50
+	Vulcan	~nmap 10.0.0.50 -Pn
+	Vulcan	This option tells nmap to skip the host discovery. (We know its up, we have internet access)
+	Vulcan	The default Ports are scanned and we see some open ports, some filtered ports, and some closed ports. Success!
+	Vulcan	"But Vulcan!" you whine, "What if Starbuck is logging and kicks me off the free wifi for messing around."
+	mona	(-Pn is also good for scanning hosts you know to be up when they claim they're down)
+	Vulcan	*sigh* fine. I'll teach you to be sneaky. You little rascals you.
+	Vulcan	~nmap 10.0.0.50 -Pn -sS
+	Vulcan	SYN Stealth Scan
+	Vulcan	this scan is effective against logging that is done against sessions.
+	Vulcan	Basically, you never complete the 3-way handshake as the port is left is a "half-open" state.
+	mona	eh
+	mona	the stealth scan isn't particularly stealthy
+	mona	in this day and age
+	Vulcan	^ mona, I'm getting there.
+	Vulcan	Dont spoil the punchline.
+	mona	haha, ok
+	=-=	reverse1 is now known as reverse
+	Vulcan	However! DUN DUN DUN! This is also the basics of a DOS attack. By leaving the ports half open, you could, (with enough traffic), starve the server of available ports.
+	Vulcan	Before you guys try to use nmap as a DOS tool, be aware that it sends a RST packet after the SYN to close the connection.
+	Vulcan	Thus keeping it "Safe for commercial penetration testing"
+	Vulcan	Okay sounds like it's "super effective"
+	mona	but there's nothing stopping you from writing your own...!
+	mona	and there are various tools that dont do that
+	Vulcan	^
+	Vulcan	well..... it was. But then ppl were like, lets build firewalls that log this sneaky SYN stealth scans. CURSES! foiled again.
+	Vulcan	mkay, slight break from the sneakyness. UDP!
+	Vulcan	UDP is a stateless protocol.
+	mona	yeah for the record
+	mona	stealth scans are not really much more stealthy
+	mona	than TCP scans these days
+	Vulcan	this means it doen't care if the port is closed and you want to send data to it.
+	mona	i want to draw attention because the name causes a lot of people to assign mystic power to it
+	Vulcan	^
+	mona	no, you can't port scan from your home address if you use ~~**STEALTH**~~
+	mona	this isn't NCIS
+	Vulcan	DONT USE -sS TO BE SNEAKY
+	Vulcan	YOUR NOT!
+	Vulcan	There is a way though, so stay tuned.
+	Vulcan	right, udp
+	Vulcan	So if a UDP port is closed, the message sent back is an ICMP Destination Unreachable message.
+	Vulcan	(basic thing I forgot to mention) -p
+	Vulcan	-p is used to specify ports.
+	Vulcan	~nmap 10.0.0.50 -Pn -sU -p 111
+	Vulcan	scan UDP port 111 of our gateway, and dont ping host.
+	Vulcan	If we get a ICMP msg, the port is closed. If we get back nothing... class?
+	=-=	Mode #school4lulz -m  by Vulcan
+	Vulcan	Anybody have an idea?
+	crackerjax	open
+	bull19dog26	open
+	AmonSec	open
+	Santa	sesame
+	fsociety	lol
+	=-=	Mode #school4lulz +m  by Vulcan
+	=-=	Dicer1 is now known as Dicer
+	fsociety	dont we get the ICMP is port is open?
+	===	#school4lulz You need voice (+v) (#school4lulz)
+	Vulcan	Correct and Incorrect!
+	Vulcan	lol, trick question.
+	Vulcan	What if there is a firewall droping all packets to UDP port 111?
+	Vulcan	It could be open, or it could be closed.
+	Vulcan	This is why you will see the message OPEN|FILTERED a lot on nmap UDP Scans
+	butts	right, the firewall can be physical hardware in front of the box. not just a firewall on the box itself
+	mona	couple other basic things that we glossed over
+	mona	you can scan a range
+	mona	by specifying CIDR notation
+	mona	i.e.
+	mona	192.168.0.0/24
+	mona	or just by typing out the range
+	mona	i.e.
+	mona	192.168.0.0-255
+	mona	you can also use a list of IP addresses with the -iL parameter
+	mona	and you can output your results in various formats with the -o paramters, i.e. -oN for normal, -oG for greppable, -oX for XML
+	=-=	Mode #school4lulz +v fsociety by mona
+	Vulcan	^all true
+	Vulcan	
+	fsociety	mona its late now Vulcan covered me
+	Vulcan	woot! I'm not a luz3r!
+	Vulcan	Mkay, the grand finale! (for tonight)
+	Vulcan	-sI
+	Vulcan	The infamous "Idle Scan"
+	Vulcan	This is (one of) the best ways to stealthily scan a network.
+	mona	but it does require some legwork
+	Vulcan	Yes it does
+	Vulcan	It works like this:
+	Vulcan	One way to determine whether a TCP port is open is to send a SYN (session establishment) packet to the port. The target machine will respond with a SYN/ACK (session request acknowledgment) packet if the port is open, and RST (reset) if the port is closed. This is the basis of the previously discussed SYN scan.
+	Vulcan	A machine that receives an unsolicited SYN/ACK packet will respond with a RST. An unsolicited RST will be ignored.
+	Vulcan	Every IP packet on the Internet has a fragment identification number (IP ID). Since many operating systems simply increment this number for each packet they send, probing for the IPID can tell an attacker how many packets have been sent since the last probe.
+	Vulcan	By combining these traits, it is possible to scan a target network while forging your identity so that it looks like an innocent zombie machine did the scanning.
+	Vulcan	Now to best understand this, I will give you some pretty pictures to follow along with.
+	Vulcan	https://nmap.org/book/idlescan.html
+	mona	i am logging the class. i will grep the joins and quits. if you want i can send it to someone for uploading
+	Vulcan	Ok, I'm gonna gloss a little, as I'm over my self given hour.
+	mona	i'll go over the details if you want
+	mona	since it's complex for noobs
+	Vulcan	I'll hit the basics, ask for ?s
+	Vulcan	then if you want to, do so. sound good?
+	mona	word
+	Vulcan	Basically: syn the zombie host
+	Vulcan	Record the IP ID
+	Vulcan	Forge a Scan Packet for the target box using the zombie box as the src IP.
+	Vulcan	send the packet and then, after the target have been given a chance to respond, but before the zombie have seen other traffic
+	Vulcan	syn the zombie again and check to see if the port was open.
+	Vulcan	This is a VERY complex problem that has been solved very neatly by nmap.
+	mona	^ if you ever want to improve your low-level socket programming
+	mona	write an idle port scanner from scratch
+	Vulcan	The pictures at that website go into detail
+	Vulcan	^^ whole heartedly agree.
+	fsociety	python is good for that
+	fsociety	^
+	Vulcan	Mkay, for those of you who just want the basics.
+	Vulcan	In order for it to work, and the legwork that mona was talking about is this.
+	=-=	psyched is now known as Anon9877
+	Vulcan	You need to find a host that does not see much traffic, (ideally less then a packet a second)
+	Vulcan	It also must be an OS that increments is IP ID by one each TCP session.
+	mona	when you're identifying hosts to use as zombies, think about shit that doesnt see much traffic and isnt heavily monitored, and is running an old or basic OS
+	mona	hint: it's not a PC
+	mona	printers are the best
+	Vulcan	Yes
+	Vulcan	Also some old telnet servers, some ftp servers
+	Vulcan	just remember, if they are on the internet, they are being scanned CONSTANTLY.
+	Vulcan	A zombie that you have been using for a week might suddenly get 1000s of packets per second.
+	Vulcan	Mkay. Homework is OS detection and Ack Scanning. Q + A?
+	=-=	Mode #school4lulz -m  by mona
+	mona	first off
+	mona	does everyone have a decent understanding of how the zombie scan works
+	mona	or do you want more
+	Vulcan	MOAR DOTS!
+	butts	fucking 50 DKP minus
+	changer	yeah, i get it
+	crackerjax	more on zombie pleaz
+	bull19dog26	got it
+	kashloca	more pls
+	mona	ok
+	AmonSec	Python socket lib and scapy for scan ?
+	mona	so
+	mona	the reason you can't just spoof IPs when you send a packet
+	mona	is because the IP header is essential to delivery
+	mona	you can pretend to be google
+	mona	but they'll respond to google, not you
+	mona	the zombie scan is a way of getting around that
+	mona	it relies on the tendency of a lot of OS's, especially old ones
+	mona	to increment the IP ID every time they receive a packet, right?
+	mona	so the way it works i
+	mona	say you have zombie machine Z, and you are A, and your target is B:
+	mona	you send a SYN to Z, and it responds. you make a note of the IP ID
+	mona	then you forge a packet to B, pretending to be Z
+	mona	B responds to Z with a RST, which makes the IP ID of Z increase by 1
+	mona	then
+	mona	you send another SYN to Z
+	mona	if the IP ID has gone up by 1 since last time
+	mona	then the port was closed
+	mona	if it went up by 2
+	mona	the it was open
+	mona	because that means that Z received a RST from B
+	mona	nmap wraps this all up for you in a single command
+	mona	nmap -Pn -sI <zombie> <target>
+	NSA_Agent	I suppose you would also have to do it multiple times, and compare the resulte, in order to be sure
+	mona	obviously if Z is getting lots of traffic
+	mona	this will be unreliable and wont work
+	Vulcan	NSA_Agent, Yes, usally
+	mona	NSA_Agent: yes
+	mona	the idea behind this scan is it's extremely hard to detect
+	mona	because B gets a pakcet from you
+	mona	but with the wrong IP
+	mona	so that's not directly traceable unless there's a MITM
+	NSA_Agent	But IP spoofing would be viable for scanning of a local network like my fellow starbucks patrons, right?
+	mona	the only person you send any packets that are tracable to
+	mona	is Z
+	mona	and even then, you're just sending innocuous SYN packets to them piecemeal
+	mona	NSA_Agent: no, what you're thinking of is ARP poisoning
+	Vulcan	mona, Its "easy to detect", but they think Zombie IP is the hacker, and you get to keep the wifi access.
+	mona	which is different
+	zelith	is there a way to force a port to open
+	mona	yeah
+	mona	IP spoofing doesnt work
+	Vulcan	zelith, No
+	mona	because your IP is how traffic is routed back to you
+	mona	that being said
+	mona	you can take advantage of the IP header in a packet
+	=-=	Mode #school4lulz +m  by mona
+	mona	and that's what i'll close on
+	mona	like I said, forging IP headers in packets is usually pretty pointless
+	mona	because the server will send its response to whoever you pretended to be
+	mona	instead of you
+	mona	but if you are comitted to being noisy
+	mona	and want to make tracing you as hard as possible
+	mona	you can use IP spoofing in nmap's "decoy" scan
+	mona	basically the idea is
+	mona	that you send your real scan packets with a tracable IP
+	mona	but for every legit packet you send with your IP in the header
+	mona	you send any number of decoy packets
+	mona	with fake IP headers
+	mona	the pakcets are identical in every other way
+	mona	effectively you're making it look like 5, or 10, or 300 servers are all doing the exact same scan
+	mona	and only one of them really is
+	mona	needless to say this is noisy as fuck
+	mona	the syntax for a decoy scan is -D followed by a list of IPs to spoof
+	mona	i.e. nmap <blah blah> -D 8.8.8.8,8.8.4.4,208.67.222.222,206.67.220.220
+	=-=	Mode #school4lulz -m  by mona
+	mona	go ahead w/ questions
+	crackerjax	is proxychains a good way to hide your real IP and have no need for the zombie host
+	mona	crackerjax: yes and no
+	mona	if you have a good proxy
+	mona	then adding a proxy is another hop between you and your target
+	crackerjax	thur Tor
+	fsociety	can nmap be used with tor?
+	mona	proxychains + zombie
+	mona	is better than proxychains or zombie
+	mona	fsociety: yes, but if you use proxychains you might have to fiddle with configs
+	mona	nmap tries to be too smart sometimes
+	fsociety	hmm i see
+	mona	google it, it's a common issue with several stack overflow threads or whatever
+	mona	just google like "nmap through tor proxychains"
+	jetblackcloud	mona: there is also the iccue that udp packets don't go over tor and will potentially leak right though proxychains
+	fsociety	what about vpn?
+	mona	yes
+	mona	depends on the vpn, but it should transparently proxy all your traffic
+	mona	in which case yes
+	fsociety	good
+	mona	i would not advise high-volume scanning on only a vpn
+	mona	no matter how much you think you trust it
+	mona	be safe
+	fsociety	VPN -> TOR -> ?
+	fsociety	seems better
+	NSA_Agent	IP spoofing again: I was actually thinking of a wifi card in monitor mode, wouldn't I be able to see all the wifi traffic and hence the probe replies too?
+	crackerjax	i use VPN then proxychains configed to Tor
+	mona	VPN-TOR is good if you're not doing anything too heinous
+	jetblackcloud	fsociety: using nmap with somehting like tor generally requires a few command line settings. in partical -sT
+	Parabole	i love free VPN x)
+	mona	check your openvpn version/configs
+	mona	and your proxychains configs
+	mona	and use tcpdump and dns leak testers
+	mona	to make sure you aren't leaking
+	mona	and dont use free vpnS
+	fsociety	i have checked with vpn leak tests and with wireshark
+	mona	you're better off using no VPNs than introducing a point of failure that is almost guaranteed to betray you to the feds
+	fsociety	there are no leaks from my side
+	crackerjax	no love for free VPN lulz
+	Vulcan	NSA_Agent, Yes, monitor mode would work, but only if you were scanning the local network
+	changer	free = not good lol
+	mona	best case scenario you're routing your suspicious traffic through a box that will cooperate with feds and thus produce additional evidence of your evil deeds
+	crackerjax	^
+	mona	that's the BEST case
+	changer	^
+	crackerjax	is it also good idea to always spoof your MAC?
+	mona	in general yes
+	mona	it's not necessary in some circumstances
+	mona	but why not?
+	mona	it costs you nothing to do
+	mona	only time it could be a problem
+	mona	is some shitty routers
+	mona	that associated users with MACs
+	fsociety	mona how can we do that
+	mona	you can fill up their tables and they'll refuse all new connections
+	crackerjax	correct i do always before scans
+	mona	fsociety: you can do it with ipconfig but macchanger is a useful tool
+	mona	that's a bit more fully featured
+	fsociety	its in apt?
+	mona	ifconfig*
+	mona	should be
+	jetblackcloud	yes
+	fsociety	great
+	crackerjax	built in if you have Kali
+	fsociety	Debian 
+	maxnull	Mona, What about modern firewalls, they will usually detect that your zombie look a like packet is coming from the wrong interface/zone and sound the spoofing alarm, thoughts about that? Is a slow a scan less suspicious than risking the spoofing alert?
+	mona	zombie scans have the advantage of being not directly traceable
+	mona	your decision will be contextual
+	mona	if you want a difficult to detect scan that is extremely hard to trace, zombie scan
+	mona	if you want fly very low under the radar and be very hard to detect in the first place
+	mona	slow scan
+	mona	but that shit's boring af
+	Vulcan	If you are scanning from the internet side of the interface, and the zombie is on the internet side of the interface, should be no spoofing alarm.
+	mona	usually a slow scan is to be reserved for the really sensitive stuff
+	mona	and there's not much that falls into the neat category of small enough not to be constantly bombarded with scans and important enough to have a very high-end firewall
+	mona	there are def occasions when max caution is desirable though
+	mona	but not 99.9% of the shit you'll scan

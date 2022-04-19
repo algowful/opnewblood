@@ -1,0 +1,417 @@
+<@crackerjax> A network is a way for computers and devices to share resources, 
+<@crackerjax> be it, the internet or a local private network.
+<@crackerjax> Computers and devices are connected to some kind of switching device such as, 
+<@crackerjax> a network hub to the main server or a router connecting to the internet.
+deep_blue (ClownPorn@piratebay.se) left the channel
+<@crackerjax> The internet is mainly comprised of interconnected computers 
+<@crackerjax> hosting various forms of software or webpages. 
+<@crackerjax> I think everyone knows that much 
+<@crackerjax> but for the noobs 
+<@crackerjax> ok
+<@crackerjax> network types
+<@crackerjax> LAN-Local Area Network
+<@crackerjax> WAN-Wide Area Network
+<@crackerjax> WLAN-Wireless Local Area Network
+<@crackerjax> LAN and WLAN are the most common and will be the majority of networks you will encounter.
+deep_blue (ClownPorn@piratebay.se) joined the channel
+deep_blue (ClownPorn@piratebay.se) left the channel
+deep_blue (ClownPorn@piratebay.se) joined the channel
+<@crackerjax> What data moves between those hubs and devices is the more technical side, so get ready...
+deep_blue (ClownPorn@piratebay.se) left the channel
+deep_blue (ClownPorn@piratebay.se) joined the channel
+<@crackerjax> TCP is a connection-oriented protocol, which means a connection is established and maintained 
+deep_blue (ClownPorn@piratebay.se) left the channel
+<@crackerjax> until the application programs at each end have finished exchanging messages.
+<@crackerjax> It determines how to break application data into packets that networks can deliver, 
+deep_blue (ClownPorn@piratebay.se) joined the channel
+<@crackerjax> sends packets to and accepts packets from the network layer, manages flow control,
+PrinterPaint (Instantbir@localhost) joined the channel
+goodbye (goodbye@localhost) joined the channel
+<@crackerjax> andM-bM-^@M-^Tbecause it is meant to provide error-free data transmissionM-bM-^@M-^Thandles retransmission 
+<@crackerjax> of dropped or garbled packets as well as acknowledgement of all packets that arrive. 
+ditchmedic (ditchmedic@localhost) joined the channel
+<@crackerjax> In the Open Systems Interconnection (OSI) communication model, 
+<@crackerjax> TCP covers parts of Layer 4, the Transport Layer, and parts of Layer 5, the Session Layer.
+<@crackerjax> For example, when a Web server sends an HTML file to a client, it uses the HTTP protocol to
+<@crackerjax> do so
+<@crackerjax> The HTTP program layer asks the TCP layer to set up the connection and send the file.
+<@crackerjax> The TCP stack divides the file into packets, numbers them and then forwards them individually
+Stacey (Instantbir@localhost) joined the channel
+<@crackerjax> to the IP layer for delivery.
+<@crackerjax> Although each packet in the transmission will have the same source and destination IP addresses,
+<@crackerjax> packets may be sent along multiple routes
+<@crackerjax> The TCP program layer in the client computer waits until all of the packets have arrived
+arc3v1l (arc3v1l@localhost) joined the channel
+<@crackerjax> then acknowledges those it receives and asks for the retransmission
+<@crackerjax> on any it does not (based on missing packet numbers), then assembles them into a file and delivers the file to the receiving application.
+<@crackerjax> ok everyone following so far
+<%polski_krol> I mean - I know I am
+ditchmedic (ditchmedic@localhost) left IRC (Read error)
+<@crackerjax> this is the TCP/IP stack layout
+unk (j0nh@localhost) joined the channel
+<@crackerjax> Application Layer>Transport Layer>IP Layer>Hardware Layer
+<@crackerjax> each layer of the model
+<@crackerjax> has its own set of protocols
+<@crackerjax> here are just some
+<@crackerjax> Application layer
+<@crackerjax> BGP DHCP DNS FTP HTTP IMAP LDAP MGCP NNTP NTP POP ONC/RPC 
+<@crackerjax> RTP RTSP RIP SIP SMTP SNMP SSH Telnet TLS/SSL XMPP 
+<@crackerjax> if you guys want to know what any of these are just look them up
+<@crackerjax> I dont want a ton of questions about what is SSH
+<@crackerjax> Transport layer
+Anonimo69 (AnonUser@localhost) left IRC (Quit: Leaving)
+<@crackerjax> TCP UDP DCCP SCTP RSVP 
+<@crackerjax> most of you should have heard of a lot of these protocols already
+Diamond (Instantbir@localhost) joined the channel
+<@crackerjax> Internet layer
+<@crackerjax> IP IPv4 IPv6 ICMP ICMPv6 ECN IGMP IPsec 
+<@crackerjax> Hardware Layer
+<@crackerjax> ARP NDP OSPF
+|darling| (ob1@localhost) joined the channel
+<@crackerjax> L2TP PPP MAC
+<@crackerjax> Ethernet DSL ISDN FDDI 
+<@crackerjax> ok that was just some basic protocols
+<@crackerjax> onward
+<@crackerjax> To establish a connection, TCP uses a three-way handshake.
+<@crackerjax> Before a client attempts to connect with a server, 
+<@crackerjax> the server must first bind to and listen at a port to open 
+SPetrus (SPetrus@localhost) left IRC (Read error)
+<@crackerjax> it up for connections:
+<@crackerjax> this is called a passive open
+|darling| (ob1@localhost) left the channel
+<@crackerjax> Once the passive open is established, a client may initiate an active open
+goodbye (goodbye@localhost) left IRC (Quit: Leaving.)
+<@crackerjax> To establish a connection, the three-way (or 3-step) handshake occurs
+hank3310 (Instantbir@localhost) joined the channel
+<@crackerjax> injecting packets of your own
+<@crackerjax> into the handshake
+<@crackerjax> is the basic way
+<@crackerjax> to hijack 
+<@crackerjax> wifi
+<@crackerjax> or capturing the handshake
+<@crackerjax> ok so 3 steps to handshake
+Vulcan (Mr@localhost) left IRC (Quit: Mom is coming, g2g)
+Vulcan (Mr@localhost) joined the channel
+<@crackerjax> SYN: The active open is performed by the client sending a SYN to the server
+bemis (Instantbir@localhost) left IRC (Quit: bemis)
+<@crackerjax> The client sets the segment's sequence number to a random value A
+<@crackerjax> SYN-ACK: In response, the server replies with a SYN-ACK
+<@crackerjax> The acknowledgment number 
+<@crackerjax> is set to one more than the received sequence number i.e. A+1
+<@crackerjax> and the sequence number 
+<@crackerjax> that the server chooses for the packet is another random number, B
+<@crackerjax> ACK: Finally, the client sends an ACK back to the server
+<@crackerjax> The sequence number is set to the received acknowledgement value i.e. A+1
+<@crackerjax> and the acknowledgement number is set to one more than the received sequence number i.e. B+1
+<@crackerjax> With these, a full-duplex communication is established.
+Neo (chatzilla@localhost) left IRC (Quit: ChatZilla 0.9.92 [Firefox 38.8.0/20000101000000])
+amostera (elkishir@localhost) joined the channel
+<@crackerjax> ok one note
+<@crackerjax> ARP requests
+<@crackerjax> Address Resolution Protocol
+alkovich (inorich@localhost) joined the channel
+<@crackerjax> This will be a common term that you will hear in future lessons
+nyselaxative (nyselaxati@localhost) left IRC (Quit: Leaving.)
+<@crackerjax> ARP is used for mapping a network address 
+<@crackerjax> (e.g. an IPv4 address) to a physical address like an Ethernet address (also named a MAC address)
+<@crackerjax> TCP PORTS
+<@crackerjax> ok how about i stop for questions
+<@crackerjax> before ports
+nanonymous1 (Instantbir@localhost) joined the channel
+|darling| (ob1@localhost) joined the channel
+ad3pt sets mode -m
+<Stacey> what's your favorite color?
+<@crackerjax> lol
+xertx (xert@localhost) left IRC (Read error)
+<@crackerjax> black
+<Vulcan> Good so far. A little dis-jointed but keep it up.
+<Stacey> jk good presentation so far
+nanonymous1 (Instantbir@localhost) left IRC (Read error)
+<@crackerjax> im new to this
+<@crackerjax> lol
+nanonymous (Instantbir@localhost) joined the channel
+<Gruben> Good review, good knowledge
+<kashloca> keep the good work
+<@ad3pt> any other questions other than Stacey's amazingly insightful one?
+<amostera> did the solution for homework last time was posted already?
+<Parabole> you re doing well
+nanonymous1 (Instantbir@localhost) joined the channel
+<Vulcan> Maybe explain the difference between the addresses if you know them. (MAC vs ip vs port)
+nanonymous (Instantbir@localhost) left IRC (Read error)
+nanonymous1 is now known as nanonymous
+<@crackerjax> well
+<@crackerjax> mainly the numbering system i believe
+<@crackerjax> as3pt?
+<@crackerjax> MAC is not sure of how long
+nanonymous (Instantbir@localhost) left IRC (Read error)
+<Vulcan> 6 bytes
+<@crackerjax> it identifies a specif device
+<@crackerjax> specific
+nanonymous (Instantbir@localhost) joined the channel
+<@crackerjax> ip address
+<@crackerjax> physical address on internet of a single host machine
+<@crackerjax> port
+<Gruben> Also subnetting 
+<kashloca> i have a question if the acknowlegment number doesn't follow what you sais like instead of B the client send B+2 or B+3 what the server will do?the same thing for the sequence
+<@crackerjax> a communications door 
+<kashloca> ??
+<@crackerjax> that i dont know
+nanonymous1 (Instantbir@localhost) joined the channel
+nanonymous (Instantbir@localhost) left IRC (Read error)
+<Gruben> IP addresses also vary by class
+nanonymous1 is now known as nanonymous
+nanonymous (Instantbir@localhost) left IRC (Quit: nanonymous)
+<@crackerjax> i believe they have to match up for the correct handshake to be made
+<Vulcan> kashloca, I can answer that, if you would like me to. pm me
+<Vulcan> crackerjax, Correct
+hank3310 (Instantbir@localhost) left IRC (Read error)
+<kashloca> okayo thanks
+<@crackerjax> but you can trick the handshake 
+<@crackerjax> by sending deauthentication packets
+<@crackerjax> modifying packet info
+<@crackerjax> can 
+<@crackerjax> fucking lag sorry
+<@crackerjax> you can modify packets
+<@crackerjax> to insert code
+<@crackerjax> to force certain actions
+<@crackerjax> restart a router
+<@crackerjax> so on so on
+<@crackerjax> well lets move on
+<@crackerjax> TCP PORTS
+<@crackerjax> a port
+<@crackerjax> is a communications doorway
+<@crackerjax> specific ports
+<@crackerjax> are related to certain applications
+<@crackerjax> there are 65535 ports 
+[reversehope] (chatzilla@localhost) left IRC (Ping timeout: 240 seconds)
+<@crackerjax> Some examples include: FTP (20 and 21), SSH (22), TELNET (23), SMTP (25), SSL (443) and HTTP (80)
+<@ad3pt> what is SSH?
+<Vulcan> lol
+<@crackerjax> ports allow for multiple resources to be used on one system
+<@ad3pt> jk jk keep going :)
+<@crackerjax> lol
+<Diamond> crackerjax
+<Diamond> What is the operating system that you using ?
+<amostera> does the class started already?
+<@crackerjax> yeah this isnt a serious thing here guys
+<deep_blue> ldsjfsd
+ad3pt sets mode +m
+<@crackerjax> just dropping some tips
+<@crackerjax> I am using Linux
+<%polski_krol> Would also be worth dropping some network tools on the newbies.
+<@crackerjax> ok
+<%polski_krol> especially linux network related stuff.
+<@crackerjax> best network tool i use
+<@crackerjax> Wireshark
+nyselaxative (nyselaxati@localhost) joined the channel
+Rudolph (user@localhost) left IRC (Ping timeout: 240 seconds)
+<@crackerjax> try this if you want to see how requests are made over a network
+hckw3 (Instantbir@localhost) left IRC (Ping timeout: 240 seconds)
+<@crackerjax> there are a lot of tools for TCP actions
+Gruben (User@localhost) left IRC (Ping timeout: 240 seconds)
+<@crackerjax> aircrack suite
+justforyou_ (justforyou@localhost) joined the channel
+<@crackerjax> reaver
+Louie_Nichols (chatzilla@localhost) left IRC (Ping timeout: 240 seconds)
+opsechs (no@localhost) left IRC (Ping timeout: 240 seconds)
+unk (j0nh@localhost) left IRC (Ping timeout: 240 seconds)
+Anon35748 (Instantbir@localhost) left IRC (Ping timeout: 240 seconds)
+<@crackerjax> any other suggestions on tools
+Zildj (Instantbir@localhost) joined the channel
+<%polski_krol> nc is a good one
+chuckles (Instantbir@localhost) joined the channel
+AnonV0125 (chatzilla@localhost) joined the channel
+hckw3 (Instantbir@localhost) joined the channel
+<@crackerjax> you will find with linux that the tools are endless
+rapha3l (rapha3l@localhost) left IRC (Read error)
+<@crackerjax> and you can write your own
+unk (j0nh@localhost) joined the channel
+justforyou (justforyou@localhost) left IRC (Ping timeout: 240 seconds)
+Gruben (User@localhost) joined the channel
+aiwaz (user@localhost) left IRC (Ping timeout: 240 seconds)
+lufuspe_ (lufuspe@localhost) left IRC (Ping timeout: 240 seconds)
+Zildj is now known as Anon2913
+v (yer@localhost) left IRC (Ping timeout: 240 seconds)
+N1NJ4BR (N1NJ4BR@localhost) left IRC (Ping timeout: 240 seconds)
+kashloca (slodurak@localhost) left IRC (Ping timeout: 240 seconds)
+chuckles is now known as Anon1586
+<@crackerjax> i can cover some TCP vulneribilites quick
+|darling| (ob1@localhost) left IRC (Ping timeout: 240 seconds)
+dis0bey (dis0beyer@localhost) left IRC (Ping timeout: 240 seconds)
+rapha3l (rapha3l@localhost) joined the channel
+Freddy (User@localhost) left IRC (Ping timeout: 240 seconds)
+SinfulHazeCE_ (SinfulHaze@localhost) left IRC (Ping timeout: 240 seconds)
+<@crackerjax> Denial of service
+ProbandoProbando (ProbandoPr@localhost) left IRC (Ping timeout: 240 seconds)
+<%polski_krol> Python is great for some simple network tools for anyone curious
+malefic (malefic@localhost) left IRC (Ping timeout: 240 seconds)
+alkovich (inorich@localhost) left IRC (Ping timeout: 240 seconds)
+Snoop (Snoop@localhost) left IRC (Ping timeout: 240 seconds)
+v (yer@localhost) joined the channel
+<@crackerjax> you can even use Imspect Element on Firefox
+Rudolph (user@localhost) joined the channel
+<@crackerjax> Inspect Element
+<%polski_krol> For a DoS?
+Snoop (Snoop@localhost) joined the channel
+<@crackerjax> To view whats going on
+ProbandoProbando (ProbandoPr@localhost) joined the channel
+<%polski_krol> or for network tools
+<@crackerjax> nope
+<%polski_krol> ah , yes
+<@crackerjax> tool
+dis0bey (dis0beyer@localhost) joined the channel
+<@crackerjax> so DOS
+aiwaz (user@localhost) joined the channel
+<@crackerjax> By using a spoofed IP address and repeatedly sending purposely assembled SYN packets
+Anon39566 (Instantbir@localhost) left IRC (Read error)
+<@crackerjax> followed by many ACK packets
+Freddy (User@localhost) joined the channel
+sahnoun (whois@localhost) joined the channel
+<@crackerjax> basiclly a DOS attack
+lufuspe_ (lufuspe@localhost) joined the channel
+<@crackerjax> you flood the server with data
+dis0bey is now known as Anon53226
+<@crackerjax> and comsume large resources
+SinfulHazeCE_ (SinfulHaze@localhost) joined the channel
+kashloca (slodurak@localhost) joined the channel
+<@crackerjax> fucks it up keeping track
+Louie (chatzilla@localhost) joined the channel
+<@crackerjax> of all the bad connections
+alkovich (inorich@localhost) joined the channel
+malefic (malefic@localhost) joined the channel
+N1NJ4BR (N1NJ4BR@localhost) joined the channel
+opsechs (no@localhost) joined the channel
+<@crackerjax> Connection hijacking
+<@crackerjax> An attacker who is able to eavesdrop a TCP session and redirect packets can hijack a TCP connection
+<@crackerjax> To do so, the attacker learns the sequence number from the ongoing communication and forges a
+blur (blur@localhost) joined the channel
+<@crackerjax> false segment that looks like the next segment in the stream
+Stacey (Instantbir@localhost) left IRC ([Onion.IRC] Local kill by butts (hi))
+Stacey (Instantbir@localhost) joined the channel
+Stacey (Instantbir@localhost) left IRC ([Onion.IRC] Local kill by butts (hi))
+Stacey (Instantbir@localhost) joined the channel
+<@crackerjax> you can inject your own data
+<@crackerjax> ARP poisoning
+<@crackerjax> more on ARP 
+<@crackerjax> ARP messages contain the IP address of a network resource
+<@crackerjax> such as the default gateway, or a DNS server
+<%polski_krol> Probably worth explaining the purpose of ARP.
+<@crackerjax> can you explain ARP more in detail
+
+<%polski_krol> Sure,
+<%polski_krol> just about it
+<%polski_krol> or its attack vector
+AnonV0125 (chatzilla@localhost) left IRC (Ping timeout: 240 seconds)
+<%polski_krol> okay ill just assume whichever
+<%polski_krol> So ARP is a necessary evil
+<@crackerjax> maybe just what the protocol is
+<%polski_krol> Address Resolution Protocol
+<%polski_krol> It basically is for your local network
+<%polski_krol> to know who is who
+<%polski_krol> If you aren't familiar with mac addresess 
+<%polski_krol> now is the time to read up on them
+<%polski_krol> arp is necessary to figure out your gateway
+<%polski_krol> and each machine on a network will use it
+<%polski_krol> The problem with ARP, although im not master of its protocol
+<%polski_krol> Is that it kind of messily handles the traffic, depending on your network setup
+<%polski_krol> its muted so i cant ask if everyone understands
+ad3pt sets mode -m
+<@ad3pt> on it boss
+<%polski_krol> im like 1/4 op 
+<%polski_krol> so ty
+<%polski_krol> anyone have any questions about ARP so far
+polski_krol listens to the crickets.
+<@crackerjax> that was really all I had up to finishing with ARP 
+<%polski_krol> k so no i take it
+<%polski_krol> The only point i wanted to make about arp
+<%polski_krol> Is the amusement behind arp poisoning 
+changer (Instantbir@localhost) joined the channel
+<@crackerjax> its a request and reply protocol
+<Stacey> Is that similar to fire sheep
+<@crackerjax> that is what i knew
+<%polski_krol> fire sheep is that android app correct?
+<%polski_krol> I think it operates a few attacks
+<%polski_krol> arp is more from a regular machine
+<Stacey> It was a chrome extension or something I used way back not sure if it works anymore
+<%polski_krol> to send spoofed arp packets
+<%polski_krol> this allows you to possibly assume the gateway, or whichever host you want to be
+<%polski_krol> by poisoning arp tables and whatnot
+|darling| (ob1@localhost) joined the channel
+<%polski_krol> look it up more if you're curious
+<Stacey> Any easy apps like that right now?
+<%polski_krol> back to you crackerjax <3
+<changer> hey, is there gonna be a transcript for the latest mini lesson? 
+<%polski_krol> kali linux has a suite of network attack tools
+<deep_blue> there's nothing dryer than an african childs mouth
+<sahnoun> what is the systeme at all  of you use it ? 
+<%polski_krol> Linux
+<deep_blue> DOS
+<@crackerjax> Kali is prebuilt with many handle network and pen tools
+<Stacey> what tool on Kali for session hijacking 
+<deep_blue> kali == childs play
+polski_krol kicked deep_blue from the channel (polski_krol)
+<@ad3pt> basically, if youre not using linux, start.
+<sahnoun> ok what it the name of your linux 
+deep_blue (ClownPorn@piratebay.se) joined the channel
+<deep_blue> hurtfuk
+<deep_blue> hurtful
+<Gruben> My linux's nme is steve
+<Gruben> name
+<changer> debain based distros are pretty good
+<%polski_krol> If you want to troll, please go to main.
+<deep_blue> suppressing my rights
+<@crackerjax> that was really all i had 
+<deep_blue> im serious tho
+<@ad3pt> theres many flavors of linux, for noobs, look into ubuntu or mint
+<@crackerjax> lookup TCP Tramsmission Control Protocol to learn more
+<Stacey> What tool on Kali is good for session hijacking or is it something that requires multiple tools ?
+<sahnoun> I am sorry but I use the linux like kali and ubuntu and parrot fidora and centos 
+<@crackerjax> Try Kali Linux if your looking for all the tools in one
+<@crackerjax> just go from there
+<Vulcan> Stacey, multiple tools are required to set up a successful session hijack unless you're cookie grabbing like it's 2005.
+<Gruben> U guys use airecrack at all to freeload wifi
+<Gruben> airmon etc
+<%polski_krol> Depends on the router setup Gruben .
+<Stacey> My wifi card is too shitty I need to buy a plug in
+<amostera> I'm excited let's start
+<sahnoun> I whnt to learn wth you I so sorry 
+<Anon52671> how do i use w ifi connection i got from aircrack in kali in a vm in my host?
+<%polski_krol> Also, many thanks for the presentation crackerjax <3
+<@ad3pt> ^
+<Vulcan> ^^
+<@crackerjax> i hope people got some info out of it
+<@crackerjax> at least some notes to research more
+<@ad3pt> you still haven't told us what SSH is...
+<deep_blue> how do i get the system 32 virus off should be the next lesson
+<@ad3pt> :D
+<Snoop> Ty crackerjax
+<changer> crackerjax is there gonna be a transcript for your class? i missed it :/
+<@crackerjax> i hope to have more structured lessons in the future
+<@crackerjax> got to start somewhere
+Anon52671 (anon666@localhost) left the channel
+<@crackerjax> there will be a transcript 
+<@crackerjax> an OP should upload it later
+<DLF> tks cj
+<%polski_krol> I could use the scrollback
+DLF (0@localhost) left IRC (Read error)
+<sabri20> i really thanfull for crackerjax 
+<changer> ok thanks, looking forward to it :)
+<%polski_krol> unless someone else already recorded the lesson
+<@ad3pt> deep_blue: install linux over windows, lesson complete
+<deep_blue> Opressor 
+<%polski_krol> I think its a good start man
+<%polski_krol>  /kickban deep_blue
+<deep_blue> lol
+<%polski_krol> ;)
+<deep_blue> weeb
+<@crackerjax> ok so lets dive in SSH
+<@crackerjax> this will be a long lesson
+<@crackerjax> lol
+<Vulcan> lol
+<Stacey> Created a pinata of crackerjax. 
+<@crackerjax> not for me
+<@ad3pt> start from the very beginning
+<Stacey> kids are going to love smashing this thing with bats
+<@crackerjax> the VERY beginning
+<@crackerjax> ok this is a server
+<@crackerjax> lol

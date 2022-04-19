@@ -1,0 +1,322 @@
+Hacking Monetization (by Fox)
+
+* Fox has changed the topic to: Hacking Monetization      || LOLHackers.com\tracksndocs - Notes. ||  donations to 1PdAKJBv8Et5yAt9GBetsf5WxgnkLqZ9Tc (`) or 18hRWnxoHztBPDYQ9bPA1uUpN8LTrd7xbB (Fox) for more wargames || @H4ckfox || you want voice ask xoxo
+<phed> me please
+<tzaki> might aswell throw me a +v
+* xoxo gives voice to phed
+* Fox sets mode +m #school4lulz
+<Fox> Alright, just note anyone with +v
+<Fox> you say dumb shit, get kicked.
+<Fox> So todays topic is fraud.
+<Fox> Things on the internet cost money.
+* Condor has quit (Ping timeout: 240 seconds)
+<Fox> Things on the internet that we want to buy, for bad reasons we obviously don't want attached to our name.
+<xoxo> because if they do get attached to our name; we can get tracked
+<Fox> Right now if paypal knew all the accounts that were attached to me, I'd probably owe them in excess of 30-40k.
+<Fox> Now I'm going to cover how to pay, and how to get paid.
+<Fox> Obviously paying isn't as complicated as getting paid.
+* Fox gives voice to tzaki
+<Fox> Anyways
+<Fox> Paypal is obviously a good choice, as are any form of credit card numbers.
+<Fox> Paypal is a great opportunity for you to use some of those docs that we covered in the prior session.
+<Fox> Registering a paypal, should preferrably be done with a United States IP address, either VPN'd or Proxied.
+<xoxo> Fox: even if you're residing outside the US? Why?
+<Fox> Ensure that you have a clean browsing session, by private mode in chrome, ff, or IE is a good place to start.
+<Chloe`> why is that, legislation?
+<Fox> xoxo US paypals have the least amount of 'tie ups'
+<xoxo> xoxo: roger that
+<Fox> EU, IN, and AS paypals have a much higher fraud/regular applicant rate due to eastern european crime
+<Fox> so it's best to just try and look like john q public for as long as you possibly can.
+<Fox> Anyways, the preferred method to create a paypal
+<Fox> imo, is a fresh gmail matching the name of your alias
+<Fox> valid home address for someone, doesn't matter who
+<Fox> vanilla visa (prepaid visa card or refillable card with 0 ties to your information)
+<ElEzio> Fox, gmails now require a sms or phone call for verification
+<xoxo> ElEzio: no, it doesn't. that is just far pass recovery.
+<Fox> ElEzio not always. Only if multiple accounts are created from the same information.
+<ElEzio> oh ok
+<xoxo> ElEzio: for*
+<Fox> anyways
+<xoxo> Fox: any EU alternatives for vanilla visa?
+<Chloe`> $500 / month for paypal new accounts
+<Fox> Any free email provider will do
+<Fox> xoxo not positive.
+<Fox> Chloe` correct, but wrong
+<Fox> 500 withdrawl limit.
+<Fox> 500 sending limit is without CC
+<Fox> so now that we've got a CC we're in step 1 verification
+<Fox> To completely unlimit the account we need a bank.
+<Chloe`> that is if I want to convert it to hardware, or launder it with eBay, there's a possibility.
+<Fox> So, we're gonna hop on over to Etrade
+<Chloe`> even above that limit
+<Fox> Etrade is a brokerage firm that paypal recognizes instantly.
+<Fox> So whilst creating an account with a 'real' ssn (doesn't matter if it's some poor schlep from google)
+<Fox> You will have mild verification process that usually can be solved with an in depth doc dossier.
+<Chloe`> (ssn = social security number, non-us guys)
+<Fox> If not, find one and reuse the fuck out of it
+<Fox> Anyways, once the application is completed you have an account number.
+<Fox> You'd go back to paypal and enter the bank information as 
+<Fox> Etrade Bank routing (google it?) and account number
+<Fox> this will ask you to verify by deposit, or immediate with user and pass
+<Fox> put in user pass from etrade
+<Fox> bang, immediately verified paypal
+* garrett gives voice to tminus
+<Fox> Now, we move along from here into funding and purchases
+<phed> so just by using a ssn from google we can get a etrade account?
+<Fox> Yes, but you should most likely use the account within 30 minutes 
+<phed> do we need anything else for it, a real address?
+<Fox> fraud will kill those accounts
+<phed> and link that to the prepaid vias?
+<Fox> phed as long as the address validates with Etrades API as something valid you're fine
+<Fox> So no 123-fuck street
+<phed> yeah cool
+<Fox> If you have a refillable visa, you can throw up the digits from that
+<Fox> and withdraw
+<Fox> Also Chloe` for the EU I think you all can use payoneer 
+<Fox> but I'm not positive. Someone will have to verifiy
+<Chloe`> (hint: transcash, in Europe)
+<Fox> Anyways, moving down the line
+<Fox> Some pro-tips with paypal.
+<Chloe`> transcash is a prepaid Visa pair
+<Chloe`> gotta check how it works
+<Fox> Don't switch money out immediately
+<Fox> Don't get a deposit, and immediately empty the whole thing
+<Fox> Paypal gets this as money laundering
+<Fox> and will shut your shit down so fast your head will spin
+<Fox> wait a little while then pull out 3/4 and spend the rest,
+<Fox> or pull it out in a day or so
+<Fox> think like you're a REAL user, and act as such
+<Fox> Most of paypals freezes are based upon predetermined actions and time 'if' statements
+<Fox> Also if your shit is frozen, 
+<Fox> Try calling them, usually they're pretty easy to social engineer.
+<Fox> But if you have an ID lock on the account, then unless you're a forger or know one, you're pretty well fucked.
+<Fox> ID Lock = Paypal hold on the account pending visual identification of the subject.
+<Fox> Anyways, a lot of the things you can get with paypal are conversion services that can convert into different digital currencies.
+<Fox> The two with the most anonymity and value I would say would be Liberty Reserve and BitCoin.
+<Chloe`> like, credit a RandomService account and spend this virtual, deregulated money?
+<Fox> http://www.libertyreserve.com/
+<Fox> and someone get the bitcoin link
+<garrett> i prefer LR over just about anything
+<Chloe`> bitcoin.org
+<Fox> Anyways Liberty Reserve is a lovely LOVELY way to get paid
+<Fox> Liberty Reserve and BitCoin are both non-reversible forms of currency
+<Fox> where as paypal is susceptible to shady chargeback procedures from a sellers behalf
+<Fox> So for purchasing VPS, VPN's, Dedis, domains for things that are going to be hot
+<Fox> Obviously paypal and un-ID-linked prepaids are going to be your way to go
+<Fox> And garrett is going to talk about LR for a few min.
+<garrett> herp
+<Chloe`> workflow?
+<garrett> Smoke breaks yo
+<Fox> I'm grabbing a cigarette.
+<Fox> lol
+<garrett> LR is secure out of the box, all you really need is an email. 
+<garrett> Your username is randomly assigned to you, as well as your passwords, key, and master key
+<garrett> I'd suggest storing that info somewhere not on your machine.
+<garrett> LR is IP locked, so if you're going to be moving around, make sure you remember the pass to the email you used
+<garrett> Hrm
+<Chloe`> they'll ask for confirmation when connecting from elsewhere?
+<garrett> Yes, they will send you an email to confirm
+<garrett> Also, LR takes their fee from INCOMING cash
+<garrett> IE: I send Fox 1000USD, he receives 950USD
+<garrett> Other than that, uh
+<garrett> Payments from LR to LR are instantaneous
+<garrett> And LR is easily cashed out via exchange service
+<garrett> ebuygold.net does LR to WU within 24 hours
+<garrett> did i miss anything?
+<xoxo> garrett: ebuygold.net doesn't work
+<garrett> wat
+<Chloe`> .com
+<Chloe`> maybe?
+<garrett> derp
+<garrett> yes
+<garrett> .com
+<Fox> K
+<garrett> sorry
+<xoxo> garrett: got that
+<Fox> Sweet
+<ElEzio> any others like it ?
+<xoxo> garrett: what is WU btw?
+<garrett> Ah
+<garrett> Western Union
+<Fox> Western Union.
+<Fox> The holy grail of C'note pimping.
+<ElEzio> word
+<garrett> :P
+<Fox> garrett should I teach them about mules?
+<xoxo> garrett: Fox: WU asks for ID card, doesn't it?
+<phed> yes please fox
+<garrett> if you want to get into it, sure
+<Fox> Kay, so mules are unsuspecting folk
+<garrett> xoxo: you can do secret questions under a certain amt
+<Fox> Both of those places have cards as well
+<Fox> Prepaids
+<Fox> So money = goes on card
+<Fox> Also certain places will do SWIFT transfers, amongst a lot of other types
+<Fox> so it's really what you wanna do
+<Fox> But anyways,
+<Fox> Mules are people that you get to cash money for you that don't know who you are.
+<Fox> There are literally 10,000 ways to get mules
+<Fox> but my personal favorite
+<Fox> is meet someone
+<Fox> give them an entirely fake name.
+<Fox> Friend em up a bit
+<Fox> then ask them to pick up the loot as you got mugged and don't have an ID
+<Fox> it's to pay your rent, et cetera
+<Fox> then when you meet them, slip em off a hundo, and never talk to them again
+<Fox> So if the drop is hot
+<Fox> and they picked up frauded money, or money that someone is looking for
+<Fox> they are off looking for Dick
+<Fox> when you're Harry.
+<Fox> You follow?
+<xoxo> Fox: that looks kinda brilliaaaaant!
+<Fox> So just be smart.
+<Chloe`> lotsa social in that.
+<garrett> if you cannot social
+<garrett> you will never take money from online
+<garrett> to your hand
+<garrett> ever
+<Fox> We may get into a side-step of socialling
+<Fox> but not right now.
+<Fox> Anyways, monetization
+<xoxo> garrett: Fox: ooh; that I can do :p
+<Fox> the good stuff.
+* aganaktismenoi_sto_irc (~giannhs@LulzCo-669A9C40.home.otenet.gr) has joined #school4lulz
+<ElEzio> is it not possible to WU the money to another country ? and pick it up there ?
+<Fox> Monetization is how are you going to take these bomb ass skills you're learning here in #school4lulz and apply it to make loot
+<Fox> ElEzio it is indeed.
+<Fox> If you are a lucky bastard in Latvia or some shit
+<Fox> Don't give a fuck.
+<Fox> Get loot. 
+<Fox> Anyways
+<Fox> Monetization is how are you going to take these bomb ass skills you're learning here in #school4lulz and apply it to make loot
+<Fox> So your options are pretty much as Follows
+<xoxo> Fox: Belgium, kinda hot? Or Latvia-style?
+<Fox> Belgium is a cooperating country.
+<Chloe`> benelux, europe, danger.
+<Fox> I'd recommend some discretion.
+<Fox> Options for Money = 
+<Fox> Doxing for money
+<Fox> Hacking for Money
+<Fox> selling email lists
+<Fox> selling user-dbs
+<Fox> selling compromised servers
+<Fox> and my personal favorite, which bought me my first car as a kid...
+<Fox> DDOS for money.
+<Fox> There's other shit but its irrelevant right now
+<xoxo> DDos for money? So you had a botnet i suppose?
+<Fox> Anyways I'll briefly cover each
+<tminus> What do you think about spamming
+<Fox> I pissed packets of excellence every morning
+<Chloe`> like, typically, i'm sysadmin and root on some hosting, silently stream the DB to some remote location, datamine it and sell the ore?
+<Fox> tminus Spamming is also another viable solution, thank you
+<Fox> Chloe` exactly.
+<Fox> I did that a few times myself.
+<Chloe`> rates ?
+<Fox> i'll get to that with the data
+* zach (~zach@LulzCo-C17AE2F0.wks.liquidweb.com) has left #school4lulz
+* zach (~zach@LulzCo-C17AE2F0.wks.liquidweb.com) has joined #school4lulz
+<Chloe`> kthx
+<Fox> now someone put in something about selling exploits.
+<Fox> Going to clarify.
+<Fox> WE DO NOT SELL EXPLOITS TO COMPANYS FOR PROFIT.
+<Fox> Period.
+<Fox> Thats whitehat shit.
+<Fox> We don't do whitehat.
+<Fox> I don't give a fuck how broke you are, there is a RBN affiliate or someone in eastern europe willing to pay you more, and pay you more often.
+<Fox> So deal within the community on that shit
+<Fox> Anyways doxing and hacking for money is pretty self explanitory
+* xoxo gives voice to darkspline
+<Fox> So lets get down to emails and user DB's
+<tzaki> is the notes for the sqli tutorial anywhere?
+<Fox> User db's are valuable when cracked from MD5 to plaintext as you are able to sell these to a lot of people
+<Fox> Tzaki, stfu. ask that later.
+<xoxo> (off-topic: any good md5-cracker)
+<tzaki> kk
+<Fox> Anyways
+<Fox> When user db's are converted to plaintext, you are able to do two things
+* xoxo gives voice to zach
+<Fox> split it into two pieces, one being an email list
+<Fox> the other being the user:pass combo
+<zach> xoxo: hashcat
+<Fox> So divvy that up and start making yourself some friends
+<Fox> Spammers, and frauders love this kind of shit
+<Fox> I've sold email DB's in the $5,000 USD range, and user db's in the $2,000 range.
+* qqqq (~User@LulzCo-72899B27.appliedops.net) has joined #school4lulz
+<Fox> This is good money, for good data.
+<darkspline> wow!
+<Fox> Obviously, if you crack iluvpuppies.blogspot.com
+<Chloe`> rate per row?
+<Fox> No one gives a flying fuck.
+<xoxo> Fox: everything of this should be done with VPN right? (or Tor)
+<xoxo> #justtipsfornewbies
+<Fox> Chloe` all dependent upon the mark
+<Fox> xoxo yes
+<Fox> Anyways, moving down the line to...
+<Fox> DDOS FOR MONEY.
+<Fox> :)
+<xoxo> (your first carà
+<xoxo> (your first car)*
+<Fox> So DDOS is Distributed Denial Of Service.
+<Fox> AND NOT LOIC YOU FUCKING NOOB ASS FAGGOTS.
+<zach> and RAID is backup
+<zach> :D
+<Fox> Fucking hate loic....
+<Fox> Fucking hate loic....
+* Fox has kicked zach from #school4lulz (Shut the fuck up.)
+* zach (~zach@LulzCo-C17AE2F0.wks.liquidweb.com) has joined #school4lulz
+<Fox> Anyways.
+<Fox> Anyone ready to pay you to DDOS is either A. In a vendetta, or B. too retarded to throw around packets themselves.
+<Fox> Charge them accordingly.
+<Fox> Sec. gents.
+<Fox> Anyways
+* xoxo gives voice to zach
+<Fox> Pisser I need someone to handle things for a few seconds
+<Fox> I got a client calling
+<xoxo> Whatcha got bro?
+<Chloe`> ok typically it will be a good investment to write automated datamining tools. best way to retrieve the data? i'd use a base64-ed GET
+<Chloe`> (no file, no trace, no scp, just a random domain)
+* Canc3R (anonymous@7C5C58FC.E1C0F028.100FBD6A.IP) has joined #school4lulz
+* aganaktismenoi_sto_irc has quit ()
+<Fox> <3 keep going Chloe` 
+<Fox> Gonna be like 10 min
+<zach> Fox: anything I can do for you today?
+<Chloe`> Once you can do SQL injection I assume it is easy to fetch data you want. Typically try a table named prefix_customers or prefix_users, with sing. variant. Use of EXPLAIN sql command might be cool if you can manage it 
+<Chloe`> as I am a shell owner, I'll usually use streamlined bash that will perform a GET request. One single line in history, easy to grep out, usually won't be caught by a firewall (if you're root you're supposed to know anyway)
+<Chloe`> if you can just inject a php file, for the sake of it, don't send anything to a domain you own. rather exploit another one, to make it harder to track you. or buy one with the great techniques Fox teaches you, with a fake identity, have it point to a random VPS and parse its logs. Whatever, these are disposable data IMO. I'm consdering doing such things for demonstration purposes
+<eax> note: if you sqli a 5.xx sql server you can use information_schema to pull up tables and columns and you won't need to guess
+<Chloe`> yup eax, that's a good point indeed :) on some hosts (my former employer's for example), information_schema can't be accessed with plain accounts
+<Chloe`> dunno why. probably some configuration trick
+<zach> Chloe`: http://www.wildcardsecurity.com/security101/index.php?title=SQL_injection#Blind_injection
+<Chloe`> thx
+<Chloe`> another idea: target common platforms, like ecommerce websites
+<Chloe`> they usually have lots of flaws (I'm an ecommerce dev, I know this), and are not always often updated for compatibility purposes
+<ElEzio> any word on porn sites ?
+<Chloe`> if you write stuff for oscommerce, or prestashop, and you can secure an access to lots of them, you'll get plenty of good data
+<Chloe`> not all of them use salting, afaik
+<Fox> I'll get in dumping CC's here shortly
+* Fox sets mode -m #school4lulz
+<darkspline> mostly md5 still from what I'm seeing Chloe` 
+<Chloe`> so, rainbow tabling might be an option, another being to slightly alter the code to send the unencrypted data (hee haa, base64 GET) to a random place
+* DaveH (~DaveH@LulzCo-7A24A8D1.dsl.eclipse.net.uk) has joined #school4lulz
+<Fox> Someone make a pastebin of all this data please
+<Chloe`> darkspline: salty md5 though sometimes
+<darkspline> Chloe`, really? any tricks w/salty md5 seas?
+* str has quit (Quit: http://www.mibbit.com ajax IRC Client)
+* Canc3R (anonymous@7C5C58FC.E1C0F028.100FBD6A.IP) has left #school4lulz
+<Chloe`> darkspline: bruteforce.
+<darkspline> yahh
+<darkspline> Chloe`, gotta get my gpu farm up for that
+<Chloe`> get info on cryptoanalysis.
+<darkspline> Chloe`, i've looked into it but not may short cuts that i c
+* ex (~ex@DB4CEAE5.76708DC0.B7449AAF.IP) has joined #school4lulz
+<Chloe`> an interesting project, since salts are not always that rich (some use a 2 hexchars salt, making it only 255 times slower) would be to rainbow table sal ranges
+<Chloe`> salt ranges
+<darkspline> thats true
+<Chloe`> a trick i use quite often if I come to hashing is salting with a hash, making it twofold hashing, harder to reverse
+<darkspline> i like
+<darkspline> i do something similar
+<zone> class is over?
+<Chloe`> it's not worth good money to spend time cracking such passwords, except if that's for breaking into some data you die wanting
+<Chloe`> nay, Fox is getting a cig
+<darkspline> i wanted to upgrade some stuff from sha1 to sha256 but i didn't have the origional data.  so I sha256(sha1val)
+<Fox> suspended for a second while fox makes money

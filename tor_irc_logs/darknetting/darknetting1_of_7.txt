@@ -1,0 +1,302 @@
+<@aediot> Hello everyone, I would like you to thank you all for coming to my 1st of 7-part class on Darknet.
+<@aediot> Bullshit disclaimer here, I am not responsible for what you do blah blah blah if you pm me asking me for help to fraud something or ask for cards i will ignore you blah blah blah. 
+<@aediot> That nonsense aside.
+<@aediot> By the end of these classes I fully expect you to make your first 6k within the month I finish this course. 
+<@aediot> Your first 50k within the next 4 months after that. 
+<@aediot> And your first near quarter million by the end of year one. 
+<@aediot> Everything I teach will be able to be performed from the comfort of your computer with full anonymity. 
+<@aediot> I will be going over various ways to make money, both for the technically minded and the non-technically minded. 
+<@aediot> Each trade comes with its ups and downs and each require specializations, so study on which method calls out the most to you and pick your craft. 
+<@aediot> This first part is about OPSEC specifics in regards to the Darknet and how to not fuck it up.
+<@aediot> Part two will be on surviving in the community.
+<@aediot> And part three to seven will be detailing how to actually make money.
+<&mona> hold up
+<@aediot> mona: Oi
+<&mona> logging
+<@aediot> I already got it covered
+<@aediot> <3
+<&mona> <3
+<@aediot> Now then.
+<@aediot> Now you might be thinking to yourself "Oh aediot I've already been lectured on how to maintain good OPSEC blah blah blah this class is redundant I'll just wait until you actually teach how to make the money"
+<@aediot> Well feel free to risk spending the next 20+ years in jail since you clearly know everything. 
+<@aediot> This class is to ensure that you don't rush into this nonsense and fuck yourself over with a big stick, I don't want to see anyone here locked up. 
+<@aediot> If you do plan on sticking around then I'd like to give you a few pieces of friendly advice. 
+<@aediot> First being, you should always maintain a healthy dose of fear.
+<@aediot> Not only will it save you from jail but it'll also make the game more enjoyable.
+<@muerto> and it will save you from getting ovened
+<@aediot> ^
+<@aediot> If you ever face a situation and you have the choice between paranoia and arrogance.
+<@aediot> Pick paranoia.
+<@aediot> Secondly, it's a common misconception that you need to be some tech genius to navigate the Darknet. 
+<@aediot> This is untrue.
+<@aediot> As far as the users go, these are just roundups from my own personal experience. 
+<@aediot> Id say about 5/10 Darknet users run on windows, rely on the Tor browser and dont have full disk encryption set up. 
+<@aediot> Aka "low hanging fruit", These are the ones that get arrested fairly quickly because they lack a healthy dose of fear and don't take the time required to set up properly. 
+<@aediot> About 3/10 people are a mix between skill levels. 
+<@aediot> They have good tips and tricks/know how to survive etc but they may still be running windows even though granted they're probably using something like whonix or tails in a VM paired with partial disk encryption.
+<@aediot> And lastly 2/10 people who were going to refer to as "elites" are the ones who know what will and wont get them caught. 
+<@aediot> Using fully encrypted drives, pure Linux setups, IMEI changing burners. 
+<@aediot> The whole 9 yards. 
+<@aediot> Does this mean all elites are tech smart though? 
+<@aediot> No. 
+<@aediot> They just take the necessary precautions to take to avoid jailtime. 
+<@aediot> A good number of the elites (especially the older ones) were criminals even before the Darknet and simply immigrated to the internet to adapt to the times. 
+<@aediot> These are people like Bankers in the business of money laundering, Kingpins, etc. 
+<@aediot> There are those who dev malware/exploits and such.
+<@aediot> And those are the tech smart ones, but they aren't everywhere so don't expect them to be.
+<@aediot> So, that said.
+<@aediot> What does this mean for you?
+<@aediot> Well if you take your time and prep yourself out with the knowledge we teach here as well as with your own research, you'll find your business opportunities and your own worth in the community skyrocket if you become an elite who knows tech. 
+<@aediot> People will want you to be their contacts solely for the fact that you're among the few that know about tech to the extent not many do. 
+<@aediot> And therefore can pull of better heists, better setups, and many other things that others cannot.
+<@aediot> Though I'll touch more on that in later classes.
+<@aediot> For example though, you might be asked to dev an autoshop in exchange for a cut of the profit.
+<@aediot> You might be asked for help with encryption or server setup/security setup.
+<@aediot> Aka good shit for you, the user.
+<@aediot> The only bonds that tie in the Darknet are fear and profit, if you can convince people that you can provide either they'll flock to you like moth to a flame.
+<@aediot> It'll do you good in the long run to remember that.
+<@aediot> Third, when you get to the point of eventually hanging around the Darknet community after these classes.
+<@aediot> Keep in mind this isn't a community that just "doxes for fun" or "to make a point".
+<@aediot> You're dealing with Kingpins, CEOs, Bankers, and Blackhats who only care for their personal flow of coin and the flow of commerce.
+<@aediot> The game is a tad bit different because you're dealing with greed.
+<@aediot> If they find you a threat they'll try to come after your contacts and credibility.
+<@aediot> Whether it means sabotaging your business in some way, or ruining your name with something embarrassing in an attempt to have you lose contacts.
+<@aediot> They'll try whatever they can to threaten your flow of coin, or your life if you don't keep your OPSEC up to point with the game you're playing. 
+<@aediot> Granted you won't encounter the more powerful ones just starting out when you sift through the public markets and forums first building a reputation. 
+<@aediot> (for the most part)
+<@aediot> This really only applies to you if you find yourself deeply involved. 
+<@aediot> However it's better to get into respectful habits early so that you don't screw yourself over when you do get deep into it.
+<@aediot> Lastly though, one more thing.
+<@aediot> If I'm ever watching the arrest reports one day and see anything about how one of you came from this IRC and got arrested.
+<@aediot> And then see that any of you squeeled to the Fed after being caught of your own fucking stupidity.
+<@aediot> If I ever see my personal nym aediot mentioned.
+<@aediot> Or really any of the staff here.
+<@aediot> I will take time out of my day to personally run you for everything you have. 
+<@aediot> At which point the Fed will be the least of your worries.
+<@aediot> And if I can't come after you. 
+<@aediot> I'll come after your family.
+<@aediot> And then I'll wait for you to get out of protection from their custody. 
+<@aediot> And will seek every possible opportunity available to harm you.
+<@aediot> So keep that in the back of your head when you consider snitching or saying anything. 
+<@aediot> If you're arrested, shut the fuck up.
+<@aediot> Period the end. 
+<@aediot> Now then. 
+<@aediot> Do we have any starting questions? I'm going to only be giving two chances (this one included) for questions this class but If I don't get to yours then I'll be available after class and you can just pm me with what you need. 
+< lolanonymous> You guys are lucky you have met a tech smart one, who develops exploits.
+< Deoxyribonucleic> What is IMEI changing burners
+< mithrandir> What do you mean for pure Linux setups? 
+<@aediot> Deoxyribonucleic: an IMEI is a unique number assigned to your phone that's used to identify you.
+<@aediot> mithrandir: Meaning they use nothing but linux and don't rely on windows or macOS.
+< R3lcr4w> What would be a propper setup on linux?
+< lolanonymous> aediot: you forgot to metion to not get scammed on darknet
+< anakata> R3lcr4w, I think that's topic for another class
+<@aediot> Depends on what you're trying to accomplish, that's not an answer I can swing at in once sentance.
+< TheWilyRacoon> Any distro advice?
+<@aediot> lolanonymous: If you don't have common sense I can't help you.
+<@aediot> Not here to cure stupid.
+< lolanonymous> aediot: well 70% are scammer
+<@aediot> TheWilyRacoon: Again it depends on what you're trying to do, and your threat analysis 
+<@aediot> lolanonymous: It's not that high.
+<@aediot> Escrow solves a lot of that.
+< mithrandir> how do you change the IMEI?
+< lolanonymous> thats true
+<@aediot> mithrandir: Depends on the phone.
+<@aediot> I may do a class at another time on securing phones, but I wont cover that here.
+< confusedtourist> aediot, are there any good guides out there? What if we want to set up this 'pure Linux environment'?
+< lolanonymous> but alot of people here will get scammed if it is the first time on darknet just don't be trusting
+<@aediot> confusedtourist: Look into distros like Arch, Whonix, Qubes and configure your setup in a way that covers your vulns. Keep paying attention though and I'll cover some of that.
+< mithrandir> aediot: thanks
+<@aediot> lolanonymous: I'll be covering that too.
+< lolanonymous> aediot: good
+<@aediot> Ok, moving on to part two. 
+<@aediot> Your first mission is to figure out what information your persona shares. 
+<@aediot> It's not easy, but just like anything that's worth your time it requires patience, planning, wit.
+<@aediot> As far as compartmentalizing what information you can and can't share, you'll find it's a much easier task to declare what information you CAN share with each persona. 
+<@aediot> As opposed to detailing what you can't.
+<@aediot> Example:
+<@aediot> "My name is Evil0n3, I am a frauder in the Darknet. As far as anyone is concerned I am based in the USA and my backstory is that I'm a Banker in real life but do not know which bank. Everyone in the Darknet knows I am in various carding communities and I can openly admit that I have done illegal things because I've done my tradecraft and know I'm protected."
+<@aediot> Like that^
+<@aediot> Maybe not the best of examples but you get the idea.
+<@aediot> Sharing no other information about yourself aside from those things listed is the trick to handling your day-to-day OPSEC.
+<@aediot> Identifying what you can share just makes things a whole lot simpler. 
+<@aediot> Your second mission is to run your tradecraft analysis to identify tasks, vulns, and countermeasures. 
+<@aediot> Here's the rundown.
+<@aediot> You need to identify firstly, what it is exactly that you have to protect. 
+<@aediot> We're going to be using Todd as an example. 
+<@aediot> Todd is a Kingpin who's been put in charge of three warehouses full of drugs, 10 corner dealers to sell to normies and addict who want a fix, and he gets his source from some grows in another city who ship it to a specific drop every 3 weeks.
+<@aediot> So we've identified what it is that Todd has to protect. 
+<@aediot> So now we identify the potential vulnerabilities for each. 
+<@aediot> With the three warehouses you need to cover you obviously have quite a few risks. 
+<@aediot> The purpose of the warehouses is so you have a place to stash the drugs that you give to your corner dealers. 
+<@aediot> In terms of securing it, think about a few different ways you could go about this. 
+<@aediot> You could have it set up so that you're the only person who knows about the warehouses location, meaning your contacts and dealers don't know its whereabouts.
+<@aediot> Problem is that comes with its own subset of vulns as well seeing as the implementations you have to put in place to maintain relative anonymity. 
+<@aediot> Which we are going to go over now.
+<@aediot> I'm going to be listing the subsets of the setup with numbers like 1/2/3 etc, and below the subsets I'll be listing out vulns for each subset via letters like A/B/C and for each vuln below I'll list a possible countermeasure via [] brackets.
+<@aediot> Now keep in mind this is just for the one possible way you could go about things, sky's the limit when you're working with imagination and wit.
+<@aediot> 1. You'd need to hide the contents of the boxes or packages you're putting the drugs in and either haul them in yourself (probably not the best idea) or for example hire some random heavyman company to place/move the boxes for you without knowing the packages contents or they'll snitch you out. 
+<@aediot> A) The company you randomly hired could drop the box or something could leak out and they would see that you're handling drugs which would lead to jail
+<@aediot> Countermeasure [ Seal the drugs ahead of time in vacumn tight non see-through packages ]
+<@aediot> B) If something ever happened to you your entire gang/crew would be shit out of luck unless you told them the locations before you died, not likely to happen seeing as itll likely be a gunshot wound.
+<@aediot> Countermeasure [ Leave a note that has the locations of the warehouses in a box. Then give the box to the next succesor in your crew via your will ]
+<@aediot> C) You would need to handle the drugs yourself or make trips to the warehouse to unload the drugs for passing out to the corner dealers. Your inner circle might know you're gone and if you have a snitch amongst you then he might try to tail you to the warehouse. 
+<@aediot> Countermeasure [ Actually couldn't think of one for this because its too complex and there are too many things you'd have to cover ]
+<@aediot> For the sake of completing this class within the next century I'm not going to go over every possible method, but I think you get my point on what needs to be done. 
+<@aediot> And also for the sake of time I'm not going to go over the most lengthy yet vital step which is identifying possible fuckups/things that could go wrong and finding countermeasures for those as well.
+<@aediot> An example being "if someone follows me to the warehouse, this is my countermeasure".
+<@aediot> Etc.
+<@aediot> This needs to be applied to everything you do.
+<@aediot> OPSEC is a 24/7 job and does not end when you shut off your computer and go to sleep for the night.
+<@aediot> Heists, Nym creation, Encryption, Anonymity
+<@aediot> Everything needs to be put through the fire and figured out to its fullest extent before you tackle really important shit.
+<@aediot> And do you see the time it takes to do this properly?
+<@aediot> Identifying the entirety for just ONE possibility of a way you could secure the warehouses and listing out the vulns/countermeasures for it?
+<@aediot> And like I said we only covered one possible way to go about this, imagine how long it would take to list out the top four or five possible ways to secure the warehouses. 
+<@aediot> And then you'd have to deal with the other two things you need to protect.
+<@aediot> Aka the corner dealers and your drop source. 
+<@aediot> This is the level of time and patience that it takes to nail down your OPSEC and get it right. 
+<@aediot> If you rush into this without figuring countermeasures for everything Todd and his crew are putting themselves at risk for a mass amount of jail time. 
+<@aediot> So to recap, the steps are as follows:
+<@aediot> 1. Identify what you're protecting.
+<@aediot> 2. Identify your end goal.
+<@aediot> 3. Identify the top best possible setups to protect your assets while weighing the pros and cons to each.
+<@aediot> 4. Identify the weaknesses in each setup. 
+<@aediot> 5. Identify countermeasures for each and every possible weakness. 
+<&mona> this is really just critical thinking, which sadly there is a massive lack of in the scene
+<@aediot> ^
+<@aediot> 6. Identify possible fuckups from both you and other likely possibilites on every step and identify countermeasures. 
+<@aediot> Thing is though, like mona said.
+<@aediot> Nobody is perfect.
+<@aediot> We aren't machines.
+<@aediot> You're going to make fuckups, which is what step 6 is for.  
+<@aediot> But if you did your tradecraft right you'll be able to know how you can recover from that and will have figured countermeasures for fuckups as well. 
+<@aediot> If your sin is extremely deadly you may even want to consider going dark (shutting down all your accounts/jacking it to another country or state) completely. 
+<@aediot> And as a demonstration of what not to do, I'm bringing up a prime example.
+<@aediot> Recently a user by the name of DiscordianAnon was doxed here by a few other members of this IRC.
+<@aediot> His OPSEC was terrible and he was some anon who claimed to fight governments and do all this activism nonsense. 
+<@aediot> Problem is "Discordian Anon" is a nym that was linked to his OLD nym which had been doxed by HTP about three years back at the current time of writing. 
+<@aediot> Do NOT do what DiscordianAnon did when doxed and just change your @ on twitter while using the same account so that you can keep your follower/e-fame reputation. 
+<@aediot> That's obviously not a good countermeasure. 
+<@aediot> If he really is involved with all these journalists and whatnot like he brags that he is then his OPSEC Is complete and utter shit and you should let that teach you as an example of what NOT to do. 
+<@aediot> By not going Dark he didnt recover from his sin, which means that he didn't do tradecraft analysis before becoming an Anon. 
+<@aediot> Aka he has no idea what it is that he's doing and is/was just winging it for the sake of fame and fortune. 
+<@aediot> This is how you land jail. 
+<@aediot> He was not fit to tackle any government or corporation with a setup like that.
+<@aediot> Nobody would be. 
+<@aediot> Pull this level of shit OPSEC on Darknet and I guarentee you you're fucked and landing 20+ years and not just an asswhooping on IRC/Twitter like he got.
+<@aediot> I'm going to say this, and I'm going to say it once. 
+<@aediot> Low hanging fruit like that should not be respected, looked up to, counted among your contacts, or anything else that even remotely ties yourself to them. 
+<@aediot> Because low hanging fruit are the first to squeel when the pigs threaten them with jail.
+<@aediot> So if they considered you among their friends or contacts.
+<@aediot> You've just painted a big red target sign on your back for Fed proding and investigation.
+<@aediot> Any questions before we move on to the last part?
+< TheDude> wise advice  
+< lolanonymous> Drugs is opsec failure from the start. Just do fraud less risky. I mean you have to have full trust in your partners, i mean full. Your not only against feds but also other dealers, just too risky. Oh yeah by the way Discordian Anon is a fucking retard.
+<@aediot> There are ways to be a kingpin and still deal in drugs.
+<@aediot> It just takes more setup and time.
+< flip> is there money on the darknet beside carding and drugs?
+<@aediot> Because it's more profitable.
+< lolanonymous> there are too many variables
+<@aediot> flip: Yes a few other things, which I'll detail in part 3.
+<@aediot> lolanonymous: But it's worth it if you have the resoucres to pull it off.
+< lolanonymous> aediot: well in some countries drugs get a bigger penalty
+< lolanonymous> than fraud
+<@aediot> Sure and that obviously go towards picking and choosing your trade.
+<@aediot> But I won't deny anyone here the thought of becoming a Kingpin if they wanted or think they can handle it.
+<@aediot> It's not impossible.
+<@aediot> It just takes time.
+< flip> im not a scared bitch btw just if im going to sell ill do it locally no fed charge 
+< lolanonymous> obviously not impossible
+< lolanonymous> just need balls
+<&mona> the concepts aediot's preaching can be applied to any level, flip
+<&mona> he's demonstrating you can do it as massive scale
+<&mona> the same things are relevant when doing small scale stuff
+<@aediot> "I'm not a scared bitch ill just do it locally" Is often the word of someone who's not done tradecraft and is just winging it.
+<@aediot> And yes like mona said.
+<@aediot> Winging it in a game that can land you a record and jailtime is not something you ever want to do.
+<@aediot> Unless you want to be low hanging fruit.
+<@aediot> In which case this class is not for you.
+< lolanonymous> aediot: what me
+< flip> your wrong ive done it my whole life so i know about others trade craft
+<@aediot> lolanonymous: I was talking to flip.
+< lolanonymous> ok
+< flip> abd im not a pro at computers no 
+< flip> but in the real world 
+< flip> come find me 
+< TheDude> only a couple elites come here
+<@aediot> Does anybody have some real questions or do you all just want to shove your e-dicks in my face with bragging.
+< jumpiner> lol
+< confusedtourist> are there any guides we should read?
+<@aediot> confusedtourist: On what specifically?
+< lolanonymous> Yeah any legit sites for guns
+< justforyou> whop about the drop off points/warehouses and the payments?
+< lolanonymous> not scammers
+< TheDude> a lot of that on here now aediot, getting worse
+< justforyou> how*
+<@aediot> I'm not here to link resources.
+<@aediot> For sites etc.
+< lolanonymous> ok
+< lolanonymous> just checking
+< confusedtourist> if no links for further reading
+<@aediot> justforyou: I can't go over all that cause I'd like to finish this class within the next century.
+< confusedtourist> how do you suggest we grow?
+< justforyou> k
+<@aediot> confusedtourist: I'll give you some things after class if you'd like
+<@aediot> Just pm me when I'm done.
+< lolanonymous> ok so how do i get a solid drop
+< lolanonymous> any tips
+< DigitalAnarchist> When will class end? I have to go in a bit and would like to know if I could get the transcript for the entire chat.
+< lolanonymous> i hear the same methods for drops
+< TheDude> this is a place for those who can to teach those who cant, and to do it safely, please respect that it is not to find "partners" 
+<@aediot> I'm not because that's common knowledge for the most part, and if you don't know how you can easily search for the how via public DNM forums.
+<&mona> transcripts will be available
+<&mona> as always
+<@aediot> ^
+< DLF> http://xerxesolusfedexu.onion/
+<@aediot> ^
+<@aediot> Alright, only a little ways to go before were done.
+<@aediot> Were moving on to the final part now which are really just a few things to get your brain jogging. 
+<@aediot> The minor (yet important) details are what keep you from arrest in most cases. 
+<@aediot> One important thing you need to drill into your head is that you are not here for fun or friends. 
+<@aediot> You play the Darknet to amass your own empire and protect any commerce and resources you've aquired. 
+<@aediot> You don't have friends.
+<@aediot> You don't have allies.
+<@aediot> You have contacts.
+<@aediot> Nothing more nothing less.
+<@aediot> Trust everyone equally, aka not at all.
+<@aediot> And for anyone unfamiliar.
+<@aediot> A contact is someone who helps your coin flow better, whether it's a source of high quality cards or someone who you know is a good DEV and can hook you up with some custom malware for a price or give you some advice on where to score a resource you need. 
+<@aediot> Another small thing you might want to consider when doing your compartmentalization analysis is if you're foreign to the extent of it showing in your typing. 
+<@aediot> You'll notice that anybody on public and private Darknet forums use proper grammar.
+<@aediot> Aka Capital at the beginning of the sentence and a period at the end of it. 
+<@aediot> Like I'm doing now. 
+<@aediot> There are reasons for this.
+<&mona> same reason you don't throw addons on the Tor Browser
+<@aediot> ^^^^
+<@aediot> One being reputation is all you have in the Darknet.
+<@aediot> And you want people to not view you as some crazed methhead to who just discovered Tor.
+<@aediot> And like mona mentioned, It disguises you.
+<@aediot> If everyone types and talks the same, there's nothing to profile.
+<@aediot> If you're foreign and can't type in well informed sentences it might do you better in the long run to publicly identify as someone from whatever country you're from.
+<@aediot> That way people won't think you're an american sperg who can't type correctly and will have a bit more patience for your bad english. 
+<@aediot> Though obviously the downside to this is that the Fed and other users might be able to profile you a bit if you don't keep up your OPSEC as strongly as you should.
+<@aediot> Of course I'll leave that decision to you so you can decide what you can/cannot handle.
+<@aediot> Also if you type in a certain way that isn't the way I'm typing right now and you're not bad at english, you should consider changing that before you get involved with the Darknet to avoid profiling. 
+<@aediot> Like .. if you have a speech pattern like this!
+<@aediot> Every other.. sentence
+<@aediot> Or something equally as stupid.
+<@aediot> Last point I'm going to touch on is really just to reiterate that you need to maintain a healthy dose of fear. 
+<@aediot> I really can't stress how important that is.
+<@aediot> Fear will keep you from doing really stupid shit like antagonizing higher ups who know more than you.
+<@aediot> Or can do more than you.
+<@aediot> Fear will stop you from carding without the protection of Tor or a VPN thinking "eh, feds won't care"
+<@aediot> Fear protects you from making really stupid fucking decisions that may lead to entrapment.
+<@aediot> So all in all fear is what assures that you'll maintain a long and happy Darknet career. 
+<@aediot> It's the little things like this that really strengthen your mindset considering OPSEC is a 24/7 job. 
+<@aediot> It's the little things like this that really strengthen your mindset considering OPSEC is a 24/7 job. 
+<@aediot> Take the time to follow all this correctly, and keep the little things in mind while you do.
+<@aediot> If you can successfully pull this off then you'll eventually come to learn that really the Feds aren't the one you need to fear.
+<@aediot> When in reality it's other users. 
+<@aediot> Alright! That's it for the class today. Thank you all for attending. 
+<@aediot> I'll stick around for a good number of hours so if you have any questions regarding the class or in general just shoot me a private message by typing "/query aediot <your message here>" And I'll answer your question as fast as I can though keep in mind it may take me a short while because I may be busy answering others questions. 
+<@aediot> **end log**

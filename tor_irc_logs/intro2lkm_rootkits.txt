@@ -1,0 +1,227 @@
+<@muerto> this lesson requires knowledge of C and how the kernel operates and how it interacts with userland
+< Bloodedge> Ok
+<@muerto> im not going to be going in detail in either of those and this will be pretty short
+< Bloodedge> lets go
+< AnonRoot> i don't know c
+< Timmy> I gotta go
+<@muerto> this is mostly to get your foot in the door, gain interest and work from there
+<@muerto> so let's begin
+<@muerto> prereqs: knowing c, how the kernel operates on a basic level
+<@muerto> what is a lkm?
+<@muerto> what is does it want?
+<@muerto> well lkm stands for loadable kernel module, it's a way for you to write code that interacts directly with the kernel, in the kernel
+<@muerto> it allows you to 'extend' the kernel
+<@muerto> basically it allows you to add onto the kernel
+<@muerto> as you can imagine, this opens up a p sick avenue to backdoor the fuck out of something
+<@muerto> lkm's aren't new and they've been around since the late ninties
+<@muerto> however the techniques involved to actually do what you want to do
+<@muerto> have evolved greatly over the time
+<@muerto> now let's take a few steps back
+<@muerto> why would one *want* to rootkit a box?
+<@muerto> let's say lil jimmy has someway found his way onto a gibson
+<@muerto> or a super computer
+<@muerto> or backbone infrastructure
+<@muerto> or your mom's linux media server holding her sex tapes
+<@muerto> and you want to retain access for as long as possible
+<@muerto> to continue doing whatever nefarious things you want
+<@muerto> it's difficult to do that
+<@muerto> without having a persistent foot hold in that box
+<@muerto> you need to not show up in ps, netstat, w, who, etc etc etc
+<@muerto> and you also need your files to be hidden from the badmin (sysadmin)
+<@muerto> so this is where a rootkit comes in, that is able to hide your activities from monitoring
+<@muerto> and the badmin that shouldn't know you're on their box
+<@muerto> we will get to how to do that later
+<@muerto> on how to actually do that
+<@muerto> in follow up lessons as we need to lay the ground work first
+<@muerto> how we doing so far?
+< AnonRoot> good
+< smurfer> good
+< metaphase> wait
+< Anon17930> nice
+< metaphase> I'm just curious as to why you said your mom sex tapes...
+<@muerto> it's a joke
+< PapaMatrix> lol 
+< D4rkL0rd> lol
+< aediot> metaphase: do you want me to kick you
+< metaphase> okay
+< Anon17930> loool,
+< D4rkL0rd> curiosity kill the cat
+< metaphase> for what?
+<@muerto> any questions that aren't retarded?
+ * k3y1o thumbs up
+< D4rkL0rd> * kills
+< AnonRoot> was you also using the gibson ref from hackers the movie?
+< PapaMatrix> lol 
+<@muerto> AnonRoot: yes :)
+< thr33> fed
+< D4rkL0rd> well lets not spacm the log now
+<@muerto> ok 
+<@muerto> usually you use the command line program
+<@muerto> 'insmod' to insert your lkm which is a kernel object
+<@muerto> rk.ko which you compile
+<@muerto> to see the current loaded modules on your box
+<@muerto> run this command
+<@muerto> "cat /proc/modules"
+<@muerto> here is an example on my box:
+<@muerto> $ cat /proc/modules
+<@muerto> vboxsf 43798 1 - Live 0x0000000000000000 (OX)
+<@muerto> dm_crypt 23177 0 - Live 0x0000000000000000
+<@muerto> nfsd 284385 2 - Live 0x0000000000000000
+<@muerto> auth_rpcgss 59338 1 nfsd, Live 0x0000000000000000
+<@muerto> nfs_acl 12837 1 nfsd, Live 0x0000000000000000
+<@muerto> nfs 236726 0 - Live 0x0000000000000000
+<&butts> lmao
+<&butts> one sec
+<@muerto> lol 
+<@muerto> sorry about that
+<@muerto> anyways 
+<@muerto> you can run that command
+<@muerto> and it'll show you your loaded modules
+<@muerto> so onwards
+<@muerto> you can use insmod or modprobe to load a module
+<@muerto> when you write your first lkm, you'll see it show up in there
+<@muerto> and in a follow up lesson
+<@muerto> we'll learn how to hide our module
+<@muerto> and make it persistent
+<@muerto> i really don't want to go into detail about *how* to write one
+<@muerto> as there are many, many tutorials on that and it involves knowing C
+<@muerto> so at the end of this talk i'll drop a bunch of links that should
+<@muerto> set you on your way
+<@muerto> this is a primer for you all
+<@muerto> so let's say you want to write a rootkit that drops a shell on a certain syscall (666 for example)
+<@muerto> a syscall is a way for your userland program to interact with the kernel
+<@muerto> 666 is not a valid syscall, but it'll be our way of letting the rootkit know
+<@muerto> "hey i want root, gibe me pls"
+<@muerto> or ddos 
+<@muerto> to do this, you would need to hook the syscall table
+<@muerto> in order to do that, you need to find the syscall table address
+<@muerto> that used to be easy in the late 90s as it was just a symbol that you could extern
+<@muerto> by just including the syscall.h file in your module
+<@muerto> nowadays, it's hidden away and not as easy to find
+<@muerto> there are three main ways people tend to find it
+<@muerto> err 4/5 whatever doesn't really matter
+<@muerto> there are many ways and you are only really limited by your creativity and knowledge of the kernel
+<@muerto> 1. looking in /proc/kallsysm
+<@muerto> 2. looking in /boot/System.map(kernel version)
+<@muerto> 4. hooking the IDT (interrupte descriptor table)
+<@muerto> 3. brute forcing kernel memory looking for it
+<@muerto> 3 and 4 i got mixed up :), my bad
+<@muerto> re #4 - this is what is called on every syscall for example:
+<@muerto> (trigger warning this is gas syntax assembly):
+<@muerto> push $0x4 # sys write/whatever doesn't matter
+<@muerto> int $0x80 # this is to interrupt the kernel and to execute our syscall or 'call' the kernel persay
+<@muerto> im wrong
+<@muerto> it's 
+<@muerto> movl $0x4, %rax
+<@muerto> this moves the absolute number 4 into the rax register
+<@muerto> which is a cpu register
+<@muerto> then you call the kernel
+<@muerto> by invoking
+<@muerto> the instruction 'int' 
+<@muerto> which tells the kernel to interrupt the execution flow and do the intede dsyscall held in %rax
+<@muerto> %rax is the x86_64 register
+<@muerto> %eax is the x86 register
+<@muerto> anyways, we'll want to find the IDT pointer which goes to the ISR or interrupt service routines
+<@muerto> which is called everytime an interrupt (int $0x80) is triggered or invoked
+<@muerto> note, this happens EVERY time you do a keypress, move the mouse or anything that interacts with the hardware
+<@muerto> and is the main way userland interacts with the kernel
+<@muerto> this is a more advanced topic which may be subject to a part two, however, more advanced rootkit hunters
+<@muerto> look for a hijacked IDT pointer
+<@muerto> back to #1, on my latest arch linux build, the syscall table address is 0x00etc which i believe kills that avenue
+<@muerto> you can try for yourself by running this command
+<@muerto> $ grep sys_call_table /proc/kallsyms 
+<@muerto> 0000000000000000 R sys_call_table
+<@muerto> 0000000000000000 R ia32_sys_call_table
+<@muerto> however if you're on debian you can always use /boot/System.map* to find the syscall table like so:
+<@muerto> debian/unbutu/whatever
+<@muerto> $ sudo grep sys_call_table /boot/System.map-3.13.0-77-generic
+<@muerto> ffffffff81801400 R sys_call_table
+<@muerto> ffffffff81809ca0 R ia32_sys_call_table
+<@muerto> and that'll give you the syscall table
+<@muerto> as you can see you have the x86 and x86_64 sys call table addresses here
+<@muerto> ia32 x86, etc
+<@muerto> how are we doing so far
+< smurfer> good
+<@muerto> awesome
+< AnonRoot> good
+< pipe> I don't want to see my moms pussy.
+< aediot> dat asm has my dick rock hard
+<@muerto> ok let's continue
+<@muerto> Here is a pretty good blog that explains how to find the syscalls dynamically without having to hard code them in
+<@muerto> it also provides example code on a root backdoor with a simple script that invokes setuid(0)
+<@muerto> https://memset.wordpress.com/2011/01/20/syscall-hijacking-dynamically-obtain-syscall-table-address-kernel-2-6-x/
+<@muerto> this is also another blog post which describes in detail how syscall hooking works:
+<@muerto> https://memset.wordpress.com/2010/12/03/syscall-hijacking-kernel-2-6-systems/
+<@muerto> and this one describes how you can get root priveleges for your client aka your root shell
+<@muerto> https://memset.wordpress.com/2010/12/28/syscall-hijacking-simple-rootkit-kernel-2-6-x/
+<@muerto> now i expect that if you have serious interest in this topic
+<@muerto> to read those blog posts
+<@muerto> and do your own research through google and kernel documentation
+<@muerto> to learn these topics in depth
+<@muerto> and there is a homework assignment for this lesson
+<@muerto> which is necessary for our next lesson where we will get our hands dirty
+<@muerto> the homework assignment is to write an LKM that gets loaded into the kernel properly and hijacks the syscall table
+<@muerto> in one way or another that *isn't* hardcoded, im okay if you want to use System.map for now or kallsyms
+<@muerto> if oyou're feeling very cool, hijack the IDT and take control of syscalls in that way
+<@muerto> homework is due in week from today, please pm me with a link or if you run into trouble (such as the makefile, loading it, unloading it, etc, please use google as MUCH as you can before asking for help)
+<@muerto> im more than happy to help people out, but i will not spoonfeed you
+<@muerto> here is a pretty decent && recent lkm rootkit if you want to take a look at something more advanced: https://github.com/mncoppola/suterusu
+<@muerto> no i will not help you learn C or deal with basic C programming issues
+<@muerto> thx
+< NullMind> so can the sysadmin  modify the syscall file 
+<@muerto> no
+< metaphase> good job, muerto.
+< NullMind> ok
+<@muerto> that question doesn't make a lot of sense, but im going to say no
+<@muerto> thank you metaphase 
+< metaphase> your welcome xD
+< metaphase> wait
+< metaphase> so does this pertain to windows as well?
+< Anon17930> muerto
+<@muerto> yes, it does
+<@muerto> however, you can't make a rootkit for linux
+< metaphase> so windows has syscalls. etc?
+<@muerto> and then expect it to work on windows
+< Anon17930> so, in this case, I would need to use the machine, and load the module, or convince someone to do it
+< Anon17930> right
+<@muerto> yes
+<@muerto> http://j00ru.vexillium.org/ntapi/
+<@muerto> Anon17930: no
+<@muerto> you need root access
+<@muerto> on your victim box
+< metaphase> is there a way to uplaod a rootkit to a victims pc?
+<&rackham> metaphase: yes
+< Anon17930> wow
+<@muerto> and you compile and load your rootkit into the kernel
+< metaphase> via internet?
+<&rackham> manually
+< NullMind> muerto: so this for post exploitation
+< Anon17930> root access
+<@muerto> yes ths is post exploitation
+< Anon17930> if you have it already, why would you do that ??
+<@muerto> if you scroll up
+<@muerto> and read where i talk about hiding yourself from the sysadmin
+< NullMind> to maintain access
+<@muerto> the reason becomes pretty clear
+<@muerto> yup
+< Anon17930> ok, getit
+< metaphase> does hiding the rootkit from the badmin also hide the rootkit from the processes?
+<@muerto> well, since the lkm is in the kernel
+<@muerto> it won't show up in any running proccess
+< metaphase> ohh yea right
+<@muerto> but it'll show up in kallsyms, /proc/moduels
+<@muerto> and lsmod
+<@muerto> however, there are techniques for hiding it
+<@muerto> which i won't cover in this session
+<@muerto> build yourself a skeleton first that is basic and we can go over that later
+< metaphase> Okay, well overall this was a very good class, you were very clear. Like before good job muerto. I will expect to attend more of your classes?
+<@muerto> yes
+<@muerto> if i have time, i will do more classes
+<@muerto> depending on how many people complete the homework
+< metaphase> alright, thanks.
+<@muerto> there will be a part #2
+< D4rkL0rd> Thank you for your time muerto :)
+<@muerto> you are welcome 
+< thr33> much tnx
+< AnonRoot> :D
+<@muerto> 23:25 <%muerto> ill be taking questions for the next 30 minutes

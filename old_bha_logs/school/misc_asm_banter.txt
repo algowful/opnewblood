@@ -1,0 +1,1822 @@
+Misc. asm banter (by hatter and eax)
+
+Jun 10 22:58:08 <eax> t is the man
+Jun 10 22:58:12 <z3rod4ta> the man
+Jun 10 22:58:32 <hatter> oh
+Jun 10 22:58:34 <hatter> That man
+Jun 10 22:58:35 <hatter> lol
+Jun 10 22:59:12 <eax> hatter whats more optimized for zeroing out a register?
+Jun 10 22:59:17 <eax> movl $0, %eax
+Jun 10 22:59:23 <eax> xorl %eax, %eax
+Jun 10 22:59:26 <KroaK> xor
+Jun 10 22:59:28 <eax> subl %eax, %eax
+Jun 10 22:59:39 <FireStarter> real hackers code in assembler
+Jun 10 22:59:40 <KroaK> xor is 2 bytes i think
+Jun 10 22:59:43 <hatter> uhm
+Jun 10 22:59:46 <hatter> I don’t know why
+Jun 10 22:59:48 <hatter> you did that eax
+Jun 10 22:59:49 <hatter> because
+Jun 10 23:00:03 <hatter> hrm, the mov takes a full cycle
+Jun 10 23:00:09 <hatter> so does the xorl
+Jun 10 23:00:13 <hatter> lets see here
+Jun 10 23:00:14 <KroaK> mov is 4 bytes
+Jun 10 23:00:17 <KroaK> opcodes
+Jun 10 23:00:20 <KroaK> iirc
+Jun 10 23:00:24 <hatter> doesn’t matter
+Jun 10 23:00:26 <hatter> we aren’t talking size
+Jun 10 23:00:28 <hatter> we’re talking cycles
+Jun 10 23:00:34 <aws> MOVE BYTES FROM REGISTER TO OTHER REGISTER REPEAT FOUR MILLION TIMES AND BE CONFUSED
+Jun 10 23:00:37 <Anorov> everything i’ve read recommends the xor
+Jun 10 23:00:40 <aws> ASSEMBLY LANGUAGE
+Jun 10 23:00:50 <hatter> pushb 0×0
+Jun 10 23:00:51 <hatter> pop eax
+Jun 10 23:00:57 <hatter> that’s 3 bytes
+Jun 10 23:01:02 <hatter> and 3/4 cycle
+Jun 10 23:01:09 <eax> sexy :3
+Jun 10 23:01:27 <KroaK> thats 2 stack accesses
+Jun 10 23:01:38 <hatter> so what
+Jun 10 23:01:43 <hatter> those are read off the cache
+Jun 10 23:01:47 <hatter> not far from the registers
+Jun 10 23:01:55 <hatter> the ones in the immediate stack frame anyway
+Jun 10 23:01:55 <KroaK> hmm
+Jun 10 23:02:14 <t> i think they doubt you hatter 
+Jun 10 23:02:16 <eax> got people fighting over asm i win the game :3
+Jun 10 23:02:45 <Anorov> what is stored in the cpu cache?
+Jun 10 23:02:51 <Anorov> other than the registers
+Jun 10 23:02:52 <aws> goodies
+Jun 10 23:02:59 <KroaK> the push and pop
+Jun 10 23:02:59 <aws> sekret goodies
+Jun 10 23:03:00 <Anorov> i know there’s l1 l2 and l3
+Jun 10 23:03:01 <eax> h4x
+Jun 10 23:03:05 <KroaK> oh lol
+Jun 10 23:03:16 <Anorov> fuck i’ll wiki it
+Jun 10 23:03:20 <KroaK> data thats used alot i think
+Jun 10 23:03:23 * notty (~joerg@LulzCo-7A5424CB.dip.t-dialin.net) entrou em #school4lulz
+Jun 10 23:03:29 * Snafu (~Snafu@2DD7CC7F.E90C2F8E.9F5DBED3.IP) entrou em #school4lulz
+Jun 10 23:03:32 <Anorov> how does it decide what goes in it though
+Jun 10 23:03:55 <hatter> That’s architecture and microcode specific
+Jun 10 23:04:28 * Fox (~Fox@841599D3.F71AD6B7.1ABC39CD.IP) entrou em #school4lulz
+Jun 10 23:04:28 * ChanServ coloca o modo +q #school4lulz Fox
+Jun 10 23:04:28 * ChanServ coloca o modo de operador a Fox
+Jun 10 23:04:31 <Fox> mmm
+Jun 10 23:04:39 <eax> mmmm fox hay bb
+Jun 10 23:04:40 <Snafu> Pffbt
+Jun 10 23:04:40 <Fox> So guys we’re about to have a box in here :3
+Jun 10 23:04:51 <KroaK> a box with fox?
+Jun 10 23:05:03 <Fox> Fox has a box that will have a bot
+Jun 10 23:05:04 <Fox> :3
+Jun 10 23:05:10 <KroaK> lol
+Jun 10 23:05:12 <Fox> What should we name him.
+Jun 10 23:05:13 * IR601 (eyearh@34FC9D27.28B72224.ABF5F547.IP) entrou em #school4lulz
+Jun 10 23:05:13 <eax> :3
+Jun 10 23:05:16 <Fox> or her….
+Jun 10 23:05:20 <eax> fox jr.
+Jun 10 23:05:35 <z0x> Fox; a box?
+Jun 10 23:05:36 <eax> or or or
+Jun 10 23:05:37 <KroaK> box
+Jun 10 23:05:40 <z0x> meaning, something you’ve r00teed?
+Jun 10 23:05:42 <Tony> Foxy
+Jun 10 23:05:43 <KroaK> b0x3n
+Jun 10 23:05:43 <KroaK> lol
+Jun 10 23:05:43 <eax> Lolilace
+Jun 10 23:05:49 <z3rod4ta> fucking openVPN its free up to 100mb a month
+Jun 10 23:05:54 <Tony> astaro ssl`
+Jun 10 23:05:54 <Fox> Something. :3
+Jun 10 23:06:00 <Anorov> i am giddy with excitement
+Jun 10 23:06:02 <KroaK> y u ping me?
+Jun 10 23:06:04 <IR601> sry for ping
+Jun 10 23:06:07 <KroaK> lol
+Jun 10 23:06:10 <IR601> XD
+Jun 10 23:06:15 <IR601> new bnc
+Jun 10 23:06:19 <KroaK> not some 0day i hope
+Jun 10 23:06:27 <IR601> lulz
+Jun 10 23:06:30 <eax> ping = insta pwn
+Jun 10 23:06:32 <KroaK> lol
+Jun 10 23:06:40 <KroaK> i’m wiping this soon
+Jun 10 23:06:42 <Odysseus> ping = pong
+Jun 10 23:06:43 <KroaK> and my netbook
+Jun 10 23:07:02 <KroaK> need to fuck with my hdd’s
+Jun 10 23:07:18 <z0x> Fox: is it here yet? lol
+Jun 10 23:07:19 -Global- [venuism] Service alias` don’t work use /msg nickserv etc
+Jun 10 23:07:20 <Fox> Hmm
+Jun 10 23:07:21 <Fox> so
+Jun 10 23:07:33 <Fox> Foxy Fox Jr and LoliLace
+Jun 10 23:07:49 <KroaK> FoxyBoxy
+Jun 10 23:08:17 <aws> ShadoPhax
+Jun 10 23:08:26 <eax> sudo
+Jun 10 23:08:27 <eax> ^
+Jun 10 23:08:32 <Tony> Foxy Kooky27
+Jun 10 23:08:44 <eax> Goku
+Jun 10 23:09:01 <z0x> sudo passwd root r00typ1e
+Jun 10 23:09:04 <z0x> aaah wrong tab
+Jun 10 23:09:09 <z0x> /clear
+Jun 10 23:09:12 <KroaK> best way to dry weed?
+Jun 10 23:09:17 <Tony> iron
+Jun 10 23:09:20 <aws> FIRE
+Jun 10 23:09:24 <Tony> blowdryer
+Jun 10 23:09:33 <flabbergaster> oven
+Jun 10 23:09:33 <KroaK> lol
+Jun 10 23:09:35 <aws> BRIMSTONE
+Jun 10 23:09:35 <z3rod4ta> tanning bed
+Jun 10 23:09:39 <Tony> sun
+Jun 10 23:09:39 <z0x> KroaK; rice, hot, dry airflow.
+Jun 10 23:09:41 <KroaK> ways without losing potency?
+Jun 10 23:09:47 <IR601> in a jar
+Jun 10 23:09:49 <KroaK> rice?
+Jun 10 23:09:52 <aws> BREATH OF A DRAGON
+Jun 10 23:09:56 <IR601> no that wld rape it
+Jun 10 23:09:57 <Tony> rice will soak out the liquideh
+Jun 10 23:09:58 <Onions> Rice takes away the moisture.
+Jun 10 23:10:03 <KroaK> ah
+Jun 10 23:10:08 <z0x> it’s a dessicant
+Jun 10 23:10:08 <Onions> You can also use silicate.
+Jun 10 23:10:13 <z0x> if you have any silica ge–
+Jun 10 23:10:13 <z0x> yeah.
+Jun 10 23:10:17 <KroaK> i’ll hang it over my puter
+Jun 10 23:10:32 <IR601> n1
+Jun 10 23:10:32 <Fox> Hmm
+Jun 10 23:10:33 <Fox> Anyways
+Jun 10 23:10:35 <Fox> setting things up
+Jun 10 23:10:38 <z0x> KroaK; you grow?
+Jun 10 23:10:39 <z3rod4ta> KroaK:  put it behind that server of urs
+Jun 10 23:10:54 <KroaK> yeah, only a little grow hut though
+Jun 10 23:11:01 <Snafu> Seeing as how theres no real way to determine where a legit lulz irc is….You would think the dudes who really “do it for the lulz” would not be cr@zy enuf to create a domain and such –> lulzsecurity.com
+Jun 10 23:11:03 <KroaK> I have a server?
+Jun 10 23:11:06 <z0x> KroaK; how many plants?
+Jun 10 23:11:17 <KroaK> 3-4 depending on size
+Jun 10 23:11:19 <Onions> Snafu, why?
+Jun 10 23:11:22 <Snafu> Um
+Jun 10 23:11:27 <Onions> It’s not like hosting a domain does much.
+Jun 10 23:11:28 <Snafu> Because they are going 0verboard?
+Jun 10 23:11:31 <Onions> Can be paid for anonymously.
+Jun 10 23:11:35 <KroaK> only for personal use
+Jun 10 23:11:44 <Onions> I don’t see how.
+Jun 10 23:11:46 <Snafu> Do you not think they’re pissing off the wrong folks man?
+Jun 10 23:11:47 <Snafu> I mean
+Jun 10 23:11:49 <z0x> they probably have someone not directly associated to manage the twitter and website
+Jun 10 23:11:52 <aws> society goes 0verboard
+Jun 10 23:11:55 <z0x> so they won’t get v&
+Jun 10 23:11:55 <Snafu> I approve somewhat of what they are doing
+Jun 10 23:11:55 <Snafu> Somewhat
+Jun 10 23:11:56 * blu3beard saiu (Remote host closed the connection)
+Jun 10 23:11:56 <Onions> As long as you keep safe, it doesn’t matter.
+Jun 10 23:11:56 <Snafu> But um
+Jun 10 23:11:59 <s1z1f> KroaK take a paper make holes in it with knife, put paper on old monitor and start some move on that computer, after that u can cover paper with something and so it will be dryed in few hours 
+Jun 10 23:12:03 <eax> inb4 Snafu = Fed
+Jun 10 23:12:05 <Snafu> Attack nato?
+Jun 10 23:12:08 <Snafu> Rly?
+Jun 10 23:12:10 <KroaK> lol
+Jun 10 23:12:11 <Onions> I don’t really care either way, Snafu. All
+Jun 10 23:12:11 <Snafu> no
+Jun 10 23:12:11 <Snafu> US marine
+Jun 10 23:12:14 <Snafu> but not fed
+Jun 10 23:12:15 <KroaK> using monitor heat?
+Jun 10 23:12:19 <aws> yeh thats what the said
+Jun 10 23:12:22 <s1z1f> ya 
+Jun 10 23:12:23 <Snafu> Eh, no worries
+Jun 10 23:12:23 <aws> they said they gonna attack
+Jun 10 23:12:27 <Onions> All I know is that if you keep careful there’s little chance someone will catch you if you’re good enough.
+Jun 10 23:12:28 <Snafu> Just curious
+Jun 10 23:12:29 <z0x> KroaK; you use a CRT?
+Jun 10 23:12:35 <Snafu> Been following the news out here in afghanistan
+Jun 10 23:12:35 <KroaK> LCD
+Jun 10 23:12:42 <Snafu> Been a lot of talk of lulz out here
+Jun 10 23:12:44 <flabbergaster> i got a 12 year old crt
+Jun 10 23:12:58 <Saya> crts suck
+Jun 10 23:13:04 <Saya> except when playing video games
+Jun 10 23:13:05 <Onions> Interesting.
+Jun 10 23:13:17 <flabbergaster> they produce so much heat, you dont need a radioator in the winter
+Jun 10 23:13:19 <Onions> You know there’s feds in here, Snafu. Don’t give out too much identifying info.
+Jun 10 23:13:25 <KroaK> iunno the whole high refresh rate is bullshit tbh
+Jun 10 23:13:34 <Snafu> I dont care
+Jun 10 23:13:39 <Snafu> Long as I dont visit Wiki Leaks, Im good =)
+Jun 10 23:13:41 <KroaK> you only notice changes in fps over ~40
+Jun 10 23:13:47 <Snafu> Thats the only site i cant “Visit”
+Jun 10 23:13:50 <Onions> You’d be surprised.
+Jun 10 23:14:16 <Onions> KroaK, not really. Common misconception.
+Jun 10 23:14:28 <KroaK> oh ok
+Jun 10 23:14:36 * janicefromHR saiu (Ping timeout: 240 seconds)
+Jun 10 23:14:41 <Onions> Eyes don’t concieve of things as “frames”.
+Jun 10 23:14:47 <Onions> So it’s the wrong metric.
+Jun 10 23:14:57 <Onions> It’s an average.
+Jun 10 23:15:02 <Snafu> Why not let them put their skillz to good use in a real way?
+Jun 10 23:15:16 <Onions> It differs from person to person, the max is something like 150FPS constant.
+Jun 10 23:15:24 <fliprez1> Snafu, where you at in AFghanistan?
+Jun 10 23:15:31 <Onions> But it will seem more fluid the higher the FPS.
+Jun 10 23:15:32 <KroaK> because its fun to watch companies who shit on their customers squirm
+Jun 10 23:15:36 <KroaK> well sony
+Jun 10 23:15:40 <KroaK> but the others too
+Jun 10 23:15:40 <Onions> It just doesn’t matter after like, ~60.
+Jun 10 23:15:48 <Snafu> Well
+Jun 10 23:15:51 <Snafu> S0ny is perfect example
+Jun 10 23:15:54 * Frank (~chatzilla@LulzCo-F5C0C62B.range86-145.btcentralplus.com) entrou em #school4lulz
+Jun 10 23:15:54 <Snafu> Why keep beating em up?
+Jun 10 23:16:00 <Frank> hey
+Jun 10 23:16:00 <Snafu> Once…twice cool…
+Jun 10 23:16:04 <KroaK> because they’re assholes
+Jun 10 23:16:10 <KroaK> drm rootkits
+Jun 10 23:16:10 <Snafu> After a while it’s bullying…
+Jun 10 23:16:12 <Snafu> Agreed
+Jun 10 23:16:13 <Onions> Snafu, because they kept going after geohot and whatnot.
+Jun 10 23:16:18 <Snafu> Absolutely agree bout sony
+Jun 10 23:16:18 <Onions> They bully them.
+Jun 10 23:16:22 <Snafu> Hey, I agree
+Jun 10 23:16:24 <Onions> They deserve to be destroyed completely.
+Jun 10 23:16:24 <Snafu> But…
+Jun 10 23:16:29 <Onions> Teach a lesson to everyone else.
+Jun 10 23:16:29 * Frank saiu (Remote host closed the connection)
+Jun 10 23:16:37 <KroaK> they were nice to nintendo
+Jun 10 23:16:42 <Snafu> What about the small people who have jobs? not the ceos, the normal joes who work for em?
+Jun 10 23:16:58 <Snafu> I hope, i’m really talking to the “lulz”
+Jun 10 23:16:58 <Onions> They should go work for a better company.
+Jun 10 23:17:11 <Snafu> Just found out there’s irc to talk for lulz tonight
+Jun 10 23:17:16 <Snafu> Economy sucks man
+Jun 10 23:17:20 <KroaK> they still have their jobs
+Jun 10 23:17:35 <Onions> Doesn’t matter.
+Jun 10 23:17:42 <Snafu> Yeah, but if you capsize that boat (sony), they might not have a life jacket
+Jun 10 23:17:48 <Fox> Snafu
+Jun 10 23:17:52 * John (John123@2082E06A.24D6463C.2B8F0750.IP) entrou em #school4lulz
+Jun 10 23:17:53 <Fox> are you retarded.
+Jun 10 23:17:57 <John> IRC
+Jun 10 23:17:59 <John> newfags
+Jun 10 23:17:59 <z3rod4ta> lool
+Jun 10 23:18:01 <Fox> You are aware of where you’re at.
+Jun 10 23:18:01 * p6chip saiu (Ping timeout: 240 seconds)
+Jun 10 23:18:01 <John> just sayin’
+Jun 10 23:18:06 <Snafu> Na man
+Jun 10 23:18:06 <Snafu> Yep
+Jun 10 23:18:08 <John> *ITC
+Jun 10 23:18:09 <Saya> John: wut
+Jun 10 23:18:10 <Saya> John: you suck
+Jun 10 23:18:10 <Snafu> Afghanistan =)
+Jun 10 23:18:11 <Fox> like.
+Jun 10 23:18:12 <Snafu> So what
+Jun 10 23:18:25 <John> Fox, I know where ` is
+Jun 10 23:18:30 <Fox> Where?
+Jun 10 23:18:40 <John> I’m not willing to disclose that information to you
+Jun 10 23:18:43 <John> people who need to know, know
+Jun 10 23:18:47 <Fox> Well then go fuck yourself.
+Jun 10 23:18:48 <John> those who don’t… don’t
+Jun 10 23:18:59 * Babe1997 (~Anna@ECB01C92.CEA15DF0.943AC7A6.IP) entrou em #school4lulz
+Jun 10 23:18:59 <Fox> Tell him I miss him and I love him <3
+Jun 10 23:19:11 <Onions> He got v&.
+Jun 10 23:19:23 <Saya> ima gonna get wasted brahs
+Jun 10 23:19:27 <Onions> I assume that’s what happens when someone disappears.
+Jun 10 23:19:30 <Saya> i love you all
+Jun 10 23:19:32 <Saya> except for John
+Jun 10 23:19:34 <Snafu> So, S0ny, why not just attack the upper echelons…..
+Jun 10 23:19:34 <Saya> who is a fucking script kid
+Jun 10 23:19:34 <aws> John, 3:16
+Jun 10 23:19:42 <Onions> Snafu, that does nothing.
+Jun 10 23:19:49 * skynyrd (~skynyrd@LulzCo-A1D2A15C.mycingular.net) entrou em #school4lulz
+Jun 10 23:19:53 <Onions> The heart of a company lies within it’s customers, then employees.
+Jun 10 23:19:53 <Snafu> no?
+Jun 10 23:20:00 <Onions> The CEOs and whatnot just collect paychecks.,
+Jun 10 23:20:02 <Snafu> Yeah, but damn man
+Jun 10 23:20:03 <Snafu> Citibank
+Jun 10 23:20:22 <Snafu> My info prolly just got jacked
+Jun 10 23:20:24 <Snafu> and I support the hackers, hell im one myself …..somewhat….
+Jun 10 23:20:29 <Snafu> Learnin anyways
+Jun 10 23:20:29 <aws> they tanked the fuckin economy
+Jun 10 23:20:32 <Snafu> But fuck….
+Jun 10 23:20:37 <aws> citibank pffff
+Jun 10 23:20:40 <Snafu> I hope my info wasnt with citibank
+Jun 10 23:20:48 <Snafu> And i had no choice
+Jun 10 23:20:51 <Snafu> Thats all the us govvie credit cards
+Jun 10 23:21:06 <z3rod4ta> citibank CEO purchased a JET right after he got the money from the GOV.
+Jun 10 23:21:10 <Onions> Get mad at Citibank for having shit security.
+Jun 10 23:21:12 <z3rod4ta> so fuck citi
+Jun 10 23:21:20 * p6chip (~p6chip@LulzCo-94D6C168.formlessnetworking.net) entrou em #school4lulz
+Jun 10 23:21:22 <Snafu> Lets put the kn0wledge towards a good use man…..For those who do what they do, and live in the uS….attack rogue countires that pose a threat to us, eh?
+Jun 10 23:21:23 <aws> re-arrangement of wealth, definately snafu
+Jun 10 23:21:30 <Onions> If you leave your door wide open you should only blame yourself when someone robs you in the night.
+Jun 10 23:21:39 <Onions> Sue Citibank, get moneyz for leaking your data.
+Jun 10 23:21:40 <Snafu> Hey, u guys are preaching to the choir man
+Jun 10 23:21:54 * skynyrd saiu ()
+Jun 10 23:21:55 <Snafu> I hate “Profiteering Gluttons” just as much as you guys do
+Jun 10 23:22:07 <Snafu> Fuck, i should be able to plug my xbox controller into my ps3 and have it work out of the box
+Jun 10 23:22:10 <aws> LETS GET SOME MORE FUCKIN CDO’S IN HERE
+Jun 10 23:22:12 <Onions> lolwat
+Jun 10 23:22:12 <Snafu> but sony is greedy
+Jun 10 23:22:14 <aws> THEY WORK GREAT
+Jun 10 23:22:15 <Snafu> and so it has to be hacked to work
+Jun 10 23:22:33 <Snafu> Fuck, i should have a calendar on my lockscreen on my iphone, but i had to jailbreak it to make that work
+Jun 10 23:22:39 <Onions> You’ve gone off the subject completely. That isn’t even nearly related.
+Jun 10 23:23:03 <Onions> “Companies should work together so that I’m not inconvenienced in any way” is not the problem.
+Jun 10 23:23:07 <Snafu> Well….You guys were talkin bout the security and such, shoulda been locked down etc….I Agree completly
+Jun 10 23:23:30 -Global- [venuism] Service alias` don’t work use /msg nickserv etc
+Jun 10 23:23:35 <lolwat> someone called? =D
+Jun 10 23:23:44 <Snafu> But….Say for instance ya hack…hell I dont know….Bank of america
+Jun 10 23:23:58 <Snafu> and ya jack lots of usernames and passwords
+Jun 10 23:23:59 <Snafu> Why not email the usernames and passwords to the customers themselves…Just their  own
+Jun 10 23:23:59 <Snafu> Make them aware
+Jun 10 23:24:04 <Snafu> Let em know how fucked up the company is
+Jun 10 23:24:07 <Snafu> Not just the ones who read the news
+Jun 10 23:24:15 <aws> COS ITS FUCKED EVERYWHERE
+Jun 10 23:24:15 <Snafu> Not many people in america could tell u where DC is
+Jun 10 23:24:25 <Snafu> Americans are fuckin stupid
+Jun 10 23:24:26 <Snafu> sadly
+Jun 10 23:24:26 <Snafu> but anyways
+Jun 10 23:24:26 <Snafu> Get the customers pissed
+Jun 10 23:24:27 <Onions> This happens all the time, by the way, Snafu. This one is just getting a lot of press, and LulzSec don’t do much with the data. Some Russian hackers got into some 80K users bank and used the cards for CP dealings.
+Jun 10 23:24:35 <Onions> Many of the customers are still in jail for CP.
+Jun 10 23:24:37 <eax> let me clarify something: this channel is a bunch of scrubs not assosiated with what you are talking about
+Jun 10 23:24:39 <eax> just saying
+Jun 10 23:24:41 <Onions> This is nothing, Snafu.
+Jun 10 23:24:44 <Snafu> Without hurting the customers
+Jun 10 23:24:48 <aws> fuck, the customers?
+Jun 10 23:24:54 <Snafu> no
+Jun 10 23:25:02 <Snafu> Fuck the coorporations, not the customers man
+Jun 10 23:25:08 <Snafu> Make the customers aware
+Jun 10 23:25:08 <Snafu> When enuf become aware
+Jun 10 23:25:09 <Snafu> they leave the company
+Jun 10 23:25:10 <aws> no i mean, customers got it in the balls for CP
+Jun 10 23:25:14 <Onions> Snafu, people don’t learn until they get burned.
+Jun 10 23:25:19 <hatter> wait,
+Jun 10 23:25:21 <Onions> Sending them their passwords won’t do shit.
+Jun 10 23:25:22 <Snafu> Hell in the email, suggest a bank you couldnt hack into…….
+Jun 10 23:25:24 <hatter> ` got v&
+Jun 10 23:25:28 <hatter> ?
+Jun 10 23:25:33 <hatter> John: ^?
+Jun 10 23:25:33 <Snafu> Ever mitm at a local starbucks?
+Jun 10 23:25:34 <Onions> I was joking.
+Jun 10 23:25:47 <Onions> No because I’m not stupid.
+Jun 10 23:25:53 <hatter> oh
+Jun 10 23:25:55 <hatter> word
+Jun 10 23:25:56 <Snafu> people shit bricks when u show em a sidejack
+Jun 10 23:26:02 <hatter> lol
+Jun 10 23:26:02 <Snafu> I love doing it to make people aware
+Jun 10 23:26:13 <Onions> They forget the next day.
+Jun 10 23:26:17 <Onions> And keep doing the same thing.
+Jun 10 23:26:24 <z3rod4ta> http://i.imgur.com/fDzc0.jpg
+Jun 10 23:26:26 <Snafu> Then hopefully, they take that lesson and dont use free wifi for shit like facebook, where the odds are its their same password for the bank
+Jun 10 23:26:29 <Onions> Unless something hurts them so that they remember.
+Jun 10 23:26:32 <Onions> They never do.
+Jun 10 23:26:35 <z3rod4ta> somene got through an emails from thr lulz list
+Jun 10 23:26:58 * p6chip saiu (Ping timeout: 240 seconds)
+Jun 10 23:27:38 <Snafu> So what do we do then Onions?
+Jun 10 23:27:38 <Onions> You seem to have a lot of faith in others, Snafu. You’re either a fed or someone that doesn’t really know what people are like.
+Jun 10 23:27:52 <Snafu> Im just a normal dude bro
+Jun 10 23:27:52 <Onions> You destroy corporations.
+Jun 10 23:27:59 <Snafu> fuck check me out
+Jun 10 23:28:05 <Onions> And do as much damage as needed.
+Jun 10 23:28:08 <Snafu> wifishield.org =)
+Jun 10 23:28:15 <Snafu> I hate huge corporations
+Jun 10 23:28:17 <Snafu> My favorite target is the damn geek squad
+Jun 10 23:28:17 <Snafu> overcharging
+Jun 10 23:28:17 <Snafu> fuckers…
+Jun 10 23:28:29 <Onions> See, the problem is not geeksquad.
+Jun 10 23:28:32 <Snafu> I do for 49.99 what they do for 149.99
+Jun 10 23:28:32 <aws> well apparently even 15 year old girls can destroy one thse days.
+Jun 10 23:28:34 <Snafu> Yes
+Jun 10 23:28:34 <Snafu> My website sucks
+Jun 10 23:28:34 <Snafu> I know
+Jun 10 23:28:34 <aws> have at it !
+Jun 10 23:28:36 <Snafu> Dont hate =)
+Jun 10 23:28:37 <Onions> The problem is the people that go to geeksquad.
+Jun 10 23:28:39 <Snafu> the problem is the idiot consumers
+Jun 10 23:28:40 <Snafu> I know
+Jun 10 23:28:46 <Snafu> ditto bro
+Jun 10 23:28:52 <Snafu> Thats why u have to pass on the knowledge and teach
+Jun 10 23:28:54 <Onions> Unless you take care of the idiots, it will never end.
+Jun 10 23:29:00 <Onions> But, there lies the problem.
+Jun 10 23:29:00 <whiteh8> Snafu is a fed
+Jun 10 23:29:04 <Onions> NO ONE EVER LEARNS
+Jun 10 23:29:07 <Snafu> heh
+Jun 10 23:29:07 <Onions> It’s impossible.
+Jun 10 23:29:16 <Snafu> Call me whatever ya want man
+Jun 10 23:29:17 <Snafu> like i said
+Jun 10 23:29:20 <Snafu> Im the ginger at wifishield
+Jun 10 23:29:23 <Onions> You’ve literally got to beat them within an inch of their life to get anything into their head.
+Jun 10 23:29:23 <Snafu> if my pic is still even there
+Jun 10 23:29:32 <whiteh8> stop trying to pacify the regulars\
+Jun 10 23:29:37 * Fox interditou *!John123@2082E06A.24D6463C.2B8F0750.IP
+Jun 10 23:29:37 <Snafu> i wonder…..
+Jun 10 23:29:38 * Fox expulsou John de #school4lulz (For being a troll)
+Jun 10 23:29:44 <hatter> rofl
+Jun 10 23:29:46 * Fox interditou Snafu!*@*
+Jun 10 23:29:47 * Fox expulsou Snafu de #school4lulz (Fed or douchebag.)
+Jun 10 23:29:49 <hatter> saw that commin
+Jun 10 23:29:54 <eax> rofl
+Jun 10 23:29:55 <hatter> How many of you saw that?
+Jun 10 23:29:56 <Onions> Thank you, Fox.
+Jun 10 23:29:57 <hatter> ol
+Jun 10 23:29:59 <hatter> *lol
+Jun 10 23:30:01 <eax> inb4 priv msg
+Jun 10 23:30:05 <Onions> lol.
+Jun 10 23:30:13 <whiteh8> fucking backtracking retard
+Jun 10 23:30:18 <hatter> ^
+Jun 10 23:30:27 <Fox> ^
+Jun 10 23:30:39 <Onions> v
+Jun 10 23:30:42 <eax> ./\
+Jun 10 23:30:53 <whiteh8> keep trying to catch this fly with my bare hands
+Jun 10 23:30:53 <Odysseus> ´`
+Jun 10 23:30:56 <whiteh8> he’s quick
+Jun 10 23:31:00 <Onions> lolwat
+Jun 10 23:31:13 <whiteh8> i used to be able to do it pretty well
+Jun 10 23:31:22 <eax> poor fly
+Jun 10 23:31:32 <eax> :’(
+Jun 10 23:31:32 * kratos (~kratos@fbi.gov) entrou em #school4lulz
+Jun 10 23:31:36 * bumfiend1 (~user@LulzCo-EE5087A5.rmpriv.nl) entrou em #school4lulz
+Jun 10 23:31:41 <whiteh8> want me to mail you his ashes? >:)
+Jun 10 23:31:51 <eax> Q___Q
+Jun 10 23:32:06 * hellothere (~hellother@34D6CFB5.A3F8D5B9.49BE9084.IP) entrou em #school4lulz
+Jun 10 23:32:08 * Odysseus saiu (Remote host closed the connection)
+Jun 10 23:32:14 <eax> when i was younger i killed a fly
+Jun 10 23:32:16 <hellothere> http://www.mclol.com/funny-articles/famous-internet-trolls-who-did-it-for-the-lulz/
+Jun 10 23:32:20 <hellothere> noobs
+Jun 10 23:32:25 <eax> i had to put it in a match box and give it a funeral
+Jun 10 23:32:29 <hellothere> hack this site
+Jun 10 23:32:31 <hellothere> bitch
+Jun 10 23:32:32 <eax> i was sad 
+Jun 10 23:32:33 <Onions> lol eax.
+Jun 10 23:32:46 * f0rget_ saiu (Ping timeout: 240 seconds)
+Jun 10 23:33:08 <Onions> The best thing is.
+Jun 10 23:33:11 <Onions> When you mow the lawn.
+Jun 10 23:33:15 <Onions> And there’s snakes around.
+Jun 10 23:33:20 <whiteh8> ew 
+Jun 10 23:33:23 <Onions> And once in a while, you feel you ran over something hard.
+Jun 10 23:33:30 <Onions> And FUCKING PIECES OF SNAKE FLYING EVERYWHERE
+Jun 10 23:33:34 <eax> :C
+Jun 10 23:33:37 <YaHMaN> coooool
+Jun 10 23:33:49 <YaHMaN> cook it + eat it
+Jun 10 23:33:51 <hatter> nice skinned wordpress hellothere
+Jun 10 23:33:53 <hatter> http://www.mclol.com/wp-login.php?redirect_to=http%3A%2F%2Fwww.mclol.com%2Fwp-admin%2F
+Jun 10 23:33:55 <hatter> come on kid
+Jun 10 23:33:56 <hellothere> http://www.mclol.com/funny-articles/famous-internet-trolls-who-did-it-for-the-lulz/     I THINK WE SHOULD HACK THIS SITE FOR CALLING US TROLLS
+Jun 10 23:34:01 * f0rget_ (~f0rget@LulzCo-6D96D76.torservers.net) entrou em #school4lulz
+Jun 10 23:34:06 <hatter> Its an obviously easy pwn
+Jun 10 23:34:08 <hatter> Get real man
+Jun 10 23:34:10 <hatter> get real.
+Jun 10 23:34:17 <eax> LOL EZ PWN
+Jun 10 23:34:24 <hatter> ez mode
+Jun 10 23:34:33 <whiteh8> hellothere, go away
+Jun 10 23:34:57 <hellothere> no
+Jun 10 23:34:59 <hellothere> ty
+Jun 10 23:35:00 * eax expulsou hellothere de #school4lulz (ez pwn get to it)
+Jun 10 23:35:06 * hellothere (~hellother@34D6CFB5.A3F8D5B9.49BE9084.IP) entrou em #school4lulz
+Jun 10 23:35:08 <hatter> haha
+Jun 10 23:35:10 <Onions> That site looks horrible.
+Jun 10 23:35:13 <hellothere> ?
+Jun 10 23:35:15 <hatter> <3 %eax
+Jun 10 23:35:16 <bumfiend1> Has anybody here got any experience in trying to ddos tor hidden services?
+Jun 10 23:35:24 <Onions> lawl
+Jun 10 23:35:27 <hellothere> yes
+Jun 10 23:35:36 <Onions> bumfiend1, good luck.
+Jun 10 23:35:43 <Onions> Those things more or less always in DDoS mode.
+Jun 10 23:35:44 <Fox> GET REEL BRO
+Jun 10 23:35:47 <Onions> Slow ass fuck.
+Jun 10 23:35:49 <Fox> JEZSUS
+Jun 10 23:35:55 <hellothere> anus
+Jun 10 23:35:58 <bumfiend1> Slowloris and basic database page milking are the only two options?
+Jun 10 23:36:03 <Fox> HATTER DOESNT TOUCH ANYTHING LESS THAN A LEVEL 99 HACK BRO
+Jun 10 23:36:08 <Fox> HATTER = MASTER BALL
+Jun 10 23:36:12 <Fox> ANY POKEMAN
+Jun 10 23:36:14 <Fox> HES GOT IT.
+Jun 10 23:36:23 <Fox> GARY MOTHERFUCKING OAK.
+Jun 10 23:36:26 <hatter> haha
+Jun 10 23:36:32 <FireStarter> bumfiend1 you would have to Ddos tor
+Jun 10 23:36:55 <hatter> no you wouldn’t
+Jun 10 23:36:59 <hatter> tor is also ezmode
+Jun 10 23:37:05 <hatter> because tor is slow in a lot of places
+Jun 10 23:37:18 <hatter> you can queue up all the different entry points and directory servers
+Jun 10 23:37:22 <hatter> to make a connection to one box
+Jun 10 23:37:28 <hatter> and hit them with like 10000 tor nodes
+Jun 10 23:37:33 <hatter> without even breaking a sweat off of dialup
+Jun 10 23:37:37 <hatter> write a perl script bro
+Jun 10 23:37:39 <hatter> lol
+Jun 10 23:37:45 <Onions> Tor only outputs what you put in.
+Jun 10 23:37:51 <Fox> I hate santrex I really do.
+Jun 10 23:37:52 <Onions> So a dialup line wouldn’t work for that.
+Jun 10 23:37:56 <hatter> Onions: yeah it would
+Jun 10 23:37:59 <hatter> you can queue it up
+Jun 10 23:38:01 <hatter> asynchronously
+Jun 10 23:38:10 <hatter> It happened to freenode before
+Jun 10 23:38:11 <hatter> Believe me
+Jun 10 23:38:14 <hatter> Its very possible
+Jun 10 23:38:30 <hatter> That’s why freenode doesn’t allow tor
+Jun 10 23:38:35 <hatter> because someone used tor to ddos them
+Jun 10 23:38:39 <Fox> hatter = throws countries
+Jun 10 23:38:44 <hatter> lol
+Jun 10 23:38:46 * aws saiu (Quit: ChatZilla 0.9.87 [Firefox 3.6.16/20110319135224])
+Jun 10 23:38:48 <hatter> don’t tell them about that X_x;
+Jun 10 23:38:50 <hatter> lol
+Jun 10 23:38:58 <Fox> Fox = throws upstream providers
+Jun 10 23:39:07 <hellothere> http://www.mclol.com/funny-articles/famous-internet-trolls-who-did-it-for-the-lulz/     I THINK WE SHOULD HACK THIS SITE FOR CALLING US TROLLS
+Jun 10 23:39:08 <Fox> eax = throws babies
+Jun 10 23:39:12 <bumfiend1> A hidden service controls the creation of rendevous points to it though
+Jun 10 23:39:13 <eax> hatter = throws errors
+Jun 10 23:39:18 * Fox interditou *!~hellother@34D6CFB5.A3F8D5B9.49BE9084.IP
+Jun 10 23:39:18 <eax> he is master race
+Jun 10 23:39:18 * hatter expulsou hellothere de #school4lulz (hellothere)
+Jun 10 23:39:22 <hatter> geeze.
+Jun 10 23:39:22 <Fox> LOL
+Jun 10 23:39:25 <Fox> LOL
+Jun 10 23:39:37 <hatter> where’s the stfubutton
+Jun 10 23:39:42 <hatter> That kid wants us to do his legwork for him
+Jun 10 23:39:46 <hatter> I even sent him the admin login
+Jun 10 23:39:47 <Fox> icwat u did there hatter
+Jun 10 23:39:48 <hatter> What a tool
+Jun 10 23:39:53 <Onions> https://www.torproject.org/docs/faq-abuse#DDoS
+Jun 10 23:39:54 <Fox> Fox sets mode +b *!~hellother@34D6CFB5.A3F8D5B9.49BE9084.IP
+Jun 10 23:40:00 <Fox> hatter kicked hellothere from the channel. (hellothere)
+Jun 10 23:40:05 <Fox> Lolol
+Jun 10 23:40:09 <eax> tag team
+Jun 10 23:40:11 <Onions> hatter: Tor also doesn’t allow bandwidth amplification attacks against external sites: you need to send in a byte for every byte that the Tor network will send to your destination. So in general, attackers who control enough bandwidth to launch an effective DDoS attack can do it just fine without Tor.
+Jun 10 23:40:17 <Onions> From that link.
+Jun 10 23:40:19 <hatter> Yeah
+Jun 10 23:40:20 <bumfiend1> Onions, I already covered that
+Jun 10 23:40:26 <hatter> You believe everything you read on the internet Onions ?
+Jun 10 23:40:29 <Fox> LOL
+Jun 10 23:40:35 <Fox> seriously.
+Jun 10 23:40:35 <Onions> I know how Tor works.
+Jun 10 23:40:36 <Fox> Hatter.
+Jun 10 23:40:39 <Fox> Please get out of my head.
+Jun 10 23:40:40 <bumfiend1> That’s why you aren’t using flooding techniques, but techniques to slow the server
+Jun 10 23:40:44 <Fox> I was literally about to type that.
+Jun 10 23:40:52 <hatter> of course no one’s gonna admit that their service can be misused
+Jun 10 23:40:55 <hatter> one sec
+Jun 10 23:41:00 <eax> hatter + fox = same person
+Jun 10 23:41:01 <eax> ijs
+Jun 10 23:41:48 * dominus (~dominus@LulzCo-6D0FF491.dhcp.reno.nv.charter.com) entrou em #school4lulz
+Jun 10 23:42:11 <hatter> lol hardly
+Jun 10 23:42:16 <hatter> I’m lookin for my old script
+Jun 10 23:42:18 <hatter> to pastebin it
+Jun 10 23:42:20 <hatter> since onion’s such a newb
+Jun 10 23:42:26 <dominus> hey
+Jun 10 23:42:26 <Onions> lol.
+Jun 10 23:42:38 <Fox> Onions
+Jun 10 23:42:41 <Onions> Well, let’s see the script. If it works I’ll believe you.
+Jun 10 23:42:41 <Fox> serious
+Jun 10 23:42:41 <Fox> Like
+Jun 10 23:42:42 <hatter> its the same one used to bring down freenode off of a dialup
+Jun 10 23:42:51 <hatter> I donno if tor updated/fixed their infrastructure
+Jun 10 23:42:55 <Fox> I would put money on hatter
+Jun 10 23:43:01 <Fox> on like 99.9% of things he says.
+Jun 10 23:43:06 <Fox> Like
+Jun 10 23:43:09 <Fox> Bet me something right now.
+Jun 10 23:43:12 <hatter> but it has definitely been possible in the past.
+Jun 10 23:43:16 <bumfiend1> I’m happily waiting for the script, I just want to ruin some pedo hidden services
+Jun 10 23:43:26 <Onions> That’s cool, Fox. You should be able to verify information by yourself, though.
+Jun 10 23:43:27 <eax> hatter is the glorified pc gaming master race and you are a dirty console peasent
+Jun 10 23:43:39 <hatter> bumfiend1: I don’t know that it’d work on a hidden service unless you know an IP
+Jun 10 23:43:43 * auer saiu (Quit: Leaving)
+Jun 10 23:43:46 <hatter> bumfiend1: this was just something used to smash an ircd
+Jun 10 23:43:51 <bumfiend1> Yeah, this script doesn’t sound like it woudl;
+Jun 10 23:44:05 * janicefromHR (~penny@LulzCo-8312FFBC.torservers.net) entrou em #school4lulz
+Jun 10 23:44:13 <hatter> my find is still running
+Jun 10 23:44:14 <hatter> lol
+Jun 10 23:44:15 <bumfiend1> As I say the hidden service controls the Rendevous point creation as far as I know, so you can’t get the directory server to queue anything up
+Jun 10 23:44:17 <Fox> oh hi janice.
+Jun 10 23:44:24 <hatter> lol
+Jun 10 23:44:37 <bumfiend1> But I only have a basic understanding of it so w/e, I’ll just focus on being bumfiend and spamming their search queries
+Jun 10 23:44:54 <DannyGreen> anyone get any info on me that isnt publicly accessable from google yet ?
+Jun 10 23:44:58 <Onions> I’m pretty sure that unless this script somehow makes all the exit points shoot massive amounts of data at the IP this can be easily blocked by firewall.
+Jun 10 23:45:03 <Onions> If it’s just connection attempts.
+Jun 10 23:45:06 * DannyGreen agora chama-se Krashed
+Jun 10 23:45:24 <eax> hi krashed
+Jun 10 23:45:29 <Anorov> so what i miss
+Jun 10 23:45:30 <Krashed> hi
+Jun 10 23:45:31 <Anorov> was there a class?
+Jun 10 23:45:33 <eax> ilu
+Jun 10 23:45:34 * IR601 saiu (Quit: ZNC – http://znc.sourceforge.net)
+Jun 10 23:45:37 <Krashed> <3
+Jun 10 23:45:38 <eax> lets have babies
+Jun 10 23:46:55 <hatter> Onions: of course it can be easily blocked, that wasn’t the argument.
+Jun 10 23:46:58 * IR601 (eyearh@2AF13FD0.28B72224.ABF5F547.IP) entrou em #school4lulz
+Jun 10 23:47:01 <hatter> Now you’re backpedaling.
+Jun 10 23:47:23 <Onions> hatter, I thought you were talking about actual bandwidth being used. If it’s just connection attempts I agree it’s possible.
+Jun 10 23:47:31 <Onions> Massive amounts of bandwidth.
+Jun 10 23:47:32 <hatter> yeah its just a synflood
+Jun 10 23:47:33 <Onions> *
+Jun 10 23:47:43 <hatter> but you can make it come from a /lot/ of places at once
+Jun 10 23:47:48 <hatter> with relatively minimal bandwidth
+Jun 10 23:47:54 <hatter> shit that doesn’t fix that syn cookie
+Jun 10 23:47:56 <hatter> is fucked
+Jun 10 23:48:02 <Onions> Yeah, especially for an IRC.
+Jun 10 23:48:14 <Onions> Where you can make the connections seem legit either way.
+Jun 10 23:48:46 <Onions> But yeah, not possible with a hidden service since there is no one endpoint to it.
+Jun 10 23:48:59 <hatter> and then if you don’t actually close the connection and you just leave the fd open
+Jun 10 23:49:03 <hatter> they wind up with a shit ton of TIME_WAIT
+Jun 10 23:49:08 <hatter> fucks up their tcpip stack
+Jun 10 23:49:11 <Onions> lol, yeah.
+Jun 10 23:49:16 <hatter> resource exhaustion
+Jun 10 23:49:19 <Onions> Freenode must have had shitty firewall rules
+Jun 10 23:49:23 <YaHMaN> yer
+Jun 10 23:49:32 * YaHMaN saiu (Quit: Cock-Lined.)
+Jun 10 23:49:40 <hatter> lol I think they just ran the directory listing with a pipe to awk + iptables to solve it
+Jun 10 23:49:46 <Onions> LOL
+Jun 10 23:49:58 <hatter> but it took them a few hours
+Jun 10 23:50:04 <hatter> hence B& by freenode
+Jun 10 23:50:05 <hatter> lol
+Jun 10 23:50:16 <Onions> I remember that JS IRC flood thing.
+Jun 10 23:50:26 <Onions> That was hilarious, too.
+Jun 10 23:50:38 <Onions> It would post the link to the JS flooder in the channels.
+Jun 10 23:50:44 <Onions> And everyone would open it causing more floods.
+Jun 10 23:54:41 <hatter> hahaha
+Jun 10 23:54:47 <hatter> that’s p. troll
+Jun 10 23:55:20 <Onions> I know lol.
+Jun 10 23:55:42 * figgybit saiu ()
+Jun 10 23:56:08 * figgybit (~whatsthis@LulzCo-D6241CCF.c3-0.avec-ubr2.nyr-avec.ny.cable.rcn.com) entrou em #school4lulz
+Jun 11 00:00:22 * dominus saiu (Quit: later)
+Jun 11 00:00:28 * Anorov saiu (Excess Flood)
+Jun 11 00:01:05 * Anorov (~an@LulzCo-B033409E.feem.net) entrou em #school4lulz
+Jun 11 00:01:13 * faceless_bees saiu (Read error: Connection reset by peer)
+Jun 11 00:02:04 * Pak (~Pak@56DB992C.42314106.B7449AAF.IP) entrou em #school4lulz
+Jun 11 00:03:12 * blu3beard (~none@46D672BC.59CB0294.C5CF906B.IP) entrou em #school4lulz
+Jun 11 00:09:05 <Onions> http://encyclopediadramatica.ch/Firefox_XPS_IRC_Attack
+Jun 11 00:09:08 <Onions> Found the link.
+Jun 11 00:10:19 * notty saiu (Ping timeout: 240 seconds)
+Jun 11 00:10:40 * wintermute (~wintermut@E595A635.A98D863.FA754C8E.IP) entrou em #school4lulz
+Jun 11 00:11:50 <Anorov> hmm, wintermute
+Jun 11 00:11:52 <Anorov> name rings a bell
+Jun 11 00:12:10 <Anorov> fuck i bet there’s like 1000 wintermutes, nvm
+Jun 11 00:12:13 <wintermute> heh
+Jun 11 00:12:13 * LordKitsuna (~LordKitsu@LulzCo-6D93A8BD.hsd1.wa.comcast.net) entrou em #school4lulz
+Jun 11 00:12:14 * ChanServ coloca o modo de semi-operador a LordKitsuna
+Jun 11 00:12:16 <Shidash> ha
+Jun 11 00:12:26 <NonaLessThanThree> Anorov, it’s from neuromancer <3
+Jun 11 00:12:26 * Punker saiu (Ping timeout: 240 seconds)
+Jun 11 00:12:30 <Anorov> ahhh
+Jun 11 00:12:31 * Krashed agora chama-se LordBulletproofGangster
+Jun 11 00:12:37 <LordBulletproofGangster> wheres my halfops niggers
+Jun 11 00:12:37 <Anorov> yeah certainly not a unique name then
+Jun 11 00:12:43 <wintermute> nope
+Jun 11 00:13:24 * Pak saiu (Quit: leaving)
+Jun 11 00:13:39 * meowZ saiu ()
+Jun 11 00:14:30 * Babe1997 (~Anna@ECB01C92.CEA15DF0.943AC7A6.IP) saiu de #school4lulz
+Jun 11 00:15:20 <IR601> nigger dun stole ur halfop
+Jun 11 00:15:41 * Saya agora chama-se S4ya
+Jun 11 00:16:10 * flabbergaster saiu (Quit: http://www.mibbit.com ajax IRC Client)
+Jun 11 00:16:38 * atriox (~not@LulzCo-3D60266.tcso.qwest.net) entrou em #school4lulz
+Jun 11 00:19:28 * wintermute saiu (Ping timeout: 240 seconds)
+Jun 11 00:19:37 * Fox saiu (Quit: Textual IRC Client: http://www.textualapp.com/)
+Jun 11 00:20:14 * blu3beard hates faggots with long ass names fucking up his irc
+Jun 11 00:20:28 * Anorov agora chama-se ashiodgasdouigqef9ohqef
+Jun 11 00:20:30 <ashiodgasdouigqef9ohqef> sup
+Jun 11 00:20:35 * LordKitsuna expulsou ashiodgasdouigqef9ohqef de #school4lulz (ashiodgasdouigqef9ohqef)
+Jun 11 00:20:36 * ashiodgasdouigqef9ohqef (~an@no.peeps.4.creeps) entrou em #school4lulz
+Jun 11 00:20:39 * ashiodgasdouigqef9ohqef agora chama-se Anorov
+Jun 11 00:20:40 <Anorov> lol
+Jun 11 00:20:43 <blu3beard> lol
+Jun 11 00:22:50 * dextone (dextone@LulzCo-6DE2E1DA.dialup.blackberry.st) entrou em #school4lulz
+Jun 11 00:22:52 * MrBlue saiu (Remote host closed the connection)
+Jun 11 00:24:58 * Fox (~fox@1671FD5.535D0BF5.9DC39C6.IP) entrou em #school4lulz
+Jun 11 00:24:58 * ChanServ coloca o modo +q #school4lulz Fox
+Jun 11 00:24:58 * ChanServ coloca o modo de operador a Fox
+Jun 11 00:25:56 <Fox> K.
+Jun 11 00:26:04 * Hazz (02611019@LulzCo-EFFC6835.mibbit.com) saiu de #school4lulz
+Jun 11 00:26:26 <Fox> So now I don’t have to worry about shit.
+Jun 11 00:27:45 * Hellspawn (~Hellspawn@LulzCo-6D45544C.qld.bigpond.net.au) entrou em #school4lulz
+Jun 11 00:27:45 <nyann> You might hate general Facebook users, but Facebook is like the Gibson on steroids for defensive prowess…
+Jun 11 00:27:49 <nyann> oops
+Jun 11 00:27:53 * noopslider (~unknownus@LulzCo-72F419C5.dip.t-dialin.net) entrou em #school4lulz
+Jun 11 00:28:48 * rawr (~rawr@LulzCo-EADBB201.formlessnetworking.net) entrou em #school4lulz
+Jun 11 00:29:17 <fliprez1> anything can be hacked
+Jun 11 00:30:20 <Fox> So what’s today’s subject gents?
+Jun 11 00:30:37 <Tony> food
+Jun 11 00:30:46 <Fox> K no.
+Jun 11 00:30:54 <Hellspawn> maybe an extension of how to get bitches fox
+Jun 11 00:31:01 <Fox> No.
+Jun 11 00:31:17 <fliprez1> lack of pussy
+Jun 11 00:31:39 <Tony> vulnerabilities in the wild
+Jun 11 00:31:41 <Hellspawn> he did a really good class on getting bitches tbh
+Jun 11 00:32:01 <Fox> Hmm.   I think we got today’s class.
+Jun 11 00:32:09 <Fox> Assembly.
+Jun 11 00:32:57 <fliprez1> class to getting bitches? step 1: get rich …fin
+Jun 11 00:33:14 <Fox> Someone kick that nigger. Im mobile.
+Jun 11 00:33:59 <eax> what nigger?
+Jun 11 00:34:03 <hatter> which one
+Jun 11 00:34:08 <eax> who the fuck is black in here
+Jun 11 00:34:09 <Fox> fliprez1:
+Jun 11 00:34:10 * hatter interditou *!*fliprez@*.sub-166-144-174.myvzw.com
+Jun 11 00:34:10 * hatter expulsou fliprez1 de #school4lulz (fliprez1)
+Jun 11 00:34:16 <Dox> +hop plox
+Jun 11 00:34:16 <hatter> lol
+Jun 11 00:34:20 <Fox> <3
+Jun 11 00:34:23 <S4ya> mov eax, 0xc0cb10c
+Jun 11 00:34:23 * hatter coloca o modo de semi-operador a Dox
+Jun 11 00:34:25 <S4ya> okay, class done
+Jun 11 00:34:30 <Dox> ty ty
+Jun 11 00:34:34 <hatter> no, class not done
+Jun 11 00:34:34 * hurr (~hurr@LulzCo-27779E49.nds.ruhr-uni-bochum.de) entrou em #school4lulz
+Jun 11 00:34:45 <hatter> we’ll also do the basics of EE
+Jun 11 00:34:50 <hatter> Well not EE
+Jun 11 00:34:50 <hatter> but
+Jun 11 00:34:54 <hatter> Basics of how a CPU works
+Jun 11 00:34:56 <S4ya> mov eax, 1
+Jun 11 00:34:57 <hatter> during the basics of ASM
+Jun 11 00:34:58 <S4ya> int 0×80
+Jun 11 00:35:01 <S4ya> okay, class done
+Jun 11 00:35:02 <S4ya> :/
+Jun 11 00:35:02 <Fox> S4ya: Hatter is asm raep
+Jun 11 00:35:17 <eax> way to combine intel syntax with at&t syntax
+Jun 11 00:35:19 <eax> :/
+Jun 11 00:35:31 <S4ya> why combine? at&t should be purged 
+Jun 11 00:35:31 <hatter> yeah… for real.  iw as about to say the same eax
+Jun 11 00:35:34 <hatter> uhm
+Jun 11 00:35:37 <hatter> then its int 80h
+Jun 11 00:35:39 <hatter> not int 0×80
+Jun 11 00:35:40 <hatter> S4ya:
+Jun 11 00:35:49 <TransfiniteGreyWizard> 0=1=0/1=1/2=2^-1
+Jun 11 00:35:57 * Marti-n (~Marti-n@LulzCo-8EF524DC.ip.telfort.nl) entrou em #school4lulz
+Jun 11 00:36:00 <Dox> +m this bitch
+Jun 11 00:36:02 <S4ya> hatter: funny, nasm nicely assembles int 0×80
+Jun 11 00:36:08 <hatter> oh?
+Jun 11 00:36:11 <hatter> This I didn’t know.
+Jun 11 00:36:15 <hatter> S4ya++
+Jun 11 00:36:18 <S4ya> <3
+Jun 11 00:36:18 <hatter> but I don’t use nasm
+Jun 11 00:36:21 <hatter> So I wouldn’t know.
+Jun 11 00:36:24 <hatter> lol
+Jun 11 00:36:31 <TransfiniteGreyWizard> Why don’t you use nasm?
+Jun 11 00:36:51 <hatter> I use the gnu `as’ and `ld’ binaries packaged as coreutilities with every linux distro ever made.
+Jun 11 00:36:52 <z3rod4ta> !topic
+Jun 11 00:37:00 * nachash (~nachash@210-50-93-160.ade.iprimus.net.au) entrou em #school4lulz
+Jun 11 00:37:12 <TransfiniteGreyWizard> You can make your own OS?
+Jun 11 00:37:25 <hatter> Yea…
+Jun 11 00:37:27 <hatter> lol
+Jun 11 00:37:44 <Dox> hatter is a bit legit
+Jun 11 00:37:47 <TransfiniteGreyWizard> I know
+Jun 11 00:37:52 <Fox> Lol
+Jun 11 00:37:57 <hatter> eax: how far do we take them?  obv cover basics,
+Jun 11 00:38:01 <hatter> exit, printf
+Jun 11 00:38:09 <hatter> perhaps loops, one way hashing?
+Jun 11 00:38:19 <hurr> whats the subject>
+Jun 11 00:38:21 <hurr> ?
+Jun 11 00:38:22 <TransfiniteGreyWizard> Hatter, did my system of equ’ make any sense to you?
+Jun 11 00:38:22 <hatter> Assembly
+Jun 11 00:38:27 <hurr> oh damn
+Jun 11 00:38:29 <Onions> Implementing RSA from scratch.
+Jun 11 00:38:29 <S4ya> repnz cmpsb
+Jun 11 00:38:31 <hurr> hardc0r
+Jun 11 00:38:35 <S4ya> no tutorial should be without it
+Jun 11 00:38:36 <TransfiniteGreyWizard> Or is it undefined nonsense?
+Jun 11 00:38:38 <eax> basics, function calls, loops, if logic
+Jun 11 00:38:43 <eax> assembling and linking
+Jun 11 00:38:47 <S4ya> also, segment selectors
+Jun 11 00:38:47 <S4ya> <3
+Jun 11 00:38:49 <nyann> slap me summa dat +v
+Jun 11 00:38:49 <hatter> TransfiniteGreyWizard: I think I may have missed that.
+Jun 11 00:38:50 <eax> maybe some recursion
+Jun 11 00:38:52 <hurr> lr parsing?
+Jun 11 00:39:01 <hurr> why do you need assembly?
+Jun 11 00:39:11 <hatter> eax: also add perhaps some bytecode analysis in there
+Jun 11 00:39:14 <eax> why don’t you need assembly
+Jun 11 00:39:15 <hatter> n binary analysis?
+Jun 11 00:39:24 * Dox oferece voz a nyann
+Jun 11 00:39:30 <hurr> sure
+Jun 11 00:39:31 <S4ya> taint tracing and analysis with pintool?
+Jun 11 00:39:33 <S4ya> that would be nice
+Jun 11 00:39:36 <Hellspawn> computers wouldnt exist without assembly
+Jun 11 00:39:37 <eax> brush through with gdb as well?
+Jun 11 00:39:39 <S4ya> fuzzing tekneeks yo
+Jun 11 00:40:00 <hatter> hrm
+Jun 11 00:40:01 <hatter> hold up
+Jun 11 00:40:05 <hurr> hellspawn: is true
+Jun 11 00:40:05 <hatter> me and eax will pm
+Jun 11 00:40:07 <hatter> and figure it out
+Jun 11 00:40:11 <hatter> n then we’ll kick off
+Jun 11 00:40:15 <null-> no asm
+Jun 11 00:40:21 <hurr> no?
+Jun 11 00:40:29 <S4ya> go over function prologues/postlogues
+Jun 11 00:40:30 <null-> nah
+Jun 11 00:40:38 <hurr> whatchoowantnigga?
+Jun 11 00:40:39 <S4ya> so that you can extend to yadda yadda stackoverflow fu in 5 minutes
+Jun 11 00:40:50 * TR0|\| (~TR0|\|@LulzCo-6B7D0F4B.dynamic.swissvpn.net) entrou em #school4lulz
+Jun 11 00:41:05 <nyann> ty dox
+Jun 11 00:41:05 <null-> hurr: something more practical for a irc class
+Jun 11 00:41:06 * nachash saiu (Remote host closed the connection)
+Jun 11 00:41:13 <Dox> np np
+Jun 11 00:41:50 * halcyon1 (~nuri@LulzCo-F91D19D3.plspca.dsl-w.verizon.net) entrou em #school4lulz
+Jun 11 00:42:05 * halcyon saiu (Ping timeout: 240 seconds)
+Jun 11 00:42:06 <Hellspawn> sql injections? live?
+Jun 11 00:42:10 <hurr> oh ya, anything is good tho, these dudes are 1e20 more leet than my dumb ass, ill listen yp
+Jun 11 00:42:11 * halcyon1 agora chama-se halcyon
+Jun 11 00:42:14 <hurr> *up
+Jun 11 00:42:22 <Fox> +m
+Jun 11 00:42:26 <S4ya> why talk about sql injection when you can talk about kr4d lowlevel coding fu
+Jun 11 00:42:43 <null-> yeah, SQLi
+Jun 11 00:42:43 <Anorov> well let’s be honest
+Jun 11 00:42:50 <Anorov> how many people here are gonna know the slightest thing about assembly?
+Jun 11 00:42:56 <S4ya> requests: polymorphic engines, self modifying code, anti-debugging trickery
+Jun 11 00:42:57 <null-> exactly
+Jun 11 00:42:58 <hurr> i know bits and peices
+Jun 11 00:42:59 <Anorov> the people here to learn that is
+Jun 11 00:43:03 <S4ya> dude, i’m retarded, and even i know
+Jun 11 00:43:05 * z3rod4ta (~zerodata@LulzCo-8312FFBC.torservers.net) saiu de #school4lulz
+Jun 11 00:43:10 <Anorov> i’m pretty retarded and i know the basics
+Jun 11 00:43:10 <hurr> but liek, what do?
+Jun 11 00:43:13 <hurr> with asm
+Jun 11 00:43:14 <Anorov> though not really enough to program in it competently
+Jun 11 00:43:23 <Anorov> just like basic ass shit
+Jun 11 00:43:24 <S4ya> you dont need to program asm competently
+Jun 11 00:43:24 <hurr> ^
+Jun 11 00:43:27 <S4ya> you need to write some payloads
+Jun 11 00:43:41 <Anorov> well why bother learning to write payloads? other people do that for you, and they make them as small and efficient as possible
+Jun 11 00:43:42 <S4ya> glue a loader together that can load higher level payload
+Jun 11 00:43:45 <S4ya> and be done with that crap
+Jun 11 00:43:52 <S4ya> because other people fuck up
+Jun 11 00:43:57 <Anorov> if anything you’ll want to know enough to be able to spot and exploit a buffer overflow
+Jun 11 00:43:59 <S4ya> and you always need custom ones in complicated exploits
+Jun 11 00:44:00 <Anorov> then you just throw in someone else’s shellcode
+Jun 11 00:44:02 <Anorov> but yeah
+Jun 11 00:44:03 <Anorov> that is true
+Jun 11 00:44:08 <S4ya> suppose liek
+Jun 11 00:44:09 <Anorov> you may need to know how to write your own
+Jun 11 00:44:09 * hatter coloca o modo +m #school4lulz
+Jun 11 00:44:37 <hatter> Okay guys — Direct questions to me or eax
+Jun 11 00:44:39 <hatter> class is now in session
+Jun 11 00:44:46 <hatter> Basics of assembly, bytecode, and processors
+Jun 11 00:45:15 <hatter> Processors & CPU’s
+Jun 11 00:45:16 * Marti-n saiu (Read error: Connection reset by peer)
+Jun 11 00:45:17 <hatter> Have gates
+Jun 11 00:45:18 <hatter> These gates
+Jun 11 00:45:22 <hatter> are accessed by instructions
+Jun 11 00:45:32 <hatter> now processors have little pieces of memory, known as registers
+Jun 11 00:45:40 * halcyon1 (~nuri@LulzCo-F91D19D3.plspca.dsl-w.verizon.net) entrou em #school4lulz
+Jun 11 00:45:44 <hatter> which are either 32 bits, or 64 bits (4 bytes or 8 bytes) in length, respectively.
+Jun 11 00:45:55 <hatter> Gates are little more than a piece of hardware circuitry.
+Jun 11 00:46:12 <hatter> When an instruction is executed, one of the available gates is used
+Jun 11 00:46:25 <hatter> operands are received by these gates
+Jun 11 00:46:35 <hatter> Sometimes the operands are registers, other times the operands are static values.
+Jun 11 00:46:44 * halcyon saiu (Ping timeout: 240 seconds)
+Jun 11 00:46:58 <hatter> registers may contain any integer up to their size (in hex) or a pointer to any piece of data
+Jun 11 00:47:14 <hatter> pointers to strings, for example, are null terminated, hence you’ve seen \0 in a lot of C, also \x00
+Jun 11 00:47:36 <hatter> A single byte (8 bits) is capable of executing an instruction, or calling access to a gate.
+Jun 11 00:48:40 <hatter> There are several basic instructions (primitives) and several general-purpose registers on the x86 processor architecture.
+Jun 11 00:49:23 <hatter> I’ll turn it over to eax to explain those
+Jun 11 00:49:44 <eax> these basic instructions consist of
+Jun 11 00:49:45 * halcyon1 saiu (Ping timeout: 240 seconds)
+Jun 11 00:49:47 * rawr saiu (Remote host closed the connection)
+Jun 11 00:49:50 <eax> push(pushl)
+Jun 11 00:49:55 <eax> pushb
+Jun 11 00:49:56 <eax> movb
+Jun 11 00:49:58 <eax> movl
+Jun 11 00:50:03 <eax> pop
+Jun 11 00:50:09 <eax> addl
+Jun 11 00:50:14 <eax> addb
+Jun 11 00:50:19 <hatter> (By the way, this is ATT System V assembly, not intel, but it works on both architectures)
+Jun 11 00:50:20 <eax> imul
+Jun 11 00:50:23 * noopslider (~unknownus@LulzCo-72F419C5.dip.t-dialin.net) saiu de #school4lulz
+Jun 11 00:50:36 <eax> and depending on your syntax these may be different
+Jun 11 00:50:42 <hatter> don’t forget
+Jun 11 00:50:43 <hatter> inc
+Jun 11 00:50:44 <hatter> dec
+Jun 11 00:50:54 <eax> (also the way you call them may be different)
+Jun 11 00:51:08 <eax> i will be explaining their usage in at&t system v syntax
+Jun 11 00:51:23 <eax> starting with movb/movl
+Jun 11 00:51:24 <hatter> The general purpose registers include (but are not limited to)
+Jun 11 00:51:30 <hatter> eax, ebx, edx, ecx,
+Jun 11 00:51:31 * nachash (~nachash@210-50-93-160.ade.iprimus.net.au) entrou em #school4lulz
+Jun 11 00:51:35 <hatter> ebp
+Jun 11 00:51:36 <hatter> etc
+Jun 11 00:51:42 <eax> ah yes
+Jun 11 00:51:43 <hatter> Registers are preceeded by a % in ATT notation
+Jun 11 00:51:46 * bumfiend1 saiu ()
+Jun 11 00:51:56 <hatter> So now you can all enjoy the joke of the handle and halfop %eax
+Jun 11 00:52:02 <hatter> For those of you who didn’t get it before 
+Jun 11 00:52:09 <eax> lol
+Jun 11 00:52:22 * whiteh8 saiu (Remote host closed the connection)
+Jun 11 00:52:25 <eax> ok so the basics of movb and movl
+Jun 11 00:52:36 <eax> movb stands for move byte
+Jun 11 00:52:49 * ryan1918 saiu (Ping timeout: 240 seconds)
+Jun 11 00:52:52 <eax> it is used for moving 1 byte of data into a register
+Jun 11 00:52:56 * bnannerz (~bnannerz@1433C591.795AAC8A.D6F486B0.IP) entrou em #school4lulz
+Jun 11 00:53:01 <eax> as the name states lol
+Jun 11 00:53:10 * pilgrim (~Pilgrim@F693A84D.73864D08.BFDD1873.IP) entrou em #school4lulz
+Jun 11 00:53:22 <hatter> oh, one more thing -
+Jun 11 00:53:23 <eax> it can also be used in conjuntion with %al
+Jun 11 00:53:26 <hatter> These are 32 bit
+Jun 11 00:53:28 <hatter> registers
+Jun 11 00:53:33 * halcyon (~nuri@LulzCo-F91D19D3.plspca.dsl-w.verizon.net) entrou em #school4lulz
+Jun 11 00:53:38 <hatter> 64 bit registers are %rax, %rbp, etc
+Jun 11 00:53:47 <hatter> essentially the same names, preceeded by an ‘r’
+Jun 11 00:53:49 <hatter> in stead of an ‘e
+Jun 11 00:53:49 <hatter> ‘
+Jun 11 00:53:58 <hatter> A register is built from several sub-registers
+Jun 11 00:54:01 <hatter> as we used to have 8 bit
+Jun 11 00:54:02 <hatter> long ago
+Jun 11 00:54:10 <hatter> before we ever had 64 bit
+Jun 11 00:54:14 <hatter> the eax register
+Jun 11 00:54:15 <hatter> is actually
+Jun 11 00:54:16 * pilgrim saiu ()
+Jun 11 00:54:19 <hatter> hrm
+Jun 11 00:54:22 <hatter> Lemme ascii art it
+Jun 11 00:54:23 <hatter>  
+Jun 11 00:54:57 * tfk0n1ne (~tfk09@C77FF6A6.FADC2A2D.F1D77C68.IP) entrou em #school4lulz
+Jun 11 00:54:58 <eax> lawl i dont think we will ever get to the basic commands :3
+Jun 11 00:55:04 <eax> anyways usage of movl and movb is
+Jun 11 00:55:13 <eax> movl $data, %register
+Jun 11 00:55:15 <hatter>  |
+Jun 11 00:55:15 <hatter>  +——eax——
+Jun 11 00:55:15 <hatter>  |
+Jun 11 00:55:15 <hatter>  +–ax—
+Jun 11 00:55:16 <hatter>  ah   al
+Jun 11 00:55:37 <hatter> movl $fromdata, %toregister
+Jun 11 00:56:00 <eax> (that moves 4 bytes of data to a register)
+Jun 11 00:56:01 <hatter> eax: you referenced %al and we can’t assume they know what that is
+Jun 11 00:56:07 <hatter> lol
+Jun 11 00:56:24 <eax> google it!
+Jun 11 00:56:27 <hatter> ^
+Jun 11 00:56:29 <hatter> Ok new rule
+Jun 11 00:56:30 <eax> nah %eax is split into 4bytes
+Jun 11 00:56:32 <hatter> If you don’t know what it is
+Jun 11 00:56:37 <hatter> Google
+Jun 11 00:56:39 <hatter> before asking questions
+Jun 11 00:56:42 <eax> %ax is 2 bytes long
+Jun 11 00:56:43 <hatter> if you have questions, pm one of us
+Jun 11 00:56:48 <nyann> literally google, or just mean search?
+Jun 11 00:56:50 <hatter> if its something the whole class should know we’ll say it out here
+Jun 11 00:56:54 <hatter> search.
+Jun 11 00:56:59 <eax> %ah and %al are 1 bytes and make up %ah
+Jun 11 00:57:04 <eax> ax*
+Jun 11 00:57:12 <hatter> %ah and %al are 1 bytes and make up %ax
+Jun 11 00:57:15 <hatter> For clarification.
+Jun 11 00:57:28 <hatter> so
+Jun 11 00:57:37 <hatter> One of the most important instructions
+Jun 11 00:57:38 <hatter> is int
+Jun 11 00:57:43 <hatter> as in kernel interrupt.
+Jun 11 00:58:12 <hatter> The kernel has a mainloop
+Jun 11 00:58:20 <hatter> that just runs in circles checking on running programs
+Jun 11 00:58:24 <hatter> to see if they need its attention.
+Jun 11 00:58:54 <hatter> if they do, the kernel will execute the command required by the application, given that the user running the application is privileged enough to do so
+Jun 11 00:59:02 <hatter> so our first example
+Jun 11 00:59:03 <hatter> will be exit
+Jun 11 00:59:14 <hatter> In assembly, your first program is exit, as opposed to ‘hello world’
+Jun 11 00:59:23 <hatter> because you do actually have to write code to exit the program.
+Jun 11 00:59:25 <eax> (fyi google: “programming from the ground up” great resource imho)
+Jun 11 00:59:35 <hatter> Quite a great book
+Jun 11 00:59:41 <hatter> eax learned from it
+Jun 11 00:59:48 <hatter> Its one of my favorites.
+Jun 11 01:00:34 <hatter> Its a free ebook
+Jun 11 01:00:36 <hatter> So no worries
+Jun 11 01:00:45 <hatter> its available in pdf, softcover or hardcover
+Jun 11 01:00:50 <hatter> (obviously physical copies cost money)
+Jun 11 01:01:12 <hatter> eax: teach’em exit
+Jun 11 01:01:14 <hatter> lol
+Jun 11 01:01:20 <eax> k
+Jun 11 01:01:36 <eax> i am going to display the asm code for exit fist then explain it
+Jun 11 01:01:42 <eax> movl $0, %ebx
+Jun 11 01:01:47 <eax> movl $1, %eax
+Jun 11 01:01:51 <eax> int $0×80
+Jun 11 01:01:56 <hatter> Oh
+Jun 11 01:01:57 * halcyon saiu (Ping timeout: 240 seconds)
+Jun 11 01:01:59 <hatter> EVERYONE WHO CAN:
+Jun 11 01:02:02 <hatter> Open up a text editor
+Jun 11 01:02:04 <hatter> and put that in there
+Jun 11 01:02:06 <hatter> if you are on linux
+Jun 11 01:02:07 <hatter> n save it
+Jun 11 01:02:14 <hatter> (Lets at least walk them through it eax )
+Jun 11 01:02:31 <eax> lol k
+Jun 11 01:02:50 <eax> ok the first instruction moves 0 into %ebx
+Jun 11 01:02:56 <hatter> ^
+Jun 11 01:02:56 * ryan1918 (~ryan@7016F228.B696884D.7E210C26.IP) entrou em #school4lulz
+Jun 11 01:03:01 <eax> (0×00000000) is what it actually looks like
+Jun 11 01:03:13 <eax> because it is a dword (8 bytes)
+Jun 11 01:03:16 <hatter> because you’re moving a long (or doubleword) into a 32 bit register
+Jun 11 01:03:40 <eax> the next instruction moves 1 into eax
+Jun 11 01:03:46 <Dox> save it with what ext?
+Jun 11 01:03:53 <eax> (0×0000001)
+Jun 11 01:03:57 <eax> ill talk about that in a sec
+Jun 11 01:04:15 <eax> next instruction is the system interupt which tells the proccessor hey do this shit
+Jun 11 01:04:17 <t> sup nigs
+Jun 11 01:04:26 <hatter> That’s correct,
+Jun 11 01:04:29 <eax> every time you file an interupt it checks %eax for what command you want to do
+Jun 11 01:04:33 <hatter> its the kernel interrupt
+Jun 11 01:04:34 <eax> $1 = exit
+Jun 11 01:04:35 <hatter> (ON LINUX)
+Jun 11 01:04:59 <eax> for the exit command it has another variable to assist it (%ebx)
+Jun 11 01:05:09 * MoDahkah (~White@LulzCo-BCEEBD65.dyn.optonline.net) entrou em #school4lulz
+Jun 11 01:05:13 <eax> this is the return variable to the system for the exit call
+Jun 11 01:05:22 <hatter> You may or may not have seen
+Jun 11 01:05:23 <eax> it is almost like return 0; or exit(0); in C
+Jun 11 01:05:25 <hatter> Exit code 127
+Jun 11 01:05:27 <hatter> in scripts
+Jun 11 01:05:30 <hatter> that means the file wasn’t found
+Jun 11 01:05:31 <hatter> etc
+Jun 11 01:05:35 <hatter> a good example
+Jun 11 01:05:38 <hatter> if you have your linux shell
+Jun 11 01:05:49 <hatter> type some random shit that obviously isn’t a command
+Jun 11 01:05:52 <hatter> then type
+Jun 11 01:05:54 <hatter> echo $?
+Jun 11 01:06:02 <hatter> with the ? mark
+Jun 11 01:06:22 <hatter> hatter ~ $ awiefuweiufh
+Jun 11 01:06:22 <hatter> awiefuweiufh: command not found
+Jun 11 01:06:22 <hatter> hatter ~ $ echo $?
+Jun 11 01:06:22 <hatter> 127
+Jun 11 01:06:32 <hatter> hatter ~ $ cd descry
+Jun 11 01:06:32 <hatter> hatter ~/descry $ echo $?
+Jun 11 01:06:32 <hatter> 0
+Jun 11 01:06:42 <hatter> $? means exit status was normal
+Jun 11 01:06:45 * hurr saiu (Remote host closed the connection)
+Jun 11 01:06:45 <hatter> Anything else is an error
+Jun 11 01:06:51 <hatter> An application can have up to 255 basic errors
+Jun 11 01:07:09 <eax> ok so now that we have the return value in %ebx and the exit cod in %eax and the system interupt. it is time to assemble and link/
+Jun 11 01:07:23 <eax> so our code looks like this
+Jun 11 01:07:24 <eax> movl $0, %ebx
+Jun 11 01:07:24 <eax> movl $1,
+Jun 11 01:07:24 <eax> int $0×80
+Jun 11 01:07:34 <eax> erm movl $1, %eax*
+Jun 11 01:07:47 <eax> name the file test.s
+Jun 11 01:08:03 <eax> in order to assemble we have to call the ‘as’ command
+Jun 11 01:08:12 <eax> so pull up your linux terminal
+Jun 11 01:08:21 * foobar29 (~Adium@LulzCo-ABE23DDB.dyn.iinet.net.au) entrou em #school4lulz
+Jun 11 01:08:22 <eax> navigate to where you saved test.s
+Jun 11 01:08:28 <eax> and type in
+Jun 11 01:08:34 <eax> as test.s -o test.o
+Jun 11 01:08:50 <eax> this will take the source code adn assemble it producing an object file
+Jun 11 01:09:05 <eax> (-o is the output flag and what is after is the filename )
+Jun 11 01:09:19 <eax> after this we can link the file togeth using the ‘ld’ command
+Jun 11 01:09:28 <eax> ld test.o -o test
+Jun 11 01:09:58 <eax> (later on if we get to it you can also dynamically link other libvarys for use in your project that include funcitons like prinf)
+Jun 11 01:10:11 <eax> so now that we have an assembled binary we can run it like so
+Jun 11 01:10:13 <eax> ./test
+Jun 11 01:10:38 <eax> now it may seem as if it did nothing but what happened was it opened and put $0 into %ebx (the retuyrn value)
+Jun 11 01:10:44 <eax> and then exit itself
+Jun 11 01:10:55 <eax> if you type echo $?
+Jun 11 01:11:01 <eax> it should produce 0
+Jun 11 01:11:04 <hatter> It wil have that 0 from %ebx.
+Jun 11 01:11:10 <hatter> So you funny guys
+Jun 11 01:11:13 <hatter> can change that first line
+Jun 11 01:11:15 <hatter> to
+Jun 11 01:11:24 <hatter> movl $69, %ebx
+Jun 11 01:11:27 <hatter> and re-assemble it
+Jun 11 01:11:30 <hatter> when you echo $?
+Jun 11 01:11:34 <hatter> it’ll say 69
+Jun 11 01:11:35 <hatter> in stead of 0
+Jun 11 01:12:25 <hatter> obviously
+Jun 11 01:12:29 <hatter> No one in here has tried this
+Jun 11 01:12:41 <hatter> Because I haven’t been spammed with ‘it won’t assemble’ messages.
+Jun 11 01:13:04 <hatter> So kids hurry up and try it
+Jun 11 01:13:09 <hatter> The reason that won’t assemble
+Jun 11 01:13:10 <hatter> is because
+Jun 11 01:13:14 <hatter> there’s no text or data segment
+Jun 11 01:13:21 <hatter> the whole exit code is as follows:
+Jun 11 01:13:24 <hatter> .section .data
+Jun 11 01:13:26 <hatter> .section .text
+Jun 11 01:13:29 <hatter> .globl _start
+Jun 11 01:13:32 <hatter> _start:
+Jun 11 01:13:38 <hatter> movl $0, %ebx
+Jun 11 01:13:45 <hatter> movl $1, %eax
+Jun 11 01:13:47 <hatter> int $0×80
+Jun 11 01:13:49 <hatter> –END–
+Jun 11 01:14:16 * lighthouse (~shadow@LulzCo-10001504.tampabay.res.rr.com) entrou em #school4lulz
+Jun 11 01:14:25 <hatter> So
+Jun 11 01:14:32 <hatter> Those of you who care to learn asm
+Jun 11 01:14:35 <hatter> Go ahead and put that in
+Jun 11 01:14:40 <hatter> save your file as ‘test.s’
+Jun 11 01:14:43 <hatter> then run
+Jun 11 01:14:46 <hatter> as test.s -o test.o
+Jun 11 01:14:50 <hatter> ld test.o -o test
+Jun 11 01:14:52 <hatter> ./test
+Jun 11 01:14:54 <hatter> echo $?
+Jun 11 01:15:26 <hatter> you should get a zero
+Jun 11 01:15:30 <hatter> anyone having a hard time may pm me
+Jun 11 01:16:12 * bnannerz (~bnannerz@1433C591.795AAC8A.D6F486B0.IP) saiu de #school4lulz
+Jun 11 01:16:23 <God>  
+Jun 11 01:17:00 * hatter oferece voz a null-
+Jun 11 01:17:06 <hatter> null-: raised a valid point
+Jun 11 01:17:08 <hatter> Go ahead and talk
+Jun 11 01:17:16 <hatter> explain your problem and why, then I’l explain the solution 
+Jun 11 01:18:10 <God> ..
+Jun 11 01:18:15 <null-> the former code from  eax assembled in my machine (32bit OS on 64bit CPU) and got the following warning
+Jun 11 01:18:26 <null-> ld: warning: cannot find entry symbol _start; defaulting to 0000000008048054
+Jun 11 01:18:50 <null-> now hatter will explain why that happen 
+Jun 11 01:19:25 <hatter> Essentially
+Jun 11 01:19:34 <hatter> He’s running a 32 bit exit call
+Jun 11 01:19:53 <hatter> null-: go ahead and cat your file
+Jun 11 01:19:54 <hatter> and paste it
+Jun 11 01:20:09 <null-> movl $0, %ebx
+Jun 11 01:20:09 <null-> movl $1, %eax
+Jun 11 01:20:09 <null-> int  $0×80
+Jun 11 01:20:14 <hatter> There’s no header
+Jun 11 01:20:17 * wutthe (fork@LulzCo-F916DAF9.ca) entrou em #school4lulz
+Jun 11 01:20:26 <hatter> 00:13 <@hatter> there’s no text or data segment
+Jun 11 01:20:26 <hatter> 00:13 <@hatter> the whole exit code is as follows:
+Jun 11 01:20:26 <hatter> 00:13 <@hatter> .section .data
+Jun 11 01:20:26 <hatter> 00:13 <@hatter> .section .text
+Jun 11 01:20:26 <hatter> 00:13 <@hatter> .globl _start
+Jun 11 01:20:28 <hatter> 00:14 <@hatter> _start:
+Jun 11 01:20:28 <hatter> 00:14 <@hatter> movl $0, %ebx
+Jun 11 01:20:30 <hatter> 00:14 <@hatter> movl $1, %eax
+Jun 11 01:20:30 <hatter> 00:14 <@hatter> int $0×80
+Jun 11 01:20:37 <hatter> Had he been using the registers
+Jun 11 01:20:38 <hatter> %rax
+Jun 11 01:20:41 <hatter> and %rbx
+Jun 11 01:20:46 <hatter> in stead of %eax and %ebx
+Jun 11 01:20:48 <hatter> respectively
+Jun 11 01:20:52 <hatter> He would not have gotten that error
+Jun 11 01:21:07 <hatter> But because he had a 64 bit cpu
+Jun 11 01:21:15 <hatter> and he’s using 32 bit registers
+Jun 11 01:21:20 <hatter> and didn’t declare his start header
+Jun 11 01:21:32 <hatter> it didn’t know to assemble it properly
+Jun 11 01:22:14 <hatter> so
+Jun 11 01:22:18 <hatter> those of you who got exit working right
+Jun 11 01:22:23 <hatter> try and make echo $? say 69
+Jun 11 01:22:23 <null-> so it doesn’t matter you are running a 32bit OS if you are running a 64bit cpu, you need to write 64bit asm
+Jun 11 01:22:25 <hatter> in stead of 0
+Jun 11 01:22:29 <hatter> null-: wrong
+Jun 11 01:22:33 <hatter> you need to declare your header
+Jun 11 01:22:37 <hatter> 00:20 <@hatter> 00:13 <@hatter> .section .data
+Jun 11 01:22:37 <hatter> 00:20 <@hatter> 00:13 <@hatter> .section .text
+Jun 11 01:22:37 <hatter> 00:20 <@hatter> 00:13 <@hatter> .globl _start
+Jun 11 01:22:37 <hatter> 00:20 <@hatter> 00:14 <@hatter> _start:
+Jun 11 01:22:45 <hatter> do that right before the beginning of your file.
+Jun 11 01:24:02 <hatter> 1 is in eax
+Jun 11 01:24:05 <hatter> because that’s the function numbwr
+Jun 11 01:24:08 <hatter> *number
+Jun 11 01:24:12 <hatter> you can google the linux syscall table
+Jun 11 01:24:15 <hatter> and it’ll show you that 1 is exit
+Jun 11 01:24:35 <hatter> We’re gonna take a 15 minute break
+Jun 11 01:24:37 <hatter> to answer some questions
+Jun 11 01:24:41 <hatter> And I need a cigarette
+Jun 11 01:24:44 <hatter> then we’ll get to hello world
+Jun 11 01:24:46 <hatter> and some loops 
+Jun 11 01:24:51 * hatter coloca o modo -m #school4lulz
+Jun 11 01:25:06 * xtal saiu (Ping timeout: 240 seconds)
+Jun 11 01:25:11 <Hellspawn> What is the use of these different error codes? Just for feedback to the user?
+Jun 11 01:25:31 <d0z3> or another program
+Jun 11 01:25:41 * nyann saiu (Quit: leaving)
+Jun 11 01:25:49 <hatter> mostly debug output Hellspawn
+Jun 11 01:25:51 <Anorov> hmm
+Jun 11 01:25:56 <Hellspawn> kk
+Jun 11 01:25:59 <d0z3> so it can know if it ran succesfully or encountered an error ? (this is in c)
+Jun 11 01:26:04 <Anorov> hatter could you display some uses of using the 2 and 1 byte registers?
+Jun 11 01:26:33 <hatter> Sure, give me a moment
+Jun 11 01:26:37 <Anorov> k
+Jun 11 01:26:55 * foobar291 (~Adium@LulzCo-D52A9B22.dyn.iinet.net.au) entrou em #school4lulz
+Jun 11 01:27:33 <hatter> I gotta smoke a cig BAD
+Jun 11 01:27:34 <hatter> lol
+Jun 11 01:27:38 * foobar29 saiu (Ping timeout: 240 seconds)
+Jun 11 01:28:18 <imposter22> ?the lulz boat?
+Jun 11 01:28:29 <TransfiniteGreyWizard> I love your class hatter
+Jun 11 01:28:38 <TransfiniteGreyWizard> I wish colleges would get to the point like you do
+Jun 11 01:29:15 <TransfiniteGreyWizard> Not kissing your ass. I’m seriously pissed with these dumbass classes.
+Jun 11 01:29:48 * halcyon (~nuri@LulzCo-DD6B9F50.dc.res.rr.com) entrou em #school4lulz
+Jun 11 01:29:51 <Anorov> you taking an assembly class in college?
+Jun 11 01:29:57 <TransfiniteGreyWizard> No just mathematics
+Jun 11 01:30:06 <Anorov> well math is a bit different lol
+Jun 11 01:30:12 <Anorov> i’m rather glad math isn’t taught in here
+Jun 11 01:30:19 <TransfiniteGreyWizard> Why not?
+Jun 11 01:30:20 <S4ya> guise guise
+Jun 11 01:30:20 <S4ya> ima doing
+Jun 11 01:30:22 <S4ya>  mov     eax, 1
+Jun 11 01:30:22 <S4ya>  db      0xff, 0xc8
+Jun 11 01:30:22 <S4ya>  pop     ebx
+Jun 11 01:30:22 <S4ya>  int     0×80
+Jun 11 01:30:22 <S4ya>  db      0xeb, 0xf4
+Jun 11 01:30:28 <Anorov> i’m god awful at math and…meh, nevermind
+Jun 11 01:30:34 <Anorov> what does db mean again? declare byte?
+Jun 11 01:30:38 <S4ya> wut wrong?
+Jun 11 01:30:40 <TransfiniteGreyWizard> You can divide any number by 5 by multiplying by 2.
+Jun 11 01:31:00 <d0z3> heh?
+Jun 11 01:31:02 <TransfiniteGreyWizard> For instance, 27475*5 can be cut in half to extract the answer.
+Jun 11 01:31:39 <TransfiniteGreyWizard> An easy way to do these large numbers in your head is to reduce all odd numbers by 1.
+Jun 11 01:31:59 <TransfiniteGreyWizard> Turning 27475 to 26464. Cutting it in half results with 13232.
+Jun 11 01:32:11 <TransfiniteGreyWizard> Add 5 (as a remainder) to the number on the right.
+Jun 11 01:32:30 <TransfiniteGreyWizard> It turns into 13737.
+Jun 11 01:32:37 <TransfiniteGreyWizard> Add a 0 and you have your answer!
+Jun 11 01:32:39 <TransfiniteGreyWizard> 137370.
+Jun 11 01:32:40 <Hellspawn> wrong.
+Jun 11 01:32:48 <Hellspawn> 26364
+Jun 11 01:32:57 <Hellspawn> you did 26464
+Jun 11 01:33:05 <Hellspawn> short cuts = where problems arise.
+Jun 11 01:33:07 <d0z3> only the odd numbers
+Jun 11 01:33:11 <d0z3> 4 = even
+Jun 11 01:33:13 <Hellspawn> fuuuuuuuuuuuuuuuuu
+Jun 11 01:33:13 <TransfiniteGreyWizard> Oops.
+Jun 11 01:33:14 <Hellspawn> lol
+Jun 11 01:33:24 <Hellspawn> i still dont like that method lol
+Jun 11 01:33:29 <d0z3> me neither
+Jun 11 01:33:43 <Hellspawn> why dont you just use a calculator?
+Jun 11 01:33:45 <TransfiniteGreyWizard> Allow me to re-correct?
+Jun 11 01:33:59 <Hellspawn> 27475 * 5
+Jun 11 01:34:13 * s0n1cK (s0n1cK@EA66A33E.F8154AB4.C94C189B.IP) entrou em #school4lulz
+Jun 11 01:34:28 <Hellspawn> 25 + 350 + 2000 + 35000 + 100000
+Jun 11 01:34:43 <Hellspawn> 137375
+Jun 11 01:34:57 <TransfiniteGreyWizard> 27475 -> 26464 -> 13232 -> 137375
+Jun 11 01:35:16 <Hellspawn> but your method isn’t even relevent
+Jun 11 01:35:23 <Hellspawn> its like doing your nine times tables using your fingers
+Jun 11 01:35:27 <TransfiniteGreyWizard> It is to logistics.
+Jun 11 01:35:41 * zteppup saiu (Ping timeout: 240 seconds)
+Jun 11 01:35:52 * tfk0n1ne (~tfk09@C77FF6A6.FADC2A2D.F1D77C68.IP) saiu de #school4lulz
+Jun 11 01:35:54 <Hellspawn> how is your method quicker than the method i just used?
+Jun 11 01:36:04 <Hellspawn> like seriously, if you want quick, use a computer
+Jun 11 01:36:13 <TylerDurden> Hatter: good class, skimmed over it as i waz away, lernin’ ppl asm is alwyas good.
+Jun 11 01:36:19 <TransfiniteGreyWizard> Its number entanglement using the imaginary number system.
+Jun 11 01:36:41 <TransfiniteGreyWizard> sin(180)/cos(90) demonstrates the relationship inversely
+Jun 11 01:37:08 <eax> soory guys im back now
+Jun 11 01:37:12 <eax> had an emergancy
+Jun 11 01:37:19 <Hellspawn> feds at your door?
+Jun 11 01:37:21 <Hellspawn> loljk
+Jun 11 01:37:23 <TransfiniteGreyWizard> We all have to use the bathroom, its ok.
+Jun 11 01:37:24 <hatter> not that cool
+Jun 11 01:37:25 <hatter> lol
+Jun 11 01:37:32 <hatter> yall got like 3 minutes left
+Jun 11 01:37:35 <IR601> shit ur self?
+Jun 11 01:37:53 <Hellspawn> we are discussing the use of mathematics hatter, not really relevant stuff
+Jun 11 01:38:06 <TransfiniteGreyWizard> Well it has a little bit to do with it.
+Jun 11 01:38:10 <t> so guys are there any questions related to the subject that hatter or eax could anser
+Jun 11 01:38:15 <null-> so… register are name sequentially? eax ebx ecx etc…
+Jun 11 01:38:16 <TransfiniteGreyWizard> How do number representations relate to logical gates?
+Jun 11 01:38:18 <Hellspawn> ok question then, what would be more efficient? greywizards method or my method for computers?
+Jun 11 01:38:30 <KroaK> not all
+Jun 11 01:38:34 <KroaK> theres ebp, esp
+Jun 11 01:38:36 <KroaK> but they’re special
+Jun 11 01:38:39 <dextone> hatter, so why I got 0 while I’m expecting 127 error code ?
+Jun 11 01:38:45 <KroaK> eip
+Jun 11 01:38:51 <KroaK> not directly accessable
+Jun 11 01:38:54 <hatter> dextone: I am still tryin to figure that out, could be something wrong with your bash install
+Jun 11 01:39:29 <TylerDurden> Yeah: stack cookies. what about them.?
+Jun 11 01:39:32 <Anorov> what distro are you running dextone
+Jun 11 01:39:39 <TransfiniteGreyWizard> Sorry guys, still a newb.
+Jun 11 01:39:40 <hatter> ok guys
+Jun 11 01:39:43 <hatter> lets wrap it up
+Jun 11 01:39:50 * hatter coloca o modo +m #school4lulz
+Jun 11 01:39:54 <hatter> eax: take it away <3
+Jun 11 01:40:02 <eax> ok boys
+Jun 11 01:40:05 <null-> KroaK: so there’s a bunch of of eax, ebp, esp, etcc?
+Jun 11 01:40:10 * Fox saiu (Ping timeout: 240 seconds)
+Jun 11 01:40:22 <eax> yes null there are a bunch of registers
+Jun 11 01:40:31 <eax> general purpose are eax, ebx, edx, ecx
+Jun 11 01:40:32 * t0bias (~t0bias@3C56B256.CB1BD8B5.3EDA1CE.IP) entrou em #school4lulz
+Jun 11 01:40:48 <eax> then special registers like eip, ebp, esp, eflags
+Jun 11 01:40:52 * xtal (~xtal@LulzCo-B26D449D.getinternet.no) entrou em #school4lulz
+Jun 11 01:40:54 <eax> anyways
+Jun 11 01:40:59 <null-> what’s the difference beteween eax and ebx for example?
+Jun 11 01:41:14 * skynyrd (~skynyrd@LulzCo-A1D2A15C.mycingular.net) entrou em #school4lulz
+Jun 11 01:41:25 <eax> nothing pretty much they can be used for the same thing
+Jun 11 01:41:31 <eax> just think of them of general purpose variables
+Jun 11 01:41:39 <eax> anyways COMMETNS YOU MUST USE THEM
+Jun 11 01:41:49 <eax> to comment something in your source code you use a hash sign
+Jun 11 01:41:52 <eax> #this is a comment
+Jun 11 01:42:09 <eax> i suggest putting a comment every 1-3 lines just so you understand what is going on
+Jun 11 01:42:22 <eax> because when you get into real projects it will get confusing
+Jun 11 01:42:42 <eax> comments are especially usefull for functions
+Jun 11 01:42:44 <hatter> When you get into highly compressed code
+Jun 11 01:42:48 <hatter> comment every line.
+Jun 11 01:42:52 <eax> ^
+Jun 11 01:43:09 <eax> sometimes 1 line of asm can do 2-4 different things at once
+Jun 11 01:43:28 <eax> its helpful also to use comments for functions
+Jun 11 01:43:35 <eax> you can describe how to call your functions
+Jun 11 01:43:40 <eax> what your function does
+Jun 11 01:43:46 <eax> what your function should return
+Jun 11 01:43:52 <eax> etc
+Jun 11 01:44:11 <eax> most functions you see in asm follow the C syntax for variables
+Jun 11 01:44:38 <eax> to pass varuiables to a function
+Jun 11 01:44:45 <eax> you must push them to the stack BEFORE
+Jun 11 01:44:48 <eax> you call your funciton
+Jun 11 01:44:58 <eax> while im at it i should explain the stack
+Jun 11 01:45:18 <eax> the stack is part of your programs memory that expands backwards
+Jun 11 01:45:30 <eax> say i pushl $1
+Jun 11 01:45:41 <eax> the stack now looks like
+Jun 11 01:45:46 <eax> 0×00000001
+Jun 11 01:45:48 * BillNye (~proficien@LulzCo-6974CE5A.hsd1.md.comcast.net) entrou em #school4lulz
+Jun 11 01:45:55 <eax> now if i pushl $4
+Jun 11 01:45:58 <eax> it looks like
+Jun 11 01:46:01 <eax> 0×0000004
+Jun 11 01:46:03 * bebop (~bebop@LulzCo-CAD7DCCC.hsd1.il.comcast.net) entrou em #school4lulz
+Jun 11 01:46:04 <eax> 0×00000001
+Jun 11 01:46:12 <eax> (too many zeros w/e)
+Jun 11 01:46:24 <eax> the stack acts like a stack of papers on your desk
+Jun 11 01:46:37 <eax> every time you put a new piece on an older one gets burried
+Jun 11 01:46:57 <eax> and in order to access a piece of papper benieth the current one you must pop it off
+Jun 11 01:47:09 * buzzkill (~buzzkill@LulzCo-EC4550D6.uvt.nl) entrou em #school4lulz
+Jun 11 01:47:16 <eax> (the pop command takes the top dword off the top of the stack and places it in a register)
+Jun 11 01:47:23 <eax> so if a stack looks like
+Jun 11 01:47:27 <eax> 0×4
+Jun 11 01:47:29 <eax> 0×1
+Jun 11 01:47:34 <eax> and i do pop %eax
+Jun 11 01:47:43 <eax> eax will now = 4
+Jun 11 01:47:47 <eax> and the stack will look like
+Jun 11 01:47:48 <eax> 0×1
+Jun 11 01:48:13 <eax> if i want to get that last piece of data i would want to issue the pop command again
+Jun 11 01:48:34 <eax> although this is not the only way to access data off the stack
+Jun 11 01:48:59 <eax> (there are address trickery you can do to get some data off the stack without popping it off but i wont get into it yet)
+Jun 11 01:49:23 <eax> so stack = pappers stack over eachother newest on the top olderst on the bottom
+Jun 11 01:49:43 * foobar291 saiu (Quit: Leaving.)
+Jun 11 01:49:46 <eax> now funcitons
+Jun 11 01:49:48 <eax> functions*
+Jun 11 01:49:59 * BestBuddy (~Bugzilla@DB72434F.EA3FB313.BE95BFFE.IP) entrou em #school4lulz
+Jun 11 01:50:02 <eax> to declare a function in att syntax you type
+Jun 11 01:50:12 <eax> .type lable, @function
+Jun 11 01:50:21 <eax> label being a label in your code
+Jun 11 01:50:42 <eax> (labels are just human readable text that is assigned to an specific memory address at startup)
+Jun 11 01:50:54 <eax> (usually looks like                      test:     )
+Jun 11 01:51:06 <eax> test being the label name and the colon afterwads means its a label
+Jun 11 01:51:10 * vec (~vec@LulzCo-893E14D4.hsd1.ga.comcast.net) entrou em #school4lulz
+Jun 11 01:51:34 <eax> if you havent noticed in your source you have _start:
+Jun 11 01:51:45 <eax> that is a label to the entry point of your program if you are wondering
+Jun 11 01:52:08 <eax> anyways once you define your function (.type test, @function)
+Jun 11 01:52:24 <eax> you have to create your label (usually directly under it)
+Jun 11 01:52:26 <eax> test:
+Jun 11 01:52:48 <eax> after that the first thing you do for every function
+Jun 11 01:53:07 <eax> is back up your %ebp (base pointer) into the stack by pushing it
+Jun 11 01:53:24 <eax> and then moving %esp to %ebp (because you should never access %esp directly)
+Jun 11 01:53:46 <eax> this will allow you to access your varriables you are pushing to your funciton
+Jun 11 01:54:11 <eax> your funciton now looks like this
+Jun 11 01:54:13 <eax> .type test, @function
+Jun 11 01:54:13 <eax> test:
+Jun 11 01:54:13 <eax> pushl %ebp
+Jun 11 01:54:13 <eax> movl %esp, %ebp
+Jun 11 01:54:46 * Renataki (~Renataki@LulzCo-E8EC77F2.hsd1.ct.comcast.net) entrou em #school4lulz
+Jun 11 01:54:48 <eax> for a definition of esp its a address pointer that poitns to the top of your stack (or the bottom i forgot ><)
+Jun 11 01:55:12 <eax> lets make this test function print something onto the screen
+Jun 11 01:55:15 * foobar29 (~Adium@LulzCo-4DF181E4.dyn.iinet.net.au) entrou em #school4lulz
+Jun 11 01:55:34 <eax> so lets learn how to print something onto the screen in the first place
+Jun 11 01:55:55 * Jessica (~Jessica@LulzCo-E723C34E.torservers.net) entrou em #school4lulz
+Jun 11 01:56:00 <eax> in order to print to stdout (the file discripter that prints to your terminal)
+Jun 11 01:56:11 <eax> the cpu needs specific data in each register
+Jun 11 01:56:37 <eax> %ebx holds the file discripter to print to (1 in this case is STDOUT)
+Jun 11 01:57:05 <eax> %ecx holds the address of the start of your buffer (the text you want to print)
+Jun 11 01:57:29 <eax> %edx hold the size of your buffer (how long it is)
+Jun 11 01:57:59 <eax> %eax holds the interupt code (if you recall 1 = exit) this time we are going to put 4 in there
+Jun 11 01:58:06 <eax> beause 4 = write
+Jun 11 01:58:26 <eax> (all these codes and stuff can be found in “programming from the ground up”)
+Jun 11 01:58:51 <eax> ok
+Jun 11 01:58:57 <hatter> Back
+Jun 11 01:59:05 <eax> wb hatter
+Jun 11 01:59:11 <hatter> ty
+Jun 11 01:59:12 <hatter> where are we?
+Jun 11 01:59:29 <eax> k so now since we have to push our variables onto the stack in order to use in in our function
+Jun 11 01:59:52 <eax> erm
+Jun 11 02:00:00 * m00p (~moop@BB6D61B8.1C393A1B.876CAAC6.IP) entrou em #school4lulz
+Jun 11 02:00:03 <eax> in order to use a variable in our funciton we have to push it onto the stack*
+Jun 11 02:00:05 * jrsimar (~M8R-5i54t@LulzCo-A2C5809A.byte4byte.com) entrou em #school4lulz
+Jun 11 02:00:30 <eax> for this function we will use the address of a ascii test string
+Jun 11 02:00:45 <eax> but where do we put this ascii text string you may ask
+Jun 11 02:00:47 <eax> good question
+Jun 11 02:00:58 * skynyrd saiu (Remote host closed the connection)
+Jun 11 02:00:58 <eax> hatter should of went over breifly the Header area
+Jun 11 02:01:08 <eax> (.section .data and .section .text
+Jun 11 02:01:08 <eax> )
+Jun 11 02:01:21 <hatter> Ah yes
+Jun 11 02:01:24 <hatter> .section
+Jun 11 02:01:27 <hatter> creates a section
+Jun 11 02:01:31 <hatter> there aren’t a lot of types
+Jun 11 02:01:37 <hatter> but bss is the main stack
+Jun 11 02:01:38 * BillNye saiu (Quit: Leaving)
+Jun 11 02:01:43 * phracktion2 saiu ()
+Jun 11 02:01:44 <hatter> data is different static data
+Jun 11 02:01:51 <eax> the .data section is reserved for stacic variables such as strings and other variables
+Jun 11 02:01:55 <hatter> and text is the main execution code
+Jun 11 02:02:00 <eax> ^
+Jun 11 02:02:17 <eax> ok so we want to define an ascii variable
+Jun 11 02:02:25 <eax> in order to do so
+Jun 11 02:02:44 <eax> we create a new label in .data (because there are no variables in asm only poitners to memory addresses)
+Jun 11 02:02:47 <eax> so
+Jun 11 02:02:52 * t0bias saiu ()
+Jun 11 02:02:52 <eax> .section .data
+Jun 11 02:02:56 <eax> our_string:
+Jun 11 02:02:59 * Wally (~Wally@LulzCo-889B720B.members.linode.com) entrou em #school4lulz
+Jun 11 02:03:07 <eax> .ascii “this is our string\n”
+Jun 11 02:03:18 <lolwat> eax,
+Jun 11 02:03:21 <lolwat> no need to null terminate?
+Jun 11 02:03:36 <eax> depends on how you use it
+Jun 11 02:03:47 <lolwat> for instance, printing it
+Jun 11 02:03:48 <eax> you need to null terminate if you call a funciton like printf
+Jun 11 02:03:58 <lolwat> without knowing its len
+Jun 11 02:04:00 <eax> but since we are using the interupt it is not madatory
+Jun 11 02:04:18 <eax> if you read up a bit i talk about the registers the write itnerupt uses
+Jun 11 02:04:22 <lolwat> so .ascii by itself
+Jun 11 02:04:25 <eax> one of them is for specifing its lenge
+Jun 11 02:04:28 <eax> length8
+Jun 11 02:04:35 <lolwat> doesn’t null terminate? (that was my question)
+Jun 11 02:04:57 <null-> eax: you mean calling printf from stdio.h ?
+Jun 11 02:04:59 <eax> not when you use the interupt for write (you specifit length in %edx)
+Jun 11 02:05:04 * MoDahkah (~White@LulzCo-BCEEBD65.dyn.optonline.net) saiu de #school4lulz
+Jun 11 02:05:15 <eax> yes you can call printf from asm i will be covering that later
+Jun 11 02:05:31 <eax> ok so back to what i was saying
+Jun 11 02:06:18 <eax> ok
+Jun 11 02:06:25 <eax> the .data section looks like this
+Jun 11 02:06:48 <eax> to define a static string (this is not the case in certian instances like for calling a function like printf)
+Jun 11 02:06:54 <eax> .section .data
+Jun 11 02:06:54 <eax> test_string:
+Jun 11 02:06:54 <eax> .ascii “test\n”
+Jun 11 02:06:54 <eax> test_end:
+Jun 11 02:06:54 <eax> .equ test_len, test_end – test_string
+Jun 11 02:07:16 <eax> .equ creates a variable in this case containing the length of the string
+Jun 11 02:07:32 <eax> as i said the labels are for human readablility and actually represent memory addresses
+Jun 11 02:07:44 <hatter> ^
+Jun 11 02:07:49 <eax> so what it does is take the ending memory address and minus the starting
+Jun 11 02:07:52 <eax> to get the length
+Jun 11 02:07:53 * wa- (~0BADC0DE@345D34A9.CA721FD9.37DDF6FC.IP) entrou em #school4lulz
+Jun 11 02:08:34 <eax> sec let me paste bin the entire code so far its too long for irc
+Jun 11 02:08:37 <eax> give me a moment
+Jun 11 02:09:06 <eax> http://pastebin.com/znZCMYRb
+Jun 11 02:09:30 <eax> so far all it has is our exit code (to exit the program) and an incomplete funciton
+Jun 11 02:09:57 <eax> lets add a way to give our function our variables (the address of our text and its length)
+Jun 11 02:10:13 <eax> to do this push them onto the stack in our main program (abouve our exit code)
+Jun 11 02:10:20 <eax> pushl $test_string
+Jun 11 02:10:24 * zteppup (~email@LulzCo-EEC8A160.hsd1.ms.comcast.net) entrou em #school4lulz
+Jun 11 02:10:32 <eax> pushl $test_len
+Jun 11 02:11:04 <eax> now after that incert a call to call our funciton
+Jun 11 02:11:08 <eax> call test
+Jun 11 02:11:21 <eax> http://pastebin.com/g6wzspYH
+Jun 11 02:11:25 <eax> now looks like so
+Jun 11 02:11:43 <eax> now our main code is finished (all we need it to do is push our data and exit)
+Jun 11 02:11:59 <eax> so lets finish up on our function (sorry for jumping back and forth so many things to tell you lol)
+Jun 11 02:12:13 <eax> now
+Jun 11 02:12:35 <eax> in our function we are currently pushing the base piointer (ebp) and then moving the stack pointer to ebp
+Jun 11 02:12:55 <eax> this allows us to access our variables (and those two commands should be in every function )
+Jun 11 02:13:21 <eax> at the point of when our function is called our stack looks like so
+Jun 11 02:13:28 <eax> $text_len
+Jun 11 02:13:37 <eax> $test_string
+Jun 11 02:13:43 <eax> return address
+Jun 11 02:13:47 <eax> ebp
+Jun 11 02:14:03 <eax> sec
+Jun 11 02:14:34 * Fox (~Fox@9FEBF99A.F71AD6B7.1ABC39CD.IP) entrou em #school4lulz
+Jun 11 02:14:34 * ChanServ coloca o modo +q #school4lulz Fox
+Jun 11 02:14:34 * ChanServ coloca o modo de operador a Fox
+Jun 11 02:14:54 <Fox> :3
+Jun 11 02:15:08 <eax> $test_len       ebp + 12
+Jun 11 02:15:08 <eax> $test_string    ebp +8
+Jun 11 02:15:08 <eax> return address  ebp +4
+Jun 11 02:15:08 <eax> ebp             ebp / esp
+Jun 11 02:15:33 <eax> ebp is the base pointer (which we moved esp to) which pointes to the bottom of the stack
+Jun 11 02:15:46 <eax> since we are working in longs (or dwords) which are 4 bytes in length
+Jun 11 02:15:58 <eax> we can move up the stack in 4 byte increments
+Jun 11 02:16:19 <eax> so say %ebp = 0×10000000
+Jun 11 02:16:30 <eax> our variable that we pushed onto the stack are at
+Jun 11 02:16:36 <eax> 0×10000008
+Jun 11 02:16:45 <eax> and 0×10000012
+Jun 11 02:16:48 <eax> in memory
+Jun 11 02:17:03 * rawr (~rawr@CCCA3D60.382F279B.761029BD.IP) entrou em #school4lulz
+Jun 11 02:17:07 <eax> so in order to access them in our finction
+Jun 11 02:17:21 <eax> we use something called indrect memory access
+Jun 11 02:17:41 <eax> (it basiacally means we specify an address and it will grab its context)
+Jun 11 02:17:59 * rawr saiu ()
+Jun 11 02:17:59 <eax> so lets grab our first variable (test_string)
+Jun 11 02:18:04 <null-> like *ptr in C?
+Jun 11 02:18:16 <eax> yes in a sense
+Jun 11 02:18:25 <eax> pointers in C point to memory addresses
+Jun 11 02:18:37 <eax> if you want you can actually do *var + 4
+Jun 11 02:18:47 <eax> and it would take the address of var and add 4 to it
+Jun 11 02:19:15 <eax> ok so in order to get our first variable underneith movl %esp, %ebp put
+Jun 11 02:19:25 * exo (~Myfziic@LulzCo-BE34EA80.hsd1.pa.comcast.net) entrou em #school4lulz
+Jun 11 02:19:33 <eax> movl 8(%ebp), %edx
+Jun 11 02:20:04 <eax> what this does is moves a long (aka a dword (4 bytes)) from the address of %ebp + 8
+Jun 11 02:20:16 <eax> and puts the contents into %edx
+Jun 11 02:20:37 <eax> so its moving 0×10000008 – 0×10000012 into %edx
+Jun 11 02:21:04 <eax> this is the address of our text string we define in the data segment which we pushed onto the stack
+Jun 11 02:21:16 <eax> (which we will need for calling our write intrrupt)
+Jun 11 02:21:28 <eax> now we have to grab the length of our text
+Jun 11 02:21:37 <eax> movl 12(%ebp), %ecx
+Jun 11 02:21:48 <eax> same thing appens here
+Jun 11 02:22:03 <eax> moves 4 bytes starting at %ebp + 12 into ecx
+Jun 11 02:22:17 <eax> thats our memory address of our .equ which is our length of our string
+Jun 11 02:22:23 * foobar29 saiu (Quit: Leaving.)
+Jun 11 02:22:46 <eax> http://pastebin.com/FZK60Bw1
+Jun 11 02:22:49 <eax> code now looks like so
+Jun 11 02:23:16 <eax> now that we have our two variables we pushed onto the stack for use in our function lets start our system interupt code
+Jun 11 02:23:23 <eax> to print our text into STDOUT
+Jun 11 02:23:38 <eax> (the file discriptor the pipes ascii onto the terminal
+Jun 11 02:23:40 <eax> )
+Jun 11 02:23:45 * tunafish (tuna@LulzCo-75BA39C5.hrbgpa.fios.verizon.net) entrou em #school4lulz
+Jun 11 02:23:46 * rj saiu (Ping timeout: 240 seconds)
+Jun 11 02:23:48 * tunafish (tuna@LulzCo-75BA39C5.hrbgpa.fios.verizon.net) saiu de #school4lulz
+Jun 11 02:24:10 <eax> as i said before the write interupt uses 3 registers in order to function
+Jun 11 02:24:14 <eax> erm 4*
+Jun 11 02:24:23 <eax> %eax, ebx, ecx, edx
+Jun 11 02:25:06 <eax> my bad class i moved the variables to the wrong registers
+Jun 11 02:25:10 <eax> it should look like so
+Jun 11 02:25:11 <eax> movl 8(%ebp), %ecx
+Jun 11 02:25:11 <eax> movl 12(%ebp), %edx
+Jun 11 02:25:39 <eax> %ebx is our file discripter we want to write to (in our case stdout is 1)
+Jun 11 02:25:50 <eax> so lets mov $1 into ebx
+Jun 11 02:25:51 * bebop (~bebop@LulzCo-CAD7DCCC.hsd1.il.comcast.net) saiu de #school4lulz
+Jun 11 02:26:25 <eax> next we need to put our buffer address (the address our text is at) into %edx
+Jun 11 02:26:28 <hatter> wow eax you’re impressing me <3
+Jun 11 02:26:54 <eax> luckily if we use the two replacment lines i screw up above we dont have to issue a command to move the data there
+Jun 11 02:26:57 <eax> because it is already there
+Jun 11 02:27:12 <eax> same goes for %ecx
+Jun 11 02:27:22 * Guantenk (Guantenk@C3D22DDB.DB5C8CD3.950BBD03.IP) entrou em #school4lulz
+Jun 11 02:27:27 <eax> http://pastebin.com/rER2gC9e
+Jun 11 02:27:31 <eax> code now looks like so
+Jun 11 02:27:34 * FireStarter saiu ()
+Jun 11 02:27:44 <eax> next we need to move our intterupt code into %eax
+Jun 11 02:28:00 <eax> when calling int $0×80 the interupt code always goes into eax
+Jun 11 02:28:08 <eax> (example for exit we moved $1 into eax
+Jun 11 02:28:10 <eax> )
+Jun 11 02:28:24 <eax> in this case to fire the write inttrupt we have to move $4 into eax
+Jun 11 02:28:35 <eax> movl $4, %eax
+Jun 11 02:28:50 <eax> now we can call our itnerupt
+Jun 11 02:29:04 <eax> basically yelling at the cpu HEY I WANT TO DO SOMETHING LOOK IN EAX AND DO THAT SHIT
+Jun 11 02:29:31 <eax> http://pastebin.com/Run4J4j3
+Jun 11 02:29:35 <eax> code now looks like so
+Jun 11 02:29:45 <eax> that is it for the writing part of the code
+Jun 11 02:29:53 <eax> now it is time for funciton clean up
+Jun 11 02:30:15 <eax> basically you mov ebp back to esp
+Jun 11 02:30:28 <eax> and pop %ebp (to get ebp address back into it)
+Jun 11 02:30:38 <eax> movl %ebp, %esp
+Jun 11 02:30:51 <eax> pop %ebp
+Jun 11 02:31:00 <eax> this is manitory because without it you will most likely see some strange stuff happen
+Jun 11 02:31:13 <eax> the last call which i havent explained is ret
+Jun 11 02:31:27 <eax> ret is a call that takes the return address off the stack
+Jun 11 02:31:34 <eax> and jumps back to that point in code
+Jun 11 02:31:40 <eax> to resume execution
+Jun 11 02:31:43 * ExplodingPiglets saiu (Ping timeout: 240 seconds)
+Jun 11 02:31:53 <eax> (the return address is where we called our funciton)
+Jun 11 02:32:30 <eax> http://pastebin.com/H435rYUb
+Jun 11 02:32:37 <eax> finished code
+Jun 11 02:32:44 <eax> also now that i think about it
+Jun 11 02:32:56 <eax> the registers eip and the whole call /ret thing
+Jun 11 02:33:07 <eax> when you use the call function
+Jun 11 02:33:24 <eax> it pushes the return address into the stack and then jumps to the address of the function start
+Jun 11 02:33:32 <eax> and you issue a ret call
+Jun 11 02:33:50 <eax> it pops the returna ddress off the stack
+Jun 11 02:33:52 <eax> into %eip
+Jun 11 02:33:57 <eax> and then jumps
+Jun 11 02:34:05 <eax> now for buffer overflows
+Jun 11 02:34:16 <eax> they happen when you overflow the stack to a point where
+Jun 11 02:34:21 <eax> you can edit the return address
+Jun 11 02:34:42 <eax> so that once you can edit the return address you can make your own
+Jun 11 02:34:52 <eax> then the function pops it into %eip
+Jun 11 02:34:56 <eax> and jumps to it
+Jun 11 02:34:59 <eax> WELL GUESS WHAT
+Jun 11 02:35:04 <eax> YOUR EXPLOIT SHELL CODE IS THERE
+Jun 11 02:35:11 <eax> and it starts to run your shell code
+Jun 11 02:35:27 <eax> hatter can maybe clarifiy that a bit more
+Jun 11 02:35:40 <eax> anyways our code is done it is time to assemble and link
+Jun 11 02:36:05 <eax> (also sorry if i dont respond to pms i dont have them open atm
+Jun 11 02:36:06 <eax> )
+Jun 11 02:36:10 <hatter> essentially
+Jun 11 02:36:20 <hatter> the pop instruction takes the latest dword
+Jun 11 02:36:23 <hatter> and shoves it into a register
+Jun 11 02:36:29 <hatter> so what’s happening when ‘ret’ is called by itself
+Jun 11 02:36:35 <hatter> is actually on the circuit
+Jun 11 02:36:40 <hatter> popl %eip
+Jun 11 02:36:45 <hatter> if you assemble both of them
+Jun 11 02:36:49 <hatter> you will get the same bytecode
+Jun 11 02:36:57 <hatter> Some assemblers won’t let you assemble popl %eip.
+Jun 11 02:37:06 <hatter> But in a stack overflow
+Jun 11 02:37:15 <hatter> the last thing shoved onto the stack (or first thing depending on how you look at it)
+Jun 11 02:37:21 <hatter> is gonna be your pointer
+Jun 11 02:37:29 <hatter> that pointer gets popped by the ret call
+Jun 11 02:37:36 <hatter> sometimes you run into funny ret calls
+Jun 11 02:37:37 <hatter> like
+Jun 11 02:37:39 <hatter> ret 0×18
+Jun 11 02:37:52 <hatter> which specifies 18 bytes be popped off of the stack before the %eip pop
+Jun 11 02:38:02 <hatter> in any case, this is the fundamental of a stack overflow.
+Jun 11 02:38:37 * m00p saiu (Remote host closed the connection)
+Jun 11 02:38:50 <eax> class give me amoment
+Jun 11 02:39:40 <eax> yea new it
+Jun 11 02:39:45 <eax> had an error in ym code lol
+Jun 11 02:39:53 <eax> http://pastebin.com/sUGerZDN
+Jun 11 02:40:26 * wa- saiu (Quit: molorrrrrrrrrrrrrrrrrrrrr)
+Jun 11 02:40:39 <eax> erm
+Jun 11 02:40:48 <eax> sec again some how it reverted to older code
+Jun 11 02:41:19 * jas09 saiu (Remote host closed the connection)
+Jun 11 02:41:31 <eax> http://pastebin.com/YK2vpa1z
+Jun 11 02:42:25 * jas09 (~User@LulzCo-6342553E.formlessnetworking.net) entrou em #school4lulz
+Jun 11 02:43:03 <eax> erm awkward
+Jun 11 02:43:09 <eax> take 5 i need to figure something out
+Jun 11 02:43:19 * eax coloca o modo -m #school4lulz
+Jun 11 02:43:49 <hatter> oh
+Jun 11 02:43:50 <hatter> Wow
+Jun 11 02:43:50 <jrsimar> appreciate this. thx eax & school4lulz
+Jun 11 02:43:57 <hatter> You need debug eax ?
+Jun 11 02:43:59 <eax> np
+Jun 11 02:44:04 <TylerDurden> http://www.intel.com/products/processor/manuals/ <=read the intel manuals for more information on instructions and their bytecodes.
+Jun 11 02:44:10 <TylerDurden> the intel manuals are GOOD INFO.
+Jun 11 02:44:13 <hatter> ^
+Jun 11 02:44:20 <hatter> amd has free arch manuals as well.
+Jun 11 02:44:21 <eax> ^
+Jun 11 02:44:34 <TylerDurden> intel’s are better, and instruction sets somewhat match.
+Jun 11 02:44:46 * pheno saiu (Remote host closed the connection)
+Jun 11 02:44:49 <eax> http://www.wildcardsecurity.com/security101/index.php?title=Ascii_shellcode
+Jun 11 02:44:53 <TylerDurden> plus intel’s recent sandy vagina 256 bits SMD registers r cool.
+Jun 11 02:44:56 <eax> http://www.wildcardsecurity.com/security101/index.php?title=Assembly_Basics#Counting
+Jun 11 02:44:59 <eax> also good reads
+Jun 11 02:45:02 <eax> made by hatter
+Jun 11 02:45:05 <hatter> :3
+Jun 11 02:45:15 <torify> thx a lot eax & hatter
+Jun 11 02:45:28 <Fox> Gents once again, just to clarify
+Jun 11 02:45:35 <haut> There’s also Paul A. Carter’s “PC Assembly language” which explains x86 Assembly in detail, using intel syntax
+Jun 11 02:45:44 <Fox> the more donations, the more people like these guys are likely to come back
+Jun 11 02:45:49 <Fox> hatter and eax are good friends
+Jun 11 02:46:02 <Fox> but we’d love to be able to show them some appreciation with perks :3
+Jun 11 02:46:10 <eax> fox is starving supporting you guys
+Jun 11 02:46:13 <hatter> there’s perks?
+Jun 11 02:46:14 <eax> feed him bitcoins
+Jun 11 02:46:24 <torify> will do asap ;(
+Jun 11 02:46:42 <KroaK> lol
+Jun 11 02:46:44 <xochipilli> sup eax
+Jun 11 02:46:54 <Fox> hatter we’re trying to give perks to our speakers.
+Jun 11 02:47:06 <Fox> Obviously these are just out of our graciousness, but you know
+Jun 11 02:47:28 <hatter> <3
+Jun 11 02:47:38 <KroaK> I think the buffer overflow part could have done with an explanation of a stack frame
+Jun 11 02:47:53 * exo saiu (Quit: Quit)
+Jun 11 02:47:57 <eax> yea i just breafliy went over it
+Jun 11 02:48:02 <eax> should of paid more attention
+Jun 11 02:48:09 <torify> first i gotta hustle a bit moar then you’ll get bitcoins ;#
+Jun 11 02:49:18 <KroaK> also people who haven’t used asm before don’t know that push and pop alter esp
+Jun 11 02:49:26 <KroaK> sorry for the criticism
+Jun 11 02:49:29 <KroaK> i did enjoy it 
+Jun 11 02:49:38 <eax> no its good keep going :3
+Jun 11 02:49:49 <eax> it is true push pop alter esp and its address
+Jun 11 02:49:51 * FireStarter (~FireStart@LulzCo-5D0A9C97.cm-6-1c.dynamic.ziggo.nl) entrou em #school4lulz
+Jun 11 02:49:51 * Spellga (Spellga@9B7EAB7E.FB625796.A951F2FE.IP) entrou em #school4lulz
+Jun 11 02:49:57 <hatter> either by 4 or 8 bytes
+Jun 11 02:49:58 <KroaK> push is simply
+Jun 11 02:50:08 <hatter> depending on the arch
+Jun 11 02:50:14 <KroaK> mov register, esp
+Jun 11 02:50:26 <KroaK> sub 4, esp
+Jun 11 02:50:30 <KroaK> # for 32 bit
+Jun 11 02:50:38 <KroaK> sub 8, esp
+Jun 11 02:50:41 <KroaK> # for 64 bit
+Jun 11 02:51:00 <KroaK> sorry i suck with AT&T syntax
+Jun 11 02:51:06 <KroaK> i’m used to intel 
+Jun 11 02:51:17 <eax> lol 
+Jun 11 02:51:19 * Jessica saiu (Connection closed)
+Jun 11 02:51:24 <eax> i only know ATT
+Jun 11 02:51:26 <eax> D:
+Jun 11 02:51:50 <KroaK> I’ve never coded my own asm, learned all my asm through disasm lol
+Jun 11 02:51:59 <eax> lol
+Jun 11 02:52:07 <eax> well i am afraid to announce i suck today
+Jun 11 02:52:09 <eax> http://pastebin.com/beH7v787
+Jun 11 02:52:12 <eax> code that should work
+Jun 11 02:52:15 <eax> that doesnt
+Jun 11 02:52:16 <eax> :/
+Jun 11 02:52:28 <jrsimar> forgive me if you already went over this, but how do you compile/run/assemble this code?
+Jun 11 02:52:38 <KroaK> as test.s -o test.o
+Jun 11 02:52:39 <eax> oh ok yea
+Jun 11 02:52:44 <KroaK> ld test.o -o test
+Jun 11 02:52:46 <KroaK> ./test
+Jun 11 02:52:49 <eax> ^
+Jun 11 02:52:53 <KroaK> if you called your file test.s
+Jun 11 02:52:57 * Fox coloca o modo de semi-operador a TylerDurden
+Jun 11 02:53:01 <eax> as is to assemble it
+Jun 11 02:53:06 <eax> ld is to link it together
+Jun 11 02:53:14 <Hellspawn> echo $?
+Jun 11 02:53:19 <Spellga> iack assembly ><
+Jun 11 02:53:25 <Spellga> long time dont work with that
+Jun 11 02:53:30 <Hellspawn> to find out what went wrong
+Jun 11 02:53:33 * MrBlue (~MrBlue@LulzCo-6D96D76.torservers.net) entrou em #school4lulz
+Jun 11 02:53:42 <eax> echo $? was to print out the return value of our exit program
+Jun 11 02:53:57 <Hellspawn> mm
+Jun 11 02:53:57 <eax> it doesn’t really effect anything else :/
+Jun 11 02:54:04 <Hellspawn> kk
+Jun 11 02:54:10 <KroaK> if you’re interesting in disassembling/gnireenigne i recommend the book:
+Jun 11 02:54:13 <KroaK> uh
+Jun 11 02:54:28 <KroaK> i think its called the art of reverse engineering: secrets of something
+Jun 11 02:54:29 <KroaK> 1sec
+Jun 11 02:54:40 <KroaK> no wait
+Jun 11 02:54:46 <wutthe> eax: what’s the most useful or fun program you’ve created?
+Jun 11 02:54:54 * imposter22 saiu (Connection closed)
+Jun 11 02:54:54 * S4ya saiu (Connection closed)
+Jun 11 02:54:54 * Onions saiu (Connection closed)
+Jun 11 02:54:56 <KroaK> reversing: secrets of reverse engineering
+Jun 11 02:55:04 <haut> by Eldad Eilam
+Jun 11 02:55:09 <KroaK> ^
+Jun 11 02:55:14 * imposter22 (~imposter2@LulzCo-CB9E1773.formlessnetworking.net) entrou em #school4lulz
+Jun 11 02:55:18 <haut> good book
+Jun 11 02:55:19 <eax> most useful? in asm nothing
+Jun 11 02:55:26 <eax> i try not to program in asm
+Jun 11 02:55:35 <eax> its boring time consuming and hard
+Jun 11 02:55:41 <KroaK> also couldn’t *var +4
+Jun 11 02:55:46 <KroaK> deref the var then add 4?
+Jun 11 02:55:52 <KroaK> *(var+4)
+Jun 11 02:55:53 <eax> ^
+Jun 11 02:55:57 <eax> yea my bad lol
+Jun 11 02:56:00 <KroaK> wouldn’t*
+Jun 11 02:56:00 <KroaK> lol
+Jun 11 02:56:17 <eax> http://pastebin.com/AbWgFsGJ
+Jun 11 02:56:25 <eax> ^ my last project i did to show someone asm
+Jun 11 02:56:29 <eax> compiles and works
+Jun 11 02:56:32 <KroaK> cool
+Jun 11 02:56:44 <Guantenk> if you wanna talk with computer, you need know asm
+Jun 11 02:56:45 <eax> it asks the user to enter a password and does a simple xor check to see if its correct
+Jun 11 02:56:59 <KroaK> if you wanna talk with computer, take lsd*
+Jun 11 02:57:05 <eax> for the life of me idk whats wrong with what we did today :/
+Jun 11 02:57:21 <lolwat> eax, thank you for the revision
+Jun 11 02:57:29 <lolwat> my asm was a little dusty
+Jun 11 02:57:32 <KroaK> what do you mean?
+Jun 11 02:57:41 <lolwat> and gotta say I hate AT&T syntax :/
+Jun 11 02:57:43 <eax> lol np
+Jun 11 02:57:51 <KroaK> haha
+Jun 11 02:57:52 <eax> theres so much to asm i didnt cover half of it :/
+Jun 11 02:57:56 <Fox> eax class over?
+Jun 11 02:57:57 <lolwat> (learned the intel way)
+Jun 11 02:58:11 <eax> yea i think so
+Jun 11 02:58:17 <Fox> Someone able to pastebin it?
+Jun 11 02:58:20 <KroaK> Q&A?
+Jun 11 02:58:21 <KroaK> lol
+Jun 11 02:58:32 <eax> even though i didnt produce functioning code i think i explained it well enoguh
+Jun 11 02:58:37 <eax> yea sure Q&A
+Jun 11 02:58:38 * MrLinux saiu (Ping timeout: 240 seconds)
+Jun 11 02:58:56 <lolwat> eax, how to find the return addr
+Jun 11 02:58:58 <lolwat> to our shellcode?
+Jun 11 02:58:59 <KroaK> well from the point of view from not knowing anything about asm
+Jun 11 02:59:06 <KroaK> I think it could be confusing
+Jun 11 02:59:10 <KroaK> this is more about asm then bof’s
+Jun 11 02:59:16 * withate saiu (Read error: Connection reset by peer)
+Jun 11 02:59:30 * withate (~pinc0de@LulzCo-9E449B52.cable.virginmedia.com) entrou em #school4lulz
+Jun 11 02:59:36 * zaiger (~newfriend@OhIntehbutt.com) entrou em #school4lulz
+Jun 11 02:59:43 <KroaK> and that could be quite a long talk about gdb
+Jun 11 02:59:45 <eax> that i am not really sure tbh
+Jun 11 02:59:49 <eax> ^
+Jun 11 02:59:59 <Fox> Someone able to pastebin it?
+Jun 11 03:00:24 <KroaK> lolwat, you pretty much open the program in gdb, reproduce the bug, slap your shellcode in a buffer and get the address
+Jun 11 03:00:33 <KroaK> but ASLR and shit makes it more difficult
+Jun 11 03:00:39 <eax> ^
+Jun 11 03:00:40 <lolwat> ASLwhat?
+Jun 11 03:00:47 <lolwat> brb googlin’
+Jun 11 03:00:51 <KroaK> something stack layout randomisation
+Jun 11 03:00:52 <Fox> PASTEBIN!?
+Jun 11 03:00:52 <haut> eax: you got the order wrong, first push len then str
+Jun 11 03:00:52 <Fox> PASTEBIN!?
+Jun 11 03:00:53 <Fox> PASTEBIN!?
+Jun 11 03:00:54 <TransfiniteGreyWizard> Hey, which is faster in computation, multiplication or division?
+Jun 11 03:00:54 <Fox> PASTEBIN!?
+Jun 11 03:00:56 <KroaK> i’ll pb it
+Jun 11 03:00:57 <eax> ASLR randomises addresses in the stack
+Jun 11 03:01:06 <KroaK> multiplication i think
+Jun 11 03:01:10 <lolwat> i see…
+Jun 11 03:01:11 <KroaK> i think div is fucking slow
+Jun 11 03:01:16 <lolwat> so the ret addr won’t be in the same spot
+Jun 11 03:01:27 <eax> with aslr no
+Jun 11 03:01:31 <KroaK> it randomises the beginning of the stack i believe
+Jun 11 03:01:35 <KroaK> when the program starts
+Jun 11 03:01:42 * Fox coloca o modo +m #school4lulz
+Jun 11 03:01:47 <Fox> Gentlemen
+Jun 11 03:01:51 <Fox> I know you’re doing your QA
+Jun 11 03:01:54 <Fox> and I’ll let you be
+Jun 11 03:01:56 <Fox> but two big things
+Jun 11 03:02:06 <Fox> 1st, we have a back-to-back class tonight
+Jun 11 03:02:17 <hatter> jesus this was a 4 hour long class
+Jun 11 03:02:19 <hatter> there’s another?
+Jun 11 03:02:23 <Fox> TylerDurden is going to do a piece of casing targets, plus some general review.
+Jun 11 03:02:28 * pRjck3vC saiu (Remote host closed the connection)
+Jun 11 03:02:30 <hatter> works for me
+Jun 11 03:02:34 <eax> jesus i tought people about seembly for 4 hours :/
+Jun 11 03:02:42 <TylerDurden> hatter: i need 1 or 2 hours for a break.
+Jun 11 03:02:43 <hatter> well eax, WE did.
+Jun 11 03:02:45 <TylerDurden> got some java to finish.
+Jun 11 03:02:47 <Fox> We <3 you.
+Case Study: Corporate Compromise (by Fox)
+Posted by nachash	 on June 19, 2011 None comments
+<~Fox> Now
+<~Fox> The most recent compromise that I did was of a corporate network that handles a specific type of document and it manages a yes/no result in the financial world
+<~Fox> This was a for-profit job
+<~Fox> Obviously I’m not going to let you in on anything but theory because we don’t want you screwing around in places like those
+<~Fox> Anyways
+<~Fox> The first and foremost was to find a vector of entry which as most of our classes have told you that with a strictly external compromise with no in, your best bet will be web applications
+<~Fox> Now moving up from there I went through the site to find a vulnerability
+<~Fox> After finding a place vulnerable to SQLi I ended up having to use binary enumeration to go through and map out everything that I could
+<~Fox> from there I was able to escalate that into a shell like we’d found before and have done in prior classes (lolhackers.com/school)
+<~Fox> From the shell I was able to dig and find the configurations that were being used for the remote DB
+<~Fox> this allowed us to find the server that would keep the records that we would need to alter in order for the client to acquire the desired result
+<~Fox> Anyways moving from there we were able to easily get into the box via keys shared between the two servers
+<~Fox> from there it was a matter of digging through the DB
+<~Fox> changing the record
+<~Fox> and the clients ability to bank without issue was restored again 
+<~Fox> P.P.S The system was called checksystems
+<~Fox> err chexsystems
+* Fox sets mode: -m
+<~Fox> So…
+<~Fox> After finding a place vulnerable to SQLi I ended up having to use binary enumeration to go through and map out everything that I could
+<~Fox> from there I was able to escalate that into a shell like we’d found before and have done in prior classes (lolhackers.com/school)
+<~Fox> From the shell I was able to dig and find the configurations that were being used for the remote DB
+<~Fox> this allowed us to find the server that would keep the records that we would need to alter in order for the client to acquire the desired result
+<~Fox> Anyways moving from there we were able to easily get into the box via keys shared between the two servers
+<~Fox> from there it was a matter of digging through the DB
+<~Fox> changing the record
+<~Fox> and the clients ability to bank without issue was restored again 
+<~Fox> P.P.S The system was called checksystems
+<~Fox> err chexsystems
+<~Fox> So…
+<~Fox> That topic kind of sucked dick.
+<Deathwish187> Interesting
+<Reelix> “via keys shared between the two servers” ?
+<flyAway> Fox.
+<flyAway> Explain binary/blind SQLI
+<~Fox> SSH keys.
+<noneya1238> Fox: did you cover your tracks?
+<flyAway> As we haven’t covered that.
+<Thing27_> SSH keys
+<Hellspawn> Q: How did you ensure the “ban” list wasnt updated from an external source?
+<~Fox> noneya1238: yes
+<~Fox> flyAway: That could help
+<Hellspawn> as in, how did you ensure that the thing you changed was all you needed to change.
+<In4TehLulz> Question: How would you know if something is vulnerable to SQLi attacks?
+<Reelix> Q: What method did you use to cover / hide your tracks 
+<~Fox> Hellspawn: That was a matter of watching through the daemons and digging around
+<flyAway> In4TehLulz: read the old tuts.
+* Reelix throws In4TehLulz a ‘
+<Hellspawn> in4tehlulz: lolhackers.com/school
+* Savitri (~savitri@LulzCo-A877BCEC.ipredate.net) has joined #school4lulz
+* ChanServ sets mode: +o Savitri
+<Hellspawn> read the tutorials.
+<flyAway> Reelix: not always quotes, tough they are good.
+* Fox sets mode: +msc
+<~Fox> Check school4lulz topic.
+<~Fox> That has a shitload of your answers
+* Fox sets mode: -msc
+<Reelix> flyAway: ‘, removing values, negative 1, +ORDER+BY+50000, etc etc :p
+<flyAway> Reelix: true.
+<~Fox> Alright
+<~Fox> I’m going to go get food
+<~Fox> I’l be back
+

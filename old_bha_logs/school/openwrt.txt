@@ -1,0 +1,444 @@
+*	Sav sets mode +m #school
+<Fox>	on murder and drugs
+<Sav>	Ok
+<Fox>	we cant do that
+<Sav>	instead of that
+<Fox>	rainbows?
+<Sav>	they'll get a class on OpenWRT and vpn pool
+<Sav>	or poop
+<nachash>	Fox: Can we make a channel to talk about murder/drugs shit?
+<nachash>	I propose #anarchy
+<Fox>	done.
+<Sav>	shhh
+<Fox>	#murder
+<Fox>	***
+<nachash>	lololol
+<Fox>	#murda
+<Sav>	ok
+*	Sav sets mode -q #school Fox
+*	Sav removes channel operator status from nachash
+<Sav>	:D
+<hatter>	sup Sav <3
+<Sav>	so
+<Sav>	nm
+<Sav>	promised a class this morning
+<Sav>	will be giving it now
+<Sav>	I had planned one
+<Mutiny>	go ahead sav, i need to go get some shit done
+<Sav>	this morning
+<Sav>	(morning for me)
+<hatter>	Sav: go for it
+<hatter>	:)
+<Sav>	OK
+<Sav>	so
+<Sav>	We'll be studying OpenWRT and how to set it up as a VPN gateway for
+your computer
+<Sav>	please pm another op if you want voice
+<Sav>	as usual
+<Sav>	This has several advantages, the main one is that little or no trace
+of configuration can be found on your computer
+*	droid has quit (Ping timeout)
+<Sav>	and an OpenWRT router like the WRT54GL is something very small and
+easy to dissimulate and shit, so in case a thief comes home and wants to rob
+your secrets he won't be able to easily find that one
+<Sav>	so, the advantages, little configuration on your computer, tinyness of
+the hardware, and overall, it's damn flexible
+<Sav>	As an example, on my WRT54GL I have a pool of 3 VPNs for diverse use
+<Sav>	2 americans, 1 for hulu, 1 for gmail.
+<Sav>	1 australian, for Kangaroo Dance.
+<Arsis>	Sav: pros/cons of that vs paid vpn?
+<Sav>	these ARE paid vpns
+<Sav>	just they're not directly set up on my computer
+<Sav>	the advantage of that is that your non-secure traffic can go through
+your normal gateway
+<Sav>	while your more sensitive traffic can be routed through your VPN
+gateway, without having to fiddle with your local host's network config
+<Sav>	another advantage is with this method is is damn easy to chain VPNs
+<Sav>	with very little route configuration
+<Sav>	So
+<Sav>	Step 1/ download openwrt, I have a preference for backfire.
+<Sav>	and tbh been having it for like 1 year, and it's perfect
+<Sav>	Step 2/ strip it down. Disable the DHCP server (rtfm)
+<Sav>	ok
+<Sav>	we're tfm
+<Sav>	so we'll give you a lecture :)
+<Sav>	first steps to strip it down, opkg list
+<Sav>	on my box, currnetly, there's 40 packets
+<Sav>	I disabled the httpd there was by default, a long while ago
+<Sav>	and activated, ofc, dropbear, the embedded ssh server
+<Sav>	you will need the following packages to have functional pptp vpn
+through your OpenWRT router
+<Sav>	ip (provides iproute2 utilities), ppp, pptp and srelay
+<Sav>	srelay is a SOCKS5 proxy, that you'll be using for connecting, but
+that's the later part
+<smeagol>	PPTP is known to be a faulty protocol. The designers of the
+protocol, Microsoft, recommend not to use it due to the inherent risks. Lots
+of people use PPTP anyway due to ease of use, but that doesn't mean it is any
+less hazardous. The maintainers of PPTP Client and Poptop recommend using
+OpenVPN (SSL based) or IPSec instead.
+http://pptpclient.sourceforge.net/protocol-security.phtml to read about why to
+not use pptp
+<awkward>	why do you use 3 VPNs and hulu, gmail have seperate?
+<Sav>	this is personal matter and is of no technical interest
+<Fox>	Alright
+<Fox>	oop
+<Fox>	sorry
+<Sav>	smeagol: it is a functional, lightweight and efficient protocol, plus
+we use GRE over it, it does the work.
+<smeagol>	umm heh
+<smeagol>	ok
+<Sav>	we're talking of a box with 4MB dynamic disk space and 16 MB RAM
+<Sav>	I can't use ipshit on it
+<smeagol>	yes, and supports openvpn
+<Sav>	which takes a fuckton diskspace
+<smeagol>	and doesnt suck ;)
+<kratos>	note that you can use a spare PC instead of a consumer router
+with OpenWRT, all you need is a linux/freebsd distro on it, a couple of nics
+(or wireless AP card) and a modem (dsl or cable etc.)
+<Sav>	pptp doesn't suck.
+<smeagol>	but ok, please continue
+<smeagol>	yes, it does, i supplied a link about its suck-factor
+*	hatter removes voice from smeagol
+<hatter>	continue Sav 
+<awkward>	this setup is mainly for home use or for using in public wifi
+spots?
+<Sav>	pptp works and is used like everywhere. Hole my fuck out and prove it
+sucks
+<Sav>	for home use
+<xochipilli>	yeah
+<Sav>	because you don't want random ppl to use your vpn
+<xochipilli>	openvpn is much bitchier
+<Sav>	OK, so let's go on
+<Sav>	strip down your OS
+<Sav>	remove all the useless crap
+<Sav>	httpd, wifi, whatever you don't use, you trash
+<Sav>	then you install ppp, pptp, srelay
+<Sav>	then
+<Sav>	you configure your chap-secrets
+<Sav>	it's a plaintext file which contains the following field
+<Sav>	username PPTP password ppp-server-ip-address
+<Sav>	I have 3 VPNs so there's 3 lines I filled in in my file
+<Sav>	then, you need to configure your peers
+<Sav>	http://slexy.org/view/s20qFu9LXI > an exemple peers file
+<Sav>	the peers are to be put in /etc/ppp/peers/ for ease of use
+<Sav>	you name then like "myvpn", "myothervpn", "thethirdone"
+<Sav>	w/e
+<Sav>	the name ... field has to correspond with one info in your
+/etc/ppp/chap-secrets file
+<Sav>	now, take time to put aside the IPs of the VPN servers you'll be
+using, you'll need this
+<Sav>	the plan, now, is to set static routes to the vpn servers through the
+main gateway, call all the vpn providers, and set a default route going
+through it
+<Sav>	for this, I have prepared a script in /etc/ppp/ip-up.d/ that I called
+"routes
+<Sav>	"
+<Sav>	my script looks like
+<Sav>	#!/bin/sh
+<Sav>	ip ro add 93.182.146.2 via 192.168.0.254
+<Sav>	ip ro add 208.91.134.130 via 192.168.0.254
+<Sav>	ip ro add 180.189.157.92 via 192.168.0.254
+<Sav>	ip ro add 64.120.244.162 via 192.168.0.254
+<Sav>	ip ro replace 0.0.0.0/0 dev ppp0
+<Sav>	192.168.0.254 being the iface for my DSL router.
+<Sav>	by default, all my traffic will go through the ppp0
+<Sav>	that is, the first I called
+<Sav>	this will make sure my VPNs don't nest by default
+<Sav>	if I want them to nest
+<Sav>	I just have to use something like (if I did it in interactive CLI)
+<Sav>	ip ro replace 208.91.134.130 dev ppp0
+<Sav>	(considering 208.91.134.130 is not the address to the ppp0 VPN
+provider)
+<Sav>	this is somethign I didn't test much this far, but it can work w/o
+problems afaik
+<Sav>	now the power of this setup
+<Sav>	is in the fact that all VPNs are constantly up
+*	d3v0n has quit (Ping timeout)
+<Sav>	if you want to change IP, you just
+<Sav>	ip ro replace 0.0.0.0/0 dev pppX
+<Sav>	and 
+<Sav>	ip ro flush table cache
+<Sav>	put this in a script and you're the winner
+<Sav>	I've put this in /usr/bin/switchvpn
+<Sav>	#!/bin/sh
+<Sav>	ip ro replace 0.0.0.0/0 dev $1
+<Sav>	ip ro flush table cache
+<Sav>	I call it as switchvpn ppp1
+<Sav>	and magically my routes are updated
+<Sav>	Now
+<Sav>	using it
+<Sav>	it's another matter
+<Sav>	You need to get something like Portable Firefox
+<Sav>	or Firefox, period, or any other user agent that will let you
+configure a proxy independently of the OS
+<Sav>	and on the OpenWRT, you need to start the srelay thingie you had just
+installed
+<Sav>	my srelay.conf is:
+<Sav>	root@ruth:~# cat /etc/srelay.conf
+<Sav>	# allow local subnet to access socks proxy
+<Sav>	192.168.0.0/24 any -
+<Sav>	(because my home network is 192.168.0)
+<Sav>	I configure Firefox very simply: go to
+Options/pReferences/Advanced/Network
+<Sav>	and fill only the "SOCKS 5 proxy" inputs
+<Sav>	with SOCKS Host: the IP of your OpenWRT router
+<Sav>	and port: 1080 (that's the default socks port)
+<Sav>	try it and it'll work
+<Sav>	now you'll run into trouble maybe because of RAM use
+<Sav>	so
+<Sav>	kill the syslog
+<Sav>	and the klog
+<Sav>	and modify your /etc/init.d/boot script
+<Sav>	replace
+<Sav>	 if [ -x /sbin/syslogd ]
+<Sav>	by
+<Sav>	  if [ -x /sbin/syslogd && false ]
+<Sav>	this will disable the startup of syslog and crap
+<Sav>	my router used to crash sometimes with big web traffic, I couldn't
+read the output but I supposed it was swappiness
+<Sav>	since there's no swap
+<Sav>	it just crashed silently
+<awkward>	do you turn the vpn off for personal legal stuff? or can it be
+on all the time?
+<Sav>	it is on all the time
+<Sav>	the advantage of this setup
+<Sav>	is that the traffic that doesn't go through the socks5 proxy
+<Sav>	goes out with my public IP
+<Sav>	as, when working for customers, publishing websites, reading my bank
+accounts
+<Sav>	all this comes from my public, well known IP
+<Sav>	only more sensitive traffic goes through VPN
+<Sav>	that is
+<Sav>	I ssh over the router
+<Sav>	by bouncing on it
+<Sav>	(I could use a socks5 compatible ssh client, I suppose puTTY supports
+this)
+<Sav>	and my web traffic in Firefox goes through it
+<Sav>	while Chrome uses my standard gateway
+<Sav>	there's absolutely no change in my computers' network config
+<Sav>	just the router is altered
+<Sav>	let me pastebin you one ps aux
+<Sav>	to show you how stripped down it is
+<Sav>	http://slexy.org/view/s21QaRdDUW
+<Sav>	I modified the /etc/init.d/srelay file to add the -m 16 option
+<Sav>	because I want to have maximum 16 processes running
+<Sav>	if you do that, guys
+<Sav>	you will gain in flexibility
+<Sav>	efficiency
+<Sav>	ease of use, seamlessness
+<Sav>	and general comfort of use
+<Sav>	it's no use getting through a VPN if you have to spend 5 mn changing
+your network config every time you want to switch IP
+<Sav>	with this solution, it's as simple as a single command line
+<Sav>	and most often it will be done transparently
+<Sav>	for sure continuous protocol program swill have to open new sessions
+<Sav>	but for the web, it's seamless
+<Sav>	so
+<Sav>	using OpenWRT + ppp + vpn + srelay + a Web User Agent that supports
+SOCKS5, your life becomes easy
+<Sav>	we could even imagine, if you didn't care, to load balance traffic
+between your VPNs. This would require packet marking in iptables
+<Sav>	(this could take up a lot of RAM, so I don't recommend it on such
+simple machines)
+<Sav>	and a small knowledge of policy routing
+<Sav>	like you create 3 routing tables
+<Sav>	one for each of your VPNs
+<Sav>	you randomly mark packets 1,2, or 3
+<Sav>	and you add rules
+<Sav>	ip ru add fwmark 1 lookup vpn1
+<Sav>	ip ru add fwmark 2 lookup vpn2
+<Sav>	ip ru add fwmark 3 lookup vpn3
+<Sav>	and the non-marked packets go through your default config
+<awkward>	but for hardcore stuff you should still use public wifi + vpn
++ tor? or this setup is secure enough?
+<Sav>	this setup can become more secure
+<Sav>	by chaining VPNs
+<Sav>	preferably VPNs from different providers
+<Sav>	and from differnet countries
+<Sav>	to chain them
+<Sav>	you have the route to the pptp server of one
+<kratos>	and rotating with a cronscript
+<Sav>	go through the established connection of the other
+<Sav>	rotating with a cronscript would break a lot of things kratos 
+<kratos>	it depends, if you had a pre-up and pre-down for each vpn
+<Sav>	or you can mark certain protocols, depending on port number, as "non
+stateful"
+<Sav>	and these would be dynarotated
+<Sav>	you can't have one for each VPN
+<Sav>	you have one global for ppp
+<Sav>	well
+<Sav>	I guess you could play with environment and shit
+<Sav>	to detect what provider you're calling
+<kratos>	well you'd have one master script that'd call other scripts
+<kratos>	if you get me
+<Sav>	but this gets beoynd the scope of the course
+<Sav>	yup
+<Sav>	still it has to detect :)
+<kratos>	mm might be a bit of work :)
+<Sav>	would be interesting, but I don't trust the 54GL for this work
+<kratos>	indeed, that's why running a spare PC as a router is better
+imo
+<Sav>	it's like , hmm, it is lacking RAM
+<Sav>	yup
+<Sav>	but 
+<Sav>	power consumption
+<Sav>	noise
+<kratos>	that's true
+<Sav>	it's cumbersome
+<kratos>	have you seen pandaboard?
+<Sav>	you have like only I iface
+<Sav>	1 iface most often
+<kratos>	yes
+<Sav>	nope didn't
+<kratos>	but with a wireless card, some more ifaces and a dsl/cable
+modem
+<kratos>	it'd do the job better :)
+<kratos>	search it up, pandaboard
+<Sav>	yeah
+<Sav>	but a 50$ router
+<Sav>	is not a 300$ computer
+<kratos>	you get what you pay for :)
+<kratos>	pandaboard is 150$
+<kratos>	iirc
+<kratos>	it's just a mobo
+<kratos>	small-sized and fairly extendable, no hd just SD
+<kratos>	etc
+<Sav>	and I like the service the $50 router provides, with 5 eth ports and a
+WiFi AP
+<Sav>	you can mod it
+<Sav>	to add a cf reader
+<Sav>	and it's easy to like tear it off
+<Sav>	and change its packaging
+<kratos>	sure
+<kratos>	you could maybe even extend RAM
+<Sav>	this gets more touchy
+<Sav>	:)
+<kratos>	i've heard of people chaining ram 
+<Sav>	ther's the WRT4GS
+<Sav>	which is IIRC 64MB RAM
+<Sav>	or something
+<Sav>	32
+<kratos>	yeah
+<Sav>	21:22 <Tyrone> poast this: Fags, get an old laptop, strip it down, its
+cheap as hell and has a built in UPS (battery).
+<Sav>	21:23 <Tyrone> Also silent, low power.
+<Sav>	I get i nprivate
+<Sav>	21:23 <Tyrone> And an attached keyboard so you can give it the 3
+fingered salute.
+<Sav>	I don't exactly agree because laptops are like reliable as shit, get
+hot as fire and fail as simon cowell
+<Sav>	but, well, it's a possibility
+<discussion>
+<Sav>	questions? 
+<kratos>	that's true. there's also other boards on offer, not just the
+panda. hackaday.com or similar will have boards for $50-$500 that will be
+perfect for basing a router on, a lot of them have low power consumption and
+are perfectly expandable
+<Sav>	Mutiny: you'll be able to give your class.
+<Sav>	yup
+<Mutiny>	I'll postpone a little bit just to give everyone a break
+<Tyrone>	A laptop will cost you anywhere between $0 and $50 tough.
+<Tyrone>	And a dualcore will hardly run hot with a stripped down gentoo
+install runnin' openvpn.
+<Sav>	just the 54G is a consumer market product, like found at the next door
+shop, you can hook one up and have it running in 10 mns, mine is like 25°C
+<Sav>	and it boots in 8s
+<Sav>	or 10 on bad days
+<Sav>	since it is a simple machine, I won't have it run a fuckton of useless
+programs, ircd, lol-screen, and such
+<Sav>	for this I have my servers.
+<Sav>	and now
+<Sav>	for your culture
+<Sav>	I urge you to read this:
+http://pptpclient.sourceforge.net/protocol-security.phtml
+<Patri0t>	^
+<prophet>	< logging everything as well if you want raw lecture
+<Tyrone>	Small pptp explanation, and why it is shit, for n00bs.
+<Tyrone>	Let's assume best case, mschapv2.
+<Tyrone>	This happens on connection initiation.
+<Sav>	yup
+<Tyrone>	Server sends challenge->user encrypts 8 byte challenge with 16
+byte ntlm hash. adds 8 byte challenge of its own.
+<Sav>	I wouldn't use pptp over a wifi network
+<hatter>	lol
+<Tyrone>	This gets sent to the server, server checks agains it's user
+db if its correct.
+<hatter>	ppp
+<Tyrone>	So you have the plaintext, all you need is the key, you can
+br00t.
+<Tyrone>	Worst case: weak as shit MSCHAP-V1 Is used (check l0pthcrack
+yo) shitty NT hash of your pass is broadcasted. BOOM, bruted.
+<Sav>	NTLM, for people's information
+<Sav>	is MD4
+<Tyrone>	Oh, and if your program has compatibility between MSCHAP v1
+and v2 auth, a MITM can force it down to one.
+<Sav>	iirc
+<Sav>	like
+<Sav>	you can kill it in no time
+<Tyrone>	yep, md4.
+<Sav>	my sister had changed my brother's computer password
+<Sav>	spawned ophcrack
+<Tyrone>	you can reverse like what, half of that algorithm?
+<Sav>	the password was like 11 chars long
+<Sav>	got cracked
+<Sav>	in 5 mn
+<Tyrone>	Not to mention that for this case, a collision is fine too.
+<Sav>	yup
+<Sav>	so, people
+<Sav>	an extra advice
+<Sav>	don't use WiFi when possible
+<Sav>	or use WPA
+<Sav>	WEP is useless
+<Sav>	WEP is like locking a door with a weak key
+<prophet>	^
+<Tyrone>	also, no WPA-PSK.
+<Sav>	and hoping no one will break in and listen to everybody
+<Spunker>	isn't WEP crackable via injection in like 5 minutes?
+<Mutiny>	WEP is like installing a lock and forgetting to use it.
+<awkward>	and leaving the key next to the door
+<Sav>	WPA establishes individual locks
+<Sav>	for each user
+<Sav>	so it's harder to attack
+<prophet>	WEP keys can be cracked from outside the network in a matter
+of minutes usually
+<Spunker>	I heard that WPA is crackable too 
+<Spunker>	but only at a certain point in time
+<LulzSheep>	are you still talking
+<Tyrone>	EAP-EKE = best key algo.
+<Spunker>	during the handshake phase or smth
+<prophet>	Spunker, it is, but the key-strngth matters
+<awkward>	if you use a shit password
+<fortmefy>	there's a couple of things, like WEP migration mode.  However,
+you're probably thinking about WPA/2-TKIP packet insertion
+<fortmefy>	besides the obvious handshake bruteforce
+<Tyrone>	try WPA/2-EAP-EKE plz.
+<LulzSheep>	I am on WPA-Personal is that good
+<Tyrone>	http://tools.ietf.org/html/rfc6124 <-EAP-EKE rfc.
+<LulzSheep>	encryption type TKIP
+<Tyrone>	tkip
+<Tyrone>	lulz.
+<Sav>	yeah
+<Sav>	anyway
+<Sav>	don't use wifi, because Eve's a bitch
+<Sav>	(the crypto Eve)
+<Sav>	my WRT54GL has no WiFi antenna
+<Sav>	and no iw package
+<Sav>	and no wifi kernel modules
+<Mutiny>	Don't set a password on your router and completely forget what
+you set it as.
+<Mutiny>	>.>
+<LulzSheep>	just roll with default
+<Sav>	use a root password
+<LulzSheep>	be an hero
+<Sav>	haha
+<Sav>	admin / admin
+<prophet>	lawl
+<Sav>	:>
+<Mutiny>	I don't roll with default, but i derped and forgot what the
+hell I set it as :-/
+<prophet>	yes, for best security, use router defaults
+<prophet>	:-P
+<Sav>	the intruders will secure it for you
+<Sav>	well
+<prophet>	hahaha
+<Sav>	they'll secure you out of it

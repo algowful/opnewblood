@@ -1,0 +1,691 @@
+Assembly (by hatter and eax)
+
+<hatter> class is now in session
+<hatter> Basics of assembly, bytecode, and processors
+<hatter> Processors & CPU's 
+<hatter> Have gates
+<hatter> These gates
+<hatter> are accessed by instructions
+<hatter> now processors have little pieces of memory, known as registers
+<hatter> which are either 32 bits, or 64 bits (4 bytes or 8 bytes) in length, respectively.
+<hatter> Gates are little more than a piece of hardware circuitry.
+<hatter> When an instruction is executed, one of the available gates is used
+<hatter> operands are received by these gates
+<hatter> Sometimes the operands are registers, other times the operands are static values.
+<hatter> registers may contain any integer up to their size (in hex) or a pointer to any piece of data
+<hatter> pointers to strings, for example, are null terminated, hence you've seen \0 in a lot of C, also \x00
+<hatter> A single byte (8 bits) is capable of executing an instruction, or calling access to a gate.
+<hatter> There are several basic instructions (primitives) and several general-purpose registers on the x86 processor architecture.
+<hatter> I'll turn it over to eax to explain those
+<eax> these basic instructions consist of
+<eax> push(pushl)
+<eax> pushb
+<eax> movb
+<eax> movl
+<eax> pop
+<eax> addl
+<eax> addb
+<hatter> (By the way, this is ATT System V assembly, not intel, but it works on both architectures)
+<eax> imul
+<eax> and depending on your syntax these may be different
+<hatter> don't forget
+<hatter> inc
+<hatter> dec
+<eax> (also the way you call them may be different)
+<eax> i will be explaining their usage in at&t system v syntax
+<eax> starting with movb/movl
+<hatter> The general purpose registers include (but are not limited to)
+<hatter> eax, ebx, edx, ecx, 
+<hatter> ebp
+<hatter> etc
+<eax> ah yes
+<hatter> Registers are preceeded by a % in ATT notation
+<hatter> So now you can all enjoy the joke of the handle and halfop %eax
+<hatter> For those of you who didn't get it before ;)
+<eax> lol
+<eax> ok so the basics of movb and movl
+<eax> movb stands for move byte
+<eax> it is used for moving 1 byte of data into a register
+<eax> as the name states lol
+<hatter> oh, one more thing -
+<eax> it can also be used in conjuntion with %al
+<hatter> These are 32 bit
+<hatter> registers
+<hatter> 64 bit registers are %rax, %rbp, etc
+<hatter> essentially the same names, preceeded by an 'r'
+<hatter> in stead of an 'e'
+<hatter> A register is built from several sub-registers
+<hatter> as we used to have 8 bit
+<hatter> long ago
+<hatter> before we ever had 64 bit
+<hatter> the eax register
+<hatter> is actually
+<hatter> hrm
+<hatter> Lemme ascii art it
+<hatter> ;)
+<eax> lawl i dont think we will ever get to the basic commands :3
+<eax> anyways usage of movl and movb is
+<eax> movl $data, %register
+<hatter>              |
+<hatter>              +------eax------
+<hatter>                     |
+<hatter>                     +--ax---
+<hatter>                      ah   al
+<hatter> movl $fromdata, %toregister
+<eax> (that moves 4 bytes of data to a register)
+<hatter> eax: you referenced %al and we can't assume they know what that is
+<hatter> lol
+<eax> google it!
+<hatter> ^
+<hatter> Ok new rule
+<eax> nah %eax is split into 4bytes
+<hatter> If you don't know what it is
+<hatter> Google
+<hatter> before asking questions
+<eax> %ax is 2 bytes long
+<hatter> if you have questions, pm one of us
+<nyann> literally google, or just mean search?
+<hatter> if its something the whole class should know we'll say it out here
+<hatter> search.
+<hatter> %ah and %al are 1 bytes and make up %ax
+<hatter> For clarification.
+<hatter> so
+<hatter> One of the most important instructions
+<hatter> is int
+<hatter> as in kernel interrupt.
+<hatter> The kernel has a mainloop
+<hatter> that just runs in circles checking on running programs
+<hatter> to see if they need its attention.
+<hatter> if they do, the kernel will execute the command required by the application, given that the user running the application is privileged enough to do so
+<hatter> so our first example
+<hatter> will be exit
+<hatter> In assembly, your first program is exit, as opposed to 'hello world'
+<hatter> because you do actually have to write code to exit the program.
+<eax> (fyi google: "programming from the ground up" great resource imho)
+<hatter> Quite a great book
+<hatter> eax learned from it
+<hatter> Its one of my favorites.
+<hatter> Its a free ebook
+<hatter> So no worries
+<hatter> its available in pdf, softcover or hardcover
+<hatter> (obviously physical copies cost money)
+<hatter> eax: teach'em exit
+<hatter> lol
+<eax> k
+<eax> i am going to display the asm code for exit fist then explain it
+<eax> movl $0, %ebx
+<eax> movl $1, %eax
+<eax> int $0x80
+<hatter> Oh
+<hatter> EVERYONE WHO CAN:
+<hatter> Open up a text editor
+<hatter> and put that in there
+<hatter> if you are on linux
+<hatter> n save it
+<hatter> (Lets at least walk them through it eax )
+<eax> lol k
+<eax> ok the first instruction moves 0 into %ebx
+<hatter> ^
+<eax> (0x00000000) is what it actually looks like
+<eax> because it is a dword (8 bytes)
+<hatter> because you're moving a long (or doubleword) into a 32 bit register
+<eax> the next instruction moves 1 into eax
+<Dox> save it with what ext?
+<eax> (0x0000001)
+<eax> ill talk about that in a sec
+<eax> next instruction is the system interupt which tells the proccessor hey do this shit
+<hatter> That's correct,
+<eax> every time you file an interupt it checks %eax for what command you want to do
+<hatter> its the kernel interrupt
+<eax> $1 = exit
+<hatter> (ON LINUX)
+<eax> for the exit command it has another variable to assist it (%ebx)
+<eax> this is the return variable to the system for the exit call
+<hatter> You may or may not have seen
+<eax> it is almost like return 0; or exit(0); in C
+<hatter> Exit code 127
+<hatter> in scripts
+<hatter> that means the file wasn't found
+<hatter> etc
+<hatter> a good example
+<hatter> if you have your linux shell
+<hatter> type some random shit that obviously isn't a command
+<hatter> then type
+<hatter> echo $?
+<hatter> with the ? mark
+<hatter> hatter ~ $ awiefuweiufh
+<hatter> awiefuweiufh: command not found
+<hatter> hatter ~ $ echo $?
+<hatter> 127
+<hatter> hatter ~ $ cd descry
+<hatter> hatter ~/descry $ echo $?
+<hatter> 0
+<hatter> $? means exit status was normal
+<hatter> Anything else is an error
+<hatter> An application can have up to 255 basic errors
+<eax> ok so now that we have the return value in %ebx and the exit code in %eax and the system interupt. it is time to assemble and link/
+<eax> so our code looks like this
+<eax> movl $0, %ebx
+<eax> movl $1, 
+<eax> int $0x80
+<eax> erm movl $1, %eax*
+<eax> name the file test.s
+<eax> in order to assemble we have to call the 'as' command
+<eax> so pull up your linux terminal
+<eax> navigate to where you saved test.s
+<eax> and type in
+<eax> as test.s -o test.o
+<eax> this will take the source code and assemble it producing an object file
+<eax> (-o is the output flag and what is after is the filename )
+<eax> after this we can link the file together using the 'ld' command
+<eax> ld test.o -o test
+<eax> (later on if we get to it you can also dynamically link other libbarys for use in your project that include funcitons like prinf)
+<eax> so now that we have an assembled binary we can run it like so
+<eax> ./test
+<eax> now it may seem as if it did nothing but what happened was it opened and put $0 into %ebx (the return value)
+<eax> and then exit itself
+<eax> if you type echo $? 
+<eax> it should produce 0
+<hatter> It wil have that 0 from %ebx.
+<hatter> So you funny guys
+<hatter> can change that first line
+<hatter> to 
+<hatter> movl $69, %ebx
+<hatter> and re-assemble it
+<hatter> when you echo $?
+<hatter> it'll say 69
+<hatter> in stead of 0
+<hatter> obviously
+<hatter> No one in here has tried this
+<hatter> Because I haven't been spammed with 'it won't assemble' messages.
+<hatter> So kids hurry up and try it
+<hatter> The reason that won't assemble
+<hatter> is because
+<hatter> there's no text or data segment
+<hatter> the whole exit code is as follows:
+<hatter> .section .data
+<hatter> .section .text
+<hatter> .globl _start
+<hatter> _start:
+<hatter> movl $0, %ebx
+<hatter> movl $1, %eax
+<hatter> int $0x80
+<hatter> --END--
+<hatter> So
+<hatter> Those of you who care to learn asm
+<hatter> Go ahead and put that in
+<hatter> save your file as 'test.s'
+<hatter> then run
+<hatter> as test.s -o test.o
+<hatter> ld test.o -o test
+<hatter> ./test
+<hatter> echo $?
+<hatter> you should get a zero
+<hatter> anyone having a hard time may pm me
+<God> :D
+* hatter gives voice to null-
+<hatter> null-: raised a valid point
+<hatter> Go ahead and talk
+<hatter> explain your problem and why, then I'l explain the solution :)
+<God> ..
+<null-> the former code from  eax assembled in my machine (32bit OS on 64bit CPU) and got the following warning
+<null-> ld: warning: cannot find entry symbol _start; defaulting to 0000000008048054
+<null-> now hatter will explain why that happen :)
+<hatter> Essentially
+<hatter> He's running a 32 bit exit call
+<hatter> null-: go ahead and cat your file
+<hatter> and paste it
+<null-> movl $0, %ebx
+<null-> movl $1, %eax
+<null-> int  $0x80
+<hatter> There's no header
+<hatter> 00:13 <@hatter> there's no text or data segment
+<hatter> 00:13 <@hatter> the whole exit code is as follows:
+<hatter> 00:13 <@hatter> .section .data
+<hatter> 00:13 <@hatter> .section .text
+<hatter> 00:13 <@hatter> .globl _start
+<hatter> 00:14 <@hatter> _start:
+<hatter> 00:14 <@hatter> movl $0, %ebx
+<hatter> 00:14 <@hatter> movl $1, %eax
+<hatter> 00:14 <@hatter> int $0x80
+<hatter> Had he been using the registers
+<hatter> %rax
+<hatter> and %rbx
+<hatter> in stead of %eax and %ebx
+<hatter> respectively
+<hatter> He would not have gotten that error
+<hatter> But because he had a 64 bit cpu
+<hatter> and he's using 32 bit registers
+<hatter> and didn't declare his start header
+<hatter> it didn't know to assemble it properly
+<hatter> so
+<hatter> those of you who got exit working right
+<hatter> try and make echo $? say 69
+<null-> so it doesn't matter you are running a 32bit OS if you are running a 64bit cpu, you need to write 64bit asm
+<hatter> in stead of 0
+<hatter> null-: wrong
+<hatter> you need to declare your header
+<hatter> 00:20 <@hatter> 00:13 <@hatter> .section .data
+<hatter> 00:20 <@hatter> 00:13 <@hatter> .section .text
+<hatter> 00:20 <@hatter> 00:13 <@hatter> .globl _start
+<hatter> 00:20 <@hatter> 00:14 <@hatter> _start:
+<hatter> do that right before the beginning of your file.
+<hatter> 1 is in eax
+<hatter> because that's the function number
+<hatter> you can google the linux syscall table
+<hatter> and it'll show you that 1 is exit
+<hatter> We're gonna take a 15 minute break
+<hatter> to answer some questions
+<hatter> And I need a cigarette
+<hatter> then we'll get to hello world
+<hatter> and some loops :)
+<Hellspawn> What is the use of these different error codes? Just for feedback to the user?
+<d0z3> or another program
+<hatter> mostly debug output Hellspawn 
+<Anorov> hmm
+<Hellspawn> kk
+<d0z3> so it can know if it ran succesfully or encountered an error ? (this is in c)
+<Anorov> hatter could you display some uses of using the 2 and 1 byte registers?
+<hatter> Sure, give me a moment
+<Anorov> k
+<hatter> I gotta smoke a cig BAD
+<hatter> lol
+<imposter22> ♪the lulz boat♪
+<TransfiniteGreyWizard> I love your class hatter
+<TransfiniteGreyWizard> I wish colleges would get to the point like you do
+<TransfiniteGreyWizard> Not kissing your ass. I'm seriously pissed with these dumbass classes.
+<Anorov> you taking an assembly class in college?
+<TransfiniteGreyWizard> No just mathematics
+<Anorov> well math is a bit different lol
+<Anorov> i'm rather glad math isn't taught in here
+<TransfiniteGreyWizard> Why not?
+<S4ya> guise guise
+<S4ya> ima doing
+<S4ya>         mov     eax, 1
+<S4ya>         db      0xff, 0xc8
+<S4ya>         pop     ebx
+<S4ya>         int     0x80
+<S4ya>         db      0xeb, 0xf4
+<Anorov> i'm god awful at math and...meh, nevermind
+<Anorov> what does db mean again? declare byte?
+<S4ya> wut wrong?
+<TransfiniteGreyWizard> You can divide any number by 5 by multiplying by 2.
+<d0z3> heh?
+<TransfiniteGreyWizard> For instance, 27475*5 can be cut in half to extract the answer.
+<TransfiniteGreyWizard> An easy way to do these large numbers in your head is to reduce all odd numbers by 1.
+<TransfiniteGreyWizard> Turning 27475 to 26464. Cutting it in half results with 13232.
+<TransfiniteGreyWizard> Add 5 (as a remainder) to the number on the right.
+<TransfiniteGreyWizard> It turns into 13737.
+<TransfiniteGreyWizard> Add a 0 and you have your answer!
+<TransfiniteGreyWizard> 137370.
+<Hellspawn> wrong.
+<Hellspawn> 26364
+<Hellspawn> you did 26464
+<Hellspawn> short cuts = where problems arise.
+<d0z3> only the odd numbers
+<d0z3> 4 = even
+<Hellspawn> fuuuuuuuuuuuuuuuuu
+<TransfiniteGreyWizard> Oops.
+<Hellspawn> lol
+<Hellspawn> i still dont like that method lol
+<d0z3> me neither
+<Hellspawn> why dont you just use a calculator?
+<TransfiniteGreyWizard> Allow me to re-correct?
+<Hellspawn> 27475 * 5
+<Hellspawn> 25 + 350 + 2000 + 35000 + 100000
+<Hellspawn> 137375
+<TransfiniteGreyWizard> 27475 -> 26464 -> 13232 -> 137375
+<Hellspawn> but your method isn't even relevent
+<Hellspawn> its like doing your nine times tables using your fingers
+<TransfiniteGreyWizard> It is to logistics.
+<Hellspawn> how is your method quicker than the method i just used?
+<Hellspawn> like seriously, if you want quick, use a computer
+<TylerDurden> Hatter: good class, skimmed over it as i waz away, lernin' ppl asm is alwyas good.
+<TransfiniteGreyWizard> Its number entanglement using the imaginary number system.
+<TransfiniteGreyWizard> sin(180)/cos(90) demonstrates the relationship inversely
+<eax> soory guys im back now
+<eax> had an emergancy
+<Hellspawn> feds at your door?
+<Hellspawn> lol jk
+<TransfiniteGreyWizard> We all have to use the bathroom, its ok.
+<hatter> not that cool
+<hatter> lol
+<hatter> yall got like 3 minutes left
+<IR601> shit ur self?
+<Hellspawn> we are discussing the use of mathematics hatter, not really relevant stuff
+<TransfiniteGreyWizard> Well it has a little bit to do with it.
+<t> so guys are there any questions related to the subject that hatter or eax could anser
+<null-> so... register are name sequentially? eax ebx ecx etc...
+<TransfiniteGreyWizard> How do number representations relate to logical gates?
+<Hellspawn> ok question then, what would be more efficient? greywizards method or my method for computers?
+<KroaK> not all
+<KroaK> theres ebp, esp
+<KroaK> but they're special
+<dextone> hatter, so why I got 0 while I'm expecting 127 error code ?
+<KroaK> eip
+<KroaK> not directly accessable
+<hatter> dextone: I am still tryin to figure that out, could be something wrong with your bash install
+<TylerDurden> Yeah: stack cookies. what about them.?
+<Anorov> what distro are you running dextone
+<TransfiniteGreyWizard> Sorry guys, still a newb.
+<hatter> ok guys
+<hatter> lets wrap it up
+<hatter> eax: take it away <3
+<eax> ok boys
+<null-> KroaK: so there's a bunch of of eax, ebp, esp, etcc?
+<eax> yes null there are a bunch of registers
+<eax> general purpose are eax, ebx, edx, ecx
+<eax> then special registers like eip, ebp, esp, eflags
+<eax> anyways
+<null-> what's the difference beteween eax and ebx for example?
+<eax> nothing pretty much they can be used for the same thing 
+<eax> just think of them of general purpose variables
+<eax> anyways COMMENTS YOU MUST USE THEM
+<eax> to comment something in your source code you use a hash sign
+<eax> #this is a comment
+<eax> i suggest putting a comment every 1-3 lines just so you understand what is going on
+<eax> because when you get into real projects it will get confusing
+<eax> comments are especially usefull for functions
+<hatter> When you get into highly compressed code
+<hatter> comment every line.
+<eax> ^
+<eax> sometimes 1 line of asm can do 2-4 different things at once
+<eax> its helpful also to use comments for functions
+<eax> you can describe how to call your functions
+<eax> what your function does
+<eax> what your function should return
+<eax> etc
+<eax> most functions you see in asm follow the C syntax for variables
+<eax> to pass variables to a function
+<eax> you must push them to the stack BEFORE
+<eax> you call your funciton
+<eax> while im at it i should explain the stack
+<eax> the stack is part of your programs memory that expands backwards
+<eax> say i pushl $1
+<eax> the stack now looks like
+<eax> 0x00000001
+<eax> now if i pushl $4
+<eax> it looks like 
+<eax> 0x0000004
+<eax> 0x00000001
+<eax> (too many zeros w/e)
+<eax> the stack acts like a stack of papers on your desk
+<eax> every time you put a new piece on an older one gets burried
+<eax> and in order to access a piece of papper benieth the current one you must pop it off
+<eax> (the pop command takes the top dword off the top of the stack and places it in a register)
+<eax> so if a stack looks like
+<eax> 0x4
+<eax> 0x1
+<eax> and i do pop %eax
+<eax> eax will now = 4
+<eax> and the stack will look like
+<eax> 0x1
+<eax> if i want to get that last piece of data i would want to issue the pop command again
+<eax> although this is not the only way to access data off the stack
+<eax> (there are address trickery you can do to get some data off the stack without popping it off but i wont get into it yet)
+<eax> so stack = pappers stack over eachother newest on the top olderst on the bottom
+<eax> now functions
+<eax> to declare a function in att syntax you type
+<eax> .type lable, @function
+<eax> label being a label in your code
+<eax> (labels are just human readable text that is assigned to an specific memory address at startup)
+<eax> (usually looks like                      test:     )
+<eax> test being the label name and the colon afterwads means its a label
+<eax> if you havent noticed in your source you have _start:
+<eax> that is a label to the entry point of your program if you are wondering
+<eax> anyways once you define your function (.type test, @function)
+<eax> you have to create your label (usually directly under it)
+<eax> test:
+<eax> after that the first thing you do for every function
+<eax> is back up your %ebp (base pointer) into the stack by pushing it
+<eax> and then moving %esp to %ebp (because you should never access %esp directly)
+<eax> this will allow you to access your varriables you are pushing to your funciton
+<eax> your funciton now looks like this
+<eax> .type test, @function
+<eax> test:
+<eax> pushl %ebp
+<eax> movl %esp, %ebp
+<eax> for a definition of esp its a address pointer that poitns to the top of your stack (or the bottom i forgot ><)
+<eax> lets make this test function print something onto the screen
+<eax> so lets learn how to print something onto the screen in the first place
+<eax> in order to print to stdout (the file discripter that prints to your terminal)
+<eax> the cpu needs specific data in each register
+<eax> %ebx holds the file discripter to print to (1 in this case is STDOUT)
+<eax> %ecx holds the address of the start of your buffer (the text you want to print)
+<eax> %edx hold the size of your buffer (how long it is)
+<eax> %eax holds the interupt code (if you recall 1 = exit) this time we are going to put 4 in there
+<eax> beause 4 = write
+<eax> (all these codes and stuff can be found in "programming from the ground up")
+<eax> ok
+<hatter> Back
+<eax> wb hatter
+<hatter> ty
+<hatter> where are we?
+<eax> k so now since we have to push our variables onto the stack in order to use in in our function
+<eax> erm
+<eax> in order to use a variable in our funciton we have to push it onto the stack*
+<eax> for this function we will use the address of a ascii test string
+<eax> but where do we put this ascii text string you may ask
+<eax> good question
+<eax> hatter should of went over breifly the Header area
+<eax> (.section .data and .section .text
+<eax> )
+<hatter> Ah yes
+<hatter> .section 
+<hatter> creates a section
+<hatter> there aren't a lot of types
+<hatter> but bss is the main stack
+<hatter> data is different static data
+<eax> the .data section is reserved for stacic variables such as strings and other variables
+<hatter> and text is the main execution code
+<eax> ^
+<eax> ok so we want to define an ascii variable
+<eax> in order to do so
+<eax> we create a new label in .data (because there are no variables in asm only poitners to memory addresses)
+<eax> so
+<eax> .section .data
+<eax> our_string:
+<eax> .ascii "this is our string\n"
+<lolwat> eax, 
+<lolwat> no need to null terminate?
+<eax> depends on how you use it
+<eax> you need to null terminate if you call a funciton like printf
+<lolwat> for instance, printing it
+<lolwat> without knowing its len
+<eax> but since we are using the interupt it is not madatory
+<eax> if you read up a bit i talk about the registers the write itnerupt uses
+<lolwat> so .ascii by itself
+<eax> one of them is for specifing its lenge
+<eax> length8
+<lolwat> doesn't null terminate? (that was my question)
+<null-> eax: you mean calling printf from stdio.h ?
+<eax> not when you use the interupt for write (you specifit length in %edx)
+>eax< he's asking whether it automatically null terminates
+<eax> yes you can call printf from asm i will be covering that later
+<eax> ok so back to what i was saying
+<eax> ok
+<eax> the .data section looks like this
+<eax> to define a static string (this is not the case in certian instances like for calling a function like printf)
+<eax> .section .data
+<eax> test_string:
+<eax> .ascii "test\n"
+<eax> test_end:
+<eax> .equ test_len, test_end - test_string
+<eax> .equ creates a variable in this case containing the length of the string
+<eax> as i said the labels are for human readablility and actually represent memory addresses
+<hatter> ^
+<eax> so what it does is take the ending memory address and minus the starting
+<eax> to get the length
+<eax> sec let me paste bin the entire code so far its too long for irc
+<eax> give me a moment
+<eax> http://pastebin.com/znZCMYRb
+<eax> so far all it has is our exit code (to exit the program) and an incomplete funciton
+<eax> lets add a way to give our function our variables (the address of our text and its length)
+<eax> to do this push them onto the stack in our main program (abouve our exit code)
+<eax> pushl $test_string
+
+===================================
+
+<eax> pushl $test_len
+<eax> now after that incert a call to call our funciton
+<eax> call test
+<eax> http://pastebin.com/g6wzspYH
+<eax> now looks like so
+<eax> now our main code is finished (all we need it to do is push our data and exit)
+<eax> so lets finish up on our function (sorry for jumping back and forth so many things to tell you lol)
+<eax> now
+<eax> in our function we are currently pushing the base piointer (ebp) and then moving the stack pointer to ebp
+<eax> this allows us to access our variables (and those two commands should be in every function )
+<eax> at the point of when our function is called our stack looks like so
+<eax> $text_len
+<eax> $test_string
+<eax> return address
+<eax> ebp
+<eax> sec
+<Fox> :3
+<eax> $test_len       ebp + 12
+<eax> $test_string    ebp +8
+<eax> return address  ebp +4
+<eax> ebp             ebp / esp
+<eax> ebp is the base pointer (which we moved esp to) which pointes to the bottom of the stack
+<eax> since we are working in longs (or dwords) which are 4 bytes in length
+<eax> we can move up the stack in 4 byte increments
+<eax> so say %ebp = 0x10000000
+<eax> our variable that we pushed onto the stack are at
+<eax> 0x10000008
+<eax> and 0x10000012
+<eax> in memory
+<eax> so in order to access them in our finction
+<eax> we use something called indrect memory access
+<eax> (it basiacally means we specify an address and it will grab its context)
+* rawr has quit ()
+<eax> so lets grab our first variable (test_string)
+<null-> like *ptr in C?
+<eax> yes in a sense
+<eax> pointers in C point to memory addresses
+<eax> if you want you can actually do *var + 4
+<eax> and it would take the address of var and add 4 to it
+<eax> ok so in order to get our first variable underneith movl %esp, %ebp put
+<eax> movl 8(%ebp), %edx
+<eax> what this does is moves a long (aka a dword (4 bytes)) from the address of %ebp + 8
+<eax> and puts the contents into %edx
+<eax> so its moving 0x10000008 - 0x10000012 into %edx
+<eax> this is the address of our text string we define in the data segment which we pushed onto the stack
+<eax> (which we will need for calling our write intrrupt)
+<eax> now we have to grab the length of our text
+<eax> movl 12(%ebp), %ecx
+<eax> same thing appens here
+<eax> moves 4 bytes starting at %ebp + 12 into ecx
+<eax> thats our memory address of our .equ which is our length of our string
+<eax> http://pastebin.com/FZK60Bw1
+<eax> code now looks like so
+<eax> now that we have our two variables we pushed onto the stack for use in our function lets start our system interupt code
+<eax> to print our text into STDOUT
+<eax> (the file discriptor the pipes ascii onto the terminal
+<eax> )
+<eax> as i said before the write interupt uses 3 registers in order to function
+<eax> erm 4*
+<eax> %eax, ebx, ecx, edx
+<eax> my bad class i moved the variables to the wrong registers
+<eax> it should look like so
+<eax> movl 8(%ebp), %ecx
+<eax> movl 12(%ebp), %edx
+<eax> %ebx is our file discripter we want to write to (in our case stdout is 1)
+<eax> so lets mov $1 into ebx
+<eax> next we need to put our buffer address (the address our text is at) into %edx
+<hatter> wow eax you're impressing me <3
+<eax> luckily if we use the two replacment lines i screw up above we dont have to issue a command to move the data there
+<eax> because it is already there
+<eax> same goes for %ecx
+<eax> http://pastebin.com/rER2gC9e
+<eax> code now looks like so
+<eax> next we need to move our intterupt code into %eax
+<eax> when calling int $0x80 the interupt code always goes into eax
+<eax> (example for exit we moved $1 into eax
+<eax> )
+<eax> in this case to fire the write inttrupt we have to move $4 into eax
+<eax> movl $4, %eax
+<eax> now we can call our itnerupt
+<eax> basically yelling at the cpu HEY I WANT TO DO SOMETHING LOOK IN EAX AND DO THAT SHIT
+<eax> http://pastebin.com/Run4J4j3
+<eax> code now looks like so
+<eax> that is it for the writing part of the code
+<eax> now it is time for funciton clean up
+<eax> basically you mov ebp back to esp
+<eax> and pop %ebp (to get ebp address back into it)
+<eax> movl %ebp, %esp
+<eax> pop %ebp
+<eax> this is manitory because without it you will most likely see some strange stuff happen
+<eax> the last call which i havent explained is ret
+<eax> ret is a call that takes the return address off the stack
+<eax> and jumps back to that point in code
+<eax> to resume execution
+<eax> (the return address is where we called our funciton)
+<eax> http://pastebin.com/H435rYUb
+<eax> finished code
+<eax> also now that i think about it
+<eax> the registers eip and the whole call /ret thing
+<eax> when you use the call function
+<eax> it pushes the return address into the stack and then jumps to the address of the function start
+<eax> and you issue a ret call
+<eax> it pops the returna ddress off the stack
+<eax> into %eip
+<eax> and then jumps
+<eax> now for buffer overflows
+<eax> they happen when you overflow the stack to a point where
+<eax> you can edit the return address
+<eax> so that once you can edit the return address you can make your own
+<eax> then the function pops it into %eip
+<eax> and jumps to it
+<eax> WELL GUESS WHAT
+<eax> YOUR EXPLOIT SHELL CODE IS THERE
+<eax> and it starts to run your shell code
+<eax> hatter can maybe clarifiy that a bit more
+<eax> anyways our code is done it is time to assemble and link
+<eax> (also sorry if i dont respond to pms i dont have them open atm
+<eax> )
+<hatter> essentially
+<hatter> the pop instruction takes the latest dword
+<hatter> and shoves it into a register
+<hatter> so what's happening when 'ret' is called by itself
+<hatter> is actually on the circuit
+<hatter> popl %eip
+<hatter> if you assemble both of them
+<hatter> you will get the same bytecode
+<hatter> Some assemblers won't let you assemble popl %eip.
+<hatter> But in a stack overflow
+<hatter> the last thing shoved onto the stack (or first thing depending on how you look at it)
+<hatter> is gonna be your pointer
+<hatter> that pointer gets popped by the ret call
+<hatter> sometimes you run into funny ret calls
+<hatter> like
+<hatter> ret 0x18
+<hatter> which specifies 18 bytes be popped off of the stack before the %eip pop
+<hatter> in any case, this is the fundamental of a stack overflow.
+<eax> class give me amoment
+<eax> yea new it
+<eax> had an error in ym code lol
+<eax> http://pastebin.com/sUGerZDN
+<eax> erm
+<eax> sec again some how it reverted to older code
+* jas09 has quit (Remote host closed the connection)
+<eax> http://pastebin.com/YK2vpa1z
+<eax> erm awkward
+<eax> take 5 i need to figure something out
+<hatter> oh
+<hatter> Wow
+<jrsimar> appreciate this. thx eax & school4lulz
+<hatter> You need debug eax ?
+<eax> np
+<TylerDurden> http://www.intel.com/products/processor/manuals/ <=read the intel manuals for more information on instructions and their bytecodes.
+<TylerDurden> the intel manuals are GOOD INFO.
+<hatter> ^
+<hatter> amd has free arch manuals as well.
+<eax> ^
+<TylerDurden> intel's are better, and instruction sets somewhat match.
+* pheno has quit (Remote host closed the connection)
+<eax> http://www.wildcardsecurity.com/security101/index.php?title=Ascii_shellcode
+<TylerDurden> plus intel's recent sandy vagina 256 bits SMD registers r cool.
+<eax> http://www.wildcardsecurity.com/security101/index.php?title=Assembly_Basics#Counting
+<eax> also good reads
+<eax> made by hatter
